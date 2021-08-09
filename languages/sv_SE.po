@@ -1,0 +1,679 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Helsinki Universal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 14:28+0000\n"
+"PO-Revision-Date: 2021-06-28 08:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: Swedish\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2"
+
+#: comments.php:35
+msgid "&amp;larr; Older Comments"
+msgstr "&amp;larr; Äldre kommentarer"
+
+#: partials/content/parts/comment.php:23
+msgid "(Edit comment)"
+msgstr "(Redigera kommentar)"
+
+#. Description of the theme
+msgid "A multipurpose WordPress theme"
+msgstr "Ett WordPress-tema för flera ändamål"
+
+#: functions/entry.php:93
+msgid "All categories"
+msgstr "Alla kategorier"
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "All posts"
+msgstr "Alla inlägg"
+
+#: functions/entry.php:117
+msgid "All tags"
+msgstr "Alla taggar"
+
+#. Author of the theme
+msgid "ArtCloud"
+msgstr "ArtCloud"
+
+#: functions/content.php:41 partials/content/parts/author.php:2
+msgid "Author"
+msgstr "Författare"
+
+#: partials/footer/back-top.php:3
+msgid "Back to top"
+msgstr "Tillbaka till toppen"
+
+#: customizer/config/choices.php:22
+msgid "Brick"
+msgstr "Tegel"
+
+#: customizer/config/choices.php:23
+msgid "Bus"
+msgstr "Buss"
+
+#: customizer/config/front-page.php:25
+msgid ""
+"Checked sections will be displayed on the front page. Reorder sections with "
+"drag and drop."
+msgstr ""
+"Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och släpp."
+
+#: partials/header/mobile-panel-toggle.php:1 partials/header/search.php:2
+msgid "Close"
+msgstr "Stänga"
+
+#: partials/header/menu.php:6
+msgid "Close Menu"
+msgstr "Stäng menyn"
+
+#: customizer/config/choices.php:19
+msgid "Coat of Arms"
+msgstr "Vapen"
+
+#: comments.php:34
+msgid "Comment navigation"
+msgstr "Kommentarnavigering"
+
+#: comments.php:17
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: comments.php:41
+msgid "Comments are closed."
+msgstr "Kommentarer är stängda."
+
+#: customizer/config/front-page.php:7
+msgid "Content"
+msgstr "Innehåll"
+
+#: integrations/complianz.php:59
+msgctxt "cookie notice title prefix"
+msgid "uses cookies"
+msgstr "använder cookies"
+
+#: customizer/config/choices.php:24
+msgid "Copper"
+msgstr "Koppar"
+
+#: partials/loop/pagination.php:34
+#, php-format
+msgid "Currently on page %d"
+msgstr "För närvarande på sidan %d"
+
+#: customizer/config.php:37
+msgctxt "Customizer panel title"
+msgid "Blog"
+msgstr "Blogg"
+
+#: customizer/config.php:76
+msgctxt "Customizer panel title"
+msgid "Footer"
+msgstr "Sidfot"
+
+#: customizer/config.php:24
+msgctxt "Customizer panel title"
+msgid "Front Page"
+msgstr "Framsida"
+
+#: customizer/config.php:11
+msgctxt "Customizer panel title"
+msgid "General"
+msgstr "Allmän"
+
+#: customizer/config.php:50
+msgctxt "Customizer panel title"
+msgid "Header"
+msgstr "Rubrik"
+
+#: customizer/config.php:63
+msgctxt "Customizer panel title"
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: customizer/config/general.php:38
+msgctxt "Customizer section title"
+msgid "Breadcrumbs"
+msgstr "Brödsmulor"
+
+#: customizer/config/blog.php:8
+#| msgid "Filters"
+msgctxt "Customizer section title"
+msgid "Entries"
+msgstr "Inlägg"
+
+#: customizer/config/header.php:8
+msgctxt "Customizer section title"
+msgid "General"
+msgstr "Allmän"
+
+#: customizer/config/header.php:38
+msgctxt "Customizer section title"
+msgid "Highlight link"
+msgstr "Markera länk"
+
+#: customizer/config/general.php:20
+msgctxt "Customizer section title"
+msgid "Koros"
+msgstr "Skuror"
+
+#: customizer/config/header.php:57
+msgctxt "Customizer section title"
+msgid "Languages"
+msgstr "Språk"
+
+#: customizer/config/sidebar.php:10
+msgctxt "Customizer section title"
+msgid "Page sidebar"
+msgstr "Sidans sidofält"
+
+#: customizer/config/header.php:23
+msgctxt "Customizer section title"
+msgid "Search"
+msgstr "Sök"
+
+#: customizer/config/front-page.php:19
+msgctxt "Customizer section title"
+msgid "Sections"
+msgstr "Avsnitt"
+
+#: customizer/config/blog.php:28
+msgctxt "Customizer section title"
+msgid "Single Article"
+msgstr "Enstaka artikel"
+
+#: customizer/config/general.php:53
+msgctxt "Customizer section title"
+msgid "Social share"
+msgstr "Social andel"
+
+#: customizer/config/general.php:9
+msgctxt "Customizer section title"
+msgid "Style"
+msgstr "Stil"
+
+#: customizer/config/header.php:44
+#| msgid "Display login link in site header"
+msgctxt "Customizer setting description"
+msgid "Display highlight link in site header"
+msgstr "Visa höjdlänk i sidhuvudet"
+
+#: customizer/config/header.php:63
+msgctxt "Customizer setting description"
+msgid "Display language selector in site header"
+msgstr "Visa språkväljaren i sidhuvudet"
+
+#: customizer/config/header.php:29
+msgctxt "Customizer setting description"
+msgid "Display search field in site header"
+msgstr "Visa sökfält i sidhuvudet"
+
+#: customizer/config/general.php:44
+msgctxt "Customizer setting description"
+msgid "Required Yoast SEO to be installed"
+msgstr "Yoast SEO krävs för att installeras"
+
+#: customizer/config/choices.php:18
+msgid "Default"
+msgstr "Standard"
+
+#: customizer/config/header.php:14
+msgid "Disable default city logo"
+msgstr "Inaktivera standardstadslogotyp"
+
+#: customizer/config/blog.php:40
+msgid "Display author"
+msgstr "Visa författare"
+
+#: customizer/config/blog.php:37
+msgid "Display categories"
+msgstr "Visa kategorier"
+
+#: customizer/config/blog.php:43
+msgid "Display date"
+msgstr "Visa datum"
+
+#: customizer/config/blog.php:46
+msgid "Display modified date"
+msgstr "Visa modifierat datum"
+
+#: customizer/config/blog.php:52
+msgid "Display related posts"
+msgstr "Visa relaterade inlägg"
+
+#: customizer/config/blog.php:34
+msgid "Display social share buttons"
+msgstr "Visa sociala delningsknappar"
+
+#: customizer/config/blog.php:49
+msgid "Display tags"
+msgstr "Visa taggar"
+
+#: customizer/config/front-page.php:53
+msgid "Displays front page content set in Dashboard > Pages > {front page}."
+msgstr ""
+"Visar innehåll på förstasidan som ställts in i Instrumentpanelen> Sidor> "
+"{förstasida}."
+
+#: inc/assets.php:171
+msgctxt "Editor palette"
+msgid "Black"
+msgstr "Svart"
+
+#: inc/assets.php:164
+#| msgid "Fog"
+msgctxt "Editor palette"
+msgid "Light"
+msgstr "DimmaLjus"
+
+#: inc/assets.php:183
+msgctxt "Editor palette"
+msgid "Light Gray"
+msgstr "Ljusgrå"
+
+#: inc/assets.php:156
+msgctxt "Editor palette"
+msgid "Primary"
+msgstr "Primär"
+
+#: inc/assets.php:177
+msgctxt "Editor palette"
+msgid "White"
+msgstr "Vit"
+
+#: customizer/config/settings.php:58 customizer/config/sidebar.php:15
+msgid "Enabled"
+msgstr "Aktiverad"
+
+#: customizer/config/choices.php:25
+msgid "Engel"
+msgstr "Engel"
+
+#: functions/social.php:58 customizer/config/choices.php:59
+msgid "Facebook"
+msgstr "Facebook"
+
+#: customizer/config/front-page.php:90
+msgid "Feed Cache time"
+msgstr "Feed Cache-tid"
+
+#: customizer/config/front-page.php:67
+msgid "Feed shortcode"
+msgstr "Mata kortkod"
+
+#: customizer/config/front-page.php:75 customizer/config/front-page.php:80
+msgid "Feed URL"
+msgstr "Feed URL"
+
+#: functions/header.php:65 partials/header/mobile-links.php:7
+msgid "Feedback"
+msgstr "Respons"
+
+#: partials/loop/pagination.php:21
+msgid "First"
+msgstr "Först"
+
+#: partials/loop/pagination.php:21
+msgid "First page"
+msgstr "Första sidan"
+
+#: customizer/config/choices.php:26
+msgid "Fog"
+msgstr "Dimma"
+
+#: inc/setup-theme.php:117
+msgctxt "Footer sidebar"
+msgid "Footer"
+msgstr "Sidfot"
+
+#: customizer/config/choices.php:20
+msgid "Gold"
+msgstr "Guld"
+
+#. Name of the theme
+msgid "Helsinkiteema #1"
+msgstr "Helsinkiteema #1"
+
+#. Author URI of the theme
+msgid "https://www.artcloud.fi/"
+msgstr "https://www.artcloud.fi/"
+
+#: customizer/config/choices.php:38
+msgctxt "Koros motif"
+msgid "Basic"
+msgstr "Bas"
+
+#: customizer/config/choices.php:39
+msgctxt "Koros motif"
+msgid "Beat"
+msgstr "Rytm"
+
+#: customizer/config/choices.php:40
+msgctxt "Koros motif"
+msgid "Pulse"
+msgstr "Puls"
+
+#: customizer/config/choices.php:41
+msgctxt "Koros motif"
+msgid "Vibration"
+msgstr "Daller"
+
+#: customizer/config/choices.php:42
+msgctxt "Koros motif"
+msgid "Wave"
+msgstr "Bränning"
+
+#: searchform.php:3 partials/header/searchform.php:3
+msgctxt "label"
+msgid "Search for:"
+msgstr "Söka efter:"
+
+#. Name of the template
+msgid "Landing Page"
+msgstr "Landningssida"
+
+#: partials/loop/pagination.php:55
+msgid "Last"
+msgstr "Sista"
+
+#: partials/loop/pagination.php:55
+msgid "Last page"
+msgstr "Sista sidan"
+
+#: functions/comments.php:32
+msgid "Leave a comment"
+msgstr "Lämna en kommentar"
+
+#: customizer/config/header.php:48
+msgid "Link text"
+msgstr "Länktext"
+
+#: customizer/config/header.php:47
+msgid "Link url"
+msgstr "Länk url"
+
+#: functions/social.php:68 customizer/config/choices.php:61
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: functions/comments.php:27
+#, php-format
+msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
+msgstr "Inloggad som %1$s. <a href=\"%2$s\">Logga ut?</a>"
+
+#: customizer/config/general.php:59
+msgid "Media"
+msgstr "Media"
+
+#: partials/header/mobile-panel-toggle.php:1
+#: partials/header/mobile-panel-toggle.php:4
+msgid "Menu"
+msgstr "Navigeringsmeny"
+
+#: customizer/config/choices.php:27
+msgid "Metro"
+msgstr "Metro"
+
+#: comments.php:36
+msgid "Newer Comments &amp;rarr;"
+msgstr "Nyare kommentarer &amp;rarr;"
+
+#: partials/loop/pagination.php:51
+msgid "Next"
+msgstr "Nästa"
+
+#: partials/loop/pagination.php:51
+msgid "Next page"
+msgstr "Nästa sida"
+
+#: partials/content/none.php:14
+msgid "No posts have been published yet."
+msgstr "Inga inlägg har publicerats än."
+
+#: partials/content/none.php:9
+msgid "No posts matching your search could be found."
+msgstr "Inga inlägg som matchar din sökning kunde hittas."
+
+#. Name of the template
+msgid "No sidebar"
+msgstr "Inget sidofält"
+
+#: functions/content.php:45
+msgid "Not Found"
+msgstr "Hittades inte"
+
+#: partials/loop/pagination.php:42
+#, php-format
+msgid "Page %d"
+msgstr "Sida %d"
+
+#: partials/loop/pagination.php:17
+msgid "Page navigation"
+msgstr "Sidnavigering"
+
+#: inc/setup-theme.php:116
+msgctxt "Page sidebar"
+msgid "Page"
+msgstr "Sida"
+
+#: searchform.php:6 partials/header/searchform.php:6
+msgctxt "placeholder"
+msgid "Search…"
+msgstr "Sök…"
+
+#: customizer/config/blog.php:15
+#| msgid "Placeholder text"
+msgid "Placeholder Icon"
+msgstr "Platshållarikon"
+
+#: customizer/config/choices.php:48 customizer/config/choices.php:49
+#: customizer/config/choices.php:50 customizer/config/choices.php:51
+#: customizer/config/choices.php:52 customizer/config/choices.php:53
+msgctxt "Placeholder icon"
+msgid "Abstract"
+msgstr "Abstrakt"
+
+#: partials/content/none.php:10
+msgid "Please try using another search term or phrase."
+msgstr "Försök använda en annan sökterm eller fras."
+
+#: customizer/config/front-page.php:58
+msgid "Post count"
+msgstr "Antal inlägg"
+
+#: inc/setup-theme.php:115
+msgctxt "Post sidebar"
+msgid "Post"
+msgstr "Artikel"
+
+#: partials/loop/count.php:6
+msgctxt "posts count"
+msgid "search results"
+msgstr "sökresultat"
+
+#: customizer/config/front-page.php:10
+msgid "Posts Feed"
+msgstr "Inläggsflöde"
+
+#: partials/loop/pagination.php:25
+msgid "Previous"
+msgstr "Tidigare"
+
+#: partials/loop/pagination.php:25
+msgid "Previous page"
+msgstr "Föregående sida"
+
+#: partials/content/parts/date.php:2
+msgid "Published"
+msgstr "Publicerad"
+
+#: partials/content/parts/related.php:3
+msgid "Read also these"
+msgstr "Läs även dessa"
+
+#: partials/loop/entry/read-more.php:2
+msgid "Read more"
+msgstr "Läs mer"
+
+#: customizer/config/front-page.php:8
+msgid "Recent Posts"
+msgstr "Nya Inlägg"
+
+#: inc/setup-theme.php:76
+msgctxt "Registered menu name"
+msgid "Footer menu"
+msgstr "Sidfotmeny"
+
+#: inc/setup-theme.php:75
+msgctxt "Registered menu name"
+msgid "Main menu"
+msgstr "Huvudmeny"
+
+#: customizer/config/blog.php:55
+msgid "Related posts count"
+msgstr "Relaterade inlägg räknas"
+
+#: searchform.php:8 partials/header/searchform.php:8
+msgctxt "reset button"
+msgid "Reset"
+msgstr "Återställa"
+
+#: customizer/config/general.php:73
+msgid "Scheme"
+msgstr "Schema"
+
+#: functions/content.php:43 partials/header/search.php:2
+#: partials/header/search.php:2
+msgid "Search"
+msgstr "Sök"
+
+#: partials/search/title.php:6
+msgid "Search results"
+msgstr "Sökresultat"
+
+#: customizer/config/front-page.php:37
+msgid "Section title"
+msgstr "Avsnittstitel"
+
+#: partials/loop/filter.php:2
+msgid "Select category"
+msgstr "Välj kategori"
+
+#: functions/social.php:59
+msgid "Share on Facebook"
+msgstr "Dela på Facebook"
+
+#: functions/social.php:69
+msgid "Share on LinkedIn"
+msgstr "Dela på LinkedIn"
+
+#: functions/social.php:64
+msgid "Share on Twitter"
+msgstr "Dela på Twitter"
+
+#: partials/content/parts/social-share.php:2
+msgid "Share this on"
+msgstr "Dela detta på"
+
+#: partials/loop/load-more.php:5
+msgid "Show more"
+msgstr "Visa mer"
+
+#: partials/loop/filter.php:23
+msgid "Show posts from a category"
+msgstr "Visa inlägg från en kategori"
+
+#: customizer/config/choices.php:21
+msgid "Silver"
+msgstr "Silver"
+
+#: partials/header/skip.php:2
+msgid "Skip to content"
+msgstr "Hoppa till innehåll"
+
+#: customizer/config/front-page.php:9
+msgid "Social Feeds"
+msgstr "Sociala flöden"
+
+#: searchform.php:12 partials/search/form-title.php:1
+msgctxt "submit button"
+msgid "Search"
+msgstr "Hitta"
+
+#: customizer/config/choices.php:28
+msgid "Summer"
+msgstr "Sommar"
+
+#: customizer/config/choices.php:29
+msgid "Suomenlinna"
+msgstr "Suomenlinna"
+
+#: customizer/config/front-page.php:91
+msgid "The feed result is cached for 12 hours by default."
+msgstr "Resultatet är cachat i 12 timmar som standard."
+
+#: partials/content/not-found.php:8
+msgid "The page you were looking for could not be found."
+msgstr "Sidan du letade efter kunde inte hittas."
+
+#: partials/content/none.php:12
+msgid "This author has not published any posts yet."
+msgstr "Denna författare har inte publicerat några inlägg ännu."
+
+#: functions/front-page.php:313
+#, php-format
+msgid "This feed is fetched from %s."
+msgstr "Den här flödet hämtas från %s."
+
+#: inc/walkers.php:165
+#, php-format
+msgid "Toggle submenu for %s"
+msgstr "Växla undermenyn för %s"
+
+#: customizer/config/choices.php:30
+msgid "Tram"
+msgstr "Spårvagn"
+
+#: functions/social.php:63 customizer/config/choices.php:60
+msgid "Twitter"
+msgstr "Twitter"
+
+#: customizer/config/general.php:26
+msgid "Type"
+msgstr "Typ"
+
+#: partials/content/parts/updated.php:2
+msgid "Updated"
+msgstr "Uppdaterad"
+
+#: partials/header/search.php:5 partials/header/search.php:9
+#: partials/header/searchform.php:12 partials/header/searchform.php:18
+msgctxt "verb"
+msgid "Search"
+msgstr "Sök"
+
+#: customizer/config/front-page.php:24
+msgid "Visible sections"
+msgstr "Synliga sektioner"
+
+#: partials/content/not-found.php:5
+msgid "Whoops!"
+msgstr "Oj då!"
+
+#. Name of the template
+msgid "With sidebar"
+msgstr "Med sidofältet"
+
+#: partials/content/none.php:5
+msgid "Worse luck!"
+msgstr "Värre tur!"
+
+#: partials/content/parts/comment.php:19
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar väntar på moderering."

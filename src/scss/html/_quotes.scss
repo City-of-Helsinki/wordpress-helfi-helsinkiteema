@@ -1,0 +1,35 @@
+cite {
+  color: $dark-gray;
+  font-style: italic;
+}
+
+blockquote {
+	background: none;
+	border-left: 8px $default-border-style var(--primary-color);
+	font-size: rem-calc(36);
+	margin: spacing('layout-l') 0;
+	padding: 0 0 0 $global-padding;
+
+  p {
+		font-style: italic;
+		margin-bottom: var(--spacing-m);
+
+    &::before {
+      content: '\201C';
+    }
+  }
+
+	cite {
+		font-style: normal;
+		font-size: rem-calc(18);
+
+		&::before {
+      content: '- ';
+    }
+	}
+
+}
+
+q {
+  font-style: italic;
+}

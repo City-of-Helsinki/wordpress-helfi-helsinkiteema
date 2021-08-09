@@ -1,0 +1,78 @@
+@mixin breakpoint( $breakpoint ) {
+  @media only screen and (min-width: #{get-breakpoint($breakpoint)} ) {
+    @content;
+  }
+}
+
+@mixin breakpointMax( $breakpoint ) {
+  @media only screen and (max-width: #{get-breakpoint($breakpoint) - 1} ) {
+    @content;
+  }
+}
+
+@mixin breakpointRange( $min, $max ) {
+  @media only screen and (min-width: #{get-breakpoint($min)} ) and (max-width: #{get-breakpoint($max) - 1} ) {
+    @content;
+  }
+}
+
+@mixin heroStyles() {
+	background-size    : cover;
+	background-position: center;
+	background-repeat  : no-repeat;
+	height: 200px;
+
+	@include breakpoint('s') {
+		height: 250px;
+	}
+
+	@include breakpoint('m') {
+		height: 300px;
+	}
+
+	@include breakpoint('l') {
+		height: 350px;
+	}
+
+	@include breakpoint('xl') {
+		height: 400px;
+	}
+}
+
+@mixin absoluteCenter() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin tagLink() {
+	background-color: var(--color-silver);
+	border: $default-border-width $default-border-style var(--color-silver);
+	border-radius: $default-border-radius;
+	color: $black;
+	display: inline-block;
+	font-size: rem-calc(16) !important;
+	margin-right: spacing('2-xs');
+	margin-bottom: spacing('2-xs');
+	padding: rem-calc(8) rem-calc(24);
+	text-decoration: none;
+
+	&:focus {
+		border-color: var(--primary-color);
+		outline: none;
+	}
+
+	&:hover {
+		background-color: var(--color-silver-dark);
+		border-color: var(--color-silver-dark);
+		outline: none;
+	}
+}
+
+@mixin alignFull() {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width: 100vw;
+	width: 100vw;
+}

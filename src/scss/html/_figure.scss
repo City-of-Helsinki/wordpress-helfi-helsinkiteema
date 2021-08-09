@@ -1,0 +1,9 @@
+figure {
+	margin: 0 0 $paragraph-margin-bottom;
+}
+
+.wp-block-image figcaption,
+figcaption {
+	font-style: italic;
+	margin-top: 0;
+}

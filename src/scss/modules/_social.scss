@@ -1,0 +1,41 @@
+.share-links {
+	display: flex;
+
+	.title {
+		font-size: fontsize-body('xl');
+		margin: 0 spacing('s') 0 0;
+		line-height: 32px;
+	}
+
+	.menu {
+		padding: 0;
+
+		&__item {
+			padding: 0;
+
+			+ .menu__item {
+				margin-left: spacing('2-xs');
+			}
+		}
+	}
+
+	.share-link {
+		color: $anchor-color;
+		text-decoration: none;
+
+		svg {
+			fill: $anchor-color;
+			width: 32px;
+		}
+
+		&:focus,
+		&:hover {
+			color: $anchor-color-alt;
+
+			svg {
+				fill: $anchor-color-alt;
+			}
+		}
+	}
+
+}

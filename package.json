@@ -1,0 +1,33 @@
+{
+  "name": "wordpress-helfi-helsinkiteema",
+  "version": "3.1.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "keywords": [],
+  "author": [
+		{
+      "name": "ArtCloud",
+      "email": "hel@artcloud.fi",
+      "homepage": "https://www.artcloud.fi"
+    }
+	],
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-polyfill": "^6.26.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.35.2"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie 11"
+  ]
+}

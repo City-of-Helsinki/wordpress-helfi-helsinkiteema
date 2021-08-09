@@ -1,0 +1,234 @@
+/* ==================== VARIABLES ==================== */
+
+/* ========== COLORS ========== */
+
+/* ===== BASE ===== */
+$black: var(--color-black) !default;
+$white: var(--color-white) !default;
+
+$light-gray: var(--color-silver-light) !default;
+$medium-gray: var(--color-black-20) !default;
+$dark-gray: var(--color-black-60) !default;
+
+/* ===== BODY ===== */
+$body-background-color: $white !default;
+$body-color: $black !default;
+
+/* ===== UTILITIES ===== */
+$info: var(--color-info) !default;
+$success: var(--color-success) !default;
+$error: var(--color-error) !default;
+$alert: var(--color-alert) !default;
+
+/* ========== BREAKPOINTS ========== */
+$breakpoints: (
+	xs: 320px,
+	s: 576px,
+	m: 768px,
+	l: 992px,
+	xl: 1248px,
+);
+
+/* ========== BORDERS ========== */
+$default-border-radius: 24px !default;
+$default-border-width: 1px !default;
+$default-border-style: solid !default;
+$default-border-color: $medium-gray !default;
+$default-border: $default-border-width $default-border-style $default-border-color !default;
+
+/* ========== GUTTERS ========== */
+$gutters: (
+	xs: 12px,
+	s: 16px,
+	m: 24px,
+);
+
+/* ========== OPACITY ========== */
+$default-opacity-hover: 0.8 !default;
+
+/* ========== SPACING ========== */
+$global-margin: var(--spacing-layout-s) !default;
+$global-padding: var(--spacing-layout-s) !default;
+
+/* ========== TRANSITIONS ========== */
+$default-transition-time: .3s !default;
+$default-transition: all $default-transition-time !default;
+
+/* ========== TYPOGRAPHY ========== */
+
+/* ===== GLOBAL ===== */
+$global-font-size: 16px !default;
+$global-line-height: var(--lineheight-l) !default;
+
+$global-font-weight-light: 100 !default;
+$global-font-weight-normal: 400 !default;
+$global-font-weight-medium: 500 !default;
+$global-font-weight-bold: 700 !default;
+$global-font-weight-black: 900 !default;
+
+/* ===== BODY ===== */
+$body-font-family: 'Helsinki Grotesk', 'Helsinki Avoin Sans', Arial, sans-serif !default;
+$body-font-size: $global-font-size !default;
+$body-font-weight: $global-font-weight-normal !default;
+
+/* ===== BUTTONS ===== */
+$button-focus-outline: 2px $default-border-style $black;
+$button-font-weight: $global-font-weight-bold !default;
+
+/* ===== HEADINGS ===== */
+$heading-font-sizes: (
+	h1: 52px,
+	h2: 36px,
+	h3: 24px,
+	h4: 20px,
+	h5: 18px,
+	h6: 16px,
+) !default;
+
+$heading-responsive-font-sizes: (
+	l: (
+		h1: 72px,
+		h2: 52px,
+		h3: 36px,
+		h4: 24px,
+		h5: 20px,
+		h6: 16px,
+	),
+) !default;
+
+$heading-color: $body-color !default;
+$heading-font-family: 'Helsinki Grotesk', 'Helsinki Avoin Sans', Arial, sans-serif !default;
+$heading-font-weight: $global-font-weight-normal !default;
+$heading-line-height: 1 !default;
+$heading-letter-spacing: 0 !default;
+$heading-margin-top: var(--spacing-4-xl) !default;
+$heading-margin-bottom: var(--spacing-l) !default;
+$heading-word-wrap: break-word !default;
+
+/* ===== LINKS ===== */
+$anchor-color: $body-color !default;
+$anchor-color-alt: var(--primary-color-dark) !default;
+$anchor-text-decoration: underline !default;
+
+$anchor-active-font-weight: $global-font-weight-medium !default;
+
+/* ===== LISTS ===== */
+$list-margin-left: $global-margin !default;
+$list-unoredered-style: disc !default;
+$list-oredered-style: decimal !default;
+
+$definition-list-title-width: 100px !default;
+
+/* ===== PARAGRAPHS ===== */
+$paragraph-line-height: $global-line-height !default;
+$paragraph-margin-bottom: var(--spacing-l) !default;
+
+/* ==================== HEADER ==================== */
+
+/* ========== GENERAL ========== */
+$header-max-width: 1920px !default;
+$header-border: $default-border-width $default-border-style $light-gray !default;
+
+$header-anchor-color: $black !default;
+$header-anchor-color-alt: var(--primary-color-dark) !default;
+$header-anchor-text-decoration: none !default;
+$header-anchor-text-decoration-alt: none !default;
+
+/* ========== MENU ========== */
+
+/* ===== GENERAL ===== */
+$header-menu-spacing: var(--spacing-s) !default;
+
+/* ===== MOBILE ===== */
+$mobilemenu-background-color: $body-color !default;
+$mobilemenu-padding: var(--spacing-2-xl) var(--spacing-l) !default;
+$mobilemenu-item-spacing: var(--spacing-s) !default;
+$mobilemenu-max-width: 80% !default;
+
+$mobilemenu-toggle-color: $black !default;
+$mobilemenu-toggle-color-alf: var(--primary-color-dark) !default;
+
+/* ========== SEARCH ========== */
+$header-search-background-color: $black !default;
+$header-search-color-alt: $white !default;
+$header-search-width: 60% !default;
+
+/* ==================== CONTENT ELEMENTS ==================== */
+
+/* ========== CONTENT ========== */
+$content-spacing: var(--spacing-s) !default;
+
+/* ========== ARTICLE ========== */
+$content-article-width-with-sidebar: 63.5% !default;
+
+/* ========== ENTRIES ========== */
+
+/* ===== GENERAL ===== */
+$entry-anchor-color: $anchor-color !default;
+$entry-anchor-color-alt: $anchor-color-alt !default;
+$entry-anchor-text-decoration: none !default;
+$entry-content-spacing: var(--spacing-m) !default;
+$entry-title-font-size: var(--fontsize-heading-m) !default;
+$entry-thumbnail-wrap-padding: 56.25% !default;
+$entry-thumbnail-wrap-background-color: $light-gray !default;
+$entry-read-more-font-weight: $global-font-weight-bold !default;
+
+/* ========== KOROS ========== */
+$koros-background-color: $body-background-color !default;
+$koros-size: 42px !default;
+$koros-spacing: $koros-size * 1.5 !default;
+
+/* ========== MAPS ========== */
+$map-wrap-padding: 56.25% !default;
+
+/* ========== MENUS ========== */
+
+/* ===== GENERAL ===== */
+$menu-item-font-size: $global-font-size !default;
+$menu-item-font-weight: $global-font-weight-normal !default;
+$menu-item-color: $black !default;
+$menu-item-color-alt: var(--primary-color-dark) !default;
+$menu-item-spacing: var(--spacing-xs) !default;
+$menu-item-text-decoration: none !default;
+$menu-item-text-transform: none !default;
+$menu-item-transition: $default-transition !default;
+
+/* ===== SUBMENU ===== */
+$submenu-background-color: $white !default;
+$submenu-item-font-size: $global-font-size !default;
+$submenu-item-font-weight: $global-font-weight-normal !default;
+$submenu-border-width: $default-border-width !default;
+$submenu-border-style: $default-border-style !default;
+$submenu-border-color: $default-border-color !default;
+$submenu-min-width: 300px !default;
+$submenu-padding: var(--spacing-2-xs) !default;
+$submenu-item-text-transform: none !default;
+
+/* ===== VERTICAL ===== */
+$vertical-menu-padding: var(--spacing-2-xs) !default;
+$vertical-menu-indent: $global-margin !default;
+
+/* ========== SIDEBAR ========== */
+$content-sidebar-width: 31.5% !default;
+
+/* ========== TABLES ========== */
+$table-border-width: $default-border-width !default;
+$table-border-style: $default-border-style !default;
+$table-border-color: $default-border-color !default;
+$table-border: $table-border-width $table-border-style $table-border-color !default;
+$table-border-enabled: true;
+$table-margin-bottom: $paragraph-margin-bottom !default;
+$table-heading-font-weight: $heading-font-weight !default;
+$table-cell-padding: var(--spacing-2-xs) !default;
+
+/* ==================== FOOTER ==================== */
+
+/* ========== GENERAL ========== */
+$footer-background-color: $black !default;
+$footer-color: $white !default;
+
+$footer-section-border-width: $default-border-width !default;
+$footer-section-border-style: $default-border-style !default;
+$footer-section-border-color: $white !default;
+$footer-section-border: $footer-section-border-width $footer-section-border-style $footer-section-border-color !default;
+$footer-section-spacing: var(--spacing-layout-s) !default;

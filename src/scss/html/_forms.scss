@@ -1,0 +1,51 @@
+form {
+
+}
+
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+  max-width: 100%;
+}
+
+.post-password-form {
+  background-color: $medium-gray;
+  margin-bottom: $global-margin;
+  padding: $global-padding;
+}
+
+.dropdown {
+	align-items: center;
+	display: flex;
+	position: relative;
+
+	&-trigger {
+
+		&[aria-expanded="true"] {
+			~ .dropdown-content {
+				display: block;
+			}
+		}
+	}
+
+	&-content {
+		background-color: $white;
+		border: $default-border;
+		display: none;
+		position : absolute;
+		top      : 100%;
+		right    : 0;
+		z-index  : 2;
+		white-space: nowrap;
+
+		a {
+			display: block;
+			padding: $global-padding;
+			text-decoration: none;
+		}
+	}
+}

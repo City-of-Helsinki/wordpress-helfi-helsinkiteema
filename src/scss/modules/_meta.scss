@@ -1,0 +1,23 @@
+.meta {
+	color: $dark-gray;
+
+	a {
+		color: $dark-gray;
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			color: colorBlackShade('90');
+			text-decoration: underline;
+		}
+	}
+
+	> * {
+		+ * {
+			border-left: $default-border-width $default-border-style $dark-gray;
+			padding-left: .5rem;
+			margin-left: .5rem;
+		}
+	}
+
+}

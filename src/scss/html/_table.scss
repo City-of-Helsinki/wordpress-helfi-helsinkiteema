@@ -1,0 +1,30 @@
+table {
+	border-collapse: collapse;
+	margin-top: $table-margin-bottom;
+	margin-bottom: $table-margin-bottom;
+	text-align: left;
+	width: 100%;
+}
+
+thead {}
+
+tbody {}
+
+tfoot {}
+
+tr {}
+
+th {
+	@if $table-border-enabled {
+		border: $table-border;
+	}
+	font-weight: $table-heading-font-weight;
+	padding: $table-cell-padding;
+}
+
+td {
+	@if $table-border-enabled {
+		border: $table-border;
+	}
+	padding: $table-cell-padding;
+}

@@ -1,0 +1,60 @@
+// FIXME: https://stackoverflow.com/questions/38000723/managing-justify-content-space-between-on-last-row
+
+.grid {
+	position: relative;
+	width: 100%;
+
+	+ .js-load-more {
+		margin-bottom: $content-spacing;
+	}
+
+	@include breakpoint(xs) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+	@each $breakpoint, $gutter in $gutters {
+		@include breakpoint($breakpoint) {
+			margin-right: -#{$gutter};
+			margin-left: -#{$gutter};
+		}
+	}
+
+	@each $breakpoint, $size in $breakpoints {
+		@include breakpoint($breakpoint) {
+			@for $i from 1 through get-max-columns($breakpoint) {
+				&.#{$breakpoint}-up-#{$i} {
+					> .grid__column {
+						width: percentage( math.div(1, $i) );
+					}
+				}
+			}
+		}
+	}
+
+	&__column {
+		box-sizing: border-box;
+		width: 100%;
+
+		@each $breakpoint, $gutter in $gutters {
+			@include breakpoint($breakpoint) {
+				margin-bottom: spacing($breakpoint);
+				padding-right: #{$gutter};
+				padding-left: #{$gutter};
+			}
+	    }
+
+		@each $breakpoint, $size in $breakpoints {
+			@include breakpoint($breakpoint) {
+				@for $i from 1 through 12 {
+					&.#{$breakpoint}-#{$i} {
+						width: percentage( math.div($i, 12) );
+					}
+				}
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,21 @@
+p {
+  line-height: $paragraph-line-height;
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+.size-s {
+	font-size: fontsize-body(s);
+}
+
+.size-m {
+	font-size: fontsize-body(m);
+}
+
+.size-l {
+	font-size: fontsize-body(l);
+}
+
+.size-xl {
+	font-size: fontsize-body(xl);
+}

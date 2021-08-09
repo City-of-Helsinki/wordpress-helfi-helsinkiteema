@@ -1,0 +1,23 @@
+.image-wrap {
+
+	> img {
+		display: block;
+		width: 100%;
+	}
+
+	&--fixed-size {
+		position: relative;
+		overflow: hidden;
+		padding-top: 64.58%;
+		width: 100%;
+
+		> img {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			transform: translateY(-50%);
+		}
+	}
+
+}

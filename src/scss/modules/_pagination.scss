@@ -1,0 +1,69 @@
+.pagination {
+  margin-top: $global-margin * 2;
+  margin-bottom: $global-margin;
+
+  ul {
+    font-size: 0;
+    margin: 0;
+    text-align: left;
+
+    li {
+      display: inline-block;
+
+      span {
+        background-color: $white;
+        border: $default-border;
+        color: $anchor-color;
+        font-size: rem-calc(16);
+        font-weight: $global-font-weight-medium;
+        display: block;
+        padding: .2rem .8rem;
+      }
+
+      a {
+        display: block;
+        color: $anchor-color;
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+          span {
+            background-color: $anchor-color;
+            color: $white;
+          }
+        }
+      }
+
+      + li {
+        margin-left: .25rem;
+      }
+    }
+
+    .current {
+
+      span {
+        background-color: $anchor-color;
+        color: $white;
+      }
+
+    }
+
+    .first {
+
+    }
+
+    .next {
+
+    }
+
+    .prev {
+
+    }
+
+    .last {
+
+    }
+
+  }
+
+}

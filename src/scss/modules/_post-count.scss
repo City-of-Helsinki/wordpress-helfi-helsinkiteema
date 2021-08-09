@@ -1,0 +1,8 @@
+.posts-count {
+	line-height: $heading-line-height;
+	margin-bottom: rem-calc(28);
+
+	.count {
+		font-weight: $global-font-weight-bold;
+	}
+}

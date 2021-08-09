@@ -1,0 +1,46 @@
+.hds-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+
+	@include breakpointMax('m') {
+		padding-left: spacing('s');
+		padding-right: spacing('s');
+		max-width: none;
+	}
+
+	&--wide {
+		max-width: 1920px;
+	}
+}
+
+.container__heading {
+	margin-top: 0;
+	margin-bottom: spacing(layout-m);
+
+	a {
+		color: $body-color;
+		text-decoration: $anchor-text-decoration;
+
+		&:focus,
+		&:hover {
+			color: $anchor-color-alt;
+		}
+	}
+}
+
+.flex-container {
+	display: flex;
+
+	&--align-center {
+		align-items: center;
+	}
+
+	&--column {
+		flex-direction: column;
+	}
+
+	&--row-reverse {
+		flex-direction: row-reverse;
+	}
+}

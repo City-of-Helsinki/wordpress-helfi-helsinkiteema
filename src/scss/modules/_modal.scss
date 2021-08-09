@@ -1,0 +1,27 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+
+  &.active {
+    display: block;
+  }
+
+  &__title {
+    margin-bottom: $global-margin;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &--full-screen {
+    position: fixed;
+  }
+
+  &--black {
+    background-color: rgba($black, 0.7);
+  }
+
+}

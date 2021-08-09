@@ -1,0 +1,27 @@
+.topbar {
+	$topbar-padding: spacing('xs') spacing('m');
+
+	background-color: #f2f2f2;
+	font-size: rem-calc(14);
+	line-height: var(--lineheight-m);
+
+	a {
+		text-decoration: $anchor-text-decoration;
+	}
+
+	&__branding {
+		padding: $topbar-padding;
+		flex-grow: 2;
+	}
+
+	&__link {
+		padding: $topbar-padding;
+		justify-content: right;
+		text-align: right;
+
+		.icon {
+			margin-top: -4px;
+		}
+	}
+
+}

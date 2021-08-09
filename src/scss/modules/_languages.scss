@@ -1,0 +1,11 @@
+.languages {
+
+	.lang-item {
+		text-decoration: underline;
+
+		&.current-lang {
+			font-weight: $global-font-weight-bold;
+			text-decoration: none;
+		}
+	}
+}

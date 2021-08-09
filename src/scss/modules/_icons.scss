@@ -1,0 +1,46 @@
+.icon {
+	background-color: transparent;
+	display: block;
+	transition: $default-transition;
+	width: 24px;
+
+	&--arrow-right {
+		transform: rotate(180deg);
+	}
+}
+
+.has-icon {
+	align-items: center;
+	display: flex;
+
+	&--before {
+		svg {
+			margin-right: #{spacing('2-xs')};
+		}
+	}
+
+	&--after {
+		svg {
+			margin-left: #{spacing('2-xs')};
+		}
+	}
+
+	&--above {
+
+		.text {
+			font-size: rem-calc(12);
+
+			@include breakpoint('l') {
+				font-size: rem-calc(12);
+			}
+		}
+
+		flex-direction: column;
+		justify-content: center;
+	}
+
+}
+
+.logo-icon {
+	height: var(--spacing-l);
+}

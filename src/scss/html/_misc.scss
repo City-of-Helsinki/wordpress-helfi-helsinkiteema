@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $body-background-color;
+  color: $body-color;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  line-height: $global-line-height;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+	border: $default-border;
+	max-width: 100%;
+}
+
+code {
+  background-color: $light-gray;
+  border: $default-border;
+  display: block;
+  margin-bottom: $paragraph-margin-bottom;
+  padding: $global-padding;
+}
+
+pre {
+  background-color: $light-gray;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+var {
+  font-weight: $global-font-weight-medium;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+address {
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+hr {
+	border: none;
+	border-top: $default-border-width $default-border-style $black;
+	margin-top: $global-margin;
+	margin-bottom: $global-margin;
+}

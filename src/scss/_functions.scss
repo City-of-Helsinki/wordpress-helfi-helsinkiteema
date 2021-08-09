@@ -1,0 +1,60 @@
+@function root-var( $variable ) {
+	@return var( #{$variable} );
+}
+
+@function breakpoint( $name ) {
+	@return root-var(--breakpoint-#{$name} );
+}
+
+@function get-breakpoint( $breakpoint ) {
+  @return map-get( $breakpoints, $breakpoint );
+}
+
+@function get-max-columns( $breakpoint ) {
+	@if ($breakpoint == xs) {
+		@return 4;
+	} @else if ($breakpoint == s) {
+		@return 4;
+	} @else if ($breakpoint == m) {
+		@return 8;
+	} @else {
+		@return 12;
+	}
+}
+
+@function container-width( $name ) {
+	@return root-var(--container-width-#{$name} );
+}
+
+@function color( $name ) {
+	@return root-var(--color-#{$name} );
+}
+
+@function colorBlackShade( $shade ) {
+	@return root-var(--color-black-#{$shade} );
+}
+
+@function spacing( $name ) {
+	@return root-var(--spacing-#{$name} );
+}
+
+@function fontsize-heading( $name ) {
+	@return root-var(--fontsize-heading-#{$name} );
+}
+
+@function fontsize-body( $name ) {
+	@return root-var(--fontsize-body-#{$name} );
+}
+
+@function rem-calc($size) {
+  $remSize: math.div($size, 16);
+  @return #{$remSize}rem;
+}
+
+@function font( $name ) {
+	@return root-var(--font-#{$name} );
+}
+
+@function lineheight( $name ) {
+	@return root-var(--lineheight-#{$name} );
+}

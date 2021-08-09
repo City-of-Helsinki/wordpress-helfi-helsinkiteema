@@ -1,0 +1,26 @@
+#breadcrumbs {
+	font-size: rem-calc(14);
+
+	.hds-container {
+		padding: var(--spacing-xs) var(--spacing-s);
+	}
+
+	span {
+		color: $anchor-color;
+	}
+
+	.breadcrumb_last {
+		font-weight: $global-font-weight-bold;
+	}
+
+	a {
+		color: $anchor-color;
+    text-decoration: $anchor-text-decoration;
+
+    &:focus,
+    &:hover {
+      color: $anchor-color-alt;
+    }
+	}
+
+}

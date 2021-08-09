@@ -1,0 +1,22 @@
+.hds-koros {
+	background-color: $body-background-color;
+	position: relative;
+	z-index: 1;
+
+	> svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateY(-100%);
+		height: $koros-size;
+		width: 100%;
+
+		path,
+		polygon {
+			fill: $koros-background-color;
+		}
+	}
+
+	&--flip-horizontal {
+	}
+}

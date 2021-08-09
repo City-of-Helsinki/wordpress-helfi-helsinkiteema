@@ -1,0 +1,14 @@
+a {
+  color: $body-color;
+  text-decoration: underline;
+  transition: $default-transition;
+
+  &:focus,
+  &:hover {
+    color: $anchor-color-alt;
+  }
+
+  &:focus {
+	  outline: $button-focus-outline;
+  }
+}

@@ -1,0 +1,35 @@
+.tags {
+
+	h2 {
+		font-size: fontsize-heading('m');
+		margin-top: 0;
+		margin-bottom: spacing('s');
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		margin-right: spacing('2-xs');
+		margin-bottom: spacing('2-xs');
+
+		.tag {
+			padding-left: spacing(layout-m);
+			padding-right: spacing(layout-m);
+		}
+	}
+
+}
+
+.tagcloud {
+
+	a {
+		@include tagLink();
+	}
+
+}

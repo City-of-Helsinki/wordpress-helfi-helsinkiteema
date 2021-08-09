@@ -1,0 +1,178 @@
+.menu {
+	display: flex;
+	list-style: none;
+	margin    : 0;
+	padding: 0;
+
+	a {
+		color: $menu-item-color;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		font-size: $menu-item-font-size;
+		font-weight: $menu-item-font-weight;
+		line-height: 1.1;
+		text-decoration: $menu-item-text-decoration;
+		text-transform: $menu-item-text-transform;
+	}
+
+	li {
+		position: relative;
+
+		&.open,
+		&:focus,
+		&:hover {
+			> ul {
+				display: block;
+			}
+		}
+	}
+
+	&__item {
+		&:focus,
+		&:hover {
+			> a {
+				color: $menu-item-color-alt;
+			}
+		}
+
+		&--active {
+			> a {
+				font-weight: $global-font-weight-bold;
+			}
+		}
+
+		&--parent {
+			> button {
+				.icon {
+					width: 32px;
+					margin-left: spacing(3-xs);
+				}
+			}
+		}
+	}
+
+	&--sub {
+		background-color:$submenu-background-color;
+		border: $submenu-border-width $submenu-border-style $submenu-border-color;
+		display  : none;
+		min-width: $submenu-min-width;
+		position : absolute;
+		padding-left: 0;
+		padding-right: 0;
+		top      : 100%;
+		left     : 0;
+		z-index  : 2;
+
+		.menu__item {
+			> a {
+				color: $menu-item-color;
+				display: block;
+				font-size: $submenu-item-font-size;
+				font-weight: $submenu-item-font-weight;
+				text-transform: $submenu-item-text-transform;
+				padding: spacing(s);
+			}
+
+			> .menu--sub {
+				top : 0;
+				left: 100%;
+			}
+
+			&:focus,
+			&:hover {
+				> a {
+					color: $menu-item-color-alt;
+				}
+			}
+
+			&--active {
+				> a {
+					font-weight: $global-font-weight-bold;
+				}
+			}
+
+			@include breakpoint('l') {
+				> .js-submenu-toggle {
+					margin-left: auto;
+					margin-right: spacing('s');
+
+					&.has-icon {
+						.icon--angle-down {
+							transform: rotate(-90deg);
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	&--vertical {
+		flex-direction: column;
+
+		.menu__item {
+			display   : block;
+			text-align: left;
+			width     : 100%;
+
+			&--parent {
+				&.has-icon {
+					display: flex;
+				}
+			}
+		}
+	}
+
+	&.menu--sidebar {
+		.menu--sub {
+			background-color: transparent;
+			box-shadow      : none;
+			margin-left: $vertical-menu-indent;
+			padding-top     : 0;
+			padding-bottom  : 0;
+			position        : static;
+
+			.menu__item {
+				> a {
+					color: $menu-item-color;
+
+					&:focus,
+					&:hover {
+						color: $menu-item-color-alt;
+					}
+				}
+
+				&--active {
+					> a {
+						color: $menu-item-color-alt;
+					}
+				}
+			}
+		}
+
+		.menu__item--active {
+			> .menu--sub {
+				display: block;
+			}
+		}
+	}
+}
+
+.js-submenu-toggle {
+
+	.icon {
+		transition: transform .6s;
+	}
+
+	&.has-icon {
+		&[aria-expanded="true"] {
+
+			.icon--angle-down {
+				transform: rotate(180deg);
+			}
+
+		}
+	}
+
+}

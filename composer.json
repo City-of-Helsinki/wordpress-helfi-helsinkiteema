@@ -1,0 +1,15 @@
+{
+  "name": "WPHEL/helsinki-universal-1",
+  "type": "wordpress-theme",
+	"version": "master",
+    "authors": [
+      {
+        "name": "Antti Koskinen",
+        "email": "antti.koskinen@fissiomedia.fi"
+      }
+    ],
+	"require": {
+    "wecodemore/wpstarter": "~2.0",
+    "johnpbloch/wordpress-core": ">5.0"
+  }
+}

@@ -1,0 +1,116 @@
+button {
+	text-decoration: none;
+	transition: $default-transition;
+
+	&:focus {
+		outline: $button-focus-outline;
+	}
+
+}
+
+.button {
+	background-color: $black;
+	color: $white;
+	text-decoration: none;
+	transition: $default-transition;
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+	svg {
+		fill: color('white');
+	}
+
+	&:focus,
+	&:hover {
+		background: var(--primary-color-dark);
+		color: color('white');
+	}
+
+	&--rounded {
+		border-radius: $default-border-radius;
+	}
+
+	&--expanded {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&--primary {
+		background-color: var(--primary-color);
+		color: color('white');
+
+		svg {
+			fill: var(--primary-color);
+		}
+
+		&:focus,
+		&:hover {
+			background: var(--primary-color-dark);
+			color: color('white');
+
+			svg {
+				fill: color('white');
+			}
+		}
+	}
+
+	&--secondary {
+		border-color: var(--primary-color);
+		background-color: color('white');
+		color: var(--primary-color);
+
+		svg {
+			fill: var(--primary-color);
+		}
+
+		&:focus,
+		&:hover {
+			background: var(--primary-color-light);
+			color: var(--primary-color-dark);
+
+			svg {
+				fill: var(--primary-color-dark);
+			}
+		}
+	}
+
+	&--white {
+		border-color: $white;
+		background-color: $white;
+		color: $black;
+
+		svg {
+			fill: $black;
+		}
+
+		&:focus,
+		&:hover {
+			border-color: $white;
+			background-color: $black;
+			color: $white;
+
+			svg {
+				fill: $white;
+			}
+		}
+	}
+
+	&--supplementary {
+		color: var(--primary-color);
+
+		svg {
+			fill: var(--primary-color);
+		}
+
+		&:focus,
+		&:hover {
+			background: var(--primary-color-light);
+			color: var(--primary-color-dark);
+
+			svg {
+				fill: var(--primary-color-dark);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,136 @@
+.footer {
+	background-color: $footer-background-color;
+	color: $footer-color;
+
+	> section {
+		@include breakpoint(l) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		+ section {
+			border-top: $footer-section-border;
+			padding-top: $footer-section-spacing;
+			padding-bottom: $footer-section-spacing;
+		}
+	}
+
+	.hds-koros {
+		> svg {
+			path,
+			polygon {
+				fill: $footer-background-color;
+			}
+		}
+	}
+
+	&__widgets {
+		padding-top: spacing('s');
+	}
+
+	&__bottom {
+		align-items: center;
+
+		@include breakpoint(l) {
+			> * {
+				+ * {
+					margin-left: spacing('s');
+				}
+			}
+		}
+	}
+
+	&__logo {
+		margin-bottom: spacing('s');
+
+		@include breakpoint(l) {
+			margin-bottom: 0;
+		}
+
+		svg {
+			fill: $footer-color;
+			height: 40px;
+		}
+	}
+
+	&__copyright {
+		margin-bottom: spacing('s');
+
+		@include breakpoint(l) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__navigation {
+		flex-grow: 2;
+		margin-bottom: $footer-section-spacing;
+
+		@include breakpoint(l) {
+			margin-bottom: 0;
+		}
+
+		.menu {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+
+			.menu__item {
+				margin-right: $menu-item-spacing;
+				margin-left: 0;
+				padding: 0;
+
+				a {
+					border-right: $footer-section-border;
+					padding-right: $menu-item-spacing;
+				}
+
+				@include breakpoint(l) {
+					&:first-child {
+						a {
+							border-left: $footer-section-border;
+							padding-left: $menu-item-spacing;
+						}
+					}
+				}
+
+				&:last-child {
+					a {
+						border-right: none;
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.widget__title {
+		color: $footer-color;
+	}
+
+	a,
+	.widget li a,
+	.menu__item > a {
+		color: $white;
+		text-decoration: $anchor-text-decoration;
+
+		svg {
+			fill: $white;
+		}
+
+		&:focus,
+		&:hover {
+			color: var(--primary-color-dark);
+
+			svg {
+				fill: var(--primary-color-dark);
+			}
+		}
+	}
+}
+
+#back-top {
+	font-size: var(--fontsize-heading-s);
+	font-weight: $global-font-weight-medium;
+	justify-content: right;
+	margin-right: 0;
+}

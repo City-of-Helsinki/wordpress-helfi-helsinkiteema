@@ -1,0 +1,28 @@
+.not-found {
+
+	.icon {
+		width: 56px;
+	}
+
+	h1 {
+		margin-top: 0;
+	}
+
+}
+
+.error404 {
+
+	.content {
+		padding-top: spacing('layout-xl');
+		padding-bottom: spacing('layout-xl');
+
+		.not-found {
+			margin-bottom: spacing('layout-m');
+		}
+
+		.search-form {
+		}
+
+	}
+
+}
