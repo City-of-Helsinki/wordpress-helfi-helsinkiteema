@@ -46,6 +46,14 @@ $hasColors: (
 		&.has-background {
 			padding: spacing('layout-m') spacing('layout-s');
 		}
+
+		> .hds-koros {
+			> svg {
+				path {
+					fill: $color;
+				}
+			}
+		}
 	}
 
   .has-#{"" + $name}-color {

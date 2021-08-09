@@ -76,7 +76,7 @@ function helsinki_full_width_block_customizations($parsed_block, $source_block) 
 	if ( 'full' === $align ) {
 		$id = time() . rand(1,100) . rand(1,100);
 		ob_start();
-		helsinki_koros($id, false);
+		helsinki_koros($id, true);
 		$koros = ob_get_clean();
 		$parsed_block['innerContent'][] = $koros;
 
@@ -88,4 +88,4 @@ function helsinki_full_width_block_customizations($parsed_block, $source_block) 
 	}
 	return $parsed_block;
 }
-add_filter('render_block_data', 'helsinki_full_width_block_customizations', 10, 2);
+// add_filter('render_block_data', 'helsinki_full_width_block_customizations', 10, 2);
