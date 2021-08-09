@@ -11,7 +11,7 @@
       "homepage": "https://www.artcloud.fi"
     }
 	],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",

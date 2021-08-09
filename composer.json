@@ -1,15 +1,17 @@
 {
-  "name": "WPHEL/helsinki-universal-1",
+  "name": "city-of-helsinki/wordpress-helfi-helsinkiteema",
   "type": "wordpress-theme",
 	"version": "master",
-    "authors": [
-      {
-        "name": "Antti Koskinen",
-        "email": "antti.koskinen@fissiomedia.fi"
-      }
-    ],
+  "authors": [
+		{
+      "name": "ArtCloud",
+      "email": "hel@artcloud.fi",
+      "homepage": "https://www.artcloud.fi"
+    }
+  ],
 	"require": {
     "wecodemore/wpstarter": "~2.0",
-    "johnpbloch/wordpress-core": ">5.0"
+    "johnpbloch/wordpress-core": ">5.0",
+		"city-of-helsinki/wordpress-helfi-hds-wp": ">1.0"
   }
 }
