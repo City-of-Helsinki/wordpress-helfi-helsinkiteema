@@ -5,6 +5,8 @@ function helsinki_customizer_choices_categories() {
     'taxonomy'   => 'category',
     'hide_empty' => false,
     'fields'     => 'id=>name',
+		'orderby'		=> 'name',
+		'order'			=> 'ASC',
   ) );
   return ( $terms && ! is_wp_error( $terms ) ) ? $terms : array();
 }
