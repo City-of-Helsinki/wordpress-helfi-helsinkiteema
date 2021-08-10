@@ -45,6 +45,20 @@ $hasColors: (
 
 		&.has-background {
 			padding: spacing('layout-m') spacing('layout-s');
+
+			&.has-koros {
+				padding-bottom: spacing('2-xs');
+			}
+		}
+
+		+ .hds-koros {
+			z-index: 2;
+
+			> svg {
+				path {
+					fill: $color;
+				}
+			}
 		}
 
 		> .hds-koros {
@@ -74,7 +88,9 @@ $hasColors: (
 .wp-block-group {
 
 	&.has-background {
-		margin-bottom: $paragraph-margin-bottom;
+		&:not(.alignfull) {
+			margin-bottom: $paragraph-margin-bottom;
+		}
 
 		.wp-block-group__inner-container {
 			>:first-child {

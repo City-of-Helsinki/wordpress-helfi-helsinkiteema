@@ -26,6 +26,15 @@ if ( ! function_exists('helsinki_koros') ) {
 	}
 }
 
+if ( ! function_exists('helsinki_block_koros') ) {
+	function helsinki_block_koros( bool $flip = false ) {
+		$id = time() . rand(1,100) . rand(1,100);
+		ob_start();
+		helsinki_koros($id, $flip);
+		return ob_get_clean();
+	}
+}
+
 if ( ! function_exists('helsinki_koros_set_type') ) {
 	function helsinki_koros_set_type( string $type ) {
 		$function = 'helsinki_koros_type_' . $type;

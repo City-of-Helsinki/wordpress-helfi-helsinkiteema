@@ -67,25 +67,31 @@ add_filter( 'widget_tag_cloud_args', 'helsinki_widget_tag_cloud_args');
 /**
   * Blocks
   */
-function helsinki_full_width_block_customizations($parsed_block, $source_block) {
-	if ( is_admin() ) {
-		return $parsed_block;
-	}
+function helsinki_alignfull_block_hds_customizations( $block_content, $block ) {
+	if (
+		$block_content &&
+		isset( $block['attrs']['align'] ) &&
+		'full' === $block['attrs']['align']
+	) {
+		$search = $replace = array();
 
-	$align = $parsed_block['attrs']['align'] ?? '';
-	if ( 'full' === $align ) {
-		$id = time() . rand(1,100) . rand(1,100);
-		ob_start();
-		helsinki_koros($id, true);
-		$koros = ob_get_clean();
-		$parsed_block['innerContent'][] = $koros;
+		$hasKoros = in_array( $block['blockName'], array('core/cover', 'core/group') );
+		if ( $hasKoros ) {
+			$search[] = 'alignfull';
+			$replace[] = 'alignfull has-koros';
+		}
 
-		$parsed_block['innerContent'][0] = str_replace(
-			'inner-container',
-			'inner-container hds-container',
-			$parsed_block['innerContent'][0]
-		);
+		$search[] = 'inner-container';
+		$replace[] = 'inner-container hds-container';
+
+		$block_content = str_replace( $search, $replace, $block_content );
+
+		if ( $hasKoros ) {
+			$block_content .= helsinki_block_koros(
+				'core/cover' !== $block['blockName']
+			);
+		}
 	}
-	return $parsed_block;
+	return $block_content;
 }
-// add_filter('render_block_data', 'helsinki_full_width_block_customizations', 10, 2);
+add_filter('render_block', 'helsinki_alignfull_block_hds_customizations', 10, 2);
