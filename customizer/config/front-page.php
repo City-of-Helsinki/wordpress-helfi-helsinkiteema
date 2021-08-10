@@ -32,69 +32,72 @@ function helsinki_customizer_front_page_sections() {
   );
 
   foreach (helsinki_front_page_default_sections() as $key => $title) {
-		if ( 'content' !== $key ) {
-			$section_settings = array(
-	  	  'title' => helsinki_setting_text(__( 'Section title', 'helsinki-universal' )),
-	  	);
-		} else {
-			$section_settings = array();
-		}
-
     $out[$key] = array(
       'config' => array(
         'title'           => $title,
         'capability'      => 'edit_theme_options',
         'active_callback' => 'helsinki_customizer_front_page_section_visibility',
       ),
-      'section_settings' => $section_settings,
+      'section_settings' => array(),
     );
 
-    if ( 'content' === $key ) {
-      $out[$key]['config']['description'] = esc_html__( 'Displays front page content set in Dashboard > Pages > {front page}.', 'helsinki-universal' );
-    }
-
-		if ( 'recent-posts' === $key ) {
-			$out[$key]['section_settings']['posts_per_page'] = helsinki_setting_select(
-				__( 'Post count', 'helsinki-universal' ),
-				'',
-				helsinki_customizer_choices_post_count(),
-				3
+		if ( 'content' !== $key ) {
+			$out[$key]['section_settings']['title'] = helsinki_setting_text(
+				__( 'Section title', 'helsinki-universal' )
 			);
 		}
 
-		if ( 'social' === $key ) {
-			$out[$key]['section_settings']['shortcode'] = helsinki_setting_shortcode(
-				__( 'Feed shortcode', 'helsinki-universal' ),
-				'',
-				''
-			);
-		}
+		switch ( $key ) {
+			case 'content':
+				$out[$key]['config']['description'] = esc_html__( 'Displays front page content set in Dashboard > Pages > {front page}.', 'helsinki-universal' );
+				break;
 
-		if ( 'feed-posts' === $key ) {
-			$out[$key]['section_settings']['feed_url'] = helsinki_setting_url(
-				__( 'Feed URL', 'helsinki-universal' ),
-				'',
-				''
-			);
-			$out[$key]['section_settings']['feed_posts_count'] = helsinki_setting_number(
-				__( 'Feed URL', 'helsinki-universal' ),
-				'',
-				10,
-				array(
-					'min' => 1,
-					'max' => 10,
-					'step' => 1,
-				)
-			);
-			$out[$key]['section_settings']['feed_lifetime'] = helsinki_setting_number(
-				__( 'Feed Cache time', 'helsinki-universal' ),
-				__( 'The feed result is cached for 12 hours by default.', 'helsinki-universal' ),
-				12,
-				array(
-					'min' => 0.25,
-					'step' => 0.25,
-				)
-			);
+			case 'recent-posts':
+				$out[$key]['section_settings']['posts_per_page'] = helsinki_setting_select(
+					__( 'Post count', 'helsinki-universal' ),
+					'',
+					helsinki_customizer_choices_post_count(),
+					3
+				);
+				break;
+
+			case 'social':
+				$out[$key]['section_settings']['shortcode'] = helsinki_setting_shortcode(
+					__( 'Feed shortcode', 'helsinki-universal' ),
+					'',
+					''
+				);
+				break;
+
+			case 'feed-posts':
+				$out[$key]['section_settings']['feed_url'] = helsinki_setting_url(
+					__( 'Feed URL', 'helsinki-universal' ),
+					'',
+					''
+				);
+				$out[$key]['section_settings']['feed_posts_count'] = helsinki_setting_number(
+					__( 'Feed URL', 'helsinki-universal' ),
+					'',
+					10,
+					array(
+						'min' => 1,
+						'max' => 10,
+						'step' => 1,
+					)
+				);
+				$out[$key]['section_settings']['feed_lifetime'] = helsinki_setting_number(
+					__( 'Feed Cache time', 'helsinki-universal' ),
+					__( 'The feed result is cached for 12 hours by default.', 'helsinki-universal' ),
+					12,
+					array(
+						'min' => 0.25,
+						'step' => 0.25,
+					)
+				);
+				break;
+
+			default:
+				break;
 		}
 
   }
