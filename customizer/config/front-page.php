@@ -53,6 +53,16 @@ function helsinki_customizer_front_page_sections() {
 				break;
 
 			case 'recent-posts':
+				$cateogries = helsinki_customizer_choices_categories();
+				$options = array(
+					'' => __('All Categories'),
+				);
+				$out[$key]['section_settings']['category'] = helsinki_setting_select(
+					__( 'Category' ),
+					'',
+					$options + $cateogries,
+					''
+				);
 				$out[$key]['section_settings']['posts_per_page'] = helsinki_setting_select(
 					__( 'Post count', 'helsinki-universal' ),
 					'',
