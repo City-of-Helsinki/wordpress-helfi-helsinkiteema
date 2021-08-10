@@ -32,9 +32,10 @@ function helsinki_front_page_section_data( string $section ) {
 	switch ( $section ) {
 		case 'recent-posts':
 			return array(
-				'query' => helsinki_front_page_recent_posts_query(
-					helsinki_theme_mod('helsinki_front_page_recent-posts', 'posts_per_page', 3)
-				),
+				'query' => helsinki_front_page_recent_posts_query(array(
+					'cat' => helsinki_theme_mod('helsinki_front_page_recent-posts', 'category', 0),
+					'posts_per_page' => helsinki_theme_mod('helsinki_front_page_recent-posts', 'posts_per_page', 3),
+				)),
 				'page_for_posts' => get_option('page_for_posts'),
 			);
 			break;
@@ -243,15 +244,20 @@ function helsinki_front_page_content_text($args = array()) {
 /**
   * Recent Posts
   */
-function helsinki_front_page_recent_posts_query( int $per_page ) {
-    return new WP_Query(
+function helsinki_front_page_recent_posts_query( array $args ) {
+  return new WP_Query(
 		apply_filters(
 			'helsinki_front_page_recent_posts_query_args',
-			array(
-				'post_type' => 'post',
-				'post_status' => 'publish',
-				'posts_per_page' => $per_page,
-			)
+			wp_parse_args(
+				$args,
+				array(
+					'post_type' => 'post',
+					'post_status' => 'publish',
+					'posts_per_page' => 3,
+					'cat' => 0,
+				)
+			),
+			$args
 		)
 	);
 }
