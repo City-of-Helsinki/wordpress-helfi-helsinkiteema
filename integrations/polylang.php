@@ -1,6 +1,11 @@
 <?php
 
+add_action('after_setup_theme', 'helsinki_register_polylang_strings', 10);
 function helsinki_register_polylang_strings() {
+	if ( ! apply_filters('helsinki_polylang_active', false) ) {
+		return;
+	}
+
 	$config = array(
 		'customizer' => array(
 			'header' => array(

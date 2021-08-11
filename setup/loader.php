@@ -65,12 +65,12 @@ function helsinki_files()
 
 	if ( class_exists('Polylang') ) {
 		$files['integrations'][] = 'polylang';
-		apply_filters('helsinki_polylang_active', '__return_true');
+		add_filter('helsinki_polylang_active', '__return_true');
 	}
 
 	if ( class_exists('COMPLIANZ') ) {
 		$files['integrations'][] = 'complianz';
-		apply_filters('helsinki_complianz_active', '__return_true');
+		add_filter('helsinki_complianz_active', '__return_true');
 	}
 
 	return $files;

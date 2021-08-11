@@ -16,7 +16,6 @@ add_action('after_setup_theme', 'helsinki_load_files', 0);
  *
  */
 add_action('after_setup_theme', 'helsinki_setup_theme', 5);
-add_action('after_setup_theme', 'helsinki_register_polylang_strings', 10);
 add_action('widgets_init', 'helsinki_register_sidebars', 10);
 add_action('widgets_init', 'helsinki_disable_default_widgets');
 
