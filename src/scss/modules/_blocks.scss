@@ -43,7 +43,7 @@ $hasColors: (
 	.has-#{"" + $name}-background-color {
 		background-color: $color;
 
-		&.has-background {
+		&.has-background:not(.button) {
 			padding: spacing('layout-m') spacing('layout-s');
 
 			&.has-koros {

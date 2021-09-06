@@ -755,6 +755,12 @@ body .cc-revoke {
 				margin-bottom: 0;
 			}
 		}
+
+		.cmplz-title-wrap {
+			> * {
+				margin-top: 0;
+			}
+		}
 	}
 
 	.cmplz-service-header {
@@ -775,17 +781,19 @@ body .cc-revoke {
 			}
 		}
 
-		> h3 {
-			font-size: fontsize-heading(s);
-			flex-grow: 2;
+		.purpose {
+			margin-left: auto;
 			margin-bottom: 0;
-			margin-right: spacing(s);
 			line-height: 1;
 		}
 
-		> p {
-			margin-bottom: 0;
-			line-height: 1;
+		.cmplz-title-wrap{
+			> * {
+				font-size: fontsize-heading('s');
+				flex-grow: 2;
+				margin-bottom: 0;
+				line-height: 1;
+			}
 		}
 	}
 

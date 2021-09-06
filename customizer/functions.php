@@ -8,7 +8,7 @@ function helsinki_theme_mods() {
 function helsinki_theme_mod( string $type, string $key = '', $default = null ) {
   $mod = get_theme_mod( $type, $default );
   if ( $key ) {
-    return isset($mod[$key]) ? $mod[$key]: $default;
+    return ! empty($mod[$key]) ? $mod[$key]: $default;
   } else {
     return $mod;
   }

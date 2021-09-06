@@ -2,11 +2,38 @@
 
 add_action( 'wp_enqueue_scripts', 'helsinki_disable_cmplz_cookiebanner_styles', PHP_INT_MAX - 49 );
 function helsinki_disable_cmplz_cookiebanner_styles() {
-    wp_dequeue_style( 'cmplz-cookie' );
+  wp_dequeue_style( 'cmplz-cookie' );
 
-    wp_dequeue_style( 'cmplz-document' );
-    wp_dequeue_style( 'cmplz-document-grid' );
+  wp_dequeue_style( 'cmplz-document' );
+  wp_dequeue_style( 'cmplz-document-grid' );
 	add_filter( 'cmplz_custom_document_css', '__return_empty_string' );
+}
+
+add_filter( 'cmplz_template_file', 'helsinki_cmplz_templates', 11, 2 );
+function helsinki_cmplz_templates( $path, $file ) {
+  // defined files only
+  if (
+    'cookiepolicy_services.php' !== $file &&
+    'cookiepolicy_cookies_row.php' !== $file &&
+    'cookiepolicy_purpose_row.php' !== $file
+  ) {
+    return $path;
+  }
+
+  // child themes only
+  if ( get_template_directory() === get_stylesheet_directory() ) {
+    return $path;
+  }
+
+  return implode(
+    DIRECTORY_SEPARATOR,
+    array(
+      get_template_directory(),
+      'complianz-gdpr-premium',
+      'templates',
+      $file
+    )
+  );
 }
 
 add_filter('cmplz_cookiebanner_settings', 'helsinki_cmplz_cookiebanner_settings', 9999, 1);
