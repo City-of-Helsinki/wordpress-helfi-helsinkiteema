@@ -846,3 +846,21 @@ body .cc-revoke {
 		.purpose {}
 	}
 }
+
+.privacy-statement {
+	.dropdown-privacy-statement {
+		summary {
+			border-top: $default-border;
+			display: block;
+			margin-top: spacing(s);
+			padding-top: spacing(s);
+			padding-bottom: spacing(s);
+
+			h3 {
+				font-size: fontsize-heading('s');
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
