@@ -1,7 +1,8 @@
 <?php
 
 function helsinki_theme_mods() {
-	return get_theme_mods();
+	$mods = get_theme_mods();
+	return $mods ?: array();
 }
 
 function helsinki_theme_mod( string $type, string $key = '', $default = null ) {
