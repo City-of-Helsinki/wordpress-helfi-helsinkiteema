@@ -184,19 +184,6 @@ function helsinki_content_article_thumbnail($post_type = null) {
 			array()
 		);
 		$caption = wp_get_attachment_caption( $thumbnail_id );
-
-		// $image_src = wp_get_attachment_image_src( $thumbnail_id );
-		// if ( $image_src ) {
-		// 	// https://gist.github.com/wazum/5710d9ef064caac7b909a9e69867f53b
-		// 	$greatestCommonDivisor = static function($width, $height) use (&$greatestCommonDivisor) {
-		//     return ($width % $height) ? $greatestCommonDivisor($height, $width % $height) : $height;
-		//   };
-		// 	$divisor = $greatestCommonDivisor($image_src[1], $image_src[2]);
-		// 	$ratio = ($image_src[1] / $divisor) / ($image_src[2] / $divisor);
-		// 	if ( $ratio > (16 / 9) ) {
-		// 		$fixed_size = true;
-		// 	}
-		// }
 	}
 
 	$data = array(
