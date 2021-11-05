@@ -103,6 +103,7 @@ function helsinki_setup_theme()
 				'scripts' => true,
 				'styles' => true,
 				'fonts' => true,
+				'favicon' => true,
 			),
 			'topbar' => true,
 			'widgets' => true,
