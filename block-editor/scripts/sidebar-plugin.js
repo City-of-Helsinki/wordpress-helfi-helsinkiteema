@@ -119,6 +119,23 @@
 										})
 									)
 								) : null,
+                element(
+									PanelBody,
+									{ title: 'Table of Contents', initialOpen: false},
+                  element(PanelRow, {},
+										element( ToggleMetaField, {
+											fieldLabel: 'Enabled',
+											fieldName: 'table_of_contents_enabled',
+										})
+									),
+									element(PanelRow, {},
+										element( TextMetaField, {
+											fieldLabel: 'Title',
+											fieldType: 'text',
+											fieldName: 'table_of_contents_title',
+										})
+									),
+								),
             );
         }
     } );

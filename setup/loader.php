@@ -43,6 +43,9 @@ function helsinki_files()
 			'assets',
 		],
 	  'functions'  => [
+		    'content' => [
+				'table-of-contents',
+			],
 			'classes',
 			'comments',
 			'content',

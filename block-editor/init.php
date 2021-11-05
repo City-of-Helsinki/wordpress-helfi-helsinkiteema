@@ -2,13 +2,15 @@
 
 add_action( 'init', 'helsinki_block_editor_meta' );
 function helsinki_block_editor_meta() {
+	// TODO: replace with loop, migrate params to config, add sanitize callback functions
+
 	register_post_meta(
 		'page',
 		'hero_cta_url',
 		array(
-	    'show_in_rest' => true,
-	    'single' => true,
-	    'type' => 'string',
+		    'show_in_rest' => true,
+		    'single' => true,
+		    'type' => 'string',
 			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
 				return esc_url_raw( $meta_value );
 			},
@@ -18,9 +20,9 @@ function helsinki_block_editor_meta() {
 		'page',
 		'hero_cta_text',
 		array(
-	    'show_in_rest' => true,
-	    'single' => true,
-	    'type' => 'string',
+		    'show_in_rest' => true,
+		    'single' => true,
+		    'type' => 'string',
 			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
 				return sanitize_text_field( $meta_value );
 			},
@@ -30,9 +32,9 @@ function helsinki_block_editor_meta() {
 		'page',
 		'hero_cta_2_url',
 		array(
-	    'show_in_rest' => true,
-	    'single' => true,
-	    'type' => 'string',
+		    'show_in_rest' => true,
+		    'single' => true,
+		    'type' => 'string',
 			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
 				return esc_url_raw( $meta_value );
 			},
@@ -42,9 +44,9 @@ function helsinki_block_editor_meta() {
 		'page',
 		'hero_cta_2_text',
 		array(
-	    'show_in_rest' => true,
-	    'single' => true,
-	    'type' => 'string',
+		    'show_in_rest' => true,
+		    'single' => true,
+		    'type' => 'string',
 			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
 				return sanitize_text_field( $meta_value );
 			},
@@ -55,9 +57,9 @@ function helsinki_block_editor_meta() {
 		'page',
 		'hero_layout_full',
 		array(
-	    'show_in_rest' => true,
-	    'single' => true,
-	    'type' => 'boolean',
+		    'show_in_rest' => true,
+		    'single' => true,
+		    'type' => 'boolean',
 			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
 				return boolval( $meta_value );
 			},
@@ -68,11 +70,37 @@ function helsinki_block_editor_meta() {
 		'page',
 		'hide_featured_image',
 		array(
-	    'show_in_rest' => true,
-	    'single' => true,
-	    'type' => 'boolean',
+		    'show_in_rest' => true,
+		    'single' => true,
+		    'type' => 'boolean',
 			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
 				return boolval( $meta_value );
+			},
+		)
+	);
+
+	register_post_meta(
+		'page',
+		'table_of_contents_enabled',
+		array(
+	    	'show_in_rest' => true,
+	    	'single' => true,
+	    	'type' => 'boolean',
+			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
+				return boolval( $meta_value );
+			},
+		)
+	);
+
+	register_post_meta(
+		'page',
+		'table_of_contents_title',
+		array(
+	    	'show_in_rest' => true,
+	    	'single' => true,
+	    	'type' => 'string',
+			'sanitize_callback' => function($meta_value, $meta_key, $meta_type) {
+				return sanitize_text_field( $meta_value );
 			},
 		)
 	);
