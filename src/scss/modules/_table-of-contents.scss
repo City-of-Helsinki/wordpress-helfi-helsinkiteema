@@ -32,7 +32,7 @@
       a {
         font-size: fontsize-body('l');
         font-weight: $global-font-weight-medium;
-        line-height: 2.15;
+        line-height: 2.4;
       }
 
       + li {
@@ -62,7 +62,7 @@
       width: auto;
 
       path {
-        fill: var(--secondary-color);
+        fill: var(--accent-color);
       }
 
       @include breakpoint('xl') {
