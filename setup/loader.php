@@ -29,6 +29,10 @@ function helsinki_files()
 			'css',
 		],
 		'block-editor' => [
+			'config' => [
+				'meta',
+			],
+			'functions',
 			'init',
 		],
 	  'inc' => [
