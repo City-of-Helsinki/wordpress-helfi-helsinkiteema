@@ -22,7 +22,7 @@ function helsinki_post_table_of_contents_default_title() {
 function helsinki_post_table_of_contents_title() {
 	$title = get_post_meta( get_queried_object_id(), 'table_of_contents_title', true );
 	return apply_filters(
-		'helsinki_post_table_of_contents_enabled',
+		'helsinki_post_table_of_contents_title',
 		! empty( $title ) ? $title : helsinki_post_table_of_contents_default_title(),
 		get_queried_object_id()
 	);
