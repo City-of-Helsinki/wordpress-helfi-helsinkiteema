@@ -41,6 +41,9 @@ function helsinki_files()
 			'taxonomy-thumbnails'
 	  ],
 		'setup' => [
+			'config' => [
+				'colors',
+			],
 			'theme',
 			'site',
 			'templates',
