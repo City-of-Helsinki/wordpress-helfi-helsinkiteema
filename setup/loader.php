@@ -67,6 +67,7 @@ function helsinki_files()
 				'view',
 			],
 		    'modules' => [
+				'comments',
 				'load-more',
 				'menu',
 				'search',
@@ -74,7 +75,6 @@ function helsinki_files()
 				'widgets',
 			],
 			'classes',
-			'comments',
 			'content',
 			'entry',
 			'misc',
