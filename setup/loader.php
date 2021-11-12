@@ -58,6 +58,9 @@ function helsinki_files()
 				'koros',
 				'svg',
 			],
+		    'modules' => [
+				'search',
+			],
 			'classes',
 			'comments',
 			'content',
@@ -69,7 +72,6 @@ function helsinki_files()
 			'misc',
 			'menu',
 			'sidebar',
-			'search',
 			'social',
 			'widgets',
 		],

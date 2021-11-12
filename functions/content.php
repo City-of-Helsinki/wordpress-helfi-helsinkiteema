@@ -69,15 +69,6 @@ if ( ! function_exists('helsinki_content_breadcrumbs') ) {
 }
 
 /**
-  * Search
-  */
-if ( ! function_exists('helsinki_search_form') ) {
-  function helsinki_search_form() {
-    get_search_form();
-  }
-}
-
-/**
   * Content article
   */
 if ( ! function_exists('helsinki_content_article') ) {

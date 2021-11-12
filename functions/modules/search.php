@@ -1,5 +1,11 @@
 <?php
 
+if ( ! function_exists('helsinki_search_form') ) {
+	function helsinki_search_form() {
+		get_search_form();
+	}
+}
+
 function helsinki_search_sidebar() {
 	get_sidebar( 'search' );
 }
