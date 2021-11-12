@@ -59,6 +59,12 @@ function helsinki_files()
 				'koros',
 				'svg',
 			],
+		    'layout' => [
+				'front-page',
+				'header',
+				'footer',
+				'sidebar',
+			],
 		    'modules' => [
 				'load-more',
 				'menu',
@@ -70,11 +76,7 @@ function helsinki_files()
 			'comments',
 			'content',
 			'entry',
-			'footer',
-			'front-page',
-			'header',
 			'misc',
-			'sidebar',
 		],
 		'integrations' => [],
 	];
