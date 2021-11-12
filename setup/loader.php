@@ -59,6 +59,7 @@ function helsinki_files()
 				'svg',
 			],
 		    'modules' => [
+				'load-more',
 				'search',
 			],
 			'classes',
@@ -68,7 +69,6 @@ function helsinki_files()
 			'footer',
 			'front-page',
 			'header',
-			'load-more',
 			'misc',
 			'menu',
 			'sidebar',
