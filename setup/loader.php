@@ -12,7 +12,7 @@ function helsinki_load_files() {
 function helsinki_files()
 {
 	$files = [
-	  'customizer' => [
+		'customizer' => [
 			'config' => [
 				'blog',
 				'choices',
@@ -35,11 +35,11 @@ function helsinki_files()
 			'functions',
 			'init',
 		],
-	  'inc' => [
+		'inc' => [
 			'filters',
 			'walkers',
 			'taxonomy-thumbnails'
-	  ],
+		],
 		'setup' => [
 			'config' => [
 				'colors',
@@ -49,7 +49,7 @@ function helsinki_files()
 			'templates',
 			'assets',
 		],
-	  'functions'  => [
+		'functions'  => [
 		    'content' => [
 				'call-to-action',
 				'table-of-contents',
@@ -60,9 +60,10 @@ function helsinki_files()
 				'svg',
 			],
 		    'layout' => [
+				'footer',
 				'front-page',
 				'header',
-				'footer',
+				'loop',
 				'sidebar',
 				'view',
 			],
