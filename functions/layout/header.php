@@ -14,7 +14,7 @@ function helsinki_header_classes() {
 
 if ( ! function_exists('helsinki_topbar_body_class') ) {
 	function helsinki_topbar_body_class($classes) {
-		return array_merge( $classes, array( 'has-topbar' ) );
+		return helsinki_add_body_class_has_n( $classes, 'topbar' );
 	}
 }
 

@@ -1,8 +1,8 @@
 <?php
 
 if ( ! function_exists('helsinki_koros_body_class') ) {
-	function helsinki_koros_body_class($classes) {
-		return array_merge( $classes, array( 'has-koros' ) );
+	function helsinki_koros_body_class( $classes ) {
+		return helsinki_add_body_class_has_n( $classes, 'koros' );
 	}
 }
 

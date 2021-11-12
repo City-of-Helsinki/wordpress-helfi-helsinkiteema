@@ -1,7 +1,7 @@
 <?php
 
-function helsinki_sidebar_body_class($classes) {
-	return array_merge( $classes, array( 'has-sidebar' ) );
+function helsinki_sidebar_body_class( $classes ) {
+	return helsinki_add_body_class_has_n( $classes, 'sidebar' );
 }
 
 function helsinki_sidebar() {
