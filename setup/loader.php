@@ -53,6 +53,7 @@ function helsinki_files()
 		    'content' => [
 				'call-to-action',
 				'table-of-contents',
+				'related',
 			],
 		    'decoration' => [
 				'koros',
