@@ -7,8 +7,10 @@ function helsinki_content_article_has_call_to_action() {
 	return $button_1_exists || $button_2_exists;
 }
 
-function helsinki_content_article_call_to_action_data() {
-	$post_id = get_the_ID();
+function helsinki_content_article_call_to_action_data( int $post_id = 0 ) {
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
 	return array(
 		'button_1' => array(
 			'text' => get_post_meta( $post_id, 'hero_cta_text', true ),
