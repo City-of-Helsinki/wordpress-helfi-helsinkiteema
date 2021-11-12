@@ -5,6 +5,7 @@
 	z-index: 1;
 
 	> section {
+
 		@include breakpoint(l) {
 			display: flex;
 			flex-wrap: wrap;
@@ -12,8 +13,7 @@
 
 		+ section {
 			border-top: $footer-section-border;
-			padding-top: $footer-section-spacing;
-			padding-bottom: $footer-section-spacing;
+      padding-top: $footer-section-spacing;
 		}
 	}
 
@@ -26,12 +26,14 @@
 		}
 	}
 
-	&__widgets {
+	.footer__widgets {
 		padding-top: spacing('s');
 	}
 
-	&__bottom {
+	.footer__bottom {
 		align-items: center;
+    margin-top: spacing('layout-m');
+    padding-bottom: $footer-section-spacing;
 
 		@include breakpoint(l) {
 			> * {
@@ -40,7 +42,25 @@
 				}
 			}
 		}
+
+    @include breakpointMax('xl') {
+      padding-bottom: spacing('layout-xl');
+    }
+
+    @include breakpoint('xl') {
+      margin-top: spacing('layout-xl');
+    }
 	}
+
+  &:not(.has-widgets) {
+    .footer__bottom {
+      padding-top: spacing('layout-m');
+
+      @include breakpoint('xl') {
+        padding-top: spacing('layout-xl');
+      }
+    }
+  }
 
 	&__logo {
 		margin-bottom: spacing('s');

@@ -8,6 +8,10 @@ function helsinki_footer_classes() {
 		'footer',
 	);
 
+	if ( is_active_sidebar( 'sidebar-footer' ) ) {
+		$classes[] = 'has-widgets';
+	}
+
 	helsinki_element_classes(
 		'footer',
 		$classes
@@ -25,16 +29,16 @@ if ( ! function_exists('helsinki_footer_koros') ) {
 
 if ( ! function_exists('helsinki_footer_widgets') ) {
 	function helsinki_footer_widgets() {
-		get_template_part('partials/footer/widgets');
+		if ( is_active_sidebar( 'sidebar-footer' ) ) {
+			get_template_part('partials/footer/widgets');
+		}
 	}
 }
 
 if ( ! function_exists('helsinki_sidebar_widgets') ) {
-  function helsinki_footer_widget_area() {
-    if ( is_active_sidebar( 'sidebar-footer' ) ) {
-      dynamic_sidebar( 'sidebar-footer' );
-    }
-  }
+	function helsinki_footer_widget_area() {
+		dynamic_sidebar( 'sidebar-footer' );
+	}
 }
 
 if ( ! function_exists('helsinki_footer_bottom') ) {
