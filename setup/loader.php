@@ -64,6 +64,7 @@ function helsinki_files()
 				'header',
 				'footer',
 				'sidebar',
+				'view',
 			],
 		    'modules' => [
 				'load-more',
