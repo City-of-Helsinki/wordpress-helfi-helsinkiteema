@@ -1,0 +1,17 @@
+.page {
+
+	&:not(.page-template-landing-page) {
+		.content {
+			&__container {
+				padding-top: spacing('layout-s');
+				padding-bottom: spacing('layout-s');
+
+				@include breakpoint(l) {
+					padding-top: spacing('layout-xl');
+					padding-bottom: spacing('layout-xl');
+				}
+			}
+		}
+	}
+
+}
