@@ -64,7 +64,7 @@ if ( ! function_exists('helsinki_default_social_share_medias') ) {
 				'title' => __( 'Share on Twitter', 'helsinki-universal' ),
 			),
 			'linkedin' => array(
-        'url' => 'https://www.linkedin.com/sharing/share-offsite/?url=%1$s',
+        		'url' => 'https://www.linkedin.com/sharing/share-offsite/?url=%1$s',
 				'text'  => __( 'LinkedIn', 'helsinki-universal' ),
 				'title' => __( 'Share on LinkedIn', 'helsinki-universal' ),
 			),
