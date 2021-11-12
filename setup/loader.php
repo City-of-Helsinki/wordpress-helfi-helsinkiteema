@@ -53,8 +53,9 @@ function helsinki_files()
 		    'content' => [
 				'call-to-action',
 				'featured-image',
-				'table-of-contents',
+				'parts',
 				'related',
+				'table-of-contents',
 			],
 		    'decoration' => [
 				'koros',
@@ -79,7 +80,6 @@ function helsinki_files()
 				'widgets',
 			],
 			'classes',
-			'content',
 			'misc',
 		],
 		'integrations' => [],
