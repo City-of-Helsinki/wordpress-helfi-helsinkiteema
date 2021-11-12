@@ -79,27 +79,25 @@ function helsinki_set_current_scheme( string $scheme ) {
 	);
 }
 
-function helsinki_scheme_root_styles(string $scheme) {
+function helsinki_scheme_root_styles( string $scheme ) {
+	$config = helsinki_colors( $scheme );
+
 	$colors = apply_filters(
 		'helsinki_scheme_root_styles_colors',
 		array(
-			'--primary-color' => '--color-' . $scheme,
-			'--primary-color-light' => '--color-' . $scheme . '-light',
-			'--primary-color-medium' => '--color-' . $scheme . '-medium-light',
-			'--primary-color-dark' => '--color-' . $scheme . '-dark',
+			'--primary-color' => $config['primary']['color'],
+			'--primary-color-light' => $config['primary']['light'],
+			'--primary-color-medium' => $config['primary']['medium'],
+			'--primary-color-dark' => $config['primary']['dark'],
+			'--secondary-color' => $config['secondary'],
+			'--accent-color' => $config['accent'],
 		),
 		$scheme
 	);
 
-	$use_hex = apply_filters( 'helsinki_scheme_root_styles_use_hex', false );
-
 	$properties = array();
-	foreach ($colors as $key => $value) {
-		$properties[] = sprintf(
-			'%s: %s;',
-			esc_attr($key),
-			$use_hex ? sanitize_hex_color( $value ) : 'var(' . esc_attr($value) . ')'
-		);
+	foreach ( $colors as $key => $value ) {
+		$properties[] = sprintf( '%s: %s;', esc_attr( $key ), sanitize_hex_color( $value ) );
 	}
 
 	echo '<style>:root {' . implode( ' ', $properties ) . '}</style>';
@@ -139,6 +137,10 @@ function helsinki_scheme_invert_color_body_class($classes) {
   * Editor palettes
   */
 function helsinki_scheme_editor_palette() {
+
+	// FIXME:
+	return array();
+
 	$config = helsinki_colors(
 		apply_filters(
 			'helsinki_scheme',
@@ -189,67 +191,9 @@ function helsinki_scheme_editor_palette() {
 }
 
 function helsinki_colors(string $name ='') {
-	$colors = apply_filters(
-		'helsinki_colors',
-		array(
-			'brick' => '#bd2719',
-			'brick-light' => '#ffeeed',
-			'brick-medium-light' => '#facbc8',
-			'brick-dark' => '#800e04',
-			'bus' => '#0000bf',
-			'bus-light' => '#f0f0ff',
-			'bus-medium-light' => '#ccccff',
-			'bus-dark' => '#00005e',
-			'coat-of-arms' => '#0072c6',
-			'coat-of-arms-light' => '#e6f4ff',
-			'coat-of-arms-medium-light' => '#b5daf7',
-			'coat-of-arms-dark' => '#005799',
-			'copper' => '#00d7a7',
-			'copper-light' => '#cffaf1',
-			'copper-medium-light' => '#9ef0de',
-			'copper-dark' => '#00a17d',
-			'engel' => '#ffe977',
-			'engel-light' => '#fff9db',
-			'engel-medium-light' => '#fff3b8',
-			'engel-dark' => '#dbc030',
-			'fog' => '#9fc9eb',
-			'fog-light' => '#e8f3fc',
-			'fog-medium-light' => '#d0e6f7',
-			'fog-dark' => '#72a5cf',
-			'gold' => '#c2a251',
-			'gold-light' => '#f7f2e4',
-			'gold-medium-light' => '#e8d7a7',
-			'gold-dark' => '#9e823c',
-			'metro' => '#fd4f00',
-			'metro-light' => '#ffeee6',
-			'metro-medium-light' => '#ffcab3',
-			'metro-dark' => '#bd2f00',
-			'silver' => '#dedfe1',
-			'silver-light' => '#f7f7f8',
-			'silver-medium-light' => '#efeff0',
-			'silver-dark' => '#b0b8bf',
-			'summer' => '#ffc61e',
-			'summer-light' => '#fff4d4',
-			'summer-medium-light' => '#ffe49c',
-			'summer-dark' => '#cc9200',
-			'suomenlinna' => '#f5a3c7',
-			'suomenlinna-light' => '#fff0f7',
-			'suomenlinna-medium-light' => '#ffdbeb',
-			'suomenlinna-dark' => '#e673a5',
-			'tram' => '#008741',
-			'tram-light' => '#dff7eb',
-			'tram-medium-light' => '#a3e3c2',
-			'tram-dark' => '#006631',
-		)
-	);
-
+	$colors = apply_filters( 'helsinki_colors', helsinki_config_colors() );
 	if ( $name ) {
-		return array(
-			'color' => $colors[$name] ?? '',
-			'light' => $colors[$name . '-light'] ?? '',
-			'medium' => $colors[$name . '-medium-light'] ?? '',
-			'dark' => $colors[$name . '-dark'] ?? '',
-		);
+		return $colors[$name] ?? $colors[ helsinki_default_scheme() ];
 	} else {
 		return $colors;
 	}
