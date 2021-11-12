@@ -5,6 +5,7 @@
 	z-index: 1;
 
 	> section {
+    padding-top: $footer-section-spacing;
 
 		@include breakpoint(l) {
 			display: flex;
@@ -13,7 +14,6 @@
 
 		+ section {
 			border-top: $footer-section-border;
-      padding-top: $footer-section-spacing;
 		}
 	}
 
@@ -26,9 +26,7 @@
 		}
 	}
 
-	.footer__widgets {
-		padding-top: spacing('s');
-	}
+	.footer__widgets {}
 
 	.footer__bottom {
 		align-items: center;
