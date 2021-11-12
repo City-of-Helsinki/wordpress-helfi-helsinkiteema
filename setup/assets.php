@@ -104,12 +104,12 @@ function helsinki_scheme_root_styles( string $scheme ) {
 	echo '<style>:root {' . implode( ' ', $properties ) . '}</style>';
 }
 
-function helsinki_scheme_body_class($classes) {
+function helsinki_scheme_body_class( $classes ) {
 	$scheme = apply_filters(
 		'helsinki_scheme',
 		helsinki_default_scheme()
 	);
-	return array_merge( $classes, array( 'has-scheme-' . $scheme ) );
+	return helsinki_add_body_class_has_n( $classes, 'scheme-' . $scheme );
 }
 
 function helsinki_scheme_has_invert_color() {
@@ -128,10 +128,7 @@ function helsinki_scheme_has_invert_color() {
 }
 
 function helsinki_scheme_invert_color_body_class($classes) {
-	return array_merge(
-		$classes,
-		array( 'has-invert-color' )
-	);
+	return helsinki_add_body_class_has_n( $classes, 'invert-color' );
 }
 
 /**
