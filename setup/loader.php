@@ -67,6 +67,7 @@ function helsinki_files()
 				'loop',
 				'sidebar',
 				'view',
+				'misc',
 			],
 		    'modules' => [
 				'comments',
