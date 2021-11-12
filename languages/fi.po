@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2021-06-28 08:18+0000\n"
+"PO-Revision-Date: 2021-11-12 08:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -50,11 +50,11 @@ msgstr "Kirjoittaja"
 msgid "Back to top"
 msgstr "Takaisin ylös"
 
-#: customizer/config/choices.php:22
+#: customizer/config/choices.php:24
 msgid "Brick"
 msgstr "Tiili"
 
-#: customizer/config/choices.php:23
+#: customizer/config/choices.php:25
 msgid "Bus"
 msgstr "Bussi"
 
@@ -72,7 +72,7 @@ msgstr "Sulje"
 msgid "Close Menu"
 msgstr "Sulje valikko"
 
-#: customizer/config/choices.php:19
+#: customizer/config/choices.php:21
 msgid "Coat of Arms"
 msgstr "Vaakuna"
 
@@ -92,12 +92,12 @@ msgstr "Kommentointi on suljettu."
 msgid "Content"
 msgstr "Sisältö"
 
-#: integrations/complianz.php:59
+#: integrations/complianz.php:86
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr "käyttää evästeitä"
 
-#: customizer/config/choices.php:24
+#: customizer/config/choices.php:26
 msgid "Copper"
 msgstr "Kupari"
 
@@ -220,7 +220,7 @@ msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr "Yoast SEO tulee olla asennettuna"
 
-#: customizer/config/choices.php:18
+#: customizer/config/choices.php:20
 msgid "Default"
 msgstr "Oletus"
 
@@ -256,34 +256,34 @@ msgstr "Näytä sosiaalisen median jakopainikkeet"
 msgid "Display tags"
 msgstr "Näytä avainsanat"
 
-#: customizer/config/front-page.php:53
+#: customizer/config/front-page.php:52
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
 "."
 
-#: inc/assets.php:171
+#: setup/assets.php:173
 msgctxt "Editor palette"
 msgid "Black"
 msgstr "Musta"
 
-#: inc/assets.php:164
+#: setup/assets.php:166
 #| msgid "Fog"
 msgctxt "Editor palette"
 msgid "Light"
 msgstr "Vaalea"
 
-#: inc/assets.php:183
+#: setup/assets.php:185
 msgctxt "Editor palette"
 msgid "Light Gray"
 msgstr "Vaalean harmaa"
 
-#: inc/assets.php:156
+#: setup/assets.php:158
 msgctxt "Editor palette"
 msgid "Primary"
 msgstr "Pääväri"
 
-#: inc/assets.php:177
+#: setup/assets.php:179
 msgctxt "Editor palette"
 msgid "White"
 msgstr "Valkoinen"
@@ -292,23 +292,23 @@ msgstr "Valkoinen"
 msgid "Enabled"
 msgstr "Käytössä"
 
-#: customizer/config/choices.php:25
+#: customizer/config/choices.php:27
 msgid "Engel"
 msgstr "Engel"
 
-#: functions/social.php:58 customizer/config/choices.php:59
+#: functions/social.php:58 customizer/config/choices.php:61
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:99
 msgid "Feed Cache time"
 msgstr "Syötteen elinikä"
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:76
 msgid "Feed shortcode"
 msgstr "Syötteen lyhytkoodi"
 
-#: customizer/config/front-page.php:75 customizer/config/front-page.php:80
+#: customizer/config/front-page.php:84 customizer/config/front-page.php:89
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
@@ -324,16 +324,16 @@ msgstr "Ensimmäinen"
 msgid "First page"
 msgstr "Ensimmäinen sivu"
 
-#: customizer/config/choices.php:26
+#: customizer/config/choices.php:28
 msgid "Fog"
 msgstr "Sumu"
 
-#: inc/setup-theme.php:117
+#: setup/theme.php:135
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: customizer/config/choices.php:20
+#: customizer/config/choices.php:22
 msgid "Gold"
 msgstr "Kulta"
 
@@ -346,27 +346,27 @@ msgstr "Helsinkiteema #1"
 msgid "https://www.artcloud.fi/"
 msgstr "https://www.artcloud.fi/"
 
-#: customizer/config/choices.php:38
+#: customizer/config/choices.php:40
 msgctxt "Koros motif"
 msgid "Basic"
 msgstr "Perus"
 
-#: customizer/config/choices.php:39
+#: customizer/config/choices.php:41
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Syke"
 
-#: customizer/config/choices.php:40
+#: customizer/config/choices.php:42
 msgctxt "Koros motif"
 msgid "Pulse"
 msgstr "Pulssi"
 
-#: customizer/config/choices.php:41
+#: customizer/config/choices.php:43
 msgctxt "Koros motif"
 msgid "Vibration"
 msgstr "Värinä"
 
-#: customizer/config/choices.php:42
+#: customizer/config/choices.php:44
 msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Tyrsky"
@@ -400,7 +400,7 @@ msgstr "Linkkiteksti"
 msgid "Link url"
 msgstr "Linkin osoite"
 
-#: functions/social.php:68 customizer/config/choices.php:61
+#: functions/social.php:68 customizer/config/choices.php:63
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -419,7 +419,7 @@ msgstr "Mediat"
 msgid "Menu"
 msgstr "Valikko"
 
-#: customizer/config/choices.php:27
+#: customizer/config/choices.php:29
 msgid "Metro"
 msgstr "Metro"
 
@@ -460,7 +460,7 @@ msgstr "Sivu %d"
 msgid "Page navigation"
 msgstr "Sivunavigointi"
 
-#: inc/setup-theme.php:116
+#: setup/theme.php:134
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
@@ -475,9 +475,9 @@ msgstr "Etsi..."
 msgid "Placeholder Icon"
 msgstr "Paikanvaraajan ikoni"
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
 #: customizer/config/choices.php:50 customizer/config/choices.php:51
 #: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:54 customizer/config/choices.php:55
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
@@ -486,11 +486,11 @@ msgstr "Abstrakti"
 msgid "Please try using another search term or phrase."
 msgstr "Ole hyvä ja kokeile hakea jollain toisella hakusanalla tai -lauseella."
 
-#: customizer/config/front-page.php:58
+#: customizer/config/front-page.php:67
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
-#: inc/setup-theme.php:115
+#: setup/theme.php:133
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr "Artikkelit"
@@ -528,12 +528,12 @@ msgstr "Lue lisää"
 msgid "Recent Posts"
 msgstr "Ajankohtaista"
 
-#: inc/setup-theme.php:76
+#: setup/theme.php:81
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr "Alatunnisteen valikko"
 
-#: inc/setup-theme.php:75
+#: setup/theme.php:80
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr "Päävalikko"
@@ -560,7 +560,7 @@ msgstr "Haku"
 msgid "Search results"
 msgstr "Hakutulokset"
 
-#: customizer/config/front-page.php:37
+#: customizer/config/front-page.php:46
 msgid "Section title"
 msgstr "Osion otsikko"
 
@@ -593,7 +593,7 @@ msgstr "Näytä lisää"
 msgid "Show posts from a category"
 msgstr "Näytä artikkeleita kategoriasta"
 
-#: customizer/config/choices.php:21
+#: customizer/config/choices.php:23
 msgid "Silver"
 msgstr "Hopea"
 
@@ -610,15 +610,19 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Haku"
 
-#: customizer/config/choices.php:28
+#: customizer/config/choices.php:30
 msgid "Summer"
 msgstr "Kesä"
 
-#: customizer/config/choices.php:29
+#: customizer/config/choices.php:31
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
-#: customizer/config/front-page.php:91
+#: functions/content/table-of-contents.php:18
+msgid "Table of Contents"
+msgstr "Sisällysluettelo"
+
+#: customizer/config/front-page.php:100
 msgid "The feed result is cached for 12 hours by default."
 msgstr ""
 "Syötteen sisältö tallennetaan välimuistiin oletuksena 12 tunnin ajaksi."
@@ -631,7 +635,7 @@ msgstr "Etsimääsi sivua ei löytynyt."
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
 
-#: functions/front-page.php:313
+#: functions/front-page.php:319
 #, php-format
 msgid "This feed is fetched from %s."
 msgstr "Tämä syöte haetaan %s:stä."
@@ -641,11 +645,11 @@ msgstr "Tämä syöte haetaan %s:stä."
 msgid "Toggle submenu for %s"
 msgstr "Näytä tai piilota \"%s\" alavalikko"
 
-#: customizer/config/choices.php:30
+#: customizer/config/choices.php:32
 msgid "Tram"
 msgstr "Spåra"
 
-#: functions/social.php:63 customizer/config/choices.php:60
+#: functions/social.php:63 customizer/config/choices.php:62
 msgid "Twitter"
 msgstr "Twitter"
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2021-06-28 08:22+0000\n"
+"PO-Revision-Date: 2021-11-12 08:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -50,11 +50,11 @@ msgstr "Författare"
 msgid "Back to top"
 msgstr "Tillbaka till toppen"
 
-#: customizer/config/choices.php:22
+#: customizer/config/choices.php:24
 msgid "Brick"
 msgstr "Tegel"
 
-#: customizer/config/choices.php:23
+#: customizer/config/choices.php:25
 msgid "Bus"
 msgstr "Buss"
 
@@ -73,7 +73,7 @@ msgstr "Stänga"
 msgid "Close Menu"
 msgstr "Stäng menyn"
 
-#: customizer/config/choices.php:19
+#: customizer/config/choices.php:21
 msgid "Coat of Arms"
 msgstr "Vapen"
 
@@ -93,12 +93,12 @@ msgstr "Kommentarer är stängda."
 msgid "Content"
 msgstr "Innehåll"
 
-#: integrations/complianz.php:59
+#: integrations/complianz.php:86
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr "använder cookies"
 
-#: customizer/config/choices.php:24
+#: customizer/config/choices.php:26
 msgid "Copper"
 msgstr "Koppar"
 
@@ -219,7 +219,7 @@ msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr "Yoast SEO krävs för att installeras"
 
-#: customizer/config/choices.php:18
+#: customizer/config/choices.php:20
 msgid "Default"
 msgstr "Standard"
 
@@ -255,34 +255,34 @@ msgstr "Visa sociala delningsknappar"
 msgid "Display tags"
 msgstr "Visa taggar"
 
-#: customizer/config/front-page.php:53
+#: customizer/config/front-page.php:52
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Visar innehåll på förstasidan som ställts in i Instrumentpanelen> Sidor> "
 "{förstasida}."
 
-#: inc/assets.php:171
+#: setup/assets.php:173
 msgctxt "Editor palette"
 msgid "Black"
 msgstr "Svart"
 
-#: inc/assets.php:164
+#: setup/assets.php:166
 #| msgid "Fog"
 msgctxt "Editor palette"
 msgid "Light"
 msgstr "DimmaLjus"
 
-#: inc/assets.php:183
+#: setup/assets.php:185
 msgctxt "Editor palette"
 msgid "Light Gray"
 msgstr "Ljusgrå"
 
-#: inc/assets.php:156
+#: setup/assets.php:158
 msgctxt "Editor palette"
 msgid "Primary"
 msgstr "Primär"
 
-#: inc/assets.php:177
+#: setup/assets.php:179
 msgctxt "Editor palette"
 msgid "White"
 msgstr "Vit"
@@ -291,23 +291,23 @@ msgstr "Vit"
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: customizer/config/choices.php:25
+#: customizer/config/choices.php:27
 msgid "Engel"
 msgstr "Engel"
 
-#: functions/social.php:58 customizer/config/choices.php:59
+#: functions/social.php:58 customizer/config/choices.php:61
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:99
 msgid "Feed Cache time"
 msgstr "Feed Cache-tid"
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:76
 msgid "Feed shortcode"
 msgstr "Mata kortkod"
 
-#: customizer/config/front-page.php:75 customizer/config/front-page.php:80
+#: customizer/config/front-page.php:84 customizer/config/front-page.php:89
 msgid "Feed URL"
 msgstr "Feed URL"
 
@@ -323,16 +323,16 @@ msgstr "Först"
 msgid "First page"
 msgstr "Första sidan"
 
-#: customizer/config/choices.php:26
+#: customizer/config/choices.php:28
 msgid "Fog"
 msgstr "Dimma"
 
-#: inc/setup-theme.php:117
+#: setup/theme.php:135
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: customizer/config/choices.php:20
+#: customizer/config/choices.php:22
 msgid "Gold"
 msgstr "Guld"
 
@@ -344,27 +344,27 @@ msgstr "Helsinkiteema #1"
 msgid "https://www.artcloud.fi/"
 msgstr "https://www.artcloud.fi/"
 
-#: customizer/config/choices.php:38
+#: customizer/config/choices.php:40
 msgctxt "Koros motif"
 msgid "Basic"
 msgstr "Bas"
 
-#: customizer/config/choices.php:39
+#: customizer/config/choices.php:41
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Rytm"
 
-#: customizer/config/choices.php:40
+#: customizer/config/choices.php:42
 msgctxt "Koros motif"
 msgid "Pulse"
 msgstr "Puls"
 
-#: customizer/config/choices.php:41
+#: customizer/config/choices.php:43
 msgctxt "Koros motif"
 msgid "Vibration"
 msgstr "Daller"
 
-#: customizer/config/choices.php:42
+#: customizer/config/choices.php:44
 msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Bränning"
@@ -398,7 +398,7 @@ msgstr "Länktext"
 msgid "Link url"
 msgstr "Länk url"
 
-#: functions/social.php:68 customizer/config/choices.php:61
+#: functions/social.php:68 customizer/config/choices.php:63
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -416,7 +416,7 @@ msgstr "Media"
 msgid "Menu"
 msgstr "Navigeringsmeny"
 
-#: customizer/config/choices.php:27
+#: customizer/config/choices.php:29
 msgid "Metro"
 msgstr "Metro"
 
@@ -457,7 +457,7 @@ msgstr "Sida %d"
 msgid "Page navigation"
 msgstr "Sidnavigering"
 
-#: inc/setup-theme.php:116
+#: setup/theme.php:134
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sida"
@@ -472,9 +472,9 @@ msgstr "Sök…"
 msgid "Placeholder Icon"
 msgstr "Platshållarikon"
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
 #: customizer/config/choices.php:50 customizer/config/choices.php:51
 #: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:54 customizer/config/choices.php:55
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakt"
@@ -483,11 +483,11 @@ msgstr "Abstrakt"
 msgid "Please try using another search term or phrase."
 msgstr "Försök använda en annan sökterm eller fras."
 
-#: customizer/config/front-page.php:58
+#: customizer/config/front-page.php:67
 msgid "Post count"
 msgstr "Antal inlägg"
 
-#: inc/setup-theme.php:115
+#: setup/theme.php:133
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr "Artikel"
@@ -525,12 +525,12 @@ msgstr "Läs mer"
 msgid "Recent Posts"
 msgstr "Nya Inlägg"
 
-#: inc/setup-theme.php:76
+#: setup/theme.php:81
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr "Sidfotmeny"
 
-#: inc/setup-theme.php:75
+#: setup/theme.php:80
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr "Huvudmeny"
@@ -557,7 +557,7 @@ msgstr "Sök"
 msgid "Search results"
 msgstr "Sökresultat"
 
-#: customizer/config/front-page.php:37
+#: customizer/config/front-page.php:46
 msgid "Section title"
 msgstr "Avsnittstitel"
 
@@ -589,7 +589,7 @@ msgstr "Visa mer"
 msgid "Show posts from a category"
 msgstr "Visa inlägg från en kategori"
 
-#: customizer/config/choices.php:21
+#: customizer/config/choices.php:23
 msgid "Silver"
 msgstr "Silver"
 
@@ -606,15 +606,19 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Hitta"
 
-#: customizer/config/choices.php:28
+#: customizer/config/choices.php:30
 msgid "Summer"
 msgstr "Sommar"
 
-#: customizer/config/choices.php:29
+#: customizer/config/choices.php:31
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
-#: customizer/config/front-page.php:91
+#: functions/content/table-of-contents.php:18
+msgid "Table of Contents"
+msgstr "Innehållsförteckning"
+
+#: customizer/config/front-page.php:100
 msgid "The feed result is cached for 12 hours by default."
 msgstr "Resultatet är cachat i 12 timmar som standard."
 
@@ -626,7 +630,7 @@ msgstr "Sidan du letade efter kunde inte hittas."
 msgid "This author has not published any posts yet."
 msgstr "Denna författare har inte publicerat några inlägg ännu."
 
-#: functions/front-page.php:313
+#: functions/front-page.php:319
 #, php-format
 msgid "This feed is fetched from %s."
 msgstr "Den här flödet hämtas från %s."
@@ -636,11 +640,11 @@ msgstr "Den här flödet hämtas från %s."
 msgid "Toggle submenu for %s"
 msgstr "Växla undermenyn för %s"
 
-#: customizer/config/choices.php:30
+#: customizer/config/choices.php:32
 msgid "Tram"
 msgstr "Spårvagn"
 
-#: functions/social.php:63 customizer/config/choices.php:60
+#: functions/social.php:63 customizer/config/choices.php:62
 msgid "Twitter"
 msgstr "Twitter"
 

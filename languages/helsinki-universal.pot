@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-28 08:12+0000\n"
+"POT-Creation-Date: 2021-11-12 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -51,11 +51,11 @@ msgstr ""
 msgid "Back to top"
 msgstr ""
 
-#: customizer/config/choices.php:22
+#: customizer/config/choices.php:24
 msgid "Brick"
 msgstr ""
 
-#: customizer/config/choices.php:23
+#: customizer/config/choices.php:25
 msgid "Bus"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Close Menu"
 msgstr ""
 
-#: customizer/config/choices.php:19
+#: customizer/config/choices.php:21
 msgid "Coat of Arms"
 msgstr ""
 
@@ -93,12 +93,12 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: integrations/complianz.php:59
+#: integrations/complianz.php:86
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr ""
 
-#: customizer/config/choices.php:24
+#: customizer/config/choices.php:26
 msgid "Copper"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr ""
 
-#: customizer/config/choices.php:18
+#: customizer/config/choices.php:20
 msgid "Default"
 msgstr ""
 
@@ -253,31 +253,31 @@ msgstr ""
 msgid "Display tags"
 msgstr ""
 
-#: customizer/config/front-page.php:53
+#: customizer/config/front-page.php:52
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 
-#: inc/assets.php:171
+#: setup/assets.php:173
 msgctxt "Editor palette"
 msgid "Black"
 msgstr ""
 
-#: inc/assets.php:164
+#: setup/assets.php:166
 msgctxt "Editor palette"
 msgid "Light"
 msgstr ""
 
-#: inc/assets.php:183
+#: setup/assets.php:185
 msgctxt "Editor palette"
 msgid "Light Gray"
 msgstr ""
 
-#: inc/assets.php:156
+#: setup/assets.php:158
 msgctxt "Editor palette"
 msgid "Primary"
 msgstr ""
 
-#: inc/assets.php:177
+#: setup/assets.php:179
 msgctxt "Editor palette"
 msgid "White"
 msgstr ""
@@ -286,23 +286,23 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
-#: customizer/config/choices.php:25
+#: customizer/config/choices.php:27
 msgid "Engel"
 msgstr ""
 
-#: functions/social.php:58 customizer/config/choices.php:59
+#: functions/social.php:58 customizer/config/choices.php:61
 msgid "Facebook"
 msgstr ""
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:99
 msgid "Feed Cache time"
 msgstr ""
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:76
 msgid "Feed shortcode"
 msgstr ""
 
-#: customizer/config/front-page.php:75 customizer/config/front-page.php:80
+#: customizer/config/front-page.php:84 customizer/config/front-page.php:89
 msgid "Feed URL"
 msgstr ""
 
@@ -318,16 +318,16 @@ msgstr ""
 msgid "First page"
 msgstr ""
 
-#: customizer/config/choices.php:26
+#: customizer/config/choices.php:28
 msgid "Fog"
 msgstr ""
 
-#: inc/setup-theme.php:117
+#: setup/theme.php:135
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: customizer/config/choices.php:20
+#: customizer/config/choices.php:22
 msgid "Gold"
 msgstr ""
 
@@ -339,27 +339,27 @@ msgstr ""
 msgid "https://www.artcloud.fi/"
 msgstr ""
 
-#: customizer/config/choices.php:38
+#: customizer/config/choices.php:40
 msgctxt "Koros motif"
 msgid "Basic"
 msgstr ""
 
-#: customizer/config/choices.php:39
+#: customizer/config/choices.php:41
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr ""
 
-#: customizer/config/choices.php:40
+#: customizer/config/choices.php:42
 msgctxt "Koros motif"
 msgid "Pulse"
 msgstr ""
 
-#: customizer/config/choices.php:41
+#: customizer/config/choices.php:43
 msgctxt "Koros motif"
 msgid "Vibration"
 msgstr ""
 
-#: customizer/config/choices.php:42
+#: customizer/config/choices.php:44
 msgctxt "Koros motif"
 msgid "Wave"
 msgstr ""
@@ -393,7 +393,7 @@ msgstr ""
 msgid "Link url"
 msgstr ""
 
-#: functions/social.php:68 customizer/config/choices.php:61
+#: functions/social.php:68 customizer/config/choices.php:63
 msgid "LinkedIn"
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: customizer/config/choices.php:27
+#: customizer/config/choices.php:29
 msgid "Metro"
 msgstr ""
 
@@ -452,7 +452,7 @@ msgstr ""
 msgid "Page navigation"
 msgstr ""
 
-#: inc/setup-theme.php:116
+#: setup/theme.php:134
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr ""
@@ -466,9 +466,9 @@ msgstr ""
 msgid "Placeholder Icon"
 msgstr ""
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
 #: customizer/config/choices.php:50 customizer/config/choices.php:51
 #: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:54 customizer/config/choices.php:55
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr ""
@@ -477,11 +477,11 @@ msgstr ""
 msgid "Please try using another search term or phrase."
 msgstr ""
 
-#: customizer/config/front-page.php:58
+#: customizer/config/front-page.php:67
 msgid "Post count"
 msgstr ""
 
-#: inc/setup-theme.php:115
+#: setup/theme.php:133
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr ""
@@ -519,12 +519,12 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/setup-theme.php:76
+#: setup/theme.php:81
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr ""
 
-#: inc/setup-theme.php:75
+#: setup/theme.php:80
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr ""
@@ -551,7 +551,7 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: customizer/config/front-page.php:37
+#: customizer/config/front-page.php:46
 msgid "Section title"
 msgstr ""
 
@@ -583,7 +583,7 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
-#: customizer/config/choices.php:21
+#: customizer/config/choices.php:23
 msgid "Silver"
 msgstr ""
 
@@ -600,15 +600,19 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: customizer/config/choices.php:28
+#: customizer/config/choices.php:30
 msgid "Summer"
 msgstr ""
 
-#: customizer/config/choices.php:29
+#: customizer/config/choices.php:31
 msgid "Suomenlinna"
 msgstr ""
 
-#: customizer/config/front-page.php:91
+#: functions/content/table-of-contents.php:18
+msgid "Table of Contents"
+msgstr ""
+
+#: customizer/config/front-page.php:100
 msgid "The feed result is cached for 12 hours by default."
 msgstr ""
 
@@ -620,7 +624,7 @@ msgstr ""
 msgid "This author has not published any posts yet."
 msgstr ""
 
-#: functions/front-page.php:313
+#: functions/front-page.php:319
 #, php-format
 msgid "This feed is fetched from %s."
 msgstr ""
@@ -630,11 +634,11 @@ msgstr ""
 msgid "Toggle submenu for %s"
 msgstr ""
 
-#: customizer/config/choices.php:30
+#: customizer/config/choices.php:32
 msgid "Tram"
 msgstr ""
 
-#: functions/social.php:63 customizer/config/choices.php:60
+#: functions/social.php:63 customizer/config/choices.php:62
 msgid "Twitter"
 msgstr ""
 
