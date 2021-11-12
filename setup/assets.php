@@ -92,7 +92,8 @@ function helsinki_scheme_root_styles( string $scheme ) {
 			'--secondary-color' => $config['secondary'],
 			'--accent-color' => $config['accent'],
 		),
-		$scheme
+		$scheme,
+		$config
 	);
 
 	$properties = array();
