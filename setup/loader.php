@@ -63,6 +63,7 @@ function helsinki_files()
 				'menu',
 				'search',
 				'social',
+				'widgets',
 			],
 			'classes',
 			'comments',
@@ -73,7 +74,6 @@ function helsinki_files()
 			'header',
 			'misc',
 			'sidebar',
-			'widgets',
 		],
 		'integrations' => [],
 	];
