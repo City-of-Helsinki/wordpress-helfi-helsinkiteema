@@ -51,6 +51,7 @@ function helsinki_files()
 		],
 	  'functions'  => [
 		    'content' => [
+				'call-to-action',
 				'table-of-contents',
 			],
 			'classes',
