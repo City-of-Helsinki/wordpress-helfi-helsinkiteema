@@ -1,5 +1,42 @@
 <?php
 
+/**
+  * Filtering
+  */
+if ( ! function_exists('helsinki_blog_filter') ) {
+	function helsinki_blog_filter() {
+		$categories = helsinki_blog_filter_categories();
+		if ( ! $categories ) {
+			return;
+		}
+
+		get_template_part(
+			'partials/loop/filter',
+			null,
+			array(
+				'placeholder' => helsinki_theme_mod(
+					'helsinki_blog_filter',
+					'placeholder',
+					__('Select category', 'helsinki-universal')
+				),
+				'categories' => $categories,
+			)
+		);
+	}
+}
+
+function helsinki_blog_filter_categories() {
+	$config = helsinki_theme_mod( 'helsinki_blog_filter', 'categories' );
+	return $config ? get_terms( array(
+	    'taxonomy' => 'category',
+		'object_ids' => array_map( 'intval', $config ),
+	    'hide_empty' => false,
+	) ) : array();
+}
+
+/**
+  * Entry grid
+  */
 if ( ! function_exists('helsinki_entries_grid') ) {
 	function helsinki_entries_grid() {
 		get_template_part('partials/loop/grid');

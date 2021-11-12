@@ -158,12 +158,6 @@ function helsinki_content_article_container_class() {
 /**
   * Categories
   */
-if ( ! function_exists('helsinki_blog_filter') ) {
-	function helsinki_blog_filter() {
-		get_template_part('partials/loop/filter');
-	}
-}
-
 if ( ! function_exists('helsinki_category_featured_image') ) {
 	function helsinki_category_featured_image( int $id ) {
 		return get_term_meta( $id, 'featured_image', true );
