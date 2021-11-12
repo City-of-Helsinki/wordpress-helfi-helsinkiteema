@@ -60,6 +60,7 @@ function helsinki_files()
 			],
 		    'modules' => [
 				'load-more',
+				'menu',
 				'search',
 			],
 			'classes',
@@ -70,7 +71,6 @@ function helsinki_files()
 			'front-page',
 			'header',
 			'misc',
-			'menu',
 			'sidebar',
 			'social',
 			'widgets',
