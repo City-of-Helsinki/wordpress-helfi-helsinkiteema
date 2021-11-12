@@ -68,12 +68,19 @@ function helsinki_loop_entry() {
 	);
 }
 
+/**
+ * @deprecated Please use helsinki_load_more_button() instead
+ * @since 4.0.0 Marked deprecated in favor of helsinki_load_more_button()
+ * @see /functions/load-more.php
+ */
 function helsinki_loop_more() {
-	get_template_part(
-		'partials/loop/load-more',
-		null,
-		array()
-	);
+	trigger_error(
+        'The ' . __FUNCTION__ . ' function is deprecated. ' .
+        'Please use helsinki_load_more_button() instead.',
+        defined( 'E_USER_DEPRECATED' ) ? E_USER_DEPRECATED : E_USER_WARNING
+    );
+
+    return helsinki_load_more_button();
 }
 
 function helsinki_loop_sidebar() {

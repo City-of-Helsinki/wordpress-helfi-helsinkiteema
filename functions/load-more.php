@@ -1,5 +1,22 @@
 <?php
 
+function helsinki_load_more_button() {
+	global $wp_query;
+
+	if ( $wp_query->max_num_pages < 2 ) {
+		return;
+	}
+
+	get_template_part(
+		'partials/loop/load-more',
+		null,
+		apply_filters(
+			'helsinki_load_more_button_args',
+			helsinki_ajax_load_more_args( $wp_query )
+		)
+	);
+}
+
 function helsinki_ajax_load_more_args( WP_Query $wp_query ) {
   return array(
     'query'    => $wp_query->query,

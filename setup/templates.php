@@ -278,7 +278,7 @@ function helsinki_setup_templates() {
 
 		add_action('helsinki_search_posts', 'helsinki_loop_count', 10);
 		add_action('helsinki_search_posts', 'helsinki_loop_list', 20);
-		add_action('helsinki_search_posts', 'helsinki_loop_more', 30);
+		add_action('helsinki_search_posts', 'helsinki_load_more_button', 30);
 
 		add_action('helsinki_search_no_posts', 'helsinki_no_posts_notice');
 
@@ -309,7 +309,7 @@ function helsinki_setup_templates() {
 
 		add_action('helsinki_loop_posts', 'helsinki_loop_count', 10);
 		add_action('helsinki_loop_posts', 'helsinki_loop_list', 20);
-		add_action('helsinki_loop_posts', 'helsinki_loop_more', 30);
+		add_action('helsinki_loop_posts', 'helsinki_load_more_button', 30);
 
 		add_action('helsinki_entries_list', 'helsinki_loop_entry', 10);
 
