@@ -60,6 +60,7 @@ function helsinki_files()
 				'svg',
 			],
 		    'layout' => [
+				'entry',
 				'footer',
 				'front-page',
 				'header',
@@ -77,7 +78,6 @@ function helsinki_files()
 			],
 			'classes',
 			'content',
-			'entry',
 			'misc',
 		],
 		'integrations' => [],
