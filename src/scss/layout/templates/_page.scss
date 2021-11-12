@@ -3,8 +3,7 @@
 	&:not(.page-template-landing-page) {
 		.content {
 			&__container {
-				padding-top: spacing('layout-s');
-				padding-bottom: spacing('layout-s');
+				padding-bottom: spacing('layout-m');
 
 				@include breakpoint(l) {
 					padding-top: spacing('layout-xl');
@@ -13,5 +12,40 @@
 			}
 		}
 	}
+
+  &.has-post-thumbnail {
+
+    .content__thumbnail {
+      margin-bottom: spacing('layout-m');
+
+      @include breakpointMax('m') {
+        @include alignFull();
+      }
+    }
+
+    @include breakpoint('l') {
+      .hero {
+        margin-bottom: $koros-size;
+      }
+    }
+
+  }
+
+  &.has-table-of-contents,
+  &:not(.has-post-thumbnail) {
+
+    .content__container {
+      padding-top: spacing('layout-m');
+
+      @include breakpoint(l) {
+        padding-top: spacing('layout-xl');
+      }
+    }
+
+    .hero {
+      margin-bottom: $koros-size;
+    }
+
+  }
 
 }

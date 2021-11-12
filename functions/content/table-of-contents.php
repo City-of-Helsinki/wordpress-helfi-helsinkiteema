@@ -56,6 +56,13 @@ function helsinki_add_id_to_heading_block( $match ) {
 }
 
 /**
+  * Classes
+  */
+function helsinki_table_of_contents_body_class( array $classes ) {
+	return helsinki_add_body_class_has_n( $classes, 'table-of-contents' );
+}
+
+/**
   * Element
   */
 function helsinki_post_table_of_contents() {

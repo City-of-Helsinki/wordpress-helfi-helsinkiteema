@@ -8,6 +8,13 @@ function helsinki_featured_image_is_hidden() {
 }
 
 /**
+  * Classes
+  */
+function helsinki_featured_image_body_class( array $classes ) {
+	return helsinki_add_body_class_has_n( $classes, 'post-thumbnail' );
+}
+
+/**
   * Posts & Pages
   */
 function helsinki_content_article_thumbnail($post_type = null) {
