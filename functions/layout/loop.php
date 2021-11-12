@@ -27,7 +27,7 @@ if ( ! function_exists('helsinki_blog_filter') ) {
 
 function helsinki_blog_filter_categories() {
 	$config = helsinki_theme_mod( 'helsinki_blog_filter', 'categories' );
-	return $config ? get_terms( array(
+	return ($config && is_array($config)) ? get_terms( array(
 	    'taxonomy' => 'category',
 		'object_ids' => array_map( 'intval', $config ),
 	    'hide_empty' => false,
