@@ -324,7 +324,7 @@ function helsinki_front_page_feed_posts_source_text() {
 }
 
 function helsinki_front_page_feed_posts_count() {
-	return helsinki_theme_mod('helsinki_front_page_feed-posts', 'feed_posts_count', 10);
+	return 7;
 }
 
 function helsinki_front_page_feed_lifetime() {
