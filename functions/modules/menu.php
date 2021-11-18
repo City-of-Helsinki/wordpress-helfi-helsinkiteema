@@ -6,7 +6,7 @@ function helsinki_menu( string $location ) {
 }
 
 function helsinki_menu_config(string $location) {
-	switch ($location) {
+	switch ( $location ) {
 		case 'main_menu':
 			return array(
 				'theme_location'    => $location,
@@ -16,8 +16,10 @@ function helsinki_menu_config(string $location) {
 				'menu_class'        => 'menu menu--main',
 				'echo'              => false,
 				'fallback_cb'       => false,
-				'link_before'				=> '<span>',
-				'link_after'				=> '</span>',
+				'link_before'		=> '<span>',
+				'link_after'		=> '</span>',
+				'before'			=> '<div class="link-wrap">',
+				'after'				=> '</div>',
 				'item_spacing'      => 'discard',
 				'walker'            => new Artcloud_Menu_Walker(),
 			);

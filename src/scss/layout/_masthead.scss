@@ -284,15 +284,7 @@
 
 			a {
 				font-size: fontsize-body(l);
-			}
-
-			&:focus,
-			&:hover {
-
-				> a {
-					color: inherit;
-				}
-
+				color: $black;
 			}
 		}
 
@@ -303,20 +295,22 @@
 				margin-top: -5px;
 			}
 
-			> a {
+			> .link-wrap {
 				border-bottom: 4px solid transparent;
+			}
 
-				&:focus,
-				&:hover {
-					border-color: $black;
+			&:focus,
+			&:hover {
+				> .link-wrap {
+					border-bottom-color: $black;
 				}
 			}
 
 			&--parent {
 				&:focus,
 				&:hover {
-					> a {
-						border-color: $black;
+					> .link-wrap {
+						border-bottom-color: $black;
 					}
 				}
 			}
@@ -329,12 +323,15 @@
 		.menu--sub {
 
 			> .menu__item {
-				> a {
-					border-left: 4px solid transparent;
 
-					&:focus,
-					&:hover {
-						border-color: $black;
+				> .link-wrap {
+					border-left: 4px solid transparent;
+				}
+
+				&:focus,
+				&:hover {
+					> .link-wrap {
+						border-left-color: $black;
 					}
 				}
 			}
@@ -423,14 +420,17 @@
 			padding: 0;
 
 			> .menu__item {
-				border-bottom: $default-border-width $default-border-style colorBlackShade('10');
 
-				> a {
-					font-size: rem-calc(20);
+				> .link-wrap {
+					border-bottom: $default-border-width $default-border-style colorBlackShade('10');
 
-					> button {
-						.icon {
-							width: 32px;
+					a {
+						font-size: rem-calc(20);
+
+						> button {
+							.icon {
+								width: 32px;
+							}
 						}
 					}
 				}
@@ -440,10 +440,12 @@
 		.menu__item {
 			padding: 0;
 
-			> a {
-				font-size: font-size(16);
-				display: inline-block;
-				padding: spacing('s');
+			> .link-wrap {
+				a {
+					font-size: font-size(16);
+					display: inline-block;
+					padding: spacing('s');
+				}
 			}
 
 			&--parent {
@@ -485,13 +487,11 @@
 		padding-top: $global-padding;
 
 		.menu {
-
 			.menu__item {
 				> a {
 					padding: spacing(2-xs) spacing(s);
 				}
 			}
-
 		}
 	}
 
