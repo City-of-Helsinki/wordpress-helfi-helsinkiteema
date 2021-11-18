@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2021-11-12 08:14+0000\n"
+"PO-Revision-Date: 2021-11-18 11:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -26,7 +26,7 @@ msgstr "(Muokkaa kommenttia)"
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
 
-#: functions/entry.php:93
+#: functions/layout/loop.php:111
 msgid "All categories"
 msgstr "Kaikki kategoriat"
 
@@ -34,7 +34,7 @@ msgstr "Kaikki kategoriat"
 msgid "All posts"
 msgstr "Kaikki artikkelit"
 
-#: functions/entry.php:117
+#: functions/layout/loop.php:135
 msgid "All tags"
 msgstr "Kaikki avainsanat"
 
@@ -42,13 +42,17 @@ msgstr "Kaikki avainsanat"
 msgid "ArtCloud"
 msgstr "ArtCloud"
 
-#: functions/content.php:41 partials/content/parts/author.php:2
+#: functions/layout/view.php:38 partials/content/parts/author.php:2
 msgid "Author"
 msgstr "Kirjoittaja"
 
 #: partials/footer/back-top.php:3
 msgid "Back to top"
 msgstr "Takaisin ylös"
+
+#. Name of the template
+msgid "Basic page without sidebar"
+msgstr "Perussivu ilman sivupalkkia"
 
 #: customizer/config/choices.php:24
 msgid "Brick"
@@ -224,6 +228,11 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
+#: inc/filters.php:103
+msgctxt "default page template name"
+msgid "Basic page"
+msgstr "Perussivu"
+
 #: customizer/config/header.php:14
 msgid "Disable default city logo"
 msgstr "Poista kaupungin oletuslogo käytöstä"
@@ -262,28 +271,28 @@ msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
 "."
 
-#: setup/assets.php:173
+#: setup/assets.php:171
 msgctxt "Editor palette"
 msgid "Black"
 msgstr "Musta"
 
-#: setup/assets.php:166
+#: setup/assets.php:164
 #| msgid "Fog"
 msgctxt "Editor palette"
 msgid "Light"
 msgstr "Vaalea"
 
-#: setup/assets.php:185
+#: setup/assets.php:183
 msgctxt "Editor palette"
 msgid "Light Gray"
 msgstr "Vaalean harmaa"
 
-#: setup/assets.php:158
+#: setup/assets.php:156
 msgctxt "Editor palette"
 msgid "Primary"
 msgstr "Pääväri"
 
-#: setup/assets.php:179
+#: setup/assets.php:177
 msgctxt "Editor palette"
 msgid "White"
 msgstr "Valkoinen"
@@ -296,7 +305,7 @@ msgstr "Käytössä"
 msgid "Engel"
 msgstr "Engel"
 
-#: functions/social.php:58 customizer/config/choices.php:61
+#: customizer/config/choices.php:61 functions/modules/social.php:58
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -312,7 +321,7 @@ msgstr "Syötteen lyhytkoodi"
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
-#: functions/header.php:65 partials/header/mobile-links.php:7
+#: functions/layout/header.php:65 partials/header/mobile-links.php:7
 msgid "Feedback"
 msgstr "Palaute"
 
@@ -388,7 +397,7 @@ msgstr "Viimeinen"
 msgid "Last page"
 msgstr "Viimeinen sivu"
 
-#: functions/comments.php:32
+#: functions/modules/comments.php:32
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
@@ -400,11 +409,11 @@ msgstr "Linkkiteksti"
 msgid "Link url"
 msgstr "Linkin osoite"
 
-#: functions/social.php:68 customizer/config/choices.php:63
+#: customizer/config/choices.php:63 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: functions/comments.php:27
+#: functions/modules/comments.php:27
 #, php-format
 msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
 msgstr ""
@@ -443,11 +452,7 @@ msgstr "Yhtään artikkelia ei ole vielä julkaistu."
 msgid "No posts matching your search could be found."
 msgstr "Hakuasi vastaavia tuloksia ei löytynyt."
 
-#. Name of the template
-msgid "No sidebar"
-msgstr "Ei sivupalkkia"
-
-#: functions/content.php:45
+#: functions/layout/view.php:42
 msgid "Not Found"
 msgstr "Ei löytynyt"
 
@@ -551,7 +556,7 @@ msgstr "Tyhjennä"
 msgid "Scheme"
 msgstr "Tyyli"
 
-#: functions/content.php:43 partials/header/search.php:2
+#: functions/layout/view.php:40 partials/header/search.php:2
 #: partials/header/search.php:2
 msgid "Search"
 msgstr "Haku"
@@ -564,19 +569,19 @@ msgstr "Hakutulokset"
 msgid "Section title"
 msgstr "Osion otsikko"
 
-#: partials/loop/filter.php:2
+#: functions/layout/loop.php:20
 msgid "Select category"
 msgstr "Valitse kategoria"
 
-#: functions/social.php:59
+#: functions/modules/social.php:59
 msgid "Share on Facebook"
 msgstr "Jaa Facebookissa"
 
-#: functions/social.php:69
+#: functions/modules/social.php:69
 msgid "Share on LinkedIn"
 msgstr "Jaa LinkedInissä"
 
-#: functions/social.php:64
+#: functions/modules/social.php:64
 msgid "Share on Twitter"
 msgstr "Jaa Twitterissä"
 
@@ -585,11 +590,11 @@ msgstr "Jaa Twitterissä"
 msgid "Share this on"
 msgstr "Jaa"
 
-#: partials/loop/load-more.php:5
+#: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr "Näytä lisää"
 
-#: partials/loop/filter.php:23
+#: partials/loop/filter.php:4
 msgid "Show posts from a category"
 msgstr "Näytä artikkeleita kategoriasta"
 
@@ -635,12 +640,12 @@ msgstr "Etsimääsi sivua ei löytynyt."
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
 
-#: functions/front-page.php:319
+#: functions/layout/front-page.php:319
 #, php-format
 msgid "This feed is fetched from %s."
 msgstr "Tämä syöte haetaan %s:stä."
 
-#: inc/walkers.php:165
+#: inc/walkers.php:172
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr "Näytä tai piilota \"%s\" alavalikko"
@@ -649,7 +654,7 @@ msgstr "Näytä tai piilota \"%s\" alavalikko"
 msgid "Tram"
 msgstr "Spåra"
 
-#: functions/social.php:63 customizer/config/choices.php:62
+#: customizer/config/choices.php:62 functions/modules/social.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -674,11 +679,6 @@ msgstr "Näytettävät osiot"
 #: partials/content/not-found.php:5
 msgid "Whoops!"
 msgstr "Hupsis!"
-
-#. Name of the template
-#| msgid "Right sidebar"
-msgid "With sidebar"
-msgstr "Sivupalkin kanssa"
 
 #: partials/content/none.php:5
 msgid "Worse luck!"

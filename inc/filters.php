@@ -95,3 +95,11 @@ function helsinki_alignfull_block_hds_customizations( $block_content, $block ) {
 	return $block_content;
 }
 add_filter('render_block', 'helsinki_alignfull_block_hds_customizations', 10, 2);
+
+/**
+  * Page Templates
+  */
+function helsinki_basic_page_template_name( $label, $context ) {
+	return _x( 'Basic page', 'default page template name', 'helsinki-universal' );
+}
+add_filter( 'default_page_template_title', 'helsinki_basic_page_template_name', 10, 2 );
