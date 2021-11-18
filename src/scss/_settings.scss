@@ -107,7 +107,6 @@ $heading-word-wrap: break-word !default;
 
 /* ===== LINKS ===== */
 $anchor-color: $body-color !default;
-$anchor-color-alt: var(--primary-color-dark) !default;
 $anchor-text-decoration: underline !default;
 
 $anchor-active-font-weight: $global-font-weight-medium !default;
@@ -128,11 +127,6 @@ $paragraph-margin-bottom: var(--spacing-l) !default;
 /* ========== GENERAL ========== */
 $header-max-width: 1920px !default;
 $header-border: $default-border-width $default-border-style $light-gray !default;
-
-$header-anchor-color: $black !default;
-$header-anchor-color-alt: var(--primary-color-dark) !default;
-$header-anchor-text-decoration: none !default;
-$header-anchor-text-decoration-alt: none !default;
 
 /* ========== MENU ========== */
 
@@ -165,7 +159,6 @@ $content-article-width-with-sidebar: 63.5% !default;
 
 /* ===== GENERAL ===== */
 $entry-anchor-color: $anchor-color !default;
-$entry-anchor-color-alt: $anchor-color-alt !default;
 $entry-anchor-text-decoration: none !default;
 $entry-content-spacing: var(--spacing-m) !default;
 $entry-title-font-size: var(--fontsize-heading-m) !default;
@@ -186,8 +179,6 @@ $map-wrap-padding: 56.25% !default;
 /* ===== GENERAL ===== */
 $menu-item-font-size: $global-font-size !default;
 $menu-item-font-weight: $global-font-weight-normal !default;
-$menu-item-color: $black !default;
-$menu-item-color-alt: var(--primary-color-dark) !default;
 $menu-item-spacing: var(--spacing-xs) !default;
 $menu-item-text-decoration: none !default;
 $menu-item-text-transform: none !default;

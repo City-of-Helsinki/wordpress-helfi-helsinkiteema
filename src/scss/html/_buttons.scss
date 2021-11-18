@@ -21,10 +21,7 @@ button {
 	}
 
 	&:focus,
-	&:hover {
-		background: var(--primary-color-dark);
-		color: color('white');
-	}
+	&:hover {}
 
 	&--rounded {
 		border-radius: $default-border-radius;
@@ -36,22 +33,11 @@ button {
 	}
 
 	&--primary {
-		background-color: var(--primary-color);
-		color: color('white');
 
-		svg {
-			fill: var(--primary-color);
-		}
+		svg {}
 
 		&:focus,
-		&:hover {
-			background: var(--primary-color-dark);
-			color: color('white');
-
-			svg {
-				fill: color('white');
-			}
-		}
+		&:hover {}
 	}
 
 	&--secondary {

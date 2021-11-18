@@ -97,13 +97,6 @@
 
           a {
             display: block;
-            color: $anchor-color-alt;
-
-            &:focus,
-            &:hover {
-              background-color: $anchor-color-alt;
-              color: $white;
-            }
           }
         }
 
@@ -119,11 +112,6 @@
 
         a {
           color: $white;
-
-          &:focus,
-          &:hover {
-            color: $anchor-color-alt;
-          }
         }
 
         .wp-calendar-nav-prev {

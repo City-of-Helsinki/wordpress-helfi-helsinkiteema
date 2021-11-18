@@ -3,9 +3,8 @@ a {
   text-decoration: underline;
   transition: $default-transition;
 
-  &:focus,
   &:hover {
-    color: $anchor-color-alt;
+    text-decoration: none;
   }
 
   &:focus {

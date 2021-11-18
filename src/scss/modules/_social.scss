@@ -27,15 +27,6 @@
 			fill: $anchor-color;
 			width: 32px;
 		}
-
-		&:focus,
-		&:hover {
-			color: $anchor-color-alt;
-
-			svg {
-				fill: $anchor-color-alt;
-			}
-		}
 	}
 
 }

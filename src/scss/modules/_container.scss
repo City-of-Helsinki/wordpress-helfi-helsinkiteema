@@ -17,16 +17,6 @@
 .container__heading {
 	margin-top: 0;
 	margin-bottom: spacing(layout-m);
-
-	a {
-		color: $body-color;
-		text-decoration: $anchor-text-decoration;
-
-		&:focus,
-		&:hover {
-			color: $anchor-color-alt;
-		}
-	}
 }
 
 .flex-container {

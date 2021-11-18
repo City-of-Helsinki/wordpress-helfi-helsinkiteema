@@ -27,16 +27,11 @@
 	}
 
 	a {
-		color: $header-anchor-color;
-		text-decoration: $header-anchor-text-decoration;
+		color: $black;
+		text-decoration: none;
 
 		svg {
-			fill: $header-anchor-color;
-		}
-
-		&:focus,
-		&:hover {
-			color: $header-anchor-color-alt;
+			fill: $black;
 		}
 	}
 
@@ -69,7 +64,6 @@
 	}
 
 	a {
-		color: $header-anchor-color;
 		line-height: 1;
 		text-decoration: none;
 	}
@@ -118,16 +112,6 @@
 		@include breakpointMax(l) {
 			svg {
 				margin-left: 0;
-			}
-		}
-
-		&:focus,
-		&:hover,
-		&[aria-expanded="true"] {
-			color: $header-anchor-color-alt;
-
-			svg {
-				fill: $header-anchor-color-alt;
 			}
 		}
 

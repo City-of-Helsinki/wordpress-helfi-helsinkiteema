@@ -5,7 +5,6 @@
 	padding: 0;
 
 	a {
-		color: $menu-item-color;
     display: block;
 		font-size: $menu-item-font-size;
 		font-weight: $menu-item-font-weight;
@@ -31,13 +30,6 @@
         }
       }
     }
-
-    &:focus,
-		&:hover {
-      > .link-wrap {
-        color: $menu-item-color-alt;
-      }
-		}
 
     &.open,
     &--hover {
@@ -83,7 +75,6 @@
         justify-content: space-between;
 
         a {
-  				color: $menu-item-color;
   				font-size: $submenu-item-font-size;
   				font-weight: $submenu-item-font-weight;
   				text-transform: $submenu-item-text-transform;
@@ -95,15 +86,6 @@
 			> .menu--sub {
 				top : 0;
 				left: 100%;
-			}
-
-			&:focus,
-			&:hover {
-				> .link-wrap {
-          a {
-  					color: $menu-item-color-alt;
-  				}
-        }
 			}
 
 			&--active {
@@ -154,27 +136,6 @@
 			padding-top     : 0;
 			padding-bottom  : 0;
 			position        : static;
-
-			.menu__item {
-				> .link-wrap {
-          a {
-  					color: $menu-item-color;
-
-  					&:focus,
-  					&:hover {
-  						color: $menu-item-color-alt;
-  					}
-  				}
-        }
-
-				&--active {
-					> .link-wrap {
-            a {
-  						color: $menu-item-color-alt;
-  					}
-          }
-				}
-			}
 		}
 
 		.menu__item--active {

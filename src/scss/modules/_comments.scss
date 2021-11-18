@@ -44,14 +44,7 @@
     }
 
     &__date {
-      &__link {
-        color: $anchor-color-alt;
-
-        &:focus,
-        &:hover {
-          color: $anchor-color;
-        }
-      }
+      &__link {}
     }
 
   }
