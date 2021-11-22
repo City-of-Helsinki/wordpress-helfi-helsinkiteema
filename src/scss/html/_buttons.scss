@@ -1,28 +1,5 @@
-button {
-	text-decoration: none;
-	transition: $default-transition;
-
-	&:focus {
-		outline: $button-focus-outline;
-	}
-
-}
-
-.button {
-	background-color: $black;
-	color: $white;
-	text-decoration: none;
-	transition: $default-transition;
-	padding-left: 2rem;
-	padding-right: 2rem;
-
-	svg {
-		fill: color('white');
-	}
-
-	&:focus,
-	&:hover {}
-
+.button,
+.hds-button {
 	&--rounded {
 		border-radius: $default-border-radius;
 	}
@@ -30,34 +7,6 @@ button {
 	&--expanded {
 		width: 100%;
 		max-width: 100%;
-	}
-
-	&--primary {
-
-		svg {}
-
-		&:focus,
-		&:hover {}
-	}
-
-	&--secondary {
-		border-color: var(--primary-color);
-		background-color: color('white');
-		color: var(--primary-color);
-
-		svg {
-			fill: var(--primary-color);
-		}
-
-		&:focus,
-		&:hover {
-			background: var(--primary-color-light);
-			color: var(--primary-color-dark);
-
-			svg {
-				fill: var(--primary-color-dark);
-			}
-		}
 	}
 
 	&--white {
@@ -77,24 +26,6 @@ button {
 
 			svg {
 				fill: $white;
-			}
-		}
-	}
-
-	&--supplementary {
-		color: var(--primary-color);
-
-		svg {
-			fill: var(--primary-color);
-		}
-
-		&:focus,
-		&:hover {
-			background: var(--primary-color-light);
-			color: var(--primary-color-dark);
-
-			svg {
-				fill: var(--primary-color-dark);
 			}
 		}
 	}

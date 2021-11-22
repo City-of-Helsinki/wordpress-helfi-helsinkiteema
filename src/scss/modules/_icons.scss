@@ -1,6 +1,8 @@
 .icon {
 	background-color: transparent;
 	display: block;
+  fill: $anchor-color;
+  margin-left: 0;
 	transition: $default-transition;
 	width: 24px;
 
