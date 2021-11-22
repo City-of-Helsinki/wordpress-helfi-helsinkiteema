@@ -85,12 +85,12 @@ function helsinki_scheme_root_styles( string $scheme ) {
 	$colors = apply_filters(
 		'helsinki_scheme_root_styles_colors',
 		array(
-			'--primary-color' => $config['primary']['color'],
-			'--primary-color-light' => $config['primary']['light'],
-			'--primary-color-medium' => $config['primary']['medium'],
-			'--primary-color-dark' => $config['primary']['dark'],
-			'--secondary-color' => $config['secondary'],
-			'--accent-color' => $config['accent'],
+			'--primary-color' => $config['primary']['color'] ?? '--color-' . $scheme,
+			'--primary-color-light' => $config['primary']['light'] ?? '--color-' . $scheme . '-light',
+			'--primary-color-medium' => $config['primary']['medium'] ?? '--color-' . $scheme . '-medium-light',
+			'--primary-color-dark' => $config['primary']['dark'] ?? '--color-' . $scheme . '-dark',
+			'--secondary-color' => $config['secondary'] ?? '',
+			'--accent-color' => $config['accent'] ?? '',
 		),
 		$scheme,
 		$config
