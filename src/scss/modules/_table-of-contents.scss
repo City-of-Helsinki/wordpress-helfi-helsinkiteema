@@ -32,11 +32,14 @@
       a {
         font-size: fontsize-body('l');
         font-weight: $global-font-weight-medium;
-        line-height: 2.4;
       }
 
       + li {
-        margin-top: spacing('2-xs');
+        margin-top: spacing('s');
+
+        @include breakpoint('xl') {
+          font-size: spacing('m');
+        }
       }
 
     }
