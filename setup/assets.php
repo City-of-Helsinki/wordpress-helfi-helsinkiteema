@@ -96,9 +96,18 @@ function helsinki_scheme_root_styles( string $scheme ) {
 		$config
 	);
 
+	$use_hex = apply_filters(
+		'helsinki_scheme_root_styles_use_hex',
+		! empty( sanitize_hex_color( $colors['--primary-color'] ) )
+	);
+
 	$properties = array();
 	foreach ( $colors as $key => $value ) {
-		$properties[] = sprintf( '%s: %s;', esc_attr( $key ), sanitize_hex_color( $value ) );
+		$properties[] = sprintf(
+			'%s: %s;',
+			esc_attr($key),
+			$use_hex ? sanitize_hex_color( $value ) : 'var(' . esc_attr($value) . ')'
+		);
 	}
 
 	echo '<style>:root {' . implode( ' ', $properties ) . '}</style>';
