@@ -167,7 +167,7 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu {
 				<span class="screen-reader-text">%s</span>
 				%s
 			</button>',
-			'submenu-toggle-' . $item->ID,
+			'submenu-toggle-' . $item_id,
 			sprintf(
 				esc_html__( 'Toggle submenu for %s', 'helsinki-universal' ),
 				$title
