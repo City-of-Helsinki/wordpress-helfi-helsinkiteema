@@ -20,13 +20,6 @@
       display: block;
 	  	font-size: fontsize-body(l);
     }
-
-    &:focus,
-    &:hover {
-      > a {
-        color: var(--primary-color);
-      }
-    }
   }
 
   img {

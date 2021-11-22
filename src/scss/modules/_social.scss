@@ -20,12 +20,12 @@
 	}
 
 	.share-link {
-		color: $anchor-color;
-		text-decoration: none;
+    line-height: 1;
+    min-height: auto;
+    padding: 0;
 
 		svg {
-			fill: $anchor-color;
-			width: 32px;
+      margin: 0;
 		}
 	}
 

@@ -131,7 +131,7 @@
 	.widget li a,
 	.menu__item > a {
 		color: $white;
-		text-decoration: $anchor-text-decoration;
+		text-decoration: underline;
 
 		svg {
 			fill: $white;
@@ -139,11 +139,7 @@
 
 		&:focus,
 		&:hover {
-			color: var(--primary-color-dark);
-
-			svg {
-				fill: var(--primary-color-dark);
-			}
+			text-decoration: none;
 		}
 	}
 }

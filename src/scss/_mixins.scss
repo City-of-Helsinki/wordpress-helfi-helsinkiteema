@@ -59,7 +59,7 @@
 	text-decoration: none;
 
 	&:focus {
-		border-color: var(--primary-color);
+		border-color: $black;
 		outline: none;
 	}
 

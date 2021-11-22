@@ -42,12 +42,8 @@
 				display: inline-block;
 
 				a {
-					text-decoration: none;
-
 					&:focus,
 					&:hover {
-						text-decoration: $anchor-text-decoration;
-
 						svg {
 							fill: var(--primary-color-dark);
 						}

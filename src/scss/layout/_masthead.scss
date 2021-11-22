@@ -328,7 +328,7 @@
   * Mobile panel
   */
 #mobile-panel-toggle {
-	color: $mobilemenu-toggle-color;
+	color: $anchor-color;
 	cursor: pointer;
 
 	@include breakpoint('l') {
@@ -340,7 +340,7 @@
 	}
 
 	svg {
-		fill: $mobilemenu-toggle-color;
+		fill: $anchor-color;
 	}
 
 	&[aria-expanded="true"] {
@@ -350,16 +350,6 @@
 
 		.icon--cross {
 			display: block;
-		}
-	}
-
-	&:focus,
-	&:hover,
-	&:active {
-		color: $mobilemenu-toggle-color;
-
-		svg {
-			fill: $mobilemenu-toggle-color;
 		}
 	}
 }

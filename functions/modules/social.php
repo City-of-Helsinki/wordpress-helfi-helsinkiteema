@@ -88,7 +88,7 @@ if ( ! function_exists('helsinki_social_share_links') ) {
 
     foreach ($medias as $key => $settings) {
       $out[] = sprintf(
-        '<a class="share-link share-link--%1$s" href="%2$s" onclick="%3$s" title="%6$s">
+        '<a class="hds-button share-link share-link--%1$s" href="%2$s" onclick="%3$s" title="%6$s">
 					<span class="screen-reader-text">%5$s</span>
 					%4$s
 				</a>',
