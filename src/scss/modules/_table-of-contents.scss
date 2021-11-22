@@ -38,7 +38,7 @@
         margin-top: spacing('s');
 
         @include breakpoint('xl') {
-          font-size: spacing('m');
+          margin-top: spacing('m');
         }
       }
 
