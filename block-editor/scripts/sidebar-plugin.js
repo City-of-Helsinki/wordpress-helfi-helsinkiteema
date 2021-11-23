@@ -63,80 +63,116 @@
 		)
 	);
 
-    registerPlugin( 'helsinki-sidebar-plugin', {
-        render: function() {
-            return element( PluginSidebar,
-                {name: 'helsinki-sidebar-plugin', icon: logoIcon, title: 'Helsinki'},
-								element(
-									PanelBody,
-									{ title: 'Hero - Buttons', initialOpen: false},
-									element(PanelRow, {},
-										element( TextMetaField, {
-											fieldLabel: 'Button 1 url',
-											fieldType: 'url',
-											fieldName: 'hero_cta_url',
-										})
-									),
-									element(PanelRow, {},
-										element( TextMetaField, {
-											fieldLabel: 'Button 1 text',
-											fieldType: 'text',
-											fieldName: 'hero_cta_text',
-										})
-									),
-									element(PanelRow, {},
-										element( TextMetaField, {
-											fieldLabel: 'Button 2 url',
-											fieldType: 'url',
-											fieldName: 'hero_cta_2_url',
-										})
-									),
-									element(PanelRow, {},
-										element( TextMetaField, {
-											fieldLabel: 'Button 2 text',
-											fieldType: 'text',
-											fieldName: 'hero_cta_2_text',
-										})
-									)
-								),
-								HelsinkiUniversalSidebar.isFrontPage ? element(
-									PanelBody,
-									{ title: 'Hero - Layout', initialOpen: false},
-									element(PanelRow, {},
-										element( ToggleMetaField, {
-											fieldLabel: 'Full Width',
-											fieldName: 'hero_layout_full',
-										})
-									)
-								) : null,
-								! HelsinkiUniversalSidebar.isFrontPage ? element(
-									PanelBody,
-									{ title: 'Featured Image', initialOpen: false},
-									element(PanelRow, {},
-										element( ToggleMetaField, {
-											fieldLabel: 'Hide',
-											fieldName: 'hide_featured_image',
-										})
-									)
-								) : null,
-                element(
-									PanelBody,
-									{ title: 'Table of Contents', initialOpen: false},
-                  element(PanelRow, {},
-										element( ToggleMetaField, {
-											fieldLabel: 'Enabled',
-											fieldName: 'table_of_contents_enabled',
-										})
-									),
-									element(PanelRow, {},
-										element( TextMetaField, {
-											fieldLabel: 'Title',
-											fieldType: 'text',
-											fieldName: 'table_of_contents_title',
-										})
-									),
-								),
-            );
+  /**
+    * Meta config
+    */
+  const metaConfig = [
+    {
+      condition: true,
+      title: 'Hero - Layout',
+      rows: [
+        {
+          condition: HelsinkiUniversalSidebar.isFrontPage,
+          type: ToggleMetaField,
+          config: { fieldLabel: 'Full Width', fieldName: 'hero_layout_full' }
+        },
+        {
+          condition: ! HelsinkiUniversalSidebar.isFrontPage,
+          type: ToggleMetaField,
+          config: { fieldLabel: 'Disable Hero', fieldName: 'disable_page_hero' }
+        },
+      ]
+    },
+    {
+      condition: true,
+      title: 'Hero - Buttons',
+      rows: [
+        {
+          condition: true,
+          type: TextMetaField,
+          config: { fieldLabel: 'Button 1 url', fieldType: 'url', fieldName: 'hero_cta_url' }
+        },
+        {
+          condition: true,
+          type: TextMetaField,
+          config: { fieldLabel: 'Button 1 text', fieldType: 'url', fieldName: 'hero_cta_url' }
+        },
+        {
+          condition: true,
+          type: TextMetaField,
+          config: { fieldLabel: 'Button 2 url', fieldType: 'url', fieldName: 'hero_cta_2_url' }
+        },
+        {
+          condition: true,
+          type: TextMetaField,
+          config: { fieldLabel: 'Button 2 text', fieldType: 'url', fieldName: 'hero_cta_2_url' }
+        },
+      ],
+    },
+    {
+      condition: ! HelsinkiUniversalSidebar.isFrontPage,
+      title: 'Featured Image',
+      rows: [
+        {
+          condition: true,
+          type: ToggleMetaField,
+          config: { fieldLabel: 'Hide', fieldName: 'hide_featured_image' }
+        },
+      ]
+    },
+    {
+      condition: ! HelsinkiUniversalSidebar.isFrontPage,
+      title: 'Table of Contents',
+      rows: [
+        {
+          condition: true,
+          type: ToggleMetaField,
+          config: { fieldLabel: 'Enabled', fieldName: 'table_of_contents_enabled' }
+        },
+        {
+          condition: true,
+          type: TextMetaField,
+          config: { fieldLabel: 'Title', fieldType: 'text', fieldName: 'table_of_contents_title' }
+        },
+      ]
+    }
+  ];
+
+  function createMetaControls( config ) {
+    var elements = [];
+
+    for (var c = 0; c < config.length; c++) {
+      if ( ! config[c].condition ) {
+        continue;
+      }
+
+      var rows = [];
+      for (var r = 0; r < config[c].rows.length; r++) {
+        if ( ! config[c].rows[r].condition ) {
+          continue;
         }
-    } );
+
+        rows.push(
+          element( config[c].rows[r].type, config[c].rows[r].config )
+        );
+      }
+
+      if ( rows.length > 0 ) {
+        elements.push(
+          element( PanelBody, { title: config[c].title, initialOpen: false }, rows )
+        );
+      }
+    }
+
+    return elements;
+  }
+
+  registerPlugin( 'helsinki-sidebar-plugin', {
+      render: function() {
+          return element( PluginSidebar,
+              {name: 'helsinki-sidebar-plugin', icon: logoIcon, title: 'Helsinki'},
+							createMetaControls( metaConfig )
+          );
+      }
+  } );
 } )( window.wp );
