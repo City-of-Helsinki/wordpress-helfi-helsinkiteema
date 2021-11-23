@@ -10,7 +10,7 @@ function helsinki_enqueue_assets()
 	/**
 	  * Theme version
 	  */
-  $version = $debug ? time() : wp_get_theme()->get('Version');
+  	$version = $debug ? time() : wp_get_theme()->get('Version');
 
 	/**
 	  * Styles
@@ -30,9 +30,9 @@ function helsinki_enqueue_assets()
 	/**
 	  * Scripts
 	  */
-  wp_enqueue_script('jquery-core');
+  	wp_enqueue_script('jquery-core');
 	$theme_js = $debug ? 'scripts.js': 'scripts.min.js';
-  wp_enqueue_script(
+  	wp_enqueue_script(
 		'theme',
 		$assets . $theme_js,
 		array(),
@@ -43,9 +43,9 @@ function helsinki_enqueue_assets()
 	/**
 	  * Comments
 	  */
-  if (is_singular() && comments_open() && get_option('thread_comments')) {
-    wp_enqueue_script('comment-reply');
-  }
+	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
+		wp_enqueue_script('comment-reply');
+	}
 }
 
 /**
@@ -144,10 +144,6 @@ function helsinki_scheme_invert_color_body_class($classes) {
   * Editor palettes
   */
 function helsinki_scheme_editor_palette() {
-
-	// FIXME:
-	return array();
-
 	$config = helsinki_colors(
 		apply_filters(
 			'helsinki_scheme',
@@ -160,19 +156,11 @@ function helsinki_scheme_editor_palette() {
 	);
 
 	$palette = array();
-	if ( ! empty( $config['color'] ) ) {
+	if ( ! empty( $config['primary']['color'] ) ) {
 		$palette[] = array(
             'name' => esc_attr_x( 'Primary', 'Editor palette','helsinki-universal' ),
             'slug' => 'primary',
-            'color' => $config['color'],
-        );
-	}
-
-	if ( ! empty( $config['light'] ) ) {
-		$palette[] = array(
-            'name' => esc_attr_x( 'Light', 'Editor palette','helsinki-universal' ),
-            'slug' => 'light',
-            'color' => $config['light'],
+            'color' => $config['primary']['color'],
         );
 	}
 
