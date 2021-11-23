@@ -24,6 +24,11 @@ function helsinki_content_article_container_class() {
 /**
   * Header
   */
+
+function helsinki_page_hero_is_disabled() {
+	return get_post_meta( get_queried_object_id(), 'disable_page_hero', true ) ? true : false;
+}
+
 function helsinki_content_article_header() {
 	get_template_part('partials/content/parts/header');
 }
