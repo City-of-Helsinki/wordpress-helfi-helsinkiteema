@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "settings": {
+    "blocks": {
+      "core/button": {
+        "border": {
+          "customRadius": false
+        },
+        "color": {
+          "palette": [],
+          "duotone": [],
+          "gradients": [],
+					"custom": false,
+					"customGradient": false,
+          "customDuotone": false
+				}
+      }
+    },
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "100%"
+    },
+    "typography": {
+      "fontSizes": [],
+      "customFontSize": false,
+      "customLineHeight": false,
+      "dropCap": false
+    }
+  }
+}
