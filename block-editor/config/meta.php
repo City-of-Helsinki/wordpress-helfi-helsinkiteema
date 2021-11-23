@@ -6,6 +6,16 @@ function helsinki_block_editor_meta_config() {
 		array(
 			array(
 				'type' => 'page',
+				'key' => 'disable_page_hero',
+				'args' => array(
+					'show_in_rest' => true,
+					'single' => true,
+					'type' => 'boolean',
+					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_bool',
+				),
+			),
+			array(
+				'type' => 'page',
 				'key' => 'hero_cta_url',
 				'args' => array(
 					'show_in_rest' => true,
