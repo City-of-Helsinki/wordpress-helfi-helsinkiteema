@@ -1,0 +1,47 @@
+.lightbox {
+  background-color: rgba(0,0,0,.6);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  .lightbox__content {
+    @include absoluteCenter();
+  }
+
+  .lightbox__navigation {
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .lightbox__close {
+    color: $white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%, -100%);
+  }
+
+  .lightbox__images {
+
+    figure {
+      margin-bottom: 0;
+
+      img {
+        display: block;
+      }
+
+      figcaption {
+        background-color: $white;
+        padding: 1rem 1rem 0;
+      }
+
+    }
+
+  }
+
+}
