@@ -260,14 +260,12 @@ function helsinkiGalleryLightbox( config ) {
 
 	function createCloseButton( lightboxId ) {
 		// Element
-		let button = document.createElement('button');
+		let button = createContainer( 'button', ['lightbox__close', 'button-reset'] );
 
 		// Attributes
 		button.id = 'close-' + lightboxId;
 		button.type = 'button';
 		button.innerHTML = strings.close;
-
-		button.classList.add( 'lightbox__close' );
 
 		button.setAttribute( 'aria-controls', lightboxId );
 		toggleAriaExpanded( button, false );
@@ -290,12 +288,11 @@ function helsinkiGalleryLightbox( config ) {
 
 	function createNavigationItem( type, text, onClick ) {
 		// Element
-		let button = document.createElement('button');
+		let button = createContainer( 'button', ['lightbox__' + type, 'hds-button', 'hds-button--small'] );
 
 		// Attributes
 		button.type = 'button';
 		button.innerHTML = text;
-		button.classList.add( 'lightbox__' + type );
 
 		// Events
 		button.addEventListener('click', onClick);
