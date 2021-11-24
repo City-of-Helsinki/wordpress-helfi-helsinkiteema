@@ -107,6 +107,8 @@ function helsinkiGalleryLightbox( config ) {
 		for ( let g = 0; g < galleries.length; g++ ) {
 			initLightbox( galleries[g] );
 		}
+
+		document.addEventListener('keydown', closeOnEsc);
 	}
 
 	function initLightbox( gallery ) {
@@ -122,6 +124,8 @@ function helsinkiGalleryLightbox( config ) {
 		initGalleryImages( figures );
 
 		let lightbox = createLightbox( gallery, figures );
+		lightbox.addEventListener( 'click', clickLightbox );
+
 		gallery.setAttribute( 'data-lightbox-id', lightbox.id );
 		gallery.after( lightbox );
 
@@ -152,7 +156,29 @@ function helsinkiGalleryLightbox( config ) {
 		);
 	}
 
-	function clickClose( event ) {
+	function clickLightbox( event ) {
+		if ( event.target === currentActive ) {
+			closeLightbox( currentActive );
+		}
+	}
+
+	function closeOnEsc( event ) {
+		if ( ! currentActive ) {
+			return;
+		}
+		event = event || window.event;
+		let isEscape = false;
+		if ( 'key' in event ) {
+			isEscape = ('Escape' === event.key || 'Esc' === event.key);
+		} else {
+			isEscape = (27 === event.keyCode);
+		}
+		if ( isEscape ) {
+			closeLightbox( currentActive );
+		}
+	}
+
+	function clickCloseButton( event ) {
 		event.preventDefault();
 		closeLightbox( event.target.closest('.lightbox') );
 	}
@@ -207,7 +233,6 @@ function helsinkiGalleryLightbox( config ) {
 			targetImage = clickedImage ? lightboxFigure( lightbox, clickedImage.src ) : null;
 
 		switchActiveImage( currentActiveImage, targetImage );
-
 		toggleHidden( lightbox, false );
 		toggleActive( lightbox, true );
 		toggleAriaExpanded( lightboxCloseButton( lightbox ), true );
@@ -219,12 +244,7 @@ function helsinkiGalleryLightbox( config ) {
 		toggleHidden( lightbox, true );
 		toggleActive( lightbox, false );
 		toggleAriaExpanded( lightboxCloseButton( lightbox ), false );
-
-		let currentActiveImage = lightboxActiveImage( lightbox );
-		if ( currentActiveImage ) {
-			toggleActive( currentActiveImage, false );
-		}
-
+		switchActiveImage( lightboxActiveImage( lightbox ), null );
 		currentActive = null;
 	}
 
@@ -288,29 +308,32 @@ function helsinkiGalleryLightbox( config ) {
 	  */
 	function createLightbox( gallery, figures ) {
 		// Element
-		let lightbox = createContainer( 'div', ['lightbox', 'lightbox--gallery'] );
+		let lightboxWrap = createContainer( 'div', ['lightbox'] );
+		let content = createContainer( 'div', ['lightbox__content'] );
 		let title = createHeading( 'h2', strings.lightboxTitle );
 
 		// Attributes
 		let lightboxId = generateLightboxId( gallery );
-		lightbox.id = lightboxId;
+		lightboxWrap.id = lightboxId;
 
 		title.id = lightboxId + '-title';
 		title.classList.add('screen-reader-text');
 
-		lightbox.setAttribute( 'role', 'dialog' );
-		lightbox.setAttribute( 'aria-modal', 'true' );
-		lightbox.setAttribute( 'aria-labelledby', title.id );
-		toggleHidden( lightbox, true );
+		lightboxWrap.setAttribute( 'role', 'dialog' );
+		lightboxWrap.setAttribute( 'aria-modal', 'true' );
+		lightboxWrap.setAttribute( 'aria-labelledby', title.id );
+		toggleHidden( lightboxWrap, true );
 
 		// Children
-		lightbox.append( title );
-		lightbox.append( createImages( figures ) );
-		lightbox.append( createNavigation() );
-		lightbox.append( createCloseButton( lightboxId ) );
+		content.append( title );
+		content.append( createImages( figures ) );
+		content.append( createNavigation() );
+		content.append( createCloseButton( lightboxId ) );
+
+		lightboxWrap.append( content );
 
 		// Output
-		return lightbox;
+		return lightboxWrap;
 	}
 
 	function createContainer( tag, classNames ) {
@@ -340,7 +363,7 @@ function helsinkiGalleryLightbox( config ) {
 		toggleAriaExpanded( button, false );
 
 		// Events
-		button.addEventListener('click', clickClose);
+		button.addEventListener('click', clickCloseButton);
 
 		// Output
 		return button;
