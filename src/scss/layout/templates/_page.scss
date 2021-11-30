@@ -42,8 +42,10 @@
       }
     }
 
-    .hero {
-      margin-bottom: $koros-size;
+    &:not(.home) {
+      .hero {
+        margin-bottom: $koros-size;
+      }
     }
 
   }
