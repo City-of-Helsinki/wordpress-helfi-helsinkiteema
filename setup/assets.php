@@ -40,12 +40,37 @@ function helsinki_enqueue_assets()
 		true
 	);
 
+	wp_localize_script(
+		'theme',
+		'helsinkiTheme',
+		helsinki_script_localization()
+	);
+
 	/**
 	  * Comments
 	  */
 	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
 		wp_enqueue_script('comment-reply');
 	}
+}
+
+function helsinki_script_localization() {
+	return apply_filters(
+		'helsinki_script_localization',
+		array(
+			'strings' => array(
+				'close' => esc_html__( 'Close', 'helsinki-universal' ),
+				'next' => esc_html__( 'Next', 'helsinki-universal' ),
+				'prev' => esc_html__( 'Previous', 'helsinki-universal' ),
+				'lightboxTitle' => esc_html__( 'Gallery images', 'helsinki-universal' ),
+			),
+			'icons' => array(
+				'close' => helsinki_get_svg_icon( 'cross' ),
+				'next' => helsinki_get_svg_icon( 'angle-right' ),
+				'prev' => helsinki_get_svg_icon( 'angle-left' ),
+			),
+		)
+	);
 }
 
 /**

@@ -8,14 +8,33 @@
   z-index: 10;
 
   .lightbox__content {
+    background-color: $white;
     @include absoluteCenter();
+    width: 90%;
+
+    &.has-navigation {
+      .lightbox__images {
+        figure {
+          figcaption {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
   }
 
   .lightbox__navigation {
-    background-color: $white;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+
+    .hds-button {
+      padding: .5rem;
+
+      svg {
+        margin-left: 0;
+      }
+    }
   }
 
   .lightbox__close {
@@ -23,7 +42,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(100%, -100%);
+    transform: translateY(-100%);
+
+    svg {
+      fill: $white;
+    }
   }
 
   .lightbox__images {
@@ -36,8 +59,7 @@
       }
 
       figcaption {
-        background-color: $white;
-        padding: 1rem 1rem 0;
+        padding: 1rem;
       }
 
     }

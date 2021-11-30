@@ -2,7 +2,7 @@ function helsinkiGalleryLightbox( config ) {
 
 	'use strict';
 
-	const {strings} = config;
+	const {strings, icons} = config;
 
 	var currentActive = null;
 
@@ -167,6 +167,11 @@ function helsinkiGalleryLightbox( config ) {
 		if ( newImage ) {
 			toggleActive( newImage, true );
 			toggleHidden( newImage, false );
+
+      adjustContainerMaxWidth(
+        currentGalleryContent( newImage ),
+        newImage.firstElementChild.naturalWidth
+      );
 		}
 	}
 
@@ -191,6 +196,10 @@ function helsinkiGalleryLightbox( config ) {
 
 	function currentGallery( galleryItem ) {
 		return galleryItem.closest( '.wp-block-gallery' );
+	}
+
+	function currentGalleryContent( galleryItem ) {
+		return galleryItem.closest( '.lightbox__content' );
 	}
 
 	function currentGalleryLightBox( gallery ) {
@@ -237,7 +246,10 @@ function helsinkiGalleryLightbox( config ) {
 		// Children
 		content.append( title );
 		content.append( createImages( figures ) );
-		content.append( createNavigation() );
+    if ( figures.length > 1 ) {
+      content.append( createNavigation() );
+      content.classList.add('has-navigation');
+    }
 		content.append( createCloseButton( lightboxId ) );
 
 		lightboxWrap.append( content );
@@ -260,12 +272,13 @@ function helsinkiGalleryLightbox( config ) {
 
 	function createCloseButton( lightboxId ) {
 		// Element
-		let button = createContainer( 'button', ['lightbox__close', 'button-reset'] );
+		let button = createContainer( 'button', ['lightbox__close', 'button-reset'] ),
+        screenReaderText = createContainer( 'span', ['screen-reader-text'] );
 
 		// Attributes
 		button.id = 'close-' + lightboxId;
 		button.type = 'button';
-		button.innerHTML = strings.close;
+		screenReaderText.innerHTML = strings.close;
 
 		button.setAttribute( 'aria-controls', lightboxId );
 		toggleAriaExpanded( button, false );
@@ -274,30 +287,35 @@ function helsinkiGalleryLightbox( config ) {
 		button.addEventListener('click', clickCloseButton);
 
 		// Output
+    button.append(screenReaderText);
+    button.innerHTML += icons.close;
 		return button;
 	}
 
 	function createNavigation() {
 		let container = createContainer( 'div', ['lightbox__navigation'] );
 
-		container.append( createNavigationItem( 'prev', strings.prev, clickPrevious ) );
-		container.append( createNavigationItem( 'next', strings.next, clickNext ) );
+		container.append( createNavigationItem( 'prev', icons.prev, strings.prev, clickPrevious ) );
+		container.append( createNavigationItem( 'next', icons.next, strings.next, clickNext ) );
 
 		return container;
 	}
 
-	function createNavigationItem( type, text, onClick ) {
+	function createNavigationItem( type, icon, text, onClick ) {
 		// Element
-		let button = createContainer( 'button', ['lightbox__' + type, 'hds-button', 'hds-button--small'] );
+		let button = createContainer( 'button', ['lightbox__' + type, 'hds-button', 'hds-button--small'] ),
+        screenReaderText = createContainer( 'span', ['screen-reader-text'] );
 
 		// Attributes
 		button.type = 'button';
-		button.innerHTML = text;
+		screenReaderText.innerHTML = text;
 
 		// Events
 		button.addEventListener('click', onClick);
 
 		// Output
+    button.append(screenReaderText);
+    button.innerHTML += icon;
 		return button;
 	}
 
@@ -382,6 +400,10 @@ function helsinkiGalleryLightbox( config ) {
 		}
 	}
 
+  function adjustContainerMaxWidth( container, maxWidth ) {
+    container.style.maxWidth = maxWidth + 'px';
+  }
+
 	/**
 	  * Module
 	  */
@@ -390,14 +412,7 @@ function helsinkiGalleryLightbox( config ) {
 	};
 }
 
-const HelsinkiGalleryLightbox = helsinkiGalleryLightbox({
-	strings: {
-		close: "Close",
-		next: "Next",
-		prev: "Previous",
-		lightboxTitle: "Gallery images",
-	}
-});
+const HelsinkiGalleryLightbox = helsinkiGalleryLightbox( helsinkiTheme );
 
 HelsinkiGalleryLightbox.init(
 	document.querySelectorAll( '.wp-block-gallery' )
