@@ -1,20 +1,29 @@
-@each $heading, $font-size in $heading-font-sizes {
-  #{$heading} {
-		color: $heading-color;
-    font-size: $font-size;
-    font-family: $heading-font-family;
-    font-weight: $heading-font-weight;
-    line-height: $heading-line-height;
-    letter-spacing: $heading-letter-spacing;
-		margin-top: $heading-margin-top;
-    margin-bottom: $heading-margin-bottom;
-    word-wrap: $heading-word-wrap;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  hyphens: auto;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
+  margin-top: $heading-margin-top;
+  margin-bottom: $heading-margin-bottom;
+  word-break: $heading-word-wrap;
 }
 
 h5,
 h6 {
 	line-height: 1.2;
+}
+
+@each $heading, $font-size in $heading-font-sizes {
+  #{$heading} {
+    font-size: $font-size;
+  }
 }
 
 @each $breakpoint, $size in $breakpoints {
