@@ -16,6 +16,10 @@
   @include breakpoint('l') {
     .alignfull {
       margin-left: calc(78.5% - 50vw);
+
+      + .hds-koros {
+        margin-left: calc(78.5% - 50vw);
+      }
     }
   }
 
