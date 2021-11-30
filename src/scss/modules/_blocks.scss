@@ -11,6 +11,16 @@
 	}
 }
 
+.has-sidebar {
+
+  @include breakpoint('l') {
+    .alignfull {
+      margin-left: calc(78.5% - 50vw);
+    }
+  }
+
+}
+
 .wp-block-group {
 
 	&.alignfull {
