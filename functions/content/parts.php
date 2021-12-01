@@ -25,8 +25,14 @@ function helsinki_content_article_container_class() {
   * Header
   */
 
+/**
+* @deprecated Please use helsinki_hero_is_disabled() instead
+* @since 4.0.0 Marked deprecated in favor of helsinki_hero_is_disabled()
+* @see /functions/hero.php
+*/
 function helsinki_page_hero_is_disabled() {
-	return get_post_meta( get_queried_object_id(), 'disable_page_hero', true ) ? true : false;
+	helsinki_deprecation_notice( __FUNCTION__, 'helsinki_hero_is_disabled()' );
+	return helsinki_hero_is_disabled( get_queried_object_id() );
 }
 
 function helsinki_content_article_header() {

@@ -132,7 +132,7 @@
         {
           condition: true,
           type: TextMetaField,
-          config: { fieldLabel: 'Button 1 text', fieldType: 'url', fieldName: 'hero_cta_url' }
+          config: { fieldLabel: 'Button 1 text', fieldType: 'url', fieldName: 'hero_cta_text' }
         },
         {
           condition: true,
@@ -142,7 +142,7 @@
         {
           condition: true,
           type: TextMetaField,
-          config: { fieldLabel: 'Button 2 text', fieldType: 'url', fieldName: 'hero_cta_2_url' }
+          config: { fieldLabel: 'Button 2 text', fieldType: 'url', fieldName: 'hero_cta_2_text' }
         },
       ],
     },

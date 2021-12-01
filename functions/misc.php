@@ -1,5 +1,12 @@
 <?php
 
+function helsinki_deprecation_notice( string $deprecated, string $new ) {
+	trigger_error(
+		"The {$deprecated} function is deprecated. Please use {$new} instead.",
+	    defined( 'E_USER_DEPRECATED' ) ? E_USER_DEPRECATED : E_USER_WARNING
+	);
+}
+
 if ( ! function_exists('helsinki_heading') ) {
   function helsinki_heading(int $level, string $text, string $id = '', $classes = array()) {
     if ( $level < 1 ) {
@@ -57,6 +64,9 @@ function helsinki_first_image_from_string( string $text = '' ) {
 	return ! empty( $matches[0][0] ) ? $matches[0][0] : '';
 }
 
+/**
+  * Conditionals
+  */
 function helsinki_id_is_front_page( $id = null ) {
 	if ( $id ) {
 		$front_page_id = apply_filters(
@@ -66,4 +76,35 @@ function helsinki_id_is_front_page( $id = null ) {
 		return absint( $front_page_id ) === absint( $id );
 	}
 	return false;
+}
+
+function helsinki_is_landing_page() {
+	return is_page_template( 'template/landing-page.php' );
+}
+
+/**
+  * Element attributes
+  */
+function helsinki_element_styles( array $styles, bool $with_style = false ) {
+	if ( ! $styles ) {
+		return;
+	}
+
+	$css = array();
+	foreach ($styles as $key => $value) {
+		$css[] = sprintf(
+			'%s: %s;',
+			sanitize_key( $key ),
+			filter_var( $key, FILTER_VALIDATE_URL ) ? esc_url( $value ) : esc_attr( $value )
+		);
+	}
+
+	return $with_style ? 'style="' . implode(' ', $css) . '"' : implode(' ', $css);
+}
+
+/**
+  * Image sizes
+  */
+function helsinki_image_size_full() {
+	return 'full';
 }

@@ -85,12 +85,7 @@ function helsinki_loop_entry() {
  * @see /functions/load-more.php
  */
 function helsinki_loop_more() {
-	trigger_error(
-        'The ' . __FUNCTION__ . ' function is deprecated. ' .
-        'Please use helsinki_load_more_button() instead.',
-        defined( 'E_USER_DEPRECATED' ) ? E_USER_DEPRECATED : E_USER_WARNING
-    );
-
+	helsinki_deprecation_notice( __FUNCTION__, 'helsinki_load_more_button()' );
     return helsinki_load_more_button();
 }
 

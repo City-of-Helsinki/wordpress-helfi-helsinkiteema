@@ -21,11 +21,7 @@ function helsinki_front_page_section( string $section ) {
 		}
 	}
 
-	get_template_part(
-		"partials/front-page/{$section}",
-		null,
-		$data
-	);
+	get_template_part( "partials/front-page/{$section}", null, $data );
 }
 
 function helsinki_front_page_section_data( string $section ) {
@@ -103,108 +99,7 @@ function helsinki_front_page_available_sections() {
   * Hero
   */
 function helsinki_front_page_hero() {
-	helsinki_front_page_section('hero');
-}
-
-function helsinki_front_page_hero_is_full_width() {
-	$id = get_option('page_on_front', 0);
-	return $id && get_post_meta( $id, 'hero_layout_full', true ) ? true : false;
-}
-
-function helsinki_front_page_hero_image_full_size() {
-	return 'full';
-}
-
-function helsinki_front_page_hero_image_styles() {
-	$styles = apply_filters(
-		'helsinki_front_page_hero_image_styles',
-		array()
-	);
-
-	if ( $styles ) {
-		$css = '';
-
-		foreach ($styles as $key => $value) {
-			$css .= sprintf(
-				'%s: %s;',
-				sanitize_key( $key ),
-				esc_attr( $value )
-			);
-		}
-
-		echo 'style="' . $css . '"';
-	}
-}
-
-function helsinki_front_page_hero_background_image( $styles ) {
-	$url = get_the_post_thumbnail_url(
-		get_option('page_on_front', 0),
-		helsinki_front_page_hero_image_full_size()
-	);
-
-	if ( $url ) {
-		$styles = array_merge(
-			$styles,
-			array(
-				'background-image' => 'url(' . $url . ')',
-				'background-position' => 'center',
-				'background-size' => 'cover',
-			)
-		);
-	}
-
-	return $styles;
-}
-
-function helsinki_front_page_hero_image($args = array()) {
-	get_template_part(
-		'partials/front-page/hero/image',
-		null,
-		$args
-	);
-}
-
-function helsinki_front_page_hero_image_element() {
-	helsinki_hero_image(
-		'helsinki_front_page_hero_image_size',
-		'large',
-		! helsinki_front_page_hero_is_full_width()
-	);
-}
-
-function helsinki_front_page_hero_content($args = array()) {
-	get_template_part(
-		'partials/front-page/hero/content',
-		null,
-		$args
-	);
-}
-
-function helsinki_front_page_hero_title($args = array()) {
-	get_template_part(
-		'partials/front-page/hero/title',
-		null,
-		$args
-	);
-}
-
-function helsinki_front_page_hero_excerpt($args = array()) {
-	get_template_part(
-		'partials/front-page/hero/excerpt',
-		null,
-		$args
-	);
-}
-
-function helsinki_front_page_hero_cta() {
-	helsinki_content_article_call_to_action();
-}
-
-function helsinki_front_page_hero_koros() {
-	helsinki_koros(
-		'front_page',
-		apply_filters( 'helsinki_front_page_hero_koros_flipped', true )
-	);
+	helsinki_front_page_section( 'hero' );
 }
 
 /**

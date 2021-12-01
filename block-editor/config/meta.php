@@ -80,6 +80,7 @@ function helsinki_block_editor_meta_config() {
 					'show_in_rest' => true,
 					'single' => true,
 					'type' => 'string',
+					'default' => 'image-left',
 					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_string',
 				),
 			),

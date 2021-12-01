@@ -66,6 +66,7 @@ function helsinki_files()
 				'entry',
 				'footer',
 				'front-page',
+				'front-page-depracated',
 				'header',
 				'loop',
 				'sidebar',
