@@ -26,12 +26,11 @@ function helsinki_block_editor_scripts() {
     	)
 	);
 
-	$front_page_id = apply_filters( 'helsinki_polylang_active', false ) ? pll_get_post( get_option('page_on_front'), pll_current_language() ) : get_option('page_on_front');
-
 	wp_add_inline_script(
 		'helsinki-sidebar-plugin',
 		'const HelsinkiUniversalSidebar = ' . json_encode( array(
-	    'isFrontPage' => ! empty( $_GET['post'] ) ? absint($front_page_id) === absint($_GET['post']) : false,
+	    	'isFrontPage' => helsinki_id_is_front_page( $_GET['post'] ?? 0 ),
+			'heroStyleOptions' => helsinki_block_editor_hero_style_options(),
 		) ),
 		'before'
 	);
