@@ -52,9 +52,9 @@ function helsinki_content_article_header_container_class() {
 	}
 
 	helsinki_element_classes(
-    'content_article_header_container',
-    $class
-  );
+		'content_article_header_container',
+		$class
+	);
 }
 
 /**
