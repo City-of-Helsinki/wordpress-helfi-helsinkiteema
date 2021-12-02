@@ -1,104 +1,19 @@
 .hero {
 	background-color: var(--primary-color);
-	display: flex;
-	flex-direction: column;
 	width: 100%;
 
 	@include breakpoint('l') {
 		margin-bottom: spacing('m');
 	}
 
-  &.has-image-left,
-  &.has-image-right {
-
-    .hero__container {
-      display: flex;
-      align-items: center;
-    }
-
-  }
-
-  &.has-image-left {
-    @include breakpoint('l') {
-      .hero__container {
-        flex-direction: row-reverse;
-
-        > * {
-          + * {
-            margin-left: 0;
-            margin-right: spacing(layout-m);
-          }
-        }
-      }
-    }
-  }
-
-  &.has-diagonal {
-    @include breakpoint('xl') {
-      position: relative;
-      overflow: hidden;
-
-      .hero__container {
-        position: relative;
-        padding-top: spacing('layout-l');
-        padding-bottom: spacing('layout-l');
-        z-index: 2;
-
-        .hero__title {
-          max-width: unset;
-        }
-
-        .hero__excerpt {
-          max-width: 480px;
-        }
-      }
-
-      .diagonal-overlay {
-        background-color: var(--primary-color);
-        width: 62%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: rotate(-45deg);
-        transform-origin: bottom left;
-        z-index: 1;
-
-        .hds-koros {
-          background-color: transparent;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-        }
-      }
-
-      .hero__thumbnail {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 60%;
-      }
-    }
-  }
-
 	&__content {
 		> * {
 			margin-bottom: 0;
-
-			@include breakpoint('l') {
-				max-width: percentage(math.div(8,12));
-			}
 		}
 
 		.hero__title,
 		.content__title {
 			margin-top: 0;
-
-			@include breakpoint('l') {
-				max-width: percentage(math.div(9,12));
-			}
 		}
 
 		.excerpt {
@@ -106,7 +21,7 @@
 		}
 
 		.buttons {
-			margin-top: spacing('layout-s');
+			margin-top: spacing('l');
 
 			.button {
 				margin-right: spacing('s');
@@ -134,20 +49,15 @@
 		}
 	}
 
-	.hero__container {
-		> * {
-			width: 100%;
-		}
-	}
-
 	.hds-container {
 		padding-top: spacing('layout-xl');
 		padding-bottom: spacing('s');
 	}
 
-	&.has-thumbnail {
+  &.has-image-left,
+  &.has-image-right {
 
-		> .hero__thumbnail {
+    > .hero__thumbnail {
 			background-color: $body-background-color;
 
 			@include breakpointMax(l) {
@@ -163,41 +73,116 @@
 			}
 		}
 
-		.hero__container {
+    > .hero__container {
 			.hero__thumbnail {
 				display: none;
 			}
 		}
 
-		@include breakpoint('l') {
+    @include breakpoint('l') {
+      > .hero__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-      &.has-image-left,
-      &.has-image-right {
-        > .hero__thumbnail {
-  				display: none;
+        > * {
+          width: calc( 50% - 1rem );
+        }
+
+        .hero__thumbnail {
+  				display: block;
   			}
       }
 
-			.hero__container {
-				justify-content: space-between;
+      > .hero__thumbnail {
+        display: none;
+      }
+    }
 
-				> * {
-					width: 50%;
+    @include breakpoint('xl') {
+      > .hero__container {
+        > * {
+          width: calc( 50% - 1.5rem );
+        }
+      }
+    }
 
-					+ * {
-						margin-left: spacing(layout-m);
-					}
-				}
+  } // has-image-left has-image-right
 
-				.hero__thumbnail {
-					display: block;
-				}
-			}
-		}
+  &.has-image-left {
+    @include breakpoint('l') {
+      .hero__container {
+        flex-direction: row-reverse;
+      }
+    }
+  } // has-image-left
 
-	}
+  &.has-diagonal {
+    @include breakpoint('l') {
+      position: relative;
+      overflow: hidden;
 
-	&.is-full-width {
+      .hero__container {
+        position: relative;
+        padding-top: spacing('layout-l');
+        padding-bottom: spacing('layout-l');
+        z-index: 2;
+
+        @include breakpoint('l') {
+      	   .hero__content {
+             max-width: 50%;
+           }
+      	}
+
+        .hero__excerpt {
+          max-width: 95%;
+        }
+
+      }
+
+      .diagonal-overlay {
+        background-color: var(--primary-color);
+        width: 1000px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-25%, 25%) rotate(-45deg);
+        transform-origin: bottom left;
+        z-index: 1;
+
+        .hds-koros {
+          background-color: transparent;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+
+      .hero__thumbnail {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 60%;
+
+        .image-wrap--fixed-size {
+          padding-top: unset;
+          height: 100%;
+
+          > img {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            max-width: unset;
+          }
+        }
+      }
+    }
+  } // has-diagonal
+
+	&.has-background-image {
 		background-color: $body-background-color;
 		position: relative;
 
@@ -208,10 +193,6 @@
 			height: 300px;
 
 			@include breakpoint('m') {
-				height: 500px;
-			}
-
-			@include breakpoint('l') {
 				height: 600px;
 			}
 
@@ -238,6 +219,7 @@
 		}
 
 		> .hds-container {
+      padding-top: spacing('s');
 			position: relative;
 			min-height: auto;
 
@@ -259,19 +241,25 @@
 			@include breakpoint('m') {
 				background-color: $body-background-color;
 				padding: spacing('2-xl') spacing('xl');
-				width: percentage(math.div(8,12));
+				width: 80%;
 			}
 
 			@include breakpoint('l') {
-				width: percentage(math.div(7,12));
+				width: 70%;
+			}
+
+			@include breakpoint('xl') {
+				width: 60%;
 			}
 		}
 
-	}
+	} // has-background-image
 
 	&.has-koros {}
 
 	&.has-excerpt {}
 
 	&.has-call-to-action {}
+
+	&.has-thumbnail {}
 }
