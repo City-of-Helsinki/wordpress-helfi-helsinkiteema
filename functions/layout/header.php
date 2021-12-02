@@ -208,13 +208,21 @@ if ( ! function_exists('helsinki_available_languages') ) {
 
 if ( ! function_exists('helsinki_header_languages') ) {
 	function helsinki_header_languages() {
-		get_template_part(
-			'partials/header/languages',
-			'',
+		$name = apply_filters( 'helsinki_header_languages', null );
+
+		$args = apply_filters(
+			'helsinki_header_languages',
 			array(
 				'languages' => helsinki_available_languages(),
-			)
+			),
+			$name
 		);
+
+		if ( empty( $args['languages'] ) ) {
+			return;
+		}
+
+		get_template_part( 'partials/header/languages', $name, $args);
 	}
 }
 
