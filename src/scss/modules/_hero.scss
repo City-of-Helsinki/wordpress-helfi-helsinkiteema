@@ -19,7 +19,6 @@
   }
 
   &.has-image-left {
-
     @include breakpoint('l') {
       .hero__container {
         flex-direction: row-reverse;
@@ -32,7 +31,56 @@
         }
       }
     }
+  }
 
+  &.has-diagonal {
+    @include breakpoint('xl') {
+      position: relative;
+      overflow: hidden;
+
+      .hero__container {
+        position: relative;
+        padding-top: spacing('layout-l');
+        padding-bottom: spacing('layout-l');
+        z-index: 2;
+
+        .hero__title {
+          max-width: unset;
+        }
+
+        .hero__excerpt {
+          max-width: 480px;
+        }
+      }
+
+      .diagonal-overlay {
+        background-color: var(--primary-color);
+        width: 62%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: rotate(-45deg);
+        transform-origin: bottom left;
+        z-index: 1;
+
+        .hds-koros {
+          background-color: transparent;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+
+      .hero__thumbnail {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 60%;
+      }
+    }
   }
 
 	&__content {
@@ -54,15 +102,14 @@
 		}
 
 		.excerpt {
-			margin-top: spacing('layout-2-xs');
+			margin-top: spacing('s');
 		}
 
 		.buttons {
-			margin-top: spacing('s');
+			margin-top: spacing('layout-s');
 
 			.button {
-				margin-top: spacing('s');
-				margin-right: spacing('layout-2-xs');
+				margin-right: spacing('s');
 			}
 		}
 	}

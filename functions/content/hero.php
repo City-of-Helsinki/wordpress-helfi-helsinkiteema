@@ -215,6 +215,10 @@ function helsinki_hero_koros( array $args = array() ) {
 	);
 }
 
+function helsinki_hero_overlay_diagonal() {
+	get_template_part( 'partials/hero/overlay/diagonal' );
+}
+
 /**
   * Template actions
   */
@@ -243,6 +247,9 @@ function helsinki_hero_actions() {
 		} else {
 			if ( ! helsinki_hero_has_diagonal() ) {
 				add_action( 'helsinki_hero', 'helsinki_hero_image', 20 );
+			} else {
+				add_action( 'helsinki_hero_after', 'helsinki_hero_overlay_diagonal', 5 );
+				remove_action( 'helsinki_hero_after', 'helsinki_hero_koros', 10 );
 			}
 
 			add_action( 'helsinki_hero_after', 'helsinki_hero_image', 20 );
