@@ -148,7 +148,7 @@
 		padding-top: spacing(layout-2-xl);
 		padding-bottom: spacing(layout-m);
 		position: absolute;
-		z-index: 2;
+		z-index: 6;
 
 		@include breakpoint(l) {
 			height: auto;
