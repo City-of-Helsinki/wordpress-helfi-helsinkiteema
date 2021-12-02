@@ -40,34 +40,62 @@ if ( ! function_exists('helsinki_header_skip') ) {
 if ( ! function_exists('helsinki_topbar') ) {
 	function helsinki_topbar() {
 		$lang = function_exists('pll_current_language') ? pll_current_language('slug') : 'fi';
-
-		$branding = array(
-			'fi' => 'https://www.hel.fi/helsinki/fi',
-			'sv' => 'https://www.hel.fi/helsinki/sv',
-			'en' => 'https://www.hel.fi/helsinki/en',
-		);
-
-		$feedback = array(
-			'fi' => 'https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/palaute',
-			'sv' => 'https://www.hel.fi/helsinki/sv/stad-och-forvaltning/delta/feedback',
-			'en' => 'https://www.hel.fi/helsinki/en/administration/participate/feedback',
-		);
-
-		get_template_part(
-			'partials/header/topbar',
-			null,
+		$name = apply_filters( 'helsinki_topbar_name', null );
+		$args = apply_filters(
+			'helsinki_topbar_args',
 			array(
-				'branding' => array(
-					'title' => 'Hel.fi',
-					'url' => $branding[$lang] ?? $branding['fi'],
-				),
-				'feedback' => array(
-					'title' => esc_html__('Feedback', 'helsinki-universal'),
-					'url' => $feedback[$lang] ?? $feedback['fi'],
-				),
-			)
+				'branding' => helsinki_topbar_branding( $lang ),
+				'feedback' => helsinki_topbar_feedback( $lang ),
+				'menu' => helsinki_topbar_menu(),
+			),
+			$name,
+			$lang
 		);
+
+		get_template_part( 'partials/header/topbar', $name, $args);
 	}
+}
+
+function helsinki_topbar_menu() {
+	if ( has_nav_menu( 'topbar_menu' ) ) {
+		return helsinki_menu( 'topbar_menu' );
+	}
+}
+
+function helsinki_topbar_branding( string $language = 'fi' ) {
+	$branding = array(
+		'fi' => 'https://www.hel.fi/helsinki/fi',
+		'sv' => 'https://www.hel.fi/helsinki/sv',
+		'en' => 'https://www.hel.fi/helsinki/en',
+	);
+
+	return apply_filters(
+		'helsinki_topbar_branding',
+		array(
+			'title' => 'Hel.fi',
+			'url' => $branding[$language] ?? $branding['fi'],
+		),
+		$language,
+		$branding
+	);
+}
+
+function helsinki_topbar_feedback( string $language = 'fi' ) {
+	$feedback = array(
+		'fi' => 'https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/palaute',
+		'sv' => 'https://www.hel.fi/helsinki/sv/stad-och-forvaltning/delta/feedback',
+		'en' => 'https://www.hel.fi/helsinki/en/administration/participate/feedback',
+	);
+
+	return apply_filters(
+		'helsinki_topbar_branding',
+		array(
+			'title' => __( 'Feedback', 'helsinki-universal' ),
+			'url' => $feedback[$language] ?? $feedback['fi'],
+		),
+		$language,
+		$feedback
+	);
 }
 
 if ( ! function_exists('helsinki_header_logo') ) {

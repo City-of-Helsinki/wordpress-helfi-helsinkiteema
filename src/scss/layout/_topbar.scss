@@ -1,12 +1,17 @@
 .topbar {
-	$topbar-padding: spacing('xs') spacing('m');
+	$topbar-padding: spacing('s') spacing('l');
 
 	background-color: #f2f2f2;
 	font-size: rem-calc(14);
 	line-height: var(--lineheight-m);
 
 	a {
-		text-decoration: $anchor-text-decoration;
+		text-decoration: none;
+
+    &:focus,
+    &:hover {
+      text-decoration: $anchor-text-decoration;
+    }
 	}
 
 	&__branding {
@@ -16,12 +21,32 @@
 
 	&__link {
 		padding: $topbar-padding;
-		justify-content: right;
-		text-align: right;
 
 		.icon {
 			margin-top: -4px;
 		}
 	}
+
+  .menu {
+
+    a {
+      font-size: rem-calc(14);
+    	line-height: var(--lineheight-m);
+
+      &:focus,
+      &:hover {
+        text-decoration: $anchor-text-decoration;
+      }
+    }
+
+    .menu__item {
+
+      + .menu__item {
+        margin-left: spacing('l');
+      }
+
+    }
+
+  }
 
 }
