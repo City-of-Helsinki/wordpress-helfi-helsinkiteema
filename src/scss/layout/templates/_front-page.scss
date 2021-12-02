@@ -1,37 +1,10 @@
 .front-page-section {
+  padding-top: spacing('layout-m');
+  padding-bottom: spacing('layout-m');
 
-	&.hero {
-
-		.hds-container {
-			min-height: rem-calc(340);
-			padding-top: spacing('layout-m');
-			padding-bottom: spacing('layout-2-xs');
-
-			@include breakpoint('m') {
-				padding-top: spacing('layout-m');
-				padding-bottom: spacing('layout-s');
-			}
-
-			@include breakpoint('l') {
-				min-height: rem-calc(440);
-				padding-top: 4.5rem;
-			}
-
-			@include breakpoint('xl') {
-				min-height: rem-calc(540);
-				padding-top: spacing('layout-xl');
-			}
-		}
-	}
-
-	&:not(.hero) {
-		padding-top: spacing('layout-m');
-		padding-bottom: spacing('layout-m');
-
-		&:last-child {
-			padding-bottom: spacing('layout-xl');
-		}
-	} // .hero
+  &:last-child {
+    padding-bottom: spacing('layout-xl');
+  }
 
 	&.posts {
 

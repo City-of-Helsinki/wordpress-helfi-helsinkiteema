@@ -49,18 +49,20 @@ function helsinki_hero_layout_style( int $id = 0 ) {
 
 	$style = '';
 
-	$layout = helsinki_hero_layout_style_meta( $id );
-	if ( $layout ) {
-		$style = $layout;
-	}
+	if ( helsinki_id_is_front_page( $id ) || helsinki_is_landing_page() ) {
+		$layout = helsinki_hero_layout_style_meta( $id );
+		if ( $layout ) {
+			$style = $layout;
+		}
 
-	$legacy = helsinki_legacy_hero_layout_full_meta( $id );
-	if ( $legacy ) {
-		$style = 'background-image';
-	}
+		$legacy = helsinki_legacy_hero_layout_full_meta( $id );
+		if ( $legacy ) {
+			$style = 'background-image';
+		}
 
-	if ( ! $style && ( helsinki_id_is_front_page( $id ) || helsinki_is_landing_page() ) ) {
-		$style = apply_filters( 'helsinki_hero_layout_style_default', 'image-left' );
+		if ( ! $style ) {
+			$style = apply_filters( 'helsinki_hero_layout_style_default', 'image-left' );
+		}
 	}
 
 	if ( $style ) {

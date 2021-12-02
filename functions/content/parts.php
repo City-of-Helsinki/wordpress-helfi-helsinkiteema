@@ -36,30 +36,26 @@ function helsinki_page_hero_is_disabled() {
 }
 
 function helsinki_content_article_header() {
-	get_template_part('partials/content/parts/header');
+	$name = apply_filters( 'helsinki_content_article_header_name', null );
+	$args = apply_filters( 'helsinki_content_article_header_args', array(), $name );
+	get_template_part( 'partials/content/parts/header', $name, $args );
+}
+
+function helsinki_content_article_header_name_hero() {
+	return 'hero';
 }
 
 function helsinki_content_article_header_class() {
-	$class = 'content__header';
-
-	if ( is_page() ) {
-		$class .= ' hero';
-	}
-
-	helsinki_hero_classes($class);
+	helsinki_element_classes(
+		'content_article_header',
+		array( 'content__header' )
+	);
 }
 
 function helsinki_content_article_header_container_class() {
-	$class = array();
-
-	if ( is_page() ) {
-		$class[] = 'hds-container';
-		$class[] = 'hero__content';
-	}
-
 	helsinki_element_classes(
 		'content_article_header_container',
-		$class
+		array()
 	);
 }
 
