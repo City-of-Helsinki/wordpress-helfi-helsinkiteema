@@ -178,22 +178,13 @@ $map-wrap-padding: 56.25% !default;
 
 /* ===== GENERAL ===== */
 $menu-item-font-size: $global-font-size !default;
-$menu-item-font-weight: $global-font-weight-normal !default;
 $menu-item-spacing: var(--spacing-xs) !default;
-$menu-item-text-decoration: none !default;
-$menu-item-text-transform: none !default;
 $menu-item-transition: $default-transition !default;
 
 /* ===== SUBMENU ===== */
-$submenu-background-color: $white !default;
 $submenu-item-font-size: $global-font-size !default;
-$submenu-item-font-weight: $global-font-weight-normal !default;
-$submenu-border-width: $default-border-width !default;
-$submenu-border-style: $default-border-style !default;
-$submenu-border-color: $default-border-color !default;
 $submenu-min-width: 300px !default;
 $submenu-padding: var(--spacing-2-xs) !default;
-$submenu-item-text-transform: none !default;
 
 /* ===== VERTICAL ===== */
 $vertical-menu-padding: var(--spacing-2-xs) !default;

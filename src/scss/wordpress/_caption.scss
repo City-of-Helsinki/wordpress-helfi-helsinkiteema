@@ -1,0 +1,41 @@
+.wp-caption {
+  background: $light-gray;
+  border: $default-border;
+  max-width: 100%;
+  padding: 0;
+  text-align: center;
+
+  &.alignnone {
+    margin: auto auto $paragraph-margin-bottom;
+  }
+
+  &.alignleft {
+		margin-right: $global-margin;
+		margin-bottom: $paragraph-margin-bottom;
+  }
+
+  &.alignright {
+		margin-left: $global-margin;
+		margin-bottom: $paragraph-margin-bottom;
+  }
+
+  img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    width: auto;
+  }
+
+  p {
+
+    &.wp-caption-text {
+      font-size: $global-font-size * 0.8;
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+
+}

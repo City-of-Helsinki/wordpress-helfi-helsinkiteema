@@ -1,0 +1,58 @@
+/**
+  * Block colors
+  */
+$hasColors: (
+	"primary": var(--primary-color),
+	"light": var(--primary-color-light),
+	"medium": var(--primary-color-medium),
+	"dark": var(--primary-color-dark),
+	"black": $black,
+	"white": $white,
+	"light-gray": $light-gray,
+);
+
+@each $name, $color in $hasColors {
+	.has-#{"" + $name}-background-color {
+		background-color: $color;
+
+		&.has-background:not(.button) {
+			padding: spacing('layout-m') spacing('layout-s');
+
+			&.has-koros {
+				padding-bottom: spacing('2-xs');
+			}
+		}
+
+		+ .hds-koros {
+			z-index: 2;
+
+			> svg {
+				path {
+					fill: $color;
+				}
+			}
+		}
+
+		> .hds-koros {
+			> svg {
+				path {
+					fill: $color;
+				}
+			}
+		}
+	}
+
+  .has-#{"" + $name}-color {
+		color: $color;
+
+		* {
+			color: $color;
+		}
+
+		.icon {
+			path {
+				fill: $color;
+			}
+		}
+  }
+}

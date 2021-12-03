@@ -45,7 +45,7 @@
 
   &:focus {
     background-color: $light-gray;
-	border: $default-border-width $default-border-style $medium-gray;
+	  border: $default-border-width $default-border-style $medium-gray;
     clip: auto !important;
     clip-path: none;
     color: $body-color;

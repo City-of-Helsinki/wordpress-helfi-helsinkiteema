@@ -1,0 +1,24 @@
+.wp-block-group {
+
+	&.has-background {
+		&:not(.alignfull) {
+			margin-bottom: $paragraph-margin-bottom;
+		}
+
+		.wp-block-group__inner-container {
+			>:first-child {
+				margin-top: 0;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				margin-bottom: spacing('s');
+			}
+
+			>:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+	}
+
+}

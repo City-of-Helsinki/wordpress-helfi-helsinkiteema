@@ -51,6 +51,7 @@ ul.posts {
 	&__thumbnail {
 
 		&.has-icon {
+      background-color: var(--primary-color);
 
 			.icon {
 				@include absoluteCenter();
