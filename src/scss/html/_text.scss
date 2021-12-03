@@ -2,6 +2,22 @@ p {
   line-height: $paragraph-line-height;
   margin-top: 0;
   margin-bottom: $paragraph-margin-bottom;
+
+  &.has-background {
+    padding: 0;
+  }
+}
+
+:root {
+  p {
+    &.has-white-color {
+      color: $body-color;
+    }
+
+    &.has-black-background-color {
+      background-color: transparent;
+    }
+  }
 }
 
 .size-s {

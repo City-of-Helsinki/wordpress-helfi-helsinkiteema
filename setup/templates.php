@@ -166,7 +166,7 @@ function helsinki_setup_templates() {
 			}
 
 			if ( has_excerpt() ) {
-				if ( helsinki_page_hero_is_disabled() ) {
+				if ( helsinki_hero_is_disabled() ) {
 					add_action('helsinki_content_article', 'helsinki_content_article_excerpt', 11);
 				} else {
 					add_filter('helsinki_hero_class_excerpt', '__return_true');

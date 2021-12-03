@@ -1,5 +1,13 @@
 .wp-block-group {
 
+  &.alignfull {
+    > * {
+      max-width: var(--container-width-xl);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
 	&.has-background {
 		&:not(.alignfull) {
 			margin-bottom: $paragraph-margin-bottom;

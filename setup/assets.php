@@ -20,7 +20,7 @@ function helsinki_enqueue_assets()
 		'theme',
 		$assets . $default_css,
 		array(
-			'hds-wp-styles',
+			'helsinki-wp-styles',
 			'wp-block-library',
 		),
 		$version,
@@ -169,45 +169,8 @@ function helsinki_scheme_invert_color_body_class($classes) {
   * Editor palettes
   */
 function helsinki_scheme_editor_palette() {
-	$config = helsinki_colors(
-		apply_filters(
-			'helsinki_scheme',
-			helsinki_theme_mod(
-				'helsinki_general_style',
-				'scheme',
-				helsinki_default_scheme()
-			)
-		)
-	);
-
-	$palette = array();
-	if ( ! empty( $config['primary']['color'] ) ) {
-		$palette[] = array(
-            'name' => esc_attr_x( 'Primary', 'Editor palette','helsinki-universal' ),
-            'slug' => 'primary',
-            'color' => $config['primary']['color'],
-        );
-	}
-
-	$palette[] = array(
-		'name' => esc_attr_x( 'Black', 'Editor palette','helsinki-universal' ),
-		'slug' => 'black',
-		'color' => '#000000',
-	);
-
-	$palette[] = array(
-		'name' => esc_attr_x( 'White', 'Editor palette','helsinki-universal' ),
-		'slug' => 'white',
-		'color' => '#ffffff',
-	);
-
-	$palette[] = array(
-		'name' => esc_attr_x( 'Light Gray', 'Editor palette','helsinki-universal' ),
-		'slug' => 'light-gray',
-		'color' => '#f7f7f8',
-	);
-
-	return $palette;
+	helsinki_deprecation_notice( __FUNCTION__, 'nothing' );
+	return array();
 }
 
 function helsinki_colors(string $name ='') {

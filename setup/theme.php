@@ -15,8 +15,8 @@ function helsinki_setup_theme()
     /**
      * Theme support
      */
-    add_theme_support('post-thumbnails');
-    add_theme_support('title-tag');
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
     add_theme_support(
         'html5',
@@ -53,8 +53,8 @@ function helsinki_setup_theme()
 	remove_theme_support( 'core-block-patterns' );
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'style-editor.css' );
-	add_theme_support('responsive-embeds');
-	add_theme_support( 'editor-color-palette', helsinki_scheme_editor_palette() );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'editor-color-palette', array() );
 	add_theme_support( 'editor-gradient-presets', array() );
 
 	/**

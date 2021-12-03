@@ -1,13 +1,4 @@
-/**
-  * Block colors
-  */
 $hasColors: (
-	"primary": var(--primary-color),
-	"light": var(--primary-color-light),
-	"medium": var(--primary-color-medium),
-	"dark": var(--primary-color-dark),
-	"black": $black,
-	"white": $white,
 	"light-gray": $light-gray,
 );
 
@@ -41,18 +32,4 @@ $hasColors: (
 			}
 		}
 	}
-
-  .has-#{"" + $name}-color {
-		color: $color;
-
-		* {
-			color: $color;
-		}
-
-		.icon {
-			path {
-				fill: $color;
-			}
-		}
-  }
 }
