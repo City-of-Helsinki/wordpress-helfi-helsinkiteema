@@ -149,9 +149,11 @@
   } // has-image-left has-image-right
 
   &.has-image-left {
-    @include breakpoint('l') {
-      .hero__container {
-        flex-direction: row-reverse;
+    &.has-thumbnail {
+      @include breakpoint('l') {
+        .hero__container {
+          flex-direction: row-reverse;
+        }
       }
     }
   } // has-image-left
