@@ -82,22 +82,11 @@ function helsinki_entry_image_icon_name() {
 }
 
 function helsinki_entry_image_icon_classes() {
-	$classes = array(
-		'has-primary-background-color',
-		'has-icon',
-	);
-
-	if ( helsinki_scheme_has_invert_color() ) {
-		$classes[] = 'has-white-color';
-	} else {
-		$classes[] = 'has-black-color';
-	}
-
 	return implode(
 		' ',
 		apply_filters(
 			'helsinki_entry_image_icon_classes',
-			$classes
+			array( 'has-icon' )
 		)
 	);
 }
