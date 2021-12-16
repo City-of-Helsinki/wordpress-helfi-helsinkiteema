@@ -135,10 +135,8 @@ function helsinki_setup_templates() {
 
 			remove_action('helsinki_main_top', 'helsinki_content_breadcrumbs', 10);
 
-			if ( ! helsinki_hero_is_disabled() ) {
-				add_action( 'helsinki_content_article_top', 'helsinki_hero_actions', 5 );
-				add_action( 'helsinki_content_article_top', 'helsinki_hero', 10 );
-			}
+			add_action( 'helsinki_content_article_top', 'helsinki_hero_actions', 5 );
+			add_action( 'helsinki_content_article_top', 'helsinki_hero', 10 );
 
 		} else {
 

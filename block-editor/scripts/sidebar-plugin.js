@@ -25,12 +25,24 @@
 				props.setMetaFieldValue( toggled ? 'true' : 'false' );
 			}
 		});
+
 	}
 
   var displayHeroStyles = hasHeroStyles();
   subscribe(function(){
     displayHeroStyles = hasHeroStyles();
   });
+
+	const heroDisplayToggle = function( props ) {
+		return element( ToggleControl, {
+			label: props.fieldLabel,
+			checked: props.metaFieldValue ? true : false,
+			onChange: function(toggled) {
+				props.setMetaFieldValue( toggled ? 'true' : 'false' );
+			},
+      disabled: displayHeroStyles === true,
+		});
+	}
 
   const heroStyleSelect = function( props ) {
 
@@ -91,6 +103,7 @@
 
 	const TextMetaField = metaCompose( textField ),
         ToggleMetaField = metaCompose( toggleField ),
+        HeroDisplayMetaField = metaCompose( heroDisplayToggle ),
         HeroStyleMetaField = metaCompose( heroStyleSelect );
 
 	const logoIcon = element('svg', { height: 24, viewBox: '0 0 78 36', }, element( 'path', {
@@ -114,8 +127,8 @@
           }
         },
         {
-          condition: ! HelsinkiUniversalSidebar.isFrontPage,
-          type: ToggleMetaField,
+          condition: true,
+          type: HeroDisplayMetaField,
           config: { fieldLabel: 'Disable Hero', fieldName: 'disable_page_hero' }
         },
       ]
