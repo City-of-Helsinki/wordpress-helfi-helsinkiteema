@@ -1,0 +1,90 @@
+.notifications {}
+
+.notification {
+  background-color: $light-gray;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,.1);
+  display: flex;
+  margin-top: spacing('s');
+  position: relative;
+
+  &:last-child {
+    margin-bottom: spacing('l');
+  }
+
+  .notification__icon {
+    background-color: $info;
+    display: flex;
+    align-items: center;
+    padding-left: spacing('2-xs');
+    padding-right: spacing('2-xs');
+
+    @include breakpoint('l') {
+      padding-left: spacing('s');
+      padding-right: spacing('s');
+    }
+
+    .icon {
+      fill: $white;
+    }
+  }
+
+  .notification__content {
+    max-width: 75%;
+    padding: spacing('s');
+
+    p {
+      font-size: $global-font-size;
+      line-height: 1.2;
+      margin-bottom: spacing('2-xs');
+    }
+
+    a {
+      align-items: center;
+      display: inline-flex;
+      font-size: $global-font-size;
+      line-height: 1;
+      text-decoration: underline;
+
+      .icon {
+        margin-left: spacing('2-xs');
+      }
+    }
+
+    @include breakpoint('l') {
+      max-width: 82%;
+    }
+
+  }
+
+  .close {
+    position: absolute;
+    top: spacing('2-xs');
+    right: spacing('2-xs');
+  }
+
+  &--warning {
+    background-color: $error-light;
+
+    .notification__icon {
+      background-color: $error;
+
+      .icon {
+        stroke: $error;
+      }
+    }
+  }
+
+  &--alert {
+    .notification__icon {
+      background-color: $alert;
+
+      .icon {
+        fill: $black;
+        stroke: $alert;
+      }
+    }
+  }
+
+  &--info {}
+
+}

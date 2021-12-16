@@ -57,6 +57,13 @@ function helsinki_setup_templates() {
 	}
 
 	/**
+	  * Notifications
+	  */
+	if ( is_singular() ) {
+		add_action('helsinki_main_top', 'helsinki_notifications', 20);
+	}
+
+	/**
 	  * No posts
 	  */
 	add_action('helsinki_no_posts', 'helsinki_no_posts_notice', 30);

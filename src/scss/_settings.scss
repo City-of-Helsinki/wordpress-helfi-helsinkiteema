@@ -16,9 +16,17 @@ $body-color: $black !default;
 
 /* ===== UTILITIES ===== */
 $info: var(--color-info) !default;
+$info-light: var(--color-info-light) !default;
+$info-dark: var(--color-info-dark) !default;
 $success: var(--color-success) !default;
+$success-light: var(--color-success-light) !default;
+$success-dark: var(--color-success-dark) !default;
 $error: var(--color-error) !default;
+$error-light: var(--color-error-light) !default;
+$error-dark: var(--color-error-dark) !default;
 $alert: var(--color-alert) !default;
+$alert-light: var(--color-alert-light) !default;
+$alert-dark: var(--color-alert-dark) !default;
 
 /* ========== BREAKPOINTS ========== */
 $breakpoints: (

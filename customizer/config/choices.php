@@ -11,8 +11,6 @@ function helsinki_customizer_choices_categories() {
   return ( $terms && ! is_wp_error( $terms ) ) ? $terms : array();
 }
 
-
-
 function helsinki_customizer_choices_style_schemes(string $name = '') {
 	$data = apply_filters(
 		'helsinki_customizer_choices_style_schemes',
@@ -64,9 +62,40 @@ function helsinki_customizer_choices_social_share() {
 	);
 }
 
+function helsinki_customizer_choices_notice_type() {
+	return array(
+		'warning' => __('Warning', 'helsinki-universal'),
+		'alert' => __('Alert', 'helsinki-universal'),
+		'info' => __('Info', 'helsinki-universal'),
+	);
+}
+
 function helsinki_customizer_choices_post_count() {
 	return array(
 		3 => 3,
 		6 => 6,
 	);
+}
+
+function helsinki_customizer_choices_language() {
+	$lang = array(
+		'' => __( 'All' )
+	);
+
+	if ( ! apply_filters( 'helsinki_polylang_active', false ) ) {
+		return $lang;
+	}
+
+	$pll = pll_languages_list( array(
+		'hide_empty' => false,
+		'fields' => '',
+	) );
+
+	if ( $pll ) {
+		foreach ( $pll as $pll_lang ) {
+			$lang[$pll_lang->slug] = $pll_lang->name;
+		}
+	}
+
+	return $lang;
 }
