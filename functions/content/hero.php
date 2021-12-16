@@ -63,6 +63,8 @@ function helsinki_hero_layout_style( int $id = 0 ) {
 		if ( ! $style ) {
 			$style = apply_filters( 'helsinki_hero_layout_style_default', 'image-left' );
 		}
+	} else if ( is_page() ) {
+		$style = 'default-style';
 	}
 
 	if ( $style ) {
@@ -221,6 +223,10 @@ function helsinki_hero_overlay_diagonal() {
 	get_template_part( 'partials/hero/overlay/diagonal' );
 }
 
+function helsinki_hero_decoration_arrow() {
+	get_template_part( 'partials/hero/decoration/arrow' );
+}
+
 /**
   * Template actions
   */
@@ -251,6 +257,7 @@ function helsinki_hero_actions() {
 				add_action( 'helsinki_hero', 'helsinki_hero_image', 20 );
 			} else {
 				add_action( 'helsinki_hero_after', 'helsinki_hero_overlay_diagonal', 5 );
+				add_action( 'helsinki_hero_after', 'helsinki_hero_decoration_arrow', 30 );
 				remove_action( 'helsinki_hero_after', 'helsinki_hero_koros', 10 );
 			}
 

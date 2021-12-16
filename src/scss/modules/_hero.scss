@@ -1,10 +1,7 @@
 .hero {
 	background-color: var(--primary-color);
+  position: relative;
 	width: 100%;
-
-	@include breakpoint('l') {
-		margin-bottom: spacing('m');
-	}
 
 	&__content {
 		> * {
@@ -32,7 +29,59 @@
 
 	&__excerpt {}
 
-	&__thumbnail {}
+	> .hero__thumbnail {
+
+		@include breakpointMax('l') {
+			.image-wrap--fixed-size {
+				> img {
+					min-height: 100%;
+					max-width: none;
+					width: auto;
+				}
+			}
+		}
+
+	}
+
+  .hero__decoration {
+    position: absolute;
+    bottom: 0;
+    left: spacing('s');
+    transform: translateY(60%);
+    width: 80px;
+    height: 110px;
+    z-index: 1;
+
+    .icon {
+      @include absoluteCenter();
+      width: 150px;
+    }
+
+    &--arrow {
+      .icon {
+        fill: var(--accent-color, var(--primary-color));
+      }
+    }
+
+    @include breakpoint('l') {
+      width: 100%;
+      max-width: var(--container-width-l);
+      height: 125px;
+      left: 50%;
+      transform: translate(-50%,70%);
+
+      .icon {
+        width: 180px;
+        left: 0;
+        transform: translate(-25%,-50%);
+      }
+    }
+
+    @include breakpoint('xl') {
+      max-width: var(--container-width-xl);
+    }
+
+  }
 
 	.button {
 		&:focus,
@@ -93,13 +142,55 @@
     }
 	}
 
+  &.has-default-style {
+    @include breakpointMax('m') {
+      > .hds-koros {
+        height: math.div($koros-size, 2);
+
+        &--beat {
+          height: 5px;
+        }
+
+        &--vibration {
+          height: math.div($koros-size, 5);
+        }
+
+        > svg {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
   &.has-image-left,
   &.has-image-right {
+
+    @include breakpointMax('l') {
+      > .hds-koros {
+        height: math.div($koros-size, 2);
+
+        &--beat {
+          height: 5px;
+        }
+
+        &--vibration {
+          height: math.div($koros-size, 5);
+        }
+
+        > svg {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
 
     > .hero__thumbnail {
 			background-color: $body-background-color;
 
-			@include breakpointMax(l) {
+			@include breakpointMax('l') {
 				.image-wrap--fixed-size {
 					overflow: auto;
 					padding-top: 0;
@@ -159,9 +250,28 @@
   } // has-image-left
 
   &.has-diagonal {
+    margin-bottom: rem-calc(64);
+
+    .hds-koros {
+      height: math.div($koros-size, 2);
+
+      &--beat {
+        height: 5px;
+      }
+
+      &--vibration {
+        height: math.div($koros-size, 5);
+      }
+
+      > svg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
     @include breakpoint('l') {
-      position: relative;
-      overflow: hidden;
+      margin-bottom: rem-calc(96);
 
       .hero__container {
         position: relative;
@@ -182,22 +292,26 @@
       }
 
       .diagonal-overlay {
-        background-color: var(--primary-color);
-        width: 1000px;
+        width: 100%;
         height: 100%;
+        overflow: hidden;
         position: absolute;
         top: 0;
-        left: 46%;
-        transform: translate(-25%, 25%) rotate(-45deg);
-        transform-origin: bottom left;
+        left: 0;
         z-index: 1;
 
         .hds-koros {
-          background-color: transparent;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
+          background-color: var(--primary-color);
+          height: 100%;
+          left: 40%;
+          width: 1100px;
+          transform: rotate(-45deg);
+          transform-origin: bottom left;
+
+          > svg {
+            transform: translateY(100%) scale(-1);
+            margin-bottom: 2px;
+          }
         }
       }
 
@@ -231,23 +345,21 @@
 			display: block;
 			margin-top: 0;
 			position: relative;
-			height: 300px;
+			min-height: calc(300px + #{$koros-size});
 
 			@include breakpoint('m') {
-				height: 600px;
+				min-height: calc(500px + #{$koros-size});
+			}
+
+			@include breakpoint('l') {
+				min-height: calc(600px + #{$koros-size});
 			}
 
 			> .hds-koros {
 				background-color: transparent;
-				height: $koros-size;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-
-				> svg {
-					position: static;
-					transform: none;
-				}
+        position: absolute;
+        bottom: 0;
+        left: 0;
 			}
 		}
 
