@@ -3,7 +3,7 @@
 /* ========== COLORS ========== */
 
 /* ===== BASE ===== */
-$black: var(--color-black) !default;
+$black: #1a1a1a !default;
 $white: var(--color-white) !default;
 
 $light-gray: var(--color-silver-light) !default;
@@ -74,36 +74,6 @@ $body-font-weight: $global-font-weight-normal !default;
 /* ===== BUTTONS ===== */
 $button-focus-outline: 2px $default-border-style $black;
 $button-font-weight: $global-font-weight-bold !default;
-
-/* ===== HEADINGS ===== */
-$heading-font-sizes: (
-	h1: 52px,
-	h2: 36px,
-	h3: 24px,
-	h4: 20px,
-	h5: 18px,
-	h6: 16px,
-) !default;
-
-$heading-responsive-font-sizes: (
-	l: (
-		h1: 72px,
-		h2: 52px,
-		h3: 36px,
-		h4: 24px,
-		h5: 20px,
-		h6: 16px,
-	),
-) !default;
-
-$heading-color: $body-color !default;
-$heading-font-family: 'Helsinki Grotesk', 'Helsinki Avoin Sans', Arial, sans-serif !default;
-$heading-font-weight: $global-font-weight-normal !default;
-$heading-line-height: 1 !default;
-$heading-letter-spacing: 0 !default;
-$heading-margin-top: var(--spacing-4-xl) !default;
-$heading-margin-bottom: var(--spacing-l) !default;
-$heading-word-wrap: break-word !default;
 
 /* ===== LINKS ===== */
 $anchor-color: $body-color !default;
@@ -200,7 +170,7 @@ $table-border-color: $default-border-color !default;
 $table-border: $table-border-width $table-border-style $table-border-color !default;
 $table-border-enabled: true;
 $table-margin-bottom: $paragraph-margin-bottom !default;
-$table-heading-font-weight: $heading-font-weight !default;
+$table-heading-font-weight: $global-font-weight-normal !default;
 $table-cell-padding: var(--spacing-2-xs) !default;
 
 /* ==================== FOOTER ==================== */
