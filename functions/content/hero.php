@@ -121,6 +121,10 @@ function helsinki_hero_background_image( $styles ) {
 /**
   * Classes
   */
+function helsinki_hero_body_class( array $classes ) {
+	return helsinki_add_body_class_has_n( $classes, 'hero' );
+}
+
 function helsinki_hero_classes( string $default = '' ) {
 	$classes = array(
 		$default,

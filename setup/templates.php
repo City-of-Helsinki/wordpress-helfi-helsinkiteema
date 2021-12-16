@@ -101,6 +101,7 @@ function helsinki_setup_templates() {
 		/**
 		  * Hero layout
 		  */
+		add_filter('body_class', 'helsinki_hero_body_class', 10);
 		add_action( 'helsinki_front_page_hero', 'helsinki_hero_actions', 5 );
 		add_action( 'helsinki_front_page_hero', 'helsinki_hero', 10 );
 
@@ -142,6 +143,7 @@ function helsinki_setup_templates() {
 
 			remove_action('helsinki_main_top', 'helsinki_content_breadcrumbs', 10);
 
+			add_filter('body_class', 'helsinki_hero_body_class', 10);
 			add_action( 'helsinki_content_article_top', 'helsinki_hero_actions', 5 );
 			add_action( 'helsinki_content_article_top', 'helsinki_hero', 10 );
 
@@ -153,6 +155,7 @@ function helsinki_setup_templates() {
 				add_filter( 'helsinki_content_article_header_name', 'helsinki_content_article_header_name_hero' );
 				add_action( 'helsinki_content_article_top', 'helsinki_content_article_header', 10 );
 
+				add_filter('body_class', 'helsinki_hero_body_class', 10);
 				add_action( 'helsinki_content_header_hero', 'helsinki_hero', 10 );
 
 				add_filter( 'helsinki_hero_class_koros', '__return_true' );
