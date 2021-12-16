@@ -85,11 +85,10 @@
 		font-size: fontsize-body(l);
 		margin-bottom: $content-spacing;
 
-		.has-background {
-			@include breakpointMax('m') {
-				@include alignFull();
-			}
-		}
+    :first-child {
+      margin-top: 0;
+    }
+
 	}
 
 	&__sidebar {}
