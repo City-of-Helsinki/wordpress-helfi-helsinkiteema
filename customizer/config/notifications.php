@@ -13,7 +13,7 @@ function helsinki_customizer_notification_sections() {
 			'config' => array(
 				'title'          => sprintf(
 					'%s %d',
-					esc_html_x( 'Notice', 'Customizer section title', 'helsinki-universal' ),
+					esc_html_x( 'Notification', 'Customizer section title', 'helsinki-universal' ),
 					$i
 				),
 				'capability'     => 'edit_theme_options',
