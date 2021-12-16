@@ -14,6 +14,22 @@
 					"customGradient": false,
           "customDuotone": false
 				}
+      },
+      "core/paragraph": {
+        "typography": {
+          "fontSizes": [
+            {
+    					"slug": "lead",
+    					"size": "20px",
+    					"name": "Lead"
+    				},
+            {
+    					"slug": "small",
+    					"size": "16px",
+    					"name": "Small"
+    				}
+          ]
+        }
       }
     },
     "layout": {
