@@ -13,7 +13,9 @@ if ( $first_image ) {
 				helsinki_entry_image_classes( $first_image ? false : true )
 			);
 		?>
-		<h3 class="entry__title"><?php echo esc_html( helsinki_trim_title( $args['item']->get_title() ) ); ?></h3>
+		<h3 class="entry__title">
+			<?php echo esc_html( helsinki_trim_title( $args['item']->get_title() ) ); ?>
+		</h3>
 		<div class="entry__excerpt excerpt size-l show-for-l">
 			<?php echo wp_kses_post( $excerpt ); ?>
 		</div>
@@ -23,7 +25,7 @@ if ( $first_image ) {
 			</time>
 		</div>
 		<div class="entry__more">
-			<?php helsinki_svg_icon('arrow-right'); ?>
+			<?php helsinki_svg_icon('link-external'); ?>
 		</div>
 	</a>
 </article>

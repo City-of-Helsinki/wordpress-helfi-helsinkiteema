@@ -41,6 +41,18 @@
 			margin-bottom: spacing('xl');
 		}
 
+    .entry--highlight {
+      > a {
+        &:hover {
+          .entry__more {
+            svg {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+
 		@include breakpoint(l) {
 			.posts {
 				padding-left: percentage(math.div(2,12));
