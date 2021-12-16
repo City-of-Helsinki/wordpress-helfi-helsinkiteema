@@ -1,4 +1,12 @@
-.notifications {}
+.has-hero {
+  .notifications {
+    .notification {
+      &:last-child {
+        margin-bottom: spacing('l');
+      }
+    }
+  }
+}
 
 .notification {
   background-color: $light-gray;
@@ -6,10 +14,6 @@
   display: flex;
   margin-top: spacing('s');
   position: relative;
-
-  &:last-child {
-    margin-bottom: spacing('l');
-  }
 
   .notification__icon {
     background-color: $info;
