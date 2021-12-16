@@ -46,6 +46,7 @@ function helsinki_setup_theme()
 	 * Block editor
 	 */
 	add_theme_support( 'disable-custom-font-sizes' );
+	add_theme_support('editor-font-sizes', array() );
 	add_theme_support( 'disable-custom-colors' );
 	add_theme_support( 'disable-custom-gradients' );
 	remove_theme_support( 'core-block-patterns' );
