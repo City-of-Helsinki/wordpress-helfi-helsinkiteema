@@ -13,6 +13,10 @@ h6 {
   margin-top: $heading-margin-top;
   margin-bottom: $heading-margin-bottom;
   word-break: $heading-word-wrap;
+
+  &.has-background {
+    padding: 0;
+  }
 }
 
 h5,
