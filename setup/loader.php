@@ -99,6 +99,11 @@ function helsinki_files()
 		add_filter('helsinki_complianz_active', '__return_true');
 	}
 
+	if ( did_action( 'wpra_loaded' ) ) {
+		$files['integrations'][] = 'wp-rss-aggregator';
+		add_filter('helsinki_wp_rss_aggregator_active', '__return_true');
+	}
+
 	return $files;
 }
 
