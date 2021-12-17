@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2021-12-16 13:25+0000\n"
+"PO-Revision-Date: 2021-12-17 11:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -41,6 +41,10 @@ msgstr "Kaikki artikkelit"
 #: functions/layout/loop.php:130
 msgid "All tags"
 msgstr "Kaikki avainsanat"
+
+#: integrations/wp-rss-aggregator.php:34
+msgid "and"
+msgstr "ja"
 
 #. Author of the theme
 msgid "ArtCloud"
@@ -344,6 +348,12 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
+#: integrations/wp-rss-aggregator.php:18 functions/layout/front-page.php:216
+#, php-format
+msgctxt "from RSS feed source"
+msgid "%s"
+msgstr "%s:stä"
+
 #: setup/assets.php:65
 msgid "Gallery images"
 msgstr "Galleriakuvat"
@@ -591,6 +601,12 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Tyhjennä"
 
+#: integrations/wp-rss-aggregator.php:42 functions/layout/front-page.php:214
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "This feed is fetched from %s."
+msgstr "Tämä syöte haetaan %s."
+
 #: customizer/config/general.php:73
 msgid "Scheme"
 msgstr "Tyyli"
@@ -689,11 +705,6 @@ msgstr "Etsimääsi sivua ei löytynyt."
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
-
-#: functions/layout/front-page.php:214
-#, php-format
-msgid "This feed is fetched from %s."
-msgstr "Tämä syöte haetaan %s:stä."
 
 #: customizer/config/notifications.php:45
 msgid "Title"

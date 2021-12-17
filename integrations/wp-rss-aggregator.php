@@ -24,11 +24,23 @@ function helsinki_wpra_feed_sources( $args ) {
 		return;
 	}
 
+	$last = count( $sources ) > 1 ? array_pop( $sources ) : '';
+	$sources = implode( ', ', $sources );
+
+	if ( $last ) {
+		$sources = sprintf(
+			'%s %s %s',
+			$sources,
+			esc_html__( 'and', 'helsinki-universal' ),
+			$last
+		);
+	}
+
 	printf(
 		'<p class="feed-source">%s</p>',
 		sprintf(
-			esc_html__( 'This feed is fetched from %s.', 'helsinki-universal' ),
-			implode( ', ', $sources )
+			esc_html_x( 'This feed is fetched from %s.', 'RSS feed source(s)', 'helsinki-universal' ),
+			$sources
 		)
 	);
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-16 13:22+0000\n"
+"POT-Creation-Date: 2021-12-17 11:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -41,6 +41,10 @@ msgstr ""
 
 #: functions/layout/loop.php:130
 msgid "All tags"
+msgstr ""
+
+#: integrations/wp-rss-aggregator.php:34
+msgid "and"
 msgstr ""
 
 #. Author of the theme
@@ -339,6 +343,12 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
+#: integrations/wp-rss-aggregator.php:18 functions/layout/front-page.php:216
+#, php-format
+msgctxt "from RSS feed source"
+msgid "%s"
+msgstr ""
+
 #: setup/assets.php:65
 msgid "Gallery images"
 msgstr ""
@@ -581,6 +591,12 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr ""
 
+#: integrations/wp-rss-aggregator.php:42 functions/layout/front-page.php:214
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "This feed is fetched from %s."
+msgstr ""
+
 #: customizer/config/general.php:73
 msgid "Scheme"
 msgstr ""
@@ -675,11 +691,6 @@ msgstr ""
 
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
-msgstr ""
-
-#: functions/layout/front-page.php:214
-#, php-format
-msgid "This feed is fetched from %s."
 msgstr ""
 
 #: customizer/config/notifications.php:45

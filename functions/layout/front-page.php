@@ -211,8 +211,11 @@ function helsinki_front_page_feed_posts_source_text() {
 		printf(
 			'<p class="feed-source">%s</p>',
 			sprintf(
-				esc_html__('This feed is fetched from %s.', 'helsinki-universal'),
-				parse_url($url, PHP_URL_HOST)
+				esc_html_x( 'This feed is fetched from %s.', 'RSS feed source(s)', 'helsinki-universal' ),
+				sprintf(
+					_x( '%s', 'from RSS feed source', 'helsinki-universal' ),
+					parse_url( $url, PHP_URL_HOST )
+				)
 			)
 		);
 	}

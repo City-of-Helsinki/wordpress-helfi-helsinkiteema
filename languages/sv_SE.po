@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2021-12-16 13:28+0000\n"
+"PO-Revision-Date: 2021-12-17 11:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -41,6 +41,10 @@ msgstr "Alla inlägg"
 #: functions/layout/loop.php:130
 msgid "All tags"
 msgstr "Alla taggar"
+
+#: integrations/wp-rss-aggregator.php:34
+msgid "and"
+msgstr "och"
 
 #. Author of the theme
 msgid "ArtCloud"
@@ -343,6 +347,12 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
+#: integrations/wp-rss-aggregator.php:18 functions/layout/front-page.php:216
+#, php-format
+msgctxt "from RSS feed source"
+msgid "%s"
+msgstr "%s"
+
 #: setup/assets.php:65
 msgid "Gallery images"
 msgstr "Galleri bilder"
@@ -588,6 +598,12 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Återställa"
 
+#: integrations/wp-rss-aggregator.php:42 functions/layout/front-page.php:214
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "This feed is fetched from %s."
+msgstr "Detta flöde hämtas från %s."
+
 #: customizer/config/general.php:73
 msgid "Scheme"
 msgstr "Schema"
@@ -685,11 +701,6 @@ msgstr "Sidan du letade efter kunde inte hittas."
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
 msgstr "Denna författare har inte publicerat några inlägg ännu."
-
-#: functions/layout/front-page.php:214
-#, php-format
-msgid "This feed is fetched from %s."
-msgstr "Den här flödet hämtas från %s."
 
 #: customizer/config/notifications.php:45
 msgid "Title"
