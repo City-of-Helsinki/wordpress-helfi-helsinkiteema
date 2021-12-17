@@ -5,7 +5,7 @@ if ( $first_image ) {
 	$excerpt = str_replace( $first_image, '', $excerpt );
 }
 ?>
-<article class="<?php helsinki_entry_classes( 'highlight entry--post' ); ?>">
+<article class="entry entry--highlight entry--post">
 	<a href="<?php echo esc_url( $args['item']->get_permalink() ); ?>">
 		<?php
 			echo helsinki_get_entry_image_with_wrap(

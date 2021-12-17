@@ -1,5 +1,5 @@
 <li>
-	<article class="<?php helsinki_entry_classes( 'feed entry--post'); ?>">
+	<article class="entry entry--feed entry--post">
 		<a href="<?php echo esc_url( $args['item']->get_permalink() ); ?>">
 			<h3 class="entry__title">
 				<?php
