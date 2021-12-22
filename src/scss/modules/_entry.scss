@@ -168,9 +168,12 @@ ul.posts {
 			font-size: $body-font-size;
 			margin-bottom: spacing('2-xs');
 
+      span {
+        margin-right: spacing('2-xs');
+      }
+
 			.icon {
 				display: inline-block;
-				margin-left: spacing('2-xs');
 				width: 16px;
 			}
 		}
