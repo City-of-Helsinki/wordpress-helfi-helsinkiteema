@@ -42,6 +42,10 @@
   }
 
   #footer {
+    .hds-koros {
+      background-color: $light-gray;
+    }
+
     .hds-container {
       padding-top: spacing('s');
       padding-bottom: spacing('l');
