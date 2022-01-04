@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2021-12-17 11:19+0000\n"
+"PO-Revision-Date: 2022-01-04 14:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -42,7 +42,7 @@ msgstr "Alla inlägg"
 msgid "All tags"
 msgstr "Alla taggar"
 
-#: integrations/wp-rss-aggregator.php:34
+#: integrations/wp-rss-aggregator.php:44
 msgid "and"
 msgstr "och"
 
@@ -347,7 +347,7 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: integrations/wp-rss-aggregator.php:18 functions/layout/front-page.php:216
+#: integrations/wp-rss-aggregator.php:28 functions/layout/front-page.php:216
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
@@ -473,6 +473,10 @@ msgstr "Navigeringsmeny"
 msgid "Metro"
 msgstr "Metro"
 
+#: integrations/wp-rss-aggregator.php:10
+msgid "Newer"
+msgstr "Nyare"
+
 #: comments.php:36
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
@@ -496,6 +500,10 @@ msgstr "Inga inlägg som matchar din sökning kunde hittas."
 #: functions/layout/view.php:42
 msgid "Not Found"
 msgstr "Hittades inte"
+
+#: integrations/wp-rss-aggregator.php:5
+msgid "Older"
+msgstr "Äldre"
 
 #: partials/loop/pagination.php:42
 #, php-format
@@ -598,7 +606,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Återställa"
 
-#: integrations/wp-rss-aggregator.php:42 functions/layout/front-page.php:214
+#: integrations/wp-rss-aggregator.php:52 functions/layout/front-page.php:214
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."

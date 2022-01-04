@@ -1,5 +1,23 @@
 <?php
 
+add_filter( 'wpra/template/list/pagination/older', 'helsinki_wpra_feed_pagination_older_string' );
+function helsinki_wpra_feed_pagination_older_string() {
+	return sprintf(
+		'%s %s',
+		'&laquo;',
+		esc_html__( 'Older', 'helsinki-universal' )
+	);
+}
+
+add_filter( 'wpra/template/list/pagination/newer', 'helsinki_wpra_feed_pagination_newer_string' );
+function helsinki_wpra_feed_pagination_newer_string() {
+	return sprintf(
+		'%s %s',
+		esc_html__( 'Newer', 'helsinki-universal' ),
+		'&raquo;'
+	);
+}
+
 add_action( 'helsinki_wpra_feed_posts_list_top', 'helsinki_wpra_feed_sources' );
 function helsinki_wpra_feed_sources( $args ) {
 	$itemsCollection = $args[0] ?? null;
