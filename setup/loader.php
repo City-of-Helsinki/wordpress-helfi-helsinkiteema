@@ -53,6 +53,7 @@ function helsinki_files()
 		'functions'  => [
 		    'content' => [
 				'call-to-action',
+				'card',
 				'featured-image',
 				'hero',
 				'parts',

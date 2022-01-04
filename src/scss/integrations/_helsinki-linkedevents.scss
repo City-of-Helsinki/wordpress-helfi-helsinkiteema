@@ -1,0 +1,25 @@
+.has-sidebar {
+
+  .helsinki-events {
+    background-color: transparent;
+    margin: 0 auto spacing('layout-l');
+    width: auto;
+    max-width: none;
+    padding: 0;
+
+    .events__grid {
+
+      .events__grid__item {
+        border: 2px solid $black;
+      }
+
+      @include breakpoint('l') {
+        .events__grid__item {
+          flex: 0 0 calc(50% - 13px);
+        }
+      }
+
+    }
+  }
+
+}

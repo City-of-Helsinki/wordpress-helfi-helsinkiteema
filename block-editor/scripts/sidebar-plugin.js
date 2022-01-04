@@ -25,7 +25,6 @@
 				props.setMetaFieldValue( toggled ? 'true' : 'false' );
 			}
 		});
-
 	}
 
   var displayHeroStyles = hasHeroStyles();
