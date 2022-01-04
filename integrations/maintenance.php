@@ -66,22 +66,12 @@ add_action( 'helsinki_maintenance_footer_top', 'helsinki_maintenance_koros' );
 add_action( 'helsinki_maintenance_footer', 'helsinki_footer_logo' );
 
 function helsinki_maintenance_site_title( $data ) {
-	if ( $data['logo'] ) {
-		$content = sprintf(
-			'<img src="%s" alt="%s">',
-			esc_url( $data['logo'] ),
-			esc_attr( $data['site_title'] )
-		);
-	} else {
-		$content = sprintf(
-			'<span>%s</span>',
-			esc_attr( $data['site_title'] )
-		);
-	}
-
 	printf(
 		'<div class="site-title">%s</div>',
-		$content
+		sprintf(
+			'<span>%s</span>',
+			esc_attr( $data['site_title'] )
+		)
 	);
 }
 
