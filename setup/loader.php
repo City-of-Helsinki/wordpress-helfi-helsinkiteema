@@ -100,6 +100,11 @@ function helsinki_files()
 		add_filter('helsinki_complianz_active', '__return_true');
 	}
 
+	if ( class_exists('MTNC') ) {
+		$files['integrations'][] = 'maintenance';
+		add_filter('helsinki_maintenance_active', '__return_true');
+	}
+
 	if ( did_action( 'wpra_loaded' ) ) {
 		$files['integrations'][] = 'wp-rss-aggregator';
 		add_filter('helsinki_wp_rss_aggregator_active', '__return_true');

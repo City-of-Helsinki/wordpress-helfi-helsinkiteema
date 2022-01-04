@@ -9,6 +9,10 @@ function helsinki_block_editor_meta() {
 
 add_action('enqueue_block_editor_assets', 'helsinki_block_editor_scripts');
 function helsinki_block_editor_scripts() {
+	if ( ! is_admin() ) {
+		return;
+	}
+
 	if ( ! helsinki_block_editor_assets_enabled() ) {
 		return;
 	}
@@ -38,6 +42,10 @@ function helsinki_block_editor_scripts() {
 
 add_action( 'enqueue_block_assets', 'helsinki_block_editor_styles' );
 function helsinki_block_editor_styles() {
+	if ( ! is_admin() ) {
+		return;
+	}
+
 	if ( ! helsinki_block_editor_assets_enabled() ) {
 		return;
 	}
