@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-04 14:05+0000\n"
+"POT-Creation-Date: 2022-01-04 17:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "All tags"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:44
+#: integrations/wp-rss-aggregator.php:52
 msgid "and"
 msgstr ""
 
@@ -343,7 +343,7 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:28 functions/layout/front-page.php:216
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:216
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
@@ -351,6 +351,10 @@ msgstr ""
 
 #: setup/assets.php:65
 msgid "Gallery images"
+msgstr ""
+
+#: integrations/maintenance.php:105
+msgid "Go to hel.fi"
 msgstr ""
 
 #: customizer/config/choices.php:20
@@ -467,7 +471,7 @@ msgstr ""
 msgid "Metro"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:10
+#: integrations/wp-rss-aggregator.php:16
 msgid "Newer"
 msgstr ""
 
@@ -495,7 +499,7 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:5
+#: integrations/wp-rss-aggregator.php:8
 msgid "Older"
 msgstr ""
 
@@ -599,7 +603,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:52 functions/layout/front-page.php:214
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:214
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
