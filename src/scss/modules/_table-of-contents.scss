@@ -1,0 +1,78 @@
+.table-of-contents {
+  background-color: $light-gray;
+  border-left: 8px solid var(--primary-color);
+  margin-bottom: spacing('layout-xl');
+  padding: spacing('layout-s') spacing('layout-s') spacing('layout-m');
+  position: relative;
+
+  @include breakpointMax('m') {
+    @include alignFull();
+  }
+
+  @include breakpoint('xl') {
+    margin-bottom: spacing('layout-2-xl');
+  }
+
+  .table-of-contents__title {
+    font-size: fontsize-heading('m');
+    margin: 0 0 spacing('s');
+
+    @include breakpoint('xl') {
+      font-size: fontsize-heading('l');
+    }
+  } // __title
+
+  .table-of-contents__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+
+      a {
+        font-size: fontsize-body('l');
+        font-weight: $global-font-weight-medium;
+      }
+
+      + li {
+        margin-top: spacing('s');
+
+        @include breakpoint('xl') {
+          margin-top: spacing('m');
+        }
+      }
+
+    }
+  } // __items
+
+  .table-of-contents__decoration {
+    position: absolute;
+    top: 92%;
+    right: spacing('s');
+    height: rem-calc(97);
+    width: rem-calc(88);
+
+    @include breakpoint('xl') {
+      right: spacing('layout-m');
+      height: rem-calc(111);
+      width: rem-calc(90);
+    }
+
+    .icon {
+      @include absoluteCenter();
+
+      height: rem-calc(140);
+      width: auto;
+
+      path {
+        fill: var(--accent-color);
+      }
+
+      @include breakpoint('xl') {
+        height: rem-calc(162);
+      }
+    }
+
+  } // __decoration
+
+}

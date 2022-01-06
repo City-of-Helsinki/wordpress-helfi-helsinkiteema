@@ -1,4 +1,4 @@
-<section id="feed-posts" class="front-page-section feed-posts">
+<section id="feed-posts" class="front-page-section feed-posts has-highlight">
 
 	<?php
 

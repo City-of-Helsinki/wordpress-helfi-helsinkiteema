@@ -5,23 +5,28 @@ cite {
 
 blockquote {
 	background: none;
-	border-left: 8px $default-border-style var(--primary-color);
 	font-size: rem-calc(36);
-	margin: spacing('layout-l') 0;
-	padding: 0 0 0 $global-padding;
+	margin: spacing('layout-l');
+	padding: 0;
 
   p {
 		font-style: italic;
-		margin-bottom: var(--spacing-m);
+		margin-bottom: 0;
 
     &::before {
       content: '\201C';
     }
+
+    &::after {
+      content: '\201D';
+    }
   }
 
 	cite {
+    color: $body-color;
 		font-style: normal;
 		font-size: rem-calc(18);
+    margin-top: spacing('m');
 
 		&::before {
       content: '- ';

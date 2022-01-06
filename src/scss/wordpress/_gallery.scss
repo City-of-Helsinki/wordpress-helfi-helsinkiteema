@@ -1,0 +1,52 @@
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	position: relative;
+	text-align: center;
+
+	@each $breakpoint, $gutter in $gutters {
+		@include breakpoint($breakpoint) {
+			margin-right: - math.div($gutter, 2);
+			margin-left: - math.div($gutter, 2);
+		}
+
+		.gallery-item {
+			padding-right: math.div($gutter, 2);
+		    padding-left: math.div($gutter, 2);
+		}
+	}
+
+  .gallery-item {
+    margin-bottom: $global-margin;
+    position: relative;
+    width: 100%;
+
+    img {}
+
+    .gallery-icon {
+
+      &.portrait {}
+
+      &.landscape {}
+
+      a {
+        display: block;
+      }
+
+    }
+
+    .gallery-caption {}
+
+  }
+
+  @for $i from 1 through 12 {
+    &.gallery-columns-#{$i} {
+      > .gallery-item {
+        width: percentage( math.div(1, $i) );
+      }
+    }
+  }
+
+}

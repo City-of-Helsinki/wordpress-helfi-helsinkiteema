@@ -12,7 +12,7 @@ function helsinki_load_files() {
 function helsinki_files()
 {
 	$files = [
-	  'customizer' => [
+		'customizer' => [
 			'config' => [
 				'blog',
 				'choices',
@@ -20,6 +20,7 @@ function helsinki_files()
 				'front-page',
 				'general',
 				'header',
+				'notifications',
 				'settings',
 				'sidebar',
 			],
@@ -29,36 +30,62 @@ function helsinki_files()
 			'css',
 		],
 		'block-editor' => [
+			'config' => [
+				'meta',
+			],
+			'functions',
 			'init',
 		],
-	  'inc' => [
+		'inc' => [
 			'filters',
 			'walkers',
 			'taxonomy-thumbnails'
-	  ],
+		],
 		'setup' => [
+			'config' => [
+				'colors',
+			],
 			'theme',
 			'site',
 			'templates',
 			'assets',
 		],
-	  'functions'  => [
+		'functions'  => [
+		    'content' => [
+				'call-to-action',
+				'card',
+				'featured-image',
+				'hero',
+				'parts',
+				'related',
+				'table-of-contents',
+			],
+		    'decoration' => [
+				'koros',
+				'svg',
+			],
+		    'layout' => [
+				'entry',
+				'footer',
+				'front-page',
+				'front-page-depracated',
+				'header',
+				'loop',
+				'sidebar',
+				'view',
+				'misc',
+			],
+		    'modules' => [
+				'comments',
+				'load-more',
+				'menu',
+				'notifications',
+				'search',
+				'social',
+				'widgets',
+			],
 			'classes',
-			'comments',
-			'content',
-			'entry',
-			'footer',
-			'front-page',
-			'koros',
-			'header',
-			'load-more',
 			'misc',
-			'menu',
-			'sidebar',
-			'search',
-			'social',
-			'svg-renderer',
-			'widgets',
 		],
 		'integrations' => [],
 	];
@@ -71,6 +98,16 @@ function helsinki_files()
 	if ( class_exists('COMPLIANZ') ) {
 		$files['integrations'][] = 'complianz';
 		add_filter('helsinki_complianz_active', '__return_true');
+	}
+
+	if ( class_exists('MTNC') ) {
+		$files['integrations'][] = 'maintenance';
+		add_filter('helsinki_maintenance_active', '__return_true');
+	}
+
+	if ( did_action( 'wpra_loaded' ) ) {
+		$files['integrations'][] = 'wp-rss-aggregator';
+		add_filter('helsinki_wp_rss_aggregator_active', '__return_true');
 	}
 
 	return $files;

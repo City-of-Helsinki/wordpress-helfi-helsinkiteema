@@ -1,0 +1,13 @@
+{% set item_url = wpra_item_url(item, options) %}
+<article class="entry entry--feed entry--post wpra-item {{ options.custom_css_classname }}">
+  <a {{ wpra_link_attrs(item_url, options)|raw }}>
+    <h3 class="entry__title">
+      <span>{{ item.title|truncate(85) }}</span>{{ include(self.dir ~ 'icon-external-link.twig') }}
+    </h3>
+  </a>
+  <div class="entry__meta meta">
+    <time class="date" datetime="{{ item.timestamp|date('c') }}">
+      {{ item.timestamp|date('j.n.Y H:i') }}
+    </time>
+  </div>
+</article>

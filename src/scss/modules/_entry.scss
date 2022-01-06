@@ -51,6 +51,7 @@ ul.posts {
 	&__thumbnail {
 
 		&.has-icon {
+      background-color: var(--primary-color);
 
 			.icon {
 				@include absoluteCenter();
@@ -166,6 +167,15 @@ ul.posts {
 		.entry__title {
 			font-size: $body-font-size;
 			margin-bottom: spacing('2-xs');
+
+      span {
+        margin-right: spacing('2-xs');
+      }
+
+			.icon {
+				display: inline-block;
+				width: 16px;
+			}
 		}
 
 		.meta {

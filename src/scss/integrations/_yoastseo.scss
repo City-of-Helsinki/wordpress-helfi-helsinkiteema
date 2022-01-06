@@ -13,14 +13,4 @@
 		font-weight: $global-font-weight-bold;
 	}
 
-	a {
-		color: $anchor-color;
-    text-decoration: $anchor-text-decoration;
-
-    &:focus,
-    &:hover {
-      color: $anchor-color-alt;
-    }
-	}
-
 }

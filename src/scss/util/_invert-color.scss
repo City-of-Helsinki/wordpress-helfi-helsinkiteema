@@ -1,0 +1,39 @@
+.has-invert-color {
+
+	.hero {
+		&:not(.is-full-width) {
+			color: $white;
+
+			.hero__title,
+			.content__title {
+				color: $white;
+			}
+
+			.button {
+				background-color: $white;
+        border-color: $white;
+				color: $black;
+
+				&:focus,
+				&:hover {
+					background-color: transparent;
+					border-color: $white;
+					color: $white;
+				}
+			}
+		}
+	} // .hero
+
+  .entry {
+    .entry__thumbnail {
+      &.has-icon {
+        .icon {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  } // .entry
+
+}

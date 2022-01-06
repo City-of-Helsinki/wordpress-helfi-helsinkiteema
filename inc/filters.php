@@ -65,33 +65,9 @@ function helsinki_widget_tag_cloud_args( $default ) {
 add_filter( 'widget_tag_cloud_args', 'helsinki_widget_tag_cloud_args');
 
 /**
-  * Blocks
+  * Page Templates
   */
-function helsinki_alignfull_block_hds_customizations( $block_content, $block ) {
-	if (
-		$block_content &&
-		isset( $block['attrs']['align'] ) &&
-		'full' === $block['attrs']['align']
-	) {
-		$search = $replace = array();
-
-		$hasKoros = in_array( $block['blockName'], array('core/cover', 'core/group') );
-		if ( $hasKoros ) {
-			$search[] = 'alignfull';
-			$replace[] = 'alignfull has-koros';
-		}
-
-		$search[] = 'inner-container';
-		$replace[] = 'inner-container hds-container';
-
-		$block_content = str_replace( $search, $replace, $block_content );
-
-		if ( $hasKoros ) {
-			$block_content .= helsinki_block_koros(
-				'core/cover' !== $block['blockName']
-			);
-		}
-	}
-	return $block_content;
+function helsinki_basic_page_template_name( $label, $context ) {
+	return _x( 'Basic page', 'default page template name', 'helsinki-universal' );
 }
-add_filter('render_block', 'helsinki_alignfull_block_hds_customizations', 10, 2);
+add_filter( 'default_page_template_title', 'helsinki_basic_page_template_name', 10, 2 );

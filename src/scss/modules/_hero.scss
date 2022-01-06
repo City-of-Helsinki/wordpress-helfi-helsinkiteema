@@ -1,48 +1,87 @@
 .hero {
 	background-color: var(--primary-color);
-	display: flex;
-	flex-direction: column;
+  position: relative;
 	width: 100%;
-
-	@include breakpoint('l') {
-		margin-bottom: spacing('m');
-	}
 
 	&__content {
 		> * {
 			margin-bottom: 0;
-
-			@include breakpoint('l') {
-				max-width: percentage(math.div(8,12));
-			}
 		}
 
 		.hero__title,
 		.content__title {
 			margin-top: 0;
-
-			@include breakpoint('l') {
-				max-width: percentage(math.div(9,12));
-			}
 		}
 
 		.excerpt {
-			margin-top: spacing('layout-2-xs');
+			margin-top: spacing('s');
 		}
 
 		.buttons {
 			margin-top: spacing('s');
 
 			.button {
-				margin-top: spacing('s');
-				margin-right: spacing('layout-2-xs');
+        margin-top: spacing('s');
+				margin-right: spacing('s');
 			}
 		}
 	}
 
 	&__excerpt {}
 
-	&__thumbnail {}
+	> .hero__thumbnail {
+
+		@include breakpointMax('l') {
+			.image-wrap--fixed-size {
+				> img {
+					min-height: 100%;
+					max-width: none;
+					width: auto;
+				}
+			}
+		}
+
+	}
+
+  .hero__decoration {
+    position: absolute;
+    bottom: 0;
+    left: spacing('s');
+    transform: translateY(60%);
+    width: 80px;
+    height: 110px;
+    z-index: 1;
+
+    .icon {
+      @include absoluteCenter();
+      width: 150px;
+    }
+
+    &--arrow {
+      .icon {
+        fill: var(--accent-color, var(--primary-color));
+      }
+    }
+
+    @include breakpoint('l') {
+      width: 100%;
+      max-width: var(--container-width-l);
+      height: 125px;
+      left: 50%;
+      transform: translate(-50%,70%);
+
+      .icon {
+        width: 180px;
+        left: 0;
+        transform: translate(-25%,-50%);
+      }
+    }
+
+    @include breakpoint('xl') {
+      max-width: var(--container-width-xl);
+    }
+
+  }
 
 	.button {
 		&:focus,
@@ -60,23 +99,98 @@
 		}
 	}
 
-	.flex-container {
-		> * {
-			width: 100%;
-		}
+  .hds-container {
+    padding-top: spacing('layout-xl');
+    padding-bottom: spacing('s');
+
+    @include breakpoint('l') {
+      .hero__content {
+        max-width: 50%;
+      }
+    }
+  }
+
+	&.has-diagonal,
+	&.has-background-image,
+	&.has-image-left,
+  &.has-image-right {
+		.hds-container {
+      display: flex;
+      align-items: center;
+      min-height: rem-calc(340);
+      padding-top: spacing('layout-m');
+      padding-bottom: spacing('layout-2-xs');
+
+      @include breakpoint('m') {
+        padding-top: spacing('layout-m');
+        padding-bottom: spacing('layout-s');
+      }
+
+      @include breakpoint('l') {
+        min-height: rem-calc(440);
+        padding-top: 4.5rem;
+
+        .hero__content {
+          max-width: unset;
+        }
+      }
+
+      @include breakpoint('xl') {
+        min-height: rem-calc(540);
+        padding-top: spacing('layout-xl');
+      }
+    }
 	}
 
-	.hds-container {
-		padding-top: spacing('layout-xl');
-		padding-bottom: spacing('s');
-	}
+  &.has-default-style {
+    @include breakpointMax('m') {
+      > .hds-koros {
+        height: math.div($koros-size, 2);
 
-	&.has-thumbnail {
+        &--beat {
+          height: 5px;
+        }
 
-		> .hero__thumbnail {
+        &--vibration {
+          height: math.div($koros-size, 5);
+        }
+
+        > svg {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  &.has-image-left,
+  &.has-image-right {
+
+    @include breakpointMax('l') {
+      > .hds-koros {
+        height: math.div($koros-size, 2);
+
+        &--beat {
+          height: 5px;
+        }
+
+        &--vibration {
+          height: math.div($koros-size, 5);
+        }
+
+        > svg {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+
+    > .hero__thumbnail {
 			background-color: $body-background-color;
 
-			@include breakpointMax(l) {
+			@include breakpointMax('l') {
 				.image-wrap--fixed-size {
 					overflow: auto;
 					padding-top: 0;
@@ -89,46 +203,141 @@
 			}
 		}
 
-		.flex-container {
+    > .hero__container {
 			.hero__thumbnail {
 				display: none;
 			}
 		}
 
-		@include breakpoint('l') {
-			> .hero__thumbnail {
-				display: none;
-			}
+    @include breakpoint('l') {
+      > .hero__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-			.flex-container {
-				justify-content: space-between;
+        > * {
+          width: calc( 50% - 1rem );
+        }
 
-				> * {
-					width: 50%;
+        .hero__thumbnail {
+  				display: block;
+  			}
+      }
 
-					+ * {
-						margin-left: spacing(layout-m);
-					}
-				}
+      > .hero__thumbnail {
+        display: none;
+      }
+    }
 
-				&.flex-container--row-reverse {
-					> * {
-						+ * {
-							margin-left: 0;
-							margin-right: spacing(layout-m);
-						}
-					}
-				}
+    @include breakpoint('xl') {
+      > .hero__container {
+        > * {
+          width: calc( 50% - 1.5rem );
+        }
+      }
+    }
 
-				.hero__thumbnail {
-					display: block;
-				}
-			}
-		}
+  } // has-image-left has-image-right
 
-	}
+  &.has-image-left {
+    &.has-thumbnail {
+      @include breakpoint('l') {
+        .hero__container {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  } // has-image-left
 
-	&.is-full-width {
+  &.has-diagonal {
+    margin-bottom: rem-calc(64);
+
+    .hds-koros {
+      height: math.div($koros-size, 2);
+
+      &--beat {
+        height: 5px;
+      }
+
+      &--vibration {
+        height: math.div($koros-size, 5);
+      }
+
+      > svg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    @include breakpoint('l') {
+      margin-bottom: rem-calc(96);
+
+      .hero__container {
+        position: relative;
+        padding-top: spacing('layout-l');
+        padding-bottom: spacing('layout-l');
+        z-index: 2;
+
+        @include breakpoint('l') {
+      	   .hero__content {
+             max-width: 50%;
+           }
+      	}
+
+        .hero__excerpt {
+          max-width: 95%;
+        }
+
+      }
+
+      .diagonal-overlay {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        .hds-koros {
+          background-color: var(--primary-color);
+          height: 100%;
+          left: 40%;
+          width: 1100px;
+          transform: rotate(-45deg);
+          transform-origin: bottom left;
+
+          > svg {
+            transform: translateY(100%) scale(-1);
+            margin-bottom: 2px;
+          }
+        }
+      }
+
+      .hero__thumbnail {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 60%;
+
+        .image-wrap--fixed-size {
+          padding-top: unset;
+          height: 100%;
+
+          > img {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            max-width: unset;
+          }
+        }
+      }
+    }
+  } // has-diagonal
+
+	&.has-background-image {
 		background-color: $body-background-color;
 		position: relative;
 
@@ -136,27 +345,21 @@
 			display: block;
 			margin-top: 0;
 			position: relative;
-			height: 300px;
+			min-height: calc(300px + #{$koros-size});
 
 			@include breakpoint('m') {
-				height: 500px;
+				min-height: calc(500px + #{$koros-size});
 			}
 
 			@include breakpoint('l') {
-				height: 600px;
+				min-height: calc(600px + #{$koros-size});
 			}
 
 			> .hds-koros {
 				background-color: transparent;
-				height: $koros-size;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-
-				> svg {
-					position: static;
-					transform: none;
-				}
+        position: absolute;
+        bottom: 0;
+        left: 0;
 			}
 		}
 
@@ -168,7 +371,8 @@
 			}
 		}
 
-		> .hds-container {
+		> .hero__container {
+      padding-top: spacing('s');
 			position: relative;
 			min-height: auto;
 
@@ -190,19 +394,18 @@
 			@include breakpoint('m') {
 				background-color: $body-background-color;
 				padding: spacing('2-xl') spacing('xl');
-				width: percentage(math.div(8,12));
+				width: 80%;
 			}
 
 			@include breakpoint('l') {
-				width: percentage(math.div(7,12));
+				width: 70%;
+			}
+
+			@include breakpoint('xl') {
+				width: 60%;
 			}
 		}
 
-	}
+	} // has-background-image
 
-	&.has-koros {}
-
-	&.has-excerpt {}
-
-	&.has-call-to-action {}
 }

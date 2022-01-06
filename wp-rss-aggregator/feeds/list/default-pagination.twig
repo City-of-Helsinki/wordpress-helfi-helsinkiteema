@@ -1,0 +1,18 @@
+{% set isOlderVisible = pagination.page < pagination.num_pages %}
+{% set isNewerVisible = pagination.page > 1 %}
+<div class="nav-links">
+    {% if isOlderVisible %}
+        <div class="nav-previous alignleft">
+            <a data-wpra-shortcode="shortcode" data-wpra-page="{{ pagination.page + 1 }}">
+              {{ wp_filter('template/list/pagination/older') }}
+            </a>
+        </div>
+    {% endif %}
+    {% if isNewerVisible %}
+        <div class="nav-next {{ isNewerVisible ? 'alignright' : 'alignleft' }}">
+            <a data-wpra-shortcode="shortcode" data-wpra-page="{{ pagination.page - 1 }}">
+              {{ wp_filter('template/list/pagination/newer') }}
+            </a>
+        </div>
+    {% endif %}
+</div>

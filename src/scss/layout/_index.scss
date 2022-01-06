@@ -1,6 +1,14 @@
 @import 'content';
+@import 'container';
 @import 'footer';
-@import 'front-page';
+@import 'grid';
 @import 'masthead';
 @import 'topbar';
 @import 'view';
+
+@import 'templates/archive';
+@import 'templates/front-page';
+@import 'templates/single';
+@import 'templates/search';
+@import 'templates/page';
+@import 'templates/maintenance';

@@ -1,0 +1,22 @@
+.feed-posts {
+
+  @each $breakpoint, $gutter in $gutters {
+		@include breakpoint($breakpoint) {
+			margin-right: -#{$gutter};
+		}
+	}
+
+  .feed-source {
+    margin-bottom: spacing('xl');
+  }
+
+  &:not(.has-highlight) {
+    .grid {
+
+      .grid__column {
+        margin-bottom: 0;
+      }
+
+    }
+  }
+}

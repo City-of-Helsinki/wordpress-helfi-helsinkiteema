@@ -57,6 +57,13 @@ function helsinki_setup_templates() {
 	}
 
 	/**
+	  * Notifications
+	  */
+	if ( is_singular() ) {
+		add_action('helsinki_main_top', 'helsinki_notifications', 20);
+	}
+
+	/**
 	  * No posts
 	  */
 	add_action('helsinki_no_posts', 'helsinki_no_posts_notice', 30);
@@ -88,51 +95,15 @@ function helsinki_setup_templates() {
 		/**
 		  * Front page layout
 		  */
-		add_action('helsinki_front_page', 'helsinki_front_page_hero', 10);
-		add_action('helsinki_front_page', 'helsinki_front_page_available_sections', 20);
-
-		add_filter('helsinki_hero_class_koros', '__return_true');
-		add_action('helsinki_front_page_hero_after', 'helsinki_front_page_hero_koros', 10);
+		add_action( 'helsinki_front_page', 'helsinki_front_page_hero', 10 );
+		add_action( 'helsinki_front_page', 'helsinki_front_page_available_sections', 20 );
 
 		/**
 		  * Hero layout
 		  */
-		add_action('helsinki_front_page_hero', 'helsinki_front_page_hero_content', 10);
-		if ( has_post_thumbnail() ) {
-			add_filter( 'helsinki_hero_class_thumbnail', '__return_true' );
-
-			if ( helsinki_front_page_hero_is_full_width() ) {
-				add_filter( 'helsinki_hero_class_full_width', '__return_true' );
-
-				remove_action('helsinki_front_page_hero_after', 'helsinki_front_page_hero_koros', 10);
-
-				add_action('helsinki_front_page_hero_before', 'helsinki_front_page_hero_image', 20);
-				add_action('helsinki_front_page_hero_image', 'helsinki_front_page_hero_koros');
-				add_action('helsinki_front_page_hero_image_size', 'helsinki_front_page_hero_image_full_size');
-
-				add_filter('helsinki_front_page_hero_image_styles', 'helsinki_front_page_hero_background_image');
-
-				add_filter( 'helsinki_front_page_hero_koros_flipped', '__return_false' );
-			} else {
-				add_filter( 'helsinki_hero_container_class_content_reverse', '__return_true' );
-				add_action('helsinki_front_page_hero', 'helsinki_front_page_hero_image', 20);
-				add_action('helsinki_front_page_hero_after', 'helsinki_front_page_hero_image', 20);
-				add_action('helsinki_front_page_hero_image', 'helsinki_front_page_hero_image_element', 10);
-			}
-
-		}
-
-		add_action('helsinki_front_page_hero_content', 'helsinki_front_page_hero_title', 10);
-
-		if ( has_excerpt() ) {
-			add_filter('helsinki_hero_class_excerpt', '__return_true');
-			add_action('helsinki_front_page_hero_content', 'helsinki_front_page_hero_excerpt', 20);
-		}
-
-		if ( helsinki_content_article_has_call_to_action() ) {
-			add_filter('helsinki_hero_class_call_to_action', '__return_true');
-			add_action('helsinki_front_page_hero_content', 'helsinki_front_page_hero_cta', 30);
-		}
+		add_filter('body_class', 'helsinki_hero_body_class', 10);
+		add_action( 'helsinki_front_page_hero', 'helsinki_hero_actions', 5 );
+		add_action( 'helsinki_front_page_hero', 'helsinki_hero', 10 );
 
 		/**
 		  * Recent posts layout
@@ -165,14 +136,34 @@ function helsinki_setup_templates() {
 	  * Page
 	  */
 	else if ( is_page() ) {
-		add_action('helsinki_content_article_top', 'helsinki_content_article_header', 10);
+
 		add_action('helsinki_content_article', 'helsinki_content_article_body', 20);
 
-		if ( is_page_template( 'template/landing-page.php' ) ) {
+		if ( helsinki_is_landing_page() ) {
+
 			remove_action('helsinki_main_top', 'helsinki_content_breadcrumbs', 10);
-			remove_action('helsinki_content_article_top', 'helsinki_content_article_header', 10);
+
+			add_filter('body_class', 'helsinki_hero_body_class', 10);
+			add_action( 'helsinki_content_article_top', 'helsinki_hero_actions', 5 );
+			add_action( 'helsinki_content_article_top', 'helsinki_hero', 10 );
+
 		} else {
-			add_action('helsinki_content_header', 'helsinki_content_article_title', 10);
+
+			if ( helsinki_hero_is_disabled() ) {
+				add_action( 'helsinki_content_article', 'helsinki_content_article_title', 10 );
+			} else {
+				add_filter( 'helsinki_content_article_header_name', 'helsinki_content_article_header_name_hero' );
+				add_action( 'helsinki_content_article_top', 'helsinki_content_article_header', 10 );
+
+				add_filter('body_class', 'helsinki_hero_body_class', 10);
+				add_action( 'helsinki_content_header_hero', 'helsinki_hero', 10 );
+
+				add_filter( 'helsinki_hero_class_koros', '__return_true' );
+				add_action( 'helsinki_hero_after', 'helsinki_hero_koros', 10 );
+
+				add_action( 'helsinki_hero', 'helsinki_hero_content', 10 );
+				add_action( 'helsinki_hero_content', 'helsinki_hero_title', 10 );
+			}
 
 			if ( ! is_page_template( 'template/no-sidebar.php' ) ) {
 				add_filter('body_class', 'helsinki_sidebar_body_class', 10);
@@ -183,19 +174,27 @@ function helsinki_setup_templates() {
 			}
 
 			if ( has_excerpt() ) {
-				add_filter('helsinki_hero_class_excerpt', '__return_true');
-				add_action('helsinki_content_header', 'helsinki_content_article_excerpt', 20);
+				if ( helsinki_hero_is_disabled() ) {
+					add_action('helsinki_content_article', 'helsinki_content_article_excerpt', 11);
+				} else {
+					add_filter('helsinki_hero_class_excerpt', '__return_true');
+					add_action( 'helsinki_hero_content', 'helsinki_hero_excerpt', 20 );
+				}
 			}
 
 			if ( helsinki_content_article_has_call_to_action() ) {
 				add_filter('helsinki_hero_class_call_to_action', '__return_true');
-				add_action('helsinki_content_header', 'helsinki_content_article_call_to_action', 30);
+				add_action('helsinki_hero_content', 'helsinki_hero_buttons', 30);
 			}
 
-			add_filter('helsinki_hero_class_koros', '__return_true');
-			add_action('helsinki_content_header_after', 'helsinki_content_article_koros', 10);
+			if ( helsinki_post_table_of_contents_enabled() ) {
+				add_filter( 'body_class', 'helsinki_table_of_contents_body_class', 10 );
+				add_filter( 'render_block', 'helsinki_add_ids_to_heading_blocks', 10, 2 );
+				add_action( 'helsinki_content_article', 'helsinki_post_table_of_contents', 14 );
+			}
 
 			if ( has_post_thumbnail() && ! helsinki_featured_image_is_hidden() ) {
+				add_filter('body_class', 'helsinki_featured_image_body_class', 10);
 				add_action('helsinki_content_article', 'helsinki_content_article_thumbnail', 15);
 			}
 		}
@@ -213,7 +212,6 @@ function helsinki_setup_templates() {
 		add_action('helsinki_content_header', 'helsinki_content_article_title', 10);
 
 		if ( has_excerpt() ) {
-			add_filter('helsinki_hero_class_excerpt', '__return_true');
 			add_action('helsinki_content_header', 'helsinki_content_article_excerpt', 20);
 		}
 
@@ -238,6 +236,7 @@ function helsinki_setup_templates() {
 		}
 
 		if ( has_post_thumbnail() ) {
+			add_filter('body_class', 'helsinki_featured_image_body_class', 10);
 			add_action('helsinki_content_article', 'helsinki_content_article_thumbnail', 30);
 		}
 
@@ -273,7 +272,7 @@ function helsinki_setup_templates() {
 
 		add_action('helsinki_search_posts', 'helsinki_loop_count', 10);
 		add_action('helsinki_search_posts', 'helsinki_loop_list', 20);
-		add_action('helsinki_search_posts', 'helsinki_loop_more', 30);
+		add_action('helsinki_search_posts', 'helsinki_load_more_button', 30);
 
 		add_action('helsinki_search_no_posts', 'helsinki_no_posts_notice');
 
@@ -304,7 +303,7 @@ function helsinki_setup_templates() {
 
 		add_action('helsinki_loop_posts', 'helsinki_loop_count', 10);
 		add_action('helsinki_loop_posts', 'helsinki_loop_list', 20);
-		add_action('helsinki_loop_posts', 'helsinki_loop_more', 30);
+		add_action('helsinki_loop_posts', 'helsinki_load_more_button', 30);
 
 		add_action('helsinki_entries_list', 'helsinki_loop_entry', 10);
 

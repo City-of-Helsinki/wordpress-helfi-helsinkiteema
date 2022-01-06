@@ -15,9 +15,9 @@ function helsinki_setup_theme()
     /**
      * Theme support
      */
-    add_theme_support('post-thumbnails');
-    add_theme_support('title-tag');
-		add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
+	add_theme_support( 'automatic-feed-links' );
     add_theme_support(
         'html5',
         [
@@ -45,16 +45,13 @@ function helsinki_setup_theme()
 	/**
 	 * Block editor
 	 */
-	add_theme_support( 'align-wide' );
-	// custom colors
-	add_theme_support( 'disable-custom-font-sizes' );
 	add_theme_support( 'disable-custom-colors' );
 	add_theme_support( 'disable-custom-gradients' );
 	remove_theme_support( 'core-block-patterns' );
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'style-editor.css' );
-	add_theme_support('responsive-embeds');
-	add_theme_support( 'editor-color-palette', helsinki_scheme_editor_palette() );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'editor-color-palette', array() );
 	add_theme_support( 'editor-gradient-presets', array() );
 
 	/**
@@ -62,40 +59,39 @@ function helsinki_setup_theme()
 	 */
 	remove_theme_support( 'widgets-block-editor' );
 
-  /**
-   * Image sizes
-   */
-  set_post_thumbnail_size(400, 225, false);
+	/**
+	  * Image sizes
+	  */
+	set_post_thumbnail_size(400, 225, false);
 
-  /**
-   * Disable inline gallery styles
-   */
-  add_filter('use_default_gallery_style', '__return_false');
+	/**
+	  * Disable inline gallery styles
+	  */
+	add_filter('use_default_gallery_style', '__return_false');
 
-  /**
-   * Menu locations
-   */
-  register_nav_menus(
-      [
-        'main_menu'      => esc_html_x('Main menu', 'Registered menu name', 'helsinki-universal'),
-				'footer_menu'          => esc_html_x('Footer menu', 'Registered menu name', 'helsinki-universal'),
-      ]
-  );
+    /**
+      * Menu locations
+      */
+	register_nav_menus( [
+		'topbar_menu' => esc_html_x( 'Top bar menu', 'Registered menu name', 'helsinki-universal' ),
+		'main_menu' => esc_html_x( 'Main menu', 'Registered menu name', 'helsinki-universal' ),
+		'footer_menu' => esc_html_x( 'Footer menu', 'Registered menu name', 'helsinki-universal' ),
+	] );
 
-  /**
-   * Social Media Settings
-   */
-  add_theme_support('artcloud-site-core-social-media-profiles');
+	/**
+	  * Social Media Settings
+	  */
+	add_theme_support('artcloud-site-core-social-media-profiles');
 
 
 	/**
-	 * 3rd Party Plugins
-	 */
+	  * 3rd Party Plugins
+	  */
 	add_theme_support( 'yoast-seo-breadcrumbs' );
 
 	/**
-	 * HDS
-	 */
+	  * HDS
+	  */
 	add_theme_support(
 		'hds-wp',
 		array(
@@ -103,8 +99,8 @@ function helsinki_setup_theme()
 				'scripts' => true,
 				'styles' => true,
 				'fonts' => true,
+				'favicon' => true,
 			),
-			'topbar' => true,
 			'widgets' => true,
 			'blocks' => true,
 			'cpt' => array(

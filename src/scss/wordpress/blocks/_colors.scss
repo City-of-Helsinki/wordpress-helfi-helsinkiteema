@@ -1,0 +1,35 @@
+$hasColors: (
+	"light-gray": $light-gray,
+);
+
+@each $name, $color in $hasColors {
+	.has-#{"" + $name}-background-color {
+		background-color: $color;
+
+		&.has-background:not(.button) {
+			padding: spacing('layout-m') spacing('layout-s');
+
+			&.has-koros {
+				padding-bottom: spacing('2-xs');
+			}
+		}
+
+		+ .hds-koros {
+			z-index: 2;
+
+			> svg {
+				path {
+					fill: $color;
+				}
+			}
+		}
+
+		> .hds-koros {
+			> svg {
+				path {
+					fill: $color;
+				}
+			}
+		}
+	}
+}

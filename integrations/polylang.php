@@ -19,6 +19,18 @@ function helsinki_register_polylang_strings() {
 		),
 	);
 
+	$notifications = array();
+	$notification_fields = array( 'title', 'text', 'link_text', 'link_url', );
+	for ( $i = 1; $i <= helsinki_customizer_notification_count(); $i++ ) {
+		$data = helsinki_theme_mod( 'helsinki_notification_notice_' . $i, '' );
+
+		foreach ( $notification_fields as $field ) {
+			$key = $i . '-' . $field;
+			$notifications[$key] = $data[$field] ?? '';
+		}
+	}
+	$config['customizer']['notification'] = $notifications;
+
 	foreach ($config as $group => $subgroups) {
 		foreach ($subgroups as $subgroup => $items) {
 			foreach ($items as $item => $text) {

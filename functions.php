@@ -44,3 +44,5 @@ add_action('template_redirect', 'helsinki_setup_templates', 10);
 add_action('wp_default_scripts', 'helsinki_move_jquery_into_footer', 10);
 add_action('wp_enqueue_scripts', 'helsinki_enqueue_assets', 10);
 add_action('widgets_init', 'helsinki_remove_recent_comments_widget_styles', 10);
+
+remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );

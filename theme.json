@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "settings": {
+    "blocks": {
+      "core/button": {
+        "border": {
+          "customRadius": false
+        },
+        "color": {
+          "palette": [],
+          "duotone": [],
+          "gradients": [],
+					"custom": false,
+					"customGradient": false,
+          "customDuotone": false
+				}
+      },
+      "core/paragraph": {
+        "typography": {
+          "fontSizes": [
+            {
+    					"slug": "lead",
+    					"size": "20px",
+    					"name": "Lead"
+    				},
+            {
+    					"slug": "small",
+    					"size": "16px",
+    					"name": "Small"
+    				}
+          ]
+        }
+      }
+    },
+    "layout": {
+      "contentSize": "1200px"
+    },
+    "typography": {
+      "fontSizes": [],
+      "customFontSize": false,
+      "customLineHeight": false,
+      "dropCap": false
+    }
+  }
+}

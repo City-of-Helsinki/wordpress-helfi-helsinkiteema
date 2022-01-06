@@ -85,16 +85,6 @@ function helsinki_customizer_front_page_sections() {
 					'',
 					''
 				);
-				$out[$key]['section_settings']['feed_posts_count'] = helsinki_setting_number(
-					__( 'Feed URL', 'helsinki-universal' ),
-					'',
-					10,
-					array(
-						'min' => 1,
-						'max' => 10,
-						'step' => 1,
-					)
-				);
 				$out[$key]['section_settings']['feed_lifetime'] = helsinki_setting_number(
 					__( 'Feed Cache time', 'helsinki-universal' ),
 					__( 'The feed result is cached for 12 hours by default.', 'helsinki-universal' ),

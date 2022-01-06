@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-28 08:12+0000\n"
+"POT-Creation-Date: 2022-01-04 17:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -27,7 +27,11 @@ msgstr ""
 msgid "A multipurpose WordPress theme"
 msgstr ""
 
-#: functions/entry.php:93
+#: customizer/config/choices.php:68
+msgid "Alert"
+msgstr ""
+
+#: functions/layout/loop.php:106
 msgid "All categories"
 msgstr ""
 
@@ -35,20 +39,32 @@ msgstr ""
 msgid "All posts"
 msgstr ""
 
-#: functions/entry.php:117
+#: functions/layout/loop.php:130
 msgid "All tags"
+msgstr ""
+
+#: integrations/wp-rss-aggregator.php:52
+msgid "and"
 msgstr ""
 
 #. Author of the theme
 msgid "ArtCloud"
 msgstr ""
 
-#: functions/content.php:41 partials/content/parts/author.php:2
+#: functions/layout/view.php:38 partials/content/parts/author.php:2
 msgid "Author"
 msgstr ""
 
 #: partials/footer/back-top.php:3
 msgid "Back to top"
+msgstr ""
+
+#: block-editor/config/meta.php:6
+msgid "Background image"
+msgstr ""
+
+#. Name of the template
+msgid "Basic page without sidebar"
 msgstr ""
 
 #: customizer/config/choices.php:22
@@ -65,12 +81,17 @@ msgid ""
 "drag and drop."
 msgstr ""
 
-#: partials/header/mobile-panel-toggle.php:1 partials/header/search.php:2
+#: setup/assets.php:62 partials/header/mobile-panel-toggle.php:1
+#: partials/header/search.php:2
 msgid "Close"
 msgstr ""
 
 #: partials/header/menu.php:6
 msgid "Close Menu"
+msgstr ""
+
+#: partials/notification/notice.php:13
+msgid "Close notification"
 msgstr ""
 
 #: customizer/config/choices.php:19
@@ -93,7 +114,7 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: integrations/complianz.php:59
+#: integrations/complianz.php:86
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr ""
@@ -107,32 +128,37 @@ msgstr ""
 msgid "Currently on page %d"
 msgstr ""
 
-#: customizer/config.php:37
+#: customizer/config.php:51
 msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr ""
 
-#: customizer/config.php:76
+#: customizer/config.php:90
 msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr ""
 
-#: customizer/config.php:24
+#: customizer/config.php:38
 msgctxt "Customizer panel title"
 msgid "Front Page"
 msgstr ""
 
-#: customizer/config.php:11
+#: customizer/config.php:12
 msgctxt "Customizer panel title"
 msgid "General"
 msgstr ""
 
-#: customizer/config.php:50
+#: customizer/config.php:64
 msgctxt "Customizer panel title"
 msgid "Header"
 msgstr ""
 
-#: customizer/config.php:63
+#: customizer/config.php:25
+msgctxt "Customizer panel title"
+msgid "Notifications"
+msgstr ""
+
+#: customizer/config.php:77
 msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr ""
@@ -165,6 +191,11 @@ msgstr ""
 #: customizer/config/header.php:57
 msgctxt "Customizer section title"
 msgid "Languages"
+msgstr ""
+
+#: customizer/config/notifications.php:16
+msgctxt "Customizer section title"
+msgid "Notification"
 msgstr ""
 
 #: customizer/config/sidebar.php:10
@@ -221,6 +252,15 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
+#: inc/filters.php:71
+msgctxt "default page template name"
+msgid "Basic page"
+msgstr ""
+
+#: block-editor/config/meta.php:5
+msgid "Diagonal"
+msgstr ""
+
 #: customizer/config/header.php:14
 msgid "Disable default city logo"
 msgstr ""
@@ -253,36 +293,12 @@ msgstr ""
 msgid "Display tags"
 msgstr ""
 
-#: customizer/config/front-page.php:53
+#: customizer/config/front-page.php:52
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 
-#: inc/assets.php:171
-msgctxt "Editor palette"
-msgid "Black"
-msgstr ""
-
-#: inc/assets.php:164
-msgctxt "Editor palette"
-msgid "Light"
-msgstr ""
-
-#: inc/assets.php:183
-msgctxt "Editor palette"
-msgid "Light Gray"
-msgstr ""
-
-#: inc/assets.php:156
-msgctxt "Editor palette"
-msgid "Primary"
-msgstr ""
-
-#: inc/assets.php:177
-msgctxt "Editor palette"
-msgid "White"
-msgstr ""
-
-#: customizer/config/settings.php:58 customizer/config/sidebar.php:15
+#: customizer/config/notifications.php:24 customizer/config/settings.php:58
+#: customizer/config/sidebar.php:15
 msgid "Enabled"
 msgstr ""
 
@@ -290,23 +306,23 @@ msgstr ""
 msgid "Engel"
 msgstr ""
 
-#: functions/social.php:58 customizer/config/choices.php:59
+#: customizer/config/choices.php:59 functions/modules/social.php:58
 msgid "Facebook"
 msgstr ""
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:89
 msgid "Feed Cache time"
 msgstr ""
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:76
 msgid "Feed shortcode"
 msgstr ""
 
-#: customizer/config/front-page.php:75 customizer/config/front-page.php:80
+#: customizer/config/front-page.php:84
 msgid "Feed URL"
 msgstr ""
 
-#: functions/header.php:65 partials/header/mobile-links.php:7
+#: functions/layout/header.php:93 partials/header/mobile-links.php:7
 msgid "Feedback"
 msgstr ""
 
@@ -322,9 +338,23 @@ msgstr ""
 msgid "Fog"
 msgstr ""
 
-#: inc/setup-theme.php:117
+#: setup/theme.php:130
 msgctxt "Footer sidebar"
 msgid "Footer"
+msgstr ""
+
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:216
+#, php-format
+msgctxt "from RSS feed source"
+msgid "%s"
+msgstr ""
+
+#: setup/assets.php:65
+msgid "Gallery images"
+msgstr ""
+
+#: integrations/maintenance.php:105
+msgid "Go to hel.fi"
 msgstr ""
 
 #: customizer/config/choices.php:20
@@ -337,6 +367,28 @@ msgstr ""
 
 #. Author URI of the theme
 msgid "https://www.artcloud.fi/"
+msgstr ""
+
+#: customizer/config/notifications.php:31
+msgid ""
+"If Polylang is active and \"All\" is selected, use String translations to "
+"translate the notice."
+msgstr ""
+
+#: block-editor/config/meta.php:8
+msgid "Image on left"
+msgstr ""
+
+#: block-editor/config/meta.php:7
+msgid "Image on right"
+msgstr ""
+
+#: customizer/config/choices.php:69
+msgid "Info"
+msgstr ""
+
+#: customizer/config/notifications.php:61
+msgid "Is external?"
 msgstr ""
 
 #: customizer/config/choices.php:38
@@ -373,6 +425,10 @@ msgstr ""
 msgid "Landing Page"
 msgstr ""
 
+#: customizer/config/notifications.php:28
+msgid "Language"
+msgstr ""
+
 #: partials/loop/pagination.php:55
 msgid "Last"
 msgstr ""
@@ -381,23 +437,23 @@ msgstr ""
 msgid "Last page"
 msgstr ""
 
-#: functions/comments.php:32
+#: functions/modules/comments.php:32
 msgid "Leave a comment"
 msgstr ""
 
-#: customizer/config/header.php:48
+#: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr ""
 
-#: customizer/config/header.php:47
+#: customizer/config/header.php:47 customizer/config/notifications.php:57
 msgid "Link url"
 msgstr ""
 
-#: functions/social.php:68 customizer/config/choices.php:61
+#: customizer/config/choices.php:61 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr ""
 
-#: functions/comments.php:27
+#: functions/modules/comments.php:27
 #, php-format
 msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
 msgstr ""
@@ -415,11 +471,15 @@ msgstr ""
 msgid "Metro"
 msgstr ""
 
+#: integrations/wp-rss-aggregator.php:16
+msgid "Newer"
+msgstr ""
+
 #: comments.php:36
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: partials/loop/pagination.php:51
+#: setup/assets.php:63 partials/loop/pagination.php:51
 msgid "Next"
 msgstr ""
 
@@ -435,12 +495,12 @@ msgstr ""
 msgid "No posts matching your search could be found."
 msgstr ""
 
-#. Name of the template
-msgid "No sidebar"
+#: functions/layout/view.php:42
+msgid "Not Found"
 msgstr ""
 
-#: functions/content.php:45
-msgid "Not Found"
+#: integrations/wp-rss-aggregator.php:8
+msgid "Older"
 msgstr ""
 
 #: partials/loop/pagination.php:42
@@ -452,7 +512,7 @@ msgstr ""
 msgid "Page navigation"
 msgstr ""
 
-#: inc/setup-theme.php:116
+#: setup/theme.php:129
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr ""
@@ -477,11 +537,11 @@ msgstr ""
 msgid "Please try using another search term or phrase."
 msgstr ""
 
-#: customizer/config/front-page.php:58
+#: customizer/config/front-page.php:67
 msgid "Post count"
 msgstr ""
 
-#: inc/setup-theme.php:115
+#: setup/theme.php:128
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr ""
@@ -495,7 +555,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: partials/loop/pagination.php:25
+#: setup/assets.php:64 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr ""
 
@@ -511,7 +571,7 @@ msgstr ""
 msgid "Read also these"
 msgstr ""
 
-#: partials/loop/entry/read-more.php:2
+#: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
 msgid "Read more"
 msgstr ""
 
@@ -519,14 +579,19 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/setup-theme.php:76
+#: setup/theme.php:78
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr ""
 
-#: inc/setup-theme.php:75
+#: setup/theme.php:77
 msgctxt "Registered menu name"
 msgid "Main menu"
+msgstr ""
+
+#: setup/theme.php:76
+msgctxt "Registered menu name"
+msgid "Top bar menu"
 msgstr ""
 
 #: customizer/config/blog.php:55
@@ -538,11 +603,17 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr ""
 
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:214
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "This feed is fetched from %s."
+msgstr ""
+
 #: customizer/config/general.php:73
 msgid "Scheme"
 msgstr ""
 
-#: functions/content.php:43 partials/header/search.php:2
+#: functions/layout/view.php:40 partials/header/search.php:2
 #: partials/header/search.php:2
 msgid "Search"
 msgstr ""
@@ -551,23 +622,23 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: customizer/config/front-page.php:37
+#: customizer/config/front-page.php:46
 msgid "Section title"
 msgstr ""
 
-#: partials/loop/filter.php:2
+#: functions/layout/loop.php:20
 msgid "Select category"
 msgstr ""
 
-#: functions/social.php:59
+#: functions/modules/social.php:59
 msgid "Share on Facebook"
 msgstr ""
 
-#: functions/social.php:69
+#: functions/modules/social.php:69
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: functions/social.php:64
+#: functions/modules/social.php:64
 msgid "Share on Twitter"
 msgstr ""
 
@@ -575,11 +646,11 @@ msgstr ""
 msgid "Share this on"
 msgstr ""
 
-#: partials/loop/load-more.php:5
+#: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr ""
 
-#: partials/loop/filter.php:23
+#: partials/loop/filter.php:4
 msgid "Show posts from a category"
 msgstr ""
 
@@ -608,8 +679,22 @@ msgstr ""
 msgid "Suomenlinna"
 msgstr ""
 
-#: customizer/config/front-page.php:91
+#: functions/content/table-of-contents.php:18
+msgid "Table of Contents"
+msgstr ""
+
+#: customizer/config/notifications.php:49
+msgid "Text"
+msgstr ""
+
+#: customizer/config/front-page.php:90
 msgid "The feed result is cached for 12 hours by default."
+msgstr ""
+
+#: customizer/config/notifications.php:30
+msgid ""
+"The notice will be displayed only, when the site is viewed on the selected "
+"language."
 msgstr ""
 
 #: partials/content/not-found.php:8
@@ -620,12 +705,11 @@ msgstr ""
 msgid "This author has not published any posts yet."
 msgstr ""
 
-#: functions/front-page.php:313
-#, php-format
-msgid "This feed is fetched from %s."
+#: customizer/config/notifications.php:45
+msgid "Title"
 msgstr ""
 
-#: inc/walkers.php:165
+#: inc/walkers.php:172
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr ""
@@ -634,11 +718,11 @@ msgstr ""
 msgid "Tram"
 msgstr ""
 
-#: functions/social.php:63 customizer/config/choices.php:60
+#: customizer/config/choices.php:60 functions/modules/social.php:63
 msgid "Twitter"
 msgstr ""
 
-#: customizer/config/general.php:26
+#: customizer/config/general.php:26 customizer/config/notifications.php:38
 msgid "Type"
 msgstr ""
 
@@ -656,12 +740,12 @@ msgstr ""
 msgid "Visible sections"
 msgstr ""
 
-#: partials/content/not-found.php:5
-msgid "Whoops!"
+#: customizer/config/choices.php:67
+msgid "Warning"
 msgstr ""
 
-#. Name of the template
-msgid "With sidebar"
+#: partials/content/not-found.php:5
+msgid "Whoops!"
 msgstr ""
 
 #: partials/content/none.php:5

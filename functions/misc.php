@@ -1,5 +1,12 @@
 <?php
 
+function helsinki_deprecation_notice( string $deprecated, string $new ) {
+	trigger_error(
+		"The {$deprecated} function is deprecated. Please use {$new} instead.",
+	    defined( 'E_USER_DEPRECATED' ) ? E_USER_DEPRECATED : E_USER_WARNING
+	);
+}
+
 if ( ! function_exists('helsinki_heading') ) {
   function helsinki_heading(int $level, string $text, string $id = '', $classes = array()) {
     if ( $level < 1 ) {
@@ -23,35 +30,6 @@ if ( ! function_exists('helsinki_heading') ) {
       $class_attr
     );
   }
-}
-
-function helsinki_hero_styles() {
-	$styles = apply_filters( 'helsinki_hero_styles', array() );
-	if ( ! $styles ) {
-		return;
-	}
-
-	$out = array();
-	foreach ($styles as $key => $value) {
-		$out[] = sprintf(
-			'%s: %s;',
-			sanitize_key( $key ),
-			filter_var( $key, FILTER_VALIDATE_URL ) ? esc_url( $value ) : esc_attr( $value )
-		);
-	}
-
-	echo implode(' ', $out);
-}
-
-function helsinki_hero_image( string $filter_name, string $size, bool $fixed = false, $post = null, $attr = '' ) {
-	echo helsinki_image_with_wrap(
-		get_the_post_thumbnail(
-			$post,
-			apply_filters( $filter_name, $size ),
-			$attr
-		),
-		$fixed
-	);
 }
 
 function helsinki_image_with_wrap( string $image = '', bool $fixed = false ) {
@@ -84,4 +62,49 @@ function helsinki_trim_text( string $text, int $max_length ) {
 function helsinki_first_image_from_string( string $text = '' ) {
 	preg_match_all('/<img.*>/i', $text, $matches);
 	return ! empty( $matches[0][0] ) ? $matches[0][0] : '';
+}
+
+/**
+  * Conditionals
+  */
+function helsinki_id_is_front_page( $id = null ) {
+	if ( $id ) {
+		$front_page_id = apply_filters(
+			'helsinki_polylang_active', false ) ?
+			pll_get_post( get_option('page_on_front'), pll_current_language() )
+			: get_option('page_on_front');
+		return absint( $front_page_id ) === absint( $id );
+	}
+	return false;
+}
+
+function helsinki_is_landing_page() {
+	return is_page_template( 'template/landing-page.php' );
+}
+
+/**
+  * Element attributes
+  */
+function helsinki_element_styles( array $styles, bool $with_style = false ) {
+	if ( ! $styles ) {
+		return;
+	}
+
+	$css = array();
+	foreach ($styles as $key => $value) {
+		$css[] = sprintf(
+			'%s: %s;',
+			sanitize_key( $key ),
+			filter_var( $key, FILTER_VALIDATE_URL ) ? esc_url( $value ) : esc_attr( $value )
+		);
+	}
+
+	return $with_style ? 'style="' . implode(' ', $css) . '"' : implode(' ', $css);
+}
+
+/**
+  * Image sizes
+  */
+function helsinki_image_size_full() {
+	return 'full';
 }

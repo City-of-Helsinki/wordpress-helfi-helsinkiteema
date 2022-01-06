@@ -1,7 +1,9 @@
 <li>
-	<article class="<?php helsinki_entry_classes( 'feed entry--post'); ?>">
+	<article class="entry entry--feed entry--post">
 		<a href="<?php echo esc_url( $args['item']->get_permalink() ); ?>">
-			<h3 class="entry__title"><?php echo esc_html( helsinki_trim_title( $args['item']->get_title() ) ); ?></h3>
+			<h3 class="entry__title">
+				<span><?php echo esc_html( helsinki_trim_title( $args['item']->get_title() ) ); ?></span><?php helsinki_svg_icon('link-external'); ?>
+			</h3>
 		</a>
 		<div class="entry__meta meta">
 			<time class="date" datetime="<?php echo esc_attr( $args['item']->get_date('c') ); ?>">
