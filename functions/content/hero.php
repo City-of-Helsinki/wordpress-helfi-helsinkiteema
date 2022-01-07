@@ -8,7 +8,13 @@ function helsinki_hero_layout_style_meta( int $id ) {
 }
 
 function helsinki_legacy_hero_layout_full_meta( int $id ) {
-	return get_post_meta( $id, 'hero_layout_full', true );
+	if (
+		! helsinki_hero_layout_style_meta( $id ) &&
+		get_post_meta( $id, 'hero_layout_full', true )
+	) {
+		return true;
+	}
+	return false;
 }
 
 function helsinki_disable_page_hero_meta( int $id ) {
