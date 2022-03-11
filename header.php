@@ -33,7 +33,7 @@
 
       ?>
 
-      <div class="navigation__content hds-container--wide flex-container">
+      <div class="hds-container navigation__content hds-container--wide flex-container">
 
         <?php
 
