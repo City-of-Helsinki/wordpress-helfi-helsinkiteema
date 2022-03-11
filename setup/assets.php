@@ -31,20 +31,45 @@ function helsinki_enqueue_assets()
 	  * Scripts
 	  */
   	wp_enqueue_script('jquery-core');
-	$theme_js = $debug ? 'scripts.js': 'scripts.min.js';
+	$theme_footer_js = $debug ? 'scripts/footer/scripts.js': 'scripts/footer/scripts.min.js';
   	wp_enqueue_script(
-		'theme',
-		$assets . $theme_js,
+		'theme-footer',
+		$assets . $theme_footer_js,
 		array(),
 		$version,
 		true
 	);
 
 	wp_localize_script(
-		'theme',
+		'theme-footer',
 		'helsinkiTheme',
 		helsinki_script_localization()
 	);
+
+	$hyphenopoly_js = 'scripts/header/libraries/hyphenopoly/Hyphenopoly_Loader.js';
+  	wp_enqueue_script(
+		'hyphenopoly',
+		$assets . $hyphenopoly_js,
+		array(),
+		$version,
+		false
+	);
+
+	$theme_header_js = $debug ? 'scripts/header/scripts.js': 'scripts/header/scripts.min.js';
+  	wp_enqueue_script(
+		'theme-header',
+		$assets . $theme_header_js,
+		array(),
+		$version,
+		false
+	);
+
+	wp_localize_script(
+		'theme-header',
+		'helsinkiTheme',
+		helsinki_script_localization()
+	);
+
 
 	/**
 	  * Comments
@@ -114,6 +139,8 @@ function helsinki_scheme_root_styles( string $scheme ) {
 			'--primary-color-light' => $config['primary']['light'] ?? '--color-' . $scheme . '-light',
 			'--primary-color-medium' => $config['primary']['medium'] ?? '--color-' . $scheme . '-medium-light',
 			'--primary-color-dark' => $config['primary']['dark'] ?? '--color-' . $scheme . '-dark',
+			'--primary-content-color' => $config['primary']['content'] ?? '--color-' . $scheme . '-content',
+			'--primary-content-secondary-color' => $config['primary']['content-secondary'] ?? '--color-' . $scheme . '-content-secondary',
 			'--secondary-color' => $config['secondary'] ?? '',
 			'--accent-color' => $config['accent'] ?? '',
 		),
