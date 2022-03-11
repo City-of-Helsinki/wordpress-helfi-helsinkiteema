@@ -85,7 +85,7 @@ function helsinki_post_table_of_contents() {
 				'title' => helsinki_post_table_of_contents_title(),
 				'items' => $items,
 			)
-		),
+		)
 	);
 }
 
