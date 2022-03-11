@@ -33,89 +33,94 @@
 			margin-bottom: 0;
 		}
 
-		&.has-thumbnail {
+		.content__excerpt {
+			margin-top: spacing('2-xs');
+
 			@include breakpoint('s') {
-				.image-wrap {
-					height: 300px;
-					padding-top: 0;
-				}
+				margin-top: spacing('s');
 			}
 		}
 
-		&.has-koros {
-			.hds-koros {
-				> svg {
-					path,
-					polygon {
-						fill: var(--primary-color);
+			&.has-thumbnail {
+				@include breakpoint('s') {
+					.image-wrap {
+						height: 300px;
+						padding-top: 0;
+					}
+				}
+			}
+
+			&.has-koros {
+				.hds-koros {
+					> svg {
+						path,
+						polygon {
+							fill: var(--primary-color);
+						}
 					}
 				}
 			}
 		}
-	}
 
-	&__thumbnail {
-		display: block;
-		width: 100%;
+		&__thumbnail {
+			display: block;
+			width: 100%;
 
-		&-wrap {
-			margin-bottom: $content-spacing;
+			&-wrap {
+				margin-bottom: $content-spacing;
+			}
+
+			figcaption {
+				font-style: normal;
+				padding: 0;
+				margin-top: spacing('2-xs');
+			}
 		}
 
-		figcaption {
-			font-style: normal;
-			padding: 0;
-			margin-top: spacing('2-xs');
-		}
-	}
-
-	&__title {
-		margin-top: 0;
-	}
-
-	&__main {
-
-		.content__thumbnail {
-			margin-bottom: $content-spacing;
-		}
-
-	}
-
-	&__body {
-		font-size: fontsize-body(l);
-		margin-bottom: $content-spacing;
-
-    :first-child {
-      margin-top: 0;
-    }
-
-	}
-
-	&__sidebar {}
-
-	&__tags {
-		border-top: $default-border;
-		border-bottom: $default-border;
-		padding-top: spacing('layout-m');
-		padding-bottom: spacing('layout-m');
-	}
-
-	&__related {
-
-		h2 {
+		&__title {
 			margin-top: 0;
 		}
 
-		padding-top: spacing('layout-l');
-		padding-bottom: spacing('layout-l');
+		&__main {
+
+			.content__thumbnail {
+				margin-bottom: $content-spacing;
+			}
+		}
+
+		&__body {
+			font-size: fontsize-body(l);
+			margin-bottom: $content-spacing;
+
+			:first-child {
+				margin-top: 0;
+			}
+		}
+
+		&__sidebar {
+		}
+
+		&__tags {
+			border-top: $default-border;
+			border-bottom: $default-border;
+			padding-top: spacing('layout-m');
+			padding-bottom: spacing('layout-m');
+		}
+
+		&__related {
+
+			h2 {
+				margin-top: 0;
+			}
+
+			padding-top: spacing('layout-l');
+			padding-bottom: spacing('layout-l');
+		}
 	}
 
-}
+	#content {
 
-#content {
-
-	> .grid {
-		margin-bottom: $content-spacing;
+		> .grid {
+			margin-bottom: $content-spacing;
+		}
 	}
-
-}

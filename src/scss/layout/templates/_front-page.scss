@@ -1,10 +1,21 @@
 .front-page-section {
-  padding-top: spacing('layout-m');
-  padding-bottom: spacing('layout-m');
+	padding-top: spacing('layout-2-xs');
+	padding-bottom: spacing('layout-2-xs');
 
-  &:last-child {
-    padding-bottom: spacing('layout-xl');
-  }
+	@include breakpoint('m') {
+		padding-top: spacing('layout-s');
+		padding-bottom: spacing('layout-s');
+	}
+
+
+	&:nth-child(2) {
+		padding-top: spacing('layout-m');
+	}
+
+
+	&:last-child {
+		padding-bottom: spacing('layout-xl');
+	}
 
 	&.posts {
 
@@ -24,7 +35,6 @@
 				}
 			}
 		}
-
 	}
 
 	&.post-content {
@@ -37,17 +47,17 @@
 			margin-bottom: spacing('m');
 		}
 
-    .entry--highlight {
-      > a {
-        &:hover {
-          .entry__more {
-            svg {
-              margin-left: 0;
-            }
-          }
-        }
-      }
-    }
+		.entry--highlight {
+			> a {
+				&:hover {
+					.entry__more {
+						svg {
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
 
 		@include breakpoint(l) {
 			.posts {
@@ -55,5 +65,4 @@
 			}
 		}
 	}
-
 }
