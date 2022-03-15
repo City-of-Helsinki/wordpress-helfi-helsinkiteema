@@ -10,12 +10,17 @@ var gulp        = require('gulp'),
 const ASSETS = {
   all:     'assets',
 	styles:  'assets/styles/',
-	scripts: 'assets/scripts/'
+	footerScripts: 'assets/scripts/footer',
+  headerScripts: 'assets/scripts/header'
 };
 
 const SOURCE = {
-  scripts: [
-    'src/js/**/*.js'
+  footerScripts: [
+    'src/js/footer/*.js'
+  ],
+  headerScripts: [
+    'src/js/header/*.js'
+
   ],
   styles: 'src/scss/**/*.scss',
 }
@@ -31,17 +36,32 @@ var cssOptions = {
 	}
 };
 
-gulp.task('scripts', function(){
-  return gulp.src(SOURCE.scripts)
+
+gulp.task('footerscripts', function(){
+  return gulp.src(SOURCE.footerScripts)
     .pipe(concat('scripts.js'))
-		.pipe(gulp.dest(ASSETS.all))
+		.pipe(gulp.dest(ASSETS.footerScripts))
     .pipe(babel({
       presets: ["@babel/preset-env"]
     }))
     .pipe(uglify())
     .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest(ASSETS.all));
+    .pipe(gulp.dest(ASSETS.footerScripts));
 });
+
+gulp.task('headerscripts', function(){
+  return gulp.src(SOURCE.headerScripts)
+    .pipe(concat('scripts.js'))
+		.pipe(gulp.dest(ASSETS.headerScripts))
+    .pipe(babel({
+      presets: ["@babel/preset-env"]
+    }))
+    .pipe(uglify())
+    .pipe(rename('scripts.min.js'))
+    .pipe(gulp.dest(ASSETS.headerScripts));
+});
+
+gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts'));
 
 gulp.task('styles', function() {
   return gulp.src(SOURCE.styles)
@@ -55,7 +75,8 @@ gulp.task('styles', function() {
 
 gulp.task('watch',function() {
   gulp.watch(SOURCE.styles,gulp.parallel('styles'));
-  gulp.watch(SOURCE.scripts, gulp.parallel('scripts'));
+  gulp.watch(SOURCE.footerScripts, gulp.parallel('footerscripts'));
+  gulp.watch(SOURCE.headerScripts, gulp.parallel('headerscripts'));
 });
 
-gulp.task('default', gulp.parallel('styles', 'scripts'));
+gulp.task('default', gulp.parallel('styles', 'footerscripts', 'headerscripts'));

@@ -1,426 +1,431 @@
 .hero {
-	background-color: var(--primary-color);
-  position: relative;
-	width: 100%;
+    background-color: var(--primary-color);
+    position: relative;
+    width: 100%;
+    margin-bottom: rem-calc(64);
 
-	&__content {
-		> * {
-			margin-bottom: 0;
-		}
 
-		.hero__title,
-		.content__title {
-			margin-top: 0;
-		}
-
-		.excerpt {
-			margin-top: spacing('s');
-		}
-
-		.buttons {
-			margin-top: spacing('s');
-
-			.button {
-        margin-top: spacing('s');
-				margin-right: spacing('s');
-			}
-		}
-	}
-
-	&__excerpt {}
-
-	> .hero__thumbnail {
-
-		@include breakpointMax('l') {
-			.image-wrap--fixed-size {
-				> img {
-					min-height: 100%;
-					max-width: none;
-					width: auto;
-				}
-			}
-		}
-
-	}
-
-  .hero__decoration {
-    position: absolute;
-    bottom: 0;
-    left: spacing('s');
-    transform: translateY(60%);
-    width: 80px;
-    height: 110px;
-    z-index: 1;
-
-    .icon {
-      @include absoluteCenter();
-      width: 150px;
-    }
-
-    &--arrow {
-      .icon {
-        fill: var(--accent-color, var(--primary-color));
-      }
-    }
-
-    @include breakpoint('l') {
-      width: 100%;
-      max-width: var(--container-width-l);
-      height: 125px;
-      left: 50%;
-      transform: translate(-50%,70%);
-
-      .icon {
-        width: 180px;
-        left: 0;
-        transform: translate(-25%,-50%);
-      }
-    }
-
-    @include breakpoint('xl') {
-      max-width: var(--container-width-xl);
-    }
-
-  }
-
-	.button {
-		&:focus,
-		&:hover {
-			background-color: transparent;
-			border-color: $black;
-			color: $black;
-		}
-	}
-
-	.hds-koros {
-		path,
-		polygon {
-			fill: var(--primary-color);
-		}
-	}
-
-  .hds-container {
-    padding-top: spacing('layout-xl');
-    padding-bottom: spacing('s');
-
-    @include breakpoint('l') {
-      .hero__content {
-        max-width: 50%;
-      }
-    }
-  }
-
-	&.has-diagonal,
-	&.has-background-image,
-	&.has-image-left,
-  &.has-image-right {
-		.hds-container {
-      display: flex;
-      align-items: center;
-      min-height: rem-calc(340);
-      padding-top: spacing('layout-m');
-      padding-bottom: spacing('layout-2-xs');
-
-      @include breakpoint('m') {
-        padding-top: spacing('layout-m');
-        padding-bottom: spacing('layout-s');
-      }
-
-      @include breakpoint('l') {
-        min-height: rem-calc(440);
-        padding-top: 4.5rem;
-
-        .hero__content {
-          max-width: unset;
-        }
-      }
-
-      @include breakpoint('xl') {
-        min-height: rem-calc(540);
-        padding-top: spacing('layout-xl');
-      }
-    }
-	}
-
-  &.has-default-style {
-    @include breakpointMax('m') {
-      > .hds-koros {
-        height: math.div($koros-size, 2);
-
-        &--beat {
-          height: 5px;
+    &__content {
+        > * {
+            margin-bottom: 0;
         }
 
-        &--vibration {
-          height: math.div($koros-size, 5);
+        .hero__title,
+        .content__title {
+            margin-top: 0;
         }
 
-        > svg {
-          position: absolute;
-          left: 0;
-          bottom: 0;
+        .excerpt {
+            margin-top: spacing('s');
         }
-      }
-    }
 
-		.hero__container {
-			.hero__content {
-				max-width: 100%;
-
-				.hero__title {
-					max-width: rem-calc(790);
-				}
-
-        .hero__excerpt,
         .buttons {
-          max-width: rem-calc(690);
+            margin-top: spacing('s');
+
+            .button {
+                margin-top: spacing('s');
+                margin-right: spacing('s');
+            }
         }
-			}
-		}
-  }
+    }
 
-  &.has-image-left,
-  &.has-image-right {
-
-    @include breakpointMax('l') {
-      > .hds-koros {
-        height: math.div($koros-size, 2);
-
-        &--beat {
-          height: 5px;
-        }
-
-        &--vibration {
-          height: math.div($koros-size, 5);
-        }
-
-        > svg {
-          position: absolute;
-          left: 0;
-          bottom: 0;
-        }
-      }
+    &__excerpt {
     }
 
     > .hero__thumbnail {
-			background-color: $body-background-color;
 
-			@include breakpointMax('l') {
-				.image-wrap--fixed-size {
-					overflow: auto;
-					padding-top: 0;
-
-					img {
-						position: static;
-						transform: none;
-					}
-				}
-			}
-		}
-
-    > .hero__container {
-			.hero__thumbnail {
-				display: none;
-			}
-		}
-
-    @include breakpoint('l') {
-      > .hero__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        > * {
-          width: calc( 50% - 1rem );
+        @include breakpointMax('l') {
+            .image-wrap--fixed-size {
+                > img {
+                    min-height: 100%;
+                    max-width: none;
+                    width: auto;
+                }
+            }
         }
-
-        .hero__thumbnail {
-  				display: block;
-  			}
-      }
-
-      > .hero__thumbnail {
-        display: none;
-      }
     }
 
-    @include breakpoint('xl') {
-      > .hero__container {
-        > * {
-          width: calc( 50% - 1.5rem );
-        }
-      }
-    }
-
-  } // has-image-left has-image-right
-
-  &.has-image-left {
-    &.has-thumbnail {
-      @include breakpoint('l') {
-        .hero__container {
-          flex-direction: row-reverse;
-        }
-      }
-    }
-  } // has-image-left
-
-  &.has-diagonal {
-    margin-bottom: rem-calc(64);
-
-    .hds-koros {
-      height: math.div($koros-size, 2);
-
-      &--beat {
-        height: 5px;
-      }
-
-      &--vibration {
-        height: math.div($koros-size, 5);
-      }
-
-      > svg {
+    .hero__decoration {
         position: absolute;
-        left: 0;
         bottom: 0;
-      }
-    }
-
-    @include breakpoint('l') {
-      margin-bottom: rem-calc(96);
-
-      .hero__container {
-        position: relative;
-        padding-top: spacing('layout-l');
-        padding-bottom: spacing('layout-l');
-        z-index: 2;
-
-        @include breakpoint('l') {
-      	   .hero__content {
-             max-width: 50%;
-           }
-      	}
-
-        .hero__excerpt {
-          max-width: 95%;
-        }
-
-      }
-
-      .diagonal-overlay {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
+        left: spacing('s');
+        transform: translateY(60%);
+        width: 80px;
+        height: 110px;
         z-index: 1;
 
-        .hds-koros {
-          background-color: var(--primary-color);
-          height: 100%;
-          left: 40%;
-          width: 1100px;
-          transform: rotate(-45deg);
-          transform-origin: bottom left;
-
-          > svg {
-            transform: translateY(100%) scale(-1);
-            margin-bottom: 2px;
-          }
+        .icon {
+            @include absoluteCenter();
+            width: 150px;
         }
-      }
 
-      .hero__thumbnail {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 60%;
-
-        .image-wrap--fixed-size {
-          padding-top: unset;
-          height: 100%;
-
-          > img {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            max-width: unset;
-          }
+        &--arrow {
+            .icon {
+                fill: var(--accent-color, var(--primary-color));
+            }
         }
-      }
+
+        @include breakpoint('l') {
+            width: 100%;
+            max-width: var(--container-width-l);
+            height: 125px;
+            left: 50%;
+            transform: translate(-50%,70%);
+
+            .icon {
+                width: 180px;
+                left: 0;
+                transform: translate(-25%,-50%);
+            }
+        }
+
+        @include breakpoint('xl') {
+            max-width: var(--container-width-xl);
+        }
     }
-  } // has-diagonal
 
-	&.has-background-image {
-		background-color: $body-background-color;
-		position: relative;
 
-		> .hero__thumbnail {
-			display: block;
-			margin-top: 0;
-			position: relative;
-			min-height: calc(300px + #{$koros-size});
+    .button {
+        &:focus,
+        &:hover {
+            background-color: transparent;
+            border-color: $black;
+            color: $black;
+        }
+    }
 
-			@include breakpoint('m') {
-				min-height: calc(500px + #{$koros-size});
-			}
+    .hds-koros {
+        path,
+        polygon {
+            fill: var(--primary-color);
+        }
+    }
 
-			@include breakpoint('l') {
-				min-height: calc(600px + #{$koros-size});
-			}
+    .hds-container {
+        padding-top: spacing('layout-xl');
+        padding-bottom: spacing('s');
 
-			> .hds-koros {
-				background-color: transparent;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-			}
-		}
+        @include breakpoint('l') {
+            .hero__content {
+                max-width: 50%;
+            }
+        }
+    }
 
-		.hds-koros {
-			> svg {
-				path {
-					fill: $body-background-color;
-				}
-			}
-		}
+    &.has-diagonal,
+    &.has-background-image,
+    &.has-image-left,
+    &.has-image-right {
+        .hds-container {
+            display: flex;
+            align-items: center;
+            min-height: rem-calc(340);
+            padding-top: spacing('layout-m');
+            padding-bottom: spacing('layout-2-xs');
 
-		> .hero__container {
-      padding-top: spacing('s');
-			position: relative;
-			min-height: auto;
+            @include breakpoint('m') {
+                padding-top: spacing('layout-m');
+                padding-bottom: spacing('layout-s');
+            }
 
-			@include breakpoint('m') {
-				padding: 0;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%,-50%);
-			}
-		}
+            @include breakpoint('l') {
+                min-height: rem-calc(440);
+                padding-top: 4.5rem;
 
-		.hero__content {
+                .hero__content {
+                    max-width: unset;
+                }
+            }
 
-			> * {
-				max-width: none;
-			}
+            @include breakpoint('xl') {
+                min-height: rem-calc(540);
+                padding-top: spacing('layout-xl');
+            }
+        }
+    }
 
-			@include breakpoint('m') {
-				background-color: $body-background-color;
-				padding: spacing('2-xl') spacing('xl');
-				width: 80%;
-			}
+    &.has-default-style {
+        margin: 0;
 
-			@include breakpoint('l') {
-				width: 70%;
-			}
+        @include breakpointMax('m') {
+            > .hds-koros {
+                height: math.div($koros-size, 2);
 
-			@include breakpoint('xl') {
-				width: 60%;
-			}
-		}
+                &--beat {
+                    height: 5px;
+                }
 
-	} // has-background-image
+                &--vibration {
+                    height: math.div($koros-size, 5);
+                }
 
+                > svg {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+        }
+
+        .hero__container {
+            .hero__content {
+                max-width: 100%;
+
+                .hero__title {
+                    max-width: rem-calc(790);
+                }
+
+                .hero__excerpt,
+                .buttons {
+                    max-width: rem-calc(690);
+                }
+            }
+        }
+    }
+
+    &.has-image-left,
+    &.has-image-right {
+
+        @include breakpointMax('l') {
+            > .hds-koros {
+                height: math.div($koros-size, 2);
+
+                &--beat {
+                    height: 5px;
+                }
+
+                &--vibration {
+                    height: math.div($koros-size, 5);
+                }
+
+                > svg {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+        }
+
+        > .hero__thumbnail {
+            background-color: $body-background-color;
+
+            @include breakpointMax('l') {
+                .image-wrap--fixed-size {
+                    overflow: auto;
+                    padding-top: 0;
+
+                    img {
+                        position: static;
+                        transform: none;
+                    }
+                }
+            }
+        }
+
+        > .hero__container {
+            .hero__thumbnail {
+                display: none;
+            }
+        }
+
+        @include breakpoint('l') {
+            > .hero__container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                > * {
+                    width: calc( 50% - 1rem );
+                }
+
+                .hero__thumbnail {
+                    display: block;
+                }
+            }
+
+            > .hero__thumbnail {
+                display: none;
+            }
+        }
+
+        @include breakpoint('xl') {
+            > .hero__container {
+                > * {
+                    width: calc( 50% - 1.5rem );
+                }
+            }
+        }
+    }
+    // has-image-left has-image-right
+
+    &.has-image-left {
+        &.has-thumbnail {
+            @include breakpoint('l') {
+                .hero__container {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+    }
+    // has-image-left
+
+    &.has-diagonal {
+
+        .hds-koros {
+            height: math.div($koros-size, 2);
+
+            &--beat {
+                height: 5px;
+            }
+
+            &--vibration {
+                height: math.div($koros-size, 5);
+            }
+
+            > svg {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        @include breakpoint('l') {
+            margin-bottom: rem-calc(96);
+
+            .hero__container {
+                position: relative;
+                padding-top: spacing('layout-l');
+                padding-bottom: spacing('layout-l');
+                z-index: 2;
+
+                @include breakpoint('l') {
+                    .hero__content {
+                        max-width: 50%;
+                    }
+                }
+
+                .hero__excerpt {
+                    max-width: 95%;
+                }
+            }
+
+            .diagonal-overlay {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+
+                .hds-koros {
+                    background-color: var(--primary-color);
+                    height: 100%;
+                    left: 40%;
+                    width: 1100px;
+                    transform: rotate(-45deg);
+                    transform-origin: bottom left;
+
+                    > svg {
+                        transform: translateY(100%) scale(-1);
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+
+            .hero__thumbnail {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 60%;
+
+                .image-wrap--fixed-size {
+                    padding-top: unset;
+                    height: 100%;
+
+                    > img {
+                        min-width: 100%;
+                        min-height: 100%;
+                        width: auto;
+                        max-width: unset;
+                    }
+                }
+            }
+        }
+    }
+    // has-diagonal
+
+    &.has-background-image {
+        background-color: $body-background-color;
+        position: relative;
+        margin-bottom: 0;
+
+
+        > .hero__thumbnail {
+            display: block;
+            margin-top: 0;
+            position: relative;
+            min-height: calc(300px + #{$koros-size});
+
+            @include breakpoint('m') {
+                min-height: calc(500px + #{$koros-size});
+            }
+
+            @include breakpoint('l') {
+                min-height: calc(600px + #{$koros-size});
+            }
+
+            > .hds-koros {
+                background-color: transparent;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        .hds-koros {
+            > svg {
+                path {
+                    fill: $body-background-color;
+                }
+            }
+        }
+
+        > .hero__container {
+            padding-top: spacing('s');
+            position: relative;
+            min-height: auto;
+
+            @include breakpoint('m') {
+                padding: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+
+        .hero__content {
+
+            > * {
+                max-width: none;
+            }
+
+            @include breakpoint('m') {
+                background-color: $body-background-color;
+                padding: spacing('2-xl') spacing('xl');
+                width: 80%;
+            }
+
+            @include breakpoint('l') {
+                width: 70%;
+            }
+
+            @include breakpoint('xl') {
+                width: 60%;
+            }
+        }
+    }
+    // has-background-image
 }
