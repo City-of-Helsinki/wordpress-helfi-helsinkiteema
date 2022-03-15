@@ -84,21 +84,6 @@
         }
     }
 
-		.hero__container {
-			.hero__content {
-				max-width: 100%;
-
-				.hero__title {
-					max-width: rem-calc(790);
-				}
-
-        .hero__excerpt,
-        .buttons {
-          max-width: rem-calc(690);
-        }
-			}
-		}
-  }
 
     .button {
         &:focus,
@@ -161,6 +146,7 @@
 
     &.has-default-style {
         margin: 0;
+
         @include breakpointMax('m') {
             > .hds-koros {
                 height: math.div($koros-size, 2);
@@ -177,6 +163,21 @@
                     position: absolute;
                     left: 0;
                     bottom: 0;
+                }
+            }
+        }
+
+        .hero__container {
+            .hero__content {
+                max-width: 100%;
+
+                .hero__title {
+                    max-width: rem-calc(790);
+                }
+
+                .hero__excerpt,
+                .buttons {
+                    max-width: rem-calc(690);
                 }
             }
         }
