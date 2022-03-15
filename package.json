@@ -5,12 +5,12 @@
   "main": "gulpfile.js",
   "keywords": [],
   "author": [
-		{
+    {
       "name": "ArtCloud",
       "email": "hel@artcloud.fi",
       "homepage": "https://www.artcloud.fi"
     }
-	],
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.7",
