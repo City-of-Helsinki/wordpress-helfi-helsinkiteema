@@ -1,4 +1,4 @@
-<header class="view-header">
+<div class="view-header">
 
 	<?php
 
@@ -32,4 +32,4 @@
 
     ?>
 
-</header>
+</div>
