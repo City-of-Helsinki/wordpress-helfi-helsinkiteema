@@ -8,11 +8,11 @@
 
 	<div class="entry__content">
 
-		<h2 class="entry__title">
+		<h3 class="entry__title">
 			<a href="<?php the_permalink(); ?>">
 				<?php helsinki_entry_title(); ?>
 			</a>
-		</h2>
+		</h3>
 
 		<div class="entry__excerpt excerpt size-l">
 			<?php the_excerpt(); ?>
