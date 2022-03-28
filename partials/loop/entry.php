@@ -1,4 +1,4 @@
-<article id="post-<?php the_id(); ?>" class="<?php helsinki_entry_classes( get_post_type() . ' entry--list flex-container' ); ?>">
+<div id="post-<?php the_id(); ?>" class="<?php helsinki_entry_classes( get_post_type() . ' entry--list flex-container' ); ?>">
 
 	<?php
 		if ( has_post_thumbnail() ) {
@@ -26,4 +26,4 @@
 
 	</div>
 
-</article>
+</div>
