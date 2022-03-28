@@ -861,6 +861,21 @@ function toggleMouseHoverClass(element, enabled) {
   }
 }
 
+(function( $ ) {
+
+$(document).ready(function(){
+
+    var links = $(".table-of-contents a");
+  
+    links.on("click", function(){
+        var target = $($(this).attr("href"));
+        target[0].setAttribute('tabindex', -1);
+        target[0].focus();
+    });
+
+  });
+
+})(jQuery);
 function jsToggleInit() {
   var toggles = document.querySelectorAll('.js-toggle');
   if ( toggles.length > 0 ) {
