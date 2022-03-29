@@ -21,9 +21,18 @@ if ( ! function_exists('helsinki_topbar_body_class') ) {
 if ( ! function_exists('helsinki_header_highlight_link') ) {
 	function helsinki_header_highlight_link() {
 		$highlight = helsinki_theme_mod('helsinki_header_highlight', '', array());
+
+		$text = $highlight['text'] ?? '';
+		$url = $highlight['url'] ?? '';
+
+		if ( apply_filters('helsinki_polylang_active', false) ) {
+			$text = pll__( $text );
+			$url = pll__( $url );
+		}
+
 		return array(
-			'url' => $highlight['url'] ?? '',
-			'text' => $highlight['text'] ?? '',
+			'url' => $url,
+			'text' => $text,
 		);
 	}
 }
