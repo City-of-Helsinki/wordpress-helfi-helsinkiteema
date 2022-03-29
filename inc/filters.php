@@ -64,6 +64,24 @@ function helsinki_widget_tag_cloud_args( $default ) {
 }
 add_filter( 'widget_tag_cloud_args', 'helsinki_widget_tag_cloud_args');
 
+function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
+	if ($widget_type == 'categories') {
+		$widget_output = str_replace('aria-current="page"', 'aria-current="true"', $widget_output);
+	}
+  else if ($widget_type == 'tag_cloud') {
+    $tag = get_queried_object();
+    $tag_id = $tag->term_id;
+    $occurence;
+    preg_match('/class="tag-cloud-link tag-link-'.$tag_id.'/', $widget_output, $occurence, PREG_OFFSET_CAPTURE);
+    if (count($occurence) > 0) {
+      $widget_output = substr_replace($widget_output, 'aria-current="true"', $occurence[0][1], 0);
+      $widget_output = str_replace('tag-link-'.$tag_id, 'tag-link-'.$tag_id.' current_tag', $widget_output);
+    }
+  }
+	return $widget_output;
+}
+add_filter( 'widget_output', 'helsinki_sidebar_filter_widgets', 10, 4 );
+
 /**
   * Page Templates
   */
