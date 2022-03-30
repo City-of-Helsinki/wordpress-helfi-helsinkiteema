@@ -1,4 +1,4 @@
-<header class="<?php helsinki_content_article_header_class(); ?>">
+<div class="<?php helsinki_content_article_header_class(); ?>">
 
 	<?php
 
@@ -32,4 +32,4 @@
 
     ?>
 
-</header>
+</div>
