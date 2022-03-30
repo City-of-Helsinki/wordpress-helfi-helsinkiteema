@@ -177,12 +177,15 @@
 			.search-field {
 				input {
 					background-color: $header-search-background-color;
-					border-color: $header-search-color-alt;
 					box-shadow: none;
 					color: $header-search-color-alt;
 
 					&:focus {
-						border-color: var(--primary-color);
+						border-color: $header-search-color-alt;
+					}
+
+					&:hover {
+						border-color: $header-search-color-alt;
 					}
 
 					&::placeholder {

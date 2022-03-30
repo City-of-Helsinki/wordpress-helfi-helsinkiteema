@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-01-04 17:59+0000\n"
+"PO-Revision-Date: 2022-03-30 10:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.4.3; wp-5.5.1"
+"X-Loco-Version: 2.6.0; wp-5.9.2"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -30,7 +30,7 @@ msgstr "Monikäyttöinen WordPress-teema"
 msgid "Alert"
 msgstr "Huomio"
 
-#: functions/layout/loop.php:106
+#: functions/layout/loop.php:107
 msgid "All categories"
 msgstr "Kaikki kategoriat"
 
@@ -38,7 +38,7 @@ msgstr "Kaikki kategoriat"
 msgid "All posts"
 msgstr "Kaikki artikkelit"
 
-#: functions/layout/loop.php:130
+#: functions/layout/loop.php:135
 msgid "All tags"
 msgstr "Kaikki avainsanat"
 
@@ -66,6 +66,10 @@ msgstr "Taustakuva"
 msgid "Basic page without sidebar"
 msgstr "Perussivu ilman sivupalkkia"
 
+#: functions/layout/misc.php:9
+msgid "Breadcrumbs"
+msgstr "Murupolku"
+
 #: customizer/config/choices.php:22
 msgid "Brick"
 msgstr "Tiili"
@@ -80,7 +84,7 @@ msgid ""
 "drag and drop."
 msgstr "Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla."
 
-#: setup/assets.php:62 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:87 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
@@ -255,7 +259,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:71
+#: inc/filters.php:89
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -354,7 +358,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
-#: setup/assets.php:65
+#: setup/assets.php:90
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -488,7 +492,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:63 partials/loop/pagination.php:51
+#: setup/assets.php:88 partials/loop/pagination.php:51
 msgid "Next"
 msgstr "Seuraava"
 
@@ -565,7 +569,7 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:64 partials/loop/pagination.php:25
+#: setup/assets.php:89 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -725,7 +729,7 @@ msgstr "Otsikko"
 #: inc/walkers.php:172
 #, php-format
 msgid "Toggle submenu for %s"
-msgstr "Näytä tai piilota \"%s\" alavalikko"
+msgstr "\"%s\" alavalikko"
 
 #: customizer/config/choices.php:30
 msgid "Tram"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-01-04 18:00+0000\n"
+"PO-Revision-Date: 2022-03-30 10:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -30,7 +30,7 @@ msgstr "Ett WordPress-tema för flera ändamål"
 msgid "Alert"
 msgstr "Uppmärksam"
 
-#: functions/layout/loop.php:106
+#: functions/layout/loop.php:107
 msgid "All categories"
 msgstr "Alla kategorier"
 
@@ -38,7 +38,7 @@ msgstr "Alla kategorier"
 msgid "All posts"
 msgstr "Alla inlägg"
 
-#: functions/layout/loop.php:130
+#: functions/layout/loop.php:135
 msgid "All tags"
 msgstr "Alla taggar"
 
@@ -66,6 +66,10 @@ msgstr "Bakgrundsbild"
 msgid "Basic page without sidebar"
 msgstr "Grundläggande sida utan sidofält"
 
+#: functions/layout/misc.php:9
+msgid "Breadcrumbs"
+msgstr "Brödsmulor"
+
 #: customizer/config/choices.php:22
 msgid "Brick"
 msgstr "Tegel"
@@ -81,7 +85,7 @@ msgid ""
 msgstr ""
 "Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och släpp."
 
-#: setup/assets.php:62 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:87 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Stänga"
@@ -254,7 +258,7 @@ msgstr "Yoast SEO krävs för att installeras"
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:71
+#: inc/filters.php:89
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -353,7 +357,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
-#: setup/assets.php:65
+#: setup/assets.php:90
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
@@ -485,7 +489,7 @@ msgstr "Nyare"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
 
-#: setup/assets.php:63 partials/loop/pagination.php:51
+#: setup/assets.php:88 partials/loop/pagination.php:51
 msgid "Next"
 msgstr "Nästa"
 
@@ -562,7 +566,7 @@ msgstr "sökresultat"
 msgid "Posts Feed"
 msgstr "Inläggsflöde"
 
-#: setup/assets.php:64 partials/loop/pagination.php:25
+#: setup/assets.php:89 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr "Tidigare"
 
