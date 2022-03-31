@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-30 10:28+0000\n"
+"POT-Creation-Date: 2022-03-31 05:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -501,6 +501,10 @@ msgstr ""
 
 #: functions/layout/view.php:42
 msgid "Not Found"
+msgstr ""
+
+#: partials/notification/notice.php:1
+msgid "Notification"
 msgstr ""
 
 #: integrations/wp-rss-aggregator.php:8

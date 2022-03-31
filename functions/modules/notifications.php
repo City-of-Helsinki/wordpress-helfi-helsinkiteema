@@ -82,7 +82,7 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 		if ( $langugage ) {
 			$notice['title'] = pll__( $notice['title'] );
 		}
-		$text .= '<strong>' . esc_html( $notice['title'] ) . '</strong> ';
+		$text .= '<strong role="heading">' . esc_html( $notice['title'] ) . '</strong> ';
 	}
 
 	if ( $text || $notice['text'] ) {

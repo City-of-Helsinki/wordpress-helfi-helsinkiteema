@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-03-30 10:29+0000\n"
+"PO-Revision-Date: 2022-03-31 05:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -508,6 +508,10 @@ msgstr "Inga inlägg som matchar din sökning kunde hittas."
 #: functions/layout/view.php:42
 msgid "Not Found"
 msgstr "Hittades inte"
+
+#: partials/notification/notice.php:1
+msgid "Notification"
+msgstr "Underrättelse"
 
 #: integrations/wp-rss-aggregator.php:8
 msgid "Older"
