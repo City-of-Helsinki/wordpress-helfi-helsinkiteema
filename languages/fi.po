@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-03-31 05:32+0000\n"
+"PO-Revision-Date: 2022-03-31 07:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -453,6 +453,10 @@ msgstr "Viimeinen sivu"
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
+#: partials/front-page/feed-posts/highlight.php:28
+msgid "Link forwards to:"
+msgstr "Linkki johtaa:"
+
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr "Linkkiteksti"
@@ -584,6 +588,10 @@ msgstr "Edellinen sivu"
 #: partials/content/parts/date.php:2
 msgid "Published"
 msgstr "Julkaistu"
+
+#: partials/loop/entry-grid.php:8
+msgid "Published:"
+msgstr "Julkaistu:"
 
 #: partials/content/parts/related.php:3
 msgid "Read also these"
