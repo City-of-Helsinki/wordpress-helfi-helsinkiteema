@@ -1,5 +1,5 @@
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-    <label for="search-input" class="screen-reader-text">
+    <label for="header-search-input" class="screen-reader-text">
 		<?php echo _x( 'Search for:', 'label', 'helsinki-universal' ); ?>
 	</label>
 	<div class="search-field hds-text-input hds-text-input__input-wrapper">
