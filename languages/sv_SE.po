@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-03-31 07:09+0000\n"
+"PO-Revision-Date: 2022-04-01 06:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -258,7 +258,7 @@ msgstr "Yoast SEO krävs för att installeras"
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:89
+#: inc/filters.php:91
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -452,6 +452,7 @@ msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
 #: partials/front-page/feed-posts/highlight.php:28
+#: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr "Länk leder till:"
 
@@ -616,6 +617,10 @@ msgstr "Huvudmeny"
 msgctxt "Registered menu name"
 msgid "Top bar menu"
 msgstr "Den översta radens meny"
+
+#: partials/content/parts/related.php:1
+msgid "Related content"
+msgstr "Relaterat innehåll"
 
 #: customizer/config/blog.php:55
 msgid "Related posts count"

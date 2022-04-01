@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 07:08+0000\n"
+"POT-Creation-Date: 2022-04-01 06:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -256,7 +256,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:89
+#: inc/filters.php:91
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -446,6 +446,7 @@ msgid "Leave a comment"
 msgstr ""
 
 #: partials/front-page/feed-posts/highlight.php:28
+#: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr ""
 
@@ -608,6 +609,10 @@ msgstr ""
 #: setup/theme.php:76
 msgctxt "Registered menu name"
 msgid "Top bar menu"
+msgstr ""
+
+#: partials/content/parts/related.php:1
+msgid "Related content"
 msgstr ""
 
 #: customizer/config/blog.php:55
