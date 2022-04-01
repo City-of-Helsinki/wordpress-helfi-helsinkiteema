@@ -30,3 +30,11 @@ function helsinki_sidebar_compatible_page_template( $post = null ) {
 		$post
 	);
 }
+
+function helsinki_sidebar_params( $params ) {
+	$params[0]['before_title'] = '<h2 class="widget__title">';
+	$params[0]['after_title'] = '</h2>';
+
+	return $params;
+}
+add_filter( 'dynamic_sidebar_params', 'helsinki_sidebar_params' );

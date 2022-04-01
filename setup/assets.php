@@ -35,7 +35,7 @@ function helsinki_enqueue_assets()
   	wp_enqueue_script(
 		'theme-footer',
 		$assets . $theme_footer_js,
-		array(),
+		array('jquery'),
 		$version,
 		true
 	);

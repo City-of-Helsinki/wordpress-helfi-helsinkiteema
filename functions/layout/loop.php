@@ -100,6 +100,7 @@ function helsinki_loop_sidebar_categories() {
 		'widget--sidebar',
 	);
 
+	ob_start();
 	the_widget(
 		'WP_Widget_Categories',
 		array(
@@ -115,6 +116,9 @@ function helsinki_loop_sidebar_categories() {
 		    'after_title'   => '</h3>',
 		)
 	);
+
+	$output = ob_get_clean();
+	echo apply_filters( 'widget_output', $output, 'categories' );
 }
 
 function helsinki_loop_sidebar_tags() {
@@ -124,6 +128,7 @@ function helsinki_loop_sidebar_tags() {
 		'widget--sidebar',
 	);
 
+	ob_start();
 	the_widget(
 		'WP_Widget_Tag_Cloud',
 		array(
@@ -137,4 +142,6 @@ function helsinki_loop_sidebar_tags() {
 		    'after_title'   => '</h3>',
 		)
 	);
+	$output = ob_get_clean();
+	echo apply_filters( 'widget_output', $output, 'tag_cloud' );
 }

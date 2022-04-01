@@ -5,6 +5,7 @@
 			<h2 class="entry__title"><?php helsinki_entry_title(); ?></h2>
 			<div class="entry__meta meta">
 				<time class="date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+					<span class="screen-reader-text"><?php esc_html_e( 'Published:', 'helsinki-universal' ); ?></span>
 					<?php echo get_the_date(); ?>
 				</time>
 			</div>

@@ -25,6 +25,7 @@ if ( $first_image ) {
 			</time>
 		</div>
 		<div class="entry__more">
+			<span class="screen-reader-text"><?php esc_html_e( 'Link forwards to:', 'helsinki-universal' ); ?></span>
 			<?php helsinki_svg_icon('link-external'); ?>
 		</div>
 	</a>

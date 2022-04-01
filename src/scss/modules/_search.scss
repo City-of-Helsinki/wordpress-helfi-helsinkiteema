@@ -75,12 +75,15 @@ input[type="search"]::-webkit-search-results-decoration {
 		.search-field {
 			input {
 				background-color: $black;
-				border-color: $white;
-				box-shadow: none;
+				box-shadow: none !important;
 				color: $white;
 
 				&:focus {
-					border-color: var(--primary-color);
+					border-color: $header-search-color-alt;
+				}
+
+				&:hover {
+					border-color: $header-search-color-alt;
 				}
 
 				&::placeholder {
@@ -97,7 +100,6 @@ input[type="search"]::-webkit-search-results-decoration {
 			}
 		}
 	}
-
 }
 
 .error404  {

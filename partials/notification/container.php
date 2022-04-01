@@ -1,5 +1,5 @@
-<div class="notifications">
+<section class="notifications">
 	<div class="hds-container">
 		<?php echo $args['notices']; ?>
 	</div>
-</div>
+</section>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-04 17:59+0000\n"
+"POT-Creation-Date: 2022-04-01 06:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Alert"
 msgstr ""
 
-#: functions/layout/loop.php:106
+#: functions/layout/loop.php:107
 msgid "All categories"
 msgstr ""
 
@@ -39,7 +39,7 @@ msgstr ""
 msgid "All posts"
 msgstr ""
 
-#: functions/layout/loop.php:130
+#: functions/layout/loop.php:135
 msgid "All tags"
 msgstr ""
 
@@ -67,6 +67,10 @@ msgstr ""
 msgid "Basic page without sidebar"
 msgstr ""
 
+#: functions/layout/misc.php:9
+msgid "Breadcrumbs"
+msgstr ""
+
 #: customizer/config/choices.php:22
 msgid "Brick"
 msgstr ""
@@ -81,7 +85,7 @@ msgid ""
 "drag and drop."
 msgstr ""
 
-#: setup/assets.php:62 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:87 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr ""
@@ -252,7 +256,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:71
+#: inc/filters.php:91
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -349,7 +353,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: setup/assets.php:65
+#: setup/assets.php:90
 msgid "Gallery images"
 msgstr ""
 
@@ -441,6 +445,11 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
+#: partials/front-page/feed-posts/highlight.php:28
+#: partials/front-page/feed-posts/list-item.php:6
+msgid "Link forwards to:"
+msgstr ""
+
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr ""
@@ -479,7 +488,7 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:63 partials/loop/pagination.php:51
+#: setup/assets.php:88 partials/loop/pagination.php:51
 msgid "Next"
 msgstr ""
 
@@ -497,6 +506,10 @@ msgstr ""
 
 #: functions/layout/view.php:42
 msgid "Not Found"
+msgstr ""
+
+#: partials/notification/notice.php:1
+msgid "Notification"
 msgstr ""
 
 #: integrations/wp-rss-aggregator.php:8
@@ -555,7 +568,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:64 partials/loop/pagination.php:25
+#: setup/assets.php:89 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr ""
 
@@ -565,6 +578,10 @@ msgstr ""
 
 #: partials/content/parts/date.php:2
 msgid "Published"
+msgstr ""
+
+#: partials/loop/entry-grid.php:8
+msgid "Published:"
 msgstr ""
 
 #: partials/content/parts/related.php:3
@@ -592,6 +609,10 @@ msgstr ""
 #: setup/theme.php:76
 msgctxt "Registered menu name"
 msgid "Top bar menu"
+msgstr ""
+
+#: partials/content/parts/related.php:1
+msgid "Related content"
 msgstr ""
 
 #: customizer/config/blog.php:55

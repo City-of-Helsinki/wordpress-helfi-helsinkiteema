@@ -40,6 +40,24 @@ function helsinki_menu_config(string $location) {
 			);
 			break;
 
+		case 'mobile_main_menu':
+			return array(
+				'theme_location'    => 'main_menu',
+				'container'         => 'false',
+				'depth'             => 3,
+				'menu_id'           => 'mobile-main-menu',
+				'menu_class'        => 'mobile-menu menu menu--main',
+				'echo'              => false,
+				'fallback_cb'       => false,
+				'link_before'		=> '<span>',
+				'link_after'		=> '</span>',
+				'before'			=> '<div class="link-wrap">',
+				'after'				=> '</div>',
+				'item_spacing'      => 'discard',
+				'walker'            => new Artcloud_Menu_Walker(),
+			);
+			break;
+
 		case 'footer_menu':
 			return array(
 				'theme_location'    => $location,

@@ -1,4 +1,4 @@
-<div id="<?php echo esc_attr( $args['id'] ); ?>" class="notification notification--<?php echo esc_attr( $args['type'] ); ?>">
+<div id="<?php echo esc_attr( $args['id'] ); ?>" class="notification notification--<?php echo esc_attr( $args['type'] ); ?>" aria-label="<?php esc_html_e( 'Notification', 'helsinki-universal' )?>">
 
 	<div class="notification__icon">
 		<?php echo $args['icon']; ?>

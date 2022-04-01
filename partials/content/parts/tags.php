@@ -1,4 +1,4 @@
-<section class="content__tags tags">
+<section role="group" aria-label="<?php esc_html_e('Tags'); ?>" class="content__tags tags">
 
 	<div class="hds-container">
 		<h2><?php esc_html_e('Tags'); ?></h2>

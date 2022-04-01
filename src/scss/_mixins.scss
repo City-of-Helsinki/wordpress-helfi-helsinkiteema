@@ -68,6 +68,12 @@
 		border-color: var(--color-silver-dark);
 		outline: none;
 	}
+
+	&.current_tag {
+		background-color: var(--color-silver-dark);
+		border-color: var(--color-silver-dark);
+		outline: none;
+	}
 }
 
 @mixin alignFull() {

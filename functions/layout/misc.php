@@ -6,7 +6,7 @@
 if ( ! function_exists('helsinki_content_breadcrumbs') ) {
 	function helsinki_content_breadcrumbs() {
 		if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs"><div class="hds-container hds-container--wide">','</div></div>' );
+			yoast_breadcrumb( '<div role="navigation" aria-label="'.esc_html__( 'Breadcrumbs', 'helsinki-universal' ).'" id="breadcrumbs" class="breadcrumbs"><div class="hds-container hds-container--wide">','</div></div>' );
 		}
 	}
 }
