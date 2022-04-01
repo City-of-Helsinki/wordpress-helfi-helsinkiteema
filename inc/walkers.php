@@ -6,7 +6,7 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu {
 
 	function start_lvl(&$output, $depth = 0, $args = array() ) {
 		$output .= sprintf(
-			"\n%s<ul class=\"menu menu--sub\" aria-labelledby=\"submenu-toggle-%s\">\n",
+			"\n%s<ul class=\"menu menu--sub\" aria-labelledby=\"%s\">\n",
 			str_repeat( "\t", $depth ),
 			$this->submenu_id ?? 0
 		);
@@ -132,8 +132,8 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu {
 		);
 
 		if ( $this->add_submenu_toggle( $args, $depth ) ) {
-		  $this->submenu_id = $item->ID;
-		  $item_output .= $this->submenu_toggle( $item->ID, $title );
+		  $this->submenu_id = $args->menu_id.'-submenu-toggle-'.$item->ID;
+		  $item_output .= $this->submenu_toggle( $this->submenu_id, $title );
 		}
 
 		$item_output .= $args->after;
@@ -167,7 +167,7 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu {
 				<span class="screen-reader-text">%s</span>
 				%s
 			</button>',
-			'submenu-toggle-' . $item_id,
+			$item_id,
 			sprintf(
 				esc_html__( 'Toggle submenu for %s', 'helsinki-universal' ),
 				$title
