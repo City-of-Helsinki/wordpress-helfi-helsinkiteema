@@ -56,7 +56,7 @@ function helsinki_widget_tag_cloud_args( $default ) {
     'largest'   => '13',
     'unit'      => 'px',
     'separator' => '',
-    'number'    => 20,
+    'number'    => 100,
     'orderby'   => 'count',
     'order'     => 'DESC',
   );
