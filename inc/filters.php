@@ -91,3 +91,32 @@ function helsinki_basic_page_template_name( $label, $context ) {
 	return _x( 'Basic page', 'default page template name', 'helsinki-universal' );
 }
 add_filter( 'default_page_template_title', 'helsinki_basic_page_template_name', 10, 2 );
+
+
+/**
+  * Password
+  */
+  function helsinki_password_protected_page_form() {
+    global $post;
+  
+    $loginurl = site_url() . '/wp-login.php?action=postpass';
+    $label = 'pwbox-' . ( ! empty( $post->ID ) ? $post->ID : rand() );
+  
+    ob_start();
+    ?>
+    <form action="<?php echo esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ); ?>" class="post-password-form" method="post">
+        <p><?php  _e( 'This content is password protected. To view it please enter your password below:' ); ?></p>
+        <div class="hds-text-input">
+          <label class="hds-text-input__label" for="<?php echo $label; ?>"><?php _e( 'Password:' ) ?></label>
+          <div class="hds-text-input__input-wrapper">
+            <input class="hds-text-input__input" name="post_password" id="<?php echo $label; ?>" type="password" size="20" />
+          </div>
+        </div>
+        <input class="hds-button button" type="submit" name="Submit" value="<?php echo esc_attr_x( 'Enter', 'post password form' ) ?>" />
+    </form>
+        
+  
+    <?php
+    return ob_get_clean();
+}   
+add_filter( 'the_password_form', 'helsinki_password_protected_page_form', 10 );
