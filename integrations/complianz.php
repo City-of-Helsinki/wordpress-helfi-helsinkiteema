@@ -65,6 +65,10 @@ function helsinki_cmplz_cookiebanner_settings( $settings ) {
 			$settings['message_optin'] ?? ''
 		);
 	}
+
+	//deleting the transient here ensures that theme overrides are applied in CSS generation
+	delete_transient("helsinki_cmplz_banner_regeneration");
+
 	return $settings;
 }
 
