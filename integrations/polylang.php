@@ -39,3 +39,24 @@ function helsinki_register_polylang_strings() {
 		}
 	}
 }
+
+add_filter('language_attributes', 'helsinki_polylang_filter_html_attributes', 10, 2);
+
+function helsinki_polylang_filter_html_attributes($output, $doctype) {
+	$replacables = array(
+		'lang="en-US"',
+		'lang="en-GB"',
+		'lang="en-AU"',
+		'lang="en-CA"',
+		'lang="sv-SE"',
+	);
+	$replacees = array(
+		'lang="en"',
+		'lang="en"',
+		'lang="en"',
+		'lang="en"',
+		'lang="sv"',
+	);
+	$output = str_replace($replacables, $replacees, $output);
+	return $output;
+}
