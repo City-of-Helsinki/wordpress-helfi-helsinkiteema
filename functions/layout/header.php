@@ -259,6 +259,13 @@ if ( ! function_exists('helsinki_header_languages') ) {
 			return;
 		}
 
+		$accessibility = array(
+			'fi' => 'Vaihda sivuston kieleksi ',
+			'en' => 'Switch website language to ',
+			'sv' => 'Ändra webbplatsens språk till ',
+		);
+		$args['accessibility'] = $accessibility;
+
 		get_template_part( 'partials/header/languages', $name, $args);
 	}
 }
