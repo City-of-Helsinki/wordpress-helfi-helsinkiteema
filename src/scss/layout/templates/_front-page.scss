@@ -7,16 +7,6 @@
 		padding-bottom: spacing('layout-s');
 	}
 
-
-	&:nth-child(2) {
-		padding-top: spacing('layout-m');
-	}
-
-
-	&:last-child {
-		padding-bottom: spacing('layout-xl');
-	}
-
 	&.posts {
 
 		.posts-page {
@@ -64,5 +54,21 @@
 				padding-left: percentage(math.div(2,12));
 			}
 		}
+	}
+}
+
+//Styles to apply only if the element is a section-tag
+section {
+	&.front-page-section {
+
+		&:nth-child(2) {
+			padding-top: spacing('layout-m');
+		}
+	
+	
+		&:last-child {
+			padding-bottom: spacing('layout-xl');
+		}
+	
 	}
 }
