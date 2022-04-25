@@ -1,7 +1,7 @@
 <?php
 
-function helsinki_front_page_section( string $section ) {
-	$data = helsinki_front_page_section_data($section);
+function helsinki_front_page_section( string $section, int $key = 0, $attributes = null) {
+	$data = helsinki_front_page_section_data($section, $attributes);
 	if ( $data ) {
 		switch ( $section ) {
 			case 'recent-posts':
@@ -24,15 +24,16 @@ function helsinki_front_page_section( string $section ) {
 	get_template_part( "partials/front-page/{$section}", null, $data );
 }
 
-function helsinki_front_page_section_data( string $section ) {
+function helsinki_front_page_section_data( string $section, $attributes = null) {
 	switch ( $section ) {
 		case 'recent-posts':
 			return array(
 				'query' => helsinki_front_page_recent_posts_query(array(
-					'cat' => helsinki_theme_mod('helsinki_front_page_recent-posts', 'category', 0),
-					'posts_per_page' => helsinki_theme_mod('helsinki_front_page_recent-posts', 'posts_per_page', 3),
+					'cat' => $attributes != null ? $attributes['category'] : helsinki_theme_mod('helsinki_front_page_recent-posts', 'category', 0),
+					'posts_per_page' => $attributes != null ? $attributes['articles'] : helsinki_theme_mod('helsinki_front_page_recent-posts', 'posts_per_page', 3),
 				)),
 				'page_for_posts' => get_option('page_for_posts'),
+				'attributes' => $attributes,
 			);
 			break;
 
@@ -66,15 +67,20 @@ function helsinki_front_page_section_data( string $section ) {
 	}
 }
 
-function helsinki_front_page_section_title( string $section, string $default = '' ) {
-  $title = helsinki_get_front_page_section_title($section, $default);
+function helsinki_front_page_section_title( string $section, string $default = '', $attributes = null) {
+  $title = helsinki_get_front_page_section_title($section, $default, $attributes);
   if ( $title ) {
     helsinki_heading( 2, $title, '', array('container__heading') );
   }
 }
 
-function helsinki_get_front_page_section_title( string $section, string $default = '' ) {
-	$title = helsinki_theme_mod('helsinki_front_page_' . $section, 'title');
+function helsinki_get_front_page_section_title( string $section, string $default = '', $attributes = null ) {
+	$title;
+	if ($attributes['title'] != null) {
+		$title = $attributes['title'];
+	}else {
+		$title = helsinki_theme_mod('helsinki_front_page_' . $section, 'title');
+	}
 	if ( function_exists('pll__') ) {
 		return pll__($title ?: $default);
 	} else {
@@ -160,7 +166,8 @@ function helsinki_front_page_recent_posts_query( array $args ) {
 function helsinki_front_page_recent_posts_title($args = array()) {
 	helsinki_front_page_section_title(
 		'recent-posts',
-		get_the_title($args['page_for_posts'])
+		get_the_title($args['page_for_posts']),
+		$args['attributes']
 	);
 }
 
