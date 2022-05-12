@@ -2,6 +2,15 @@
 add_action( 'customize_register', 'helsinki_customizer_init' );
 function helsinki_customizer_init( $wp_customize ) {
 
+  wp_enqueue_style(
+    'customize-general-styles',
+    get_template_directory_uri() . '/customizer/' . 'styles.css',
+    array(),
+    wp_get_theme()->get('Version'),
+    'all'
+  );
+
+
 	/**
 	  * Custom Controls
 		*/
