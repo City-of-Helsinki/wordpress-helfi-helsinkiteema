@@ -295,6 +295,25 @@ function helsinki_front_page_load_post() {
 	}
 }
 
+function helsinki_front_page_load_latest_posts_page() {
+	$latest_posts_page_id = get_option('page_for_posts', 0);
+	if ( ! $latest_posts_page_id ) {
+		return;
+	}
+	$query = new WP_Query( array( 'page_id' => $latest_posts_page_id ) );
+	if ($query->have_posts()) {
+		$query->the_post();
+	}
+}
+
+function helsinki_has_front_page_set() {
+	$front_page_id = get_option('page_on_front', 0);
+	if ( ! $front_page_id ) {
+		return false;
+	}
+	return true;
+}
+
 function helsinki_front_page_unload_post() {
 	wp_reset_postdata();
 }
