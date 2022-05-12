@@ -11,7 +11,8 @@ const ASSETS = {
   all:     'assets',
 	styles:  'assets/styles/',
 	footerScripts: 'assets/scripts/footer',
-  headerScripts: 'assets/scripts/header'
+  headerScripts: 'assets/scripts/header',
+  adminScripts: 'assets/scripts/admin'
 };
 
 const SOURCE = {
@@ -20,7 +21,9 @@ const SOURCE = {
   ],
   headerScripts: [
     'src/js/header/*.js'
-
+  ],
+  adminScripts: [
+    'src/js/admin/*.js'
   ],
   styles: 'src/scss/**/*.scss',
 }
@@ -61,7 +64,20 @@ gulp.task('headerscripts', function(){
     .pipe(gulp.dest(ASSETS.headerScripts));
 });
 
-gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts'));
+gulp.task('adminscripts', function(){
+  return gulp.src(SOURCE.adminScripts)
+    .pipe(concat('scripts.js'))
+		.pipe(gulp.dest(ASSETS.adminScripts))
+    .pipe(babel({
+      presets: ["@babel/preset-env"]
+    }))
+    .pipe(uglify())
+    .pipe(rename('scripts.min.js'))
+    .pipe(gulp.dest(ASSETS.adminScripts));
+});
+
+
+gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts', 'adminscripts'));
 
 gulp.task('styles', function() {
   return gulp.src(SOURCE.styles)
@@ -77,6 +93,7 @@ gulp.task('watch',function() {
   gulp.watch(SOURCE.styles,gulp.parallel('styles'));
   gulp.watch(SOURCE.footerScripts, gulp.parallel('footerscripts'));
   gulp.watch(SOURCE.headerScripts, gulp.parallel('headerscripts'));
+  gulp.watch(SOURCE.adminScripts, gulp.parallel('adminscripts'));
 });
 
-gulp.task('default', gulp.parallel('styles', 'footerscripts', 'headerscripts'));
+gulp.task('default', gulp.parallel('styles', 'footerscripts', 'headerscripts', 'adminscripts'));

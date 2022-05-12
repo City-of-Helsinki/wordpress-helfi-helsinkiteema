@@ -35,7 +35,10 @@ function helsinki_ajax_load_more() {
 	}
 
 	if ( empty($_POST['query']) || ! is_array($_POST['query']) ) {
-		wp_send_json_error();
+		$_POST['query'] = array(
+			'cat' => get_option('default_category')
+		);
+		//wp_send_json_error();
 	}
 
 	$args = helsinki_esc_query_args($_POST['query']);

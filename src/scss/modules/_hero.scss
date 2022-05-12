@@ -429,3 +429,15 @@
     }
     // has-background-image
 }
+
+body {
+    &.blog {
+        .hero {
+            &.has-diagonal,
+            &.has-image-left,
+            &.has-image-right {
+                margin-bottom: rem-calc(96);
+            }
+        }
+    }
+}
