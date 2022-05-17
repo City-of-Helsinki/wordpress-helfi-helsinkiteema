@@ -76,7 +76,7 @@ function helsinki_front_page_section_title( string $section, string $default = '
 
 function helsinki_get_front_page_section_title( string $section, string $default = '', $attributes = null ) {
 	$title;
-	if ($attributes['title'] != null) {
+	if ($attributes != null && $attributes['title'] != null) {
 		$title = $attributes['title'];
 	}else {
 		$title = helsinki_theme_mod('helsinki_front_page_' . $section, 'title');
