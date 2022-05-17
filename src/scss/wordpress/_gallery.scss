@@ -19,7 +19,6 @@
     }
 
     .gallery-item {
-        margin-bottom: $global-margin;
         position: relative;
         width: 100%;
 
@@ -48,11 +47,21 @@
             $percentage: percentage( math.div(1, $i) );
 
             > .gallery-item {
-                width: calc(#{$percentage} - var(--gallery-block--gutter-size, 16px)*0.66667);
-            }
+                width: calc(50% - var(--gallery-block--gutter-size, 16px)/2);
+                margin-right: var(--gallery-block--gutter-size,16px);
 
-            > .gallery-item:nth-of-type(#{$i}n+#{$i}) {
-                margin-right: 0;
+                &:nth-of-type(2n) {
+                    margin-right: 0;
+                }
+
+                @include breakpoint('s') {
+                    width: calc(#{$percentage} - var(--gallery-block--gutter-size, 16px)*0.66667) !important;
+                    margin-right: var(--gallery-block--gutter-size,16px) !important;
+
+                    &:nth-of-type(#{$i}n+#{$i}) {
+                        margin-right: 0 !important;
+                    }
+                }
             }
         }
     }
