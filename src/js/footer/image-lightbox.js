@@ -179,7 +179,7 @@ function helsinkiGalleryLightbox( config ) {
 	  * Elements
 	  */
 	function galleryFigures( gallery ) {
-		return gallery.querySelectorAll( '.blocks-gallery-item figure' );
+		return gallery.querySelectorAll( '.blocks-gallery-item figure, figure .wp-block-image, .gallery-item' );
 	}
 
 	function activeLightbox() {
@@ -195,7 +195,7 @@ function helsinkiGalleryLightbox( config ) {
 	}
 
 	function currentGallery( galleryItem ) {
-		return galleryItem.closest( '.wp-block-gallery' );
+		return galleryItem.closest( '.wp-block-gallery, .gallery' );
 	}
 
 	function currentGalleryContent( galleryItem ) {
@@ -389,7 +389,7 @@ function helsinkiGalleryLightbox( config ) {
 	}
 
 	function hasImageLinks( gallery ) {
-		return gallery.querySelector( '.blocks-gallery-item > figure > a' );
+		return gallery.querySelector( '.blocks-gallery-item > figure > a, figure.wp-block-image > a, .gallery-item > .gallery-icon > a' );
 	}
 
 	function toggleHidden( element, hidden ) {
@@ -415,5 +415,5 @@ function helsinkiGalleryLightbox( config ) {
 const HelsinkiGalleryLightbox = helsinkiGalleryLightbox( helsinkiTheme );
 
 HelsinkiGalleryLightbox.init(
-	document.querySelectorAll( '.wp-block-gallery' )
+	document.querySelectorAll( '.wp-block-gallery, .gallery' )
 );
