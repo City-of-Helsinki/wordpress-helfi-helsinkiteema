@@ -892,6 +892,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	transition: opacity 1s ease;
 	padding: spacing(l) spacing(m) spacing(m);
 	position: fixed;
+	top: initial;
 	bottom: 0;
 	left: 0;
 	overflow: hidden;
@@ -902,6 +903,8 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	max-width: 100%;
 	width: 100%;
 	border-style: none;
+	margin: 0;
+	transform: translate(0);
 
 	@include breakpoint(l) {
 		flex-direction: row;
