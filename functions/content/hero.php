@@ -30,7 +30,7 @@ function helsinki_hero_is_disabled( int $id = 0 ) {
 
 function helsinki_hero_has_background_image( int $id = 0 ) {
 	if ( ! $id ) {
-		$id = get_queried_object_id();
+		$id = get_the_ID();
 	}
 
 	$legacy = helsinki_legacy_hero_layout_full_meta( $id );
@@ -43,14 +43,14 @@ function helsinki_hero_has_background_image( int $id = 0 ) {
 
 function helsinki_hero_has_diagonal( int $id = 0 ) {
 	if ( ! $id ) {
-		$id = get_queried_object_id();
+		$id = get_the_ID();
 	}
 	return 'diagonal' === helsinki_hero_layout_style_meta( $id );
 }
 
 function helsinki_hero_layout_style( int $id = 0 ) {
 	if ( ! $id ) {
-		$id = get_queried_object_id();
+		$id = get_the_ID();
 	}
 
 	$style = '';
@@ -106,7 +106,7 @@ function helsinki_hero_image_styles() {
 
 function helsinki_hero_background_image( $styles ) {
 	$url = get_the_post_thumbnail_url(
-		get_queried_object_id(),
+		get_the_ID(),
 		helsinki_image_size_full()
 	);
 

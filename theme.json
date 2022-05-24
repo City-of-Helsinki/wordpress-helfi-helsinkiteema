@@ -30,6 +30,15 @@
     				}
           ]
         }
+      },
+      "core/heading": {
+        "typography": {
+          "fontWeight": false,
+          "fontStyle": false,
+          "fontSize": false,
+          "textTransform": false,
+          "letterSpacing": false  
+        }
       }
     },
     "layout": {

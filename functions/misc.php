@@ -82,6 +82,16 @@ function helsinki_is_landing_page() {
 	return is_page_template( 'template/landing-page.php' );
 }
 
+function helsinki_is_static_front_page() {
+	$type = get_option("show_on_front", false);
+	if ($type == "page") {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 /**
   * Element attributes
   */
