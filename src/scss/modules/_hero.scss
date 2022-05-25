@@ -37,9 +37,9 @@
         @include breakpointMax('l') {
             .image-wrap--fixed-size {
                 > img {
-                    min-height: 100%;
+                    max-height: 300px;
                     max-width: none;
-                    width: auto;
+                    object-fit: cover;
                 }
             }
         }
