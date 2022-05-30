@@ -28,7 +28,9 @@ if ( ! function_exists('helsinki_view_heading') ) {
 
 if ( ! function_exists('helsinki_view_title') ) {
 	function helsinki_view_title() {
-		if ( is_front_page() ) {
+		if ( is_front_page() && is_home()) {
+			$title = get_the_title(get_option('page_for_posts'));
+		} else if (is_front_page()) {
 			$title = get_the_title(get_option('page_on_front'));
 		} else if ( is_home() ) {
 			$title = get_the_title(get_option('page_for_posts'));
@@ -56,9 +58,16 @@ if ( ! function_exists('helsinki_view_description') ) {
 
 if ( ! function_exists('helsinki_view_description_content') ) {
 	function helsinki_view_description_content() {
-		$description = get_the_excerpt(get_queried_object());
-		if (empty($description)) {
+		if ( is_front_page() && is_home()) {
+			$description = get_the_excerpt(get_option('page_for_posts'));
+		} else if (is_front_page()) {
+			$description = get_the_excerpt(get_option('page_on_front'));
+		} else if ( is_home() ) {
+			$description = get_the_excerpt(get_option('page_for_posts'));
+		} else if ( is_archive() ) {
 			$description = get_the_archive_description();
+		} else {
+			$description = get_the_excerpt();
 		}
 		return apply_filters('helsinki_view_description', $description);
 	}
