@@ -1,8 +1,5 @@
 <?php
-$description = apply_filters(
-	'helsinki_view_description',
-	get_the_archive_description()
-);
+$description = helsinki_view_description_content();
 if ( ! $description ) {
 	return;
 }
