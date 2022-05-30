@@ -54,6 +54,17 @@ if ( ! function_exists('helsinki_view_description') ) {
 	}
 }
 
+if ( ! function_exists('helsinki_view_description_content') ) {
+	function helsinki_view_description_content() {
+		$description = get_the_excerpt(get_queried_object());
+		if (empty($description)) {
+			$description = get_the_archive_description();
+		}
+		return apply_filters('helsinki_view_description', $description);
+	}
+}
+
+
 if ( ! function_exists('helsinki_view_hero') ) {
 	function helsinki_view_hero() {
 		get_template_part('partials/view/hero');
