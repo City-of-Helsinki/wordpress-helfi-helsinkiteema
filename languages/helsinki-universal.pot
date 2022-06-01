@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-01 06:38+0000\n"
+"POT-Creation-Date: 2022-06-01 10:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "ArtCloud"
 msgstr ""
 
-#: functions/layout/view.php:38 partials/content/parts/author.php:2
+#: functions/layout/view.php:40 partials/content/parts/author.php:2
 msgid "Author"
 msgstr ""
 
@@ -85,7 +85,7 @@ msgid ""
 "drag and drop."
 msgstr ""
 
-#: setup/assets.php:87 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr ""
@@ -118,7 +118,8 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: integrations/complianz.php:86
+#: integrations/complianz.php:102
+#: complianz-gdpr-premium/templates/cookiebanner.php:37
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr ""
@@ -326,7 +327,7 @@ msgstr ""
 msgid "Feed URL"
 msgstr ""
 
-#: functions/layout/header.php:93 partials/header/mobile-links.php:7
+#: functions/layout/header.php:102 partials/header/mobile-links.php:7
 msgid "Feedback"
 msgstr ""
 
@@ -347,13 +348,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:216
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:223
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: setup/assets.php:90
+#: setup/assets.php:114
 msgid "Gallery images"
 msgstr ""
 
@@ -488,7 +489,7 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:88 partials/loop/pagination.php:51
+#: setup/assets.php:112 partials/loop/pagination.php:51
 msgid "Next"
 msgstr ""
 
@@ -504,7 +505,7 @@ msgstr ""
 msgid "No posts matching your search could be found."
 msgstr ""
 
-#: functions/layout/view.php:42
+#: functions/layout/view.php:44
 msgid "Not Found"
 msgstr ""
 
@@ -514,6 +515,10 @@ msgstr ""
 
 #: integrations/wp-rss-aggregator.php:8
 msgid "Older"
+msgstr ""
+
+#: functions/content/table-of-contents.php:18
+msgid "On this page"
 msgstr ""
 
 #: partials/loop/pagination.php:42
@@ -568,7 +573,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:89 partials/loop/pagination.php:25
+#: setup/assets.php:113 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr ""
 
@@ -624,7 +629,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:214
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:221
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -634,7 +639,7 @@ msgstr ""
 msgid "Scheme"
 msgstr ""
 
-#: functions/layout/view.php:40 partials/header/search.php:2
+#: functions/layout/view.php:42 partials/header/search.php:2
 #: partials/header/search.php:2
 msgid "Search"
 msgstr ""
@@ -698,10 +703,6 @@ msgstr ""
 
 #: customizer/config/choices.php:29
 msgid "Suomenlinna"
-msgstr ""
-
-#: functions/content/table-of-contents.php:18
-msgid "Table of Contents"
 msgstr ""
 
 #: customizer/config/notifications.php:49

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-04-01 06:40+0000\n"
+"PO-Revision-Date: 2022-06-01 10:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -50,7 +50,7 @@ msgstr "och"
 msgid "ArtCloud"
 msgstr "ArtCloud"
 
-#: functions/layout/view.php:38 partials/content/parts/author.php:2
+#: functions/layout/view.php:40 partials/content/parts/author.php:2
 msgid "Author"
 msgstr "Författare"
 
@@ -85,7 +85,7 @@ msgid ""
 msgstr ""
 "Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och släpp."
 
-#: setup/assets.php:87 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Stänga"
@@ -118,7 +118,8 @@ msgstr "Kommentarer är stängda."
 msgid "Content"
 msgstr "Innehåll"
 
-#: integrations/complianz.php:86
+#: integrations/complianz.php:102
+#: complianz-gdpr-premium/templates/cookiebanner.php:37
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr "använder cookies"
@@ -330,7 +331,7 @@ msgstr "Mata kortkod"
 msgid "Feed URL"
 msgstr "Feed URL"
 
-#: functions/layout/header.php:93 partials/header/mobile-links.php:7
+#: functions/layout/header.php:102 partials/header/mobile-links.php:7
 msgid "Feedback"
 msgstr "Respons"
 
@@ -351,13 +352,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:216
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:223
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
-#: setup/assets.php:90
+#: setup/assets.php:114
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
@@ -494,7 +495,7 @@ msgstr "Nyare"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
 
-#: setup/assets.php:88 partials/loop/pagination.php:51
+#: setup/assets.php:112 partials/loop/pagination.php:51
 msgid "Next"
 msgstr "Nästa"
 
@@ -510,7 +511,7 @@ msgstr "Inga inlägg har publicerats än."
 msgid "No posts matching your search could be found."
 msgstr "Inga inlägg som matchar din sökning kunde hittas."
 
-#: functions/layout/view.php:42
+#: functions/layout/view.php:44
 msgid "Not Found"
 msgstr "Hittades inte"
 
@@ -521,6 +522,10 @@ msgstr "Underrättelse"
 #: integrations/wp-rss-aggregator.php:8
 msgid "Older"
 msgstr "Äldre"
+
+#: functions/content/table-of-contents.php:18
+msgid "On this page"
+msgstr "På den här sidan"
 
 #: partials/loop/pagination.php:42
 #, php-format
@@ -575,7 +580,7 @@ msgstr "sökresultat"
 msgid "Posts Feed"
 msgstr "Inläggsflöde"
 
-#: setup/assets.php:89 partials/loop/pagination.php:25
+#: setup/assets.php:113 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr "Tidigare"
 
@@ -631,7 +636,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Återställa"
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:214
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:221
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -641,7 +646,7 @@ msgstr "Detta flöde hämtas från %s."
 msgid "Scheme"
 msgstr "Schema"
 
-#: functions/layout/view.php:40 partials/header/search.php:2
+#: functions/layout/view.php:42 partials/header/search.php:2
 #: partials/header/search.php:2
 msgid "Search"
 msgstr "Sök"
@@ -706,10 +711,6 @@ msgstr "Sommar"
 #: customizer/config/choices.php:29
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
-
-#: functions/content/table-of-contents.php:18
-msgid "Table of Contents"
-msgstr "Innehållsförteckning"
 
 #: customizer/config/notifications.php:49
 msgid "Text"

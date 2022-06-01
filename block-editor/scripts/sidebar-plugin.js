@@ -22,7 +22,7 @@
 			label: props.fieldLabel,
 			checked: props.metaFieldValue ? true : false,
 			onChange: function(toggled) {
-				props.setMetaFieldValue( toggled ? 'true' : 'false' );
+				props.setMetaFieldValue( toggled ? true : false );
 			}
 		});
 	}
@@ -37,7 +37,7 @@
 			label: props.fieldLabel,
 			checked: props.metaFieldValue ? true : false,
 			onChange: function(toggled) {
-				props.setMetaFieldValue( toggled ? 'true' : 'false' );
+				props.setMetaFieldValue( toggled ? true : false );
 			},
       disabled: displayHeroStyles === true,
 		});
@@ -177,11 +177,6 @@
           condition: true,
           type: ToggleMetaField,
           config: { fieldLabel: 'Enabled', fieldName: 'table_of_contents_enabled' }
-        },
-        {
-          condition: true,
-          type: TextMetaField,
-          config: { fieldLabel: 'Title', fieldType: 'text', fieldName: 'table_of_contents_title' }
         },
       ]
     }

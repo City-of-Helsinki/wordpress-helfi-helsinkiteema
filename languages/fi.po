@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-04-01 06:39+0000\n"
+"PO-Revision-Date: 2022-06-01 10:37+0000\n"
 "Last-Translator: \n"
-"Language-Team: Suomi\n"
+"Language-Team: Finnish\n"
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "ja"
 msgid "ArtCloud"
 msgstr "ArtCloud"
 
-#: functions/layout/view.php:38 partials/content/parts/author.php:2
+#: functions/layout/view.php:40 partials/content/parts/author.php:2
 msgid "Author"
 msgstr "Kirjoittaja"
 
@@ -84,7 +84,7 @@ msgid ""
 "drag and drop."
 msgstr "Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla."
 
-#: setup/assets.php:87 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
@@ -117,7 +117,8 @@ msgstr "Kommentointi on suljettu."
 msgid "Content"
 msgstr "Sisältö"
 
-#: integrations/complianz.php:86
+#: integrations/complianz.php:102
+#: complianz-gdpr-premium/templates/cookiebanner.php:37
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr "käyttää evästeitä"
@@ -331,7 +332,7 @@ msgstr "Syötteen lyhytkoodi"
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
-#: functions/layout/header.php:93 partials/header/mobile-links.php:7
+#: functions/layout/header.php:102 partials/header/mobile-links.php:7
 msgid "Feedback"
 msgstr "Palaute"
 
@@ -352,13 +353,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:216
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:223
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
-#: setup/assets.php:90
+#: setup/assets.php:114
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -497,7 +498,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:88 partials/loop/pagination.php:51
+#: setup/assets.php:112 partials/loop/pagination.php:51
 msgid "Next"
 msgstr "Seuraava"
 
@@ -513,7 +514,7 @@ msgstr "Yhtään artikkelia ei ole vielä julkaistu."
 msgid "No posts matching your search could be found."
 msgstr "Hakuasi vastaavia tuloksia ei löytynyt."
 
-#: functions/layout/view.php:42
+#: functions/layout/view.php:44
 msgid "Not Found"
 msgstr "Ei löytynyt"
 
@@ -524,6 +525,10 @@ msgstr "Ilmoitus"
 #: integrations/wp-rss-aggregator.php:8
 msgid "Older"
 msgstr "Vanhemmat"
+
+#: functions/content/table-of-contents.php:18
+msgid "On this page"
+msgstr "Tällä sivulla"
 
 #: partials/loop/pagination.php:42
 #, php-format
@@ -578,7 +583,7 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:89 partials/loop/pagination.php:25
+#: setup/assets.php:113 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -634,7 +639,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Tyhjennä"
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:214
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:221
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -644,7 +649,7 @@ msgstr "Tämä syöte haetaan %s."
 msgid "Scheme"
 msgstr "Tyyli"
 
-#: functions/layout/view.php:40 partials/header/search.php:2
+#: functions/layout/view.php:42 partials/header/search.php:2
 #: partials/header/search.php:2
 msgid "Search"
 msgstr "Haku"
@@ -710,10 +715,6 @@ msgstr "Kesä"
 #: customizer/config/choices.php:29
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
-
-#: functions/content/table-of-contents.php:18
-msgid "Table of Contents"
-msgstr "Sisällysluettelo"
 
 #: customizer/config/notifications.php:49
 msgid "Text"
