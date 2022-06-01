@@ -12,18 +12,10 @@ function helsinki_post_table_of_contents_enabled() {
 	);
 }
 
-function helsinki_post_table_of_contents_default_title() {
-	return apply_filters(
-		'helsinki_post_table_of_contents_default_title',
-		__( 'Table of Contents', 'helsinki-universal' )
-	);
-}
-
 function helsinki_post_table_of_contents_title() {
-	$title = get_post_meta( get_queried_object_id(), 'table_of_contents_title', true );
 	return apply_filters(
 		'helsinki_post_table_of_contents_title',
-		! empty( $title ) ? $title : helsinki_post_table_of_contents_default_title(),
+		__( 'On this page', 'helsinki-universal' ),
 		get_queried_object_id()
 	);
 }
