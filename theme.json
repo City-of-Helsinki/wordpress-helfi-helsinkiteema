@@ -17,18 +17,11 @@
       },
       "core/paragraph": {
         "typography": {
-          "fontSizes": [
-            {
-    					"slug": "lead",
-    					"size": "20px",
-    					"name": "Lead"
-    				},
-            {
-    					"slug": "small",
-    					"size": "16px",
-    					"name": "Small"
-    				}
-          ]
+          "fontWeight": false,
+          "fontStyle": false,
+          "fontSize": false,
+          "textTransform": false,
+          "letterSpacing": false  
         }
       },
       "core/heading": {
