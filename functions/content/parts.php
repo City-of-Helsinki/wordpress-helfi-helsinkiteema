@@ -89,8 +89,13 @@ function helsinki_content_excerpt( $post = null ) {
 
 function helsinki_get_content_excerpt( $post = null ) {
 	$excerpt = get_the_excerpt( $post );
-	$max_length = apply_filters( 'helsinki_content_excerpt_length', 195 );
-	return mb_strlen($excerpt) > $max_length ? mb_substr($excerpt, 0, $max_length) : $excerpt;
+	$max_length = apply_filters( 'helsinki_content_excerpt_length', null );
+	if ($max_length != null) {
+		return mb_strlen($excerpt) > $max_length ? mb_substr($excerpt, 0, $max_length) : $excerpt;
+	}
+	else {
+		return $excerpt;
+	}
 }
 
 /**
