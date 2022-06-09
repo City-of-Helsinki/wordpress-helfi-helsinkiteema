@@ -60,16 +60,18 @@ function helsinki_config_colors() {
 			'secondary' => '#f0f0ff',
 			'accent' => '#00d7a7',
 		),
-		// 'fog' => array(
-		// 	'primary' => array(
-		// 		'color' => '#9fc9eb',
-		// 		'light' => '#e8f3fc',
-		// 		'medium' => '#d0e6f7',
-		// 		'dark' => '#72a5cf',
-		// 	),
-		// 	'secondary' => '',
-		// 	'accent' => '',
-		// ),
+		'fog' => array(
+		 	'primary' => array(
+		 		'color' => '#9fc9eb',
+		 		'light' => '#e8f3fc',
+		 		'medium' => '#d0e6f7',
+		 		'dark' => '#72a5cf',
+				'content' => '#1a1a1a',
+				'content-secondary' => '#ffffff',
+			),
+		 	'secondary' => '#e8f3fc',
+			'accent' => '#f5a3c7',
+		),
 		'gold' => array(
 			'primary' => array(
 				'color' => '#c2a251',
