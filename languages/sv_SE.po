@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-06-01 10:37+0000\n"
+"PO-Revision-Date: 2022-06-09 06:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -81,9 +81,17 @@ msgstr "Buss"
 #: customizer/config/front-page.php:25
 msgid ""
 "Checked sections will be displayed on the front page. Reorder sections with "
-"drag and drop."
+"drag and drop. \n"
+"\t\t  \n"
+"\t\t  This feature is being retired. Please use the front page's block "
+"editor to setup the front page content. Remember to keep the Content-"
+"checkbox active."
 msgstr ""
-"Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och släpp."
+"Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och släpp. "
+"\n"
+"\n"
+"Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
+"framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
 
 #: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
@@ -259,7 +267,7 @@ msgstr "Yoast SEO krävs för att installeras"
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:91
+#: inc/filters.php:97
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -300,7 +308,7 @@ msgstr "Visa sociala delningsknappar"
 msgid "Display tags"
 msgstr "Visa taggar"
 
-#: customizer/config/front-page.php:52
+#: customizer/config/front-page.php:54
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Visar innehåll på förstasidan som ställts in i Instrumentpanelen> Sidor> "
@@ -319,15 +327,15 @@ msgstr "Engel"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:89
+#: customizer/config/front-page.php:91
 msgid "Feed Cache time"
 msgstr "Feed Cache-tid"
 
-#: customizer/config/front-page.php:76
+#: customizer/config/front-page.php:78
 msgid "Feed shortcode"
 msgstr "Mata kortkod"
 
-#: customizer/config/front-page.php:84
+#: customizer/config/front-page.php:86
 msgid "Feed URL"
 msgstr "Feed URL"
 
@@ -562,7 +570,7 @@ msgstr "Abstrakt"
 msgid "Please try using another search term or phrase."
 msgstr "Försök använda en annan sökterm eller fras."
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:69
 msgid "Post count"
 msgstr "Antal inlägg"
 
@@ -655,7 +663,7 @@ msgstr "Sök"
 msgid "Search results"
 msgstr "Sökresultat"
 
-#: customizer/config/front-page.php:46
+#: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Avsnittstitel"
 
@@ -716,7 +724,7 @@ msgstr "Suomenlinna"
 msgid "Text"
 msgstr "Text"
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:92
 msgid "The feed result is cached for 12 hours by default."
 msgstr "Resultatet är cachat i 12 timmar som standard."
 

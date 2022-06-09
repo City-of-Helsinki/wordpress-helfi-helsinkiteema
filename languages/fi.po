@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-06-01 10:37+0000\n"
+"PO-Revision-Date: 2022-06-09 06:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "Language: fi\n"
@@ -81,8 +81,16 @@ msgstr "Bussi"
 #: customizer/config/front-page.php:25
 msgid ""
 "Checked sections will be displayed on the front page. Reorder sections with "
-"drag and drop."
-msgstr "Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla."
+"drag and drop. \n"
+"\t\t  \n"
+"\t\t  This feature is being retired. Please use the front page's block "
+"editor to setup the front page content. Remember to keep the Content-"
+"checkbox active."
+msgstr ""
+"Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla.\n"
+"\n"
+"Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
+"etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
 #: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
@@ -260,7 +268,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:91
+#: inc/filters.php:97
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -301,7 +309,7 @@ msgstr "Näytä sosiaalisen median jakopainikkeet"
 msgid "Display tags"
 msgstr "Näytä avainsanat"
 
-#: customizer/config/front-page.php:52
+#: customizer/config/front-page.php:54
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
@@ -320,15 +328,15 @@ msgstr "Engel"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:89
+#: customizer/config/front-page.php:91
 msgid "Feed Cache time"
 msgstr "Syötteen elinikä"
 
-#: customizer/config/front-page.php:76
+#: customizer/config/front-page.php:78
 msgid "Feed shortcode"
 msgstr "Syötteen lyhytkoodi"
 
-#: customizer/config/front-page.php:84
+#: customizer/config/front-page.php:86
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
@@ -565,7 +573,7 @@ msgstr "Abstrakti"
 msgid "Please try using another search term or phrase."
 msgstr "Ole hyvä ja kokeile hakea jollain toisella hakusanalla tai -lauseella."
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:69
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
@@ -658,7 +666,7 @@ msgstr "Haku"
 msgid "Search results"
 msgstr "Hakutulokset"
 
-#: customizer/config/front-page.php:46
+#: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
 
@@ -720,7 +728,7 @@ msgstr "Suomenlinna"
 msgid "Text"
 msgstr "Teksti"
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:92
 msgid "The feed result is cached for 12 hours by default."
 msgstr ""
 "Syötteen sisältö tallennetaan välimuistiin oletuksena 12 tunnin ajaksi."
