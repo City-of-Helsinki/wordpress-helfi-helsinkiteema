@@ -22,7 +22,9 @@ function helsinki_customizer_front_page_sections() {
       'section_settings' => array(
         'visible' => helsinki_setting_multicheckbox(
           __( 'Visible sections', 'helsinki-universal' ),
-          __( 'Checked sections will be displayed on the front page. Reorder sections with drag and drop.', 'helsinki-universal' ),
+          __( 'Checked sections will be displayed on the front page. Reorder sections with drag and drop. 
+		  
+		  This feature is being retired. Please use the front page\'s block editor to setup the front page content. Remember to keep the Content-checkbox active.', 'helsinki-universal' ),
           helsinki_front_page_default_sections(),
           true,
           array_keys(helsinki_front_page_default_sections())
