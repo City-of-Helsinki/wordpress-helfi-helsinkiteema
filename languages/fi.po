@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-06-09 06:44+0000\n"
+"PO-Revision-Date: 2022-06-10 08:47+0000\n"
 "Last-Translator: \n"
-"Language-Team: Finnish\n"
+"Language-Team: Suomi\n"
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "(Muokkaa kommenttia)"
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
 
-#: customizer/config/choices.php:68
+#: customizer/config/choices.php:69
 msgid "Alert"
 msgstr "Huomio"
 
@@ -324,7 +324,7 @@ msgstr "Käytössä"
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:60 functions/modules/social.php:58
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -404,7 +404,7 @@ msgstr "Kuva vasemmalla"
 msgid "Image on right"
 msgstr "Kuva oikealla"
 
-#: customizer/config/choices.php:69
+#: customizer/config/choices.php:70
 msgid "Info"
 msgstr "Ilmoitus"
 
@@ -421,6 +421,11 @@ msgstr "Perus"
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Syke"
+
+#: customizer/config/choices.php:43
+msgctxt "Koros motif"
+msgid "Calm"
+msgstr "Tyyni"
 
 #: customizer/config/choices.php:40
 msgctxt "Koros motif"
@@ -475,7 +480,7 @@ msgstr "Linkkiteksti"
 msgid "Link url"
 msgstr "Linkin osoite"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:62 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -562,9 +567,9 @@ msgstr "Etsi..."
 msgid "Placeholder Icon"
 msgstr "Paikanvaraajan ikoni"
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
-#: customizer/config/choices.php:50 customizer/config/choices.php:51
-#: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:49 customizer/config/choices.php:50
+#: customizer/config/choices.php:51 customizer/config/choices.php:52
+#: customizer/config/choices.php:53 customizer/config/choices.php:54
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
@@ -761,7 +766,7 @@ msgstr "\"%s\" alavalikko"
 msgid "Tram"
 msgstr "Spåra"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:61 functions/modules/social.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -783,7 +788,7 @@ msgstr "Hae"
 msgid "Visible sections"
 msgstr "Näytettävät osiot"
 
-#: customizer/config/choices.php:67
+#: customizer/config/choices.php:68
 msgid "Warning"
 msgstr "Varoitus"
 
