@@ -10,7 +10,6 @@
 
 	.view-title,
 	&__title {
-		color: $white;
 		margin-bottom: 0;
 		margin-top: 0;
 
@@ -29,6 +28,8 @@
 		}
 	}
 
+	.view-title,
+	.view-header__title,
 	.view-description {
 		color: $white;
 	}

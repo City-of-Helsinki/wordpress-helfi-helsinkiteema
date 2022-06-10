@@ -76,9 +76,37 @@ if ( ! function_exists('helsinki_view_description_content') ) {
 
 if ( ! function_exists('helsinki_view_hero') ) {
 	function helsinki_view_hero() {
-		get_template_part('partials/view/hero');
+		helsinki_hero_koros();
+		//get_template_part('partials/view/hero');
 	}
 }
+
+if ( ! function_exists('helsinki_view_classes') ) {
+	function helsinki_view_classes(string $default = '') {
+		if ( is_front_page() && is_home()) {
+			$default = 'hero';
+		} else if (is_front_page()) {
+			$default = 'hero';
+		} else if ( is_home() ) {
+			$default = 'hero';
+		} else if ( is_archive() ) {
+			$default = 'hero';
+		} else if ( is_author() ) {
+			$default = 'hero';
+		} else if ( is_search() ) {
+			$default = 'view-header';
+		} else if ( is_404() ) {
+			$default = 'view-header';
+		} else {
+			$default = 'hero';
+		}
+		$classes = array(
+			$default,
+		);
+		helsinki_element_classes('view', $classes);
+	}
+}
+
 
 if ( ! function_exists('helsinki_view_hero_image') ) {
 	function helsinki_view_hero_image_url() {
