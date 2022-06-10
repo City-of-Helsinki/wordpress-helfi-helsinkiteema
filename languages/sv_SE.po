@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-06-09 06:44+0000\n"
+"PO-Revision-Date: 2022-06-10 08:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -26,7 +26,7 @@ msgstr "(Redigera kommentar)"
 msgid "A multipurpose WordPress theme"
 msgstr "Ett WordPress-tema för flera ändamål"
 
-#: customizer/config/choices.php:68
+#: customizer/config/choices.php:69
 msgid "Alert"
 msgstr "Uppmärksam"
 
@@ -323,7 +323,7 @@ msgstr "Aktiverad"
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:60 functions/modules/social.php:58
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -402,7 +402,7 @@ msgstr "Bild till vänster"
 msgid "Image on right"
 msgstr "Bild till höger"
 
-#: customizer/config/choices.php:69
+#: customizer/config/choices.php:70
 msgid "Info"
 msgstr "Info"
 
@@ -419,6 +419,11 @@ msgstr "Bas"
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Rytm"
+
+#: customizer/config/choices.php:43
+msgctxt "Koros motif"
+msgid "Calm"
+msgstr "Lugna"
 
 #: customizer/config/choices.php:40
 msgctxt "Koros motif"
@@ -473,7 +478,7 @@ msgstr "Länktext"
 msgid "Link url"
 msgstr "Länk url"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:62 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -559,9 +564,9 @@ msgstr "Sök…"
 msgid "Placeholder Icon"
 msgstr "Platshållarikon"
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
-#: customizer/config/choices.php:50 customizer/config/choices.php:51
-#: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:49 customizer/config/choices.php:50
+#: customizer/config/choices.php:51 customizer/config/choices.php:52
+#: customizer/config/choices.php:53 customizer/config/choices.php:54
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakt"
@@ -757,7 +762,7 @@ msgstr "Växla undermenyn för %s"
 msgid "Tram"
 msgstr "Spårvagn"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:61 functions/modules/social.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -779,7 +784,7 @@ msgstr "Sök"
 msgid "Visible sections"
 msgstr "Synliga sektioner"
 
-#: customizer/config/choices.php:67
+#: customizer/config/choices.php:68
 msgid "Warning"
 msgstr "Varning"
 
