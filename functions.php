@@ -25,7 +25,7 @@ add_action('widgets_init', 'helsinki_disable_default_widgets');
  * Apply filters based on theme mods
  *
  */
-add_action('init', 'helsinki_setup_site', 10);
+add_action('wp_loaded', 'helsinki_setup_site', 10);
 
 /**
  * Setup templates

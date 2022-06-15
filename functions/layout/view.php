@@ -28,7 +28,9 @@ if ( ! function_exists('helsinki_view_heading') ) {
 
 if ( ! function_exists('helsinki_view_title') ) {
 	function helsinki_view_title() {
-		if ( is_front_page() ) {
+		if ( is_front_page() && is_home()) {
+			$title = get_the_title(get_option('page_for_posts'));
+		} else if (is_front_page()) {
 			$title = get_the_title(get_option('page_on_front'));
 		} else if ( is_home() ) {
 			$title = get_the_title(get_option('page_for_posts'));
@@ -54,11 +56,57 @@ if ( ! function_exists('helsinki_view_description') ) {
 	}
 }
 
-if ( ! function_exists('helsinki_view_hero') ) {
-	function helsinki_view_hero() {
-		get_template_part('partials/view/hero');
+if ( ! function_exists('helsinki_view_description_content') ) {
+	function helsinki_view_description_content() {
+		if ( is_front_page() && is_home()) {
+			$description = get_the_excerpt(get_option('page_for_posts'));
+		} else if (is_front_page()) {
+			$description = get_the_excerpt(get_option('page_on_front'));
+		} else if ( is_home() ) {
+			$description = get_the_excerpt(get_option('page_for_posts'));
+		} else if ( is_archive() ) {
+			$description = get_the_archive_description();
+		} else {
+			$description = get_the_excerpt();
+		}
+		return apply_filters('helsinki_view_description', $description);
 	}
 }
+
+
+if ( ! function_exists('helsinki_view_hero') ) {
+	function helsinki_view_hero() {
+		helsinki_hero_koros();
+		//get_template_part('partials/view/hero');
+	}
+}
+
+if ( ! function_exists('helsinki_view_classes') ) {
+	function helsinki_view_classes(string $default = '') {
+		if ( is_front_page() && is_home()) {
+			$default = 'hero';
+		} else if (is_front_page()) {
+			$default = 'hero';
+		} else if ( is_home() ) {
+			$default = 'hero';
+		} else if ( is_archive() ) {
+			$default = 'hero';
+		} else if ( is_author() ) {
+			$default = 'hero';
+		} else if ( is_search() ) {
+			$default = 'view-header';
+		} else if ( is_404() ) {
+			$default = 'view-header';
+		} else {
+			$default = 'hero';
+		}
+		$classes = array(
+			$default,
+		);
+		helsinki_element_classes('view', $classes);
+	}
+}
+
 
 if ( ! function_exists('helsinki_view_hero_image') ) {
 	function helsinki_view_hero_image_url() {

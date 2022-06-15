@@ -4,36 +4,48 @@ cite {
 }
 
 blockquote {
-	background: none;
-	font-size: rem-calc(36);
-	margin: spacing('layout-l');
-	padding: 0;
+    background: none;
+    font-size: rem-calc(36);
+    margin: 0;
+    margin-bottom: spacing('layout-l');
+    padding: 0;
+    border-left: 8px solid;
+    border-color: var(--primary-color);
+    padding-left: spacing('layout-s');
 
-  p {
-    font-size: inherit;
-		font-style: italic;
-		margin-bottom: 0;
-
-    &::before {
-      content: '\201C';
+    @include breakpointMax('m') {
+        padding-left: spacing('layout-2-xs');
     }
 
-    &::after {
-      content: '\201D';
+
+    p {
+        font-size: rem-calc(32);
+        font-style: italic;
+        margin-bottom: 0;
+
+        @include breakpointMax('m') {
+            font-size: rem-calc(24);
+        }
+
+        &::before {
+            content: '\201C';
+        }
+
+        &::after {
+            content: '\201D';
+        }
     }
-  }
 
-	cite {
-    color: $body-color;
-		font-style: normal;
-		font-size: rem-calc(18);
-    margin-top: spacing('m');
+    cite {
+        color: $body-color;
+        font-style: normal;
+        font-size: rem-calc(18);
+        margin-top: spacing('m');
 
-		&::before {
-      content: '- ';
+        &::before {
+            content: '- ';
+        }
     }
-	}
-
 }
 
 q {

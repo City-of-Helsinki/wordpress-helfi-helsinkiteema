@@ -37,7 +37,7 @@
         @include breakpointMax('l') {
             .image-wrap--fixed-size {
                 > img {
-                    max-height: 300px;
+                    height: 300px;
                     max-width: none;
                     object-fit: cover;
                 }

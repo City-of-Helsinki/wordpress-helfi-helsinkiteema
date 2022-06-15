@@ -3,7 +3,7 @@ get_header();
 
 if (get_option('page_for_posts') == get_the_ID()) {
   global $wp_query; 
-  $wp_query = new WP_Query(array( 'cat' => get_option("default_category")));
+  $wp_query = new WP_Query(array( 'cat' => ''));
 	get_template_part(
 		'partials/front-page/archives',
 		null,

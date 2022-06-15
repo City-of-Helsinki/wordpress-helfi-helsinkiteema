@@ -158,8 +158,10 @@ function helsinki_setup_templates() {
 
 			add_filter('body_class', 'helsinki_sidebar_body_class', 10);
 		
+			add_action('helsinki_view_header_classes', 'helsinki_view_classes', 10);
 			add_action('helsinki_view_header', 'helsinki_view_heading', 10);
 			add_action('helsinki_view_header', 'helsinki_view_description', 20);
+			add_action('helsinki_view_header_after', 'helsinki_view_hero', 20);
 	
 			add_action('helsinki_loop_top', 'helsinki_view_header', 10);
 	
@@ -188,10 +190,13 @@ function helsinki_setup_templates() {
 		if (get_option('page_for_posts') == get_the_ID()) {
 			remove_action('helsinki_main_top', 'helsinki_notifications', 20 );
 			add_filter('body_class', 'helsinki_sidebar_body_class', 10);
-
+			
+			add_filter('body_class', 'helsinki_hero_body_class', 10);
+			add_action('helsinki_view_header_classes', 'helsinki_view_classes', 10);
 			add_action('helsinki_view_header', 'helsinki_view_heading', 10);
 			add_action('helsinki_view_header', 'helsinki_view_description', 20);
-	
+			add_action('helsinki_view_header_after', 'helsinki_view_hero', 20);
+		
 			add_action('helsinki_loop_top', 'helsinki_view_header', 10);
 	
 			add_action('helsinki_loop_posts', 'helsinki_loop_count', 10);
@@ -333,6 +338,7 @@ function helsinki_setup_templates() {
 	else if ( is_search() ) {
 		add_filter('body_class', 'helsinki_sidebar_body_class', 10);
 
+		add_action('helsinki_view_header_classes', 'helsinki_view_classes', 10);
 		add_action('helsinki_search_top', 'helsinki_view_header', 10);
 		global $wp_query;
 		if ( $wp_query->post_count ) {
@@ -368,8 +374,11 @@ function helsinki_setup_templates() {
 	else {
 		add_filter('body_class', 'helsinki_sidebar_body_class', 10);
 
+		add_filter('body_class', 'helsinki_hero_body_class', 10);
+		add_action('helsinki_view_header_classes', 'helsinki_view_classes', 10);
 		add_action('helsinki_view_header', 'helsinki_view_heading', 10);
 		add_action('helsinki_view_header', 'helsinki_view_description', 20);
+		add_action('helsinki_view_header_after', 'helsinki_view_hero', 20);
 
 		add_action('helsinki_loop_top', 'helsinki_view_header', 10);
 

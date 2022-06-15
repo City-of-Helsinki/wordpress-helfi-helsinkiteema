@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-04-01 06:39+0000\n"
+"PO-Revision-Date: 2022-06-10 08:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -26,7 +26,7 @@ msgstr "(Muokkaa kommenttia)"
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
 
-#: customizer/config/choices.php:68
+#: customizer/config/choices.php:69
 msgid "Alert"
 msgstr "Huomio"
 
@@ -50,7 +50,7 @@ msgstr "ja"
 msgid "ArtCloud"
 msgstr "ArtCloud"
 
-#: functions/layout/view.php:38 partials/content/parts/author.php:2
+#: functions/layout/view.php:40 partials/content/parts/author.php:2
 msgid "Author"
 msgstr "Kirjoittaja"
 
@@ -81,10 +81,18 @@ msgstr "Bussi"
 #: customizer/config/front-page.php:25
 msgid ""
 "Checked sections will be displayed on the front page. Reorder sections with "
-"drag and drop."
-msgstr "Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla."
+"drag and drop. \n"
+"\t\t  \n"
+"\t\t  This feature is being retired. Please use the front page's block "
+"editor to setup the front page content. Remember to keep the Content-"
+"checkbox active."
+msgstr ""
+"Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla.\n"
+"\n"
+"Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
+"etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: setup/assets.php:87 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
@@ -117,7 +125,8 @@ msgstr "Kommentointi on suljettu."
 msgid "Content"
 msgstr "Sisältö"
 
-#: integrations/complianz.php:86
+#: integrations/complianz.php:102
+#: complianz-gdpr-premium/templates/cookiebanner.php:37
 msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr "käyttää evästeitä"
@@ -259,7 +268,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:91
+#: inc/filters.php:97
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -300,7 +309,7 @@ msgstr "Näytä sosiaalisen median jakopainikkeet"
 msgid "Display tags"
 msgstr "Näytä avainsanat"
 
-#: customizer/config/front-page.php:52
+#: customizer/config/front-page.php:54
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
@@ -315,23 +324,23 @@ msgstr "Käytössä"
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:60 functions/modules/social.php:58
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:89
+#: customizer/config/front-page.php:91
 msgid "Feed Cache time"
 msgstr "Syötteen elinikä"
 
-#: customizer/config/front-page.php:76
+#: customizer/config/front-page.php:78
 msgid "Feed shortcode"
 msgstr "Syötteen lyhytkoodi"
 
-#: customizer/config/front-page.php:84
+#: customizer/config/front-page.php:86
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
-#: functions/layout/header.php:93 partials/header/mobile-links.php:7
+#: functions/layout/header.php:102 partials/header/mobile-links.php:7
 msgid "Feedback"
 msgstr "Palaute"
 
@@ -352,13 +361,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:216
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:223
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
-#: setup/assets.php:90
+#: setup/assets.php:114
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -395,7 +404,7 @@ msgstr "Kuva vasemmalla"
 msgid "Image on right"
 msgstr "Kuva oikealla"
 
-#: customizer/config/choices.php:69
+#: customizer/config/choices.php:70
 msgid "Info"
 msgstr "Ilmoitus"
 
@@ -412,6 +421,11 @@ msgstr "Perus"
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Syke"
+
+#: customizer/config/choices.php:43
+msgctxt "Koros motif"
+msgid "Calm"
+msgstr "Tyyni"
 
 #: customizer/config/choices.php:40
 msgctxt "Koros motif"
@@ -466,7 +480,7 @@ msgstr "Linkkiteksti"
 msgid "Link url"
 msgstr "Linkin osoite"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:62 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -497,7 +511,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:88 partials/loop/pagination.php:51
+#: setup/assets.php:112 partials/loop/pagination.php:51
 msgid "Next"
 msgstr "Seuraava"
 
@@ -513,7 +527,7 @@ msgstr "Yhtään artikkelia ei ole vielä julkaistu."
 msgid "No posts matching your search could be found."
 msgstr "Hakuasi vastaavia tuloksia ei löytynyt."
 
-#: functions/layout/view.php:42
+#: functions/layout/view.php:44
 msgid "Not Found"
 msgstr "Ei löytynyt"
 
@@ -524,6 +538,10 @@ msgstr "Ilmoitus"
 #: integrations/wp-rss-aggregator.php:8
 msgid "Older"
 msgstr "Vanhemmat"
+
+#: functions/content/table-of-contents.php:18
+msgid "On this page"
+msgstr "Tällä sivulla"
 
 #: partials/loop/pagination.php:42
 #, php-format
@@ -549,9 +567,9 @@ msgstr "Etsi..."
 msgid "Placeholder Icon"
 msgstr "Paikanvaraajan ikoni"
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
-#: customizer/config/choices.php:50 customizer/config/choices.php:51
-#: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:49 customizer/config/choices.php:50
+#: customizer/config/choices.php:51 customizer/config/choices.php:52
+#: customizer/config/choices.php:53 customizer/config/choices.php:54
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
@@ -560,7 +578,7 @@ msgstr "Abstrakti"
 msgid "Please try using another search term or phrase."
 msgstr "Ole hyvä ja kokeile hakea jollain toisella hakusanalla tai -lauseella."
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:69
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
@@ -578,7 +596,7 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:89 partials/loop/pagination.php:25
+#: setup/assets.php:113 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -634,7 +652,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Tyhjennä"
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:214
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:221
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -644,7 +662,7 @@ msgstr "Tämä syöte haetaan %s."
 msgid "Scheme"
 msgstr "Tyyli"
 
-#: functions/layout/view.php:40 partials/header/search.php:2
+#: functions/layout/view.php:42 partials/header/search.php:2
 #: partials/header/search.php:2
 msgid "Search"
 msgstr "Haku"
@@ -653,7 +671,7 @@ msgstr "Haku"
 msgid "Search results"
 msgstr "Hakutulokset"
 
-#: customizer/config/front-page.php:46
+#: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
 
@@ -711,15 +729,11 @@ msgstr "Kesä"
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
-#: functions/content/table-of-contents.php:18
-msgid "Table of Contents"
-msgstr "Sisällysluettelo"
-
 #: customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Teksti"
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:92
 msgid "The feed result is cached for 12 hours by default."
 msgstr ""
 "Syötteen sisältö tallennetaan välimuistiin oletuksena 12 tunnin ajaksi."
@@ -752,7 +766,7 @@ msgstr "\"%s\" alavalikko"
 msgid "Tram"
 msgstr "Spåra"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:61 functions/modules/social.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -774,7 +788,7 @@ msgstr "Hae"
 msgid "Visible sections"
 msgstr "Näytettävät osiot"
 
-#: customizer/config/choices.php:67
+#: customizer/config/choices.php:68
 msgid "Warning"
 msgstr "Varoitus"
 

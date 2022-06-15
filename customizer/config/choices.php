@@ -40,6 +40,7 @@ function helsinki_customizer_choices_koros() {
 		'pulse'     => _x('Pulse', 'Koros motif', 'helsinki-universal'),
 		'vibration' => _x('Vibration', 'Koros motif', 'helsinki-universal'),
 		'wave'      => _x('Wave', 'Koros motif', 'helsinki-universal'),
+		'calm'      => _x('Calm', 'Koros motif', 'helsinki-universal'),
 	);
 }
 
