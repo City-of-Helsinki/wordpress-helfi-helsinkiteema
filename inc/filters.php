@@ -30,11 +30,17 @@ function helsinki_excerpt_more_html() {
 add_filter( 'excerpt_more', 'helsinki_excerpt_more_html' );
 
 function helsinki_excerpt_character_length( $text, $raw_excerpt ) {
-	return substr(
-		$raw_excerpt,
-		0,
-		apply_filters( 'helsinki_excerpt_character_length', 195 )
-	);
+  $max_length = apply_filters( 'helsinki_excerpt_character_length', null );
+  if ($max_length != null) {
+    return substr(
+      $raw_excerpt,
+      0,
+      $max_length
+    );
+  }
+  else {
+    return $raw_excerpt;
+  }
 }
 add_filter( 'wp_trim_excerpt', 'helsinki_excerpt_character_length', 999, 2 );
 

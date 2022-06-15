@@ -51,13 +51,14 @@ function helsinki_front_page_section_data( string $section, $attributes = null) 
 
 		case 'feed-posts':
 			$count = helsinki_front_page_feed_posts_count();
-			$url = helsinki_front_page_feed_posts_url();
+			$url = helsinki_front_page_feed_posts_url($attributes);
 			return array(
 				'feed_posts' => helsinki_front_page_feed_rss($url, $count),
 				'feed_url' => $url,
 				'feed_posts_count' => $count,
 				'date_format' => get_option( 'date_format' ),
 				'time_format' => get_option( 'time_format' ),
+				'attributes' => $attributes,
 			);
 			break;
 
@@ -76,7 +77,7 @@ function helsinki_front_page_section_title( string $section, string $default = '
 
 function helsinki_get_front_page_section_title( string $section, string $default = '', $attributes = null ) {
 	$title;
-	if ($attributes != null && $attributes['title'] != null) {
+	if ($attributes != null && isset($attributes['title'])) {
 		$title = $attributes['title'];
 	}else {
 		$title = helsinki_theme_mod('helsinki_front_page_' . $section, 'title');
@@ -208,12 +209,15 @@ function helsinki_front_page_social_media_feed($args = array()) {
 /**
   * Posts Feed
   */
-function helsinki_front_page_feed_posts_url() {
+function helsinki_front_page_feed_posts_url($attributes = null) {
+	if ($attributes != null && isset($attributes['url'])) {
+		return $attributes['url'];
+	}
 	return helsinki_theme_mod('helsinki_front_page_feed-posts', 'feed_url', '');
 }
 
-function helsinki_front_page_feed_posts_source_text() {
-	$url = helsinki_front_page_feed_posts_url();
+function helsinki_front_page_feed_posts_source_text($args = array()) {
+	$url = helsinki_front_page_feed_posts_url($args['attributes']);
 	if ( $url ) {
 		printf(
 			'<p class="feed-source">%s</p>',
@@ -247,7 +251,8 @@ function helsinki_front_page_lifetime_filter($lifetime, $url) {
 function helsinki_front_page_feed_posts_title($args = array()) {
 	helsinki_front_page_section_title(
 		'feed-posts',
-		''
+		'',
+		$args['attributes']
 	);
 }
 

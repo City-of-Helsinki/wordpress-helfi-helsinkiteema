@@ -73,3 +73,9 @@ if ( ! function_exists('helsinki_koros_type_wave') ) {
 		return 'wave';
 	}
 }
+
+if ( ! function_exists('helsinki_koros_type_calm') ) {
+	function helsinki_koros_type_calm() {
+		return 'calm';
+	}
+}

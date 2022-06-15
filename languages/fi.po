@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-06-01 10:37+0000\n"
+"PO-Revision-Date: 2022-06-10 08:47+0000\n"
 "Last-Translator: \n"
-"Language-Team: Finnish\n"
+"Language-Team: Suomi\n"
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "(Muokkaa kommenttia)"
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
 
-#: customizer/config/choices.php:68
+#: customizer/config/choices.php:69
 msgid "Alert"
 msgstr "Huomio"
 
@@ -81,8 +81,16 @@ msgstr "Bussi"
 #: customizer/config/front-page.php:25
 msgid ""
 "Checked sections will be displayed on the front page. Reorder sections with "
-"drag and drop."
-msgstr "Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla."
+"drag and drop. \n"
+"\t\t  \n"
+"\t\t  This feature is being retired. Please use the front page's block "
+"editor to setup the front page content. Remember to keep the Content-"
+"checkbox active."
+msgstr ""
+"Valitut osiot näytetään etusivulla. Järjestä osiot raahaamalla.\n"
+"\n"
+"Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
+"etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
 #: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
@@ -260,7 +268,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:91
+#: inc/filters.php:97
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -301,7 +309,7 @@ msgstr "Näytä sosiaalisen median jakopainikkeet"
 msgid "Display tags"
 msgstr "Näytä avainsanat"
 
-#: customizer/config/front-page.php:52
+#: customizer/config/front-page.php:54
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
@@ -316,19 +324,19 @@ msgstr "Käytössä"
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:60 functions/modules/social.php:58
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:89
+#: customizer/config/front-page.php:91
 msgid "Feed Cache time"
 msgstr "Syötteen elinikä"
 
-#: customizer/config/front-page.php:76
+#: customizer/config/front-page.php:78
 msgid "Feed shortcode"
 msgstr "Syötteen lyhytkoodi"
 
-#: customizer/config/front-page.php:84
+#: customizer/config/front-page.php:86
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
@@ -396,7 +404,7 @@ msgstr "Kuva vasemmalla"
 msgid "Image on right"
 msgstr "Kuva oikealla"
 
-#: customizer/config/choices.php:69
+#: customizer/config/choices.php:70
 msgid "Info"
 msgstr "Ilmoitus"
 
@@ -413,6 +421,11 @@ msgstr "Perus"
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Syke"
+
+#: customizer/config/choices.php:43
+msgctxt "Koros motif"
+msgid "Calm"
+msgstr "Tyyni"
 
 #: customizer/config/choices.php:40
 msgctxt "Koros motif"
@@ -467,7 +480,7 @@ msgstr "Linkkiteksti"
 msgid "Link url"
 msgstr "Linkin osoite"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:62 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -554,9 +567,9 @@ msgstr "Etsi..."
 msgid "Placeholder Icon"
 msgstr "Paikanvaraajan ikoni"
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
-#: customizer/config/choices.php:50 customizer/config/choices.php:51
-#: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:49 customizer/config/choices.php:50
+#: customizer/config/choices.php:51 customizer/config/choices.php:52
+#: customizer/config/choices.php:53 customizer/config/choices.php:54
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
@@ -565,7 +578,7 @@ msgstr "Abstrakti"
 msgid "Please try using another search term or phrase."
 msgstr "Ole hyvä ja kokeile hakea jollain toisella hakusanalla tai -lauseella."
 
-#: customizer/config/front-page.php:67
+#: customizer/config/front-page.php:69
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
@@ -658,7 +671,7 @@ msgstr "Haku"
 msgid "Search results"
 msgstr "Hakutulokset"
 
-#: customizer/config/front-page.php:46
+#: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
 
@@ -720,7 +733,7 @@ msgstr "Suomenlinna"
 msgid "Text"
 msgstr "Teksti"
 
-#: customizer/config/front-page.php:90
+#: customizer/config/front-page.php:92
 msgid "The feed result is cached for 12 hours by default."
 msgstr ""
 "Syötteen sisältö tallennetaan välimuistiin oletuksena 12 tunnin ajaksi."
@@ -753,7 +766,7 @@ msgstr "\"%s\" alavalikko"
 msgid "Tram"
 msgstr "Spåra"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:61 functions/modules/social.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -775,7 +788,7 @@ msgstr "Hae"
 msgid "Visible sections"
 msgstr "Näytettävät osiot"
 
-#: customizer/config/choices.php:67
+#: customizer/config/choices.php:68
 msgid "Warning"
 msgstr "Varoitus"
 

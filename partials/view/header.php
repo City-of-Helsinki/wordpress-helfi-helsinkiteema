@@ -1,4 +1,4 @@
-<div class="view-header">
+<div class="<?php do_action('helsinki_view_header_classes') ?>">
 
 	<?php
 
