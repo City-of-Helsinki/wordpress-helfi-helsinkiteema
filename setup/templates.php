@@ -264,7 +264,7 @@ function helsinki_setup_templates() {
 
 				if ( helsinki_post_table_of_contents_enabled() ) {
 					add_filter( 'body_class', 'helsinki_table_of_contents_body_class', 10 );
-					add_filter( 'render_block', 'helsinki_add_ids_to_heading_blocks', 10, 2 );
+					add_filter( 'render_block', 'helsinki_add_ids_to_headings', 10, 2 );
 					add_action( 'helsinki_content_article', 'helsinki_post_table_of_contents', 14 );
 				}
 
