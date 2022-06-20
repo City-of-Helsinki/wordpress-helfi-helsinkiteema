@@ -263,11 +263,12 @@
 	border-bottom: $header-border;
 
 	#main-menu {
-		height: rem-calc(64);
 		padding-left: spacing(m);
 		padding-right: spacing(m);
+		margin-right: 300px;
 
 		.menu__item {
+			height: rem-calc(64);
 			display: flex;
 			align-items: center;
 
@@ -305,7 +306,7 @@
 			}
 
 			+ .menu__item {
-				margin-left: spacing(m);
+
 			}
 		}
 
@@ -324,7 +325,6 @@
 					}
 				}
 			}
-
 		}
 	}
 }
