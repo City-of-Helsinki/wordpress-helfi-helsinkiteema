@@ -24,6 +24,15 @@
           "letterSpacing": false  
         }
       },
+      "core/quote": {
+        "typography": {
+          "fontWeight": false,
+          "fontStyle": false,
+          "fontSize": false,
+          "textTransform": false,
+          "letterSpacing": false  
+        }
+      },
       "core/heading": {
         "typography": {
           "fontWeight": false,
