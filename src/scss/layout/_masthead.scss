@@ -12,6 +12,9 @@
 	position: relative;
 
 	@include breakpointMax(l) {
+		padding-left: spacing(s);
+		padding-right: spacing(s);
+
 		.navigation__languages {
 			display: none;
 		}
@@ -335,6 +338,7 @@
 #mobile-panel-toggle {
 	color: $anchor-color;
 	cursor: pointer;
+	padding-left: 8px;
 
 	@include breakpoint('l') {
 		display: none;
