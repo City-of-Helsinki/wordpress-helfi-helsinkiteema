@@ -5,13 +5,14 @@
 			color: $white;
 
 			.hero__title,
-			.content__title {
+			.content__title,
+			.view-header__title {
 				color: $white;
 			}
 
 			.button {
 				background-color: $white;
-        border-color: $white;
+				border-color: $white;
 				color: $black;
 
 				&:focus,

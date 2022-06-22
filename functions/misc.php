@@ -60,7 +60,12 @@ function helsinki_trim_text( string $text, int $max_length ) {
 }
 
 function helsinki_first_image_from_string( string $text = '' ) {
-	preg_match_all('/<img.*>/i', $text, $matches);
+	preg_match_all('/<img.*\/>/i', $text, $matches);
+	return ! empty( $matches[0][0] ) ? $matches[0][0] : '';
+}
+
+function helsinki_first_paragraph_from_string( string $text = '' ) {
+	preg_match_all('/<p.*>.*<\/p>/i', $text, $matches);
 	return ! empty( $matches[0][0] ) ? $matches[0][0] : '';
 }
 

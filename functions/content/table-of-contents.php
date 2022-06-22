@@ -23,26 +23,41 @@ function helsinki_post_table_of_contents_title() {
 /**
   * Filter
   */
-function helsinki_add_ids_to_heading_blocks( $block_content, $block ) {
-	if ( 'core/heading' !== $block['blockName'] ) {
+function helsinki_add_ids_to_headings( $block_content, $block ) {
+	/*if ( 'core/heading' !== $block['blockName'] ) {
 		return $block_content;
-	}
-	if ( false !== strpos( $block_content, ' id="' ) ) {
+	}*/
+	/*if ( false !== strpos( $block_content, ' id="' ) ) {
 		return $block_content;
-	}
+	}*/
 	// h[1-6] to match all levels
-	return preg_replace_callback(
+	/*return preg_replace_callback(
 		"#<(h2)>(.*?)</\\1>#",
 		"helsinki_add_id_to_heading_block",
 		$block_content
-	);
+	);*/
+	preg_match_all('/(\<h2[^\>]*\>)(.*)(<\/h2>)/', $block_content, $matches);
+	if (!empty($matches[0])) {
+		preg_match( '/id="([^"]*)"/', $matches[1][0], $id );
+		if (empty($id)) {
+			$text = strip_tags( $matches[2][0] );
+			$block_content = str_replace( $block_content, preg_replace_callback(
+				"/\<((h2)[^\>]*)\>(.*)(<\/h2>)/",
+				"helsinki_add_id_to_heading",
+				$block_content		
+			), $block_content );
+			//var_dump($block_content);
+		}
+	}
+	return $block_content;
 }
 
-function helsinki_add_id_to_heading_block( $match ) {
+function helsinki_add_id_to_heading( $match ) {
 	return sprintf(
-		'<%1$s id="%2$s">%3$s</%1$s>',
+		'<%1$s id="%2$s">%3$s</%4$s>',
 		$match[1],
-		sanitize_title_with_dashes( $match[2] ),
+		sanitize_title_with_dashes( strip_tags( remove_accents($match[3]) ) ),
+		$match[3],
 		$match[2]
 	);
 }
@@ -107,7 +122,19 @@ function helsinki_post_content_heading_link_list_items( $blocks ) {
             $out = array_merge( $out,
 				helsinki_post_content_heading_link_list_items( $block['innerBlocks'] )
 			);
-        }
+        } else {
+			$rendered_block = render_block( $block ); //server-side rendered blocks require this step for the final HTML...
+			preg_match_all('/(<h2[^\>]*>)(.*)(<\/h2>)/', $rendered_block, $matches);
+			if (!empty($matches[0])) {
+				$text = strip_tags( $matches[2][0] );
+				preg_match( '/id="([^"]*)"/', $matches[1][0], $id );
+				$out[] = sprintf(
+					'<li><a href="#%s">%s</a></li>',
+					$id[1] ?? sanitize_title_with_dashes( remove_accents( $text ) ),
+					$text
+				);
+			}
+		}
 
 	}
 
