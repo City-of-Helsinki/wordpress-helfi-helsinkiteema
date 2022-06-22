@@ -85,7 +85,8 @@
 										data-category="cmplz_functional"
 										class="cmplz-consent-checkbox cmplz-functional"
 										size="40"
-										value="1"/>
+										value="1"
+										disabled />
 								<span class="cmplz-slider cmplz-round"></span>
 							</div>
 							<span class="cmplz-label" tabindex="0">{category_functional}</span>
