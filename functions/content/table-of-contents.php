@@ -36,13 +36,13 @@ function helsinki_add_ids_to_headings( $block_content, $block ) {
 		"helsinki_add_id_to_heading_block",
 		$block_content
 	);*/
-	preg_match_all('/(\<h2[^\>]*\>)(.*)(<\/h2>)/', $block_content, $matches);
+	preg_match_all('/(\<h2[^\>]*\>)(.*)(<\/h2>)/sU', $block_content, $matches);
 	if (!empty($matches[0])) {
 		preg_match( '/id="([^"]*)"/', $matches[1][0], $id );
 		if (empty($id)) {
 			$text = strip_tags( $matches[2][0] );
 			$block_content = str_replace( $block_content, preg_replace_callback(
-				"/\<((h2)[^\>]*)\>(.*)(<\/h2>)/",
+				"/\<((h2)[^\>]*)\>(.*)(<\/h2>)/sU",
 				"helsinki_add_id_to_heading",
 				$block_content		
 			), $block_content );
