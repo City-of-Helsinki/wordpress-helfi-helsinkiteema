@@ -96,7 +96,7 @@ function helsinki_post_table_of_contents() {
 	);
 }
 
-function helsinki_post_content_heading_link_list_items( $blocks ) {
+function helsinki_post_content_heading_link_list_items( $blocks, $level = 2 ) {
 	$out = array();
 
 	foreach ( $blocks as $index => $block ) {
@@ -114,17 +114,19 @@ function helsinki_post_content_heading_link_list_items( $blocks ) {
 			preg_match( '/id="([^"]*)"/', $block['innerHTML'], $id );
 			$out[] = sprintf(
 				'<li><a href="#%s">%s</a></li>',
-				$id[1] ?? sanitize_title_with_dashes( $text ),
+				$id[1] ?? sanitize_title_with_dashes( remove_accents( $text  ) ),
 				$text
 			);
 
-        } else if ( ! empty( $block['innerBlocks'] ) ) {
-            $out = array_merge( $out,
-				helsinki_post_content_heading_link_list_items( $block['innerBlocks'] )
-			);
-        } else {
+        } else if ( 'hds-wp/accordion' === $block['blockName'] || 'core/group' === $block['blockName'] ){
+			if ( ! empty( $block['innerBlocks'] ) ) {
+				$out = array_merge( $out,
+					helsinki_post_content_heading_link_list_items( $block['innerBlocks'] )
+				);
+			}
+		} else {
 			$rendered_block = render_block( $block ); //server-side rendered blocks require this step for the final HTML...
-			preg_match_all('/(<h2[^\>]*>)(.*)(<\/h2>)/', $rendered_block, $matches);
+			preg_match_all('/(<h2[^\>]*>)(.*)(<\/h2>)/sU', $rendered_block, $matches);
 			if (!empty($matches[0])) {
 				$text = strip_tags( $matches[2][0] );
 				preg_match( '/id="([^"]*)"/', $matches[1][0], $id );
@@ -132,6 +134,12 @@ function helsinki_post_content_heading_link_list_items( $blocks ) {
 					'<li><a href="#%s">%s</a></li>',
 					$id[1] ?? sanitize_title_with_dashes( remove_accents( $text ) ),
 					$text
+				);
+			}
+
+			if ( ! empty( $block['innerBlocks'] ) ) {
+				$out = array_merge( $out,
+					helsinki_post_content_heading_link_list_items( $block['innerBlocks'] )
 				);
 			}
 		}
