@@ -133,7 +133,7 @@ add_filter( 'the_password_form', 'helsinki_password_protected_page_form', 10 );
 
 wp_embed_register_handler(
   'helsinkichannel',
-  '#(www\.)?helsinkikanava\.fi/(fi|fi_FI|en|sv)/web/helsinkikanava/player(/embed)?/((vod)\?assetId=([\d]+))?#i',
+  '#(www\.)?helsinkikanava\.fi/(fi|fi_FI|en|en_US|sv|sv_SE)/web/helsinkikanava/player(/embed)?/((vod)\?assetId=([\d]+))?#i',
   'helsinki_handle_helsinkichannel_embed'
 );
 
