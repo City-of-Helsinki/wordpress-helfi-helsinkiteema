@@ -41,6 +41,15 @@
           "textTransform": false,
           "letterSpacing": false  
         }
+      },
+      "core/table": {
+        "typography": {
+          "fontWeight": false,
+          "fontStyle": false,
+          "fontSize": false,
+          "textTransform": false,
+          "letterSpacing": false  
+        }
       }
     },
     "layout": {
