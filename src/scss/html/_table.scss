@@ -1,31 +1,136 @@
 table {
-	border-collapse: collapse;
+	display: block;
+	border-collapse: separate !important;
+	border-spacing: 0;
 	margin-top: $table-margin-bottom;
-	margin-bottom: $table-margin-bottom;
+	margin-bottom: 0;
 	text-align: left;
-	width: 100%;
-	max-width: 860px;
+	width: unset !important;
+	max-width: fit-content;
+	overflow-x: auto;
+	white-space: nowrap;
 }
 
-thead {}
+thead {
+	width: 100%;
+	background-color: $black;
+	color: $white;
+}
 
-tbody {}
+tbody {
+	width: 100%;
+	tr {
+		&:hover {
+			background-color: var(--color-black-5) !important;
+		}
+	}
+}
 
-tfoot {}
+tfoot {
+	width: 100%;
 
-tr {}
+	td {
+		@if $table-border-enabled {
+			border-top: $table-border;
+		}
+	}
+
+}
+
+tr {
+	&:not(:last-of-type) {
+		td {
+			@if $table-border-enabled {
+				border-bottom: $table-border;
+			}
+		}
+		th {
+			@if $table-border-enabled {
+				border-bottom: $table-border;
+			}
+		}
+	}
+}
 
 th {
-	@if $table-border-enabled {
-		border: $table-border;
-	}
 	font-weight: $table-heading-font-weight;
 	padding: $table-cell-padding;
+	white-space: normal;
+	min-width: 140px;
 }
 
 td {
-	@if $table-border-enabled {
-		border: $table-border;
-	}
 	padding: $table-cell-padding;
+	white-space: normal;
+	min-width: 140px;
+}
+
+figure.wp-block-table {
+	overflow-x: hidden;
+	max-width: 860px;
+	margin-bottom: $paragraph-margin-bottom;
+
+	&.has-vertical-header {
+		table {
+			tbody {
+				tr {
+					td {
+						&:first-of-type {
+							font-weight: $table-heading-font-weight;
+							background-color: $black;
+							border-bottom-color: $table-border-color-vertical;
+							color: $white;
+						}
+					}
+				}
+			}
+
+			tfoot {
+				tr {
+					td {
+						&:first-of-type {
+							font-weight: $table-heading-font-weight;
+							background-color: $black;
+							border-top-color: $table-border-color-vertical;
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.is-style-stripes {
+		border-bottom: none;
+
+		tbody {
+			tr {
+				&:nth-child(odd) {
+					background-color: unset;
+				}
+
+				&:nth-child(even) {
+					background-color: var(--color-black-10);
+				}
+			}
+		}
+	}
+
+	&.is-style-regular {
+		table {
+			border: 1px solid var(--color-black-60);
+		}
+	}
+
+	figcaption {
+		background: none !important;
+		color: $black !important;
+		font-size: $global-font-size !important;
+		font-style: normal !important;
+		text-align: left !important;
+		padding: .5rem 0 0 !important;
+		position: static !important;
+		flex-grow: 0;
+		flex-basis: unset;
+	}
 }
