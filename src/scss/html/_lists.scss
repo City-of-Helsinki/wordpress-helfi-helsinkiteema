@@ -46,8 +46,11 @@ dd {
 			+ li {
 				margin-top: spacing('2-xs');
 			}
+
+			ol, ul {
+				margin-top: spacing('2-xs') !important;
+				margin-bottom: 0;
+			}
 		}
-
 	}
-
 }
