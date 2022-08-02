@@ -50,7 +50,17 @@
           "textTransform": false,
           "letterSpacing": false  
         }
+      },
+      "core/list": {
+        "typography": {
+          "fontWeight": false,
+          "fontStyle": false,
+          "fontSize": false,
+          "textTransform": false,
+          "letterSpacing": false  
+        }
       }
+
     },
     "layout": {
       "contentSize": "1200px"
