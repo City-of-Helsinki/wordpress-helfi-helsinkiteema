@@ -62,6 +62,10 @@
       }
 
     },
+    "color": {
+      "customDuotone": false,
+      "duotone": null
+    },
     "layout": {
       "contentSize": "1200px"
     },
