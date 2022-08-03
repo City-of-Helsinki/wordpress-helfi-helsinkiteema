@@ -1450,6 +1450,17 @@ body .cc-revoke {
 				}
 			}
 
+			&:disabled {
+				+ .cmplz-slider {
+					background-color: var(--color-black-10) !important;
+					cursor: not-allowed;
+
+					&:before {
+						background-color: var(--color-white) !important;
+					}
+				}
+			}
+
 			&[type="checkbox"] {
 				&:focus {
 					+ .cmplz-slider:after {
@@ -1459,6 +1470,7 @@ body .cc-revoke {
 				}
 			}
 		}
+
 	}
 	// .cmplz-slider-checkbox
 
