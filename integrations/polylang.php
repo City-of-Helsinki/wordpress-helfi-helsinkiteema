@@ -60,3 +60,20 @@ function helsinki_polylang_filter_html_attributes($output, $doctype) {
 	$output = str_replace($replacables, $replacees, $output);
 	return $output;
 }
+
+add_action('create_term', 'helsinki_polylang_after_term_saved', 10, 3);
+
+function helsinki_polylang_after_term_saved($term_id, $tt_id, $taxonomy) {
+	$postdata = json_decode(file_get_contents('php://input'));
+	if (!empty($postdata) && ($taxonomy == 'post_tag' || $taxonomy == 'category')) {
+		if (function_exists('pll_get_term_language')) {
+			$term_language = pll_get_term_language($term_id);
+
+			if (empty($term_language)) {
+				if (function_exists('pll_set_term_language')) {
+					pll_set_term_language($term_id, $postdata->lang);
+				}
+			}
+		}
+	}
+}
