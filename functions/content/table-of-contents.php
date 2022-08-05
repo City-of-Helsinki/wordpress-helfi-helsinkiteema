@@ -118,11 +118,11 @@ function helsinki_post_content_heading_link_list_items( $blocks, $level = 2 ) {
 				$text
 			);
 
-        } else if ( 'hds-wp/accordion' === $block['blockName'] || 'core/group' === $block['blockName'] ){
+        } else if ( 'core/group' === $block['blockName'] ){
 			if ( ! empty( $block['innerBlocks'] ) ) {
-				$out = array_merge( $out,
+				$out = array_unique(array_merge( $out,
 					helsinki_post_content_heading_link_list_items( $block['innerBlocks'] )
-				);
+				));
 			}
 		} else {
 			$rendered_block = render_block( $block ); //server-side rendered blocks require this step for the final HTML...
@@ -130,17 +130,20 @@ function helsinki_post_content_heading_link_list_items( $blocks, $level = 2 ) {
 			if (!empty($matches[0])) {
 				$text = strip_tags( $matches[2][0] );
 				preg_match( '/id="([^"]*)"/', $matches[1][0], $id );
-				$out[] = sprintf(
+				$markup = sprintf(
 					'<li><a href="#%s">%s</a></li>',
 					$id[1] ?? sanitize_title_with_dashes( remove_accents( $text ) ),
 					$text
 				);
+				if (!in_array($markup, $out)) {
+					$out[] = $markup;
+				}
 			}
 
 			if ( ! empty( $block['innerBlocks'] ) ) {
-				$out = array_merge( $out,
+				$out = array_unique(array_merge( $out,
 					helsinki_post_content_heading_link_list_items( $block['innerBlocks'] )
-				);
+				));
 			}
 		}
 
