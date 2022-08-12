@@ -2,6 +2,7 @@ table {
 	display: block;
 	border-collapse: separate !important;
 	border-spacing: 0;
+	border: 1px solid var(--color-black-60);
 	margin-top: $table-margin-bottom;
 	margin-bottom: 0;
 	text-align: left;
@@ -9,6 +10,12 @@ table {
 	max-width: fit-content;
 	overflow-x: auto;
 	white-space: nowrap;
+
+	caption {
+		margin: spacing('l') spacing('s');
+		margin-top: spacing('l') !important;
+		text-align: left;
+	}
 }
 
 thead {
@@ -103,6 +110,10 @@ figure.wp-block-table {
 	&.is-style-stripes {
 		border-bottom: none;
 
+		table {
+			border: none;
+		}
+
 		tbody {
 			tr {
 				&:nth-child(odd) {
@@ -113,12 +124,6 @@ figure.wp-block-table {
 					background-color: var(--color-black-10);
 				}
 			}
-		}
-	}
-
-	&.is-style-regular {
-		table {
-			border: 1px solid var(--color-black-60);
 		}
 	}
 
