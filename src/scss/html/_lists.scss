@@ -40,13 +40,17 @@ dd {
 .content__body {
 
 	ol, ul {
+		max-width: 860px;
 
 		li {
 			+ li {
 				margin-top: spacing('2-xs');
 			}
+
+			ol, ul {
+				margin-top: spacing('2-xs') !important;
+				margin-bottom: 0;
+			}
 		}
-
 	}
-
 }

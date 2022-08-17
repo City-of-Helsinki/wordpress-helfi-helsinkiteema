@@ -126,3 +126,23 @@ add_filter( 'default_page_template_title', 'helsinki_basic_page_template_name', 
     return ob_get_clean();
 }   
 add_filter( 'the_password_form', 'helsinki_password_protected_page_form', 10 );
+
+/**
+ * Embed
+ */
+
+wp_embed_register_handler(
+  'helsinkichannel',
+  '#(www\.)?helsinkikanava\.fi/(fi|fi_FI|en|en_US|sv|sv_SE)/web/helsinkikanava/player(/embed)?/((vod)\?assetId=([\d]+))?#i',
+  'helsinki_handle_helsinkichannel_embed'
+);
+
+function helsinki_handle_helsinkichannel_embed( $matches, $attr, $url, $rawattr ) {
+  $embed = sprintf(
+          '<iframe src="https://www.helsinkikanava.fi/%1$s/web/helsinkikanava/player/embed/%2$s" width="1000" height="563" scrolling="no" allowfullscreen="true" sandbox="allow-scripts allow-presentation allow-same-origin"></iframe>',
+          esc_attr($matches[2]),
+          esc_attr($matches[4])
+          );
+
+  return apply_filters( 'embed_helsinkichannel', $embed, $matches, $attr, $url, $rawattr );
+}

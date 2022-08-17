@@ -174,12 +174,13 @@ $content-sidebar-width: 31.5% !default;
 /* ========== TABLES ========== */
 $table-border-width: $default-border-width !default;
 $table-border-style: $default-border-style !default;
-$table-border-color: $default-border-color !default;
+$table-border-color: var(--color-black-10) !default;
+$table-border-color-vertical: $medium-gray !default;
 $table-border: $table-border-width $table-border-style $table-border-color !default;
 $table-border-enabled: true;
 $table-margin-bottom: $paragraph-margin-bottom !default;
-$table-heading-font-weight: $global-font-weight-normal !default;
-$table-cell-padding: var(--spacing-2-xs) !default;
+$table-heading-font-weight: $global-font-weight-medium !default;
+$table-cell-padding: var(--spacing-xs) var(--spacing-m) !default;
 
 /* ==================== FOOTER ==================== */
 

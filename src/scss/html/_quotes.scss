@@ -12,6 +12,7 @@ blockquote {
     border-left: 8px solid;
     border-color: var(--primary-color);
     padding-left: spacing('layout-s');
+    max-width: 860px;
 
     @include breakpointMax('m') {
         padding-left: spacing('layout-2-xs');
