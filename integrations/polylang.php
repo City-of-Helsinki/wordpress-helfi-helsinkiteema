@@ -34,7 +34,9 @@ function helsinki_register_polylang_strings() {
 	foreach ($config as $group => $subgroups) {
 		foreach ($subgroups as $subgroup => $items) {
 			foreach ($items as $item => $text) {
-				pll_register_string( "{$group}-{$subgroup}-{$item}", $text, 'Helsinki Universal', false );
+				if (function_exists('pll_register_string')) {
+					pll_register_string( "{$group}-{$subgroup}-{$item}", $text, 'Helsinki Universal', false );
+				}
 			}
 		}
 	}
