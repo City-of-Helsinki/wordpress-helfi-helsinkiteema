@@ -967,9 +967,10 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	}
 
 	.cmplz-categories {
-
+		width: unset !important;
 		.cmplz-categories-inner {
-			display: flex;		
+			display: flex;
+			flex-wrap: wrap;
 
 			.cmplz-category {
 				background: none;
@@ -984,7 +985,14 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	}
 
 	.cmplz-buttons {
+		flex-direction: row;
+
+		@include breakpointMax(m) {
+			flex-direction: column;
+		}
+
 		button {
+			min-width: unset !important;
 			transition: all .3s;
 		}
 	}
