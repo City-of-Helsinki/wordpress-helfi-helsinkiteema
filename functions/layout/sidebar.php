@@ -9,7 +9,10 @@ function helsinki_sidebar() {
 }
 function helsinki_sidebar_widgets( $widget_area, $post_id ) {
 	if ( is_active_sidebar( $widget_area ) ) {
+		ob_start();
 		dynamic_sidebar( $widget_area );
+		$sidebar = ob_get_clean();
+		echo apply_filters('helsinki_sidebar_output', $sidebar);
 	}
 }
 

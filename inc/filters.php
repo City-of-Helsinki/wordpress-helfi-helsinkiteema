@@ -90,6 +90,30 @@ function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
 }
 add_filter( 'widget_output', 'helsinki_sidebar_filter_widgets', 10, 4 );
 
+function helsinki_sidebar_filter_rss_links($output) {
+    $domIcon = new DOMDocument();
+    $domIcon->encoding = 'utf-8';
+    $domIcon->loadXML(helsinki_get_svg_icon('link-external'));
+    $icon = $domIcon->getElementsByTagName('svg');
+
+    $dom = new DOMDocument();
+    $dom->encoding = 'utf-8';
+    $dom->loadHTML(mb_convert_encoding($output, 'HTML-ENTITIES', 'UTF-8'));
+    $icon = $dom->importNode($icon->item(0), true);
+    $links = $dom->getElementsByTagName('a');
+    for ($i = 0; $i < $links->count(); $i++) {
+      $link = $links->item($i);
+      if ($link->getAttribute('class') == 'rsswidget') {
+        $cIcon = $icon->cloneNode(true);
+        $link->appendChild($cIcon);
+      }
+    }
+    return $dom->saveHTML();
+}
+
+add_filter('helsinki_sidebar_output', 'helsinki_sidebar_filter_rss_links');
+add_filter( 'rss_widget_feed_link', '__return_false' );
+
 /**
   * Page Templates
   */
