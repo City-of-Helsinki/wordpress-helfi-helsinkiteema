@@ -18,6 +18,7 @@ function helsinki_load_more_button() {
 }
 
 function helsinki_ajax_load_more_args( WP_Query $wp_query ) {
+  $wp_query->query['post_status'] = 'publish';
   return array(
     'query'    => $wp_query->query,
     'nonce'    => wp_create_nonce('load_more'),
