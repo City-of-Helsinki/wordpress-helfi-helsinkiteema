@@ -10,6 +10,7 @@ var gulp        = require('gulp'),
 const ASSETS = {
   all:     'assets',
 	styles:  'assets/styles/',
+  adminStyles: 'assets/admin/styles',
 	footerScripts: 'assets/scripts/footer',
   headerScripts: 'assets/scripts/header',
   adminScripts: 'assets/scripts/admin'
@@ -25,7 +26,8 @@ const SOURCE = {
   adminScripts: [
     'src/js/admin/*.js'
   ],
-  styles: 'src/scss/**/*.scss',
+  publicStyles: 'src/scss/**/*.scss',
+  adminStyles: 'src/admin/scss/**/*.scss'
 }
 
 var sassOptions = {
@@ -76,11 +78,8 @@ gulp.task('adminscripts', function(){
     .pipe(gulp.dest(ASSETS.adminScripts));
 });
 
-
-gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts', 'adminscripts'));
-
-gulp.task('styles', function() {
-  return gulp.src(SOURCE.styles)
+gulp.task('publicStyles', function() {
+  return gulp.src(SOURCE.publicStyles)
     .pipe(sass(sassOptions))
 		.pipe(gulp.dest(ASSETS.all))
     .pipe(prefix())
@@ -88,6 +87,20 @@ gulp.task('styles', function() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(ASSETS.all))
 });
+
+gulp.task('adminStyles', function() {
+  return gulp.src(SOURCE.adminStyles)
+    .pipe(sass(sassOptions))
+		.pipe(gulp.dest(ASSETS.adminStyles))
+    .pipe(prefix())
+    .pipe(cleanCSS(cssOptions))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(ASSETS.adminStyles))
+});
+
+gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts', 'adminscripts'));
+gulp.task('styles', gulp.parallel('publicStyles', 'adminStyles'));
+
 
 gulp.task('watch',function() {
   gulp.watch(SOURCE.styles,gulp.parallel('styles'));
