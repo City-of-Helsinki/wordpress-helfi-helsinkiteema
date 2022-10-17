@@ -59,8 +59,16 @@
           "textTransform": false,
           "letterSpacing": false  
         }
+      },
+      "core/group": {
+        "typography": {
+          "fontWeight": false,
+          "fontStyle": false,
+          "fontSize": false,
+          "textTransform": false,
+          "letterSpacing": false  
+        }
       }
-
     },
     "color": {
       "customDuotone": false,
