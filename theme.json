@@ -59,6 +59,23 @@
           "textTransform": false,
           "letterSpacing": false  
         }
+      },
+      "core/social-links": {
+        "color": {
+          "defaultPalette": false,
+          "palette": [
+            {
+              "slug": "black-hds",
+              "color": "#000000",
+              "name": "Black"
+            },
+            {
+              "slug": "white-hds",
+              "color": "#ffffff",
+              "name": "White"
+            }
+          ]
+        }
       }
 
     },
