@@ -1,0 +1,15 @@
+@use "sass:math";
+
+@import '../../scss/functions';
+@import '../../scss/mixins';
+@import '../../scss/settings';
+
+.editor-styles-wrapper {
+
+    @include breakpointMax('m') {
+        padding-left: spacing('s');
+        padding-right: spacing('s');
+    }
+
+    @import '../../scss/elements';
+}
