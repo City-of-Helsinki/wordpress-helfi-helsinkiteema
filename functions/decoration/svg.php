@@ -55,13 +55,14 @@ function helsinki_svg_icon( string $key ) {
 	echo helsinki_get_svg_icon($key);
 }
 
-function helsinki_get_svg_icon( string $key ) {
+function helsinki_get_svg_icon( string $key, string $extra_classes = '' ) {
 	$path = helsinki_svg_paths( $key );
 	return $path ? sprintf(
-		'<svg class="icon icon--%s" viewBox="%s" aria-hidden="true" tabindex="-1">
+		'<svg class="icon icon--%s %s" viewBox="%s" aria-hidden="true" tabindex="-1">
 			<path d="%s"></path>
 		</svg>',
 		$key,
+		$extra_classes,
 		helsinki_svg_view_box($key),
 		$path
 	) : '';
