@@ -2,6 +2,7 @@
 	var registerPlugin = wp.plugins.registerPlugin;
 	var PluginSidebar = wp.editPost.PluginSidebar;
 	var element = wp.element.createElement;
+  var fragment = wp.element.Fragment;
 	var compose = wp.compose.compose;
 	var { withSelect, withDispatch, subscribe, select } = wp.data;
 	var { Panel, PanelBody, PanelRow, TextControl, ToggleControl, SelectControl } = wp.components;
@@ -33,6 +34,9 @@
   });
 
 	const heroDisplayToggle = function( props ) {
+    if (displayHeroStyles) {
+      return element(fragment, {});
+    }
 		return element( ToggleControl, {
 			label: props.fieldLabel,
 			checked: props.metaFieldValue ? true : false,

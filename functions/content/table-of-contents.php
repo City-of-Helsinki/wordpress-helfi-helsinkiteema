@@ -99,6 +99,12 @@ function helsinki_post_table_of_contents() {
 function helsinki_post_content_heading_link_list_items( $blocks, $level = 2 ) {
 	$out = array();
 
+	//block name => block version
+	$multipleHeadings =	
+	array(
+		'hds-wp/accordion' => 2,
+	);
+
 	foreach ( $blocks as $index => $block ) {
 
 		if ( 'core/heading' === $block['blockName']  ) {
@@ -128,15 +134,33 @@ function helsinki_post_content_heading_link_list_items( $blocks, $level = 2 ) {
 			$rendered_block = render_block( $block ); //server-side rendered blocks require this step for the final HTML...
 			preg_match_all('/(<h2[^\>]*>)(.*)(<\/h2>)/sU', $rendered_block, $matches);
 			if (!empty($matches[0])) {
-				$text = strip_tags( $matches[2][0] );
-				preg_match( '/id="([^"]*)"/', $matches[1][0], $id );
-				$markup = sprintf(
-					'<li><a href="#%s">%s</a></li>',
-					$id[1] ?? sanitize_title_with_dashes( remove_accents( $text ) ),
-					$text
-				);
-				if (!in_array($markup, $out)) {
-					$out[] = $markup;
+				//register multiple heading from block; required for some server-side rendered blocks
+				if (array_key_exists($block['blockName'], $multipleHeadings) && isset($block['attrs']['blockVersion']) && $block['attrs']['blockVersion'] >= $multipleHeadings[$block['blockName']]) {
+					for ($i = 0; $i < count($matches[0]); $i++) {
+						$text = strip_tags( $matches[2][$i] );
+						preg_match( '/id="([^"]*)"/', $matches[1][$i], $id );
+						$markup = sprintf(
+							'<li><a href="#%s">%s</a></li>',
+							$id[1] ?? sanitize_title_with_dashes( remove_accents( $text ) ),
+							$text
+						);
+						if (!in_array($markup, $out)) {
+							$out[] = $markup;
+						}	
+					}
+				}
+				//register only first heading
+				else {
+					$text = strip_tags( $matches[2][0] );
+					preg_match( '/id="([^"]*)"/', $matches[1][0], $id );
+					$markup = sprintf(
+						'<li><a href="#%s">%s</a></li>',
+						$id[1] ?? sanitize_title_with_dashes( remove_accents( $text ) ),
+						$text
+					);
+					if (!in_array($markup, $out)) {
+						$out[] = $markup;
+					}
 				}
 			}
 

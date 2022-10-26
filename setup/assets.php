@@ -87,6 +87,21 @@ function helsinki_enqueue_admin_assets($hook_suffix) {
 	  */
   	$version = $debug ? time() : wp_get_theme()->get('Version');
 
+	/**
+	  * Styles
+	  */
+	  $admin_css = $debug ? 'admin/styles/admin.css': 'admin/styles/admin.min.css';
+	  wp_enqueue_style(
+		  'theme-admin-styles',
+		  $assets . $admin_css,
+		  array(
+			  'wp-block-library',
+		  ),
+		  $version,
+		  'all'
+	  );
+  
+
 	$theme_admin_js = $debug ? 'scripts/admin/scripts.js': 'scripts/admin/scripts.min.js';
 	wp_enqueue_script(
 		'theme-admin',
