@@ -14,7 +14,7 @@ function helsinki_add_links_symbols($content = '') {
         else if ( str_starts_with( $matches['href'][$i], 'tel:' ) ) {
             $content = str_replace($matches[0][$i], helsinki_build_replacement_link($matches['link'][$i], $matches['content'][$i], $matches['endtag'][$i], $matches['svgafter'][$i], 'phone'), $content);
         }
-        else if (!str_contains($matches['href'][$i], $url)) {
+        else if (!str_contains($matches['href'][$i], $url) && !str_starts_with( $matches['href'][$i], '#' )) {
             $content = str_replace($matches[0][$i], helsinki_build_replacement_link($matches['link'][$i], $matches['content'][$i], $matches['endtag'][$i], $matches['svgafter'][$i], 'external'), $content);
         }
     }
