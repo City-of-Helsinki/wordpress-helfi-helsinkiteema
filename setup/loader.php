@@ -85,6 +85,7 @@ function helsinki_files()
 				'widgets',
 			],
 			'classes',
+			'links',
 			'misc',
 		],
 		'integrations' => [],

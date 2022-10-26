@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-06-10 08:48+0000\n"
+"PO-Revision-Date: 2022-10-25 11:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -21,6 +21,18 @@ msgstr "&amp;larr; Äldre kommentarer"
 #: partials/content/parts/comment.php:23
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
+
+#: functions/links.php:43
+msgid "(Link leads to external service)"
+msgstr "(Länk leder till extern tjänst)"
+
+#: functions/links.php:29
+msgid "(Link opens default mail program)"
+msgstr "(Länk öppnar standardprogram för e-post)"
+
+#: functions/links.php:36
+msgid "(Link starts a phone call)"
+msgstr "(Link startar ett telefonsamtal)"
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
@@ -93,7 +105,7 @@ msgstr ""
 "Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
 "framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
 
-#: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Stänga"
@@ -267,7 +279,7 @@ msgstr "Yoast SEO krävs för att installeras"
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:97
+#: inc/filters.php:121
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -360,13 +372,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:223
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
-#: setup/assets.php:114
+#: setup/assets.php:129
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
@@ -465,7 +477,7 @@ msgstr "Sista sidan"
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: partials/front-page/feed-posts/highlight.php:28
+#: partials/front-page/feed-posts/highlight.php:30
 #: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr "Länk leder till:"
@@ -508,7 +520,7 @@ msgstr "Nyare"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
 
-#: setup/assets.php:112 partials/loop/pagination.php:51
+#: setup/assets.php:127 partials/loop/pagination.php:51
 msgid "Next"
 msgstr "Nästa"
 
@@ -593,7 +605,7 @@ msgstr "sökresultat"
 msgid "Posts Feed"
 msgstr "Inläggsflöde"
 
-#: setup/assets.php:113 partials/loop/pagination.php:25
+#: setup/assets.php:128 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr "Tidigare"
 
@@ -649,7 +661,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Återställa"
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:221
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
