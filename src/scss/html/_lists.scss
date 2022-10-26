@@ -40,16 +40,22 @@ dd {
 .content__body {
 
 	ol, ul {
-		max-width: 860px;
 
-		li {
-			+ li {
-				margin-top: spacing('2-xs');
-			}
+		//only apply rules if lists have no classes; existing classes mean the lists most likely already have functioning layouts
+		&:not([class]), &[class=""] {
+			max-width: 860px;
 
-			ol, ul {
-				margin-top: spacing('2-xs') !important;
-				margin-bottom: 0;
+			li {
+				&:not([class]), &[class=""] {
+					+ li {
+						margin-top: spacing('2-xs');
+					}
+
+					ol, ul {
+						margin-top: spacing('2-xs') !important;
+						margin-bottom: 0;
+					}
+				}
 			}
 		}
 	}
