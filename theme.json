@@ -60,6 +60,15 @@
           "letterSpacing": false  
         }
       },
+      "core/group": {
+        "typography": {
+          "fontWeight": false,
+          "fontStyle": false,
+          "fontSize": false,
+          "textTransform": false,
+          "letterSpacing": false  
+        }
+      },
       "core/social-links": {
         "color": {
           "defaultPalette": false,
@@ -77,7 +86,6 @@
           ]
         }
       }
-
     },
     "color": {
       "customDuotone": false,
