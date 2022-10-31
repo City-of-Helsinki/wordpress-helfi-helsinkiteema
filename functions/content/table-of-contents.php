@@ -135,7 +135,7 @@ function helsinki_post_content_heading_link_list_items( $blocks, $level = 2 ) {
 			preg_match_all('/(<h2[^\>]*>)(.*)(<\/h2>)/sU', $rendered_block, $matches);
 			if (!empty($matches[0])) {
 				//register multiple heading from block; required for some server-side rendered blocks
-				if (array_key_exists($block['blockName'], $multipleHeadings) && isset($block['attrs']['blockVersion']) && $block['attrs']['blockVersion'] >= $multipleHeadings[$block['blockName']]) {
+				if ((array_key_exists($block['blockName'], $multipleHeadings) && isset($block['attrs']['blockVersion']) && $block['attrs']['blockVersion'] >= $multipleHeadings[$block['blockName']]) || $block['blockName'] == null) {
 					for ($i = 0; $i < count($matches[0]); $i++) {
 						$text = strip_tags( $matches[2][$i] );
 						preg_match( '/id="([^"]*)"/', $matches[1][$i], $id );
