@@ -49,9 +49,7 @@ if ( ! function_exists('helsinki_entry_title') ) {
 
 if ( ! function_exists('helsinki_get_entry_title') ) {
 	function helsinki_get_entry_title() {
-		return helsinki_trim_title(
-			get_the_title()
-		);
+		return get_the_title();
 	}
 }
 
