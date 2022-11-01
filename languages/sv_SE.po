@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2022-10-25 11:40+0000\n"
+"PO-Revision-Date: 2022-11-01 08:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,18 +22,6 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:43
-msgid "(Link leads to external service)"
-msgstr "(Länk leder till extern tjänst)"
-
-#: functions/links.php:29
-msgid "(Link opens default mail program)"
-msgstr "(Länk öppnar standardprogram för e-post)"
-
-#: functions/links.php:36
-msgid "(Link starts a phone call)"
-msgstr "(Link startar ett telefonsamtal)"
-
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
 msgstr "Ett WordPress-tema för flera ändamål"
@@ -45,10 +33,6 @@ msgstr "Uppmärksam"
 #: functions/layout/loop.php:107
 msgid "All categories"
 msgstr "Alla kategorier"
-
-#: partials/front-page/recent-posts/more.php:5
-msgid "All posts"
-msgstr "Alla inlägg"
 
 #: functions/layout/loop.php:135
 msgid "All tags"
@@ -683,6 +667,10 @@ msgstr "Sökresultat"
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Avsnittstitel"
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "See all news"
+msgstr "Se alla nyheter"
 
 #: functions/layout/loop.php:20
 msgid "Select category"

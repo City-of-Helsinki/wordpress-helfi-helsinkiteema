@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-10-25 11:40+0000\n"
+"PO-Revision-Date: 2022-11-01 08:26+0000\n"
 "Last-Translator: \n"
-"Language-Team: Finnish\n"
+"Language-Team: Suomi\n"
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -22,18 +22,6 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:43
-msgid "(Link leads to external service)"
-msgstr "(Linkki johtaa ulkoiseen palveluun)"
-
-#: functions/links.php:29
-msgid "(Link opens default mail program)"
-msgstr "(Linkki avaa oletussähköpostiohjelman)"
-
-#: functions/links.php:36
-msgid "(Link starts a phone call)"
-msgstr "(Linkki aloittaa puhelun)"
-
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
@@ -45,10 +33,6 @@ msgstr "Huomio"
 #: functions/layout/loop.php:107
 msgid "All categories"
 msgstr "Kaikki kategoriat"
-
-#: partials/front-page/recent-posts/more.php:5
-msgid "All posts"
-msgstr "Kaikki artikkelit"
 
 #: functions/layout/loop.php:135
 msgid "All tags"
@@ -686,6 +670,10 @@ msgstr "Hakutulokset"
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "See all news"
+msgstr "Katso kaikki uutiset"
 
 #: functions/layout/loop.php:20
 msgid "Select category"
