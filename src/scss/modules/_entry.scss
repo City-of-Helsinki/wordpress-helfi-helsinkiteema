@@ -196,6 +196,11 @@ ul.posts {
 
 		.entry__thumbnail {
 			margin-bottom: $entry-content-spacing;
+
+			img {
+				object-fit: cover;
+				min-height: 100%;
+			}
 		}
 
 	} // --grid
