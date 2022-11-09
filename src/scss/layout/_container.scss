@@ -34,3 +34,22 @@
 		flex-direction: row-reverse;
 	}
 }
+
+.is-layout-flex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin-bottom: spacing('l');
+
+	&.wp-block-columns {
+		gap: 0;
+
+		@include breakpoint('m') {
+			gap: 64px;
+		}
+	}
+}
+
+.is-layout-flow {
+	margin-bottom: spacing('l');
+}

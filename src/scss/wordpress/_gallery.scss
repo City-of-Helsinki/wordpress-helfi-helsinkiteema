@@ -7,11 +7,6 @@
     text-align: center;
 
     @each $breakpoint, $gutter in $gutters {
-        @include breakpoint($breakpoint) {
-            margin-right: - math.div($gutter, 2);
-            margin-left: - math.div($gutter, 2);
-        }
-
         .gallery-item {
             padding-right: 0;
             padding-left: 0;
