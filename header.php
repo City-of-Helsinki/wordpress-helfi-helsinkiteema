@@ -59,10 +59,6 @@
 
     </header>
 
-    <?php 
-      $header = ob_get_clean();
-      echo apply_filters( 'helsinki_header_output', $header,)
-    ?>
 
     <?php
 
@@ -85,3 +81,8 @@
         do_action('helsinki_main_top');
 
       ?>
+    <?php 
+      $header = ob_get_clean();
+      echo apply_filters( 'helsinki_header_output', $header);
+    ?>
+
