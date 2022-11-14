@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * I18n
+ */
+load_theme_textdomain('helsinki-universal', get_template_directory() .'/languages');
+
+
+/**
  * Load files
  *
  * Theme file configuration and autoloader
