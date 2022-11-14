@@ -3,11 +3,6 @@ function helsinki_setup_theme()
 {
 
     /**
-     * I18n
-     */
-    load_theme_textdomain('helsinki-universal', get_template_directory() .'/languages');
-
-    /**
      * Embed width
      */
     $GLOBALS['content_width'] = apply_filters('embed_content_width', 1000);
