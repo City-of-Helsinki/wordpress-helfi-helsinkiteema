@@ -5,7 +5,7 @@ add_filter( 'helsinki_header_output', 'helsinki_add_links_symbols', 100, 1 );
 add_filter( 'helsinki_footer_output', 'helsinki_add_links_symbols', 100, 1 );
 
 function helsinki_add_links_symbols($content = '') {
-    preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg).)*(?<svginner><\/svg>)?)(?<endtag><\/a>)(?<svgafter><svg)?/s', $content, $matches);
+    preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg).)*(?<svginner><\/svg>)?)\s*(?<endtag><\/a>)(?<svgafter><svg)?/sU', $content, $matches);
     $url = get_site_url();
     for($i = 0; $i < count($matches[0]); $i++) {
         if ( str_starts_with( $matches['href'][$i], 'mailto:' ) ) {
