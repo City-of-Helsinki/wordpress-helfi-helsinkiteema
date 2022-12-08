@@ -40,7 +40,7 @@ function helsinki_get_svg_placeholder( string $key ) {
 	$path = helsinki_placeholder_svg_paths( $key );
 	return $path ? sprintf(
 		'<svg class="icon icon--%s" viewBox="%s" aria-hidden="true" tabindex="-1">
-			<g id="%s" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g id="%s" stroke="none" stroke-width="1" fill-rule="evenodd">
 				<path d="%s" fill-rule="nonzero"></path>
 			</g>
 		</svg>',
