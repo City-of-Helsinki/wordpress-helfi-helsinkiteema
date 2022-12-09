@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-11-14 09:38+0000\n"
+"PO-Revision-Date: 2022-12-09 10:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -45,10 +45,6 @@ msgstr "Huomio"
 #: functions/layout/loop.php:107
 msgid "All categories"
 msgstr "Kaikki kategoriat"
-
-#: partials/front-page/recent-posts/more.php:5
-msgid "All posts"
-msgstr "Kaikki artikkelit"
 
 #: functions/layout/loop.php:135
 msgid "All tags"
@@ -686,6 +682,10 @@ msgstr "Hakutulokset"
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "See all news"
+msgstr "Katso kaikki uutiset"
 
 #: functions/layout/loop.php:20
 msgid "Select category"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-14 09:37+0000\n"
+"POT-Creation-Date: 2022-12-09 10:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -21,6 +21,18 @@ msgstr ""
 
 #: partials/content/parts/comment.php:23
 msgid "(Edit comment)"
+msgstr ""
+
+#: functions/links.php:43
+msgid "(Link leads to external service)"
+msgstr ""
+
+#: functions/links.php:29
+msgid "(Link opens default mail program)"
+msgstr ""
+
+#: functions/links.php:36
+msgid "(Link starts a phone call)"
 msgstr ""
 
 #. Description of the theme
