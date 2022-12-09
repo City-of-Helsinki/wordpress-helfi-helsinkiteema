@@ -5,7 +5,7 @@ add_filter( 'helsinki_header_output', 'helsinki_add_links_symbols', 100, 1 );
 add_filter( 'helsinki_footer_output', 'helsinki_add_links_symbols', 100, 1 );
 
 function helsinki_add_links_symbols($content = '') {
-    preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg).)*(?<svginner><\/svg>)?)\s*(?<endtag><\/a>)(?<svgafter><svg)?/sU', $content, $matches);
+    preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg).)*(?<svginner><\/svg>)?)(?<endtag><\/a>)(?<svgafter><svg)?/s', $content, $matches);
     $url = get_site_url();
     for($i = 0; $i < count($matches[0]); $i++) {
         if ( str_starts_with( $matches['href'][$i], 'mailto:' ) ) {
@@ -26,21 +26,21 @@ function helsinki_build_replacement_link($begintag, $content, $svginner, $endtag
     $extra_attrs = '';
     $icon = '';
     if ($linkType == 'mail') {
-        $ariaLabel = sprintf('aria-label="%s"', __('(Link opens default mail program)', 'helsinki-universal'));
+        $ariaLabel = sprintf('aria-label="%s"', esc_attr(wp_strip_all_tags($content)) . ' - ' . __('(Link opens default mail program)', 'helsinki-universal'));
         $extra_attrs = 'data-protocol="mailto"';
         if (empty($svgafter) && empty($svginner)) {
             $icon = helsinki_get_svg_icon('envelope', 'inline-icon');
         }
     }
     else if ($linkType == 'phone') {
-        $ariaLabel = sprintf('aria-label="%s"', __('(Link starts a phone call)', 'helsinki-universal'));
+        $ariaLabel = sprintf('aria-label="%s"', esc_attr(wp_strip_all_tags($content)) . ' - ' . __('(Link starts a phone call)', 'helsinki-universal'));
         $extra_attrs = 'data-protocol="tel"';
         if (empty($svgafter) && empty($svginner)) {
             $icon = helsinki_get_svg_icon('phone', 'inline-icon');
         }
     }
     else if ($linkType == 'external') {
-        $ariaLabel = sprintf('aria-label="%s"', __('(Link leads to external service)', 'helsinki-universal'));
+        $ariaLabel = sprintf('aria-label="%s"', esc_attr(wp_strip_all_tags($content)) . ' - ' . __('(Link leads to external service)', 'helsinki-universal'));
         $extra_attrs = 'data-is-external="true"';
         if (empty($svgafter) && empty($svginner)) {
             $icon = helsinki_get_svg_icon('link-external', 'inline-icon');
