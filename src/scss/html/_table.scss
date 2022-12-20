@@ -1,8 +1,8 @@
 table {
 	display: block;
-	border-collapse: separate !important;
+	/*border-collapse: separate !important;
 	border-spacing: 0;
-	border: 1px solid var(--color-black-60);
+	border: 1px solid var(--color-black-60);*/
 	margin-top: $table-margin-bottom;
 	margin-bottom: 0;
 	text-align: left;
@@ -12,8 +12,6 @@ table {
 	white-space: nowrap;
 
 	caption {
-		margin: spacing('l') spacing('m');
-		margin-top: spacing('l') !important;
 		text-align: left;
 	}
 }
@@ -22,14 +20,25 @@ thead {
 	width: 100%;
 	background-color: $black;
 	color: $white;
+	border-top: 1px double var(--color-black-60);
+	border-left: 1px double var(--color-black-60);
+	border-right: 1px double var(--color-black-60);
 }
 
 tbody {
 	width: 100%;
+
 	tr {
 		&:hover {
 			background-color: var(--color-black-5) !important;
 		}
+	}
+
+	border-left: 1px double var(--color-black-60);
+	border-right: 1px double var(--color-black-60);
+
+	&:last-child {
+		border-bottom: 1px double var(--color-black-60);
 	}
 }
 
@@ -42,6 +51,9 @@ tfoot {
 		}
 	}
 
+	border-bottom: 1px double var(--color-black-60);
+	border-left: 1px double var(--color-black-60);
+	border-right: 1px double var(--color-black-60);
 }
 
 tr {
@@ -61,15 +73,17 @@ tr {
 
 th {
 	font-weight: $table-heading-font-weight;
-	padding: $table-cell-padding;
+	padding: $table-cell-padding !important;
 	white-space: normal;
 	min-width: 140px;
+	border: unset !important;
 }
 
 td {
-	padding: $table-cell-padding;
+	padding: $table-cell-padding !important;
 	white-space: normal;
 	min-width: 140px;
+	border: unset !important;
 }
 
 figure.wp-block-table {
@@ -114,7 +128,12 @@ figure.wp-block-table {
 			border: none;
 		}
 
+		thead {
+			border: none;
+		}
+
 		tbody {
+			border: none;
 			tr {
 				&:nth-child(odd) {
 					background-color: unset;
@@ -124,6 +143,10 @@ figure.wp-block-table {
 					background-color: var(--color-black-10);
 				}
 			}
+		}
+
+		tfoot {
+			border: none;
 		}
 	}
 
@@ -137,5 +160,47 @@ figure.wp-block-table {
 		position: static !important;
 		flex-grow: 0;
 		flex-basis: unset;
+	}
+}
+
+.wp-block-calendar {
+	color: $black;
+
+	table {
+		caption {
+			color: $black;
+		}
+
+		thead {
+			tr {
+				th {
+					font-weight: inherit;
+					background: unset;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				td {
+					color: $black;
+					border-right: $table-border !important;
+					border-bottom: $table-border !important;
+					border-color: $table-border-color !important;
+				}
+			}
+		}
+	}
+
+	nav {
+		.wp-calendar-nav-prev {
+			float: left;
+			padding: 8px;
+		}
+
+		.wp-calendar-nav-next {
+			float: right;
+			padding: 8px;
+		}
 	}
 }
