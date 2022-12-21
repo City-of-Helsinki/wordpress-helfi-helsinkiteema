@@ -6,7 +6,7 @@ ul.posts {
 .entry {
 	position: relative;
 
-	> a {
+	.entry__link {
 		display: block;
 		text-decoration: none;
 
@@ -18,14 +18,21 @@ ul.posts {
 				text-decoration: underline;
 			}
 
-			.entry__more {
+			& ~ .entry__more {
 				svg {
 					margin-left: $global-margin;
 				}
 			}
-
 		}
 
+		&:after {
+			bottom: 0;
+			content: "";
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
 	}
 
 	&__column {
@@ -51,15 +58,13 @@ ul.posts {
 	&__thumbnail {
 
 		&.has-icon {
-      background-color: var(--primary-color);
+			background-color: var(--primary-color);
 
 			.icon {
 				@include absoluteCenter();
 				width: rem-calc(112);
 			}
-
 		}
-
 	}
 
 	&__header {
@@ -77,9 +82,11 @@ ul.posts {
 		}
 	}
 
-	&__content {}
+	&__content {
+	}
 
-	&__meta {}
+	&__meta {
+	}
 
 	&__excerpt {
 		margin-bottom: rem-calc(18);
@@ -126,10 +133,10 @@ ul.posts {
 					margin-bottom: 0;
 					width: 180px;
 				}
-
 			}
 		}
-	} // --list
+	}
+	// --list
 
 	&--highlight {
 
@@ -146,8 +153,8 @@ ul.posts {
 		.entry__title {
 			font-size: var(--fontsize-heading-m);
 		}
-
-	} // --highlight
+	}
+	// --highlight
 
 	&--feed {
 		border-left: 4px $default-border-style var(--primary-color);
@@ -167,9 +174,9 @@ ul.posts {
 			font-size: $body-font-size;
 			margin-bottom: spacing('2-xs');
 
-      span {
-        margin-right: spacing('2-xs');
-      }
+			span {
+				margin-right: spacing('2-xs');
+			}
 
 			.icon {
 				display: inline-block;
@@ -180,8 +187,8 @@ ul.posts {
 		.meta {
 			font-size: rem-calc(14);
 		}
-
-	} // -feed
+	}
+	// -feed
 
 	&--grid {
 
@@ -202,8 +209,8 @@ ul.posts {
 				min-height: 100%;
 			}
 		}
-
-	} // --grid
+	}
+	// --grid
 } // .entry
 
 .entries {
