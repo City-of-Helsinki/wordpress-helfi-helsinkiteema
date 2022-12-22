@@ -170,9 +170,27 @@ ul.posts {
 			margin-bottom: 0;
 		}
 
+		a {
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+
+				& ~ .entry__more {
+					svg {
+						margin-left: $global-margin;
+					}
+				}
+			}
+		}
+
+
 		.entry__title {
-			font-size: $body-font-size;
 			margin-bottom: spacing('2-xs');
+			font-size: var(--fontsize-heading-xs);
+
+			@include breakpoint(l) {
+				font-size: var(--fontsize-heading-m);
+			}
 
 			span {
 				margin-right: spacing('2-xs');
