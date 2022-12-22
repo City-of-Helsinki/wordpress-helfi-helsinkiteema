@@ -187,9 +187,6 @@ ul.posts {
 			margin-bottom: spacing('2-xs');
 			font-size: var(--fontsize-heading-xs);
 
-			@include breakpoint(l) {
-				font-size: var(--fontsize-heading-m);
-			}
 
 			span {
 				margin-right: spacing('2-xs');
@@ -197,7 +194,15 @@ ul.posts {
 
 			.icon {
 				display: inline-block;
-				width: 32px;
+				width: 24px;
+			}
+
+			@include breakpoint(l) {
+				font-size: var(--fontsize-heading-m);
+
+				.icon {
+					width: 32px;
+				}
 			}
 		}
 
