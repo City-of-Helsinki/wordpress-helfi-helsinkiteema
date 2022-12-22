@@ -23,9 +23,7 @@ ul.posts {
 					margin-left: $global-margin;
 				}
 			}
-
 		}
-
 	}
 
 	&__column {
@@ -51,15 +49,13 @@ ul.posts {
 	&__thumbnail {
 
 		&.has-icon {
-      background-color: var(--primary-color);
+			background-color: var(--primary-color);
 
 			.icon {
 				@include absoluteCenter();
 				width: rem-calc(112);
 			}
-
 		}
-
 	}
 
 	&__header {
@@ -78,9 +74,11 @@ ul.posts {
 		}
 	}
 
-	&__content {}
+	&__content {
+	}
 
-	&__meta {}
+	&__meta {
+	}
 
 	&__excerpt {
 		margin-bottom: rem-calc(18);
@@ -127,10 +125,10 @@ ul.posts {
 					margin-bottom: 0;
 					width: 180px;
 				}
-
 			}
 		}
-	} // --list
+	}
+	// --list
 
 	&--highlight {
 
@@ -147,8 +145,8 @@ ul.posts {
 		.entry__title {
 			font-size: var(--fontsize-heading-m);
 		}
-
-	} // --highlight
+	}
+	// --highlight
 
 	&--feed {
 		border-left: 4px $default-border-style var(--primary-color);
@@ -164,13 +162,31 @@ ul.posts {
 			margin-bottom: 0;
 		}
 
-		.entry__title {
-			font-size: $body-font-size;
-			margin-bottom: spacing('2-xs');
+		a {
+			&:hover,
+			&:focus {
+				text-decoration: underline;
 
-      span {
-        margin-right: spacing('2-xs');
-      }
+				& ~ .entry__more {
+					svg {
+						margin-left: $global-margin;
+					}
+				}
+			}
+		}
+
+
+		.entry__title {
+			margin-bottom: spacing('2-xs');
+			font-size: var(--fontsize-heading-xs);
+
+			@include breakpoint(l) {
+				font-size: var(--fontsize-heading-m);
+			}
+
+			span {
+				margin-right: spacing('2-xs');
+			}
 
 			.icon {
 				display: inline-block;
@@ -181,8 +197,8 @@ ul.posts {
 		.meta {
 			font-size: rem-calc(14);
 		}
-
-	} // -feed
+	}
+	// -feed
 
 	&--grid {
 
@@ -198,8 +214,8 @@ ul.posts {
 		.entry__thumbnail {
 			margin-bottom: $entry-content-spacing;
 		}
-
-	} // --grid
+	}
+	// --grid
 } // .entry
 
 .entries {

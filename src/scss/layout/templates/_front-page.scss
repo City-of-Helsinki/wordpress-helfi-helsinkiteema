@@ -72,3 +72,12 @@ section {
 	
 	}
 }
+
+div {
+	&.front-page-section {
+		.hds-container {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
