@@ -175,11 +175,19 @@ ul.posts {
 			&:focus {
 				text-decoration: underline;
 
-				& ~ .entry__more {
-					svg {
-						margin-left: $global-margin;
-					}
+				svg {
+					margin-left: $global-margin;
+					width: 32px;
 				}
+			}
+
+			&:after {
+				bottom: 0;
+				content: "";
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
 			}
 		}
 
