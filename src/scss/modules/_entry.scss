@@ -6,7 +6,7 @@ ul.posts {
 .entry {
 	position: relative;
 
-	> a {
+	.entry__link {
 		display: block;
 		text-decoration: none;
 
@@ -18,12 +18,22 @@ ul.posts {
 				text-decoration: underline;
 			}
 
-			.entry__more {
+			& ~ .entry__more {
 				svg {
 					margin-left: $global-margin;
 				}
 			}
 		}
+
+		&:after {
+			bottom: 0;
+			content: "";
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
 	}
 
 	&__column {
@@ -212,6 +222,7 @@ ul.posts {
 		.entry__meta {
 			font-size: rem-calc(16) !important;
 		}
+    
 	}
 	// -feed
 
@@ -233,6 +244,7 @@ ul.posts {
 				object-fit: cover;
 				min-height: 100%;
 			}
+
 		}
 	}
 	// --grid
