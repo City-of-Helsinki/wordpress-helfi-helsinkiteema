@@ -47,10 +47,6 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: partials/front-page/recent-posts/more.php:5
-msgid "All posts"
-msgstr ""
-
 #: functions/layout/loop.php:135
 msgid "All tags"
 msgstr ""
@@ -671,6 +667,10 @@ msgstr ""
 
 #: customizer/config/front-page.php:48
 msgid "Section title"
+msgstr ""
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "See all news"
 msgstr ""
 
 #: functions/layout/loop.php:20

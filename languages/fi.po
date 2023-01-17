@@ -46,10 +46,6 @@ msgstr "Huomio"
 msgid "All categories"
 msgstr "Kaikki kategoriat"
 
-#: partials/front-page/recent-posts/more.php:5
-msgid "All posts"
-msgstr "Kaikki artikkelit"
-
 #: functions/layout/loop.php:135
 msgid "All tags"
 msgstr "Kaikki avainsanat"
@@ -686,6 +682,10 @@ msgstr "Hakutulokset"
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "See all news"
+msgstr "Katso kaikki uutiset"
 
 #: functions/layout/loop.php:20
 msgid "Select category"

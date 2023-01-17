@@ -46,10 +46,6 @@ msgstr "Uppmärksam"
 msgid "All categories"
 msgstr "Alla kategorier"
 
-#: partials/front-page/recent-posts/more.php:5
-msgid "All posts"
-msgstr "Alla inlägg"
-
 #: functions/layout/loop.php:135
 msgid "All tags"
 msgstr "Alla taggar"
@@ -683,6 +679,10 @@ msgstr "Sökresultat"
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Avsnittstitel"
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "See all news"
+msgstr "Se alla nyheter"
 
 #: functions/layout/loop.php:20
 msgid "Select category"
