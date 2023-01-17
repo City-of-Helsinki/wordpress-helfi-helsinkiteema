@@ -168,7 +168,7 @@ ul.posts {
 				text-decoration: underline;
 
 				svg {
-					margin-left: $global-margin;
+					margin-left: 8px;
 				}
 			}
 
@@ -186,7 +186,7 @@ ul.posts {
 		.entry__title {
 			margin-bottom: spacing('2-xs');
 			font-size: var(--fontsize-heading-xs);
-
+			font-weight: $global-font-weight-medium;
 
 			span {
 				margin-right: spacing('2-xs');
@@ -205,9 +205,13 @@ ul.posts {
 				}
 			}
 		}
-
+		//important? doesn't exist on rss feed
 		.meta {
 			font-size: rem-calc(14);
+		}
+
+		.entry__meta {
+			font-size: rem-calc(16) !important;
 		}
 	}
 	// -feed
