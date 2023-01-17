@@ -1,4 +1,6 @@
-<section id="feed-posts" class="front-page-section feed-posts has-highlight">
+<<?php isset($args['attributes']) ? print('div') : print('section') ?> 
+	id="<?php isset($args['attributes']) ? print($args['attributes']['anchor']) : print('feed-posts') ?>" 
+	class="front-page-section feed-posts<?php isset($args['attributes']['className']) ? print(' '.$args['attributes']['className']) : '' ?>">
 
 	<?php
 
@@ -31,4 +33,4 @@
 	do_action('helsinki_front_page_feed-posts_after', $args);
 
 	?>
-</section>
+</<?php isset($args['attributes']) ? print('div') : print('section') ?>>

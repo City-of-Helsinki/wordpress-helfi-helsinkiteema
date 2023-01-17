@@ -233,7 +233,7 @@ function helsinki_front_page_feed_posts_source_text($args = array()) {
 }
 
 function helsinki_front_page_feed_posts_count() {
-	return 7;
+	return 6;
 }
 
 function helsinki_front_page_feed_lifetime() {
