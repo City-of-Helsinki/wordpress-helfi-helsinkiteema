@@ -100,13 +100,17 @@ function helsinkiGalleryLightbox( config ) {
 	/**
 	  * Init
 	  */
-	function initLightboxes( galleries ) {
-		if ( galleries.length === 0 ) {
+	function initLightboxes( galleries, singleImages ) {
+		if ( galleries.length === 0 && singleImages.length === 0 ) {
 			return;
 		}
 
 		for ( let g = 0; g < galleries.length; g++ ) {
 			initLightbox( galleries[g] );
+		}
+
+		for ( let s = 0; s < singleImages.length; s++ ) {
+			initLightbox( singleImages[s] );
 		}
 
 		document.addEventListener('keydown', closeOnEsc);
@@ -124,6 +128,8 @@ function helsinkiGalleryLightbox( config ) {
 
 		initGalleryImages( figures );
 
+		console.log(gallery);
+		console.log(figures);
 		let lightbox = createLightbox( gallery, figures );
 		lightbox.addEventListener( 'click', clickLightbox );
 
@@ -141,7 +147,8 @@ function helsinkiGalleryLightbox( config ) {
 
 	function initGalleryImage( figure ) {
 		let imageLink = figure.querySelector( 'a' );
-		imageLink.addEventListener( 'click', clickImage );
+		if (imageLink)
+			imageLink.addEventListener( 'click', clickImage );
 	}
 
 	/**
@@ -276,6 +283,11 @@ function helsinkiGalleryLightbox( config ) {
 	  * Elements
 	  */
 	function galleryFigures( gallery ) {
+		console.log(gallery.classList.contains('wp-block-image'));
+		if (gallery.classList.contains('wp-block-image') || (gallery.classList.contains('wp-caption') && gallery.querySelector('img'))) {
+			return [gallery];
+		}
+
 		return gallery.querySelectorAll( '.blocks-gallery-item figure, figure .wp-block-image, .gallery-item' );
 	}
 
@@ -292,7 +304,8 @@ function helsinkiGalleryLightbox( config ) {
 	}
 
 	function currentGallery( galleryItem ) {
-		return galleryItem.closest( '.wp-block-gallery, .gallery' );
+		console.log(galleryItem);
+		return galleryItem.closest( '.wp-block-gallery, .gallery' ) ? galleryItem.closest( '.wp-block-gallery, .gallery' ) : galleryItem.closest('figure');
 	}
 
 	function currentGalleryContent( galleryItem ) {
@@ -300,6 +313,7 @@ function helsinkiGalleryLightbox( config ) {
 	}
 
 	function currentGalleryLightBox( gallery ) {
+		console.log(gallery);
 		return document.getElementById(
 			gallery.getAttribute( 'data-lightbox-id' )
 		);
@@ -486,6 +500,20 @@ function helsinkiGalleryLightbox( config ) {
 	}
 
 	function hasImageLinks( gallery ) {
+		if (gallery.classList.contains('wp-block-image') || (gallery.classList.contains('wp-caption') && gallery.querySelector('img'))) {
+			var link = gallery.querySelector( 'a' );
+			if (link) {
+				var href = link.getAttribute('href');
+				var acceptedEndings = ['jpg', 'jpg/', 'png', 'png/', 'webp', 'webp/'];
+				for (var i = 0; i < acceptedEndings.length; i++) {
+					if (href.endsWith(acceptedEndings[i])) {
+						return link;
+					}
+				}
+			}
+			return false;
+		}
+
 		return gallery.querySelector( '.blocks-gallery-item > figure > a, figure.wp-block-image > a, .gallery-item > .gallery-icon > a' );
 	}
 
@@ -544,7 +572,8 @@ function helsinkiGalleryLightbox( config ) {
 const HelsinkiGalleryLightbox = helsinkiGalleryLightbox( helsinkiTheme );
 
 HelsinkiGalleryLightbox.init(
-	document.querySelectorAll( '.wp-block-gallery, .gallery' )
+	document.querySelectorAll( '.wp-block-gallery, .gallery' ),
+	document.querySelectorAll( ':not(.wp-block-gallery, .gallery) > .wp-block-image, .wp-caption' )
 );
 
 function jsLoadMoreInit() {
