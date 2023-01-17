@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-06-10 08:47+0000\n"
+"PO-Revision-Date: 2022-11-14 09:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.0; wp-5.9.2"
+"X-Loco-Version: 2.6.0; wp-6.1"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -21,6 +21,18 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 #: partials/content/parts/comment.php:23
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
+
+#: functions/links.php:43
+msgid "(Link leads to external service)"
+msgstr "(Linkki johtaa ulkoiseen palveluun)"
+
+#: functions/links.php:29
+msgid "(Link opens default mail program)"
+msgstr "(Linkki avaa oletussähköpostiohjelman)"
+
+#: functions/links.php:36
+msgid "(Link starts a phone call)"
+msgstr "(Linkki aloittaa puhelun)"
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
@@ -33,10 +45,6 @@ msgstr "Huomio"
 #: functions/layout/loop.php:107
 msgid "All categories"
 msgstr "Kaikki kategoriat"
-
-#: partials/front-page/recent-posts/more.php:5
-msgid "All posts"
-msgstr "Kaikki artikkelit"
 
 #: functions/layout/loop.php:135
 msgid "All tags"
@@ -92,7 +100,7 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
@@ -268,7 +276,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:97
+#: inc/filters.php:121
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -361,13 +369,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:223
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
-#: setup/assets.php:114
+#: setup/assets.php:129
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -467,7 +475,7 @@ msgstr "Viimeinen sivu"
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
-#: partials/front-page/feed-posts/highlight.php:28
+#: partials/front-page/feed-posts/highlight.php:30
 #: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr "Linkki johtaa:"
@@ -511,7 +519,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:112 partials/loop/pagination.php:51
+#: setup/assets.php:127 partials/loop/pagination.php:51
 msgid "Next"
 msgstr "Seuraava"
 
@@ -596,7 +604,7 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:113 partials/loop/pagination.php:25
+#: setup/assets.php:128 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -652,7 +660,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr "Tyhjennä"
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:221
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -674,6 +682,10 @@ msgstr "Hakutulokset"
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
+
+#: partials/front-page/recent-posts/more.php:5
+msgid "See all news"
+msgstr "Katso kaikki uutiset"
 
 #: functions/layout/loop.php:20
 msgid "Select category"

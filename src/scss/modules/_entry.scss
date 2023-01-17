@@ -33,6 +33,7 @@ ul.posts {
 			right: 0;
 			top: 0;
 		}
+
 	}
 
 	&__column {
@@ -73,7 +74,6 @@ ul.posts {
 
 	&__title {
 		font-size: $entry-title-font-size;
-		font-weight: $global-font-weight-medium;
 		line-height: 1.2;
 		margin-top: 0;
 		margin-bottom: spacing(xs);
@@ -105,7 +105,7 @@ ul.posts {
 		font-weight: $entry-read-more-font-weight;
 
 		svg {
-			width: 32px;
+			width: 48px;
 		}
 	}
 
@@ -171,9 +171,31 @@ ul.posts {
 			margin-bottom: 0;
 		}
 
+		a {
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+
+				svg {
+					margin-left: 8px;
+				}
+			}
+
+			&:after {
+				bottom: 0;
+				content: "";
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+
+
 		.entry__title {
-			font-size: $body-font-size;
 			margin-bottom: spacing('2-xs');
+			font-size: var(--fontsize-heading-xs);
+			font-weight: $global-font-weight-medium;
 
 			span {
 				margin-right: spacing('2-xs');
@@ -181,13 +203,26 @@ ul.posts {
 
 			.icon {
 				display: inline-block;
-				width: 16px;
+				width: 24px;
+			}
+
+			@include breakpoint(l) {
+				font-size: var(--fontsize-heading-m);
+
+				.icon {
+					width: 32px;
+				}
 			}
 		}
-
+		//important? doesn't exist on rss feed
 		.meta {
 			font-size: rem-calc(14);
 		}
+
+		.entry__meta {
+			font-size: rem-calc(16) !important;
+		}
+    
 	}
 	// -feed
 
@@ -204,6 +239,12 @@ ul.posts {
 
 		.entry__thumbnail {
 			margin-bottom: $entry-content-spacing;
+
+			img {
+				object-fit: cover;
+				min-height: 100%;
+			}
+
 		}
 	}
 	// --grid
