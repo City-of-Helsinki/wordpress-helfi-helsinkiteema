@@ -19,7 +19,8 @@
     do_action('helsinki_footer_before');
 
   ?>
-
+    
+  <?php ob_start(); ?>
   <footer id="footer" class="<?php helsinki_footer_classes(); ?>" role="contentinfo">
 
     <?php
@@ -33,6 +34,11 @@
     ?>
 
   </footer>
+
+  <?php 
+      $footer = ob_get_clean();
+      echo apply_filters( 'helsinki_footer_output', $footer,)
+    ?>
 
   <?php
 
