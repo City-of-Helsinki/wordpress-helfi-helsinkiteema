@@ -95,6 +95,7 @@ function helsinkiGalleryLightbox( config ) {
 	const {strings, icons} = config;
 
 	var currentActive = null;
+	var currentClickedElement = null;
 
 	/**
 	  * Init
@@ -152,7 +153,8 @@ function helsinkiGalleryLightbox( config ) {
 			currentGalleryLightBox(
 				currentGallery( event.currentTarget )
 			),
-			event.currentTarget.firstElementChild
+			event.currentTarget.firstElementChild,
+			event.currentTarget
 		);
 	}
 
@@ -224,7 +226,7 @@ function helsinkiGalleryLightbox( config ) {
 	/**
 	  * Interactions
 	  */
-	function openLightBox( lightbox, clickedImage ) {
+	function openLightBox( lightbox, clickedImage, clickedElement ) {
 		if ( currentActive && currentActive !== lightbox ) {
 			closeLightbox( currentActive );
 		}
@@ -237,7 +239,10 @@ function helsinkiGalleryLightbox( config ) {
 		toggleActive( lightbox, true );
 		toggleAriaExpanded( lightboxCloseButton( lightbox ), true );
 
+		console.log(clickedImage);
 		currentActive = lightbox;
+		currentClickedElement = clickedElement;
+		trapFocus(currentActive);
 	}
 
 	function closeLightbox( lightbox ) {
@@ -245,7 +250,9 @@ function helsinkiGalleryLightbox( config ) {
 		toggleActive( lightbox, false );
 		toggleAriaExpanded( lightboxCloseButton( lightbox ), false );
 		switchActiveImage( lightboxActiveImage( lightbox ), null );
+		freeFocus(currentActive, currentClickedElement);
 		currentActive = null;
+		currentClickedElement = null;
 	}
 
 	function switchActiveImage( currentImage, newImage ) {
@@ -488,6 +495,38 @@ function helsinkiGalleryLightbox( config ) {
 		} else {
 			element.hidden = false;
 		}
+	}
+	function trapFocus(element) {
+		var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+		var firstFocusableEl = focusableEls[0];  
+		var lastFocusableEl = focusableEls[focusableEls.length - 1];
+		var KEYCODE_TAB = 9;
+	  
+		firstFocusableEl.focus();
+		element.addEventListener('keydown', element.kd = function(e) {
+		  var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+	  
+		  if (!isTabPressed) { 
+			return; 
+		  }
+	  
+		  if ( e.shiftKey ) /* shift + tab */ {
+			if (document.activeElement === firstFocusableEl) {
+			  lastFocusableEl.focus();
+				e.preventDefault();
+			  }
+			} else /* tab */ {
+			if (document.activeElement === lastFocusableEl) {
+			  firstFocusableEl.focus();
+				e.preventDefault();
+			  }
+			}
+		});
+	}
+	function freeFocus(element, clickedElement) {
+		element.removeEventListener('keydown', element.kd);
+		console.log(clickedElement);
+		clickedElement.focus();
 	}
 
   function adjustContainerMaxWidth( container, maxWidth ) {
