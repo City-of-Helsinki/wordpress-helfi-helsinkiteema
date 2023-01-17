@@ -1,6 +1,8 @@
 <?php
 get_header();
 
+ob_start();
+
 if (get_option('page_for_posts') == get_the_ID()) {
   global $wp_query; 
   $wp_query = new WP_Query(array( 'cat' => ''));
@@ -36,5 +38,8 @@ else {
     */
   do_action("helsinki_content_after");
 }
+
+$content = ob_get_clean();
+echo apply_filters( 'helsinki_content_output', $content);
 
 get_footer();

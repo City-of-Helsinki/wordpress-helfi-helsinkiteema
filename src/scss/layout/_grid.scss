@@ -14,13 +14,6 @@
 		justify-content: flex-start;
 	}
 
-	@each $breakpoint, $gutter in $gutters {
-		@include breakpoint($breakpoint) {
-			margin-right: -#{$gutter};
-			margin-left: -#{$gutter};
-		}
-	}
-
 	@each $breakpoint, $size in $breakpoints {
 		@include breakpoint($breakpoint) {
 			@for $i from 1 through get-max-columns($breakpoint) {
@@ -33,6 +26,24 @@
 		}
 	}
 
+	@each $breakpoint, $gutter in $gutters {
+		@include breakpoint($breakpoint) {
+			//margin-right: calc(-#{$gutter} / 2);
+			//margin-left: calc(-#{$gutter} / 2);
+			grid-gap: #{$gutter};
+
+			@for $i from 1 through 12 {
+				&.#{$breakpoint}-up-#{$i} {
+					> .grid__column {
+						$percentage: percentage( math.div(1, $i) );
+						width: calc(#{$percentage} - #{$gutter} * (#{$i} - 1) / #{$i});
+					}
+				}
+			}
+		}
+	}
+
+
 	&__column {
 		box-sizing: border-box;
 		width: 100%;
@@ -40,21 +51,19 @@
 		@each $breakpoint, $gutter in $gutters {
 			@include breakpoint($breakpoint) {
 				margin-bottom: spacing($breakpoint);
-				padding-right: #{$gutter};
-				padding-left: #{$gutter};
+				//padding-right: calc(#{$gutter} / 2);
+				//padding-left: calc(#{$gutter} / 2);
 			}
-	    }
+		}
 
 		@each $breakpoint, $size in $breakpoints {
 			@include breakpoint($breakpoint) {
 				@for $i from 1 through 12 {
 					&.#{$breakpoint}-#{$i} {
-						width: percentage( math.div($i, 12) );
+						//width: percentage( math.div($i, 12) );
 					}
 				}
 			}
 		}
-
 	}
-
 }

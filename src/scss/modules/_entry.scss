@@ -64,7 +64,6 @@ ul.posts {
 
 	&__title {
 		font-size: $entry-title-font-size;
-		font-weight: $global-font-weight-medium;
 		line-height: 1.2;
 		margin-top: 0;
 		margin-bottom: spacing(xs);
@@ -96,7 +95,7 @@ ul.posts {
 		font-weight: $entry-read-more-font-weight;
 
 		svg {
-			width: 32px;
+			width: 48px;
 		}
 	}
 
@@ -229,6 +228,11 @@ ul.posts {
 
 		.entry__thumbnail {
 			margin-bottom: $entry-content-spacing;
+
+			img {
+				object-fit: cover;
+				min-height: 100%;
+			}
 		}
 	}
 	// --grid
