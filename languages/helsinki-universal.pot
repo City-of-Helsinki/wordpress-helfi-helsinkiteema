@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-10 08:47+0000\n"
+"POT-Creation-Date: 2022-11-14 09:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -21,6 +21,18 @@ msgstr ""
 
 #: partials/content/parts/comment.php:23
 msgid "(Edit comment)"
+msgstr ""
+
+#: functions/links.php:43
+msgid "(Link leads to external service)"
+msgstr ""
+
+#: functions/links.php:29
+msgid "(Link opens default mail program)"
+msgstr ""
+
+#: functions/links.php:36
+msgid "(Link starts a phone call)"
 msgstr ""
 
 #. Description of the theme
@@ -89,7 +101,7 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: setup/assets.php:111 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr ""
@@ -261,7 +273,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:97
+#: inc/filters.php:121
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -352,13 +364,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:223
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: setup/assets.php:114
+#: setup/assets.php:129
 msgid "Gallery images"
 msgstr ""
 
@@ -455,7 +467,7 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: partials/front-page/feed-posts/highlight.php:28
+#: partials/front-page/feed-posts/highlight.php:30
 #: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr ""
@@ -498,7 +510,7 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:112 partials/loop/pagination.php:51
+#: setup/assets.php:127 partials/loop/pagination.php:51
 msgid "Next"
 msgstr ""
 
@@ -582,7 +594,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:113 partials/loop/pagination.php:25
+#: setup/assets.php:128 partials/loop/pagination.php:25
 msgid "Previous"
 msgstr ""
 
@@ -638,7 +650,7 @@ msgctxt "reset button"
 msgid "Reset"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:221
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."

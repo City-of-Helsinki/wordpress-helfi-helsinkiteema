@@ -9,6 +9,13 @@
 	&--arrow-right {
 		transform: rotate(180deg);
 	}
+
+	&.inline-icon {
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: -4px;
+		margin-left: spacing('4-xs');
+	}
 }
 
 .has-icon {
