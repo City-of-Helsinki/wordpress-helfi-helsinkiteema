@@ -20,7 +20,7 @@
       do_action('helsinki_header_before');
 
     ?>
-
+    <?php ob_start(); ?>
     <header id="masthead" class="<?php helsinki_header_classes(); ?>" role="banner">
 
       <?php
@@ -59,6 +59,7 @@
 
     </header>
 
+
     <?php
 
       /**
@@ -80,3 +81,8 @@
         do_action('helsinki_main_top');
 
       ?>
+    <?php 
+      $header = ob_get_clean();
+      echo apply_filters( 'helsinki_header_output', $header);
+    ?>
+

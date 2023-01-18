@@ -1,6 +1,8 @@
 <?php
 get_header();
 
+ob_start(); 
+
 /**
   * Hook: helsinki_loop_before
   *
@@ -102,5 +104,8 @@ do_action('helsinki_loop_before');
   *
   */
 do_action('helsinki_loop_after');
+
+$content = ob_get_clean();
+echo apply_filters( 'helsinki_content_output', $content);
 
 get_footer(); ?>
