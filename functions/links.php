@@ -6,7 +6,7 @@ add_filter( 'helsinki_footer_output', 'helsinki_add_links_symbols', 100, 1 );
 
 function helsinki_add_links_symbols($content = '') {
     preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg).)*(?<svginner><\/svg>)?)\s*(?<endtag><\/a>)(?<svgafter><svg)?/s', $content, $matches);
-    $url = get_home_url(get_current_blog_id());
+    $url = get_option('siteurl'); // get the site url from options, because plugins can change it from get_home_url()
     for($i = 0; $i < count($matches[0]); $i++) {
         if ( str_starts_with( $matches['href'][$i], 'mailto:' ) ) {
             $content = str_replace($matches[0][$i], helsinki_build_replacement_link($matches['link'][$i], $matches['content'][$i], $matches['svginner'][$i], $matches['endtag'][$i], $matches['svgafter'][$i], 'mail'), $content);
