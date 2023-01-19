@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2022-12-09 10:29+0000\n"
+"PO-Revision-Date: 2023-01-18 07:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -475,7 +475,6 @@ msgstr "Viimeinen sivu"
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
-#: partials/front-page/feed-posts/highlight.php:30
 #: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr "Linkki johtaa:"
