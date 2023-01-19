@@ -49,7 +49,7 @@ function helsinki_setup_templates() {
 	if (
 		apply_filters( 'helsinki_breadcrumbs_enabled', false ) &&
 		(
-			! is_front_page() && ! is_home()
+			(helsinki_is_static_front_page() && ! is_front_page()) || (! is_front_page() && ! is_home())
 		)
 	) {
 		add_action('helsinki_main_top', 'helsinki_content_breadcrumbs', 10);
