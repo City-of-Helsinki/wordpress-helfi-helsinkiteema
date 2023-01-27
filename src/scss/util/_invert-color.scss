@@ -21,6 +21,19 @@
 					border-color: $white;
 					color: $white;
 				}
+
+				&.hds-button--secondary {
+					background-color: transparent;
+					border-color: $white;
+					color: $white;
+
+					&:focus,
+					&:hover {
+						background-color: $white;
+						border-color: $white;
+						color: $black;
+					}
+				}
 			}
 		}
 	} // .hero
