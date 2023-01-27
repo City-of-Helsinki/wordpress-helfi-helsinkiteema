@@ -86,12 +86,7 @@
 
 
     .button {
-        &:focus,
-        &:hover {
-            background-color: transparent;
-            border-color: $black;
-            color: $black;
-        }
+		
     }
 
     .hds-koros {
