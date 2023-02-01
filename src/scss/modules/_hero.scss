@@ -86,12 +86,7 @@
 
 
     .button {
-        &:focus,
-        &:hover {
-            background-color: transparent;
-            border-color: $black;
-            color: $black;
-        }
+		
     }
 
     .hds-koros {
@@ -289,6 +284,22 @@
             }
         }
 
+		@include breakpointMax('l') {
+
+			.hero__thumbnail {
+				.image-wrap--fixed-size {
+					overflow: auto;
+					padding-top: 0;
+
+					img {
+						position: static;
+						transform: none;
+					}
+				}
+			}
+		}
+
+
         @include breakpoint('l') {
             margin-bottom: rem-calc(96);
 
@@ -351,6 +362,7 @@
                         max-width: unset;
                     }
                 }
+	
             }
         }
     }
