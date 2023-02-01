@@ -95,7 +95,12 @@
       "contentSize": "1200px"
     },
     "typography": {
-      "fontSizes": [],
+	  "fontWeight": false,
+	  "fontStyle": false,
+	  "fontSizes": [],
+	  "textTransform": false,
+	  "textDecoration": false,
+	  "letterSpacing": false,
       "customFontSize": false,
       "customLineHeight": false,
       "dropCap": false
