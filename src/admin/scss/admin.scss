@@ -6,10 +6,17 @@
 
 .editor-styles-wrapper {
 
-    @include breakpointMax('m') {
-        padding-left: spacing('s');
-        padding-right: spacing('s');
-    }
+    padding-left: spacing('s') !important;
+    padding-right: spacing('s') !important;
+
+	.block-editor-block-list__layout.is-root-container {
+		.wp-block-hds-wp-image-banner {
+			margin-left: calc(50% - 50vw)!important;
+			margin-right: calc(50% - 50vw)!important;
+			max-width: 100vw;
+			width: 100vw;
+		}	
+	}
 
     @import '../../scss/elements';
 }
