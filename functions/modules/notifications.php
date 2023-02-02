@@ -103,7 +103,9 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 			esc_url( $notice['link_url'] ),
 			esc_html( $notice['link_text'] ),
 			helsinki_get_svg_icon(
-				$notice['is_external'] ? 'link-external' : 'arrow-right'
+				$notice['is_external'] ? 'link-external' : 'arrow-right',
+				'',
+				$notice['is_external'] ?  __('(Link leads to external service)', 'helsinki-universal') : ''
 			)
 		);
 	}
