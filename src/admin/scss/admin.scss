@@ -24,6 +24,13 @@
 				clear: both; //hack to fix alignment issues
 			}
 		}
+		.wp-block-image {
+			&:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.aligncenter)) {
+				display: table !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+			}
+		}
 	}
 
     @import '../../scss/elements';
