@@ -9,7 +9,7 @@
     padding-left: spacing('s') !important;
     padding-right: spacing('s') !important;
 	max-width: var(--wp--style--global--content-size);
-	width: calc(100% - spacing('s') * 2);
+	width: calc(100% - #{spacing('s')} * 2);
 	margin: auto !important;
 
 	.block-editor-block-list__layout.is-root-container {
