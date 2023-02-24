@@ -16,6 +16,30 @@
 			max-width: 100vw;
 			width: 100vw;
 		}	
+
+		.wp-block-table {
+			table {
+				border-bottom: 1px double var(--color-black-60);
+				
+				tbody {
+					border-bottom: none;
+				}
+
+				tfoot {
+					border-bottom: none;
+				}
+
+			}
+
+			&.is-style-stripes {
+				border-bottom: none;
+		
+				table {
+					border-bottom: none;
+				}
+			}			
+
+		}
 	}
 
     @import '../../scss/elements';
