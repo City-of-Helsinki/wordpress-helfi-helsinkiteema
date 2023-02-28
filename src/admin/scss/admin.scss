@@ -56,6 +56,13 @@
 
 		}
 
+		.wp-caption {
+			img {
+				width: -moz-available;
+				width: -webkit-fill-available;
+				width: fill-available;
+			}
+		}
 	}
 
     @import '../../scss/elements';
