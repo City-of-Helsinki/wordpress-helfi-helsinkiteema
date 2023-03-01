@@ -11,6 +11,13 @@ table {
 	overflow-x: auto;
 	white-space: nowrap;
 
+	&.has-fixed-layout {
+		display: table;
+		table-layout: fixed;
+		width: 100% !important;
+		max-width: none;
+	}
+
 	caption {
 		text-align: left;
 	}
@@ -23,6 +30,14 @@ thead {
 	border-top: 1px double var(--color-black-60);
 	border-left: 1px double var(--color-black-60);
 	border-right: 1px double var(--color-black-60);
+
+	&:not(:empty)+ tbody {
+		tr {
+			&:first-child {
+				border-top: none;
+			}
+		}
+	}
 }
 
 tbody {
@@ -31,6 +46,10 @@ tbody {
 	tr {
 		&:hover {
 			background-color: var(--color-black-5) !important;
+		}
+
+		&:first-child {
+			border-top: 1px double var(--color-black-60);
 		}
 	}
 
@@ -135,6 +154,7 @@ figure.wp-block-table {
 		tbody {
 			border: none;
 			tr {
+				border: none;
 				&:nth-child(odd) {
 					background-color: unset;
 				}
