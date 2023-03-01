@@ -93,6 +93,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			padding: 0;
+			gap: 0;
 
 			.menu__item {
 				margin-right: $menu-item-spacing;
@@ -102,6 +103,7 @@
 				a {
 					border-right: $footer-section-border;
 					padding-right: $menu-item-spacing;
+					display: inline;
 				}
 
 				@include breakpoint(l) {
