@@ -170,16 +170,3 @@ function helsinki_handle_helsinkichannel_embed( $matches, $attr, $url, $rawattr 
 
   return apply_filters( 'embed_helsinkichannel', $embed, $matches, $attr, $url, $rawattr );
 }
-
-/**
- * Blocks
- */
-
-function helsinki_lists_block_filter( $block_content, $block ) {
-  if ($block['blockName'] == 'core/list') {
-    $block_content = preg_replace('/<(ul|ol)/', '<$1 class="wp-block-list"', $block_content, 1);
-  }
-
-  return $block_content;
-}
-add_filter( 'render_block', 'helsinki_lists_block_filter', 10, 2 );
