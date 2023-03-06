@@ -63,6 +63,10 @@
 				width: fill-available;
 			}
 		}
+		
+		& > .wp-block-list {
+			padding-left: $list-margin-left;
+		}
 	}
 
     @import '../../scss/elements';
