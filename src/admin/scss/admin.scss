@@ -4,7 +4,7 @@
 @import '../../scss/mixins';
 @import '../../scss/settings';
 
-.editor-styles-wrapper {
+body.wp-admin .editor-styles-wrapper, body.editor-styles-wrapper {
 
     padding-left: spacing('s') !important;
     padding-right: spacing('s') !important;
