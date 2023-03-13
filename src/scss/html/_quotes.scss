@@ -38,6 +38,7 @@ blockquote {
     }
 
     cite {
+        display: block;
         color: $body-color;
         font-style: normal;
         font-size: rem-calc(18);
