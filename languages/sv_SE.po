@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-01-18 07:22+0000\n"
+"PO-Revision-Date: 2023-03-14 10:28+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:43
+#: functions/links.php:47 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:29
+#: functions/links.php:33
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:36
+#: functions/links.php:40
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
@@ -448,10 +448,10 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Bränning"
 
-#: searchform.php:3 partials/header/searchform.php:3
+#: searchform.php:3
 msgctxt "label"
-msgid "Search for:"
-msgstr "Söka efter:"
+msgid "Search by keyword"
+msgstr "Sök efter nyckelord"
 
 #. Name of the template
 msgid "Landing Page"
@@ -473,7 +473,6 @@ msgstr "Sista sidan"
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: partials/front-page/feed-posts/highlight.php:30
 #: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr "Länk leder till:"
@@ -562,11 +561,6 @@ msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sida"
 
-#: searchform.php:6 partials/header/searchform.php:6
-msgctxt "placeholder"
-msgid "Search…"
-msgstr "Sök…"
-
 #: customizer/config/blog.php:15
 #| msgid "Placeholder text"
 msgid "Placeholder Icon"
@@ -652,11 +646,6 @@ msgstr "Relaterat innehåll"
 msgid "Related posts count"
 msgstr "Relaterade inlägg räknas"
 
-#: searchform.php:8 partials/header/searchform.php:8
-msgctxt "reset button"
-msgid "Reset"
-msgstr "Återställa"
-
 #: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
@@ -675,6 +664,16 @@ msgstr "Sök"
 #: partials/search/title.php:6
 msgid "Search results"
 msgstr "Sökresultat"
+
+#: searchform.php:7
+msgctxt "search submit"
+msgid "Search"
+msgstr "Sök"
+
+#: partials/header/search.php:9 partials/search/form-title.php:1
+msgctxt "search title"
+msgid "Search the site"
+msgstr "Sök på webbplatsen"
 
 #: customizer/config/front-page.php:48
 msgid "Section title"
@@ -723,11 +722,6 @@ msgstr "Hoppa till innehåll"
 #: customizer/config/front-page.php:9
 msgid "Social Feeds"
 msgstr "Sociala flöden"
-
-#: searchform.php:12 partials/search/form-title.php:1
-msgctxt "submit button"
-msgid "Search"
-msgstr "Hitta"
 
 #: customizer/config/choices.php:28
 msgid "Summer"
@@ -786,8 +780,7 @@ msgstr "Typ"
 msgid "Updated"
 msgstr "Uppdaterad"
 
-#: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:12 partials/header/searchform.php:18
+#: partials/header/search.php:5
 msgctxt "verb"
 msgid "Search"
 msgstr "Sök"

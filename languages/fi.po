@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-01-18 07:20+0000\n"
+"PO-Revision-Date: 2023-03-14 10:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:43
+#: functions/links.php:47 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
 
-#: functions/links.php:29
+#: functions/links.php:33
 msgid "(Link opens default mail program)"
 msgstr "(Linkki avaa oletussähköpostiohjelman)"
 
-#: functions/links.php:36
+#: functions/links.php:40
 msgid "(Link starts a phone call)"
 msgstr "(Linkki aloittaa puhelun)"
 
@@ -450,10 +450,10 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Tyrsky"
 
-#: searchform.php:3 partials/header/searchform.php:3
+#: searchform.php:3
 msgctxt "label"
-msgid "Search for:"
-msgstr "Hae:"
+msgid "Search by keyword"
+msgstr "Etsi hakusanalla"
 
 #. Name of the template
 msgid "Landing Page"
@@ -564,11 +564,6 @@ msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
 
-#: searchform.php:6 partials/header/searchform.php:6
-msgctxt "placeholder"
-msgid "Search…"
-msgstr "Etsi..."
-
 #: customizer/config/blog.php:15
 #| msgid "Placeholder text"
 msgid "Placeholder Icon"
@@ -654,11 +649,6 @@ msgstr "Suositeltu sisältö"
 msgid "Related posts count"
 msgstr "Suositeltujen artikkelien lukumäärä"
 
-#: searchform.php:8 partials/header/searchform.php:8
-msgctxt "reset button"
-msgid "Reset"
-msgstr "Tyhjennä"
-
 #: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
@@ -677,6 +667,16 @@ msgstr "Haku"
 #: partials/search/title.php:6
 msgid "Search results"
 msgstr "Hakutulokset"
+
+#: searchform.php:7
+msgctxt "search submit"
+msgid "Search"
+msgstr "Hae"
+
+#: partials/header/search.php:9 partials/search/form-title.php:1
+msgctxt "search title"
+msgid "Search the site"
+msgstr "Hae sivustolta"
 
 #: customizer/config/front-page.php:48
 msgid "Section title"
@@ -726,11 +726,6 @@ msgstr "Siirry sisältöön"
 #: customizer/config/front-page.php:9
 msgid "Social Feeds"
 msgstr "Sosiaaliset syötteet"
-
-#: searchform.php:12 partials/search/form-title.php:1
-msgctxt "submit button"
-msgid "Search"
-msgstr "Haku"
 
 #: customizer/config/choices.php:28
 msgid "Summer"
@@ -789,8 +784,7 @@ msgstr "Tyyppi"
 msgid "Updated"
 msgstr "Päivitetty"
 
-#: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:12 partials/header/searchform.php:18
+#: partials/header/search.php:5
 msgctxt "verb"
 msgid "Search"
 msgstr "Hae"

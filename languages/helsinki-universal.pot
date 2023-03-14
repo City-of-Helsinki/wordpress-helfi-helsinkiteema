@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-17 13:10+0000\n"
+"POT-Creation-Date: 2023-03-14 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:43
+#: functions/links.php:47 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:29
+#: functions/links.php:33
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:36
+#: functions/links.php:40
 msgid "(Link starts a phone call)"
 msgstr ""
 
@@ -438,9 +438,9 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr ""
 
-#: searchform.php:3 partials/header/searchform.php:3
+#: searchform.php:3
 msgctxt "label"
-msgid "Search for:"
+msgid "Search by keyword"
 msgstr ""
 
 #. Name of the template
@@ -551,11 +551,6 @@ msgctxt "Page sidebar"
 msgid "Page"
 msgstr ""
 
-#: searchform.php:6 partials/header/searchform.php:6
-msgctxt "placeholder"
-msgid "Search…"
-msgstr ""
-
 #: customizer/config/blog.php:15
 msgid "Placeholder Icon"
 msgstr ""
@@ -640,11 +635,6 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: searchform.php:8 partials/header/searchform.php:8
-msgctxt "reset button"
-msgid "Reset"
-msgstr ""
-
 #: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
@@ -662,6 +652,16 @@ msgstr ""
 
 #: partials/search/title.php:6
 msgid "Search results"
+msgstr ""
+
+#: searchform.php:7
+msgctxt "search submit"
+msgid "Search"
+msgstr ""
+
+#: partials/header/search.php:9 partials/search/form-title.php:1
+msgctxt "search title"
+msgid "Search the site"
 msgstr ""
 
 #: customizer/config/front-page.php:48
@@ -710,11 +710,6 @@ msgstr ""
 
 #: customizer/config/front-page.php:9
 msgid "Social Feeds"
-msgstr ""
-
-#: searchform.php:12 partials/search/form-title.php:1
-msgctxt "submit button"
-msgid "Search"
 msgstr ""
 
 #: customizer/config/choices.php:28
@@ -772,8 +767,7 @@ msgstr ""
 msgid "Updated"
 msgstr ""
 
-#: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:12 partials/header/searchform.php:18
+#: partials/header/search.php:5
 msgctxt "verb"
 msgid "Search"
 msgstr ""

@@ -14,37 +14,46 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.search-form {
+.search-form, .wp-block-search {
 
-	.search-field {
+	label {
+		font-size: 16px;
+		font-weight: $global-font-weight-bold;
+	}
+
+	.search-field, .wp-block-search__inside-wrapper {
 		position: relative;
+		gap: 10px;
+		grid-gap: 10px;
+
+		@include breakpointMax('s') {
+			flex-wrap: wrap;
+		}
+
+		&:focus-within {
+			input:not([readonly]) {
+				box-shadow: none;
+			}
+		}
 
 		input {
 			padding-right: 5rem;
+
+			&:focus {
+				box-shadow: 0 0 0 var(--outline-width) $black !important;
+			}
 		}
 
 		button {
-			position: absolute;
-			top: 1rem;
-			right: 1rem;
 
-			&:first-of-type {
-				right: 3rem;
-			}
-
-			&:last-of-type {
-				right: 1rem;
-			}
 		}
 
-		[type="reset"] {
-			svg {
-				fill: $white;
-			}
-		}
+		[type="submit"] {
 
-		+ [type="submit"] {
-			margin-top: spacing(xs);
+			@include breakpointMax('s') {
+				width: 100%;
+			}
+
 		}
 	}
 
@@ -56,8 +65,13 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .search {
 
+	.view-header {
+		background-color: $header-search-background-color;
+		color: $header-search-color-alt;
+	}
+
 	.view-title {
-		font-size: fontsize-heading(l);
+		color: $header-search-color-alt;
 	}
 
 	.not-found {
@@ -73,10 +87,11 @@ input[type="search"]::-webkit-search-results-decoration {
 		max-width: 788px;
 
 		.search-field {
+
 			input {
-				background-color: $black;
-				box-shadow: none !important;
-				color: $white;
+				background-color: $header-search-background-color;
+				color: $header-search-color-alt;
+				box-shadow: none;
 
 				&:focus {
 					border-color: $header-search-color-alt;
@@ -85,18 +100,42 @@ input[type="search"]::-webkit-search-results-decoration {
 				&:hover {
 					border-color: $header-search-color-alt;
 				}
+			}
 
-				&::placeholder {
-					color: $white;
+			[type="submit"] {
+	
+			}
+		}
+	}
+}
+
+footer {
+	.search-form {
+		.search-field {
+
+			&:focus-within {
+				input:not([readonly]) {
+					border-color: $white;
+				}
+			}
+	
+			input:not([readonly]) {
+				background-color: transparent;
+				color: $white;
+				box-shadow: none;
+
+				&:focus {
+					border-color: $white;
+					box-shadow: 0 0 0 var(--outline-width) $white !important;
+				}
+
+				&:hover {
+					border-color: $white;
 				}
 			}
 
 			[type="submit"] {
-				color: $white;
-
-				svg {
-					fill: $white;
-				}
+				@extend %inverted-button;
 			}
 		}
 	}

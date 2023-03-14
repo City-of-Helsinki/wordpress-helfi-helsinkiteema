@@ -6,8 +6,8 @@
 	</button>
 	<div id="header-search" aria-labelledby="header-search-toggle" role="region">
 		<div class="hds-container">
-			<h2 class="search-title"><?php echo esc_html_x('Search', 'verb', 'helsinki-universal'); ?></h2>
-			<?php helsinki_header_searchform(); ?>
+			<h2 class="search-title"><?php echo esc_html_x('Search the site', 'search title', 'helsinki-universal'); ?></h2>
+			<?php get_search_form(); ?>
 		</div>
 	</div>
 </div>
