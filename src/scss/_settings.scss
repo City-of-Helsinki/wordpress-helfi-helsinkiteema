@@ -122,8 +122,8 @@ $mobilemenu-toggle-color: $black !default;
 $mobilemenu-toggle-color-alf: var(--primary-color-dark) !default;
 
 /* ========== SEARCH ========== */
-$header-search-background-color: $black !default;
-$header-search-color-alt: $white !default;
+$header-search-background-color: var(--color-silver-light) !default;
+$header-search-color-alt: $black !default;
 $header-search-width: 60% !default;
 
 /* ==================== CONTENT ELEMENTS ==================== */

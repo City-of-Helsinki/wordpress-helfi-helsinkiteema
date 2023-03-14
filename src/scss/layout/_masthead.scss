@@ -121,7 +121,6 @@
 		}
 
 		&[aria-expanded="true"] {
-			background-color: $header-search-background-color;
 			color: $header-search-color-alt;
 
 			svg {
@@ -199,27 +198,17 @@
 				}
 
 				[type="submit"] {
-					color: $header-search-color-alt;
 
-					svg {
-						fill: $header-search-color-alt;
-					}
 				}
 
 				> [type="submit"] {
-					font-size: fontsize-heading(m);
-					display: none;
 
-					@include breakpoint(l) {
-						display: inline-block;
-					}
 				}
 
 				+ [type="submit"] {
-					@include breakpoint(l) {
-						display: none;
-					}
+		
 				}
+
 			}
 		}
 	}
