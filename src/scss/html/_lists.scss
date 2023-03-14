@@ -42,7 +42,7 @@ dd {
 	ol, ul {
 
 		//only apply rules if lists have no classes; existing classes mean the lists most likely already have functioning layouts
-		&:not([class]), &[class=""], &.wp-block-list {
+		&:not([class]), &[class=""] {
 			max-width: 860px;
 
 			li {
@@ -65,8 +65,6 @@ dd {
 ol, ul {
 
   &.wp-block-list {
-    max-width: 860px;
-
     li {
       + li {
         margin-top: spacing('2-xs');
