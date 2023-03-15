@@ -8,6 +8,16 @@ div.aligncenter {
   margin-left: auto;
 	margin-right: auto;
 	margin-bottom: $paragraph-margin-bottom;
+
+	+ * {
+		clear:both;
+	}
+
+	+ .lightbox {
+		+ * {
+			clear:both;
+		}	
+	}
 }
 
 .alignright {
@@ -15,6 +25,17 @@ div.aligncenter {
   float: right;
   margin-left: $global-margin;
 	margin-bottom: $paragraph-margin-bottom;
+
+	+ * {
+		clear:right;
+	}
+
+	+ .lightbox {
+		+ * {
+			clear:right;
+		}	
+	}
+
 }
 
 .alignleft {
@@ -22,6 +43,17 @@ div.aligncenter {
   float: left;
   margin-right: $global-margin;
 	margin-bottom: $paragraph-margin-bottom;
+
+	+ * {
+		clear:left;
+	}
+
+	+ .lightbox {
+		+ * {
+			clear:left;
+		}	
+	}
+
 }
 
 a {
