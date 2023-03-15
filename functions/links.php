@@ -1,11 +1,14 @@
 <?php
 
-add_filter( 'helsinki_content_output', 'helsinki_add_links_symbols', 100, 1 );
+//add_filter( 'helsinki_content_output', 'helsinki_add_links_symbols', 100, 1 );
+add_filter( 'helsinki_call_to_action_buttons', 'helsinki_add_links_symbols', 100, 1 );
+add_filter( 'helsinki_sidebar_output', 'helsinki_add_links_symbols', 100, 1 );
+add_filter( 'render_block', 'helsinki_links_parse_blocks', 100, 2 );
 add_filter( 'helsinki_header_output', 'helsinki_add_links_symbols', 100, 1 );
 add_filter( 'helsinki_footer_output', 'helsinki_add_links_symbols', 100, 1 );
 
 function helsinki_add_links_symbols($content = '') {
-    preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg).)*(?<svginner><\/svg>)?)\s*(?<endtag><\/a>)(?<svgafter><svg)?/s', $content, $matches);
+    preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg|<img).)*(?<svginner><\/svg>)?)\s*(?<endtag><\/a>)(?<svgafter><svg)?/s', $content, $matches);
     $url = get_option('home'); // get the site url from options, because plugins can change it from get_home_url()
     for($i = 0; $i < count($matches[0]); $i++) {
         if ( str_starts_with( $matches['href'][$i], 'mailto:' ) ) {
@@ -25,29 +28,30 @@ function helsinki_build_replacement_link($begintag, $content, $svginner, $endtag
     $ariaLabel = '';
     $extra_attrs = '';
     $icon = '';
+
     if ($linkType == 'mail') {
-        $ariaLabel = sprintf('aria-label="%s"', esc_attr(wp_strip_all_tags($content)) . ' - ' . __('(Link opens default mail program)', 'helsinki-universal'));
+        $ariaLabel = __('(Link opens default mail program)', 'helsinki-universal');
         $extra_attrs = 'data-protocol="mailto"';
         if (empty($svgafter) && empty($svginner)) {
-            $icon = helsinki_get_svg_icon('envelope', 'inline-icon');
+            $icon = helsinki_get_svg_icon('envelope', 'inline-icon', $ariaLabel);
         }
     }
     else if ($linkType == 'phone') {
-        $ariaLabel = sprintf('aria-label="%s"', esc_attr(wp_strip_all_tags($content)) . ' - ' . __('(Link starts a phone call)', 'helsinki-universal'));
+        $ariaLabel = __('(Link starts a phone call)', 'helsinki-universal');
         $extra_attrs = 'data-protocol="tel"';
         if (empty($svgafter) && empty($svginner)) {
-            $icon = helsinki_get_svg_icon('phone', 'inline-icon');
+            $icon = helsinki_get_svg_icon('phone', 'inline-icon', $ariaLabel);
         }
     }
     else if ($linkType == 'external') {
-        $ariaLabel = sprintf('aria-label="%s"', esc_attr(wp_strip_all_tags($content)) . ' - ' . __('(Link leads to external service)', 'helsinki-universal'));
+        $ariaLabel = __('(Link leads to external service)', 'helsinki-universal');
         $extra_attrs = 'data-is-external="true"';
         if (empty($svgafter) && empty($svginner)) {
-            $icon = helsinki_get_svg_icon('link-external', 'inline-icon');
+            $icon = helsinki_get_svg_icon('link-external', 'inline-icon', $ariaLabel);
         }
     }
 
-    $newBeginTag = str_replace('>', $ariaLabel . ' ' . $extra_attrs . '>', $begintag );
+    $newBeginTag = str_replace('>', $extra_attrs . '>', $begintag );
 
     return sprintf('%s%s%s%s',
         $newBeginTag,
@@ -56,3 +60,24 @@ function helsinki_build_replacement_link($begintag, $content, $svginner, $endtag
         $svgafter
     );
 }
+
+function helsinki_links_parse_blocks( $block_content = '', $block = [] ) {
+	$blocksToParse= [
+		'core/button',
+		'core/paragraph',
+		'core/heading',
+		'core/list',
+		'core/quote',
+		'core/table',
+		null,
+		'helsinki-linkedevents/grid',
+		'helsinki-tpr/unit'
+	];
+
+	if ( ! in_array( $block['blockName'], $blocksToParse, true ) ) {
+		return $block_content;
+	}
+
+	return helsinki_add_links_symbols( $block_content );
+}
+

@@ -234,7 +234,7 @@ if ( ! function_exists('helsinki_available_languages') ) {
 				'hide_if_empty'          => 1,
 				'hide_current'           => 0,
 				'display_names_as'       => 'name',
-				'hide_if_no_translation' => 1,
+				'hide_if_no_translation' => 0,
 				'raw'                    => true
 			));
 		} else {

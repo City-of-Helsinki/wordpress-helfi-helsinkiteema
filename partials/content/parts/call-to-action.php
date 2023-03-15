@@ -19,8 +19,9 @@ foreach ( $args['cta'] as $key => $button ) {
 }
 
 if ( $buttons ) {
-	printf(
+	$output = sprintf(
 		'<div class="buttons">%s</div>',
 		implode('', $buttons)
 	);
+	echo apply_filters( 'helsinki_call_to_action_buttons', $output );
 }
