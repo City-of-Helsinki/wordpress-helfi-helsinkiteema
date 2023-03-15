@@ -130,6 +130,11 @@
     // --widget_categories
 
     &--widget_pages {
+
+        .current_page_item {
+            font-weight: $global-font-weight-bold;
+        }
+
     }
     // --widget_pages
 
@@ -281,7 +286,7 @@
             .current-menu-item,
             .menu__item--active {
                 > a {
-                    color: var(--primary-color);
+                    font-weight: $global-font-weight-bold;
                 }
             }
         }

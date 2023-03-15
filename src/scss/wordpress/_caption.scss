@@ -10,13 +10,17 @@
   }
 
   &.alignleft {
-		margin-right: $global-margin;
-		margin-bottom: $paragraph-margin-bottom;
+		margin-right: $global-margin !important;
+		margin-bottom: $paragraph-margin-bottom !important;
   }
 
   &.alignright {
-		margin-left: $global-margin;
-		margin-bottom: $paragraph-margin-bottom;
+		margin-left: $global-margin !important;
+		margin-bottom: $paragraph-margin-bottom !important;
+  }
+
+  &.aligncenter {
+		margin-bottom: $paragraph-margin-bottom !important;
   }
 
   img {
