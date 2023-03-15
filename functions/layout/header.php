@@ -48,7 +48,7 @@ if ( ! function_exists('helsinki_header_skip') ) {
 
 if ( ! function_exists('helsinki_topbar') ) {
 	function helsinki_topbar() {
-		$lang = function_exists('pll_current_language') ? pll_current_language('slug') : 'fi';
+		$lang = function_exists('pll_current_language') ? pll_current_language('slug') : substr( get_bloginfo('language'), 0, 2 );
 		$name = apply_filters( 'helsinki_topbar_name', null );
 		$args = apply_filters(
 			'helsinki_topbar_args',
