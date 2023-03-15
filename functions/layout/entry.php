@@ -84,7 +84,7 @@ function helsinki_entry_image_icon_classes() {
 		' ',
 		apply_filters(
 			'helsinki_entry_image_icon_classes',
-			array( 'has-icon' )
+			array( 'has-icon', helsinki_scheme_has_invert_color() ? 'has-invert-color' : '' )
 		)
 	);
 }
