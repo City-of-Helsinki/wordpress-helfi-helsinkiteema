@@ -124,7 +124,7 @@ function helsinki_post_content_heading_link_list_items( $blocks, $level = 2 ) {
 				$text
 			);
 
-        } else if ( 'core/group' === $block['blockName'] ){
+        } else if ( 'core/group' === $block['blockName'] || 'core/columns' === $block['blockName'] || 'core/column' === $block['blockName'] ){
 			if ( ! empty( $block['innerBlocks'] ) ) {
 				$out = array_unique(array_merge( $out,
 					helsinki_post_content_heading_link_list_items( $block['innerBlocks'] )
