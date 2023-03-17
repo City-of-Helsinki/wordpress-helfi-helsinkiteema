@@ -100,6 +100,12 @@
 				margin-left: 0;
 				padding: 0;
 
+				&--active {
+					a {
+						font-weight: $global-font-weight-bold;
+					}
+				}
+
 				a {
 					border-right: $footer-section-border;
 					padding-right: $menu-item-spacing;
