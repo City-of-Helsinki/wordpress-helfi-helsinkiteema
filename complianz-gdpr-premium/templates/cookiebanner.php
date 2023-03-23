@@ -37,7 +37,7 @@
 						esc_html_x('uses cookies', 'cookie notice title prefix', 'helsinki-universal')
 					); ?>
 				</h2>
-				<p>{message_{consent_type}}</p>
+				<p><?php _e('This website uses required cookies to ensure the basic functionality and performance. In addition, we use targeting cookies to improve the user experience, perform analytics and display personalised content.', 'helsinki-universal') ?></p>
 			</div>
 		</div>
 		
@@ -150,10 +150,10 @@
 <!-- Footer - Buttons -->
 
 	<div class="cmplz-buttons">
-		<button class="cmplz-btn cmplz-accept">{accept_{consent_type}}</button>
-		<button class="cmplz-btn cmplz-deny">{dismiss}</button>
-		<button class="cmplz-btn cmplz-view-preferences">{manage_options}</button>
-		<button class="cmplz-btn cmplz-save-preferences">{save_settings}</button>
+		<button class="cmplz-btn cmplz-accept"><?php _e('Accept all cookies', 'helsinki-universal') ?></button>
+		<button class="cmplz-btn cmplz-deny"><?php _e('Accept required cookies only', 'helsinki-universal') ?></button>
+		<button class="cmplz-btn cmplz-view-preferences"><?php _e('Show cookie settings', 'helsinki-universal') ?></button>
+		<button class="cmplz-btn cmplz-save-preferences"><?php _e('Accept selected cookies', 'helsinki-universal') ?></button>
 		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">{manage_options}</a>
 		<?php do_action("cmplz_after_buttons")?>
 	</div>
