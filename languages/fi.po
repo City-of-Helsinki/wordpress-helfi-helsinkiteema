@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-03-14 10:27+0000\n"
+"PO-Revision-Date: 2023-03-23 06:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -37,6 +37,18 @@ msgstr "(Linkki aloittaa puhelun)"
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:153
+msgid "Accept all cookies"
+msgstr "Hyväksy kaikki evästeet"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:154
+msgid "Accept required cookies only"
+msgstr "Hyväksy vain välttämättömät evästeet"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:156
+msgid "Accept selected cookies"
+msgstr "Hyväksy valitut evästeet"
 
 #: customizer/config/choices.php:69
 msgid "Alert"
@@ -450,10 +462,10 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Tyrsky"
 
-#: searchform.php:3
+#: searchform.php:3 partials/header/searchform.php:3
 msgctxt "label"
-msgid "Search by keyword"
-msgstr "Etsi hakusanalla"
+msgid "Search for:"
+msgstr "Hae:"
 
 #. Name of the template
 msgid "Landing Page"
@@ -564,6 +576,11 @@ msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
 
+#: searchform.php:6 partials/header/searchform.php:6
+msgctxt "placeholder"
+msgid "Search…"
+msgstr "Etsi..."
+
 #: customizer/config/blog.php:15
 #| msgid "Placeholder text"
 msgid "Placeholder Icon"
@@ -668,16 +685,6 @@ msgstr "Haku"
 msgid "Search results"
 msgstr "Hakutulokset"
 
-#: searchform.php:7
-msgctxt "search submit"
-msgid "Search"
-msgstr "Hae"
-
-#: partials/header/search.php:9 partials/search/form-title.php:1
-msgctxt "search title"
-msgid "Search the site"
-msgstr "Hae sivustolta"
-
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Osion otsikko"
@@ -707,6 +714,10 @@ msgstr "Jaa Twitterissä"
 msgid "Share this on"
 msgstr "Jaa"
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:155
+msgid "Show cookie settings"
+msgstr "Näytä evästeasetukset"
+
 #: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr "Näytä lisää"
@@ -726,6 +737,11 @@ msgstr "Siirry sisältöön"
 #: customizer/config/front-page.php:9
 msgid "Social Feeds"
 msgstr "Sosiaaliset syötteet"
+
+#: searchform.php:8 partials/search/form-title.php:1
+msgctxt "submit button"
+msgid "Search"
+msgstr "Haku"
 
 #: customizer/config/choices.php:28
 msgid "Summer"
@@ -759,6 +775,17 @@ msgstr "Etsimääsi sivua ei löytynyt."
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:40
+msgid ""
+"This website uses required cookies to ensure the basic functionality and "
+"performance. In addition, we use targeting cookies to improve the user "
+"experience, perform analytics and display personalised content."
+msgstr ""
+"Tämä sivusto käyttää välttämättömiä evästeitä sivun perustoimintojen ja "
+"suorituskyvyn varmistamiseksi. Lisäksi käytämme kohdennusevästeitä "
+"käyttäjäkokemuksen parantamiseksi, analytiikkaan ja yksilöidyn sisällön "
+"näyttämiseen."
+
 #: customizer/config/notifications.php:45
 msgid "Title"
 msgstr "Otsikko"
@@ -784,7 +811,8 @@ msgstr "Tyyppi"
 msgid "Updated"
 msgstr "Päivitetty"
 
-#: partials/header/search.php:5
+#: partials/header/search.php:5 partials/header/search.php:9
+#: partials/header/searchform.php:8 partials/header/searchform.php:14
 msgctxt "verb"
 msgid "Search"
 msgstr "Hae"

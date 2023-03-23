@@ -151,18 +151,7 @@ body #cc-window.cc-window {
 
 		&.cc-allow {}
 
-		&.cc-accept-all {
-			background-color: $white !important;
-			border-color: $white !important;
-			color: var(--color-bus-dark) !important;
-
-			&:focus,
-			&:hover {
-				background-color: var(--color-bus-dark) !important;
-				border-color: var(--color-bus-dark) !important;
-				color: $white !important;
-			}
-		}
+		&.cc-accept-all {}
 
 		&.cc-save {}
 
@@ -1092,16 +1081,6 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		}
 
 		&.cmplz-accept {
-			background-color: $white !important;
-			border-color: $white !important;
-			color: var(--color-bus-dark) !important;
-
-			&:focus,
-			&:hover {
-				background-color: var(--color-bus-dark) !important;
-				border-color: var(--color-bus-dark) !important;
-				color: $white !important;
-			}
 		}
 
 		&.cmplz-save-preferences {
