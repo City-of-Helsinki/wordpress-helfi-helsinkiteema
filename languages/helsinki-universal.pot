@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-17 13:10+0000\n"
+"POT-Creation-Date: 2023-03-24 11:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:43
+#: functions/links.php:47 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:29
+#: functions/links.php:33
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:36
+#: functions/links.php:40
 msgid "(Link starts a phone call)"
 msgstr ""
 
@@ -41,14 +41,6 @@ msgstr ""
 
 #: customizer/config/choices.php:69
 msgid "Alert"
-msgstr ""
-
-#: functions/layout/loop.php:107
-msgid "All categories"
-msgstr ""
-
-#: functions/layout/loop.php:135
-msgid "All tags"
 msgstr ""
 
 #: integrations/wp-rss-aggregator.php:52
@@ -85,6 +77,10 @@ msgstr ""
 
 #: customizer/config/choices.php:23
 msgid "Bus"
+msgstr ""
+
+#: functions/layout/loop.php:107
+msgid "Categories"
 msgstr ""
 
 #: customizer/config/front-page.php:25
@@ -140,7 +136,7 @@ msgstr ""
 msgid "Copper"
 msgstr ""
 
-#: partials/loop/pagination.php:34
+#: partials/loop/pagination.php:37
 #, php-format
 msgid "Currently on page %d"
 msgstr ""
@@ -343,11 +339,7 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#: partials/loop/pagination.php:21
-msgid "First"
-msgstr ""
-
-#: partials/loop/pagination.php:21
+#: partials/loop/pagination.php:27
 msgid "First page"
 msgstr ""
 
@@ -452,10 +444,6 @@ msgid "Language"
 msgstr ""
 
 #: partials/loop/pagination.php:55
-msgid "Last"
-msgstr ""
-
-#: partials/loop/pagination.php:55
 msgid "Last page"
 msgstr ""
 
@@ -505,11 +493,12 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:127 partials/loop/pagination.php:51
+#: setup/assets.php:127 partials/loop/pagination.php:18
+#: partials/loop/pagination.php:61
 msgid "Next"
 msgstr ""
 
-#: partials/loop/pagination.php:51
+#: partials/loop/pagination.php:61
 msgid "Next page"
 msgstr ""
 
@@ -537,12 +526,12 @@ msgstr ""
 msgid "On this page"
 msgstr ""
 
-#: partials/loop/pagination.php:42
+#: partials/loop/pagination.php:45
 #, php-format
 msgid "Page %d"
 msgstr ""
 
-#: partials/loop/pagination.php:17
+#: partials/loop/pagination.php:18
 msgid "Page navigation"
 msgstr ""
 
@@ -589,11 +578,11 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:128 partials/loop/pagination.php:25
+#: setup/assets.php:128 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr ""
 
-#: partials/loop/pagination.php:25
+#: partials/loop/pagination.php:21
 msgid "Previous page"
 msgstr ""
 
@@ -638,11 +627,6 @@ msgstr ""
 
 #: customizer/config/blog.php:55
 msgid "Related posts count"
-msgstr ""
-
-#: searchform.php:8 partials/header/searchform.php:8
-msgctxt "reset button"
-msgid "Reset"
 msgstr ""
 
 #: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
@@ -712,7 +696,7 @@ msgstr ""
 msgid "Social Feeds"
 msgstr ""
 
-#: searchform.php:12 partials/search/form-title.php:1
+#: searchform.php:8 partials/search/form-title.php:1
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -723,6 +707,10 @@ msgstr ""
 
 #: customizer/config/choices.php:29
 msgid "Suomenlinna"
+msgstr ""
+
+#: functions/layout/loop.php:135
+msgid "Tags"
 msgstr ""
 
 #: customizer/config/notifications.php:49
@@ -773,7 +761,7 @@ msgid "Updated"
 msgstr ""
 
 #: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:12 partials/header/searchform.php:18
+#: partials/header/searchform.php:8 partials/header/searchform.php:14
 msgctxt "verb"
 msgid "Search"
 msgstr ""

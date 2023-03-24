@@ -328,23 +328,17 @@
 				margin: 0;
 
 				a {
-					border-bottom: $default-border;
 					text-decoration: none;
-					padding: spacing(xs);
 
 					&:focus,
 					&:hover {
-						background-color: $black;
-						border-color: $black;
-						color: $white;
+
 					}
 				}
 
 				&.current-cat {
 					a {
-						background-color: $black;
-						border-color: $black;
-						color: $white;
+
 					}
 				}
 
