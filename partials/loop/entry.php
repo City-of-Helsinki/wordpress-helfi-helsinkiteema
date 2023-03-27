@@ -14,11 +14,11 @@
 			</a>
 		</h3>
 
-		<div class="entry__excerpt excerpt size-l">
-			<?php the_excerpt(); ?>
-		</div>
-
 		<div class="entry__meta meta">
+			<span class="content__category categories">
+				<span class="screen-reader-text"><?php esc_html_e('Categories'); ?>:</span>
+				<?php the_category(', '); ?>
+			</span>
 			<time class="date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
 				<?php echo get_the_date(); ?>
 			</time>
