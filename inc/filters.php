@@ -72,8 +72,8 @@ add_filter( 'widget_tag_cloud_args', 'helsinki_widget_tag_cloud_args');
 
 function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
 	if ($widget_type == 'categories') {
-		$widget_output = str_replace('aria-current="page"', 'aria-current="true"', $widget_output);
-	}
+		$widget_output = str_replace('aria-current="page"', 'aria-current="true"', $widget_output); //replace aria attributes
+  }
   else if ($widget_type == 'tag_cloud') {
     $tag = get_queried_object();
     if ($tag != null && $tag instanceof WP_TERM) {
@@ -113,6 +113,13 @@ function helsinki_sidebar_filter_rss_links($output) {
 
 add_filter('helsinki_sidebar_output', 'helsinki_sidebar_filter_rss_links');
 add_filter( 'rss_widget_feed_link', '__return_false' );
+
+function helsinki_filter_category_dropdown_widget($output) {
+  $output = str_replace('<select', '<p><span class="hds-text-input__input-wrapper"><select', $output); //wrap select in span
+  $output = str_replace('</select>', '</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>', $output); //add chevron to category dropdown
+  return $output;
+}
+add_filter('wp_dropdown_cats', 'helsinki_filter_category_dropdown_widget');
 
 /**
   * Page Templates
