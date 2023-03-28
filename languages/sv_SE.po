@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-03-23 06:25+0000\n"
+"PO-Revision-Date: 2023-03-27 12:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -54,14 +54,6 @@ msgstr "Acceptera valda kakor"
 msgid "Alert"
 msgstr "Uppmärksam"
 
-#: functions/layout/loop.php:107
-msgid "All categories"
-msgstr "Alla kategorier"
-
-#: functions/layout/loop.php:135
-msgid "All tags"
-msgstr "Alla taggar"
-
 #: integrations/wp-rss-aggregator.php:52
 msgid "and"
 msgstr "och"
@@ -97,6 +89,10 @@ msgstr "Tegel"
 #: customizer/config/choices.php:23
 msgid "Bus"
 msgstr "Buss"
+
+#: functions/layout/loop.php:107
+msgid "Categories"
+msgstr "Kategorier"
 
 #: customizer/config/front-page.php:25
 msgid ""
@@ -156,7 +152,7 @@ msgstr "använder cookies"
 msgid "Copper"
 msgstr "Koppar"
 
-#: partials/loop/pagination.php:34
+#: partials/loop/pagination.php:37
 #, php-format
 msgid "Currently on page %d"
 msgstr "För närvarande på sidan %d"
@@ -287,7 +283,7 @@ msgstr "Yoast SEO krävs för att installeras"
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:121
+#: inc/filters.php:128
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -363,11 +359,7 @@ msgstr "Feed URL"
 msgid "Feedback"
 msgstr "Respons"
 
-#: partials/loop/pagination.php:21
-msgid "First"
-msgstr "Först"
-
-#: partials/loop/pagination.php:21
+#: partials/loop/pagination.php:27
 msgid "First page"
 msgstr "Första sidan"
 
@@ -460,10 +452,10 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Bränning"
 
-#: searchform.php:3 partials/header/searchform.php:3
+#: searchform.php:3
 msgctxt "label"
-msgid "Search for:"
-msgstr "Söka efter:"
+msgid "Search by keyword"
+msgstr "Sök efter nyckelord"
 
 #. Name of the template
 msgid "Landing Page"
@@ -472,10 +464,6 @@ msgstr "Landningssida"
 #: customizer/config/notifications.php:28
 msgid "Language"
 msgstr "Språk"
-
-#: partials/loop/pagination.php:55
-msgid "Last"
-msgstr "Sista"
 
 #: partials/loop/pagination.php:55
 msgid "Last page"
@@ -527,11 +515,12 @@ msgstr "Nyare"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
 
-#: setup/assets.php:127 partials/loop/pagination.php:51
+#: setup/assets.php:127 partials/loop/pagination.php:18
+#: partials/loop/pagination.php:61
 msgid "Next"
 msgstr "Nästa"
 
-#: partials/loop/pagination.php:51
+#: partials/loop/pagination.php:61
 msgid "Next page"
 msgstr "Nästa sida"
 
@@ -559,12 +548,12 @@ msgstr "Äldre"
 msgid "On this page"
 msgstr "På den här sidan"
 
-#: partials/loop/pagination.php:42
+#: partials/loop/pagination.php:45
 #, php-format
 msgid "Page %d"
 msgstr "Sida %d"
 
-#: partials/loop/pagination.php:17
+#: partials/loop/pagination.php:18
 msgid "Page navigation"
 msgstr "Sidnavigering"
 
@@ -572,11 +561,6 @@ msgstr "Sidnavigering"
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sida"
-
-#: searchform.php:6 partials/header/searchform.php:6
-msgctxt "placeholder"
-msgid "Search…"
-msgstr "Sök…"
 
 #: customizer/config/blog.php:15
 #| msgid "Placeholder text"
@@ -612,11 +596,11 @@ msgstr "sökresultat"
 msgid "Posts Feed"
 msgstr "Inläggsflöde"
 
-#: setup/assets.php:128 partials/loop/pagination.php:25
+#: setup/assets.php:128 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr "Tidigare"
 
-#: partials/loop/pagination.php:25
+#: partials/loop/pagination.php:21
 msgid "Previous page"
 msgstr "Föregående sida"
 
@@ -682,6 +666,16 @@ msgstr "Sök"
 msgid "Search results"
 msgstr "Sökresultat"
 
+#: searchform.php:7
+msgctxt "search submit"
+msgid "Search"
+msgstr "Sök"
+
+#: partials/header/search.php:9 partials/search/form-title.php:1
+msgctxt "search title"
+msgid "Search the site"
+msgstr "Sök på webbplatsen"
+
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr "Avsnittstitel"
@@ -734,11 +728,6 @@ msgstr "Hoppa till innehåll"
 msgid "Social Feeds"
 msgstr "Sociala flöden"
 
-#: searchform.php:8 partials/search/form-title.php:1
-msgctxt "submit button"
-msgid "Search"
-msgstr "Hitta"
-
 #: customizer/config/choices.php:28
 msgid "Summer"
 msgstr "Sommar"
@@ -746,6 +735,10 @@ msgstr "Sommar"
 #: customizer/config/choices.php:29
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
+
+#: functions/layout/loop.php:135
+msgid "Tags"
+msgstr "Taggar"
 
 #: customizer/config/notifications.php:49
 msgid "Text"
@@ -807,8 +800,7 @@ msgstr "Typ"
 msgid "Updated"
 msgstr "Uppdaterad"
 
-#: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:8 partials/header/searchform.php:14
+#: partials/header/search.php:5
 msgctxt "verb"
 msgid "Search"
 msgstr "Sök"
