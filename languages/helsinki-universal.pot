@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-14 10:27+0000\n"
+"POT-Creation-Date: 2023-03-29 06:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -37,6 +37,18 @@ msgstr ""
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
+msgstr ""
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:153
+msgid "Accept all cookies"
+msgstr ""
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:154
+msgid "Accept required cookies only"
+msgstr ""
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:156
+msgid "Accept selected cookies"
 msgstr ""
 
 #: customizer/config/choices.php:69
@@ -265,7 +277,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:121
+#: inc/filters.php:128
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -681,6 +693,10 @@ msgstr ""
 msgid "Share this on"
 msgstr ""
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:155
+msgid "Show cookie settings"
+msgstr ""
+
 #: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr ""
@@ -733,6 +749,13 @@ msgstr ""
 
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
+msgstr ""
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:40
+msgid ""
+"This website uses required cookies to ensure the basic functionality and "
+"performance. In addition, we use targeting cookies to improve the user "
+"experience, perform analytics and display personalised content."
 msgstr ""
 
 #: customizer/config/notifications.php:45

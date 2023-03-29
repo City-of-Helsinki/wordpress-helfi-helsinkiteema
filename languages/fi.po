@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-03-14 10:27+0000\n"
+"PO-Revision-Date: 2023-03-29 06:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -38,17 +38,21 @@ msgstr "(Linkki aloittaa puhelun)"
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:153
+msgid "Accept all cookies"
+msgstr "Hyväksy kaikki evästeet"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:154
+msgid "Accept required cookies only"
+msgstr "Hyväksy vain välttämättömät evästeet"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:156
+msgid "Accept selected cookies"
+msgstr "Hyväksy valitut evästeet"
+
 #: customizer/config/choices.php:69
 msgid "Alert"
 msgstr "Huomio"
-
-#: functions/layout/loop.php:107
-msgid "All categories"
-msgstr "Kaikki kategoriat"
-
-#: functions/layout/loop.php:135
-msgid "All tags"
-msgstr "Kaikki avainsanat"
 
 #: integrations/wp-rss-aggregator.php:52
 msgid "and"
@@ -85,6 +89,10 @@ msgstr "Tiili"
 #: customizer/config/choices.php:23
 msgid "Bus"
 msgstr "Bussi"
+
+#: functions/layout/loop.php:107
+msgid "Categories"
+msgstr "Kategoriat"
 
 #: customizer/config/front-page.php:25
 msgid ""
@@ -143,7 +151,7 @@ msgstr "käyttää evästeitä"
 msgid "Copper"
 msgstr "Kupari"
 
-#: partials/loop/pagination.php:34
+#: partials/loop/pagination.php:37
 #, php-format
 msgid "Currently on page %d"
 msgstr "Olet sivulla %d"
@@ -276,7 +284,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:121
+#: inc/filters.php:128
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -352,11 +360,7 @@ msgstr "Syötteen URL"
 msgid "Feedback"
 msgstr "Palaute"
 
-#: partials/loop/pagination.php:21
-msgid "First"
-msgstr "Ensimmäinen"
-
-#: partials/loop/pagination.php:21
+#: partials/loop/pagination.php:27
 msgid "First page"
 msgstr "Ensimmäinen sivu"
 
@@ -464,10 +468,6 @@ msgid "Language"
 msgstr "Kieli"
 
 #: partials/loop/pagination.php:55
-msgid "Last"
-msgstr "Viimeinen"
-
-#: partials/loop/pagination.php:55
 msgid "Last page"
 msgstr "Viimeinen sivu"
 
@@ -518,11 +518,12 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:127 partials/loop/pagination.php:51
+#: setup/assets.php:127 partials/loop/pagination.php:18
+#: partials/loop/pagination.php:61
 msgid "Next"
 msgstr "Seuraava"
 
-#: partials/loop/pagination.php:51
+#: partials/loop/pagination.php:61
 msgid "Next page"
 msgstr "Seuraava sivu"
 
@@ -550,12 +551,12 @@ msgstr "Vanhemmat"
 msgid "On this page"
 msgstr "Tällä sivulla"
 
-#: partials/loop/pagination.php:42
+#: partials/loop/pagination.php:45
 #, php-format
 msgid "Page %d"
 msgstr "Sivu %d"
 
-#: partials/loop/pagination.php:17
+#: partials/loop/pagination.php:18
 msgid "Page navigation"
 msgstr "Sivunavigointi"
 
@@ -598,11 +599,11 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:128 partials/loop/pagination.php:25
+#: setup/assets.php:128 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr "Edellinen"
 
-#: partials/loop/pagination.php:25
+#: partials/loop/pagination.php:21
 msgid "Previous page"
 msgstr "Edellinen sivu"
 
@@ -707,6 +708,10 @@ msgstr "Jaa Twitterissä"
 msgid "Share this on"
 msgstr "Jaa"
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:155
+msgid "Show cookie settings"
+msgstr "Näytä evästeasetukset"
+
 #: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr "Näytä lisää"
@@ -735,6 +740,10 @@ msgstr "Kesä"
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
+#: functions/layout/loop.php:135
+msgid "Tags"
+msgstr "Avainsanat"
+
 #: customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Teksti"
@@ -758,6 +767,17 @@ msgstr "Etsimääsi sivua ei löytynyt."
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:40
+msgid ""
+"This website uses required cookies to ensure the basic functionality and "
+"performance. In addition, we use targeting cookies to improve the user "
+"experience, perform analytics and display personalised content."
+msgstr ""
+"Tämä sivusto käyttää välttämättömiä evästeitä sivun perustoimintojen ja "
+"suorituskyvyn varmistamiseksi. Lisäksi käytämme kohdennusevästeitä "
+"käyttäjäkokemuksen parantamiseksi, analytiikkaan ja yksilöidyn sisällön "
+"näyttämiseen."
 
 #: customizer/config/notifications.php:45
 msgid "Title"
