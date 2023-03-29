@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 11:38+0000\n"
+"POT-Creation-Date: 2023-03-14 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -430,9 +430,9 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr ""
 
-#: searchform.php:3 partials/header/searchform.php:3
+#: searchform.php:3
 msgctxt "label"
-msgid "Search for:"
+msgid "Search by keyword"
 msgstr ""
 
 #. Name of the template
@@ -540,11 +540,6 @@ msgctxt "Page sidebar"
 msgid "Page"
 msgstr ""
 
-#: searchform.php:6 partials/header/searchform.php:6
-msgctxt "placeholder"
-msgid "Search…"
-msgstr ""
-
 #: customizer/config/blog.php:15
 msgid "Placeholder Icon"
 msgstr ""
@@ -648,6 +643,16 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
+#: searchform.php:7
+msgctxt "search submit"
+msgid "Search"
+msgstr ""
+
+#: partials/header/search.php:9 partials/search/form-title.php:1
+msgctxt "search title"
+msgid "Search the site"
+msgstr ""
+
 #: customizer/config/front-page.php:48
 msgid "Section title"
 msgstr ""
@@ -694,11 +699,6 @@ msgstr ""
 
 #: customizer/config/front-page.php:9
 msgid "Social Feeds"
-msgstr ""
-
-#: searchform.php:8 partials/search/form-title.php:1
-msgctxt "submit button"
-msgid "Search"
 msgstr ""
 
 #: customizer/config/choices.php:28
@@ -760,8 +760,7 @@ msgstr ""
 msgid "Updated"
 msgstr ""
 
-#: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:8 partials/header/searchform.php:14
+#: partials/header/search.php:5
 msgctxt "verb"
 msgid "Search"
 msgstr ""
