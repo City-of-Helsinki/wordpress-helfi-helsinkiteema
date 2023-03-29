@@ -63,6 +63,10 @@ body.wp-admin .editor-styles-wrapper, body.editor-styles-wrapper {
 			}			
 
 		}
+
+		& > .wp-block-list {
+			padding-left: $list-margin-left;
+		}
 	}
 
     @import '../../scss/elements';
