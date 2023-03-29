@@ -104,7 +104,7 @@ function helsinki_loop_sidebar_categories() {
 	the_widget(
 		'WP_Widget_Categories',
 		array(
-			'title' => __( 'All categories', 'helsinki-universal' ),
+			'title' => __( 'Categories', 'helsinki-universal' ),
 			'count' => 0,
 			'hierarchical' => 0,
 			'dropdown' => 0,
@@ -132,8 +132,9 @@ function helsinki_loop_sidebar_tags() {
 	the_widget(
 		'WP_Widget_Tag_Cloud',
 		array(
-			'title' => __( 'All tags', 'helsinki-universal' ),
+			'title' => __( 'Tags', 'helsinki-universal' ),
 			'taxonomy' => 'post_tag',
+			'count' => true,
 		),
 		array(
 			'before_widget' => '<div class="' . implode(' ', $classes) . '">',

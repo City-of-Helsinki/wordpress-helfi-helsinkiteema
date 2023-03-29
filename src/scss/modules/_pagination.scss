@@ -1,4 +1,4 @@
-.pagination {
+/*.pagination {
   margin-top: $global-margin * 2;
   margin-bottom: $global-margin;
 
@@ -66,4 +66,29 @@
 
   }
 
+}*/
+
+.hds-pagination-container {
+
+  .hds-pagination {
+
+    &:before {
+      line-height: 58px; //this MUST match button height, or else elements will not properly align!
+    }
+
+    &__item-link {
+      box-sizing: content-box;
+    }
+
+    .hds-pagination__pages {
+      margin-left: 0;
+    }
+
+    .hds-button {
+      padding-left: spacing('2-xs');
+      padding-right: spacing('2-xs');
+      height: 58px; //enforcing height as per above
+    }
+
+  }  
 }

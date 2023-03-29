@@ -1,1 +1,1 @@
-<h1 class="view-title"><?php echo esc_attr_x( 'Search', 'submit button', 'helsinki-universal' ) ?></h1>
+<h1 class="view-title"><?php echo esc_html_x('Search the site', 'search title', 'helsinki-universal'); ?></h1>
