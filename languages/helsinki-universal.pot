@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-17 13:10+0000\n"
+"POT-Creation-Date: 2023-03-23 06:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,20 +23,32 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:43
+#: functions/links.php:47 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:29
+#: functions/links.php:33
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:36
+#: functions/links.php:40
 msgid "(Link starts a phone call)"
 msgstr ""
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
+msgstr ""
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:153
+msgid "Accept all cookies"
+msgstr ""
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:154
+msgid "Accept required cookies only"
+msgstr ""
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:156
+msgid "Accept selected cookies"
 msgstr ""
 
 #: customizer/config/choices.php:69
@@ -640,11 +652,6 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: searchform.php:8 partials/header/searchform.php:8
-msgctxt "reset button"
-msgid "Reset"
-msgstr ""
-
 #: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
@@ -692,6 +699,10 @@ msgstr ""
 msgid "Share this on"
 msgstr ""
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:155
+msgid "Show cookie settings"
+msgstr ""
+
 #: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr ""
@@ -712,7 +723,7 @@ msgstr ""
 msgid "Social Feeds"
 msgstr ""
 
-#: searchform.php:12 partials/search/form-title.php:1
+#: searchform.php:8 partials/search/form-title.php:1
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -747,6 +758,13 @@ msgstr ""
 msgid "This author has not published any posts yet."
 msgstr ""
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:40
+msgid ""
+"This website uses required cookies to ensure the basic functionality and "
+"performance. In addition, we use targeting cookies to improve the user "
+"experience, perform analytics and display personalised content."
+msgstr ""
+
 #: customizer/config/notifications.php:45
 msgid "Title"
 msgstr ""
@@ -773,7 +791,7 @@ msgid "Updated"
 msgstr ""
 
 #: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:12 partials/header/searchform.php:18
+#: partials/header/searchform.php:8 partials/header/searchform.php:14
 msgctxt "verb"
 msgid "Search"
 msgstr ""

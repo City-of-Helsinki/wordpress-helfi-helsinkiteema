@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-01-18 07:22+0000\n"
+"PO-Revision-Date: 2023-03-23 06:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,21 +22,33 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:43
+#: functions/links.php:47 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:29
+#: functions/links.php:33
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:36
+#: functions/links.php:40
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
 msgstr "Ett WordPress-tema för flera ändamål"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:153
+msgid "Accept all cookies"
+msgstr "Acceptera alla kakor"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:154
+msgid "Accept required cookies only"
+msgstr "Acceptera endast nödvändiga"
+
+#: complianz-gdpr-premium/templates/cookiebanner.php:156
+msgid "Accept selected cookies"
+msgstr "Acceptera valda kakor"
 
 #: customizer/config/choices.php:69
 msgid "Alert"
@@ -473,7 +485,6 @@ msgstr "Sista sidan"
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: partials/front-page/feed-posts/highlight.php:30
 #: partials/front-page/feed-posts/list-item.php:6
 msgid "Link forwards to:"
 msgstr "Länk leder till:"
@@ -652,11 +663,6 @@ msgstr "Relaterat innehåll"
 msgid "Related posts count"
 msgstr "Relaterade inlägg räknas"
 
-#: searchform.php:8 partials/header/searchform.php:8
-msgctxt "reset button"
-msgid "Reset"
-msgstr "Återställa"
-
 #: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
@@ -704,6 +710,10 @@ msgstr "Dela på Twitter"
 msgid "Share this on"
 msgstr "Dela detta på"
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:155
+msgid "Show cookie settings"
+msgstr "Visa kakinställningarna"
+
 #: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr "Visa mer"
@@ -724,7 +734,7 @@ msgstr "Hoppa till innehåll"
 msgid "Social Feeds"
 msgstr "Sociala flöden"
 
-#: searchform.php:12 partials/search/form-title.php:1
+#: searchform.php:8 partials/search/form-title.php:1
 msgctxt "submit button"
 msgid "Search"
 msgstr "Hitta"
@@ -761,6 +771,17 @@ msgstr "Sidan du letade efter kunde inte hittas."
 msgid "This author has not published any posts yet."
 msgstr "Denna författare har inte publicerat några inlägg ännu."
 
+#: complianz-gdpr-premium/templates/cookiebanner.php:40
+msgid ""
+"This website uses required cookies to ensure the basic functionality and "
+"performance. In addition, we use targeting cookies to improve the user "
+"experience, perform analytics and display personalised content."
+msgstr ""
+"Denna webbplats använder obligatoriska kakor för att säkerställa de "
+"grundläggande funktionerna och prestandan. Dessutom använder vi "
+"inriktningskakor för bättre användarupplevelse, analytik och "
+"individualiserat innehåll."
+
 #: customizer/config/notifications.php:45
 msgid "Title"
 msgstr "Titel"
@@ -787,7 +808,7 @@ msgid "Updated"
 msgstr "Uppdaterad"
 
 #: partials/header/search.php:5 partials/header/search.php:9
-#: partials/header/searchform.php:12 partials/header/searchform.php:18
+#: partials/header/searchform.php:8 partials/header/searchform.php:14
 msgctxt "verb"
 msgid "Search"
 msgstr "Sök"
