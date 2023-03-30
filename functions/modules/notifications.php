@@ -116,13 +116,18 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 		'info' => 'info-circle-fill',
 	);
 
+	$type = "info";
+	if ( isset($notice["type"]) && !empty($notice["type"]) ) {
+		$type = $notice["type"];
+	}
+
 	get_template_part(
 		'partials/notification/notice',
 		null,
 		array(
-			'id' => md5( $notice['type'] . $text ),
-			'type' => $notice['type'],
-			'icon' => helsinki_get_svg_icon( $icon[$notice['type']] ),
+			'id' => md5( $type . $text ),
+			'type' => $type,
+			'icon' => helsinki_get_svg_icon( $icon[$type] ),
 			'text' => $text,
 		)
 	);
