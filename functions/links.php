@@ -71,7 +71,8 @@ function helsinki_links_parse_blocks( $block_content = '', $block = [] ) {
 		'core/table',
 		null,
 		'helsinki-linkedevents/grid',
-		'helsinki-tpr/unit'
+		'helsinki-tpr/unit',
+        'hds-wp/rss-feed'
 	];
 
 	if ( ! in_array( $block['blockName'], $blocksToParse, true ) ) {
