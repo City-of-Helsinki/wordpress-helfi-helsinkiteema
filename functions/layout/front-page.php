@@ -50,7 +50,7 @@ function helsinki_front_page_section_data( string $section, $attributes = null) 
 			break;
 
 		case 'feed-posts':
-			$count = helsinki_front_page_feed_posts_count();
+			$count = isset($attributes['amount']) ? $attributes['amount'] : helsinki_front_page_feed_posts_count();
 			$url = helsinki_front_page_feed_posts_url($attributes);
 			return array(
 				'feed_posts' => helsinki_front_page_feed_rss($url, $count),
@@ -222,7 +222,7 @@ function helsinki_front_page_feed_posts_source_text($args = array()) {
 		printf(
 			'<p class="feed-source">%s</p>',
 			sprintf(
-				esc_html_x( 'This feed is fetched from %s.', 'RSS feed source(s)', 'helsinki-universal' ),
+				esc_html_x( 'Contents are automatically fetched from %s.', 'RSS feed source(s)', 'helsinki-universal' ),
 				sprintf(
 					_x( '%s', 'from RSS feed source', 'helsinki-universal' ),
 					parse_url( $url, PHP_URL_HOST )
@@ -237,7 +237,7 @@ function helsinki_front_page_feed_posts_count() {
 }
 
 function helsinki_front_page_feed_lifetime() {
-	$hours = absint( helsinki_theme_mod('helsinki_front_page_feed-posts', 'feed_lifetime', 12) );
+	$hours = absint( helsinki_theme_mod('helsinki_front_page_feed-posts', 'feed_lifetime', 1) );
 	return $hours > 0 ? HOUR_IN_SECONDS * $hours : HOUR_IN_SECONDS * 12;
 }
 

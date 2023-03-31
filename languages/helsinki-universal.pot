@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 06:42+0000\n"
+"POT-Creation-Date: 2023-03-31 07:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -463,10 +463,6 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: partials/front-page/feed-posts/list-item.php:6
-msgid "Link forwards to:"
-msgstr ""
-
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr ""
@@ -636,7 +632,13 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
+#: functions/layout/front-page.php:225
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "Contents are automatically fetched from %s."
+msgstr ""
+
+#: integrations/wp-rss-aggregator.php:60
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
