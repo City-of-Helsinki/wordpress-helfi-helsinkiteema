@@ -31,7 +31,7 @@ thead {
 	border-top: 1px double var(--color-black-60);
 	border-left: 1px double var(--color-black-60);
 	border-right: 1px double var(--color-black-60);
-	border-bottom: none;
+	border-bottom: none !important;
 
 	&:not(:empty)+ tbody {
 		tr {
@@ -72,7 +72,7 @@ tfoot {
 		}
 	}
 
-	border-top: none;
+	border-top: none !important;
 	border-bottom: 1px double var(--color-black-60);
 	border-left: 1px double var(--color-black-60);
 	border-right: 1px double var(--color-black-60);
