@@ -21,6 +21,7 @@ table {
 	caption {
 		text-align: left;
 	}
+
 }
 
 thead {
@@ -30,6 +31,7 @@ thead {
 	border-top: 1px double var(--color-black-60);
 	border-left: 1px double var(--color-black-60);
 	border-right: 1px double var(--color-black-60);
+	border-bottom: none;
 
 	&:not(:empty)+ tbody {
 		tr {
@@ -70,6 +72,7 @@ tfoot {
 		}
 	}
 
+	border-top: none;
 	border-bottom: 1px double var(--color-black-60);
 	border-left: 1px double var(--color-black-60);
 	border-right: 1px double var(--color-black-60);
@@ -106,9 +109,22 @@ td {
 }
 
 figure.wp-block-table {
+	display: block !important;
 	overflow-x: hidden;
-	max-width: 860px;
+	max-width: min(860px, 100%);
 	margin-bottom: $paragraph-margin-bottom;
+
+	&:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.aligncenter)) {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	&.aligncenter {
+		table {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 
 	&.has-vertical-header {
 		table {
@@ -168,6 +184,19 @@ figure.wp-block-table {
 		tfoot {
 			border: none;
 		}
+	}
+
+	table {
+		td {
+			word-break: normal !important;
+		}
+
+		&.has-fixed-layout {
+			td {
+				word-break: break-word !important;
+			}
+		}
+	
 	}
 
 	figcaption {
