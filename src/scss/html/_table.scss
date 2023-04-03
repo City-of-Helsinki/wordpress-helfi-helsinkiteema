@@ -119,13 +119,6 @@ figure.wp-block-table {
 		margin-right: 0 !important;
 	}
 
-	&.aligncenter {
-		table {
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}
-
 	&.has-vertical-header {
 		table {
 			tbody {
@@ -210,6 +203,17 @@ figure.wp-block-table {
 		flex-grow: 0;
 		flex-basis: unset;
 	}
+
+	&.aligncenter {
+		table {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		figcaption {
+			text-align: center !important;
+		}
+	}
+
 }
 
 .wp-block-calendar {
