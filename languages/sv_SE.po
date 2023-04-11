@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-03-31 07:22+0000\n"
+"PO-Revision-Date: 2023-04-06 11:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,17 +22,21 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:48 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:33
+#: functions/links.php:34
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:40
+#: functions/links.php:41
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
+
+#: partials/content/not-found.php:5
+msgid "404 - Sorry, the page you were looking for was not found"
+msgstr "404 - Tyvärr hittas inte sidan du sökte"
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
@@ -93,6 +97,14 @@ msgstr "Buss"
 #: functions/layout/loop.php:107
 msgid "Categories"
 msgstr "Kategorier"
+
+#: partials/content/not-found.php:8
+msgid ""
+"Check that you have typed in the page address correctly. We may have deleted "
+"or moved the content."
+msgstr ""
+"Kontrollera att sidans adress är rätt skriven. Vi kan också ha tagit bort "
+"eller flyttat sidan."
 
 #: customizer/config/front-page.php:25
 msgid ""
@@ -382,6 +394,14 @@ msgstr "%s"
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
+#: partials/content/not-found.php:10
+msgid "Give feedback"
+msgstr "Ge respons"
+
+#: partials/content/not-found.php:9
+msgid "Go back to the frontpage"
+msgstr "Gä till framsida"
+
 #: integrations/maintenance.php:105
 msgid "Go to hel.fi"
 msgstr "Gå till hel.fi webbplats"
@@ -472,6 +492,10 @@ msgstr "Sista sidan"
 #: functions/modules/comments.php:32
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
+
+#: partials/front-page/feed-posts/list-item.php:6
+msgid "Link forwards to:"
+msgstr "Länk leder till:"
 
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
@@ -643,14 +667,7 @@ msgstr "Relaterat innehåll"
 msgid "Related posts count"
 msgstr "Relaterade inlägg räknas"
 
-#: functions/layout/front-page.php:225
-#, php-format
-#| msgid "The contents are automatically retrieved from %s."
-msgctxt "RSS feed source(s)"
-msgid "Contents are automatically fetched from %s."
-msgstr "Innehållet hämtas automatiskt från %s."
-
-#: integrations/wp-rss-aggregator.php:60
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -759,10 +776,6 @@ msgstr ""
 "Meddelandet kommer endast att visas när webbplatsen visas på det valda "
 "språket."
 
-#: partials/content/not-found.php:8
-msgid "The page you were looking for could not be found."
-msgstr "Sidan du letade efter kunde inte hittas."
-
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
 msgstr "Denna författare har inte publicerat några inlägg ännu."
@@ -815,10 +828,6 @@ msgstr "Synliga sektioner"
 #: customizer/config/choices.php:68
 msgid "Warning"
 msgstr "Varning"
-
-#: partials/content/not-found.php:5
-msgid "Whoops!"
-msgstr "Oj då!"
 
 #: partials/content/none.php:5
 msgid "Worse luck!"

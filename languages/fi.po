@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-03-31 07:22+0000\n"
+"PO-Revision-Date: 2023-04-06 11:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.0; wp-6.2"
+"X-Loco-Version: 2.6.0; wp-6.1"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -22,17 +22,21 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:48 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
 
-#: functions/links.php:33
+#: functions/links.php:34
 msgid "(Link opens default mail program)"
 msgstr "(Linkki avaa oletussähköpostiohjelman)"
 
-#: functions/links.php:40
+#: functions/links.php:41
 msgid "(Link starts a phone call)"
 msgstr "(Linkki aloittaa puhelun)"
+
+#: partials/content/not-found.php:5
+msgid "404 - Sorry, the page you were looking for was not found"
+msgstr "404 - Etsimääsi sivua ei valitettavasti löytynyt"
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
@@ -93,6 +97,14 @@ msgstr "Bussi"
 #: functions/layout/loop.php:107
 msgid "Categories"
 msgstr "Kategoriat"
+
+#: partials/content/not-found.php:8
+msgid ""
+"Check that you have typed in the page address correctly. We may have deleted "
+"or moved the content."
+msgstr ""
+"Tarkista, että sivun osoite on kirjoitettu oikein. Olemme myös saattaneet "
+"poistaa tai siirtää sivun."
 
 #: customizer/config/front-page.php:25
 msgid ""
@@ -383,6 +395,14 @@ msgstr "%s:stä"
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
+#: partials/content/not-found.php:10
+msgid "Give feedback"
+msgstr "Anna palautetta"
+
+#: partials/content/not-found.php:9
+msgid "Go back to the frontpage"
+msgstr "Siirry etusivulle"
+
 #: integrations/maintenance.php:105
 msgid "Go to hel.fi"
 msgstr "Siirry hel.fi-sivustolle"
@@ -474,6 +494,10 @@ msgstr "Viimeinen sivu"
 #: functions/modules/comments.php:32
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
+
+#: partials/front-page/feed-posts/list-item.php:6
+msgid "Link forwards to:"
+msgstr "Linkki johtaa:"
 
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
@@ -646,14 +670,7 @@ msgstr "Suositeltu sisältö"
 msgid "Related posts count"
 msgstr "Suositeltujen artikkelien lukumäärä"
 
-#: functions/layout/front-page.php:225
-#, php-format
-#| msgid "The contents are automatically retrieved from %s."
-msgctxt "RSS feed source(s)"
-msgid "Contents are automatically fetched from %s."
-msgstr "Sisällöt haetaan automaattisesti osoitteesta %s."
-
-#: integrations/wp-rss-aggregator.php:60
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -763,10 +780,6 @@ msgid ""
 msgstr ""
 "Ilmoitus näytetään vain, kun sivustoa tarkastellaan valitulla kielellä."
 
-#: partials/content/not-found.php:8
-msgid "The page you were looking for could not be found."
-msgstr "Etsimääsi sivua ei löytynyt."
-
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
@@ -819,10 +832,6 @@ msgstr "Näytettävät osiot"
 #: customizer/config/choices.php:68
 msgid "Warning"
 msgstr "Varoitus"
-
-#: partials/content/not-found.php:5
-msgid "Whoops!"
-msgstr "Hupsis!"
 
 #: partials/content/none.php:5
 msgid "Worse luck!"
