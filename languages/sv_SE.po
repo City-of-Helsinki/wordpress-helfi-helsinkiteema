@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-04-06 11:12+0000\n"
+"PO-Revision-Date: 2023-04-11 10:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:48 functions/modules/notifications.php:108
+#: functions/links.php:53 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:34
+#: functions/links.php:39
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:41
+#: functions/links.php:46
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
@@ -493,10 +493,6 @@ msgstr "Sista sidan"
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: partials/front-page/feed-posts/list-item.php:6
-msgid "Link forwards to:"
-msgstr "Länk leder till:"
-
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr "Länktext"
@@ -667,7 +663,13 @@ msgstr "Relaterat innehåll"
 msgid "Related posts count"
 msgstr "Relaterade inlägg räknas"
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
+#: functions/layout/front-page.php:225
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "Contents are automatically fetched from %s."
+msgstr "Innehållet hämtas automatiskt från %s."
+
+#: integrations/wp-rss-aggregator.php:60
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."

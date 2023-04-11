@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-04-11 09:56+0000\n"
+"PO-Revision-Date: 2023-04-11 10:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:48 functions/modules/notifications.php:108
+#: functions/links.php:53 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
 
-#: functions/links.php:34
+#: functions/links.php:39
 msgid "(Link opens default mail program)"
 msgstr "(Linkki avaa oletussähköpostiohjelman)"
 
-#: functions/links.php:41
+#: functions/links.php:46
 msgid "(Link starts a phone call)"
 msgstr "(Linkki aloittaa puhelun)"
 
@@ -495,10 +495,6 @@ msgstr "Viimeinen sivu"
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
-#: partials/front-page/feed-posts/list-item.php:6
-msgid "Link forwards to:"
-msgstr "Linkki johtaa:"
-
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr "Linkkiteksti"
@@ -670,7 +666,13 @@ msgstr "Suositeltu sisältö"
 msgid "Related posts count"
 msgstr "Suositeltujen artikkelien lukumäärä"
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
+#: functions/layout/front-page.php:225
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "Contents are automatically fetched from %s."
+msgstr "Sisällöt haetaan automaattisesti osoitteesta %s."
+
+#: integrations/wp-rss-aggregator.php:60
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."

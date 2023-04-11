@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-06 11:11+0000\n"
+"POT-Creation-Date: 2023-04-11 10:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:48 functions/modules/notifications.php:108
+#: functions/links.php:53 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:34
+#: functions/links.php:39
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:41
+#: functions/links.php:46
 msgid "(Link starts a phone call)"
 msgstr ""
 
@@ -481,10 +481,6 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: partials/front-page/feed-posts/list-item.php:6
-msgid "Link forwards to:"
-msgstr ""
-
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr ""
@@ -654,7 +650,13 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
+#: functions/layout/front-page.php:225
+#, php-format
+msgctxt "RSS feed source(s)"
+msgid "Contents are automatically fetched from %s."
+msgstr ""
+
+#: integrations/wp-rss-aggregator.php:60
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
