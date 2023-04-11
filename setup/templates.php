@@ -361,7 +361,6 @@ function helsinki_setup_templates() {
 	else if ( is_404() ) {
 		add_filter('body_class', 'helsinki_sidebar_body_class', 10);
 		add_action('helsinki_not_found', 'helsinki_not_found_notice', 30);
-		add_action('helsinki_not_found', 'helsinki_search_form', 40);
 	}
 
 	/**

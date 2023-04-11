@@ -1,9 +1,5 @@
 .not-found {
 
-	.icon {
-		width: 56px;
-	}
-
 	h1 {
 		margin-top: 0;
 	}
@@ -18,11 +14,23 @@
 
 		.not-found {
 			margin-bottom: spacing('layout-m');
+
+			a {
+				font-weight: $global-font-weight-medium;
+			}
+
+			.decoration {
+				display: block;
+				margin: auto;
+			}
 		}
 
-		.search-form {
-		}
+	}
 
+	footer {
+		.hds-koros {
+			background-color: $light-gray;
+		}
 	}
 
 }

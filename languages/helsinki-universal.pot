@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 06:42+0000\n"
+"POT-Creation-Date: 2023-04-06 11:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,16 +23,20 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:48 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:33
+#: functions/links.php:34
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:40
+#: functions/links.php:41
 msgid "(Link starts a phone call)"
+msgstr ""
+
+#: partials/content/not-found.php:5
+msgid "404 - Sorry, the page you were looking for was not found"
 msgstr ""
 
 #. Description of the theme
@@ -93,6 +97,12 @@ msgstr ""
 
 #: functions/layout/loop.php:107
 msgid "Categories"
+msgstr ""
+
+#: partials/content/not-found.php:8
+msgid ""
+"Check that you have typed in the page address correctly. We may have deleted "
+"or moved the content."
 msgstr ""
 
 #: customizer/config/front-page.php:25
@@ -372,6 +382,14 @@ msgstr ""
 
 #: setup/assets.php:129
 msgid "Gallery images"
+msgstr ""
+
+#: partials/content/not-found.php:10
+msgid "Give feedback"
+msgstr ""
+
+#: partials/content/not-found.php:9
+msgid "Go back to the frontpage"
 msgstr ""
 
 #: integrations/maintenance.php:105
@@ -743,10 +761,6 @@ msgid ""
 "language."
 msgstr ""
 
-#: partials/content/not-found.php:8
-msgid "The page you were looking for could not be found."
-msgstr ""
-
 #: partials/content/none.php:12
 msgid "This author has not published any posts yet."
 msgstr ""
@@ -794,10 +808,6 @@ msgstr ""
 
 #: customizer/config/choices.php:68
 msgid "Warning"
-msgstr ""
-
-#: partials/content/not-found.php:5
-msgid "Whoops!"
 msgstr ""
 
 #: partials/content/none.php:5
