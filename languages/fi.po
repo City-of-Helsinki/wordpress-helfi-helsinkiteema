@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-04-06 11:12+0000\n"
+"PO-Revision-Date: 2023-04-11 09:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -389,7 +389,7 @@ msgstr "Alatunniste"
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
-msgstr "%s:stä"
+msgstr "%s"
 
 #: setup/assets.php:129
 msgid "Gallery images"
