@@ -9,7 +9,12 @@ add_filter( 'helsinki_footer_output', 'helsinki_add_links_symbols', 100, 1 );
 
 function helsinki_add_links_symbols($content = '') {
     preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg|<img).)*(?<svginner><\/svg>)?)\s*(?<endtag><\/a>)(?<svgafter><svg)?/s', $content, $matches);
+
+
     $url = get_option('home'); // get the site url from options, because plugins can change it from get_home_url()
+    $url = preg_replace('/^https?:\/\//', '', $url);
+
+
     for($i = 0; $i < count($matches[0]); $i++) {
         if ( str_starts_with( $matches['href'][$i], 'mailto:' ) ) {
             $content = str_replace($matches[0][$i], helsinki_build_replacement_link($matches['link'][$i], $matches['content'][$i], $matches['svginner'][$i], $matches['endtag'][$i], $matches['svgafter'][$i], 'mail'), $content);
@@ -17,7 +22,7 @@ function helsinki_add_links_symbols($content = '') {
         else if ( str_starts_with( $matches['href'][$i], 'tel:' ) ) {
             $content = str_replace($matches[0][$i], helsinki_build_replacement_link($matches['link'][$i], $matches['content'][$i], $matches['svginner'][$i], $matches['endtag'][$i], $matches['svgafter'][$i], 'phone'), $content);
         }
-        else if (!str_contains($matches['href'][$i], $url) && !str_starts_with( $matches['href'][$i], '#' ) && !str_starts_with( $matches['href'][$i], '/' )) {
+        else if (!str_contains(preg_replace('/^https?:\/\//', '', $matches['href'][$i]), $url) && !str_starts_with( $matches['href'][$i], '#' ) && !str_starts_with( $matches['href'][$i], '/' )) {
             $content = str_replace($matches[0][$i], helsinki_build_replacement_link($matches['link'][$i], $matches['content'][$i], $matches['svginner'][$i], $matches['endtag'][$i], $matches['svgafter'][$i], 'external'), $content);
         }
     }
