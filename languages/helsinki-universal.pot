@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 06:42+0000\n"
+"POT-Creation-Date: 2023-04-12 06:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:52 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:33
+#: functions/links.php:38
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:40
+#: functions/links.php:45
 msgid "(Link starts a phone call)"
 msgstr ""
 
