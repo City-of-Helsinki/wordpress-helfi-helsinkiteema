@@ -116,6 +116,11 @@ function helsinki_files()
 		add_filter('helsinki_wp_rss_aggregator_active', '__return_true');
 	}
 
+	if ( defined( 'SBIVER' ) ) {
+		$files['integrations'][] = 'smash-balloon';
+		add_filter('helsinki_smash_balloon_active', '__return_true');
+	}
+
 	return $files;
 }
 
