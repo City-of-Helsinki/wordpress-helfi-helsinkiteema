@@ -177,3 +177,41 @@ function helsinki_handle_helsinkichannel_embed( $matches, $attr, $url, $rawattr 
 
   return apply_filters( 'embed_helsinkichannel', $embed, $matches, $attr, $url, $rawattr );
 }
+
+/**
+ * Image
+ */
+
+ function helsinki_image_render( $block_content = '', $block = [] ) {
+	if ( empty( $block['blockName'] ) || 'core/image' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	if (function_exists('helsinki_base_image_credit')) {
+		$credit = helsinki_base_image_credit($block['attrs']['id']);
+
+		preg_match_all('/(?<figcaption><figcaption[^\>]*>)(?<content>.*)(<\/figcaption>)/sU', $block_content, $matches);
+
+		if (!empty($matches['figcaption'][0])) {
+			$block_content = preg_replace(
+				'/(?<figcaption><figcaption[^\>]*>)(?<content>.*)(<\/figcaption>)/sU',
+				$matches['figcaption'][0] . $matches['content'][0] . ' ' . $credit . '</figcaption>',
+				$block_content,
+				1
+			);
+		} else {
+			//if there is no figcaption, create one
+			preg_match_all('/(?<figure><figure[^\>]*>)(?<content>.*)(<\/figure>)/sU', $block_content, $matches);
+      $block_content = preg_replace(
+				'/(?<figure><figure[^\>]*>)(?<content>.*)(<\/figure>)/sU',
+				$matches['figure'][0] . '<figcaption>' . $credit . '</figcaption></figure>',
+				$block_content,
+				1
+			);
+		}
+
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block', 'helsinki_image_render', 10, 2 );

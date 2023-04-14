@@ -40,6 +40,7 @@ function helsinki_register_polylang_strings() {
 			}
 		}
 	}
+
 }
 
 add_filter('language_attributes', 'helsinki_polylang_filter_html_attributes', 10, 2);

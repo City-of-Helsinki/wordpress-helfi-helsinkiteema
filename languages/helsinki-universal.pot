@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-11 10:00+0000\n"
+"POT-Creation-Date: 2023-04-14 07:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -564,6 +564,15 @@ msgstr ""
 #: setup/theme.php:129
 msgctxt "Page sidebar"
 msgid "Page"
+msgstr ""
+
+#: functions/media/meta.php:52
+#, php-format
+msgid "Photo: %s"
+msgstr ""
+
+#: functions/media/meta.php:18
+msgid "Photographer"
 msgstr ""
 
 #: customizer/config/blog.php:15

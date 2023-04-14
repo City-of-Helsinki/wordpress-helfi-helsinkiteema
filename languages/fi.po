@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-04-11 10:01+0000\n"
+"PO-Revision-Date: 2023-04-14 07:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -580,6 +580,15 @@ msgstr "Sivunavigointi"
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
+
+#: functions/media/meta.php:52
+#, php-format
+msgid "Photo: %s"
+msgstr "Kuva: %s"
+
+#: functions/media/meta.php:18
+msgid "Photographer"
+msgstr "Kuvaaja"
 
 #: customizer/config/blog.php:15
 #| msgid "Placeholder text"

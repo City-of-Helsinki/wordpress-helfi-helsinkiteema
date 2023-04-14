@@ -75,6 +75,9 @@ function helsinki_files()
 				'view',
 				'misc',
 			],
+			'media' => [
+				'meta',
+			],
 		    'modules' => [
 				'comments',
 				'load-more',
