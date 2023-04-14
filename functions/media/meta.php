@@ -2,27 +2,15 @@
 
 function helsinki_add_image_attachment_fields_to_edit( $form_fields, $post ) {
 		
-	// Re-order the "Caption" field by removing it and re-adding it later
-	//$caption_field = $form_fields['post_excerpt'];
-	//unset($form_fields['post_excerpt']);
-	
-	// Re-order the "File URL" field
-	//$image_url_field = $form_fields['image_url'];
-	//unset($form_fields['image_url']);
-	
-	// Add Caption before Credit field 
-	//$form_fields['post_excerpt'] = $caption_field;
-	
-	// Add a Photographer field
-	$form_fields["photographer_text"] = array(
-		"label" => __("Photographer", "helsinki-universal"),
-		"input" => "text",
-		"value" => esc_attr( get_post_meta($post->ID, "_photographer_text", true) ),
-	);
-		
-	// Add Caption before Credit field 
-	//$form_fields['image_url'] = $image_url_field;
-	
+    //if post mime type starts with "image"
+    if ( substr( $post->post_mime_type, 0, 5 ) == 'image' ) {
+        $form_fields["photographer_text"] = array(
+            "label" => __("Photographer", "helsinki-universal"),
+            "input" => "text",
+            "value" => esc_attr( get_post_meta($post->ID, "_photographer_text", true) ),
+        );
+    }
+			
 	return $form_fields;
 }
 add_filter("attachment_fields_to_edit", "helsinki_add_image_attachment_fields_to_edit", null, 2);
