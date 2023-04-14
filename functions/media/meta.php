@@ -28,14 +28,8 @@ function helsinki_add_image_attachment_fields_to_edit( $form_fields, $post ) {
 add_filter("attachment_fields_to_edit", "helsinki_add_image_attachment_fields_to_edit", null, 2);
 
 function helsinki_add_image_attachment_fields_to_save( $post, $attachment ) {
-    var_dump($attachment);
 	if ( isset( $attachment['photographer_text'] ) ) {
 		update_post_meta( $post['ID'], '_photographer_text', esc_attr($attachment['photographer_text']) );
-
-        if (function_exists('pll_register_string')) {
-            $id = $post['ID'];
-            pll_register_string( "photographer-text-{$id}", $attachment['photographer_text'], 'Helsinki Universal', false );
-        }	
     }
 	return $post;
 }
