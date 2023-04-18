@@ -77,7 +77,7 @@ function helsinki_widget_recent_posts_args( $instance, $widget_instance, $args )
     add_filter( 'get_the_date', function ( $the_date, $d, $post )
     {
         // Set new date format
-        $d = 'd.m.Y H:m';
+        $d = 'd.m.Y H:i';
         // Set new value format to $the_date
         $the_date = mysql2date( $d, $post->post_date );
 
