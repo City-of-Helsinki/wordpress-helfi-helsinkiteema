@@ -38,6 +38,13 @@ if ( ! function_exists('helsinki_grid_entry') ) {
 	}
 }
 
+if ( ! function_exists('helsinki_feed_entry') ) {
+	function helsinki_feed_entry() {
+		get_template_part('partials/loop/entry', 'feed');
+	}
+}
+
+
 /**
   * Title
   */

@@ -2,9 +2,16 @@
 	display: flex;
 
 	.title {
-		font-size: fontsize-body('xl');
+		font-size: fontsize-heading('m');
+		font-weight: $global-font-weight-medium;
 		margin: 0 spacing('s') 0 0;
-		line-height: 32px;
+		line-height: 28px;
+
+		@include breakpointMax('l') { 
+			font-size: 20px;
+			line-height: 26px;
+		}
+
 	}
 
 	.menu {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 08:28+0000\n"
+"POT-Creation-Date: 2023-04-17 08:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -105,7 +105,7 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr ""
@@ -370,7 +370,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: setup/assets.php:131
+#: setup/assets.php:129
 msgid "Gallery images"
 msgstr ""
 
@@ -380,10 +380,6 @@ msgstr ""
 
 #: customizer/config/choices.php:20
 msgid "Gold"
-msgstr ""
-
-#: block-editor/metaboxes.php:36
-msgid "Heading"
 msgstr ""
 
 #. Name of the theme
@@ -509,7 +505,7 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:129 partials/loop/pagination.php:18
+#: setup/assets.php:127 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr ""
@@ -589,7 +585,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:130 partials/loop/pagination.php:21
+#: setup/assets.php:128 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr ""
 
@@ -603,10 +599,6 @@ msgstr ""
 
 #: partials/loop/entry-grid.php:8
 msgid "Published:"
-msgstr ""
-
-#: partials/content/parts/related.php:3
-msgid "Read also these"
 msgstr ""
 
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
@@ -709,10 +701,6 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
-#: block-editor/metaboxes.php:6
-msgid "Sidebar"
-msgstr ""
-
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr ""
@@ -737,7 +725,7 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
+#: customizer/config/notifications.php:49
 msgid "Text"
 msgstr ""
 
@@ -810,6 +798,10 @@ msgstr ""
 
 #: partials/content/none.php:5
 msgid "Worse luck!"
+msgstr ""
+
+#: partials/content/parts/related.php:3
+msgid "You might be interested in"
 msgstr ""
 
 #: partials/content/parts/comment.php:19
