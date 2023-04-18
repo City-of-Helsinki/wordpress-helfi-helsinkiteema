@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-03-29 06:45+0000\n"
+"PO-Revision-Date: 2023-04-17 08:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:52 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
 
-#: functions/links.php:33
+#: functions/links.php:38
 msgid "(Link opens default mail program)"
 msgstr "(Linkki avaa oletussähköpostiohjelman)"
 
-#: functions/links.php:40
+#: functions/links.php:45
 msgid "(Link starts a phone call)"
 msgstr "(Linkki aloittaa puhelun)"
 
@@ -615,10 +615,6 @@ msgstr "Julkaistu"
 msgid "Published:"
 msgstr "Julkaistu:"
 
-#: partials/content/parts/related.php:3
-msgid "Read also these"
-msgstr "Lue myös nämä"
-
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
 msgid "Read more"
 msgstr "Lue lisää"
@@ -824,6 +820,10 @@ msgstr "Hupsis!"
 #: partials/content/none.php:5
 msgid "Worse luck!"
 msgstr "Voi harmi!"
+
+#: partials/content/parts/related.php:3
+msgid "You might be interested in"
+msgstr "Sinua voisi kiinnostaa"
 
 #: partials/content/parts/comment.php:19
 msgid "Your comment is awaiting moderation."

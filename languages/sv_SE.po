@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-03-29 06:46+0000\n"
+"PO-Revision-Date: 2023-04-17 08:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:52 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:33
+#: functions/links.php:38
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:40
+#: functions/links.php:45
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
@@ -612,10 +612,6 @@ msgstr "Publicerad"
 msgid "Published:"
 msgstr "Publicerad:"
 
-#: partials/content/parts/related.php:3
-msgid "Read also these"
-msgstr "Läs även dessa"
-
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
 msgid "Read more"
 msgstr "Läs mer"
@@ -820,6 +816,10 @@ msgstr "Oj då!"
 #: partials/content/none.php:5
 msgid "Worse luck!"
 msgstr "Värre tur!"
+
+#: partials/content/parts/related.php:3
+msgid "You might be interested in"
+msgstr "Du kanske är intresserad av"
 
 #: partials/content/parts/comment.php:19
 msgid "Your comment is awaiting moderation."

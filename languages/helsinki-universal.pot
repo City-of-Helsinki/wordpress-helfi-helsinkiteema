@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-12 06:48+0000\n"
+"POT-Creation-Date: 2023-04-17 08:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -601,10 +601,6 @@ msgstr ""
 msgid "Published:"
 msgstr ""
 
-#: partials/content/parts/related.php:3
-msgid "Read also these"
-msgstr ""
-
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
 msgid "Read more"
 msgstr ""
@@ -802,6 +798,10 @@ msgstr ""
 
 #: partials/content/none.php:5
 msgid "Worse luck!"
+msgstr ""
+
+#: partials/content/parts/related.php:3
+msgid "You might be interested in"
 msgstr ""
 
 #: partials/content/parts/comment.php:19
