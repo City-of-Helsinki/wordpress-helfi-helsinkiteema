@@ -13,10 +13,10 @@
 	}
 
 	> * {
+		margin-right: .5rem;
 		+ * {
 			border-left: $default-border-width $default-border-style $dark-gray;
 			padding-left: .5rem;
-			margin-left: .5rem;
 		}
 	}
 

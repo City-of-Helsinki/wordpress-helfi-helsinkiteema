@@ -70,6 +70,26 @@ function helsinki_widget_tag_cloud_args( $default ) {
 }
 add_filter( 'widget_tag_cloud_args', 'helsinki_widget_tag_cloud_args');
 
+function helsinki_widget_recent_posts_args( $instance, $widget_instance, $args ) {
+
+  if ($widget_instance->id_base === 'recent-posts' && $instance['show_date'] === true) {
+
+    add_filter( 'get_the_date', function ( $the_date, $d, $post )
+    {
+        // Set new date format
+        $d = 'd.m.Y H:m';
+        // Set new value format to $the_date
+        $the_date = mysql2date( $d, $post->post_date );
+
+        return $the_date;   
+    }, 10, 3 );
+
+  }
+
+  return $instance;
+}
+add_filter( 'widget_display_callback', 'helsinki_widget_recent_posts_args', 10, 3 );
+
 function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
 	if ($widget_type == 'categories') {
 		$widget_output = str_replace('aria-current="page"', 'aria-current="true"', $widget_output); //replace aria attributes
