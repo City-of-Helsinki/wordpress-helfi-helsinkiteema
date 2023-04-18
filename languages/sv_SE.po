@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-04-14 07:21+0000\n"
+"PO-Revision-Date: 2023-04-18 08:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -295,7 +295,7 @@ msgstr "Yoast SEO krävs för att installeras"
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:128
+#: inc/filters.php:148
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -578,12 +578,12 @@ msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sida"
 
-#: functions/media/meta.php:52
+#: functions/media/meta.php:32
 #, php-format
 msgid "Photo: %s"
 msgstr "Bild: %s"
 
-#: functions/media/meta.php:18
+#: functions/media/meta.php:8
 msgid "Photographer"
 msgstr "Fotograf"
 
@@ -636,10 +636,6 @@ msgstr "Publicerad"
 #: partials/loop/entry-grid.php:8
 msgid "Published:"
 msgstr "Publicerad:"
-
-#: partials/content/parts/related.php:3
-msgid "Read also these"
-msgstr "Läs även dessa"
 
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
 msgid "Read more"
@@ -843,6 +839,10 @@ msgstr "Varning"
 #: partials/content/none.php:5
 msgid "Worse luck!"
 msgstr "Värre tur!"
+
+#: partials/content/parts/related.php:3
+msgid "You might be interested in"
+msgstr "Du kanske är intresserad av"
 
 #: partials/content/parts/comment.php:19
 msgid "Your comment is awaiting moderation."
