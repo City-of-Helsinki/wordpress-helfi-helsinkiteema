@@ -19,7 +19,6 @@ function helsinki_customizer_choices_style_schemes(string $name = '') {
 			'coat-of-arms' => __('Coat of Arms', 'helsinki-universal'),
 			'gold' => __('Gold', 'helsinki-universal'),
 			'silver' => __('Silver', 'helsinki-universal'),
-			'brick' => __('Brick', 'helsinki-universal'),
 			'bus' => __('Bus', 'helsinki-universal'),
 			'copper' => __('Copper', 'helsinki-universal'),
 			'engel' => __('Engel', 'helsinki-universal'),
