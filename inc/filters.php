@@ -208,6 +208,11 @@ function helsinki_handle_helsinkichannel_embed( $matches, $attr, $url, $rawattr 
 	}
 
 	if (function_exists('helsinki_base_image_credit')) {
+    
+    if (empty($block['attrs']['id'])) {
+      return $block_content;
+    }
+
 		$credit = helsinki_base_image_credit($block['attrs']['id']);
 
     if (!empty($credit)) {
