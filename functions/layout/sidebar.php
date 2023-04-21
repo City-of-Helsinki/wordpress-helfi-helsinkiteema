@@ -9,10 +9,19 @@ function helsinki_sidebar() {
 }
 function helsinki_sidebar_widgets( $widget_area, $post_id ) {
 	if ( is_active_sidebar( $widget_area ) ) {
-		ob_start();
 		dynamic_sidebar( $widget_area );
-		$sidebar = ob_get_clean();
-		echo apply_filters('helsinki_sidebar_output', $sidebar);
+	}
+}
+
+function helsinki_sidebar_post_meta() {
+	$sidebar_heading = get_post_meta( get_the_ID(), 'sidebar_heading', true );
+	$sidebar_content = get_post_meta( get_the_ID(), 'sidebar_content', true );
+
+	if ( $sidebar_heading || $sidebar_content ) {
+		get_template_part( 'partials/sidebar/post-meta', null, array(
+			'sidebar_heading' => $sidebar_heading,
+			'sidebar_content' => $sidebar_content,
+		) );
 	}
 }
 

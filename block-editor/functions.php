@@ -14,3 +14,7 @@ function helsinki_block_editor_meta_sanitize_url( $value, $key, $type ) {
 function helsinki_block_editor_meta_sanitize_bool( $value, $key, $type ) {
 	return boolval( $value );
 }
+
+function helsinki_block_editor_meta_sanitize_wp_editor( $value, $key, $type ) {
+	return wp_kses_post( $value );
+}

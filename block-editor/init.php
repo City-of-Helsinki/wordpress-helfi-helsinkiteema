@@ -9,6 +9,8 @@ function helsinki_block_editor_meta() {
 	}
 }
 
+add_action('add_meta_boxes', 'helsinki_block_editor_add_metaboxes');
+
 add_action('enqueue_block_editor_assets', 'helsinki_block_editor_scripts');
 function helsinki_block_editor_scripts() {
 	if ( ! is_admin() ) {
@@ -31,6 +33,19 @@ function helsinki_block_editor_scripts() {
 			'wp-compose',
     	)
 	);
+
+	wp_enqueue_script(
+		'helsinki-editor-metaboxes',
+		get_template_directory_uri() . '/block-editor/scripts/metaboxes.js',
+		array(
+			'jquery',
+			'jquery-ui-core',
+			'jquery-ui-sortable',
+    	), 
+		null, 
+		true
+	);
+
 
 	wp_add_inline_script(
 		'helsinki-sidebar-plugin',

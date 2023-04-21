@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-09 09:39+0000\n"
+"POT-Creation-Date: 2023-04-21 06:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,20 +23,16 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:53 functions/modules/notifications.php:108
+#: functions/links.php:52 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:39
+#: functions/links.php:38
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:46
+#: functions/links.php:45
 msgid "(Link starts a phone call)"
-msgstr ""
-
-#: partials/content/not-found.php:5
-msgid "404 - Sorry, the page you were looking for was not found"
 msgstr ""
 
 #. Description of the theme
@@ -55,7 +51,7 @@ msgstr ""
 msgid "Accept selected cookies"
 msgstr ""
 
-#: customizer/config/choices.php:68
+#: customizer/config/choices.php:69
 msgid "Alert"
 msgstr ""
 
@@ -88,17 +84,15 @@ msgid "Breadcrumbs"
 msgstr ""
 
 #: customizer/config/choices.php:22
+msgid "Brick"
+msgstr ""
+
+#: customizer/config/choices.php:23
 msgid "Bus"
 msgstr ""
 
 #: functions/layout/loop.php:107
 msgid "Categories"
-msgstr ""
-
-#: partials/content/not-found.php:8
-msgid ""
-"Check that you have typed in the page address correctly. We may have deleted "
-"or moved the content."
 msgstr ""
 
 #: customizer/config/front-page.php:25
@@ -111,7 +105,7 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr ""
@@ -150,7 +144,7 @@ msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr ""
 
-#: customizer/config/choices.php:23
+#: customizer/config/choices.php:24
 msgid "Copper"
 msgstr ""
 
@@ -333,11 +327,11 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
-#: customizer/config/choices.php:24
+#: customizer/config/choices.php:25
 msgid "Engel"
 msgstr ""
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:60 functions/modules/social.php:58
 msgid "Facebook"
 msgstr ""
 
@@ -353,11 +347,15 @@ msgstr ""
 msgid "Feed URL"
 msgstr ""
 
+#: functions/layout/header.php:102 partials/header/mobile-links.php:7
+msgid "Feedback"
+msgstr ""
+
 #: partials/loop/pagination.php:27
 msgid "First page"
 msgstr ""
 
-#: customizer/config/choices.php:25
+#: customizer/config/choices.php:26
 msgid "Fog"
 msgstr ""
 
@@ -366,22 +364,14 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
-msgstr ""
-
-#: functions/layout/header.php:102 partials/content/not-found.php:10
-msgid "Give feedback"
-msgstr ""
-
-#: partials/content/not-found.php:9
-msgid "Go back to the frontpage"
 msgstr ""
 
 #: integrations/maintenance.php:105
@@ -390,6 +380,10 @@ msgstr ""
 
 #: customizer/config/choices.php:20
 msgid "Gold"
+msgstr ""
+
+#: block-editor/metaboxes.php:30
+msgid "Heading"
 msgstr ""
 
 #. Name of the theme
@@ -414,7 +408,7 @@ msgstr ""
 msgid "Image on right"
 msgstr ""
 
-#: customizer/config/choices.php:69
+#: customizer/config/choices.php:70
 msgid "Info"
 msgstr ""
 
@@ -422,32 +416,32 @@ msgstr ""
 msgid "Is external?"
 msgstr ""
 
-#: customizer/config/choices.php:37
+#: customizer/config/choices.php:38
 msgctxt "Koros motif"
 msgid "Basic"
 msgstr ""
 
-#: customizer/config/choices.php:38
+#: customizer/config/choices.php:39
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr ""
 
-#: customizer/config/choices.php:42
+#: customizer/config/choices.php:43
 msgctxt "Koros motif"
 msgid "Calm"
 msgstr ""
 
-#: customizer/config/choices.php:39
+#: customizer/config/choices.php:40
 msgctxt "Koros motif"
 msgid "Pulse"
 msgstr ""
 
-#: customizer/config/choices.php:40
+#: customizer/config/choices.php:41
 msgctxt "Koros motif"
 msgid "Vibration"
 msgstr ""
 
-#: customizer/config/choices.php:41
+#: customizer/config/choices.php:42
 msgctxt "Koros motif"
 msgid "Wave"
 msgstr ""
@@ -473,6 +467,10 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
+#: partials/front-page/feed-posts/list-item.php:6
+msgid "Link forwards to:"
+msgstr ""
+
 #: customizer/config/header.php:48 customizer/config/notifications.php:53
 msgid "Link text"
 msgstr ""
@@ -481,7 +479,7 @@ msgstr ""
 msgid "Link url"
 msgstr ""
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:62 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr ""
 
@@ -499,7 +497,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: customizer/config/choices.php:26
+#: customizer/config/choices.php:27
 msgid "Metro"
 msgstr ""
 
@@ -511,7 +509,7 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr ""
@@ -558,22 +556,13 @@ msgctxt "Page sidebar"
 msgid "Page"
 msgstr ""
 
-#: functions/media/meta.php:32
-#, php-format
-msgid "Photo: %s"
-msgstr ""
-
-#: functions/media/meta.php:8
-msgid "Photographer"
-msgstr ""
-
 #: customizer/config/blog.php:15
 msgid "Placeholder Icon"
 msgstr ""
 
-#: customizer/config/choices.php:48 customizer/config/choices.php:49
-#: customizer/config/choices.php:50 customizer/config/choices.php:51
-#: customizer/config/choices.php:52 customizer/config/choices.php:53
+#: customizer/config/choices.php:49 customizer/config/choices.php:50
+#: customizer/config/choices.php:51 customizer/config/choices.php:52
+#: customizer/config/choices.php:53 customizer/config/choices.php:54
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr ""
@@ -600,7 +589,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr ""
 
@@ -651,13 +640,7 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: functions/layout/front-page.php:227
-#, php-format
-msgctxt "RSS feed source(s)"
-msgid "Contents are automatically fetched from %s."
-msgstr ""
-
-#: integrations/wp-rss-aggregator.php:60
+#: integrations/wp-rss-aggregator.php:60 functions/layout/front-page.php:225
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
@@ -691,7 +674,7 @@ msgid "Section title"
 msgstr ""
 
 #: partials/front-page/recent-posts/more.php:5
-msgid "See all articles"
+msgid "See all news"
 msgstr ""
 
 #: functions/layout/loop.php:20
@@ -726,6 +709,10 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr ""
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr ""
@@ -738,11 +725,11 @@ msgstr ""
 msgid "Social Feeds"
 msgstr ""
 
-#: customizer/config/choices.php:27
+#: customizer/config/choices.php:28
 msgid "Summer"
 msgstr ""
 
-#: customizer/config/choices.php:28
+#: customizer/config/choices.php:29
 msgid "Suomenlinna"
 msgstr ""
 
@@ -750,7 +737,7 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:38 customizer/config/notifications.php:49
 msgid "Text"
 msgstr ""
 
@@ -762,6 +749,10 @@ msgstr ""
 msgid ""
 "The notice will be displayed only, when the site is viewed on the selected "
 "language."
+msgstr ""
+
+#: partials/content/not-found.php:8
+msgid "The page you were looking for could not be found."
 msgstr ""
 
 #: partials/content/none.php:12
@@ -784,11 +775,11 @@ msgstr ""
 msgid "Toggle submenu for %s"
 msgstr ""
 
-#: customizer/config/choices.php:29
+#: customizer/config/choices.php:30
 msgid "Tram"
 msgstr ""
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:61 functions/modules/social.php:63
 msgid "Twitter"
 msgstr ""
 
@@ -809,8 +800,12 @@ msgstr ""
 msgid "Visible sections"
 msgstr ""
 
-#: customizer/config/choices.php:67
+#: customizer/config/choices.php:68
 msgid "Warning"
+msgstr ""
+
+#: partials/content/not-found.php:5
+msgid "Whoops!"
 msgstr ""
 
 #: partials/content/none.php:5
