@@ -35,6 +35,7 @@ function helsinki_files()
 			],
 			'functions',
 			'init',
+			'metaboxes',
 		],
 		'inc' => [
 			'filters',

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-03-29 06:46+0000\n"
+"PO-Revision-Date: 2023-04-21 06:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:52 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:33
+#: functions/links.php:38
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:40
+#: functions/links.php:45
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
@@ -109,7 +109,7 @@ msgstr ""
 "Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
 "framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Stänga"
@@ -378,7 +378,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
@@ -389,6 +389,10 @@ msgstr "Gå till hel.fi webbplats"
 #: customizer/config/choices.php:20
 msgid "Gold"
 msgstr "Guld"
+
+#: block-editor/metaboxes.php:30
+msgid "Heading"
+msgstr "Rubrik"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -515,7 +519,7 @@ msgstr "Nyare"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr "Nästa"
@@ -596,7 +600,7 @@ msgstr "sökresultat"
 msgid "Posts Feed"
 msgstr "Inläggsflöde"
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr "Tidigare"
 
@@ -716,6 +720,10 @@ msgstr "Visa mer"
 msgid "Show posts from a category"
 msgstr "Visa inlägg från en kategori"
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr "Sidofältet"
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr "Silver"
@@ -740,7 +748,7 @@ msgstr "Suomenlinna"
 msgid "Tags"
 msgstr "Taggar"
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:38 customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Text"
 

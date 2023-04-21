@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-03-29 06:45+0000\n"
+"PO-Revision-Date: 2023-04-21 06:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -22,15 +22,15 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:47 functions/modules/notifications.php:108
+#: functions/links.php:52 functions/modules/notifications.php:108
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
 
-#: functions/links.php:33
+#: functions/links.php:38
 msgid "(Link opens default mail program)"
 msgstr "(Linkki avaa oletussähköpostiohjelman)"
 
-#: functions/links.php:40
+#: functions/links.php:45
 msgid "(Link starts a phone call)"
 msgstr "(Linkki aloittaa puhelun)"
 
@@ -108,7 +108,7 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
@@ -379,7 +379,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -390,6 +390,10 @@ msgstr "Siirry hel.fi-sivustolle"
 #: customizer/config/choices.php:20
 msgid "Gold"
 msgstr "Kulta"
+
+#: block-editor/metaboxes.php:30
+msgid "Heading"
+msgstr "Otsikko"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -518,7 +522,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr "Seuraava"
@@ -599,7 +603,7 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -720,6 +724,10 @@ msgstr "Näytä lisää"
 msgid "Show posts from a category"
 msgstr "Näytä artikkeleita kategoriasta"
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr "Sivupalkki"
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr "Hopea"
@@ -744,7 +752,7 @@ msgstr "Suomenlinna"
 msgid "Tags"
 msgstr "Avainsanat"
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:38 customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Teksti"
 

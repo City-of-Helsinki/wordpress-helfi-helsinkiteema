@@ -1,0 +1,21 @@
+.content__sidebar {
+    .sidebar__post-meta {
+
+        .sidebar__post-meta__heading {
+
+            font-size: fontsize-heading('m');
+            font-weight: $global-font-weight-medium;
+            margin-top: 0;
+            margin-bottom: $paragraph-margin-bottom;   
+
+        }
+        .sidebar__post-meta__text {
+
+            p {
+                padding: spacing('l') spacing('s');
+                background-color: var(--secondary-color);
+            }
+
+        }
+    }
+}
