@@ -81,6 +81,7 @@ function helsinki_setup_templates() {
 	) {
 
 		if ( helsinki_sidebar_compatible_page_template() ) {
+			add_action('helsinki_sidebar', 'helsinki_sidebar_post_meta', 10);
 			add_action('helsinki_sidebar', 'helsinki_sidebar_widgets', 10, 2);
 		}
 	}

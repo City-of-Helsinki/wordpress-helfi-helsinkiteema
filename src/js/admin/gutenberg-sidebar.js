@@ -1,11 +1,5 @@
 (function( wp ) {
 
-    //write a script that hides/shows an element based on the current page template
-    //if the current page template is default then show the element
-    //if the current page template is not default then hide the element
-    //element visibility should be toggled on page template change
-    //element visibility should be toggled on page load
-
     //get the current page template
     var currentTemplate = wp.data.select( 'core/editor' ).getEditedPostAttribute( 'template' );
 
@@ -32,19 +26,3 @@
 
 
 } )( window.wp );
-
-(function( $ ) {
-
-    $(document).ready(function(){
-        var section = $('#front-static-pages'),
-        staticPage = section.find('input:radio[value="page"]'),
-        selects = section.find('select'),
-        check_enabled = function(){
-            selects.prop( 'disabled', null );
-        };
-        check_enabled();
-        section.find( 'input:radio' ).off();    
-        section.find( 'input:radio' ).on( 'change', check_enabled );    
-      });
-    
-    })(jQuery);
