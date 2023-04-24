@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-04-18 08:59+0000\n"
+"PO-Revision-Date: 2023-04-24 08:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -54,7 +54,7 @@ msgstr "Hyväksy vain välttämättömät evästeet"
 msgid "Accept selected cookies"
 msgstr "Hyväksy valitut evästeet"
 
-#: customizer/config/choices.php:69
+#: customizer/config/choices.php:68
 msgid "Alert"
 msgstr "Huomio"
 
@@ -87,10 +87,6 @@ msgid "Breadcrumbs"
 msgstr "Murupolku"
 
 #: customizer/config/choices.php:22
-msgid "Brick"
-msgstr "Tiili"
-
-#: customizer/config/choices.php:23
 msgid "Bus"
 msgstr "Bussi"
 
@@ -120,7 +116,7 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
@@ -159,7 +155,7 @@ msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr "käyttää evästeitä"
 
-#: customizer/config/choices.php:24
+#: customizer/config/choices.php:23
 msgid "Copper"
 msgstr "Kupari"
 
@@ -348,11 +344,11 @@ msgstr ""
 msgid "Enabled"
 msgstr "Käytössä"
 
-#: customizer/config/choices.php:25
+#: customizer/config/choices.php:24
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:58
+#: customizer/config/choices.php:59 functions/modules/social.php:58
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -376,7 +372,7 @@ msgstr "Palaute"
 msgid "First page"
 msgstr "Ensimmäinen sivu"
 
-#: customizer/config/choices.php:26
+#: customizer/config/choices.php:25
 msgid "Fog"
 msgstr "Sumu"
 
@@ -391,7 +387,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -410,6 +406,10 @@ msgstr "Siirry hel.fi-sivustolle"
 #: customizer/config/choices.php:20
 msgid "Gold"
 msgstr "Kulta"
+
+#: block-editor/metaboxes.php:36
+msgid "Heading"
+msgstr "Otsikko"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -436,7 +436,7 @@ msgstr "Kuva vasemmalla"
 msgid "Image on right"
 msgstr "Kuva oikealla"
 
-#: customizer/config/choices.php:70
+#: customizer/config/choices.php:69
 msgid "Info"
 msgstr "Ilmoitus"
 
@@ -444,32 +444,32 @@ msgstr "Ilmoitus"
 msgid "Is external?"
 msgstr "Ulkoinen?"
 
-#: customizer/config/choices.php:38
+#: customizer/config/choices.php:37
 msgctxt "Koros motif"
 msgid "Basic"
 msgstr "Perus"
 
-#: customizer/config/choices.php:39
+#: customizer/config/choices.php:38
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Syke"
 
-#: customizer/config/choices.php:43
+#: customizer/config/choices.php:42
 msgctxt "Koros motif"
 msgid "Calm"
 msgstr "Tyyni"
 
-#: customizer/config/choices.php:40
+#: customizer/config/choices.php:39
 msgctxt "Koros motif"
 msgid "Pulse"
 msgstr "Pulssi"
 
-#: customizer/config/choices.php:41
+#: customizer/config/choices.php:40
 msgctxt "Koros motif"
 msgid "Vibration"
 msgstr "Värinä"
 
-#: customizer/config/choices.php:42
+#: customizer/config/choices.php:41
 msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Tyrsky"
@@ -503,7 +503,7 @@ msgstr "Linkkiteksti"
 msgid "Link url"
 msgstr "Linkin osoite"
 
-#: customizer/config/choices.php:62 functions/modules/social.php:68
+#: customizer/config/choices.php:61 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -522,7 +522,7 @@ msgstr "Mediat"
 msgid "Menu"
 msgstr "Valikko"
 
-#: customizer/config/choices.php:27
+#: customizer/config/choices.php:26
 msgid "Metro"
 msgstr "Metro"
 
@@ -534,7 +534,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr "Seuraava"
@@ -595,9 +595,9 @@ msgstr "Kuvaaja"
 msgid "Placeholder Icon"
 msgstr "Paikanvaraajan ikoni"
 
-#: customizer/config/choices.php:49 customizer/config/choices.php:50
-#: customizer/config/choices.php:51 customizer/config/choices.php:52
-#: customizer/config/choices.php:53 customizer/config/choices.php:54
+#: customizer/config/choices.php:48 customizer/config/choices.php:49
+#: customizer/config/choices.php:50 customizer/config/choices.php:51
+#: customizer/config/choices.php:52 customizer/config/choices.php:53
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
@@ -624,7 +624,7 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -747,6 +747,10 @@ msgstr "Näytä lisää"
 msgid "Show posts from a category"
 msgstr "Näytä artikkeleita kategoriasta"
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr "Sivupalkki"
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr "Hopea"
@@ -759,11 +763,11 @@ msgstr "Siirry sisältöön"
 msgid "Social Feeds"
 msgstr "Sosiaaliset syötteet"
 
-#: customizer/config/choices.php:28
+#: customizer/config/choices.php:27
 msgid "Summer"
 msgstr "Kesä"
 
-#: customizer/config/choices.php:29
+#: customizer/config/choices.php:28
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
@@ -771,7 +775,7 @@ msgstr "Suomenlinna"
 msgid "Tags"
 msgstr "Avainsanat"
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Teksti"
 
@@ -811,11 +815,11 @@ msgstr "Otsikko"
 msgid "Toggle submenu for %s"
 msgstr "\"%s\" alavalikko"
 
-#: customizer/config/choices.php:30
+#: customizer/config/choices.php:29
 msgid "Tram"
 msgstr "Spåra"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:63
+#: customizer/config/choices.php:60 functions/modules/social.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -836,7 +840,7 @@ msgstr "Hae"
 msgid "Visible sections"
 msgstr "Näytettävät osiot"
 
-#: customizer/config/choices.php:68
+#: customizer/config/choices.php:67
 msgid "Warning"
 msgstr "Varoitus"
 

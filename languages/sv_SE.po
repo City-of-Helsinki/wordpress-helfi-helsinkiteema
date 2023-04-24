@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-04-18 08:59+0000\n"
+"PO-Revision-Date: 2023-04-24 08:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -54,7 +54,7 @@ msgstr "Acceptera endast nödvändiga"
 msgid "Accept selected cookies"
 msgstr "Acceptera valda kakor"
 
-#: customizer/config/choices.php:69
+#: customizer/config/choices.php:68
 msgid "Alert"
 msgstr "Uppmärksam"
 
@@ -87,10 +87,6 @@ msgid "Breadcrumbs"
 msgstr "Brödsmulor"
 
 #: customizer/config/choices.php:22
-msgid "Brick"
-msgstr "Tegel"
-
-#: customizer/config/choices.php:23
 msgid "Bus"
 msgstr "Buss"
 
@@ -121,7 +117,7 @@ msgstr ""
 "Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
 "framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Stänga"
@@ -160,7 +156,7 @@ msgctxt "cookie notice title prefix"
 msgid "uses cookies"
 msgstr "använder cookies"
 
-#: customizer/config/choices.php:24
+#: customizer/config/choices.php:23
 msgid "Copper"
 msgstr "Koppar"
 
@@ -347,11 +343,11 @@ msgstr ""
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: customizer/config/choices.php:25
+#: customizer/config/choices.php:24
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:58
+#: customizer/config/choices.php:59 functions/modules/social.php:58
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -375,7 +371,7 @@ msgstr "Respons"
 msgid "First page"
 msgstr "Första sidan"
 
-#: customizer/config/choices.php:26
+#: customizer/config/choices.php:25
 msgid "Fog"
 msgstr "Dimma"
 
@@ -390,7 +386,7 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
@@ -409,6 +405,10 @@ msgstr "Gå till hel.fi webbplats"
 #: customizer/config/choices.php:20
 msgid "Gold"
 msgstr "Guld"
+
+#: block-editor/metaboxes.php:36
+msgid "Heading"
+msgstr "Rubrik"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -434,7 +434,7 @@ msgstr "Bild till vänster"
 msgid "Image on right"
 msgstr "Bild till höger"
 
-#: customizer/config/choices.php:70
+#: customizer/config/choices.php:69
 msgid "Info"
 msgstr "Info"
 
@@ -442,32 +442,32 @@ msgstr "Info"
 msgid "Is external?"
 msgstr "Är extern?"
 
-#: customizer/config/choices.php:38
+#: customizer/config/choices.php:37
 msgctxt "Koros motif"
 msgid "Basic"
 msgstr "Bas"
 
-#: customizer/config/choices.php:39
+#: customizer/config/choices.php:38
 msgctxt "Koros motif"
 msgid "Beat"
 msgstr "Rytm"
 
-#: customizer/config/choices.php:43
+#: customizer/config/choices.php:42
 msgctxt "Koros motif"
 msgid "Calm"
 msgstr "Lugna"
 
-#: customizer/config/choices.php:40
+#: customizer/config/choices.php:39
 msgctxt "Koros motif"
 msgid "Pulse"
 msgstr "Puls"
 
-#: customizer/config/choices.php:41
+#: customizer/config/choices.php:40
 msgctxt "Koros motif"
 msgid "Vibration"
 msgstr "Daller"
 
-#: customizer/config/choices.php:42
+#: customizer/config/choices.php:41
 msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Bränning"
@@ -501,7 +501,7 @@ msgstr "Länktext"
 msgid "Link url"
 msgstr "Länk url"
 
-#: customizer/config/choices.php:62 functions/modules/social.php:68
+#: customizer/config/choices.php:61 functions/modules/social.php:68
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -519,7 +519,7 @@ msgstr "Media"
 msgid "Menu"
 msgstr "Navigeringsmeny"
 
-#: customizer/config/choices.php:27
+#: customizer/config/choices.php:26
 msgid "Metro"
 msgstr "Metro"
 
@@ -531,7 +531,7 @@ msgstr "Nyare"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr "Nästa"
@@ -592,9 +592,9 @@ msgstr "Fotograf"
 msgid "Placeholder Icon"
 msgstr "Platshållarikon"
 
-#: customizer/config/choices.php:49 customizer/config/choices.php:50
-#: customizer/config/choices.php:51 customizer/config/choices.php:52
-#: customizer/config/choices.php:53 customizer/config/choices.php:54
+#: customizer/config/choices.php:48 customizer/config/choices.php:49
+#: customizer/config/choices.php:50 customizer/config/choices.php:51
+#: customizer/config/choices.php:52 customizer/config/choices.php:53
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakt"
@@ -621,7 +621,7 @@ msgstr "sökresultat"
 msgid "Posts Feed"
 msgstr "Inläggsflöde"
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr "Tidigare"
 
@@ -743,6 +743,10 @@ msgstr "Visa mer"
 msgid "Show posts from a category"
 msgstr "Visa inlägg från en kategori"
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr "Sidofältet"
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr "Silver"
@@ -755,11 +759,11 @@ msgstr "Hoppa till innehåll"
 msgid "Social Feeds"
 msgstr "Sociala flöden"
 
-#: customizer/config/choices.php:28
+#: customizer/config/choices.php:27
 msgid "Summer"
 msgstr "Sommar"
 
-#: customizer/config/choices.php:29
+#: customizer/config/choices.php:28
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
@@ -767,7 +771,7 @@ msgstr "Suomenlinna"
 msgid "Tags"
 msgstr "Taggar"
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Text"
 
@@ -807,11 +811,11 @@ msgstr "Titel"
 msgid "Toggle submenu for %s"
 msgstr "Växla undermenyn för %s"
 
-#: customizer/config/choices.php:30
+#: customizer/config/choices.php:29
 msgid "Tram"
 msgstr "Spårvagn"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:63
+#: customizer/config/choices.php:60 functions/modules/social.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -832,7 +836,7 @@ msgstr "Sök"
 msgid "Visible sections"
 msgstr "Synliga sektioner"
 
-#: customizer/config/choices.php:68
+#: customizer/config/choices.php:67
 msgid "Warning"
 msgstr "Varning"
 
