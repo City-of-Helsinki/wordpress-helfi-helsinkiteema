@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 06:15+0000\n"
+"POT-Creation-Date: 2023-04-24 08:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -382,7 +382,7 @@ msgstr ""
 msgid "Gold"
 msgstr ""
 
-#: block-editor/metaboxes.php:30
+#: block-editor/metaboxes.php:36
 msgid "Heading"
 msgstr ""
 
@@ -737,7 +737,7 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: block-editor/metaboxes.php:38 customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
 msgid "Text"
 msgstr ""
 
