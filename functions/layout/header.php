@@ -91,15 +91,15 @@ function helsinki_topbar_branding( string $language = 'fi' ) {
 
 function helsinki_topbar_feedback( string $language = 'fi' ) {
 	$feedback = array(
-		'fi' => 'https://www.hel.fi/helsinki/fi/kaupunki-ja-hallinto/osallistu-ja-vaikuta/palaute',
-		'sv' => 'https://www.hel.fi/helsinki/sv/stad-och-forvaltning/delta/feedback',
-		'en' => 'https://www.hel.fi/helsinki/en/administration/participate/feedback',
+		'fi' => 'https://palautteet.hel.fi/',
+		'sv' => 'https://palautteet.hel.fi/sv',
+		'en' => 'https://palautteet.hel.fi/en',
 	);
 
 	return apply_filters(
 		'helsinki_topbar_branding',
 		array(
-			'title' => __( 'Feedback', 'helsinki-universal' ),
+			'title' => __( 'Give feedback', 'helsinki-universal' ),
 			'url' => $feedback[$language] ?? $feedback['fi'],
 		),
 		$language,
@@ -175,7 +175,19 @@ if ( ! function_exists('helsinki_header_mobile_panel') ) {
 
 if ( ! function_exists('helsinki_header_mobile_links') ) {
 	function helsinki_header_mobile_links() {
-		get_template_part('partials/header/mobile-links');
+		$lang = function_exists('pll_current_language') ? pll_current_language('slug') : substr( get_bloginfo('language'), 0, 2 );
+		$name = apply_filters( 'helsinki_topbar_name', null );
+		$args = apply_filters(
+			'helsinki_topbar_args',
+			array(
+				'branding' => helsinki_topbar_branding( $lang ),
+				'feedback' => helsinki_topbar_feedback( $lang ),
+			),
+			$name,
+			$lang
+		);
+
+		get_template_part('partials/header/mobile-links', null, $args);
 	}
 }
 
