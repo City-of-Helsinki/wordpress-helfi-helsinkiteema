@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-04-24 08:51+0000\n"
+"PO-Revision-Date: 2023-04-25 05:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -364,10 +364,6 @@ msgstr "Syötteen lyhytkoodi"
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
-#: functions/layout/header.php:102 partials/header/mobile-links.php:7
-msgid "Feedback"
-msgstr "Palaute"
-
 #: partials/loop/pagination.php:27
 msgid "First page"
 msgstr "Ensimmäinen sivu"
@@ -391,7 +387,7 @@ msgstr "%s"
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
-#: partials/content/not-found.php:10
+#: functions/layout/header.php:102 partials/content/not-found.php:10
 msgid "Give feedback"
 msgstr "Anna palautetta"
 
