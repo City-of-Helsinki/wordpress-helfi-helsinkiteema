@@ -91,6 +91,10 @@ function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
 add_filter( 'widget_output', 'helsinki_sidebar_filter_widgets', 10, 4 );
 
 function helsinki_sidebar_filter_rss_links($output) {
+    if (empty($output)) {
+      return $output;
+    }
+
     $domIcon = new DOMDocument();
     $domIcon->encoding = 'utf-8';
     $domIcon->loadXML(helsinki_get_svg_icon('link-external'));
