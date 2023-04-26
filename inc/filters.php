@@ -58,8 +58,8 @@ add_filter('comment_form_default_fields', 'helsinki_comment_form_default_fields'
   */
 function helsinki_widget_tag_cloud_args( $default ) {
   $edit = array(
-    'smallest'  => '13',
-    'largest'   => '13',
+    'smallest'  => '14',
+    'largest'   => '14',
     'unit'      => 'px',
     'separator' => '',
     'number'    => 100,
