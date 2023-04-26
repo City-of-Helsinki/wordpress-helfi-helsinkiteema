@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-12 06:48+0000\n"
+"POT-Creation-Date: 2023-04-24 12:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -347,10 +347,6 @@ msgstr ""
 msgid "Feed URL"
 msgstr ""
 
-#: functions/layout/header.php:102 partials/header/mobile-links.php:7
-msgid "Feedback"
-msgstr ""
-
 #: partials/loop/pagination.php:27
 msgid "First page"
 msgstr ""
@@ -372,6 +368,10 @@ msgstr ""
 
 #: setup/assets.php:129
 msgid "Gallery images"
+msgstr ""
+
+#: functions/layout/header.php:102
+msgid "Give feedback"
 msgstr ""
 
 #: integrations/maintenance.php:105
