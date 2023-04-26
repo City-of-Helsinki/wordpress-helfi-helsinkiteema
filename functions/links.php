@@ -6,6 +6,7 @@ add_filter( 'helsinki_sidebar_output', 'helsinki_add_links_symbols', 100, 1 );
 add_filter( 'render_block', 'helsinki_links_parse_blocks', 100, 2 );
 add_filter( 'helsinki_header_output', 'helsinki_add_links_symbols', 100, 1 );
 add_filter( 'helsinki_footer_output', 'helsinki_add_links_symbols', 100, 1 );
+add_filter( 'helsinki_404_output', 'helsinki_add_links_symbols', 100, 1 );
 
 function helsinki_add_links_symbols($content = '') {
     preg_match_all('/(?<link>\s*href="(?<href>[^"]*)"[^>]*>)(?<content>(?:(?!<div|<\/a|<\/svg|<img).)*(?<svginner><\/svg>)?)\s*(?<endtag><\/a>)(?<svgafter><svg)?/s', $content, $matches);
@@ -76,7 +77,8 @@ function helsinki_links_parse_blocks( $block_content = '', $block = [] ) {
 		'core/table',
 		null,
 		'helsinki-linkedevents/grid',
-		'helsinki-tpr/unit'
+		'helsinki-tpr/unit',
+        'hds-wp/rss-feed'
 	];
 
 	if ( ! in_array( $block['blockName'], $blocksToParse, true ) ) {

@@ -9,7 +9,9 @@ do_action('helsinki_not_found_before');
 
 ?>
 
-<div class="content">
+<?php ob_start(); ?>
+
+<div class="content has-light-gray-background-color">
 
 	<?php
 
@@ -33,7 +35,7 @@ do_action('helsinki_not_found_before');
 
 		?>
 
-		<div class="content__main">
+		<div class="">
 
 			<?php
 
@@ -70,6 +72,11 @@ do_action('helsinki_not_found_before');
 	?>
 
 </div>
+
+<?php 
+      $error404 = ob_get_clean();
+      echo apply_filters( 'helsinki_404_output', $error404);
+?>
 
 <?php
 

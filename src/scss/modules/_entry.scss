@@ -169,7 +169,7 @@ ul.posts {
 	}
 	// --highlight
 
-	&--feed {
+	&.entry--feed {
 		border-left: 4px $default-border-style var(--primary-color);
 		padding-left: spacing('s');
 		margin-bottom: spacing('m');
