@@ -12,7 +12,8 @@
         .sidebar__post-meta__text {
 
             p {
-                padding: spacing('l') spacing('s');
+                padding: spacing('m') spacing('s');
+                margin-bottom: spacing('s');
                 background-color: var(--secondary-color);
             }
 
