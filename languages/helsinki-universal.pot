@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 05:29+0000\n"
+"POT-Creation-Date: 2023-05-02 06:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -283,7 +283,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:148
+#: inc/filters.php:152
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
