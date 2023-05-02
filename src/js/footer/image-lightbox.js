@@ -38,8 +38,6 @@ function helsinkiGalleryLightbox( config ) {
 
 		initGalleryImages( figures );
 
-		console.log(gallery);
-		console.log(figures);
 		let lightbox = createLightbox( gallery, figures );
 		lightbox.addEventListener( 'click', clickLightbox );
 
@@ -156,7 +154,6 @@ function helsinkiGalleryLightbox( config ) {
 		toggleActive( lightbox, true );
 		toggleAriaExpanded( lightboxCloseButton( lightbox ), true );
 
-		console.log(clickedImage);
 		currentActive = lightbox;
 		currentClickedElement = clickedElement;
 		trapFocus(currentActive);
@@ -193,7 +190,6 @@ function helsinkiGalleryLightbox( config ) {
 	  * Elements
 	  */
 	function galleryFigures( gallery ) {
-		console.log(gallery.classList.contains('wp-block-image'));
 		if (gallery.classList.contains('wp-block-image') || (gallery.classList.contains('wp-caption') && gallery.querySelector('img'))) {
 			return [gallery];
 		}
@@ -214,7 +210,6 @@ function helsinkiGalleryLightbox( config ) {
 	}
 
 	function currentGallery( galleryItem ) {
-		console.log(galleryItem);
 		return galleryItem.closest( '.wp-block-gallery, .gallery' ) ? galleryItem.closest( '.wp-block-gallery, .gallery' ) : galleryItem.closest('figure');
 	}
 
@@ -223,7 +218,6 @@ function helsinkiGalleryLightbox( config ) {
 	}
 
 	function currentGalleryLightBox( gallery ) {
-		console.log(gallery);
 		return document.getElementById(
 			gallery.getAttribute( 'data-lightbox-id' )
 		);
@@ -463,7 +457,6 @@ function helsinkiGalleryLightbox( config ) {
 	}
 	function freeFocus(element, clickedElement) {
 		element.removeEventListener('keydown', element.kd);
-		console.log(clickedElement);
 		clickedElement.focus();
 	}
 
