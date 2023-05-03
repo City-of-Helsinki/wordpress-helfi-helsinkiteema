@@ -32,6 +32,7 @@ function helsinki_files()
 		'block-editor' => [
 			'config' => [
 				'meta',
+				'settings',
 			],
 			'functions',
 			'init',
