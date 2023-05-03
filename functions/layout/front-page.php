@@ -181,11 +181,13 @@ function helsinki_front_page_recent_posts_grid($args = array()) {
 }
 
 function helsinki_front_page_recent_posts_more($args = array()) {
-	get_template_part(
-		'partials/front-page/recent-posts/more',
-		null,
-		$args
-	);
+	if ( isset($args['page_for_posts']) && !empty($args['page_for_posts']) ) {
+		get_template_part(
+			'partials/front-page/recent-posts/more',
+			null,
+			$args
+		);
+	}
 }
 
 /**
