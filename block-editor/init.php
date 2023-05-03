@@ -1,5 +1,7 @@
 <?php
 
+add_filter( 'block_editor_settings_all', 'helsinki_block_editor_settings', 10);
+
 add_action( 'init', 'helsinki_block_editor_meta' );
 function helsinki_block_editor_meta() {
 	foreach ( helsinki_block_editor_meta_config() as $config ) {
