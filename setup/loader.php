@@ -16,6 +16,7 @@ function helsinki_files()
 			'config' => [
 				'blog',
 				'choices',
+				'feedback-buttons',
 				'footer',
 				'front-page',
 				'general',
@@ -81,6 +82,7 @@ function helsinki_files()
 			],
 		    'modules' => [
 				'comments',
+				'feedback',
 				'load-more',
 				'menu',
 				'notifications',
