@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-04-26 08:11+0000\n"
+"PO-Revision-Date: 2023-05-08 11:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -169,6 +169,11 @@ msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr "Blogi"
 
+#: customizer/config.php:103
+msgctxt "Customizer panel title"
+msgid "Feedback buttons"
+msgstr "Palautepainikkeet"
+
 #: customizer/config.php:90
 msgctxt "Customizer panel title"
 msgid "Footer"
@@ -209,6 +214,11 @@ msgstr "Murupolku"
 msgctxt "Customizer section title"
 msgid "Entries"
 msgstr "Julkaisut"
+
+#: customizer/config/feedback-buttons.php:9
+msgctxt "Customizer section title"
+msgid "Feedback"
+msgstr "Palaute"
 
 #: customizer/config/header.php:8
 msgctxt "Customizer section title"
@@ -339,6 +349,7 @@ msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
 "."
 
+#: customizer/config/feedback-buttons.php:14
 #: customizer/config/notifications.php:24 customizer/config/settings.php:58
 #: customizer/config/sidebar.php:15
 msgid "Enabled"
