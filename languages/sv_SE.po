@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-04-26 06:27+0000\n"
+"PO-Revision-Date: 2023-05-09 09:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -376,7 +376,7 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
@@ -664,7 +664,7 @@ msgstr "Relaterat innehåll"
 msgid "Related posts count"
 msgstr "Relaterade inlägg räknas"
 
-#: functions/layout/front-page.php:225
+#: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "Contents are automatically fetched from %s."
@@ -704,8 +704,8 @@ msgid "Section title"
 msgstr "Avsnittstitel"
 
 #: partials/front-page/recent-posts/more.php:5
-msgid "See all news"
-msgstr "Se alla nyheter"
+msgid "See all articles"
+msgstr "Se alla artiklar"
 
 #: functions/layout/loop.php:20
 msgid "Select category"
