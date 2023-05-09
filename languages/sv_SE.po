@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2023-05-09 09:50+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv_SE\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Plural-Forms: nplurals=2; plural=n != 1;"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -109,8 +110,8 @@ msgid ""
 "editor to setup the front page content. Remember to keep the Content-"
 "checkbox active."
 msgstr ""
-"Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och "
-"släpp. \n"
+"Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och släpp. "
+"\n"
 "\n"
 "Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
 "framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
@@ -299,7 +300,7 @@ msgstr "Yoast SEO krävs för att installeras"
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:148
+#: inc/filters.php:152
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -385,7 +386,7 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
@@ -673,7 +674,7 @@ msgstr "Relaterat innehåll"
 msgid "Related posts count"
 msgstr "Relaterade inlägg räknas"
 
-#: functions/layout/front-page.php:225
+#: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "Contents are automatically fetched from %s."
@@ -690,6 +691,7 @@ msgid "Scheme"
 msgstr "Schema"
 
 #: functions/layout/view.php:42 partials/header/search.php:2
+#: partials/header/search.php:2
 msgid "Search"
 msgstr "Sök"
 
@@ -712,8 +714,8 @@ msgid "Section title"
 msgstr "Avsnittstitel"
 
 #: partials/front-page/recent-posts/more.php:5
-msgid "See all news"
-msgstr "Se alla nyheter"
+msgid "See all articles"
+msgstr "Se alla artiklar"
 
 #: functions/layout/loop.php:20
 msgid "Select category"

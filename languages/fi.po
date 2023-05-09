@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2023-05-09 09:49+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Suomi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fi\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Plural-Forms: nplurals=2; plural=n != 1;"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -300,7 +301,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:148
+#: inc/filters.php:152
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -344,8 +345,8 @@ msgstr "Näytä avainsanat"
 #: customizer/config/front-page.php:54
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
-"Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > "
-"{etusivu}."
+"Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
+"."
 
 #: customizer/config/feedback-buttons.php:14
 #: customizer/config/notifications.php:24 customizer/config/settings.php:58
@@ -386,7 +387,7 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
@@ -676,7 +677,7 @@ msgstr "Suositeltu sisältö"
 msgid "Related posts count"
 msgstr "Suositeltujen artikkelien lukumäärä"
 
-#: functions/layout/front-page.php:225
+#: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "Contents are automatically fetched from %s."
@@ -693,6 +694,7 @@ msgid "Scheme"
 msgstr "Tyyli"
 
 #: functions/layout/view.php:42 partials/header/search.php:2
+#: partials/header/search.php:2
 msgid "Search"
 msgstr "Haku"
 
@@ -715,7 +717,7 @@ msgid "Section title"
 msgstr "Osion otsikko"
 
 #: partials/front-page/recent-posts/more.php:5
-msgid "See all news"
+msgid "See all articles"
 msgstr "Katso kaikki artikkelit"
 
 #: functions/layout/loop.php:20
