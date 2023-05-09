@@ -2,7 +2,7 @@
 	<span class="link-wrap">
 		<a class="has-icon has-icon--after hds-button" href="<?php echo esc_url(get_permalink($args['page_for_posts'])); ?>">
 			<?php
-				esc_html_e('See all news', 'helsinki-universal');
+				esc_html_e('See all articles', 'helsinki-universal');
 				helsinki_svg_icon('arrow-right');
 			?>
 		</a>
