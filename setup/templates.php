@@ -81,6 +81,7 @@ function helsinki_setup_templates() {
 	) {
 
 		if ( helsinki_sidebar_compatible_page_template() ) {
+			add_action('helsinki_sidebar', 'helsinki_sidebar_post_meta', 10);
 			add_action('helsinki_sidebar', 'helsinki_sidebar_widgets', 10, 2);
 		}
 	}
@@ -299,9 +300,7 @@ function helsinki_setup_templates() {
 				add_action('helsinki_content_article_meta', 'helsinki_content_article_author', 20);
 			}
 
-			if ( apply_filters( 'helsinki_blog_single_date', false ) ) {
-				add_action('helsinki_content_article_meta', 'helsinki_content_article_date', 30);
-			}
+			add_action('helsinki_content_article_meta', 'helsinki_content_article_date', 30);
 
 			if ( apply_filters( 'helsinki_blog_single_updated', false ) ) {
 				add_action('helsinki_content_article_meta', 'helsinki_content_article_updated', 40);

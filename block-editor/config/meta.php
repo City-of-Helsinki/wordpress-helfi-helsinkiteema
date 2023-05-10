@@ -104,6 +104,26 @@ function helsinki_block_editor_meta_config() {
 					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_bool',
 				),
 			),
+			array(
+				'type' => 'page',
+				'key' => 'sidebar_heading',
+				'args' => array(
+					'show_in_rest' => true,
+					'single' => true,
+					'type' => 'string',
+					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_string',
+				),
+			),
+			array(
+				'type' => 'page',
+				'key' => 'sidebar_content',
+				'args' => array(
+					'show_in_rest' => true,
+					'single' => true,
+					'type' => 'string',
+					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_wp_editor',
+				),
+			),
 		)
 	);
 }

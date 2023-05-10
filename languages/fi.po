@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-04-26 08:11+0000\n"
+"PO-Revision-Date: 2023-05-10 06:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.0; wp-6.1"
+"X-Loco-Version: 2.6.0; wp-6.2"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -116,7 +116,7 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
@@ -292,7 +292,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:128
+#: inc/filters.php:152
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -377,13 +377,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -402,6 +402,10 @@ msgstr "Siirry hel.fi-sivustolle"
 #: customizer/config/choices.php:20
 msgid "Gold"
 msgstr "Kulta"
+
+#: block-editor/metaboxes.php:36
+msgid "Heading"
+msgstr "Otsikko"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -526,7 +530,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr "Seuraava"
@@ -616,7 +620,7 @@ msgstr "hakutulosta"
 msgid "Posts Feed"
 msgstr "Artikkelisyöte"
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -631,10 +635,6 @@ msgstr "Julkaistu"
 #: partials/loop/entry-grid.php:8
 msgid "Published:"
 msgstr "Julkaistu:"
-
-#: partials/content/parts/related.php:3
-msgid "Read also these"
-msgstr "Lue myös nämä"
 
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
 msgid "Read more"
@@ -667,7 +667,7 @@ msgstr "Suositeltu sisältö"
 msgid "Related posts count"
 msgstr "Suositeltujen artikkelien lukumäärä"
 
-#: functions/layout/front-page.php:225
+#: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "Contents are automatically fetched from %s."
@@ -707,8 +707,8 @@ msgid "Section title"
 msgstr "Osion otsikko"
 
 #: partials/front-page/recent-posts/more.php:5
-msgid "See all news"
-msgstr "Katso kaikki uutiset"
+msgid "See all articles"
+msgstr "Katso kaikki artikkelit"
 
 #: functions/layout/loop.php:20
 msgid "Select category"
@@ -743,6 +743,10 @@ msgstr "Näytä lisää"
 msgid "Show posts from a category"
 msgstr "Näytä artikkeleita kategoriasta"
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr "Sivupalkki"
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr "Hopea"
@@ -767,7 +771,7 @@ msgstr "Suomenlinna"
 msgid "Tags"
 msgstr "Avainsanat"
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Teksti"
 
@@ -839,6 +843,10 @@ msgstr "Varoitus"
 #: partials/content/none.php:5
 msgid "Worse luck!"
 msgstr "Voi harmi!"
+
+#: partials/content/parts/related.php:3
+msgid "You might be interested in"
+msgstr "Sinua voisi kiinnostaa"
 
 #: partials/content/parts/comment.php:19
 msgid "Your comment is awaiting moderation."
