@@ -48,6 +48,13 @@ function helsinki_hero_has_diagonal( int $id = 0 ) {
 	return 'diagonal' === helsinki_hero_layout_style_meta( $id );
 }
 
+function helsinki_hero_has_image_below( int $id = 0 ) {
+	if ( ! $id ) {
+		$id = get_the_ID();
+	}
+	return 'image-below' === helsinki_hero_layout_style_meta( $id );
+}
+
 function helsinki_hero_layout_style( int $id = 0 ) {
 	if ( ! $id ) {
 		$id = get_the_ID();
@@ -262,6 +269,12 @@ function helsinki_hero_actions() {
 			add_filter( 'helsinki_hero_image_styles', 'helsinki_hero_background_image' );
 
 			add_filter( 'helsinki_hero_koros_flipped', '__return_false' );
+		} else if ( helsinki_hero_has_image_below() ) {
+			add_filter( 'helsinki_hero_class_full_width', '__return_true' );
+
+			add_action( 'helsinki_hero_after', 'helsinki_hero_decoration_arrow', 30 );
+			add_action( 'helsinki_hero_after', 'helsinki_hero_image', 20 );
+			add_action( 'helsinki_hero_image', 'helsinki_hero_image_element', 10 );
 		} else {
 			if ( ! helsinki_hero_has_diagonal() ) {
 				add_action( 'helsinki_hero', 'helsinki_hero_image', 20 );

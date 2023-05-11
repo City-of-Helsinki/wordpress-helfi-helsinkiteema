@@ -6,6 +6,7 @@ function helsinki_block_editor_hero_style_options() {
 		'background-image' => esc_html__( 'Background image', 'helsinki-universal' ),
 		'image-right' => esc_html__( 'Image on right', 'helsinki-universal' ),
 		'image-left' => esc_html__( 'Image on left', 'helsinki-universal' ),
+		'image-below' => esc_html__( 'Image below', 'helsinki-universal' ),
 	);
 }
 
