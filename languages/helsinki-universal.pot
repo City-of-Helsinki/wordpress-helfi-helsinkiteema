@@ -3,9 +3,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2023-05-16 08:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Bus"
 msgstr ""
 
-#: functions/layout/loop.php:107
+#: functions/layout/loop.php:110
 msgid "Categories"
 msgstr ""
 
@@ -385,6 +385,7 @@ msgid "Gallery images"
 msgstr ""
 
 #: functions/layout/header.php:102 partials/content/not-found.php:10
+#: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""
 
@@ -536,12 +537,12 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: partials/content/none.php:14
+#: partials/content/none.php:25
 msgid "No posts have been published yet."
 msgstr ""
 
-#: partials/content/none.php:9
-msgid "No posts matching your search could be found."
+#: partials/content/none.php:19
+msgid "No results found."
 msgstr ""
 
 #: functions/layout/view.php:44
@@ -594,7 +595,7 @@ msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr ""
 
-#: partials/content/none.php:10
+#: partials/content/none.php:20
 msgid "Please try using another search term or phrase."
 msgstr ""
 
@@ -663,6 +664,10 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
+#: partials/content/none.php:7 partials/search/title.php:6
+msgid "Results for keyword"
+msgstr ""
+
 #: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
@@ -683,8 +688,8 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: partials/search/title.php:6
-msgid "Search results"
+#: partials/search/links.php:15
+msgid "Search on hel.fi"
 msgstr ""
 
 #: searchform.php:7
@@ -761,7 +766,7 @@ msgstr ""
 msgid "Suomenlinna"
 msgstr ""
 
-#: functions/layout/loop.php:135
+#: functions/layout/loop.php:138
 msgid "Tags"
 msgstr ""
 
@@ -779,7 +784,7 @@ msgid ""
 "language."
 msgstr ""
 
-#: partials/content/none.php:12
+#: partials/content/none.php:23
 msgid "This author has not published any posts yet."
 msgstr ""
 
@@ -828,11 +833,11 @@ msgstr ""
 msgid "Warning"
 msgstr ""
 
-#: partials/content/none.php:5
+#: partials/content/none.php:14
 msgid "Worse luck!"
 msgstr ""
 
-#: partials/content/parts/related.php:3
+#: partials/search/links.php:3 partials/content/parts/related.php:3
 msgid "You might be interested in"
 msgstr ""
 

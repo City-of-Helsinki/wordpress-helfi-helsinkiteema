@@ -127,6 +127,18 @@ ul.posts {
 			margin-bottom: spacing(layout-s);
 		}
 
+		.entry__content {
+
+			.entry__title {
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+
+		}
+
 		@include breakpoint(m) {
 			flex-direction: row-reverse;
 
