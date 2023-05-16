@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-05-10 06:13+0000\n"
+"PO-Revision-Date: 2023-05-16 09:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -90,7 +90,7 @@ msgstr "Murupolku"
 msgid "Bus"
 msgstr "Bussi"
 
-#: functions/layout/loop.php:107
+#: functions/layout/loop.php:110
 msgid "Categories"
 msgstr "Kategoriat"
 
@@ -388,6 +388,7 @@ msgid "Gallery images"
 msgstr "Galleriakuvat"
 
 #: functions/layout/header.php:102 partials/content/not-found.php:10
+#: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Anna palautetta"
 
@@ -539,13 +540,13 @@ msgstr "Seuraava"
 msgid "Next page"
 msgstr "Seuraava sivu"
 
-#: partials/content/none.php:14
+#: partials/content/none.php:25
 msgid "No posts have been published yet."
 msgstr "Yhtään artikkelia ei ole vielä julkaistu."
 
-#: partials/content/none.php:9
-msgid "No posts matching your search could be found."
-msgstr "Hakuasi vastaavia tuloksia ei löytynyt."
+#: partials/content/none.php:19
+msgid "No results found."
+msgstr "Ei hakutuloksia."
 
 #: functions/layout/view.php:44
 msgid "Not Found"
@@ -598,7 +599,7 @@ msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
 
-#: partials/content/none.php:10
+#: partials/content/none.php:20
 msgid "Please try using another search term or phrase."
 msgstr "Ole hyvä ja kokeile hakea jollain toisella hakusanalla tai -lauseella."
 
@@ -667,6 +668,10 @@ msgstr "Suositeltu sisältö"
 msgid "Related posts count"
 msgstr "Suositeltujen artikkelien lukumäärä"
 
+#: partials/content/none.php:7 partials/search/title.php:6
+msgid "Results for keyword"
+msgstr "Hakutulokset hakusanalle"
+
 #: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
@@ -688,9 +693,9 @@ msgstr "Tyyli"
 msgid "Search"
 msgstr "Haku"
 
-#: partials/search/title.php:6
-msgid "Search results"
-msgstr "Hakutulokset"
+#: partials/search/links.php:15
+msgid "Search on hel.fi"
+msgstr "Etsi hel.fistä"
 
 #: searchform.php:7
 msgctxt "search submit"
@@ -767,7 +772,7 @@ msgstr "Kesä"
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
-#: functions/layout/loop.php:135
+#: functions/layout/loop.php:138
 msgid "Tags"
 msgstr "Avainsanat"
 
@@ -787,7 +792,7 @@ msgid ""
 msgstr ""
 "Ilmoitus näytetään vain, kun sivustoa tarkastellaan valitulla kielellä."
 
-#: partials/content/none.php:12
+#: partials/content/none.php:23
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
 
@@ -840,11 +845,11 @@ msgstr "Näytettävät osiot"
 msgid "Warning"
 msgstr "Varoitus"
 
-#: partials/content/none.php:5
+#: partials/content/none.php:14
 msgid "Worse luck!"
 msgstr "Voi harmi!"
 
-#: partials/content/parts/related.php:3
+#: partials/search/links.php:3 partials/content/parts/related.php:3
 msgid "You might be interested in"
 msgstr "Sinua voisi kiinnostaa"
 
