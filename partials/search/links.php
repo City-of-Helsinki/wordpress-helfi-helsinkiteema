@@ -5,14 +5,14 @@
             <li class="links-list__item">
                 <div class="link">            
                     <a href="<?php esc_html_e( $args['feedback']); ?>" class="link__title_link">
-                        <h3 class="link___title"><span><?php esc_html_e('Give feedback', 'helsinki-universal'); ?></span><?php helsinki_svg_icon('link-external'); ?></h3>
+                        <h3 class="link___title"><span><?php esc_html_e('Give feedback', 'helsinki-universal'); ?></span><?php echo helsinki_get_svg_icon('link-external', '', __('(Link leads to external service)', 'helsinki-universal')); ?></h3>
                     </a>
                 </div>
             </li>
             <li class="links-list__item">
                 <div class="link">
                     <a href="<?php esc_html_e( $args['search_target']); ?>" class="link__title_link">
-                        <h3 class="link___title"><span><?php esc_html_e('Search on hel.fi', 'helsinki-universal'); ?></span><?php helsinki_svg_icon('link-external'); ?></h3>
+                        <h3 class="link___title"><span><?php esc_html_e('Search on hel.fi', 'helsinki-universal'); ?></span><?php echo helsinki_get_svg_icon('link-external', '', __('(Link leads to external service)', 'helsinki-universal')); ?></h3>
                     </a>
                 </div>
             </li>
