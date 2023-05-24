@@ -91,7 +91,7 @@ function helsinki_topbar_branding( string $language = 'fi' ) {
 
 function helsinki_topbar_feedback( string $language = 'fi' ) {
 	$feedback = array(
-		'fi' => 'https://palautteet.hel.fi/',
+		'fi' => 'https://palautteet.hel.fi/fi',
 		'sv' => 'https://palautteet.hel.fi/sv',
 		'en' => 'https://palautteet.hel.fi/en',
 	);
