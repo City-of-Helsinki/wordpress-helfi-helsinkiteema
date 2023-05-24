@@ -1,7 +1,7 @@
 <?php
 
 function helsinki_content_article_related($post_type = null) {
-	$posts_per_page = helsinki_theme_mod( 'helsinki_blog_single', 'related_count', 3 );
+	$posts_per_page = helsinki_theme_mod( 'helsinki_blog_single', 'related_count', 4 );
 	$post_id = array(get_the_ID());
 	$query = helsinki_content_article_related_posts_query(
 		$post_id,
@@ -11,6 +11,12 @@ function helsinki_content_article_related($post_type = null) {
 			},
 			get_the_category()
 		),
+		!empty(get_the_tags()) ? array_map(
+			function($tag) {
+				return $tag->term_id;
+			},
+			get_the_tags()
+		) : array(),
 		$posts_per_page
 	);
 
@@ -27,6 +33,7 @@ function helsinki_content_article_related($post_type = null) {
 					$query->posts
 				)
 			),
+			array(),
 			array(),
 			$posts_per_page - $query->post_count
 		);
@@ -49,20 +56,34 @@ function helsinki_content_article_related($post_type = null) {
 	}
 }
 
-function helsinki_content_article_related_posts_query( array $post_id, array $terms = array(), int $posts_per_page = 4) {
+function helsinki_content_article_related_posts_query( array $post_id, array $cat_terms = array(), array $key_terms = array(), int $posts_per_page = 4) {
 	$args = array(
 		'post__not_in' => $post_id,
 		'post_type' => 'post',
 		'posts_status' => 'publish',
 		'posts_per_page' => $posts_per_page,
+		'orderby' => 'date',
+		'tax_query' => array(
+			'relation' => 'OR',
+		),
 	);
 
-	if ( $terms ) {
-		$args['tax_query'] = array(
+	if ( $cat_terms ) {
+		$args['tax_query'][] = array(
 			array(
 				'taxonomy' => 'category',
 				'field' => 'term_id',
-				'terms' => $terms,
+				'terms' => $cat_terms,
+			),
+		);
+	}
+
+	if ( $key_terms ) {
+		$args['tax_query'][] = array(
+			array(
+				'taxonomy' => 'post_tag',
+				'field' => 'term_id',
+				'terms' => $key_terms,
 			),
 		);
 	}

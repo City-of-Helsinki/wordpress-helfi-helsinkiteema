@@ -1,11 +1,15 @@
 <?php
 
+add_filter( 'block_editor_settings_all', 'helsinki_block_editor_settings', 10);
+
 add_action( 'init', 'helsinki_block_editor_meta' );
 function helsinki_block_editor_meta() {
 	foreach ( helsinki_block_editor_meta_config() as $config ) {
 		register_post_meta(	$config['type'], $config['key'], $config['args'] );
 	}
 }
+
+add_action('add_meta_boxes', 'helsinki_block_editor_add_metaboxes');
 
 add_action('enqueue_block_editor_assets', 'helsinki_block_editor_scripts');
 function helsinki_block_editor_scripts() {
@@ -29,6 +33,19 @@ function helsinki_block_editor_scripts() {
 			'wp-compose',
     	)
 	);
+
+	wp_enqueue_script(
+		'helsinki-editor-metaboxes',
+		get_template_directory_uri() . '/block-editor/scripts/metaboxes.js',
+		array(
+			'jquery',
+			'jquery-ui-core',
+			'jquery-ui-sortable',
+    	), 
+		null, 
+		true
+	);
+
 
 	wp_add_inline_script(
 		'helsinki-sidebar-plugin',

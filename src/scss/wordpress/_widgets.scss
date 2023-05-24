@@ -162,35 +162,43 @@
     // --widget_recent_comments
 
     &--widget_recent_entries {
+        font-size: rem-calc(20);
 
-        ul {
+        .widget__title {
+            margin-bottom: 0 !important;
+        }
 
-            li {
-                border-left: 4px $default-border-style var(--primary-color);
-                padding-left: spacing('s');
+        li {
+            padding-bottom: 8px;
+            padding-top: 16px;
+            margin-top: 0 !important;
 
-                + li {
-                    margin-top: spacing('l');
-                }
+            &:not(:first-child) {
+                border-top: 1px solid var(--color-black-20);
+            }
 
-                a {
-                    font-size: $body-font-size;
-                    font-weight: $global-font-weight-medium;
-                    text-decoration: none;
+            a {
+                font-weight: $global-font-weight-medium;
+                text-decoration: none;
+                font-size: rem-calc(20);
+                margin-bottom: spacing('2-xs');
 
-                    &:focus,
-                    &:hover {
-                        color: inherit;
-                        text-decoration: underline;
-                    }
-                }
-
-                .post-date {
-                    color: $dark-gray;
-                    font-size: rem-calc(14);
-                    margin-top: spacing('2-xs');
+                &:hover {
+                    text-decoration: underline;
                 }
             }
+
+            .post-date {
+                color: $dark-gray;
+                font-size: rem-calc(16);
+                display: inline-block;
+                margin-bottom: spacing('2-xs');
+            }
+
+            *:last-child {
+                margin-bottom: 0;
+            }
+
         }
     }
     // --widget_recent_entries
@@ -318,7 +326,7 @@
 
 		&__title {
 			border-bottom: 2px $default-border-style $black;
-			font-weight: $global-font-weight-normal;
+			font-weight: $global-font-weight-medium;
 			margin-bottom: spacing(m);
 			padding-bottom: spacing(m);
 		}

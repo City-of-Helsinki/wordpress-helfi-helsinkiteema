@@ -111,7 +111,7 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr ""
@@ -283,7 +283,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:128
+#: inc/filters.php:152
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -366,13 +366,13 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
 msgstr ""
 
@@ -390,6 +390,10 @@ msgstr ""
 
 #: customizer/config/choices.php:20
 msgid "Gold"
+msgstr ""
+
+#: block-editor/metaboxes.php:36
+msgid "Heading"
 msgstr ""
 
 #. Name of the theme
@@ -515,7 +519,7 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr ""
@@ -604,7 +608,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr ""
 
@@ -618,10 +622,6 @@ msgstr ""
 
 #: partials/loop/entry-grid.php:8
 msgid "Published:"
-msgstr ""
-
-#: partials/content/parts/related.php:3
-msgid "Read also these"
 msgstr ""
 
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
@@ -655,7 +655,7 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: functions/layout/front-page.php:225
+#: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "Contents are automatically fetched from %s."
@@ -695,7 +695,7 @@ msgid "Section title"
 msgstr ""
 
 #: partials/front-page/recent-posts/more.php:5
-msgid "See all news"
+msgid "See all articles"
 msgstr ""
 
 #: functions/layout/loop.php:20
@@ -730,6 +730,10 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr ""
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr ""
@@ -754,7 +758,7 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
 msgid "Text"
 msgstr ""
 
@@ -819,6 +823,10 @@ msgstr ""
 
 #: partials/content/none.php:5
 msgid "Worse luck!"
+msgstr ""
+
+#: partials/content/parts/related.php:3
+msgid "You might be interested in"
 msgstr ""
 
 #: partials/content/parts/comment.php:19
