@@ -80,3 +80,21 @@ div {
 		}
 	}
 }
+
+.has-sidebar {
+	.front-page-section {
+	
+		&.posts {
+
+			.grid {
+				@include breakpoint('l') {
+					$gutter: map-get($gutters, 'l');
+
+					.grid__column {
+						width: calc(50% - #{$gutter} / 2);
+					}
+				}
+			}
+		}
+	}
+}
