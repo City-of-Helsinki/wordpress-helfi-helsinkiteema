@@ -33,8 +33,8 @@ if ( ! function_exists('helsinki_entry') ) {
 }
 
 if ( ! function_exists('helsinki_grid_entry') ) {
-	function helsinki_grid_entry() {
-		get_template_part('partials/loop/entry', 'grid');
+	function helsinki_grid_entry($args = array()) {
+		get_template_part('partials/loop/entry', 'grid', $args);
 	}
 }
 
@@ -104,18 +104,26 @@ function helsinki_entry_image_classes( bool $icon = false ) {
 	return $class;
 }
 
-function helsinki_entry_image( $post = null ) {
-	echo helsinki_get_entry_image( $post );
+function helsinki_entry_has_placeholder_class($args = array()) {
+	if (isset($args['attributes']['className'])) {
+		//if className contains "is-style-without-image" then return true
+		return strpos($args['attributes']['className'], 'is-style-without-image') !== false;
+	}
+	return false;
 }
 
-function helsinki_get_entry_image( $post = null ) {
+function helsinki_entry_image( $post = null, $force_placeholder = false ) {
+	echo helsinki_get_entry_image( $post, $force_placeholder );
+}
+
+function helsinki_get_entry_image( $post = null, $force_placeholder = false ) {
 	$image = helsinki_get_entry_image_html(
 		$post ? $post : get_post(),
 		helsinki_entry_image_size(),
 		array()
 	);
 
-	if ( ! $image ) {
+	if ( ! $image || $force_placeholder ) {
 		return helsinki_get_entry_image_with_wrap(
 			helsinki_entry_image_icon(),
 			helsinki_entry_image_classes(true)
