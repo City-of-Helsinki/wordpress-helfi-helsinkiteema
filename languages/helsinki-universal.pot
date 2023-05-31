@@ -411,6 +411,10 @@ msgid ""
 "translate the notice."
 msgstr ""
 
+#: block-editor/config/meta.php:9
+msgid "Image below"
+msgstr ""
+
 #: block-editor/config/meta.php:8
 msgid "Image on left"
 msgstr ""
