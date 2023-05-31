@@ -33,10 +33,10 @@ do_action( 'sbi_before_feed', $posts, $settings );
 //sbi_header_html( $settings, $header_data, 'outside' );
 ?>
 
-<div id="sb_instagram" <?php echo $feed_classes . $feed_styles; ?> data-feedid="<?php echo esc_attr( $feed_id ); ?>" <?php echo $feed_atts; ?> data-shortcode-atts="<?php echo esc_attr( $shortcode_atts ); ?>" <?php echo $other_atts; ?> aria-hidden="true">
+<div id="sb_instagram" <?php echo $feed_classes . $feed_styles; ?> data-feedid="<?php echo esc_attr( $feed_id ); ?>" <?php echo $feed_atts; ?> data-shortcode-atts="<?php echo esc_attr( $shortcode_atts ); ?>" <?php echo $other_atts; ?>>
 	<?php //sbi_header_html( $settings, $header_data ); ?>
 
-    <div id="sbi_images" <?php echo $sb_images_style; ?>>
+    <div id="sbi_images" aria-hidden="true" <?php echo $sb_images_style; ?>>
 		<?php
 		if ( ! in_array( 'ajaxPostLoad', $flags, true ) ) {
 			$this->posts_loop( $posts, $settings );

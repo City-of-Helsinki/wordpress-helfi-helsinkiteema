@@ -134,6 +134,14 @@ function helsinki_script_localization() {
 				'close' => helsinki_get_svg_icon( 'cross' ),
 				'next' => helsinki_get_svg_icon( 'angle-right' ),
 				'prev' => helsinki_get_svg_icon( 'angle-left' ),
+				'arrowRight' => helsinki_get_svg_icon( 'arrow-right' ),
+				'faceSmile' => helsinki_get_svg_icon( 'face-smile' ),
+				'faceSad' => helsinki_get_svg_icon( 'face-sad' ),
+				'faceNeutral' => helsinki_get_svg_icon( 'face-neutral' ),
+				'whatsapp' => helsinki_get_svg_icon( 'whatsapp' ),
+				'facebook' => helsinki_get_svg_icon( 'facebook' ),
+				'twitter' => helsinki_get_svg_icon( 'twitter' ),
+				'email' => helsinki_get_svg_icon( 'envelope' ),
 			),
 		)
 	);

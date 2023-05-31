@@ -72,10 +72,13 @@ function helsinki_loop_list() {
 }
 
 function helsinki_loop_entry() {
+	$is_search = is_search();
 	get_template_part(
 		'partials/loop/entry',
 		null,
-		array()
+		array(
+			'is_search' => $is_search,
+		)
 	);
 }
 

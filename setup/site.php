@@ -46,6 +46,13 @@ function helsinki_setup_site() {
 	}
 
 	/**
+	 * Feedback buttons
+	 */
+	if ( helsinki_theme_mod('helsinki_feedback_feedback', 'enabled') ) {
+		add_filter('helsinki_feedback_enabled', '__return_true');
+	}
+
+	/**
 	  * Front Page
 	  */
 	add_filter( 'wp_feed_cache_transient_lifetime', 'helsinki_front_page_lifetime_filter', 10, 2 );
