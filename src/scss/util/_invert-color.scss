@@ -1,7 +1,7 @@
 .has-invert-color {
 
 	.hero {
-		&:not(.is-full-width) {
+		&:not(.has-background-image) {
 			color: $white;
 
 			.hero__title,

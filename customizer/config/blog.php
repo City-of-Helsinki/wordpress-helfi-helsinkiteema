@@ -54,7 +54,7 @@ function helsinki_customizer_blog_sections() {
 				'related_count' => helsinki_setting_number(
 					esc_html__('Related posts count', 'helsinki-universal'),
 					'',
-					3,
+					4,
 					array(
 						'step' => 1,
 						'min' => 3,

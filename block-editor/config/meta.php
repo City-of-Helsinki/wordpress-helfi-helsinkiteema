@@ -6,6 +6,7 @@ function helsinki_block_editor_hero_style_options() {
 		'background-image' => esc_html__( 'Background image', 'helsinki-universal' ),
 		'image-right' => esc_html__( 'Image on right', 'helsinki-universal' ),
 		'image-left' => esc_html__( 'Image on left', 'helsinki-universal' ),
+		'image-below' => esc_html__( 'Image below', 'helsinki-universal' ),
 	);
 }
 
@@ -102,6 +103,26 @@ function helsinki_block_editor_meta_config() {
 					'single' => true,
 					'type' => 'boolean',
 					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_bool',
+				),
+			),
+			array(
+				'type' => 'page',
+				'key' => 'sidebar_heading',
+				'args' => array(
+					'show_in_rest' => true,
+					'single' => true,
+					'type' => 'string',
+					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_string',
+				),
+			),
+			array(
+				'type' => 'page',
+				'key' => 'sidebar_content',
+				'args' => array(
+					'show_in_rest' => true,
+					'single' => true,
+					'type' => 'string',
+					'sanitize_callback' => 'helsinki_block_editor_meta_sanitize_wp_editor',
 				),
 			),
 		)

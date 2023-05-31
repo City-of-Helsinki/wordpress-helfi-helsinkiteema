@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-08 11:53+0000\n"
+"POT-Creation-Date: 2023-05-16 08:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Bus"
 msgstr ""
 
-#: functions/layout/loop.php:107
+#: functions/layout/loop.php:110
 msgid "Categories"
 msgstr ""
 
@@ -111,7 +111,7 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: setup/assets.php:126 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr ""
@@ -293,7 +293,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:128
+#: inc/filters.php:152
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -377,17 +377,18 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:227
+#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: setup/assets.php:129
+#: setup/assets.php:131
 msgid "Gallery images"
 msgstr ""
 
 #: functions/layout/header.php:102 partials/content/not-found.php:10
+#: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""
 
@@ -403,6 +404,10 @@ msgstr ""
 msgid "Gold"
 msgstr ""
 
+#: block-editor/metaboxes.php:36
+msgid "Heading"
+msgstr ""
+
 #. Name of the theme
 msgid "Helsinkiteema #1"
 msgstr ""
@@ -415,6 +420,10 @@ msgstr ""
 msgid ""
 "If Polylang is active and \"All\" is selected, use String translations to "
 "translate the notice."
+msgstr ""
+
+#: block-editor/config/meta.php:9
+msgid "Image below"
 msgstr ""
 
 #: block-editor/config/meta.php:8
@@ -522,7 +531,7 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:127 partials/loop/pagination.php:18
+#: setup/assets.php:129 partials/loop/pagination.php:18
 #: partials/loop/pagination.php:61
 msgid "Next"
 msgstr ""
@@ -531,12 +540,12 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: partials/content/none.php:14
+#: partials/content/none.php:25
 msgid "No posts have been published yet."
 msgstr ""
 
-#: partials/content/none.php:9
-msgid "No posts matching your search could be found."
+#: partials/content/none.php:19
+msgid "No results found."
 msgstr ""
 
 #: functions/layout/view.php:44
@@ -589,7 +598,7 @@ msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr ""
 
-#: partials/content/none.php:10
+#: partials/content/none.php:20
 msgid "Please try using another search term or phrase."
 msgstr ""
 
@@ -611,7 +620,7 @@ msgstr ""
 msgid "Posts Feed"
 msgstr ""
 
-#: setup/assets.php:128 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
 msgstr ""
 
@@ -625,10 +634,6 @@ msgstr ""
 
 #: partials/loop/entry-grid.php:8
 msgid "Published:"
-msgstr ""
-
-#: partials/content/parts/related.php:3
-msgid "Read also these"
 msgstr ""
 
 #: functions/modules/notifications.php:73 partials/loop/entry/read-more.php:2
@@ -662,7 +667,11 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: functions/layout/front-page.php:225
+#: partials/content/none.php:7 partials/search/title.php:6
+msgid "Results for keyword"
+msgstr ""
+
+#: functions/layout/front-page.php:227
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "Contents are automatically fetched from %s."
@@ -683,8 +692,8 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: partials/search/title.php:6
-msgid "Search results"
+#: partials/search/links.php:15
+msgid "Search on hel.fi"
 msgstr ""
 
 #: searchform.php:7
@@ -702,7 +711,7 @@ msgid "Section title"
 msgstr ""
 
 #: partials/front-page/recent-posts/more.php:5
-msgid "See all news"
+msgid "See all articles"
 msgstr ""
 
 #: functions/layout/loop.php:20
@@ -737,6 +746,10 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
+#: block-editor/metaboxes.php:6
+msgid "Sidebar"
+msgstr ""
+
 #: customizer/config/choices.php:21
 msgid "Silver"
 msgstr ""
@@ -757,11 +770,11 @@ msgstr ""
 msgid "Suomenlinna"
 msgstr ""
 
-#: functions/layout/loop.php:135
+#: functions/layout/loop.php:138
 msgid "Tags"
 msgstr ""
 
-#: customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
 msgid "Text"
 msgstr ""
 
@@ -775,7 +788,7 @@ msgid ""
 "language."
 msgstr ""
 
-#: partials/content/none.php:12
+#: partials/content/none.php:23
 msgid "This author has not published any posts yet."
 msgstr ""
 
@@ -824,8 +837,12 @@ msgstr ""
 msgid "Warning"
 msgstr ""
 
-#: partials/content/none.php:5
+#: partials/content/none.php:14
 msgid "Worse luck!"
+msgstr ""
+
+#: partials/search/links.php:3 partials/content/parts/related.php:3
+msgid "You might be interested in"
 msgstr ""
 
 #: partials/content/parts/comment.php:19

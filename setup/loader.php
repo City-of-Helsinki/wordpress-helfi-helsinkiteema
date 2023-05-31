@@ -33,9 +33,11 @@ function helsinki_files()
 		'block-editor' => [
 			'config' => [
 				'meta',
+				'settings',
 			],
 			'functions',
 			'init',
+			'metaboxes',
 		],
 		'inc' => [
 			'filters',
@@ -114,6 +116,11 @@ function helsinki_files()
 	if ( did_action( 'wpra_loaded' ) ) {
 		$files['integrations'][] = 'wp-rss-aggregator';
 		add_filter('helsinki_wp_rss_aggregator_active', '__return_true');
+	}
+
+	if ( defined( 'SBIVER' ) ) {
+		$files['integrations'][] = 'smash-balloon';
+		add_filter('helsinki_smash_balloon_active', '__return_true');
 	}
 
 	return $files;

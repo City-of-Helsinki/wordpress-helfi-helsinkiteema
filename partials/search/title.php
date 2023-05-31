@@ -3,7 +3,7 @@
 		<?php
 			printf(
 				'%s "%s"',
-				esc_html__('Search results', 'helsinki-universal'),
+				esc_html__('Results for keyword', 'helsinki-universal'),
 				get_search_query()
 			);
 		?>

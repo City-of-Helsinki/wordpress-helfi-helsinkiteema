@@ -106,7 +106,9 @@ function helsinki_enqueue_admin_assets($hook_suffix) {
 	wp_enqueue_script(
 		'theme-admin',
 		$assets . $theme_admin_js,
-		array(),
+		array(
+			'wp-edit-post',
+		),
 		$version,
 		true
 	);

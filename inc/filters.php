@@ -58,8 +58,8 @@ add_filter('comment_form_default_fields', 'helsinki_comment_form_default_fields'
   */
 function helsinki_widget_tag_cloud_args( $default ) {
   $edit = array(
-    'smallest'  => '13',
-    'largest'   => '13',
+    'smallest'  => '14',
+    'largest'   => '14',
     'unit'      => 'px',
     'separator' => '',
     'number'    => 100,
@@ -69,6 +69,26 @@ function helsinki_widget_tag_cloud_args( $default ) {
   return array_merge( $default, $edit );
 }
 add_filter( 'widget_tag_cloud_args', 'helsinki_widget_tag_cloud_args');
+
+function helsinki_widget_recent_posts_args( $instance, $widget_instance, $args ) {
+
+  if ($widget_instance->id_base === 'recent-posts' && $instance['show_date'] === true) {
+
+    add_filter( 'get_the_date', function ( $the_date, $d, $post )
+    {
+        // Set new date format
+        $d = 'd.m.Y H:i';
+        // Set new value format to $the_date
+        $the_date = mysql2date( $d, $post->post_date );
+
+        return $the_date;   
+    }, 10, 3 );
+
+  }
+
+  return $instance;
+}
+add_filter( 'widget_display_callback', 'helsinki_widget_recent_posts_args', 10, 3 );
 
 function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
 	if ($widget_type == 'categories') {
@@ -91,6 +111,10 @@ function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
 add_filter( 'widget_output', 'helsinki_sidebar_filter_widgets', 10, 4 );
 
 function helsinki_sidebar_filter_rss_links($output) {
+    if (empty($output)) {
+      return $output;
+    }
+
     $domIcon = new DOMDocument();
     $domIcon->encoding = 'utf-8';
     $domIcon->loadXML(helsinki_get_svg_icon('link-external'));
