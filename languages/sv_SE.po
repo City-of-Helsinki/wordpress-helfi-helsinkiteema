@@ -170,6 +170,11 @@ msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr "Blogg"
 
+#: customizer/config.php:103
+msgctxt "Customizer panel title"
+msgid "Feedback buttons"
+msgstr "Återkopplingsknappar"
+
 #: customizer/config.php:90
 msgctxt "Customizer panel title"
 msgid "Footer"
@@ -210,6 +215,11 @@ msgstr "Brödsmulor"
 msgctxt "Customizer section title"
 msgid "Entries"
 msgstr "Inlägg"
+
+#: customizer/config/feedback-buttons.php:9
+msgctxt "Customizer section title"
+msgid "Feedback"
+msgstr "Respons"
 
 #: customizer/config/header.php:8
 msgctxt "Customizer section title"
@@ -338,6 +348,7 @@ msgstr ""
 "Visar innehåll på förstasidan som ställts in i Instrumentpanelen> Sidor> "
 "{förstasida}."
 
+#: customizer/config/feedback-buttons.php:14
 #: customizer/config/notifications.php:24 customizer/config/settings.php:58
 #: customizer/config/sidebar.php:15
 msgid "Enabled"

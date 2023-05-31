@@ -96,6 +96,19 @@ function helsinki_customizer_config() {
 
 		    ), // helsinki_footer
 
+			//Feedback buttons
+			'helsinki_feedback' => array(
+
+		      'config' => array(
+		        'title'          => esc_html_x( 'Feedback buttons', 'Customizer panel title', 'helsinki-universal' ),
+		        'priority'       => 35,
+		        'capability'     => 'edit_theme_options',
+		      ),
+
+		      'panel_sections' => helsinki_customizer_feedback_sections(),
+
+		    ), // helsinki_feedback
+
 		) // array
 
 	); // return

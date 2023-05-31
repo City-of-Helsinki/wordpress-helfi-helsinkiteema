@@ -164,6 +164,11 @@ msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr ""
 
+#: customizer/config.php:103
+msgctxt "Customizer panel title"
+msgid "Feedback buttons"
+msgstr ""
+
 #: customizer/config.php:90
 msgctxt "Customizer panel title"
 msgid "Footer"
@@ -202,6 +207,11 @@ msgstr ""
 #: customizer/config/blog.php:8
 msgctxt "Customizer section title"
 msgid "Entries"
+msgstr ""
+
+#: customizer/config/feedback-buttons.php:9
+msgctxt "Customizer section title"
+msgid "Feedback"
 msgstr ""
 
 #: customizer/config/header.php:8
@@ -328,6 +338,7 @@ msgstr ""
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 
+#: customizer/config/feedback-buttons.php:14
 #: customizer/config/notifications.php:24 customizer/config/settings.php:58
 #: customizer/config/sidebar.php:15
 msgid "Enabled"
