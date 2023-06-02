@@ -36,13 +36,14 @@ function helsinki_cff_check_feed_settings() {
     $feeds = $wpdb->get_results("SELECT * FROM $feeds_table_name", ARRAY_A);
 
     foreach ($feeds as $feed) {
-        if (!isset($feed['settings']['helsinki_theme_modified']) || strtotime($feed['settings']['helsinki_theme_modified']) < strtotime($feed['last_modified'])) {
-            $feed['settings'] = helsinki_cff_override_feed_settings($feed['settings']);
+        $settings = json_decode($feed['settings'], true);
+        if (!isset($settings['helsinki_theme_modified']) || strtotime($settings['helsinki_theme_modified']) < strtotime($feed['last_modified'])) {
+            $settings = helsinki_cff_override_feed_settings($settings);
 
             $wpdb->update(
                 $feeds_table_name,
                 array(
-                    'settings' => json_encode($feed['settings'])
+                    'settings' => json_encode($settings)
                 ),
                 array(
                     'id' => $feed['id']
@@ -56,10 +57,8 @@ function helsinki_cff_check_feed_settings() {
 add_action('init', 'helsinki_cff_check_feed_settings');
 
 function helsinki_cff_override_feed_settings($settings) {
-    // convert $settings json to array
-    $settings = json_decode($settings, true);
 
-    $settings['feedtemplate'] = 'default';
+    $settings['feedtemplate'] = 'simple_masonry';
     $settings['feedtype'] = 'timeline';
     $settings['feedlayout'] = 'masonry';
     $settings['height'] = '';
@@ -73,6 +72,7 @@ function helsinki_cff_override_feed_settings($settings) {
     $settings['poststyle'] = 'regular';
     $settings['sepsize'] = '1';
     $settings['sepcolor'] = '#f2f2f2';
+    $settings['include'] = array("text","desc","sharedlinks","date","media","medialink","eventtitle","eventdetails","social","link","likebox","author");
     $settings['authorsize'] = '18';
     $settings['authorcolor'] = '#1a1a1a';
     $settings['textlength'] = '10000';
@@ -94,10 +94,9 @@ function helsinki_cff_override_feed_settings($settings) {
     $settings['expandcomments'] = '';
     $settings['showfacebooklink'] = 'false';
     $settings['showsharelink'] = 'false';
-    $settings['showlikebox'] = '';
+    $settings['showlikebox'] = 'off';
+    $settings['disablelightbox'] = 'on';
     $settings['helsinki_theme_modified'] = date( 'Y-m-d H:i:s' );
-
-    //$settings = json_encode($settings);
 
     return $settings;
 }
