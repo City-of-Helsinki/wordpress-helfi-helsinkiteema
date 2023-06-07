@@ -214,6 +214,11 @@ function helsinki_setup_templates() {
 		else {
 			add_action('helsinki_content_article', 'helsinki_content_article_body', 20);
 
+			if ( apply_filters( 'helsinki_feedback_enabled', false ) ) {
+				add_filter('body_class', 'helsinki_feedback_buttons_body_class', 10);
+				add_action('helsinki_content_body_after', 'helsinki_feedback_buttons', 21);
+			}
+
 			if ( helsinki_is_landing_page() ) {
 				add_filter('body_class', 'helsinki_hero_body_class', 10);
 				add_action( 'helsinki_content_article_top', 'helsinki_hero_actions', 5 );
@@ -335,10 +340,7 @@ function helsinki_setup_templates() {
 
 		add_action('helsinki_view_header_classes', 'helsinki_view_classes', 10);
 		add_action('helsinki_search_top', 'helsinki_view_header', 10);
-		global $wp_query;
-		if ( $wp_query->post_count ) {
-			add_action('helsinki_search_top', 'helsinki_search_title', 20);
-		}
+		add_action('helsinki_search_top', 'helsinki_search_title', 20);
 
 		add_action('helsinki_view_header', 'helsinki_search_form_title', 10);
 		add_action('helsinki_view_header', 'helsinki_search_form', 20);

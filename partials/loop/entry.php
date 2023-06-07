@@ -14,14 +14,25 @@
 			</a>
 		</h3>
 
+		<?php if ( $args['is_search'] && !empty(get_the_excerpt()) ) : ?>
+			<div class="entry__excerpt excerpt size-l">
+				<?php the_excerpt(); ?>
+			</div>
+		<?php endif; ?>
+
 		<div class="entry__meta meta">
-			<span class="content__category categories">
-				<span class="screen-reader-text"><?php esc_html_e('Categories'); ?>:</span>
-				<?php the_category(', '); ?>
-			</span>
-			<time class="date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-				<?php echo get_the_date(); ?>
-			</time>
+			<?php if ( !empty(get_the_category_list(', ')) ) : ?>
+				<span class="content__category categories">
+					<span class="screen-reader-text"><?php esc_html_e('Categories'); ?>:</span>
+					<?php the_category(', '); ?>
+				</span>
+			<?php endif; ?>
+			<?php if ( get_post_type() === 'post' ) : ?>
+				<time class="date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+					<?php echo get_the_date(); ?>
+				</time>
+			<?php endif; ?>
+
 		</div>
 
 	</div>
