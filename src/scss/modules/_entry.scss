@@ -63,7 +63,8 @@ ul.posts {
 
 			.icon {
 				@include absoluteCenter();
-				width: rem-calc(112);
+                max-width: 180px;
+                width: 30%;
 			}
 		}
 
@@ -109,15 +110,12 @@ ul.posts {
 		margin-bottom: $entry-content-spacing;
 	}
 
-	&__more {
+	.entry__more {
 		font-weight: $entry-read-more-font-weight;
 
 		svg {
-			width: 24px;
-
-			@include breakpoint('s') {
-				width: 48px;
-			}
+			width: 48px;
+			margin-left: -8px;
 		}
 	}
 
@@ -258,7 +256,6 @@ ul.posts {
 
 		.entry__meta {
 			font-size: rem-calc(14);
-			margin-bottom: $entry-content-spacing;
 		}
 
 		.entry__thumbnail {
