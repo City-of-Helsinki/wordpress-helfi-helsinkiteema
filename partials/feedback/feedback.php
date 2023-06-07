@@ -93,7 +93,7 @@
                 apiKey: '<?php echo $args['apiKey']; ?>',
                 title: '<?php echo $args['title']; ?>',
                 postId: '<?php echo $args['postId']; ?>',
-                categories: ['<?php echo $args['category']; ?>'],
+                categories: ['wordpress', '<?php echo $args['category']; ?>'],
                 disableFonts: <?php echo $args['disableFonts'] ? 'true' : 'false'; ?>,
                 initCallback: (element, canonicalUrl) => helsinkiInitRns(element, canonicalUrl),
             };
