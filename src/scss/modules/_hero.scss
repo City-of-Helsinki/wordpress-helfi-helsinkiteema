@@ -43,6 +43,22 @@
                 }
             }
         }
+
+        .hero__thumbnail_caption {
+            color: $black;
+            float: right;
+            text-align: right;
+            margin-left: 130px;
+            margin-right: spacing('s');
+        }
+    }
+
+    .hero__thumbnail {
+
+        &_caption {
+            margin-top: spacing('s');
+        }
+
     }
 
     .hero__decoration {
@@ -421,21 +437,28 @@
     &.has-background-image {
         background-color: $body-background-color;
         position: relative;
-        margin-bottom: 0;
 
-
-        > .hero__thumbnail {
-            display: block;
+        > .hero__thumbnail:first-child {
+            display: none;
             margin-top: 0;
             position: relative;
             min-height: calc(300px + #{$koros-size});
+            margin-bottom: 32px;
 
-            @include breakpoint('m') {
+            /*@include breakpoint('m') {
                 min-height: calc(500px + #{$koros-size});
-            }
+            }*/
 
             @include breakpoint('l') {
+                display: block;
                 min-height: calc(600px + #{$koros-size});
+            }
+
+            > .hero__thumbnail_caption {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 1;
             }
 
             > .hds-koros {
@@ -443,30 +466,128 @@
                 position: absolute;
                 bottom: 0;
                 left: 0;
+
+                &--basic {
+                    + .hero__thumbnail_caption {
+                        bottom: -6px;
+                    }
+                }
+
+                &--beat {
+                    + .hero__thumbnail_caption {
+                        bottom: -34px;
+                    }
+                }
+
+                &--pulse {
+                    + .hero__thumbnail_caption {
+                        bottom: -16px;
+                    }
+                }
+
+                &--vibration {
+                    + .hero__thumbnail_caption {
+                        bottom: -26px;
+                    }
+                }
+
+                &--wave {
+                    + .hero__thumbnail_caption {
+                        bottom: -16px;
+                    }
+                }
+
+                &--calm {
+                    + .hero__thumbnail_caption {
+                        
+                    }
+                }
+
             }
         }
 
         .hds-koros {
+
             > svg {
-                path {
+                path, polygon {
                     fill: $body-background-color;
                 }
             }
+
+            @include breakpointMax('l') {
+                height: math.div($koros-size, 2);
+
+                &--beat {
+                    height: 5px;
+                }
+    
+                &--vibration {
+                    height: math.div($koros-size, 5);
+                }
+    
+                > svg {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+
         }
 
         > .hero__container {
-            padding-top: spacing('s');
-            position: relative;
-            min-height: auto;
 
-            @include breakpoint('m') {
+            @include breakpoint('l') {
                 padding: 0;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
             }
+
         }
+
+        .hero__thumbnail__mobile {
+            display: block;
+
+            background-color: $body-background-color;
+
+            .image-wrap--fixed-size {
+                padding-top: 0;
+    
+                img {
+                    position: static;
+                    transform: none;
+                    max-width: none;
+                    height: 400px;
+                    object-fit: cover;
+    
+                    @include breakpointMax('l') {
+                        height: 300px;
+                    }    
+                }
+            }
+
+        }
+
+        .hero__decoration {
+
+            @include breakpoint('l') {
+                transform: translate(-50%,50%);
+            }
+    
+        }
+
+        @include breakpoint('l') {
+
+            > .hds-koros {
+                display: none;
+            }
+
+            .hero__thumbnail__mobile {
+                display: none;
+            }
+        }
+
 
         .hero__content {
 
@@ -474,13 +595,9 @@
                 max-width: none;
             }
 
-            @include breakpoint('m') {
+            @include breakpoint('l') {
                 background-color: $body-background-color;
                 padding: spacing('2-xl') spacing('xl');
-                width: 80%;
-            }
-
-            @include breakpoint('l') {
                 width: 70%;
             }
 
