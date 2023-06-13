@@ -1,0 +1,14 @@
+name: 'Validate Merge to Main'
+
+on:
+  pull_request:
+
+jobs:
+  validate_merge_to_main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate merge to main
+        if: github.base_ref == 'main' && github.head_ref != 'release'
+        run: |
+          echo "ERROR: You can only merge to main from release!"
+          exit 1
