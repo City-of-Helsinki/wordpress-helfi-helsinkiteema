@@ -1,0 +1,8 @@
+<wpml-config>
+  <custom-fields>
+    <custom-field action="translate">hero_cta_url</custom-field>
+    <custom-field action="translate">hero_cta_text</custom-field>
+    <custom-field action="translate">hero_cta_2_url</custom-field>
+    <custom-field action="translate">hero_cta_2_text</custom-field>
+  </custom-fields>
+</wpml-config>
