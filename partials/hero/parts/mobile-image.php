@@ -1,4 +1,4 @@
-<div class="hero__thumbnail hero__thumbnail__mobile" <?php helsinki_hero_image_mobile_styles(); ?>>
+<figure class="hero__thumbnail hero__thumbnail__mobile" <?php helsinki_hero_image_mobile_styles(); ?>>
 	<?php
 
 		/**
@@ -8,4 +8,4 @@
 		do_action( 'helsinki_hero_mobile_image', $args );
 
 	?>
-</div>
+</figure>
