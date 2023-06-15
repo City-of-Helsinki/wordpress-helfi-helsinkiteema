@@ -54,6 +54,7 @@
     }
 
     .hero__thumbnail {
+        margin: 0;
 
         &_caption {
             margin-top: spacing('s');
@@ -255,7 +256,9 @@
             }
 
             > .hero__thumbnail {
-                display: none;
+                .image-wrap {
+                    display: none;
+                }
             }
         }
 

@@ -345,9 +345,10 @@ function helsinki_hero_actions() {
 			}
 				
 			add_action( 'helsinki_hero_after', 'helsinki_hero_decoration_arrow', 30 );
-			add_action( 'helsinki_hero_after', 'helsinki_hero_image', 20 );
+			add_action( 'helsinki_hero_after', 'helsinki_hero_image_mobile', 20 );
 			add_action( 'helsinki_hero_image', 'helsinki_hero_image_element', 10 );
-			add_action( 'helsinki_hero_image', 'helsinki_hero_image_caption', 11 );
+			add_action( 'helsinki_hero_mobile_image', 'helsinki_hero_image_mobile_element', 10 );	
+			add_action( 'helsinki_hero_mobile_image', 'helsinki_hero_image_caption', 11 );
 		}
 
 	}
