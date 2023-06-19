@@ -59,15 +59,6 @@ $escaped_share_html = SW_Display_Elements::get_escaped_share_content( $account_d
 <div class="sbsw-item sbsw-<?php echo esc_attr( $plugin ); ?>-item<?php echo esc_attr( $item_classes ); ?>" id="sbsw-<?php echo esc_attr( $post_id ); ?>"<?php echo $sb_item_style; ?>>
     <div class="sbsw-item-inner"<?php echo $sb_inner_item_style; ?>>
 
-        <div class="sbsw-follow">
-            <a href="<?php echo esc_url( $account_link ); ?>" target="_blank" rel="nofollow noopener" tabindex="-1">
-                <?php
-                echo $sm_icon;
-                echo esc_html( $follow_button_text );
-                ?>
-            </a>
-        </div>
-
         <div class="sbsw-item-header<?php echo esc_attr( $avatar_class . $date_class ); ?>"<?php echo $item_header_style; ?>>
             <div class="sbsw-identity sbsw-clear">
                 <div class="sbsw-icon">
@@ -104,7 +95,6 @@ $escaped_share_html = SW_Display_Elements::get_escaped_share_content( $account_d
         <div class="sbsw-item-media"<?php echo $available_images_attribute; ?>>
             <?php echo $maybe_play_button_html; ?>
             <?php echo $media_html; ?>
-            <a href="<?php echo esc_attr( $lightbox_image ); ?>" class="sbsw-lightbox-hover"<?php echo $lightbox_attribute; ?> tabindex="-1"><span class="sbsw-screenreader"><?php echo esc_html( sprintf( __( 'Lightbox link for post with description %s', 'social-wall' ), sbsw_maybe_shorten_text( $description, 50 ) ) ); ?></span></a>
         </div>
         <?php endif; ?>
 
