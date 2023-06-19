@@ -11,7 +11,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
-$load_button_text = __( $settings['buttontext'], 'social-wall' );
+$load_button_text = __( 'Load more', 'helsinki-universal' );
 ?>
 <div class="sb-wall-footer">
 	<?php if ( $use_pagination ) : ?>
