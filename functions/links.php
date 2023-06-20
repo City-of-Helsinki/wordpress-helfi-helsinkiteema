@@ -80,7 +80,10 @@ function helsinki_links_parse_blocks( $block_content = '', $block = [] ) {
 		'helsinki-tpr/unit',
         'hds-wp/rss-feed',
         'hds-wp/banner',
-        'hds-wp/image-text'
+        'hds-wp/image-text',
+        'hds-wp/image-banner',
+        'hds-wp/map',
+        'hds-wp/video'
 	];
 
 	if ( ! in_array( $block['blockName'], $blocksToParse, true ) ) {
