@@ -32,25 +32,6 @@ function helsinki_customizer_header_sections() {
 
 		), // search
 
-		'highlight' => array(
-
-			'config' => array(
-				'title'          => esc_html_x( 'Highlight link', 'Customizer section title', 'helsinki-universal' ),
-				'capability'     => 'edit_theme_options',
-			),
-
-			'section_settings' => array_merge(
-				helsinki_customizer_setting_enabled(
-					esc_html_x( 'Display highlight link in site header', 'Customizer setting description', 'helsinki-universal' )
-				),
-				array(
-					'url' => helsinki_setting_url( __('Link url', 'helsinki-universal'), '', '' ),
-					'text' => helsinki_setting_text( __('Link text', 'helsinki-universal'), '', '' ),
-				)
-			), // section_settings
-
-		), // highlight
-
 		'languages' => array(
 
 			'config' => array(
