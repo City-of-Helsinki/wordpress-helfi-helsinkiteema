@@ -7,53 +7,10 @@
 		padding-bottom: spacing('layout-s');
 	}
 
-	&.posts {
-
-		.posts-page {
-
-			.link-wrap {
-				display: inline-block;
-
-				a {
-					&:focus,
-					&:hover {
-						svg {
-
-						}
-					}
-				}
-			}
-		}
-	}
-
 	&.post-content {
 		font-size: fontsize-body(l);
 	}
 
-	&.feed-posts {
-
-		.container__heading {
-			margin-bottom: spacing('m');
-		}
-
-		.entry--highlight {
-			> a {
-				&:hover {
-					.entry__more {
-						svg {
-							margin-left: 0;
-						}
-					}
-				}
-			}
-		}
-
-		@include breakpoint(l) {
-			.posts {
-				padding-left: percentage(math.div(2,12));
-			}
-		}
-	}
 }
 
 //Styles to apply only if the element is a section-tag
@@ -69,32 +26,5 @@ section {
 			padding-bottom: spacing('layout-xl');
 		}
 	
-	}
-}
-
-div {
-	&.front-page-section {
-		.hds-container {
-			padding-left: 0;
-			padding-right: 0;
-		}
-	}
-}
-
-.has-sidebar {
-	.front-page-section {
-	
-		&.posts {
-
-			.grid {
-				@include breakpoint('l') {
-					$gutter: map-get($gutters, 'l');
-
-					.grid__column {
-						width: calc(50% - #{$gutter} / 2);
-					}
-				}
-			}
-		}
 	}
 }

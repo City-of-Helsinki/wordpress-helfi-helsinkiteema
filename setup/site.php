@@ -24,7 +24,7 @@ function helsinki_setup_site() {
 	/**
 	  * Site header
 	  */
-	$header_parts = array('search', 'languages', 'highlight');
+	$header_parts = array('search', 'languages');
 	foreach ($header_parts as $header_part) {
 		if ( helsinki_theme_mod('helsinki_header_' . $header_part, 'enabled') ) {
 			add_filter('helsinki_header_' . $header_part . '_enabled', '__return_true');
@@ -53,11 +53,6 @@ function helsinki_setup_site() {
 	}
 
 	/**
-	  * Front Page
-	  */
-	add_filter( 'wp_feed_cache_transient_lifetime', 'helsinki_front_page_lifetime_filter', 10, 2 );
-
-	/**
 	  * Posts Page
 	  */
 	if ( helsinki_theme_mod('helsinki_blog_filter', 'enabled') ) {
@@ -79,13 +74,4 @@ function helsinki_setup_site() {
 		add_filter('helsinki_blog_single_meta', '__return_true');
 	}
 
-	/**
-	  * Social share
-	  */
-	$enabled_social_share_medias = helsinki_theme_mod('helsinki_general_social_share', 'medias');
-	if ( $enabled_social_share_medias ) {
-		foreach ($enabled_social_share_medias as $enabled_social_share_media) {
-			add_filter('helsinki_social_share_media_' . $enabled_social_share_media . '_enabled', '__return_true');
-		}
-	}
 }
