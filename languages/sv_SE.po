@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-06-29 11:27+0000\n"
+"PO-Revision-Date: 2023-06-29 11:29+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
