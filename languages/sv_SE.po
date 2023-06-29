@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-06-26 09:36+0000\n"
+"PO-Revision-Date: 2023-06-29 11:27+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -112,6 +112,10 @@ msgstr ""
 "\n"
 "Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
 "framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
+
+#: functions/layout/header.php:71
+msgid "City of Helsinki"
+msgstr "Helsingfors stad"
 
 #: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
@@ -360,11 +364,15 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
+#: functions/layout/misc.php:17
+msgid "Front page"
+msgstr "Startsida"
+
 #: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
-#: functions/layout/header.php:102 partials/content/not-found.php:10
+#: functions/layout/header.php:89 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Ge respons"

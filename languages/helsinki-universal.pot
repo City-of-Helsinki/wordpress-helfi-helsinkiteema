@@ -7,7 +7,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-06-26 09:35+0000\n"
+"POT-Creation-Date: 2023-06-29 11:27+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -105,6 +105,10 @@ msgid ""
 "\t\t  This feature is being retired. Please use the front page's block "
 "editor to setup the front page content. Remember to keep the Content-"
 "checkbox active."
+msgstr ""
+
+#: functions/layout/header.php:71
+msgid "City of Helsinki"
 msgstr ""
 
 #: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
@@ -351,11 +355,15 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
+#: functions/layout/misc.php:17
+msgid "Front page"
+msgstr ""
+
 #: setup/assets.php:131
 msgid "Gallery images"
 msgstr ""
 
-#: functions/layout/header.php:102 partials/content/not-found.php:10
+#: functions/layout/header.php:89 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""

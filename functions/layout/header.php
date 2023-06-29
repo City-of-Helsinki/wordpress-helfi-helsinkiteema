@@ -18,25 +18,6 @@ if ( ! function_exists('helsinki_topbar_body_class') ) {
 	}
 }
 
-if ( ! function_exists('helsinki_header_highlight_link') ) {
-	function helsinki_header_highlight_link() {
-		$highlight = helsinki_theme_mod('helsinki_header_highlight', '', array());
-
-		$text = $highlight['text'] ?? '';
-		$url = $highlight['url'] ?? '';
-
-		if ( apply_filters('helsinki_polylang_active', false) ) {
-			$text = pll__( $text );
-			$url = pll__( $url );
-		}
-
-		return array(
-			'url' => $url,
-			'text' => $text,
-		);
-	}
-}
-
 /**
   * Partials
   */
@@ -71,6 +52,12 @@ function helsinki_topbar_menu() {
 	}
 }
 
+function helsinki_mobile_topbar_menu() {
+	if ( has_nav_menu( 'topbar_menu' ) ) {
+		return helsinki_menu( 'mobile_topbar_menu' );
+	}
+}
+
 function helsinki_topbar_branding( string $language = 'fi' ) {
 	$branding = array(
 		'fi' => 'https://www.hel.fi/helsinki/fi',
@@ -81,7 +68,7 @@ function helsinki_topbar_branding( string $language = 'fi' ) {
 	return apply_filters(
 		'helsinki_topbar_branding',
 		array(
-			'title' => 'Hel.fi',
+			'title' => __( 'City of Helsinki', 'helsinki-universal' ),
 			'url' => $branding[$language] ?? $branding['fi'],
 		),
 		$language,
@@ -129,16 +116,13 @@ if ( ! function_exists('helsinki_header_logo') ) {
 		}
 
 		$default_logo = apply_filters('helsinki_header_default_logo_enabled', true) ? helsinki_get_svg_logo(): '';
-		if ( $default_logo ) {
+		if ( $default_logo || $custom_logo) {
 			$classes[] = 'has-icon';
 		}
 
 		if ( $custom_logo ) {
 			$classes[] = 'custom-logo';
-
-			if ( $default_logo ) {
-				$classes[] = 'has-icon--after';
-			}
+			$classes[] = 'has-icon--before';
 		} else if ( $default_logo ) {
 			$classes[] = 'has-icon--before';
 		}
@@ -182,6 +166,7 @@ if ( ! function_exists('helsinki_header_mobile_links') ) {
 			array(
 				'branding' => helsinki_topbar_branding( $lang ),
 				'feedback' => helsinki_topbar_feedback( $lang ),
+				'menu' => helsinki_mobile_topbar_menu(),
 			),
 			$name,
 			$lang
@@ -223,18 +208,6 @@ if ( ! function_exists('helsinki_header_search') ) {
 if ( ! function_exists('helsinki_header_searchform') ) {
 	function helsinki_header_searchform() {
 		get_template_part('partials/header/searchform');
-	}
-}
-
-if ( ! function_exists('helsinki_header_highlight') ) {
-	function helsinki_header_highlight() {
-		get_template_part(
-			'partials/header/highlight',
-			null,
-			array(
-				'link' => helsinki_header_highlight_link(),
-			)
-		);
 	}
 }
 
