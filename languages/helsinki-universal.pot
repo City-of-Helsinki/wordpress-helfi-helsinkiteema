@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 08:59+0000\n"
+"POT-Creation-Date: 2023-06-29 10:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -24,6 +24,7 @@ msgid "(Edit comment)"
 msgstr ""
 
 #: functions/links.php:53 functions/modules/notifications.php:108
+#: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr ""
 
@@ -109,6 +110,10 @@ msgid ""
 "\t\t  This feature is being retired. Please use the front page's block "
 "editor to setup the front page content. Remember to keep the Content-"
 "checkbox active."
+msgstr ""
+
+#: functions/layout/header.php:71
+msgid "City of Helsinki"
 msgstr ""
 
 #: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
@@ -219,17 +224,12 @@ msgctxt "Customizer section title"
 msgid "General"
 msgstr ""
 
-#: customizer/config/header.php:38
-msgctxt "Customizer section title"
-msgid "Highlight link"
-msgstr ""
-
 #: customizer/config/general.php:20
 msgctxt "Customizer section title"
 msgid "Koros"
 msgstr ""
 
-#: customizer/config/header.php:57
+#: customizer/config/header.php:38
 msgctxt "Customizer section title"
 msgid "Languages"
 msgstr ""
@@ -270,11 +270,6 @@ msgid "Style"
 msgstr ""
 
 #: customizer/config/header.php:44
-msgctxt "Customizer setting description"
-msgid "Display highlight link in site header"
-msgstr ""
-
-#: customizer/config/header.php:63
 msgctxt "Customizer setting description"
 msgid "Display language selector in site header"
 msgstr ""
@@ -383,11 +378,15 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
+#: functions/layout/misc.php:17
+msgid "Front page"
+msgstr ""
+
 #: setup/assets.php:131
 msgid "Gallery images"
 msgstr ""
 
-#: functions/layout/header.php:102 partials/content/not-found.php:10
+#: functions/layout/header.php:89 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""
@@ -493,11 +492,11 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: customizer/config/header.php:48 customizer/config/notifications.php:53
+#: customizer/config/notifications.php:53
 msgid "Link text"
 msgstr ""
 
-#: customizer/config/header.php:47 customizer/config/notifications.php:57
+#: customizer/config/notifications.php:57
 msgid "Link url"
 msgstr ""
 
@@ -540,11 +539,11 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: partials/content/none.php:25
+#: partials/content/none.php:17
 msgid "No posts have been published yet."
 msgstr ""
 
-#: partials/content/none.php:19
+#: partials/content/none.php:12
 msgid "No results found."
 msgstr ""
 
@@ -596,10 +595,6 @@ msgstr ""
 #: customizer/config/choices.php:52 customizer/config/choices.php:53
 msgctxt "Placeholder icon"
 msgid "Abstract"
-msgstr ""
-
-#: partials/content/none.php:20
-msgid "Please try using another search term or phrase."
 msgstr ""
 
 #: customizer/config/front-page.php:69
@@ -667,7 +662,7 @@ msgstr ""
 msgid "Related posts count"
 msgstr ""
 
-#: partials/content/none.php:7 partials/search/title.php:6
+#: partials/search/title.php:6
 msgid "Results for keyword"
 msgstr ""
 
@@ -710,7 +705,7 @@ msgstr ""
 msgid "Section title"
 msgstr ""
 
-#: partials/front-page/recent-posts/more.php:5
+#: partials/front-page/recent-posts/more.php:13
 msgid "See all articles"
 msgstr ""
 
@@ -788,7 +783,7 @@ msgid ""
 "language."
 msgstr ""
 
-#: partials/content/none.php:23
+#: partials/content/none.php:15
 msgid "This author has not published any posts yet."
 msgstr ""
 
@@ -837,7 +832,7 @@ msgstr ""
 msgid "Warning"
 msgstr ""
 
-#: partials/content/none.php:14
+#: partials/content/none.php:7
 msgid "Worse luck!"
 msgstr ""
 

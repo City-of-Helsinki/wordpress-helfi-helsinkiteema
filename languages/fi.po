@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-05-16 09:01+0000\n"
+"PO-Revision-Date: 2023-06-29 10:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: Suomi\n"
 "Language: fi\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.3\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.0; wp-6.2\n"
 
 #: comments.php:35
@@ -23,6 +23,7 @@ msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
 #: functions/links.php:53 functions/modules/notifications.php:108
+#: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
 
@@ -115,6 +116,10 @@ msgstr ""
 "\n"
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
+
+#: functions/layout/header.php:71
+msgid "City of Helsinki"
+msgstr "Helsingin kaupunki"
 
 #: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
@@ -225,18 +230,13 @@ msgctxt "Customizer section title"
 msgid "General"
 msgstr "Yleinen"
 
-#: customizer/config/header.php:38
-msgctxt "Customizer section title"
-msgid "Highlight link"
-msgstr "Nostolinkki"
-
 #: customizer/config/general.php:20
 #| msgid "Top bar"
 msgctxt "Customizer section title"
 msgid "Koros"
 msgstr "Koristeet"
 
-#: customizer/config/header.php:57
+#: customizer/config/header.php:38
 msgctxt "Customizer section title"
 msgid "Languages"
 msgstr "Kielet"
@@ -278,12 +278,6 @@ msgid "Style"
 msgstr "Tyyli"
 
 #: customizer/config/header.php:44
-#| msgid "Display login link in site header"
-msgctxt "Customizer setting description"
-msgid "Display highlight link in site header"
-msgstr "Näytä nostolinkki ylätunnisteessa"
-
-#: customizer/config/header.php:63
 msgctxt "Customizer setting description"
 msgid "Display language selector in site header"
 msgstr "Näytä kielivalitsin ylätunnisteessa"
@@ -346,8 +340,8 @@ msgstr "Näytä avainsanat"
 #: customizer/config/front-page.php:54
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
-"Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > "
-"{etusivu}."
+"Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
+"."
 
 #: customizer/config/feedback-buttons.php:14
 #: customizer/config/notifications.php:24 customizer/config/settings.php:58
@@ -394,11 +388,15 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
+#: functions/layout/misc.php:17
+msgid "Front page"
+msgstr "Etusivu"
+
 #: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
-#: functions/layout/header.php:102 partials/content/not-found.php:10
+#: functions/layout/header.php:89 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Anna palautetta"
@@ -507,11 +505,11 @@ msgstr "Viimeinen sivu"
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
-#: customizer/config/header.php:48 customizer/config/notifications.php:53
+#: customizer/config/notifications.php:53
 msgid "Link text"
 msgstr "Linkkiteksti"
 
-#: customizer/config/header.php:47 customizer/config/notifications.php:57
+#: customizer/config/notifications.php:57
 msgid "Link url"
 msgstr "Linkin osoite"
 
@@ -555,11 +553,11 @@ msgstr "Seuraava"
 msgid "Next page"
 msgstr "Seuraava sivu"
 
-#: partials/content/none.php:25
+#: partials/content/none.php:17
 msgid "No posts have been published yet."
 msgstr "Yhtään artikkelia ei ole vielä julkaistu."
 
-#: partials/content/none.php:19
+#: partials/content/none.php:12
 msgid "No results found."
 msgstr "Ei hakutuloksia."
 
@@ -613,10 +611,6 @@ msgstr "Paikanvaraajan ikoni"
 msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
-
-#: partials/content/none.php:20
-msgid "Please try using another search term or phrase."
-msgstr "Ole hyvä ja kokeile hakea jollain toisella hakusanalla tai -lauseella."
 
 #: customizer/config/front-page.php:69
 msgid "Post count"
@@ -683,7 +677,7 @@ msgstr "Suositeltu sisältö"
 msgid "Related posts count"
 msgstr "Suositeltujen artikkelien lukumäärä"
 
-#: partials/content/none.php:7 partials/search/title.php:6
+#: partials/search/title.php:6
 msgid "Results for keyword"
 msgstr "Hakutulokset hakusanalle"
 
@@ -704,6 +698,7 @@ msgid "Scheme"
 msgstr "Tyyli"
 
 #: functions/layout/view.php:42 partials/header/search.php:2
+#: partials/header/search.php:2
 msgid "Search"
 msgstr "Haku"
 
@@ -725,7 +720,7 @@ msgstr "Hae sivustolta"
 msgid "Section title"
 msgstr "Osion otsikko"
 
-#: partials/front-page/recent-posts/more.php:5
+#: partials/front-page/recent-posts/more.php:13
 msgid "See all articles"
 msgstr "Katso kaikki artikkelit"
 
@@ -806,7 +801,7 @@ msgid ""
 msgstr ""
 "Ilmoitus näytetään vain, kun sivustoa tarkastellaan valitulla kielellä."
 
-#: partials/content/none.php:23
+#: partials/content/none.php:15
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
 
@@ -859,7 +854,7 @@ msgstr "Näytettävät osiot"
 msgid "Warning"
 msgstr "Varoitus"
 
-#: partials/content/none.php:14
+#: partials/content/none.php:7
 msgid "Worse luck!"
 msgstr "Voi harmi!"
 

@@ -239,7 +239,7 @@
 	.menu {
 		padding-left: spacing('s');
 		padding-right: spacing('s');
-		gap: spacing('s');
+		column-gap: spacing('s');
 	}
 
 	.menu__item {
@@ -333,10 +333,13 @@
 
 			> .menu__item {
 				height: rem-calc(48);
-				font-size: rem-calc(16);
 	
 				> .link-wrap {
 					border-left: 4px solid transparent;
+
+					a {
+						font-size: rem-calc(16);
+					}
 				}
 
 				&:focus,
@@ -463,10 +466,14 @@
 			padding: 0;
 
 			> .link-wrap {
+				align-items: stretch;
+				justify-content: space-between;
+
 				a {
 					font-size: font-size(16) !important;
 					display: inline-block;
 					padding: spacing('s');
+					line-height: 32px;
 				}
 			}
 
@@ -475,22 +482,58 @@
 				flex-wrap: wrap;
 				justify-content: space-between;
 
-				> button {
-					border-left: $default-border-width $default-border-style colorBlackShade('10');
-					padding: spacing('s');
+				> .link-wrap {
+					padding: 0;
 
-					.icon {
-						width: 24px;
-						margin-left: 0;
+					button {
+						border-left: $default-border-width $default-border-style colorBlackShade('10');
+						width: 64px;
+						background: $white;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+	
+						.icon {
+							width: 24px;
+							margin-left: 0;
+						}
 					}
-				}
+				} 
 
 				> .menu--sub {
-					background-color: $light-gray;
+					//background-color: $light-gray;
 					border: none;
-					padding: 0 0 0 $mobilemenu-item-spacing;
+					//padding: 0 0 0 $mobilemenu-item-spacing;
 					position: static;
 					width: 100%;
+
+					//for loop to add padding to menu item based on depth
+					@for $i from 1 through 5 {
+						.menu__depth-#{$i} {
+							> .link-wrap {
+								padding-left: calc(#{$mobilemenu-item-spacing} * #{$i});
+							}
+						}
+					}
+
+					.menu__item {
+						.link-wrap {
+							border-left: 4px solid transparent;
+							border-bottom: $default-border-width $default-border-style colorBlackShade('10');
+
+							a {
+								padding-top: 9px;
+								padding-bottom: 9px;
+							}
+						}
+
+						&--active {
+							> .link-wrap {
+								border-left-color: $black;
+							}
+
+						}
+					}
 				}
 
 				> .js-submenu-toggle {
