@@ -30,10 +30,6 @@ function helsinki_setup_templates() {
 		add_action('helsinki_header_mobile_panel', 'helsinki_header_languages', 10);
 	}
 
-	if ( apply_filters( 'helsinki_header_highlight_enabled', false ) ) {
-		add_action( 'helsinki_header', 'helsinki_header_highlight', 30 );
-	}
-
 	if ( apply_filters( 'helsinki_header_search_enabled', false ) ) {
 		add_action( 'helsinki_header', 'helsinki_header_search', 40 );
 	}

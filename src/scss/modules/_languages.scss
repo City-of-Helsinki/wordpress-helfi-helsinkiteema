@@ -1,11 +1,15 @@
 .languages {
 
 	.lang-item {
-		text-decoration: underline;
+
+		a {
+			line-height: $global-line-height;
+		}
 
 		&.current-lang {
 			font-weight: $global-font-weight-bold;
 			text-decoration: none;
+			border-bottom: 2px solid $black;
 		}
 	}
 }

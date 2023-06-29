@@ -24,7 +24,7 @@ function helsinki_setup_site() {
 	/**
 	  * Site header
 	  */
-	$header_parts = array('search', 'languages', 'highlight');
+	$header_parts = array('search', 'languages');
 	foreach ($header_parts as $header_part) {
 		if ( helsinki_theme_mod('helsinki_header_' . $header_part, 'enabled') ) {
 			add_filter('helsinki_header_' . $header_part . '_enabled', '__return_true');
