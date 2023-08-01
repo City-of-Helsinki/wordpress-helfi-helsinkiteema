@@ -38,10 +38,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 		input {
 			padding-right: 5rem;
-
-			&:focus {
-				box-shadow: 0 0 0 var(--outline-width) $black !important;
-			}
 		}
 
 		button {
@@ -120,11 +116,6 @@ footer {
 				background-color: transparent;
 				color: $white;
 				box-shadow: none;
-
-				&:focus {
-					border-color: $white;
-					box-shadow: 0 0 0 var(--outline-width) $white !important;
-				}
 
 				&:hover {
 					border-color: $white;
