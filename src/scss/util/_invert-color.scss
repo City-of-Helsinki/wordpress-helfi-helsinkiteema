@@ -11,45 +11,7 @@
 			}
 
 			.button {
-				background-color: $white;
-				border-color: $white;
-				color: $black;
-
-				.icon {
-					fill: $black;
-				}
-
-				&:focus,
-				&:hover {
-					background-color: transparent;
-					border-color: $white;
-					color: $white;
-
-					.icon {
-						fill: $white;
-					}
-				}
-
-				&.hds-button--secondary {
-					background-color: transparent;
-					border-color: $white;
-					color: $white;
-
-					.icon {
-						fill: $white;
-					}
-
-					&:focus,
-					&:hover {
-						background-color: $white;
-						border-color: $white;
-						color: $black;
-
-						.icon {
-							fill: $black;
-						}
-					}
-				}
+				@extend %inverted-button;
 			}
 		}
 	} // .hero
@@ -77,16 +39,19 @@
 		fill: $black;
 	}
 
-	&:focus,
+
 	&:hover {
 		background-color: transparent;
-		border-color: $white;
 		color: $white;
 
 		.icon {
 			fill: $white;
 		}
 	}
+
+  &:focus {
+    outline-color: $white;
+  }
 
 	&.hds-button--secondary {
 		background-color: transparent;
@@ -97,15 +62,18 @@
 			fill: $white;
 		}
 
-		&:focus,
 		&:hover {
 			background-color: $white;
-			border-color: $white;
 			color: $black;
 
 			.icon {
 				fill: $black;
 			}
 		}
+
+    &:focus {
+      outline-color: $white;
+    }
+
 	}
 }
