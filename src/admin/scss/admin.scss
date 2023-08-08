@@ -58,9 +58,13 @@ body.editor-styles-wrapper {
       }
     }
 
-    & > .wp-block-list {
-      padding-left: $list-margin-left;
-    }
+	& > .wp-block-list {
+		padding-left: $list-margin-left;
+	}
+
+	.hds-pagination {
+		pointer-events: none;
+	}
   }
 
   @import '../../scss/elements';
