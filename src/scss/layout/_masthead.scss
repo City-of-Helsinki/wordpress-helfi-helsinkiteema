@@ -1,21 +1,39 @@
+#wpadminbar {
+	+ #masthead {
+		--wordpress-toolbar-height: 32px;
+
+		@media screen and (max-width: 782px) {
+			--wordpress-toolbar-height: 46px;
+		}
+	}
+}
+
 #masthead {
 	background-color: $white;
 	position: relative;
+	--navigation-content-height: 64px;
+	--logout-bar-height: 53px;
 
 	@include breakpointMax(l) {
 		border-bottom: $header-border;
+	}
+
+	@include breakpoint(l) {
+		--navigation-content-height: 74px;
 	}
 }
 
 .navigation__content {
 	align-items: stretch;
 	position: relative;
-	height: 64px;
+	height: var(--navigation-content-height);
 
-	@include breakpointMax(l) {
+	@include breakpointMax(m) {
 		padding-left: spacing(s);
 		padding-right: spacing(s);
+	}
 
+	@include breakpointMax(l) {
 		.navigation__languages {
 			display: none;
 		}
@@ -23,7 +41,6 @@
 
 	@include breakpoint(l) {
 		padding: 0;
-		height: 74px;
 
 		> div {
 			display: flex;
@@ -250,6 +267,15 @@
 		}
 	}
 
+	@include breakpoint(m) {
+
+		.menu {
+			padding-left: spacing('m');
+			padding-right: spacing('m');
+		}
+		
+	}
+
 	@include breakpoint(l) {
 		.menu {
 			padding: 0;
@@ -403,6 +429,8 @@
 }
 
 #mobile-panel {
+	--mobile-menu-height: 100vh;
+	--mobile-menu-max-height: calc(var(--mobile-menu-height) - var(--wordpress-toolbar-height,0px) - var(--navigation-content-height) - var(--logout-bar-height));
 	background-color: $body-background-color;
 	display: none;
 	position: absolute;
@@ -410,13 +438,17 @@
 	left: 0;
 	width: 100vw;
 	z-index: 2;
+	height: var(--mobile-menu-height);
+	max-height: var(--mobile-menu-max-height);
+	overflow-y: auto;
+	flex-direction: column;
 
 	> * {
 		border-top: $default-border-width $default-border-style colorBlackShade('10');
 	}
 
 	&.active {
-		display: block;
+		display: flex;
 	}
 
 	.navigation__languages {
@@ -435,8 +467,6 @@
 	}
 
 	.navigation__menu {
-		max-height: 500px;
-		overflow-y: scroll;
 
 		> .menu {
 			display: block;
@@ -474,6 +504,10 @@
 					display: inline-block;
 					padding: spacing('s');
 					line-height: 32px;
+
+					@include breakpoint('m') {
+						padding: spacing('s') spacing('m');
+					}
 				}
 			}
 
@@ -552,6 +586,7 @@
 		padding-top: $global-padding;
 		padding-bottom: $global-padding;
 		background-color: $light-gray;
+		flex-grow: 1;
 
 		#mobile-topbar-menu {
 			flex-direction: column;
@@ -561,6 +596,10 @@
 			.menu__item {
 				> a {
 					padding: spacing(2-xs) spacing(s);
+
+					@include breakpoint('m') {
+						padding: spacing(2-xs) spacing(m);
+					}
 				}
 			}
 		}
