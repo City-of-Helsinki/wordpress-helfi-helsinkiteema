@@ -4,10 +4,6 @@ p {
   margin-bottom: $paragraph-margin-bottom;
   max-width: 860px;
 
-  + p {
-    margin-top: calc(var(--spacing-s) * -1);
-  }
-
   &.has-background {
     padding: 0;
   }
