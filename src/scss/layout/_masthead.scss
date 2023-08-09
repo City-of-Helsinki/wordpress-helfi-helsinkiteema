@@ -12,7 +12,12 @@
 	background-color: $white;
 	position: relative;
 	--navigation-content-height: 64px;
-	--logout-bar-height: 53px;
+
+	#logout_bar {
+		~ * {
+			--logout-bar-height: 53px;
+		}
+	}	
 
 	@include breakpointMax(l) {
 		border-bottom: $header-border;
@@ -430,7 +435,7 @@
 
 #mobile-panel {
 	--mobile-menu-height: 100vh;
-	--mobile-menu-max-height: calc(var(--mobile-menu-height) - var(--wordpress-toolbar-height,0px) - var(--navigation-content-height) - var(--logout-bar-height));
+	--mobile-menu-max-height: calc(var(--mobile-menu-height) - var(--wordpress-toolbar-height,0px) - var(--navigation-content-height) - var(--logout-bar-height,0px));
 	background-color: $body-background-color;
 	display: none;
 	position: absolute;
