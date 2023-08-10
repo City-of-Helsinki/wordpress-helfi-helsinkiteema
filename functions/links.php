@@ -96,6 +96,6 @@ function helsinki_links_parse_blocks( $block_content = '', $block = [] ) {
 		return $block_content;
 	}
 
-	return helsinki_add_links_symbols( $block_content, in_array( $block['blockName'], $custom_classes, true ) ? $custom_classes[$block['blockName']] : '' );
+	return helsinki_add_links_symbols( $block_content, in_array( $block['blockName'], $custom_classes, true ) ? $custom_classes[$block['blockName']] : 'inline-icon' );
 }
 
