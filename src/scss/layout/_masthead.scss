@@ -410,6 +410,7 @@
 #mobile-panel-toggle {
 	color: $anchor-color;
 	cursor: pointer;
+	padding: 0;
 	padding-left: spacing(2-xs);
 	padding-right: spacing(2-xs);
 	margin-right: calc(var(--spacing-2-xs) * -1);
