@@ -7,7 +7,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-06-29 11:27+0000\n"
+"POT-Creation-Date: 2023-08-17 08:53+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -128,6 +128,10 @@ msgstr ""
 msgid "Coat of Arms"
 msgstr ""
 
+#: customizer/config/general.php:59
+msgid "Color"
+msgstr ""
+
 #: comments.php:34
 msgid "Comment navigation"
 msgstr ""
@@ -154,7 +158,7 @@ msgstr ""
 msgid "Copper"
 msgstr ""
 
-#: partials/loop/pagination.php:37
+#: partials/loop/pagination.php:44
 #, php-format
 msgid "Currently on page %d"
 msgstr ""
@@ -174,11 +178,6 @@ msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr ""
 
-#: customizer/config.php:12
-msgctxt "Customizer panel title"
-msgid "General"
-msgstr ""
-
 #: customizer/config.php:51
 msgctxt "Customizer panel title"
 msgid "Header"
@@ -194,14 +193,19 @@ msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr ""
 
-#: customizer/config/general.php:38
+#: customizer/config.php:12
+msgctxt "Customizer panel title"
+msgid "Style"
+msgstr ""
+
+#: customizer/config/header.php:53
 msgctxt "Customizer section title"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: customizer/config/blog.php:8
+#: customizer/config/general.php:9
 msgctxt "Customizer section title"
-msgid "Entries"
+msgid "Color"
 msgstr ""
 
 #: customizer/config/feedback-buttons.php:9
@@ -211,17 +215,22 @@ msgstr ""
 
 #: customizer/config/header.php:8
 msgctxt "Customizer section title"
-msgid "General"
+msgid "Helsinki logo"
+msgstr ""
+
+#: customizer/config/general.php:38
+msgctxt "Customizer section title"
+msgid "Icon"
 msgstr ""
 
 #: customizer/config/general.php:20
 msgctxt "Customizer section title"
-msgid "Koros"
+msgid "Koroshape"
 msgstr ""
 
 #: customizer/config/header.php:38
 msgctxt "Customizer section title"
-msgid "Languages"
+msgid "Language selector"
 msgstr ""
 
 #: customizer/config/notifications.php:16
@@ -244,14 +253,9 @@ msgctxt "Customizer section title"
 msgid "Sections"
 msgstr ""
 
-#: customizer/config/blog.php:28
+#: customizer/config/blog.php:8
 msgctxt "Customizer section title"
 msgid "Single Article"
-msgstr ""
-
-#: customizer/config/general.php:9
-msgctxt "Customizer section title"
-msgid "Style"
 msgstr ""
 
 #: customizer/config/header.php:44
@@ -264,7 +268,7 @@ msgctxt "Customizer setting description"
 msgid "Display search field in site header"
 msgstr ""
 
-#: customizer/config/general.php:44
+#: customizer/config/header.php:59
 msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr ""
@@ -286,27 +290,27 @@ msgstr ""
 msgid "Disable default city logo"
 msgstr ""
 
-#: customizer/config/blog.php:40
+#: customizer/config/blog.php:20
 msgid "Display author"
 msgstr ""
 
-#: customizer/config/blog.php:37
+#: customizer/config/blog.php:17
 msgid "Display categories"
 msgstr ""
 
-#: customizer/config/blog.php:43
+#: customizer/config/blog.php:23
 msgid "Display modified date"
 msgstr ""
 
-#: customizer/config/blog.php:49
+#: customizer/config/blog.php:29
 msgid "Display related posts"
 msgstr ""
 
-#: customizer/config/blog.php:34
+#: customizer/config/blog.php:14
 msgid "Display social share buttons"
 msgstr ""
 
-#: customizer/config/blog.php:46
+#: customizer/config/blog.php:26
 msgid "Display tags"
 msgstr ""
 
@@ -336,7 +340,7 @@ msgstr ""
 msgid "Feed URL"
 msgstr ""
 
-#: partials/loop/pagination.php:27
+#: partials/loop/pagination.php:34
 msgid "First page"
 msgstr ""
 
@@ -390,6 +394,10 @@ msgstr ""
 
 #. Author URI of the theme
 msgid "https://www.artcloud.fi/"
+msgstr ""
+
+#: customizer/config/general.php:45
+msgid "Icon"
 msgstr ""
 
 #: customizer/config/notifications.php:31
@@ -448,6 +456,10 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr ""
 
+#: customizer/config/general.php:26
+msgid "Koroshape"
+msgstr ""
+
 #: searchform.php:3
 msgctxt "label"
 msgid "Search by keyword"
@@ -461,7 +473,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: partials/loop/pagination.php:55
+#: partials/loop/pagination.php:62
 msgid "Last page"
 msgstr ""
 
@@ -507,12 +519,12 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:129 partials/loop/pagination.php:18
-#: partials/loop/pagination.php:61
+#: setup/assets.php:129 partials/loop/pagination.php:25
+#: partials/loop/pagination.php:68
 msgid "Next"
 msgstr ""
 
-#: partials/loop/pagination.php:61
+#: partials/loop/pagination.php:68
 msgid "Next page"
 msgstr ""
 
@@ -540,12 +552,12 @@ msgstr ""
 msgid "On this page"
 msgstr ""
 
-#: partials/loop/pagination.php:45
+#: partials/loop/pagination.php:52
 #, php-format
 msgid "Page %d"
 msgstr ""
 
-#: partials/loop/pagination.php:18
+#: partials/loop/pagination.php:25
 msgid "Page navigation"
 msgstr ""
 
@@ -561,10 +573,6 @@ msgstr ""
 
 #: functions/media/meta.php:8
 msgid "Photographer"
-msgstr ""
-
-#: customizer/config/blog.php:15
-msgid "Placeholder Icon"
 msgstr ""
 
 #: customizer/config/choices.php:48 customizer/config/choices.php:49
@@ -588,11 +596,11 @@ msgctxt "posts count"
 msgid "search results"
 msgstr ""
 
-#: setup/assets.php:130 partials/loop/pagination.php:21
+#: setup/assets.php:130 partials/loop/pagination.php:28
 msgid "Previous"
 msgstr ""
 
-#: partials/loop/pagination.php:21
+#: partials/loop/pagination.php:28
 msgid "Previous page"
 msgstr ""
 
@@ -635,10 +643,6 @@ msgstr ""
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
-msgstr ""
-
-#: customizer/config/general.php:54
-msgid "Scheme"
 msgstr ""
 
 #: functions/layout/view.php:42 partials/header/search.php:2
@@ -762,7 +766,7 @@ msgstr ""
 msgid "Twitter"
 msgstr ""
 
-#: customizer/config/general.php:26 customizer/config/notifications.php:38
+#: customizer/config/notifications.php:38
 msgid "Type"
 msgstr ""
 

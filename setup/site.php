@@ -17,7 +17,7 @@ function helsinki_setup_site() {
 		$current_scheme ?: helsinki_default_scheme()
 	);
 
-	if ( helsinki_theme_mod('helsinki_general_breadcrumbs', 'enabled') ) {
+	if ( helsinki_theme_mod('helsinki_header_breadcrumbs', 'enabled') ) {
 		add_filter('helsinki_breadcrumbs_enabled', '__return_true');
 	}
 

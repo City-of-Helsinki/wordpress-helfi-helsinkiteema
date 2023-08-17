@@ -9,7 +9,7 @@ function helsinki_customizer_config() {
 		    'helsinki_general' => array(
 
 		      'config' => array(
-		        'title'          => esc_html_x( 'General', 'Customizer panel title', 'helsinki-universal' ),
+		        'title'          => esc_html_x( 'Style', 'Customizer panel title', 'helsinki-universal' ),
 		        'priority'       => 35,
 		        'capability'     => 'edit_theme_options',
 		      ),
