@@ -34,7 +34,7 @@ $footer_attributes   = SB_Instagram_Display_Elements::get_footer_attributes( $se
 
 	<?php ob_start(); ?>
 
-	<?php if ( ( $first_username && $show_follow_button ) || sbi_doing_customizer( $settings ) ) : ?>
+	<?php if ( ( $first_username && !is_numeric($first_username) && $show_follow_button ) || sbi_doing_customizer( $settings ) ) : ?>
         <a<?php echo SB_Instagram_Display_Elements::get_header_link( $settings, $first_username ) ?> class="sbi_follow_btn_link" target="_blank" rel="nofollow noopener">
             <span<?php echo SB_Instagram_Display_Elements::get_follow_attribute( $settings ); ?>><?php echo esc_html( $follow_button_text ); ?></span>
         </a>

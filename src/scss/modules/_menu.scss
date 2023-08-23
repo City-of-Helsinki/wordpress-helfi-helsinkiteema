@@ -24,11 +24,22 @@
 			width: 100%;
 
 			button {
-				margin-left: spacing(3-xs);
+				margin-left: spacing(s);
+				background-color: var(--color-black-5);
 
 				.icon {
-					width: 32px;
+					width: 24px;
+					pointer-events: none;
 				}
+
+				&:hover {
+					background-color: var(--color-black-20);
+				}
+
+				&:focus {
+					outline: 3px solid $black;
+				}
+
 			}
 		}
 
@@ -83,7 +94,7 @@
 			}
 
 			> .menu--sub {
-				top: 0;
+				top: -1px;
 				left: 100%;
 			}
 

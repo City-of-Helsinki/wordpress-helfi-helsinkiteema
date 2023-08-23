@@ -9,7 +9,7 @@ function helsinki_customizer_config() {
 		    'helsinki_general' => array(
 
 		      'config' => array(
-		        'title'          => esc_html_x( 'General', 'Customizer panel title', 'helsinki-universal' ),
+		        'title'          => esc_html_x( 'Style', 'Customizer panel title', 'helsinki-universal' ),
 		        'priority'       => 35,
 		        'capability'     => 'edit_theme_options',
 		      ),
@@ -30,19 +30,6 @@ function helsinki_customizer_config() {
 		      'panel_sections' => helsinki_customizer_notification_sections(),
 
 		  ), // helsinki_notification
-
-		    // Front page
-		    'helsinki_front_page' => array(
-
-		      'config' => array(
-		        'title'          => esc_html_x( 'Front Page', 'Customizer panel title', 'helsinki-universal' ),
-		        'priority'       => 35,
-		        'capability'     => 'edit_theme_options',
-		      ),
-
-		      'panel_sections' => helsinki_customizer_front_page_sections(),
-
-		    ), // helsinki_front_page
 
 		    // Blog
 		    'helsinki_blog' => array(
