@@ -22,6 +22,21 @@ function helsinki_menu_config(string $location) {
 			);
 			break;
 
+		case 'mobile_topbar_menu':
+			return array(
+				'theme_location'    => 'topbar_menu',
+				'container'         => 'false',
+				'container_id'      => '',
+				'depth'             => 1,
+				'menu_id'           => 'mobile-topbar-menu',
+				'menu_class'        => 'mobile-menu menu menu--topbar',
+				'echo'              => false,
+				'fallback_cb'       => false,
+				'item_spacing'      => 'discard',
+				'walker'            => new Artcloud_Menu_Walker(),
+			);
+			break;
+
 		case 'main_menu':
 			return array(
 				'theme_location'    => $location,

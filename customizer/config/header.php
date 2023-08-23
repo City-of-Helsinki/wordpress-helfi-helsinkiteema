@@ -5,7 +5,7 @@ function helsinki_customizer_header_sections() {
 		'general' => array(
 
 			'config' => array(
-			'title'          => esc_html_x( 'General', 'Customizer section title', 'helsinki-universal' ),
+			'title'          => esc_html_x( 'Helsinki logo', 'Customizer section title', 'helsinki-universal' ),
 			'capability'     => 'edit_theme_options',
 			),
 
@@ -32,29 +32,10 @@ function helsinki_customizer_header_sections() {
 
 		), // search
 
-		'highlight' => array(
-
-			'config' => array(
-				'title'          => esc_html_x( 'Highlight link', 'Customizer section title', 'helsinki-universal' ),
-				'capability'     => 'edit_theme_options',
-			),
-
-			'section_settings' => array_merge(
-				helsinki_customizer_setting_enabled(
-					esc_html_x( 'Display highlight link in site header', 'Customizer setting description', 'helsinki-universal' )
-				),
-				array(
-					'url' => helsinki_setting_url( __('Link url', 'helsinki-universal'), '', '' ),
-					'text' => helsinki_setting_text( __('Link text', 'helsinki-universal'), '', '' ),
-				)
-			), // section_settings
-
-		), // highlight
-
 		'languages' => array(
 
 			'config' => array(
-				'title'          => esc_html_x( 'Languages', 'Customizer section title', 'helsinki-universal' ),
+				'title'          => esc_html_x( 'Language selector', 'Customizer section title', 'helsinki-universal' ),
 				'capability'     => 'edit_theme_options',
 			),
 
@@ -65,5 +46,21 @@ function helsinki_customizer_header_sections() {
 			), // section_settings
 
 		), // languages
+
+		'breadcrumbs' => array(
+
+			'config' => array(
+				'title'          => esc_html_x( 'Breadcrumbs', 'Customizer section title', 'helsinki-universal' ),
+				'capability'     => 'edit_theme_options',
+			),
+	
+			'section_settings' => helsinki_merge_section_settings(
+				helsinki_customizer_setting_enabled(
+					esc_html_x( 'Required Yoast SEO to be installed', 'Customizer setting description', 'helsinki-universal' )
+				)
+			), // section_settings
+	
+		), // breadcrumbs
+	
     );
 }

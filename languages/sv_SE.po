@@ -3,16 +3,11 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 14:28+0000\n"
-"PO-Revision-Date: 2023-05-16 09:02+0000\n"
-"Last-Translator: \n"
-"Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.3\n"
-"X-Loco-Version: 2.6.0; wp-6.1.1\n"
+"PO-Revision-Date: 2023-08-23 07:44+0000\n"
+"X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -22,15 +17,16 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:53 functions/modules/notifications.php:108
+#: functions/links.php:54 functions/modules/notifications.php:108
+#: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:39
+#: functions/links.php:40
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:46
+#: functions/links.php:47
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
@@ -102,7 +98,7 @@ msgstr ""
 "Kontrollera att sidans adress är rätt skriven. Vi kan också ha tagit bort "
 "eller flyttat sidan."
 
-#: customizer/config/front-page.php:25
+#: customizer/config/front-page.php:22
 msgid ""
 "Checked sections will be displayed on the front page. Reorder sections with "
 "drag and drop. \n"
@@ -111,11 +107,15 @@ msgid ""
 "editor to setup the front page content. Remember to keep the Content-"
 "checkbox active."
 msgstr ""
-"Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och "
-"släpp. \n"
+"Markerade avsnitt visas på förstasidan. Omordna sektioner med dra och släpp. "
+"\n"
 "\n"
 "Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
 "framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
+
+#: functions/layout/header.php:71
+msgid "City of Helsinki"
+msgstr "Helsingfors stad"
 
 #: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
@@ -133,6 +133,10 @@ msgstr "Stäng avisering"
 #: customizer/config/choices.php:19
 msgid "Coat of Arms"
 msgstr "Vapen"
+
+#: customizer/config/general.php:59
+msgid "Color"
+msgstr "Färg"
 
 #: comments.php:34
 msgid "Comment navigation"
@@ -165,32 +169,22 @@ msgstr "Koppar"
 msgid "Currently on page %d"
 msgstr "För närvarande på sidan %d"
 
-#: customizer/config.php:51
+#: customizer/config.php:38
 msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr "Blogg"
 
-#: customizer/config.php:103
+#: customizer/config.php:90
 msgctxt "Customizer panel title"
 msgid "Feedback buttons"
 msgstr "Återkopplingsknappar"
 
-#: customizer/config.php:90
+#: customizer/config.php:77
 msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: customizer/config.php:38
-msgctxt "Customizer panel title"
-msgid "Front Page"
-msgstr "Framsida"
-
-#: customizer/config.php:12
-msgctxt "Customizer panel title"
-msgid "General"
-msgstr "Allmän"
-
-#: customizer/config.php:64
+#: customizer/config.php:51
 msgctxt "Customizer panel title"
 msgid "Header"
 msgstr "Rubrik"
@@ -200,21 +194,26 @@ msgctxt "Customizer panel title"
 msgid "Notifications"
 msgstr "Aviseringar"
 
-#: customizer/config.php:77
+#: customizer/config.php:64
 msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: customizer/config/general.php:38
+#: customizer/config.php:12
+msgctxt "Customizer panel title"
+msgid "Style"
+msgstr "Skuror"
+
+#: customizer/config/header.php:53
 msgctxt "Customizer section title"
 msgid "Breadcrumbs"
 msgstr "Brödsmulor"
 
-#: customizer/config/blog.php:8
-#| msgid "Filters"
+#: customizer/config/general.php:9
+#| msgid "Koros"
 msgctxt "Customizer section title"
-msgid "Entries"
-msgstr "Inlägg"
+msgid "Color"
+msgstr "Färg"
 
 #: customizer/config/feedback-buttons.php:9
 msgctxt "Customizer section title"
@@ -223,23 +222,25 @@ msgstr "Respons"
 
 #: customizer/config/header.php:8
 msgctxt "Customizer section title"
-msgid "General"
-msgstr "Allmän"
+msgid "Helsinki logo"
+msgstr "Helsinki logotyp"
 
-#: customizer/config/header.php:38
+#: customizer/config/general.php:38
+#| msgid "Style"
 msgctxt "Customizer section title"
-msgid "Highlight link"
-msgstr "Markera länk"
+msgid "Icon"
+msgstr "Ikon"
 
 #: customizer/config/general.php:20
 msgctxt "Customizer section title"
-msgid "Koros"
-msgstr "Skuror"
+msgid "Koroshape"
+msgstr "Koroform"
 
-#: customizer/config/header.php:57
+#: customizer/config/header.php:38
+#| msgid "Languages"
 msgctxt "Customizer section title"
-msgid "Languages"
-msgstr "Språk"
+msgid "Language selector"
+msgstr "Språkmenyn"
 
 #: customizer/config/notifications.php:16
 msgctxt "Customizer section title"
@@ -256,33 +257,17 @@ msgctxt "Customizer section title"
 msgid "Search"
 msgstr "Sök"
 
-#: customizer/config/front-page.php:19
+#: customizer/config/front-page.php:16
 msgctxt "Customizer section title"
 msgid "Sections"
 msgstr "Avsnitt"
 
-#: customizer/config/blog.php:28
+#: customizer/config/blog.php:8
 msgctxt "Customizer section title"
 msgid "Single Article"
 msgstr "Enstaka artikel"
 
-#: customizer/config/general.php:53
-msgctxt "Customizer section title"
-msgid "Social share"
-msgstr "Social andel"
-
-#: customizer/config/general.php:9
-msgctxt "Customizer section title"
-msgid "Style"
-msgstr "Stil"
-
 #: customizer/config/header.php:44
-#| msgid "Display login link in site header"
-msgctxt "Customizer setting description"
-msgid "Display highlight link in site header"
-msgstr "Visa höjdlänk i sidhuvudet"
-
-#: customizer/config/header.php:63
 msgctxt "Customizer setting description"
 msgid "Display language selector in site header"
 msgstr "Visa språkväljaren i sidhuvudet"
@@ -292,7 +277,7 @@ msgctxt "Customizer setting description"
 msgid "Display search field in site header"
 msgstr "Visa sökfält i sidhuvudet"
 
-#: customizer/config/general.php:44
+#: customizer/config/header.php:59
 msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr "Yoast SEO krävs för att installeras"
@@ -314,35 +299,31 @@ msgstr "Diagonal"
 msgid "Disable default city logo"
 msgstr "Inaktivera standardstadslogotyp"
 
-#: customizer/config/blog.php:40
+#: customizer/config/blog.php:20
 msgid "Display author"
 msgstr "Visa författare"
 
-#: customizer/config/blog.php:37
+#: customizer/config/blog.php:17
 msgid "Display categories"
 msgstr "Visa kategorier"
 
-#: customizer/config/blog.php:43
-msgid "Display date"
-msgstr "Visa datum"
-
-#: customizer/config/blog.php:46
+#: customizer/config/blog.php:23
 msgid "Display modified date"
 msgstr "Visa modifierat datum"
 
-#: customizer/config/blog.php:52
+#: customizer/config/blog.php:29
 msgid "Display related posts"
 msgstr "Visa relaterade inlägg"
 
-#: customizer/config/blog.php:34
+#: customizer/config/blog.php:14
 msgid "Display social share buttons"
 msgstr "Visa sociala delningsknappar"
 
-#: customizer/config/blog.php:49
+#: customizer/config/blog.php:26
 msgid "Display tags"
 msgstr "Visa taggar"
 
-#: customizer/config/front-page.php:54
+#: customizer/config/front-page.php:51
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Visar innehåll på förstasidan som ställts in i Instrumentpanelen> Sidor> "
@@ -358,19 +339,15 @@ msgstr "Aktiverad"
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:59 functions/modules/social.php:51
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:91
+#: customizer/config/front-page.php:80
 msgid "Feed Cache time"
 msgstr "Feed Cache-tid"
 
-#: customizer/config/front-page.php:78
-msgid "Feed shortcode"
-msgstr "Mata kortkod"
-
-#: customizer/config/front-page.php:86
+#: customizer/config/front-page.php:75
 msgid "Feed URL"
 msgstr "Feed URL"
 
@@ -387,17 +364,21 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
+#: integrations/wp-rss-aggregator.php:36
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s"
 
+#: functions/layout/misc.php:17
+msgid "Front page"
+msgstr "Startsida"
+
 #: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
-#: functions/layout/header.php:102 partials/content/not-found.php:10
+#: functions/layout/header.php:89 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Ge respons"
@@ -425,6 +406,10 @@ msgstr "Helsinkiteema #1"
 #. Author URI of the theme
 msgid "https://www.artcloud.fi/"
 msgstr "https://www.artcloud.fi/"
+
+#: customizer/config/general.php:45
+msgid "Icon"
+msgstr "Ikon"
 
 #: customizer/config/notifications.php:31
 msgid ""
@@ -484,6 +469,10 @@ msgctxt "Koros motif"
 msgid "Wave"
 msgstr "Bränning"
 
+#: customizer/config/general.php:26
+msgid "Koroshape"
+msgstr "Koroform"
+
 #: searchform.php:3
 msgctxt "label"
 msgid "Search by keyword"
@@ -505,26 +494,26 @@ msgstr "Sista sidan"
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: customizer/config/header.php:48 customizer/config/notifications.php:53
+#: customizer/config/notifications.php:53
 msgid "Link text"
 msgstr "Länktext"
 
-#: customizer/config/header.php:47 customizer/config/notifications.php:57
+#: customizer/config/notifications.php:57
 msgid "Link url"
 msgstr "Länk url"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:61 functions/modules/social.php:61
 msgid "LinkedIn"
 msgstr "LinkedIn"
+
+#: sbsw/footer.php:14
+msgid "Load more"
+msgstr "Ladda mer"
 
 #: functions/modules/comments.php:27
 #, php-format
 msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
 msgstr "Inloggad som %1$s. <a href=\"%2$s\">Logga ut?</a>"
-
-#: customizer/config/general.php:59
-msgid "Media"
-msgstr "Media"
 
 #: partials/header/mobile-panel-toggle.php:1
 #: partials/header/mobile-panel-toggle.php:4
@@ -552,11 +541,11 @@ msgstr "Nästa"
 msgid "Next page"
 msgstr "Nästa sida"
 
-#: partials/content/none.php:25
+#: partials/content/none.php:17
 msgid "No posts have been published yet."
 msgstr "Inga inlägg har publicerats än."
 
-#: partials/content/none.php:19
+#: partials/content/none.php:12
 msgid "No results found."
 msgstr "Inga sökresultat."
 
@@ -599,11 +588,6 @@ msgstr "Bild: %s"
 msgid "Photographer"
 msgstr "Fotograf"
 
-#: customizer/config/blog.php:15
-#| msgid "Placeholder text"
-msgid "Placeholder Icon"
-msgstr "Platshållarikon"
-
 #: customizer/config/choices.php:48 customizer/config/choices.php:49
 #: customizer/config/choices.php:50 customizer/config/choices.php:51
 #: customizer/config/choices.php:52 customizer/config/choices.php:53
@@ -611,11 +595,7 @@ msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakt"
 
-#: partials/content/none.php:20
-msgid "Please try using another search term or phrase."
-msgstr "Försök använda en annan sökterm eller fras."
-
-#: customizer/config/front-page.php:69
+#: customizer/config/front-page.php:66
 msgid "Post count"
 msgstr "Antal inlägg"
 
@@ -628,10 +608,6 @@ msgstr "Artikel"
 msgctxt "posts count"
 msgid "search results"
 msgstr "sökresultat"
-
-#: customizer/config/front-page.php:10
-msgid "Posts Feed"
-msgstr "Inläggsflöde"
 
 #: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
@@ -653,10 +629,6 @@ msgstr "Publicerad:"
 msgid "Read more"
 msgstr "Läs mer"
 
-#: customizer/config/front-page.php:8
-msgid "Recent Posts"
-msgstr "Nya Inlägg"
-
 #: setup/theme.php:78
 msgctxt "Registered menu name"
 msgid "Footer menu"
@@ -676,19 +648,9 @@ msgstr "Den översta radens meny"
 msgid "Related content"
 msgstr "Relaterat innehåll"
 
-#: customizer/config/blog.php:55
-msgid "Related posts count"
-msgstr "Relaterade inlägg räknas"
-
-#: partials/content/none.php:7 partials/search/title.php:6
+#: partials/search/title.php:6
 msgid "Results for keyword"
 msgstr "Resultat för sökord"
-
-#: functions/layout/front-page.php:227
-#, php-format
-msgctxt "RSS feed source(s)"
-msgid "Contents are automatically fetched from %s."
-msgstr "Innehållet hämtas automatiskt från %s."
 
 #: integrations/wp-rss-aggregator.php:60
 #, php-format
@@ -696,11 +658,8 @@ msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
 msgstr "Detta flöde hämtas från %s."
 
-#: customizer/config/general.php:73
-msgid "Scheme"
-msgstr "Schema"
-
 #: functions/layout/view.php:42 partials/header/search.php:2
+#: partials/header/search.php:2
 msgid "Search"
 msgstr "Sök"
 
@@ -718,27 +677,23 @@ msgctxt "search title"
 msgid "Search the site"
 msgstr "Sök på webbplatsen"
 
-#: customizer/config/front-page.php:48
+#: customizer/config/front-page.php:45
 msgid "Section title"
 msgstr "Avsnittstitel"
-
-#: partials/front-page/recent-posts/more.php:5
-msgid "See all articles"
-msgstr "Se alla artiklar"
 
 #: functions/layout/loop.php:20
 msgid "Select category"
 msgstr "Välj kategori"
 
-#: functions/modules/social.php:59
+#: functions/modules/social.php:52
 msgid "Share on Facebook"
 msgstr "Dela på Facebook"
 
-#: functions/modules/social.php:69
+#: functions/modules/social.php:62
 msgid "Share on LinkedIn"
 msgstr "Dela på LinkedIn"
 
-#: functions/modules/social.php:64
+#: functions/modules/social.php:57
 msgid "Share on Twitter"
 msgstr "Dela på Twitter"
 
@@ -770,10 +725,6 @@ msgstr "Silver"
 msgid "Skip to content"
 msgstr "Hoppa till innehåll"
 
-#: customizer/config/front-page.php:9
-msgid "Social Feeds"
-msgstr "Sociala flöden"
-
 #: customizer/config/choices.php:27
 msgid "Summer"
 msgstr "Sommar"
@@ -790,7 +741,7 @@ msgstr "Taggar"
 msgid "Text"
 msgstr "Text"
 
-#: customizer/config/front-page.php:92
+#: customizer/config/front-page.php:81
 msgid "The feed result is cached for 12 hours by default."
 msgstr "Resultatet är cachat i 12 timmar som standard."
 
@@ -802,7 +753,7 @@ msgstr ""
 "Meddelandet kommer endast att visas när webbplatsen visas på det valda "
 "språket."
 
-#: partials/content/none.php:23
+#: partials/content/none.php:15
 msgid "This author has not published any posts yet."
 msgstr "Denna författare har inte publicerat några inlägg ännu."
 
@@ -830,11 +781,11 @@ msgstr "Växla undermenyn för %s"
 msgid "Tram"
 msgstr "Spårvagn"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:60 functions/modules/social.php:56
 msgid "Twitter"
 msgstr "Twitter"
 
-#: customizer/config/general.php:26 customizer/config/notifications.php:38
+#: customizer/config/notifications.php:38
 msgid "Type"
 msgstr "Typ"
 
@@ -847,7 +798,7 @@ msgctxt "verb"
 msgid "Search"
 msgstr "Sök"
 
-#: customizer/config/front-page.php:24
+#: customizer/config/front-page.php:21
 msgid "Visible sections"
 msgstr "Synliga sektioner"
 
@@ -855,7 +806,7 @@ msgstr "Synliga sektioner"
 msgid "Warning"
 msgstr "Varning"
 
-#: partials/content/none.php:14
+#: partials/content/none.php:7
 msgid "Worse luck!"
 msgstr "Värre tur!"
 
