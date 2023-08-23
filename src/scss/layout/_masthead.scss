@@ -77,6 +77,14 @@
 			padding: 0 spacing(m);
 		}
 	}
+
+	button {
+		outline-offset: -3px;
+
+		svg {
+			outline: none;
+		}
+	}
 }
 
 .navigation__logo {
@@ -140,8 +148,8 @@
 
 	#header-search-toggle {
 		height: 100%;
-		padding-left: spacing(s);
-		padding-right: spacing(s);
+		padding-left: spacing(2-xs);
+		padding-right: spacing(2-xs);
 
 		@include breakpoint(l) {
 			padding-left: spacing(m);
@@ -402,9 +410,10 @@
 #mobile-panel-toggle {
 	color: $anchor-color;
 	cursor: pointer;
-	padding-left: 8px;
-	padding-top: 0;
-	padding-bottom: 0;
+	padding: 0;
+	padding-left: spacing(2-xs);
+	padding-right: spacing(2-xs);
+	margin-right: calc(var(--spacing-2-xs) * -1);
 
 	@include breakpoint('l') {
 		display: none;
