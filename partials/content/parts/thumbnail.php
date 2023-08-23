@@ -5,10 +5,11 @@
 			isset( $args['fixed_size'] ) ? boolval($args['fixed_size']) : false 
 		);
 
-		if ( $args['caption'] ?? '' ) {
+		if ( $args['caption'] || $args['credit'] ) {
 			printf(
-				'<figcaption>%s</figcaption>',
-				esc_html( $args['caption'] )
+				'<figcaption>%s%s</figcaption>',
+				$args['caption'] ? esc_html( $args['caption'] ) : '',
+				$args['credit'] ? ($args['caption'] ? ' ' : '') . esc_html( $args['credit'] ) : '',
 			);
 		}
 	?>

@@ -72,3 +72,41 @@ function helsinki_customizer_init( $wp_customize ) {
   } // panels
 
 }
+
+function helsinki_migrate_settings() {
+
+  $theme_version = get_theme_mod( 'helsinki_theme_version', false );
+
+  //if theme version is not set, or if theme version is below 4.20.0
+  if ( ! $theme_version || version_compare( $theme_version, '4.20.0', '<' ) ) {
+
+    $settings = get_theme_mods();
+
+    if ( isset($settings['helsinki_blog_entry']) && isset($settings['helsinki_blog_entry']['placeholder_icon']) ) {
+
+      $settings['helsinki_general_icon']['placeholder_icon'] = $settings['helsinki_blog_entry']['placeholder_icon'];
+      unset($settings['helsinki_blog_entry']['placeholder_icon']);
+
+    }
+
+    if ( isset($settings['helsinki_general_breadcrumbs']) && isset($settings['helsinki_general_breadcrumbs']['enabled']) ) {
+
+      $settings['helsinki_header_breadcrumbs']['enabled'] = $settings['helsinki_general_breadcrumbs']['enabled'];
+      unset($settings['helsinki_general_breadcrumbs']['enabled']);
+
+    }
+
+    //update settings
+    foreach ( $settings as $setting_id => $setting ) {
+      set_theme_mod( $setting_id, $setting );
+    }
+
+  }
+
+  //if current theme version does not match, update the setting
+  if ( $theme_version !== wp_get_theme()->get('Version') ) {
+    set_theme_mod( 'helsinki_theme_version', wp_get_theme()->get('Version') );
+  }
+
+}
+add_action( 'after_setup_theme', 'helsinki_migrate_settings' );

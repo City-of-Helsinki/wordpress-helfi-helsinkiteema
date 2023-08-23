@@ -20,3 +20,8 @@ add_filter( 'hds_wp_links_list_item_placeholder_icon', 'helsinki_links_list_item
 function helsinki_links_list_item_placeholder_icon( string $name ) {
 	return helsinki_entry_image_icon_name();
 }
+
+add_filter( 'hds_wp_recent_posts_placeholder_icon', 'helsinki_recent_posts_placeholder_icon' );
+function helsinki_recent_posts_placeholder_icon( string $name ) {
+	return helsinki_entry_image_icon_name();
+}
