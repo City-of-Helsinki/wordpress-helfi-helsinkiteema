@@ -128,6 +128,10 @@ function helsinki_files()
 		add_filter('helsinki_custom_facebook_feed_active', '__return_true');
 	}
 
+	if ( defined( 'SWVER' ) ) {
+		$files['integrations'][] = 'sb-social-wall';
+		add_filter('helsinki_smash_balloon_social_wall_active', '__return_true');
+	}
 
 	return $files;
 }

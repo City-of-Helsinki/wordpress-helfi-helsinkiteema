@@ -7,7 +7,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-08-23 06:08+0000\n"
+"POT-Creation-Date: 2023-08-23 07:37+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -18,16 +18,16 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:53 functions/modules/notifications.php:108
+#: functions/links.php:54 functions/modules/notifications.php:108
 #: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr ""
 
-#: functions/links.php:39
+#: functions/links.php:40
 msgid "(Link opens default mail program)"
 msgstr ""
 
-#: functions/links.php:46
+#: functions/links.php:47
 msgid "(Link starts a phone call)"
 msgstr ""
 
@@ -491,6 +491,10 @@ msgstr ""
 
 #: customizer/config/choices.php:61 functions/modules/social.php:61
 msgid "LinkedIn"
+msgstr ""
+
+#: sbsw/footer.php:14
+msgid "Load more"
 msgstr ""
 
 #: functions/modules/comments.php:27

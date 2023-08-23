@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-08-23 06:09+0000\n"
+"PO-Revision-Date: 2023-08-23 07:38+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -17,16 +17,16 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:53 functions/modules/notifications.php:108
+#: functions/links.php:54 functions/modules/notifications.php:108
 #: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:39
+#: functions/links.php:40
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:46
+#: functions/links.php:47
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
@@ -505,6 +505,10 @@ msgstr "Länk url"
 #: customizer/config/choices.php:61 functions/modules/social.php:61
 msgid "LinkedIn"
 msgstr "LinkedIn"
+
+#: sbsw/footer.php:14
+msgid "Load more"
+msgstr "Ladda mer"
 
 #: functions/modules/comments.php:27
 #, php-format
