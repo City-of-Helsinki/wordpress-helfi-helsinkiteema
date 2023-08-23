@@ -3,16 +3,11 @@ msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
-"PO-Revision-Date: 2023-08-17 06:51+0000\n"
-"Last-Translator: \n"
-"Language-Team: Suomi\n"
 "Language: fi\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.0; wp-6.3"
+"PO-Revision-Date: 2023-08-23 05:44+0000\n"
+"X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -117,6 +112,10 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
+#: functions/layout/header.php:71
+msgid "City of Helsinki"
+msgstr "Helsingin kaupunki"
+
 #: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
@@ -209,7 +208,7 @@ msgctxt "Customizer panel title"
 msgid "Style"
 msgstr "Tyyli"
 
-#: customizer/config/header.php:72
+#: customizer/config/header.php:53
 msgctxt "Customizer section title"
 msgid "Breadcrumbs"
 msgstr "Murupolku"
@@ -230,11 +229,6 @@ msgctxt "Customizer section title"
 msgid "Helsinki logo"
 msgstr "Helsinki-kehystunnus"
 
-#: customizer/config/header.php:38
-msgctxt "Customizer section title"
-msgid "Highlight link"
-msgstr "Nostolinkki"
-
 #: customizer/config/general.php:38
 #| msgid "Style"
 msgctxt "Customizer section title"
@@ -246,7 +240,7 @@ msgctxt "Customizer section title"
 msgid "Koroshape"
 msgstr "Koromuoto"
 
-#: customizer/config/header.php:57
+#: customizer/config/header.php:38
 #| msgid "Languages"
 msgctxt "Customizer section title"
 msgid "Language selector"
@@ -283,12 +277,6 @@ msgid "Social share"
 msgstr "Sosiaalisen median jako"
 
 #: customizer/config/header.php:44
-#| msgid "Display login link in site header"
-msgctxt "Customizer setting description"
-msgid "Display highlight link in site header"
-msgstr "Näytä nostolinkki ylätunnisteessa"
-
-#: customizer/config/header.php:63
 msgctxt "Customizer setting description"
 msgid "Display language selector in site header"
 msgstr "Näytä kielivalitsin ylätunnisteessa"
@@ -298,7 +286,7 @@ msgctxt "Customizer setting description"
 msgid "Display search field in site header"
 msgstr "Näytä hakukenttä ylätunnisteessa"
 
-#: customizer/config/header.php:78
+#: customizer/config/header.php:59
 msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr "Yoast SEO tulee olla asennettuna"
@@ -399,11 +387,15 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
+#: functions/layout/misc.php:17
+msgid "Front page"
+msgstr "Etusivu"
+
 #: setup/assets.php:131
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
-#: functions/layout/header.php:102 partials/content/not-found.php:10
+#: functions/layout/header.php:89 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Anna palautetta"
@@ -520,11 +512,11 @@ msgstr "Viimeinen sivu"
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
-#: customizer/config/header.php:48 customizer/config/notifications.php:53
+#: customizer/config/notifications.php:53
 msgid "Link text"
 msgstr "Linkkiteksti"
 
-#: customizer/config/header.php:47 customizer/config/notifications.php:57
+#: customizer/config/notifications.php:57
 msgid "Link url"
 msgstr "Linkin osoite"
 
