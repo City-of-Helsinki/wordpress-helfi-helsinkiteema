@@ -122,30 +122,10 @@ function helsinki_setup_templates() {
 			add_action( 'helsinki_front_page_hero', 'helsinki_hero', 10 );
 
 			/**
-			 * Recent posts layout
-			*/
-			add_action('helsinki_front_page_recent_posts', 'helsinki_front_page_recent_posts_title', 10);
-			add_action('helsinki_front_page_recent_posts', 'helsinki_front_page_recent_posts_grid', 20);
-			add_action('helsinki_front_page_recent_posts', 'helsinki_front_page_recent_posts_more', 30);
-
-			/**
 			 * Content layout
 			*/
 			add_action('helsinki_front_page_content', 'helsinki_front_page_content_title', 10);
 			add_action('helsinki_front_page_content', 'helsinki_front_page_content_text', 20);
-
-			/**
-			 * Social media layout
-			*/
-			add_action('helsinki_front_page_social', 'helsinki_front_page_social_title', 10);
-			add_action('helsinki_front_page_social', 'helsinki_front_page_social_media_feed', 20);
-
-			/**
-			 * Feed posts layout
-			*/
-			add_action('helsinki_front_page_feed-posts', 'helsinki_front_page_feed_posts_title', 10);
-			add_action('helsinki_front_page_feed-posts', 'helsinki_front_page_feed_posts_source_text', 20);
-			add_action('helsinki_front_page_feed-posts', 'helsinki_front_page_feed_posts', 30);
 
 			add_action( 'helsinki_front_page', 'helsinki_front_page_unload_post', 10 );
 		}

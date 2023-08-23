@@ -7,7 +7,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-08-23 05:43+0000\n"
+"POT-Creation-Date: 2023-08-23 06:08+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -97,7 +97,7 @@ msgid ""
 "or moved the content."
 msgstr ""
 
-#: customizer/config/front-page.php:25
+#: customizer/config/front-page.php:22
 msgid ""
 "Checked sections will be displayed on the front page. Reorder sections with "
 "drag and drop. \n"
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Coat of Arms"
 msgstr ""
 
-#: customizer/config/general.php:78
+#: customizer/config/general.php:59
 msgid "Color"
 msgstr ""
 
@@ -163,27 +163,22 @@ msgstr ""
 msgid "Currently on page %d"
 msgstr ""
 
-#: customizer/config.php:51
+#: customizer/config.php:38
 msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr ""
 
-#: customizer/config.php:103
+#: customizer/config.php:90
 msgctxt "Customizer panel title"
 msgid "Feedback buttons"
 msgstr ""
 
-#: customizer/config.php:90
+#: customizer/config.php:77
 msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr ""
 
-#: customizer/config.php:38
-msgctxt "Customizer panel title"
-msgid "Front Page"
-msgstr ""
-
-#: customizer/config.php:64
+#: customizer/config.php:51
 msgctxt "Customizer panel title"
 msgid "Header"
 msgstr ""
@@ -193,7 +188,7 @@ msgctxt "Customizer panel title"
 msgid "Notifications"
 msgstr ""
 
-#: customizer/config.php:77
+#: customizer/config.php:64
 msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr ""
@@ -253,7 +248,7 @@ msgctxt "Customizer section title"
 msgid "Search"
 msgstr ""
 
-#: customizer/config/front-page.php:19
+#: customizer/config/front-page.php:16
 msgctxt "Customizer section title"
 msgid "Sections"
 msgstr ""
@@ -261,11 +256,6 @@ msgstr ""
 #: customizer/config/blog.php:8
 msgctxt "Customizer section title"
 msgid "Single Article"
-msgstr ""
-
-#: customizer/config/general.php:58
-msgctxt "Customizer section title"
-msgid "Social share"
 msgstr ""
 
 #: customizer/config/header.php:44
@@ -309,14 +299,10 @@ msgid "Display categories"
 msgstr ""
 
 #: customizer/config/blog.php:23
-msgid "Display date"
-msgstr ""
-
-#: customizer/config/blog.php:26
 msgid "Display modified date"
 msgstr ""
 
-#: customizer/config/blog.php:32
+#: customizer/config/blog.php:29
 msgid "Display related posts"
 msgstr ""
 
@@ -324,11 +310,11 @@ msgstr ""
 msgid "Display social share buttons"
 msgstr ""
 
-#: customizer/config/blog.php:29
+#: customizer/config/blog.php:26
 msgid "Display tags"
 msgstr ""
 
-#: customizer/config/front-page.php:54
+#: customizer/config/front-page.php:51
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 
@@ -342,19 +328,15 @@ msgstr ""
 msgid "Engel"
 msgstr ""
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:59 functions/modules/social.php:51
 msgid "Facebook"
 msgstr ""
 
-#: customizer/config/front-page.php:91
+#: customizer/config/front-page.php:80
 msgid "Feed Cache time"
 msgstr ""
 
-#: customizer/config/front-page.php:78
-msgid "Feed shortcode"
-msgstr ""
-
-#: customizer/config/front-page.php:86
+#: customizer/config/front-page.php:75
 msgid "Feed URL"
 msgstr ""
 
@@ -371,7 +353,7 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
+#: integrations/wp-rss-aggregator.php:36
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
@@ -507,17 +489,13 @@ msgstr ""
 msgid "Link url"
 msgstr ""
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:61 functions/modules/social.php:61
 msgid "LinkedIn"
 msgstr ""
 
 #: functions/modules/comments.php:27
 #, php-format
 msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
-msgstr ""
-
-#: customizer/config/general.php:64
-msgid "Media"
 msgstr ""
 
 #: partials/header/mobile-panel-toggle.php:1
@@ -600,7 +578,7 @@ msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr ""
 
-#: customizer/config/front-page.php:69
+#: customizer/config/front-page.php:66
 msgid "Post count"
 msgstr ""
 
@@ -612,10 +590,6 @@ msgstr ""
 #: partials/loop/count.php:6
 msgctxt "posts count"
 msgid "search results"
-msgstr ""
-
-#: customizer/config/front-page.php:10
-msgid "Posts Feed"
 msgstr ""
 
 #: setup/assets.php:130 partials/loop/pagination.php:21
@@ -638,10 +612,6 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: customizer/config/front-page.php:8
-msgid "Recent Posts"
-msgstr ""
-
 #: setup/theme.php:78
 msgctxt "Registered menu name"
 msgid "Footer menu"
@@ -661,18 +631,8 @@ msgstr ""
 msgid "Related content"
 msgstr ""
 
-#: customizer/config/blog.php:35
-msgid "Related posts count"
-msgstr ""
-
 #: partials/search/title.php:6
 msgid "Results for keyword"
-msgstr ""
-
-#: functions/layout/front-page.php:227
-#, php-format
-msgctxt "RSS feed source(s)"
-msgid "Contents are automatically fetched from %s."
 msgstr ""
 
 #: integrations/wp-rss-aggregator.php:60
@@ -700,27 +660,23 @@ msgctxt "search title"
 msgid "Search the site"
 msgstr ""
 
-#: customizer/config/front-page.php:48
+#: customizer/config/front-page.php:45
 msgid "Section title"
-msgstr ""
-
-#: partials/front-page/recent-posts/more.php:13
-msgid "See all articles"
 msgstr ""
 
 #: functions/layout/loop.php:20
 msgid "Select category"
 msgstr ""
 
-#: functions/modules/social.php:59
+#: functions/modules/social.php:52
 msgid "Share on Facebook"
 msgstr ""
 
-#: functions/modules/social.php:69
+#: functions/modules/social.php:62
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: functions/modules/social.php:64
+#: functions/modules/social.php:57
 msgid "Share on Twitter"
 msgstr ""
 
@@ -752,10 +708,6 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: customizer/config/front-page.php:9
-msgid "Social Feeds"
-msgstr ""
-
 #: customizer/config/choices.php:27
 msgid "Summer"
 msgstr ""
@@ -772,7 +724,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: customizer/config/front-page.php:92
+#: customizer/config/front-page.php:81
 msgid "The feed result is cached for 12 hours by default."
 msgstr ""
 
@@ -806,7 +758,7 @@ msgstr ""
 msgid "Tram"
 msgstr ""
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:60 functions/modules/social.php:56
 msgid "Twitter"
 msgstr ""
 
@@ -823,7 +775,7 @@ msgctxt "verb"
 msgid "Search"
 msgstr ""
 
-#: customizer/config/front-page.php:24
+#: customizer/config/front-page.php:21
 msgid "Visible sections"
 msgstr ""
 

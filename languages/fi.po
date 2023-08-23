@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-08-23 05:44+0000\n"
+"PO-Revision-Date: 2023-08-23 06:09+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -98,7 +98,7 @@ msgstr ""
 "Tarkista, että sivun osoite on kirjoitettu oikein. Olemme myös saattaneet "
 "poistaa tai siirtää sivun."
 
-#: customizer/config/front-page.php:25
+#: customizer/config/front-page.php:22
 msgid ""
 "Checked sections will be displayed on the front page. Reorder sections with "
 "drag and drop. \n"
@@ -133,7 +133,7 @@ msgstr "Sulje ilmoitus"
 msgid "Coat of Arms"
 msgstr "Vaakuna"
 
-#: customizer/config/general.php:78
+#: customizer/config/general.php:59
 msgid "Color"
 msgstr "Väri"
 
@@ -168,27 +168,22 @@ msgstr "Kupari"
 msgid "Currently on page %d"
 msgstr "Olet sivulla %d"
 
-#: customizer/config.php:51
+#: customizer/config.php:38
 msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr "Blogi"
 
-#: customizer/config.php:103
+#: customizer/config.php:90
 msgctxt "Customizer panel title"
 msgid "Feedback buttons"
 msgstr "Palautepainikkeet"
 
-#: customizer/config.php:90
+#: customizer/config.php:77
 msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: customizer/config.php:38
-msgctxt "Customizer panel title"
-msgid "Front Page"
-msgstr "Etusivu"
-
-#: customizer/config.php:64
+#: customizer/config.php:51
 msgctxt "Customizer panel title"
 msgid "Header"
 msgstr "Ylätunniste"
@@ -198,7 +193,7 @@ msgctxt "Customizer panel title"
 msgid "Notifications"
 msgstr "Ilmoitukset"
 
-#: customizer/config.php:77
+#: customizer/config.php:64
 msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr "Sivupalkki"
@@ -261,7 +256,7 @@ msgctxt "Customizer section title"
 msgid "Search"
 msgstr "Haku"
 
-#: customizer/config/front-page.php:19
+#: customizer/config/front-page.php:16
 msgctxt "Customizer section title"
 msgid "Sections"
 msgstr "Osiot"
@@ -270,11 +265,6 @@ msgstr "Osiot"
 msgctxt "Customizer section title"
 msgid "Single Article"
 msgstr "Yksittäinen artikkeli"
-
-#: customizer/config/general.php:58
-msgctxt "Customizer section title"
-msgid "Social share"
-msgstr "Sosiaalisen median jako"
 
 #: customizer/config/header.php:44
 msgctxt "Customizer setting description"
@@ -317,14 +307,10 @@ msgid "Display categories"
 msgstr "Näytä kategoriat"
 
 #: customizer/config/blog.php:23
-msgid "Display date"
-msgstr "Näytä päivämäärä"
-
-#: customizer/config/blog.php:26
 msgid "Display modified date"
 msgstr "Näytä muokkauksen päivämäärä"
 
-#: customizer/config/blog.php:32
+#: customizer/config/blog.php:29
 msgid "Display related posts"
 msgstr "Näytä suositellut artikkelit"
 
@@ -332,11 +318,11 @@ msgstr "Näytä suositellut artikkelit"
 msgid "Display social share buttons"
 msgstr "Näytä sosiaalisen median jakopainikkeet"
 
-#: customizer/config/blog.php:29
+#: customizer/config/blog.php:26
 msgid "Display tags"
 msgstr "Näytä avainsanat"
 
-#: customizer/config/front-page.php:54
+#: customizer/config/front-page.php:51
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
@@ -352,19 +338,15 @@ msgstr "Käytössä"
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:59 functions/modules/social.php:58
+#: customizer/config/choices.php:59 functions/modules/social.php:51
 msgid "Facebook"
 msgstr "Facebook"
 
-#: customizer/config/front-page.php:91
+#: customizer/config/front-page.php:80
 msgid "Feed Cache time"
 msgstr "Syötteen elinikä"
 
-#: customizer/config/front-page.php:78
-msgid "Feed shortcode"
-msgstr "Syötteen lyhytkoodi"
-
-#: customizer/config/front-page.php:86
+#: customizer/config/front-page.php:75
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
@@ -381,7 +363,7 @@ msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: integrations/wp-rss-aggregator.php:36 functions/layout/front-page.php:229
+#: integrations/wp-rss-aggregator.php:36
 #, php-format
 msgctxt "from RSS feed source"
 msgid "%s"
@@ -520,7 +502,7 @@ msgstr "Linkkiteksti"
 msgid "Link url"
 msgstr "Linkin osoite"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:68
+#: customizer/config/choices.php:61 functions/modules/social.php:61
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -529,10 +511,6 @@ msgstr "LinkedIn"
 msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
 msgstr ""
 "Kirjautuneena sisään tunnuksella %1$s. <a href=\"%2$s\">Kirjaudu ulos?</a>"
-
-#: customizer/config/general.php:64
-msgid "Media"
-msgstr "Mediat"
 
 #: partials/header/mobile-panel-toggle.php:1
 #: partials/header/mobile-panel-toggle.php:4
@@ -614,7 +592,7 @@ msgctxt "Placeholder icon"
 msgid "Abstract"
 msgstr "Abstrakti"
 
-#: customizer/config/front-page.php:69
+#: customizer/config/front-page.php:66
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
@@ -627,10 +605,6 @@ msgstr "Artikkelit"
 msgctxt "posts count"
 msgid "search results"
 msgstr "hakutulosta"
-
-#: customizer/config/front-page.php:10
-msgid "Posts Feed"
-msgstr "Artikkelisyöte"
 
 #: setup/assets.php:130 partials/loop/pagination.php:21
 msgid "Previous"
@@ -652,10 +626,6 @@ msgstr "Julkaistu:"
 msgid "Read more"
 msgstr "Lue lisää"
 
-#: customizer/config/front-page.php:8
-msgid "Recent Posts"
-msgstr "Ajankohtaista"
-
 #: setup/theme.php:78
 msgctxt "Registered menu name"
 msgid "Footer menu"
@@ -675,19 +645,9 @@ msgstr "Yläpalkin valikko"
 msgid "Related content"
 msgstr "Suositeltu sisältö"
 
-#: customizer/config/blog.php:35
-msgid "Related posts count"
-msgstr "Suositeltujen artikkelien lukumäärä"
-
 #: partials/search/title.php:6
 msgid "Results for keyword"
 msgstr "Hakutulokset hakusanalle"
-
-#: functions/layout/front-page.php:227
-#, php-format
-msgctxt "RSS feed source(s)"
-msgid "Contents are automatically fetched from %s."
-msgstr "Sisällöt haetaan automaattisesti osoitteesta %s."
 
 #: integrations/wp-rss-aggregator.php:60
 #, php-format
@@ -714,27 +674,23 @@ msgctxt "search title"
 msgid "Search the site"
 msgstr "Hae sivustolta"
 
-#: customizer/config/front-page.php:48
+#: customizer/config/front-page.php:45
 msgid "Section title"
 msgstr "Osion otsikko"
-
-#: partials/front-page/recent-posts/more.php:13
-msgid "See all articles"
-msgstr "Katso kaikki artikkelit"
 
 #: functions/layout/loop.php:20
 msgid "Select category"
 msgstr "Valitse kategoria"
 
-#: functions/modules/social.php:59
+#: functions/modules/social.php:52
 msgid "Share on Facebook"
 msgstr "Jaa Facebookissa"
 
-#: functions/modules/social.php:69
+#: functions/modules/social.php:62
 msgid "Share on LinkedIn"
 msgstr "Jaa LinkedInissä"
 
-#: functions/modules/social.php:64
+#: functions/modules/social.php:57
 msgid "Share on Twitter"
 msgstr "Jaa Twitterissä"
 
@@ -767,10 +723,6 @@ msgstr "Hopea"
 msgid "Skip to content"
 msgstr "Siirry sisältöön"
 
-#: customizer/config/front-page.php:9
-msgid "Social Feeds"
-msgstr "Sosiaaliset syötteet"
-
 #: customizer/config/choices.php:27
 msgid "Summer"
 msgstr "Kesä"
@@ -787,7 +739,7 @@ msgstr "Avainsanat"
 msgid "Text"
 msgstr "Teksti"
 
-#: customizer/config/front-page.php:92
+#: customizer/config/front-page.php:81
 msgid "The feed result is cached for 12 hours by default."
 msgstr ""
 "Syötteen sisältö tallennetaan välimuistiin oletuksena 12 tunnin ajaksi."
@@ -827,7 +779,7 @@ msgstr "\"%s\" alavalikko"
 msgid "Tram"
 msgstr "Spåra"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:63
+#: customizer/config/choices.php:60 functions/modules/social.php:56
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -844,7 +796,7 @@ msgctxt "verb"
 msgid "Search"
 msgstr "Hae"
 
-#: customizer/config/front-page.php:24
+#: customizer/config/front-page.php:21
 msgid "Visible sections"
 msgstr "Näytettävät osiot"
 

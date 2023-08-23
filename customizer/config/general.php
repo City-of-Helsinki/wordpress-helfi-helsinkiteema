@@ -52,25 +52,6 @@ function helsinki_customizer_general_sections() {
 
 	), // icon
 
-	'social_share' => array(
-
-		'config' => array(
-			'title'          => esc_html_x( 'Social share', 'Customizer section title', 'helsinki-universal' ),
-			'capability'     => 'edit_theme_options',
-		),
-
-		'section_settings' => array(
-			'medias' => helsinki_setting_multicheckbox(
-				__('Media', 'helsinki-universal'),
-				'',
-				helsinki_customizer_choices_social_share(),
-				false,
-				array()
-			),
-		), // section_settings
-
-	), // social_share
-
   );
 
 	if ( apply_filters( 'helsinki_scheme_selection_enabled', true ) ) {
