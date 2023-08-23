@@ -6,7 +6,7 @@ function helsinki_customizer_general_sections() {
 	'style' => array(
 
 		'config' => array(
-			'title'          => esc_html_x( 'Style', 'Customizer section title', 'helsinki-universal' ),
+			'title'          => esc_html_x( 'Color', 'Customizer section title', 'helsinki-universal' ),
 			'capability'     => 'edit_theme_options',
 		),
 
@@ -17,13 +17,13 @@ function helsinki_customizer_general_sections() {
 	'koros' => array(
 
 		'config' => array(
-			'title'          => esc_html_x( 'Koros', 'Customizer section title', 'helsinki-universal' ),
+			'title'          => esc_html_x( 'Koroshape', 'Customizer section title', 'helsinki-universal' ),
 			'capability'     => 'edit_theme_options',
 		),
 
 		'section_settings' => array(
 			'type' => helsinki_setting_select(
-				__('Type', 'helsinki-universal'),
+				__('Koroshape', 'helsinki-universal'),
 				'',
 				helsinki_customizer_choices_koros(),
 				helsinki_koros_type_basic()
@@ -32,26 +32,31 @@ function helsinki_customizer_general_sections() {
 
 	), // koros
 
-	'breadcrumbs' => array(
+	'icon' => array(
 
 		'config' => array(
-			'title'          => esc_html_x( 'Breadcrumbs', 'Customizer section title', 'helsinki-universal' ),
+			'title'          => esc_html_x( 'Icon', 'Customizer section title', 'helsinki-universal' ),
 			'capability'     => 'edit_theme_options',
 		),
 
-		'section_settings' => helsinki_merge_section_settings(
-			helsinki_customizer_setting_enabled(
-				esc_html_x( 'Required Yoast SEO to be installed', 'Customizer setting description', 'helsinki-universal' )
-			)
+		'section_settings' => array(
+
+			'placeholder_icon' => helsinki_setting_select(
+				__('Icon', 'helsinki-universal'),
+				'',
+				helsinki_customizer_choices_placeholder_icon(),
+				'abstract-3'
+			),
+
 		), // section_settings
 
-	), // breadcrumbs
+	), // icon
 
   );
 
 	if ( apply_filters( 'helsinki_scheme_selection_enabled', true ) ) {
 		$config['style']['section_settings']['scheme'] = helsinki_setting_select(
-			__('Scheme', 'helsinki-universal'),
+			__('Color', 'helsinki-universal'),
 			'',
 			helsinki_customizer_choices_style_schemes(),
 			''

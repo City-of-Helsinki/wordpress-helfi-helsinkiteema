@@ -18,7 +18,7 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu {
 			$indent = str_repeat( "\t", $depth );
 		}
 
-		$classes = array( 'menu__item' );
+		$classes = array( 'menu__item', 'menu__depth-' . $depth );
 
 		if ( $item->current == 1 || $item->current_item_ancestor == true ) {
 			$classes[] = 'menu__item--active';

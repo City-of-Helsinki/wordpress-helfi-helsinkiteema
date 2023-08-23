@@ -2,26 +2,6 @@
 
 function helsinki_customizer_blog_sections() {
 	return array(
-		'entry' => array(
-
-			'config' => array(
-				'title'          => esc_html_x( 'Entries', 'Customizer section title', 'helsinki-universal' ),
-				'capability'     => 'edit_theme_options',
-			),
-
-			'section_settings' => array(
-
-				'placeholder_icon' => helsinki_setting_select(
-					__('Placeholder Icon', 'helsinki-universal'),
-					'',
-					helsinki_customizer_choices_placeholder_icon(),
-					'abstract-3'
-				),
-
-			), // section_settings
-
-		), // entry
-
 		'single' => array(
 
 			'config' => array(

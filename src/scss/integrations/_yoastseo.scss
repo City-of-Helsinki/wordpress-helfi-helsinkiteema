@@ -2,7 +2,8 @@
 	font-size: rem-calc(14);
 
 	.hds-container {
-		padding: var(--spacing-xs) var(--spacing-s);
+		padding-top: var(--spacing-xs);
+		padding-bottom: var(--spacing-xs);
 	}
 
 	span {
@@ -11,6 +12,13 @@
 
 	.breadcrumb_last {
 		font-weight: $global-font-weight-bold;
+	}
+
+	@include breakpoint(l) {
+		.hds-container {
+			padding-left: var(--spacing-m);
+			padding-right: var(--spacing-m);
+		}
 	}
 
 }

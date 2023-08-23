@@ -3,17 +3,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-26 08:49+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
+"\n"
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.4.0; wp-5.4.1"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2023-08-23 06:08+0000\n"
+"X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -112,6 +107,10 @@ msgid ""
 "checkbox active."
 msgstr ""
 
+#: functions/layout/header.php:71
+msgid "City of Helsinki"
+msgstr ""
+
 #: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
@@ -127,6 +126,10 @@ msgstr ""
 
 #: customizer/config/choices.php:19
 msgid "Coat of Arms"
+msgstr ""
+
+#: customizer/config/general.php:59
+msgid "Color"
 msgstr ""
 
 #: comments.php:34
@@ -175,11 +178,6 @@ msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr ""
 
-#: customizer/config.php:12
-msgctxt "Customizer panel title"
-msgid "General"
-msgstr ""
-
 #: customizer/config.php:51
 msgctxt "Customizer panel title"
 msgid "Header"
@@ -195,14 +193,19 @@ msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr ""
 
-#: customizer/config/general.php:38
+#: customizer/config.php:12
+msgctxt "Customizer panel title"
+msgid "Style"
+msgstr ""
+
+#: customizer/config/header.php:53
 msgctxt "Customizer section title"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: customizer/config/blog.php:8
+#: customizer/config/general.php:9
 msgctxt "Customizer section title"
-msgid "Entries"
+msgid "Color"
 msgstr ""
 
 #: customizer/config/feedback-buttons.php:9
@@ -212,17 +215,22 @@ msgstr ""
 
 #: customizer/config/header.php:8
 msgctxt "Customizer section title"
-msgid "General"
+msgid "Helsinki logo"
+msgstr ""
+
+#: customizer/config/general.php:38
+msgctxt "Customizer section title"
+msgid "Icon"
 msgstr ""
 
 #: customizer/config/general.php:20
 msgctxt "Customizer section title"
-msgid "Koros"
+msgid "Koroshape"
 msgstr ""
 
 #: customizer/config/header.php:38
 msgctxt "Customizer section title"
-msgid "Languages"
+msgid "Language selector"
 msgstr ""
 
 #: customizer/config/notifications.php:16
@@ -245,14 +253,9 @@ msgctxt "Customizer section title"
 msgid "Sections"
 msgstr ""
 
-#: customizer/config/blog.php:28
+#: customizer/config/blog.php:8
 msgctxt "Customizer section title"
 msgid "Single Article"
-msgstr ""
-
-#: customizer/config/general.php:9
-msgctxt "Customizer section title"
-msgid "Style"
 msgstr ""
 
 #: customizer/config/header.php:44
@@ -265,7 +268,7 @@ msgctxt "Customizer setting description"
 msgid "Display search field in site header"
 msgstr ""
 
-#: customizer/config/general.php:44
+#: customizer/config/header.php:59
 msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr ""
@@ -287,27 +290,27 @@ msgstr ""
 msgid "Disable default city logo"
 msgstr ""
 
-#: customizer/config/blog.php:40
+#: customizer/config/blog.php:20
 msgid "Display author"
 msgstr ""
 
-#: customizer/config/blog.php:37
+#: customizer/config/blog.php:17
 msgid "Display categories"
 msgstr ""
 
-#: customizer/config/blog.php:43
+#: customizer/config/blog.php:23
 msgid "Display modified date"
 msgstr ""
 
-#: customizer/config/blog.php:49
+#: customizer/config/blog.php:29
 msgid "Display related posts"
 msgstr ""
 
-#: customizer/config/blog.php:34
+#: customizer/config/blog.php:14
 msgid "Display social share buttons"
 msgstr ""
 
-#: customizer/config/blog.php:46
+#: customizer/config/blog.php:26
 msgid "Display tags"
 msgstr ""
 
@@ -356,11 +359,15 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
+#: functions/layout/misc.php:17
+msgid "Front page"
+msgstr ""
+
 #: setup/assets.php:131
 msgid "Gallery images"
 msgstr ""
 
-#: functions/layout/header.php:102 partials/content/not-found.php:10
+#: functions/layout/header.php:89 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""
@@ -387,6 +394,10 @@ msgstr ""
 
 #. Author URI of the theme
 msgid "https://www.artcloud.fi/"
+msgstr ""
+
+#: customizer/config/general.php:45
+msgid "Icon"
 msgstr ""
 
 #: customizer/config/notifications.php:31
@@ -443,6 +454,10 @@ msgstr ""
 #: customizer/config/choices.php:41
 msgctxt "Koros motif"
 msgid "Wave"
+msgstr ""
+
+#: customizer/config/general.php:26
+msgid "Koroshape"
 msgstr ""
 
 #: searchform.php:3
@@ -556,10 +571,6 @@ msgstr ""
 msgid "Photographer"
 msgstr ""
 
-#: customizer/config/blog.php:15
-msgid "Placeholder Icon"
-msgstr ""
-
 #: customizer/config/choices.php:48 customizer/config/choices.php:49
 #: customizer/config/choices.php:50 customizer/config/choices.php:51
 #: customizer/config/choices.php:52 customizer/config/choices.php:53
@@ -628,10 +639,6 @@ msgstr ""
 #, php-format
 msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
-msgstr ""
-
-#: customizer/config/general.php:54
-msgid "Scheme"
 msgstr ""
 
 #: functions/layout/view.php:42 partials/header/search.php:2
@@ -755,7 +762,7 @@ msgstr ""
 msgid "Twitter"
 msgstr ""
 
-#: customizer/config/general.php:26 customizer/config/notifications.php:38
+#: customizer/config/notifications.php:38
 msgid "Type"
 msgstr ""
 
