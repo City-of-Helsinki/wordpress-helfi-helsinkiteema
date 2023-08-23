@@ -1,4 +1,4 @@
-<div class="hero__thumbnail" <?php helsinki_hero_image_styles(); ?>>
+<figure class="hero__thumbnail" <?php helsinki_hero_image_styles(); ?>>
 	<?php
 
 		/**
@@ -8,4 +8,4 @@
 		do_action( 'helsinki_hero_image', $args );
 
 	?>
-</div>
+</figure>
