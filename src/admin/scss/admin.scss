@@ -72,4 +72,14 @@ body.wp-admin .editor-styles-wrapper, body.editor-styles-wrapper {
     @import '../../scss/elements';
 }
 
+body .interface-interface-skeleton__sidebar {
+	.components-flex {
+		label {
+			overflow: visible !important;
+			text-overflow: unset !important;
+		}
+	}
+}
+
+
 @import 'metaboxes';

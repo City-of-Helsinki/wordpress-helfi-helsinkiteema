@@ -123,6 +123,12 @@ function helsinki_files()
 		add_filter('helsinki_smash_balloon_active', '__return_true');
 	}
 
+	if ( defined('CFFVER') ) {
+		$files['integrations'][] = 'custom-facebook-feed';
+		add_filter('helsinki_custom_facebook_feed_active', '__return_true');
+	}
+
+
 	return $files;
 }
 
