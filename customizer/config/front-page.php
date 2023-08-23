@@ -5,9 +5,6 @@ function helsinki_front_page_default_sections() {
 		'helsinki_front_page_default_sections',
 		array(
 			'content'      => __('Content', 'helsinki-universal'),
-			'recent-posts' => __('Recent Posts', 'helsinki-universal'),
-			'social'       => __('Social Feeds', 'helsinki-universal'),
-			'feed-posts'   => __('Posts Feed', 'helsinki-universal'),
 		)
 	);
 }
@@ -70,14 +67,6 @@ function helsinki_customizer_front_page_sections() {
 					'',
 					helsinki_customizer_choices_post_count(),
 					3
-				);
-				break;
-
-			case 'social':
-				$out[$key]['section_settings']['shortcode'] = helsinki_setting_shortcode(
-					__( 'Feed shortcode', 'helsinki-universal' ),
-					'',
-					''
 				);
 				break;
 

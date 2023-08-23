@@ -8,10 +8,6 @@ function helsinki_register_polylang_strings() {
 
 	$config = array(
 		'customizer' => array(
-			'header' => array(
-				'highlight-url' => helsinki_theme_mod('helsinki_header_highlight', 'url'),
-				'highlight-text' => helsinki_theme_mod('helsinki_header_highlight', 'text'),
-			),
 			'front-page' => array(
 				'recent-posts' => helsinki_theme_mod('helsinki_front_page_recent-posts', 'title'),
 				'social' => helsinki_theme_mod('helsinki_front_page_social', 'title'),

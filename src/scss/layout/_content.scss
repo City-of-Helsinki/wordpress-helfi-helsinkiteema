@@ -73,7 +73,13 @@
 			figcaption {
 				font-style: normal;
 				padding: 0;
-				margin-top: spacing('2-xs');
+				margin-top: spacing('s');
+				
+				@include breakpointMax('m') {
+					padding-left: spacing('s');
+					padding-right: spacing('s');
+				}
+
 			}
 		}
 

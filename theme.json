@@ -88,8 +88,12 @@
       }
     },
     "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
       "customDuotone": false,
-      "duotone": null
+      "duotone": null,
+      "palette": [],
+      "gradients": []
     },
     "layout": {
       "contentSize": "1200px"
