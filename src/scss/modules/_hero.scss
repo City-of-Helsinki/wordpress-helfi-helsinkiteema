@@ -61,7 +61,7 @@
 
         &--arrow {
             .icon {
-                fill: var(--accent-color, var(--primary-color));
+                background-color: var(--accent-color, var(--primary-color));
             }
         }
 
