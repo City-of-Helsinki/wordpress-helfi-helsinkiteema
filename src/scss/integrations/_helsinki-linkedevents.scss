@@ -2,10 +2,21 @@
 
   .helsinki-events {
     //background-color: transparent;
-    margin: 0 auto spacing('layout-l');
     width: auto;
     max-width: none;
-    padding: spacing('l');
+    padding: spacing('l') spacing('s');
+
+    .hds-container {
+      padding: 0;
+    }
+
+    @include breakpoint('m') {
+      padding: spacing('l');
+    }
+
+    @include breakpoint('l') {
+      margin: 0 auto spacing('layout-l');
+    }
 
     .events__grid {
 
