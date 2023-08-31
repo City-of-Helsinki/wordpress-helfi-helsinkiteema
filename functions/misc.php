@@ -120,6 +120,10 @@ function helsinki_element_styles( array $styles, bool $with_style = false ) {
 /**
   * Image sizes
   */
+function helsinki_image_size_large() {
+	return 'large';
+}
+
 function helsinki_image_size_full() {
 	return 'full';
 }
