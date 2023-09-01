@@ -10,6 +10,10 @@
 		transform: rotate(180deg);
 	}
 
+	&--link-external {
+		width: 16px;
+	}
+
 	&.inline-icon {
 		display: inline-block;
 		vertical-align: middle;
