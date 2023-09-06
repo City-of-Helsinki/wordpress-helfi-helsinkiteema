@@ -11,6 +11,15 @@ if ( ! function_exists('helsinki_content_breadcrumbs') ) {
 	}
 }
 
+add_filter('wpseo_breadcrumb_single_link_info', 'helsinki_content_breadcrumbs_single_link_info', 10, 3);
+function helsinki_content_breadcrumbs_single_link_info($link_info, $index, $crumbs) {
+	if ($index == 0) {
+		$link_info['text'] = __('Front page', 'helsinki-universal');
+	}
+
+	return $link_info;
+}
+
 /**
   * Pagination
   */

@@ -1,7 +1,7 @@
 <?php
 
 function helsinki_content_article_related($post_type = null) {
-	$posts_per_page = helsinki_theme_mod( 'helsinki_blog_single', 'related_count', 4 );
+	$posts_per_page = 4;
 	$post_id = array(get_the_ID());
 	$query = helsinki_content_article_related_posts_query(
 		$post_id,
