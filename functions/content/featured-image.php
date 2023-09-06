@@ -20,6 +20,7 @@ function helsinki_featured_image_body_class( array $classes ) {
 function helsinki_content_article_thumbnail($post_type = null) {
 	$img_html = '';
 	$caption = '';
+	$credit = '';
 	$fixed_size = false;
 	$thumbnail_id = get_post_thumbnail_id();
 
@@ -31,12 +32,14 @@ function helsinki_content_article_thumbnail($post_type = null) {
 			array()
 		);
 		$caption = wp_get_attachment_caption( $thumbnail_id );
+		$credit = helsinki_base_image_credit( $thumbnail_id );
 	}
 
 	$data = array(
 		'image' => $img_html,
 		'caption' => $caption,
 		'fixed_size' => $fixed_size,
+		'credit' => $credit,
 	);
 
 	if ( ! $data['image'] ) {

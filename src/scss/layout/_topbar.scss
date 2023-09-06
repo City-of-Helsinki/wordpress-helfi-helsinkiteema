@@ -1,9 +1,14 @@
 .topbar {
-	$topbar-padding: spacing('s') spacing('l');
+	$topbar-padding: spacing('s') spacing('m');
 
 	background-color: #f2f2f2;
-	font-size: rem-calc(14);
-	line-height: var(--lineheight-m);
+	font-size: rem-calc(16);
+	line-height: var(--lineheight-l);
+
+  > .hds-container {
+    padding: $topbar-padding;
+    gap: 0 spacing('l');
+  }
 
 	a {
 		text-decoration: none;
@@ -15,12 +20,12 @@
 	}
 
 	&__branding {
-		padding: $topbar-padding;
+		//padding: $topbar-padding;
 		flex-grow: 2;
 	}
 
 	&__link {
-		padding: $topbar-padding;
+		//padding: $topbar-padding;
 
 		.icon {
 			margin-top: -4px;
@@ -29,9 +34,11 @@
 
   .menu {
 
+    gap: 0 spacing('l');
+
     a {
-      font-size: rem-calc(14);
-    	line-height: var(--lineheight-m);
+      font-size: rem-calc(16);
+    	line-height: var(--lineheight-l);
 
       &:focus,
       &:hover {
@@ -42,7 +49,7 @@
     .menu__item {
 
       + .menu__item {
-        margin-left: spacing('l');
+        //margin-left: spacing('l');
       }
 
     }

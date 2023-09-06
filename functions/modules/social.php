@@ -38,15 +38,8 @@ if ( ! function_exists('helsinki_social_media_profile_url') ) {
 if ( ! function_exists('helsinki_social_share_medias') ) {
 	function helsinki_social_share_medias() {
 		$default = helsinki_default_social_share_medias();
-		$enabled = array();
 
-		foreach ($default as $media => $config) {
-			if ( apply_filters( 'helsinki_social_share_media_' . $media . '_enabled', false ) ) {
-				$enabled[$media] = $config;
-			}
-		}
-
-		return apply_filters('helsinki_social_share_medias', $enabled);
+		return apply_filters('helsinki_social_share_medias', $default);
 	}
 }
 
