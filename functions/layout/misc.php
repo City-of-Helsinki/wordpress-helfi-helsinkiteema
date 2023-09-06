@@ -24,8 +24,8 @@ function helsinki_content_breadcrumbs_single_link_info($link_info, $index, $crum
   * Pagination
   */
 if ( ! function_exists('helsinki_loop_pagination') ) {
-	function helsinki_loop_pagination() {
-		get_template_part('partials/loop/pagination');
+	function helsinki_loop_pagination( $args = array() ) {
+		get_template_part('partials/loop/pagination', null, $args);
 	}
 }
 
