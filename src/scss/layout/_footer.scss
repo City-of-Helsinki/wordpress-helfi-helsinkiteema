@@ -144,6 +144,10 @@
 
 		svg {
 			fill: $white;
+
+			&.mask-icon {
+				background-color: $white;
+			}
 		}
 
 		&:focus,

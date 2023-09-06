@@ -28,7 +28,7 @@
     }
 
     .icon {
-      fill: $white;
+      background-color: $white;
     }
   }
 
@@ -83,7 +83,7 @@
       background-color: $alert;
 
       .icon {
-        fill: $black;
+        background-color: $black;
         stroke: $alert;
       }
     }
