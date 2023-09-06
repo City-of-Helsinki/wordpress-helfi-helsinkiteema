@@ -191,6 +191,7 @@ function helsinki_scheme_root_styles( string $scheme ) {
 			'--primary-content-color' => $config['primary']['content'] ?? '--color-' . $scheme . '-content',
 			'--primary-content-secondary-color' => $config['primary']['content-secondary'] ?? '--color-' . $scheme . '-content-secondary',
 			'--secondary-color' => $config['secondary'] ?? '',
+			'--secondary-content-color' => $config['secondary-content'] ?? '',
 			'--accent-color' => $config['accent'] ?? '',
 		),
 		$scheme,
