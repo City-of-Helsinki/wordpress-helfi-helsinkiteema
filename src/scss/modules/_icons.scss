@@ -19,6 +19,13 @@
 		width: 16px;
 	}
 
+	@for $i from 1 through 6 {
+		&--abstract-#{$i} {
+			background-color: transparent;
+		}
+	}
+
+
 	&.inline-icon {
 		display: inline-block;
 		vertical-align: middle;
