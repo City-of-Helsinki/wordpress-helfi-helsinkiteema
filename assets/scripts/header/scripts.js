@@ -11,6 +11,7 @@ Hyphenopoly.config({
             "h4": {minWordLength: 14},
             "h5": {minWordLength: 14},
             "h6": {minWordLength: 14},
+            ".link__title_link": {minWordLength: 14},
         }
     }
 });
