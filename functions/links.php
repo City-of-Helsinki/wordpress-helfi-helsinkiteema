@@ -79,13 +79,13 @@ function helsinki_links_parse_blocks( $block_content = '', $block = [] ) {
 		null,
 		'helsinki-linkedevents/grid',
 		'helsinki-tpr/unit',
-    'hds-wp/rss-feed',
-    'hds-wp/banner',
-    'hds-wp/image-text',
-    'hds-wp/image-banner',
-    'hds-wp/map',
-    'hds-wp/video'
-    'hds-wp/links',
+        'hds-wp/rss-feed',
+        'hds-wp/banner',
+        'hds-wp/image-text',
+        'hds-wp/image-banner',
+        'hds-wp/map',
+        'hds-wp/video',
+        'hds-wp/links',
 	];
 
     $custom_classes = [
