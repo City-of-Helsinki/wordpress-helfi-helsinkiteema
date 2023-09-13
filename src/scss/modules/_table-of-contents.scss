@@ -63,9 +63,10 @@
 
       height: rem-calc(140);
       width: auto;
+      background-color: var(--accent-color);
 
       path {
-        fill: var(--accent-color);
+        
       }
 
       @include breakpoint('xl') {

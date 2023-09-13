@@ -5,7 +5,8 @@ ob_start();
 
 if (get_option('page_for_posts') == get_the_ID()) {
   global $wp_query; 
-  $wp_query = new WP_Query(array( 'cat' => ''));
+  global $paged;
+  $wp_query = new WP_Query(array( 'cat' => '', 'paged' => $paged));
 	get_template_part(
 		'partials/front-page/archives',
 		null,

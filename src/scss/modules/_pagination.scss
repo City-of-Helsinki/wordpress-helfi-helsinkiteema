@@ -82,13 +82,21 @@
 
     .hds-pagination__pages {
       margin-left: 0;
+
+      li {
+        list-style: none;
+      }
     }
 
     .hds-button {
       padding-left: spacing('2-xs');
       padding-right: spacing('2-xs');
       height: 58px; //enforcing height as per above
+      color: var(--color);
+      text-decoration: none;
+      svg {
+        fill: var(--color);
+      }
     }
-
   }  
 }

@@ -53,11 +53,6 @@
 		&__thumbnail {
 			@include breakpointMax('m') {
 				@include alignFull();
-
-				figcaption {
-					padding-left: spacing('m');
-					padding-right: spacing('m');
-				}
 			}
 		}
 

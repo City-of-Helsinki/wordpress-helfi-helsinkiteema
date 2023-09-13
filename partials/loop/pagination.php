@@ -6,7 +6,14 @@ if ( empty( $paged ) ) {
   $paged = 1;
 }
 
-$pages = $wp_query->max_num_pages ? (int) $wp_query->max_num_pages : 1;
+//if $args is set
+if ( isset( $args['max_num_pages'] ) ) {
+  $pages = $args['max_num_pages'] ? (int) $args['max_num_pages'] : 1;
+}
+else {
+  $pages = $wp_query->max_num_pages ? (int) $wp_query->max_num_pages : 1;
+}
+
 $range = 2;
 $showitems = ($range * 2) + 1;
 

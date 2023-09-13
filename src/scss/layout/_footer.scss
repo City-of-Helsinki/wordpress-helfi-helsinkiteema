@@ -1,6 +1,7 @@
 .footer {
 	background-color: $footer-background-color;
 	color: $footer-color;
+	outline-color: $footer-color;
 	position: relative;
 	z-index: 1;
 
@@ -143,6 +144,10 @@
 
 		svg {
 			fill: $white;
+
+			&.mask-icon {
+				background-color: $white;
+			}
 		}
 
 		&:focus,

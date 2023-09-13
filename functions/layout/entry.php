@@ -83,7 +83,7 @@ function helsinki_entry_image_icon() {
 }
 
 function helsinki_entry_image_icon_name() {
-	return helsinki_theme_mod('helsinki_blog_entry', 'placeholder_icon', 'abstract-3');
+	return helsinki_theme_mod('helsinki_general_icon', 'placeholder_icon', 'abstract-3');
 }
 
 function helsinki_entry_image_icon_classes() {
