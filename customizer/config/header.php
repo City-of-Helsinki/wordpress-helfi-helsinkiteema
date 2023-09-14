@@ -77,7 +77,7 @@ function helsinki_customizer_header_sections()
 						esc_html__('Select two levels of hierarchy on large screens and five levels of hierarchy on small screens only if the sites pages have a side menu. Otherwise, select three hierarchy levels.', 'helsinki-universal'),
 						array(
 							'menu-depth-3' => esc_html_x('Three levels of hierarchy on large and small screens', 'Customizer setting description', 'helsinki-universal'),
-							'menu-depth-3-5' => esc_html_x('Two levels of hierarchy for large screens and five levels of hierarchy for small screens', 'Customizer setting description', 'helsinki-universal'),
+							'menu-depth-2-5' => esc_html_x('Two levels of hierarchy for large screens and five levels of hierarchy for small screens', 'Customizer setting description', 'helsinki-universal'),
 						),
 						'menu-depth-3'
 					),

@@ -12,6 +12,10 @@ function helsinki_sidebar()
 
 function helsinki_sidebar_navigation()
 {
+	if (!helsinki_sidebar_compatible_page_template()) {
+		return;
+	}
+
 	get_sidebar('navigation');
 }
 
@@ -63,6 +67,10 @@ function helsinki_sidebar_has_sidenavigation()
 		return false;
 	}
 
+	if (!helsinki_sidebar_compatible_page_template()) {
+		return true;
+	}
+
 	add_filter('body_class', function ($classes) {
 		$classes[] = 'has-sidenavigation';
 		return $classes;
@@ -97,7 +105,7 @@ function helsinki_get_submenu($items, $args)
 		$parent_id = $current_pages[0]->ID;
 	}
 
-	$children = submenu_get_children_ids($parent_id, $items);
+	$children = helsinki_submenu_get_children_ids($parent_id, $items);
 
 	foreach ($items as $key => $item) {
 		if ($item->ID != $parent_id && !in_array($item->ID, $children)) {
@@ -109,8 +117,8 @@ function helsinki_get_submenu($items, $args)
 	return $items;
 }
 
-add_action('wp_update_nav_menu', 'my_get_menu_items');
-function my_get_menu_items($nav_menu_selected_id)
+add_action('wp_update_nav_menu', 'helsinki_get_menu_items');
+function helsinki_get_menu_items($nav_menu_selected_id)
 {
 	$menu_items = wp_get_nav_menu_items($nav_menu_selected_id);
 
@@ -118,7 +126,7 @@ function my_get_menu_items($nav_menu_selected_id)
 		$submenu_items = $menu_items;
 
 		if ($menu_item->menu_item_parent === '0') {
-			$children = submenu_get_children_ids($menu_item->ID, $menu_items);
+			$children = helsinki_submenu_get_children_ids($menu_item->ID, $menu_items);
 
 			if ($children == null) {
 				continue;
@@ -147,12 +155,12 @@ function my_get_menu_items($nav_menu_selected_id)
 	}
 }
 
-function submenu_get_children_ids($id, $items)
+function helsinki_submenu_get_children_ids($id, $items)
 {
 
 	$ids = wp_filter_object_list($items, array('menu_item_parent' => $id), 'and', 'ID');
 	foreach ($ids as $id) {
-		$ids = array_merge($ids, submenu_get_children_ids($id, $items));
+		$ids = array_merge($ids, helsinki_submenu_get_children_ids($id, $items));
 	}
 
 	return $ids;

@@ -1,12 +1,25 @@
 <?php
 
-function helsinki_menu( string $location ) {
-	$config = helsinki_menu_config( $location );
-	return $config ? wp_nav_menu( apply_filters( "helsinki_{$location}_args", $config ) ) : '';
+function helsinki_menu(string $location)
+{
+	$config = helsinki_menu_config($location);
+	return $config ? wp_nav_menu(apply_filters("helsinki_{$location}_args", $config)) : '';
 }
 
-function helsinki_menu_config(string $location) {
-	switch ( $location ) {
+function helsinki_menu_config(string $location)
+{
+
+	$theme_menu_depth = get_theme_mod('helsinki_header_primary_menu');
+
+	if ($theme_menu_depth['menu-items'] === 'menu-depth-2-5') {
+		$desktop_depth = 2;
+		$mobile_depth = 5;
+	} else {
+		$desktop_depth = 3;
+		$mobile_depth = 3;
+	}
+
+	switch ($location) {
 		case 'topbar_menu':
 			return array(
 				'theme_location'    => $location,
@@ -41,7 +54,7 @@ function helsinki_menu_config(string $location) {
 			return array(
 				'theme_location'    => $location,
 				'container'         => 'false',
-				'depth'             => 3,
+				'depth'             => $desktop_depth,
 				'menu_id'           => 'main-menu',
 				'menu_class'        => 'menu menu--main',
 				'echo'              => false,
@@ -59,7 +72,7 @@ function helsinki_menu_config(string $location) {
 			return array(
 				'theme_location'    => 'main_menu',
 				'container'         => 'false',
-				'depth'             => 3,
+				'depth'             => $mobile_depth,
 				'menu_id'           => 'mobile-main-menu',
 				'menu_class'        => 'mobile-menu menu menu--main',
 				'echo'              => false,

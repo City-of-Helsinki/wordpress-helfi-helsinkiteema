@@ -136,7 +136,7 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu
 
 		if ($this->add_submenu_toggle($args, $depth)) {
 			$this->submenu_id = $args->menu_id . '-submenu-toggle-' . $item->ID;
-			$item_output .= $this->submenu_toggle($this->submenu_id, $title);
+			$item_output .= submenu_toggle($this->submenu_id, $title, 'js-submenu-toggle');
 		}
 
 		$item_output .= $args->after;
@@ -164,21 +164,7 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu
 		$output .= $this->discard_item_spacing($args) ? '</li>' : "</li>\n";
 	}
 
-	public function submenu_toggle($item_id, $title)
-	{
-		return sprintf(
-			'<button id="%s" class="button-reset menu__toggle js-submenu-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-				<span class="screen-reader-text">%s</span>
-				%s
-			</button>',
-			$item_id,
-			sprintf(
-				esc_html__('Toggle submenu for %s', 'helsinki-universal'),
-				$title
-			),
-			helsinki_get_svg_icon('angle-down')
-		);
-	}
+
 
 	public function add_submenu_toggle($args, $depth)
 	{
@@ -293,7 +279,9 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 		}
 
 		if ($args->walker->has_children && $depth > 0) {
-			$item_output .= '<button class="sidebar-navigation__toggle js-sidebarnavigation-toggle" type="button" aria-haspopup="true" aria-expanded="false"><span class="screen-reader-text">' . sprintf(esc_html__('Toggle submenu for %s', 'helsinki-universal'), $title) . '</span>' . helsinki_get_svg_icon('angle-down') . '</button>';
+			//$item_output .= '<button class="sidebar-navigation__toggle js-sidebarnavigation-toggle" type="button" aria-haspopup="true" aria-expanded="false"><span class="screen-reader-text">' . sprintf(esc_html__('Toggle submenu for %s', 'helsinki-universal'), $title) . '</span>' . helsinki_get_svg_icon('angle-down') . '</button>';
+			$this->submenu_id = $args->menu_id . '-submenu-toggle-' . $item->ID;
+			$item_output .= submenu_toggle($this->submenu_id, $title, 'js-sidebarnavigation-toggle');
 		}
 
 		$item_output .= "</span>";
@@ -321,22 +309,6 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 		$output .= $this->discard_item_spacing($args) ? '</li>' : "</li>\n";
 	}
 
-	public function submenu_toggle($item_id, $title)
-	{
-		return sprintf(
-			'<button id="%s" class="button-reset menu__toggle js-submenu-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-				<span class="screen-reader-text">%s</span>
-				%s
-			</button>',
-			$item_id,
-			sprintf(
-				esc_html__('Toggle submenu for %s', 'helsinki-universal'),
-				$title
-			),
-			helsinki_get_svg_icon('angle-down')
-		);
-	}
-
 	public function add_submenu_toggle($args, $depth)
 	{
 		if ($depth > 0) {
@@ -351,24 +323,41 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 	}
 }
 
-add_action('wp_nav_menu_item_custom_fields', function ($item_id, $item) {
-	//if ($item->menu_item_parent == 0) :
-	$show_sidenav = get_post_meta($item->object_id, 'sidebar_navigation', true);
-?>
-	<p class="hds-show-sidenav description description-wide">
+function submenu_toggle($item_id, $title, $toggle)
+{
+	return sprintf(
+		'<button id="%s" class="button-reset menu__toggle %s" type="button" aria-haspopup="true" aria-expanded="false">
+				<span class="screen-reader-text">%s</span>
+				%s
+			</button>',
+		$item_id,
+		$toggle,
+		sprintf(
+			esc_html__('Toggle submenu for %s', 'helsinki-universal'),
+			$title
+		),
+		helsinki_get_svg_icon('angle-down')
+	);
+}
 
-		<label for="hds-menu-item-sidenav-<?php echo $item_id; ?>">
-			<?php echo esc_html__('Side navigation', 'helsinki-universal'); ?>
+add_action('wp_nav_menu_item_custom_fields', function ($item_id, $item) {
+	if ($item->menu_item_parent == 0) :
+		$show_sidenav = get_post_meta($item->object_id, 'sidebar_navigation', true);
+?>
+		<p class="hds-show-sidenav description description-wide">
+
+			<label for="hds-menu-item-sidenav-<?php echo $item_id; ?>">
+				<?php echo esc_html__('Side navigation', 'helsinki-universal'); ?>
+				<br>
+				<input type="checkbox" id="hds-menu-item-sidenav-<?php echo $item_id; ?>" name="hds-menu-item-sidenav[<?php echo $item_id; ?>]" <?php checked($show_sidenav, true); ?> /><?php _e('Show side navigation', 'helsinki-universal'); ?>
+			</label>
 			<br>
-			<input type="checkbox" id="hds-menu-item-sidenav-<?php echo $item_id; ?>" name="hds-menu-item-sidenav[<?php echo $item_id; ?>]" <?php checked($show_sidenav, true); ?> /><?php _e('Show side navigation', 'helsinki-universal'); ?>
-		</label>
-		<br>
-		<i>
-			<?php echo esc_html__('The side navigation is displayed on this page and on all its subpages, if the Basic page template is used on the page.', 'helsinki-universal'); ?>
-		</i>
-	</p>
+			<i>
+				<?php echo esc_html__('The side navigation is displayed on this page and on all its subpages, if the Basic page template is used on the page.', 'helsinki-universal'); ?>
+			</i>
+		</p>
 <?php
-	//endif;
+	endif;
 }, 10, 2);
 
 add_action('wp_update_nav_menu_item', function ($menu_id, $menu_item_db_id) {

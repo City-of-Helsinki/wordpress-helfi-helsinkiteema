@@ -96,21 +96,31 @@
           justify-content: center;
           width: 44px;
           cursor: pointer;
+
           .icon {
             width: 28px;
           }
           svg {
-            background: rgb(242, 242, 242);
           }
           &[aria-expanded='true'] {
             svg {
               transform: rotate(180deg);
             }
           }
-          &:hover {
-            svg {
-              background-color: #ccc;
-            }
+          &:hover::before {
+            background-color: var(--color-black-20);
+          }
+          &::before {
+            background-color: var(--color-black-5);
+            content: '';
+            height: 24px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            width: 24px;
           }
         }
       }
