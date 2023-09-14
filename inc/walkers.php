@@ -283,7 +283,7 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 			);
 		} else {
 			$item_output .= sprintf(
-				'%s<a %s>%s%s%s</a>',
+				'%s<a class="sibebar-navigation--link" %s>%s%s%s</a>',
 				$args->before,
 				$attributes,
 				$args->link_before,
