@@ -122,7 +122,9 @@ function helsinki_sidebar_filter_rss_links($output) {
 
     $dom = new DOMDocument();
     $dom->encoding = 'utf-8';
+    libxml_use_internal_errors(true);
     $dom->loadHTML(mb_convert_encoding($output, 'HTML-ENTITIES', 'UTF-8'));
+    libxml_clear_errors();
     $icon = $dom->importNode($icon->item(0), true);
     $links = $dom->getElementsByTagName('a');
     for ($i = 0; $i < $links->count(); $i++) {
