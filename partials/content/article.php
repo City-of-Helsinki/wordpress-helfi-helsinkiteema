@@ -1,11 +1,11 @@
 <?php
 $post_type = get_post_type();
 
-  /**
-    * Hook: helsinki_content_article_before
-    *
-    */
-  do_action('helsinki_content_article_before', $post_type);
+/**
+ * Hook: helsinki_content_article_before
+ *
+ */
+do_action('helsinki_content_article_before', $post_type);
 
 ?>
 
@@ -13,11 +13,11 @@ $post_type = get_post_type();
 
 	<?php
 
-		/**
-		  * Hook: helsinki_content_article_top
-		  *
-		  */
-		do_action('helsinki_content_article_top', $post_type);
+	/**
+	 * Hook: helsinki_content_article_top
+	 *
+	 */
+	do_action('helsinki_content_article_top', $post_type);
 
 	?>
 
@@ -25,11 +25,11 @@ $post_type = get_post_type();
 
 		<?php
 
-			/**
-			  * Hook: helsinki_content_article_main_before
-			  *
-			  */
-			do_action('helsinki_content_article_main_before', $post_type);
+		/**
+		 * Hook: helsinki_content_article_main_before
+		 *
+		 */
+		do_action('helsinki_content_article_main_before', $post_type);
 
 		?>
 
@@ -37,11 +37,11 @@ $post_type = get_post_type();
 
 			<?php
 
-				/**
-				  * Hook: helsinki_content_article
-				  *
-				  */
-				do_action('helsinki_content_article', $post_type);
+			/**
+			 * Hook: helsinki_content_article
+			 *
+			 */
+			do_action('helsinki_content_article', $post_type);
 
 			?>
 
@@ -49,11 +49,11 @@ $post_type = get_post_type();
 
 		<?php
 
-			/**
-			  * Hook: helsinki_content_article_main_after
-			  *
-			  */
-			do_action('helsinki_content_article_main_after', $post_type);
+		/**
+		 * Hook: helsinki_content_article_main_after
+		 *
+		 */
+		do_action('helsinki_content_article_main_after', $post_type);
 
 		?>
 
@@ -61,11 +61,11 @@ $post_type = get_post_type();
 
 	<?php
 
-		/**
-		  * Hook: helsinki_content_article_bottom
-		  *
-		  */
-		do_action('helsinki_content_article_bottom', $post_type);
+	/**
+	 * Hook: helsinki_content_article_bottom
+	 *
+	 */
+	do_action('helsinki_content_article_bottom', $post_type);
 
 	?>
 
@@ -73,10 +73,10 @@ $post_type = get_post_type();
 
 <?php
 
-  /**
-    * Hook: helsinki_content_article_after
-    *
-    */
-  do_action('helsinki_content_article_after', $post_type);
+/**
+ * Hook: helsinki_content_article_after
+ *
+ */
+do_action('helsinki_content_article_after', $post_type);
 
 ?>

@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-08-29 10:55+0000\n"
+"PO-Revision-Date: 2023-09-14 10:44+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -116,8 +116,8 @@ msgstr ""
 msgid "City of Helsinki"
 msgstr "Helsingin kaupunki"
 
-#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
-#: partials/header/search.php:2
+#: setup/assets.php:128 partials/header/search.php:2
+#: partials/header/mobile-panel-toggle.php:1
 msgid "Close"
 msgstr "Sulje"
 
@@ -203,7 +203,7 @@ msgctxt "Customizer panel title"
 msgid "Style"
 msgstr "Tyyli"
 
-#: customizer/config/header.php:53
+#: customizer/config/header.php:54
 msgctxt "Customizer section title"
 msgid "Breadcrumbs"
 msgstr "Murupolku"
@@ -219,7 +219,7 @@ msgctxt "Customizer section title"
 msgid "Feedback"
 msgstr "Palaute"
 
-#: customizer/config/header.php:8
+#: customizer/config/header.php:9
 msgctxt "Customizer section title"
 msgid "Helsinki logo"
 msgstr "Helsinki-kehystunnus"
@@ -235,7 +235,7 @@ msgctxt "Customizer section title"
 msgid "Koroshape"
 msgstr "Koromuoto"
 
-#: customizer/config/header.php:38
+#: customizer/config/header.php:39
 #| msgid "Languages"
 msgctxt "Customizer section title"
 msgid "Language selector"
@@ -251,7 +251,12 @@ msgctxt "Customizer section title"
 msgid "Page sidebar"
 msgstr "Sivujen sivupalkki"
 
-#: customizer/config/header.php:23
+#: customizer/config/header.php:69
+msgctxt "Customizer section title"
+msgid "Primary menu"
+msgstr ""
+
+#: customizer/config/header.php:24
 msgctxt "Customizer section title"
 msgid "Search"
 msgstr "Haku"
@@ -266,26 +271,40 @@ msgctxt "Customizer section title"
 msgid "Single Article"
 msgstr "Yksittäinen artikkeli"
 
-#: customizer/config/header.php:44
+#: customizer/config/header.php:45
 msgctxt "Customizer setting description"
 msgid "Display language selector in site header"
 msgstr "Näytä kielivalitsin ylätunnisteessa"
 
-#: customizer/config/header.php:29
+#: customizer/config/header.php:30
 msgctxt "Customizer setting description"
 msgid "Display search field in site header"
 msgstr "Näytä hakukenttä ylätunnisteessa"
 
-#: customizer/config/header.php:59
+#: customizer/config/header.php:60
 msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr "Yoast SEO tulee olla asennettuna"
+
+#: customizer/config/header.php:79
+msgctxt "Customizer setting description"
+msgid "Three levels of hierarchy on large and small screens"
+msgstr "Kolme hierarkiatasoa isoilla ja pienillä näytöillä"
+
+#: customizer/config/header.php:80
+msgctxt "Customizer setting description"
+msgid ""
+"Two levels of hierarchy for large screens and five levels of hierarchy for "
+"small screens"
+msgstr ""
+"Kaksi hierarkiatasoa isoilla näytöillä ja viisi hierarkiatasoa pienillä "
+"näytöillä"
 
 #: customizer/config/choices.php:18
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:152
+#: inc/filters.php:154
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -294,7 +313,7 @@ msgstr "Perussivu"
 msgid "Diagonal"
 msgstr "Diagonaali"
 
-#: customizer/config/header.php:14
+#: customizer/config/header.php:15
 msgid "Disable default city logo"
 msgstr "Poista kaupungin oletuslogo käytöstä"
 
@@ -328,9 +347,8 @@ msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
 "."
 
-#: customizer/config/feedback-buttons.php:14
-#: customizer/config/notifications.php:24 customizer/config/settings.php:58
-#: customizer/config/sidebar.php:15
+#: customizer/config/settings.php:63 customizer/config/feedback-buttons.php:14
+#: customizer/config/notifications.php:24 customizer/config/sidebar.php:15
 msgid "Enabled"
 msgstr "Käytössä"
 
@@ -516,6 +534,10 @@ msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
 msgstr ""
 "Kirjautuneena sisään tunnuksella %1$s. <a href=\"%2$s\">Kirjaudu ulos?</a>"
 
+#: customizer/config/header.php:76
+msgid "Main menu information hierarchy levels"
+msgstr "Päävalikon informaatiohierarkian tasot"
+
 #: partials/header/mobile-panel-toggle.php:1
 #: partials/header/mobile-panel-toggle.php:4
 msgid "Menu"
@@ -673,7 +695,7 @@ msgctxt "search submit"
 msgid "Search"
 msgstr "Hae"
 
-#: partials/header/search.php:9 partials/search/form-title.php:1
+#: partials/search/form-title.php:1 partials/header/search.php:9
 msgctxt "search title"
 msgid "Search the site"
 msgstr "Hae sivustolta"
@@ -685,6 +707,16 @@ msgstr "Osion otsikko"
 #: functions/layout/loop.php:20
 msgid "Select category"
 msgstr "Valitse kategoria"
+
+#: customizer/config/header.php:77
+msgid ""
+"Select two levels of hierarchy on large screens and five levels of hierarchy "
+"on small screens only if the sites pages have a side menu. Otherwise, select "
+"three hierarchy levels."
+msgstr ""
+"Valitse kaksi hierarkiatasoa isoilla näytöillä ja viisi hierarkiatasoa "
+"pienillä näytöillä vain siinä tapauksessa, jos sivuston sivuilla on käytössä "
+"sivuvalikko. Muussa tapauksessa valitse kolme hierarkiatasoa."
 
 #: functions/modules/social.php:52
 msgid "Share on Facebook"
@@ -714,6 +746,14 @@ msgstr "Näytä lisää"
 #: partials/loop/filter.php:4
 msgid "Show posts from a category"
 msgstr "Näytä artikkeleita kategoriasta"
+
+#: inc/walkers.php:352
+msgid "Show side navigation"
+msgstr "Näytä sivuvalikko"
+
+#: inc/walkers.php:350
+msgid "Side navigation"
+msgstr "Sivuvalikko"
 
 #: block-editor/metaboxes.php:6
 msgid "Sidebar"
@@ -755,6 +795,14 @@ msgid ""
 msgstr ""
 "Ilmoitus näytetään vain, kun sivustoa tarkastellaan valitulla kielellä."
 
+#: inc/walkers.php:356
+msgid ""
+"The side navigation is displayed on this page and on all its subpages, if "
+"the Basic page template is used on the page."
+msgstr ""
+"Sivuvalikko näytetään tällä sivulla ja sen kaikilla alasivuilla, jos sivulla "
+"on käytössä Perussivu-sivupohja."
+
 #: partials/content/none.php:15
 msgid "This author has not published any posts yet."
 msgstr "Kirjoittaja ei ole julkaissut vielä yhtään artikkelia."
@@ -774,7 +822,7 @@ msgstr ""
 msgid "Title"
 msgstr "Otsikko"
 
-#: inc/walkers.php:172
+#: inc/walkers.php:336
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr "\"%s\" alavalikko"

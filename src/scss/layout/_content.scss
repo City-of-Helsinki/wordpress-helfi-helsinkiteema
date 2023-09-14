@@ -1,129 +1,157 @@
 .has-sidebar {
+  .content__sidebar {
+    margin-top: $content-spacing;
+  }
 
-	.content__sidebar {
-		margin-top: $content-spacing;
-	}
+  @include breakpoint('l') {
+    .content__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
-	@include breakpoint('l') {
-		.content__container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
+    .content__main {
+      width: $content-article-width-with-sidebar;
+    }
 
-		.content__main {
-			width: $content-article-width-with-sidebar;
-		}
-
-		.content__sidebar {
-			margin-top: 0;
-			width: $content-sidebar-width;
-		}
-	}
-
+    .content__sidebar {
+      margin-top: 0;
+      width: $content-sidebar-width;
+    }
+  }
 }
 
 .content {
+  &__header {
+    margin-bottom: 0;
 
-	&__header {
-		margin-bottom: 0;
+    .content__title,
+    .content__thumbnail-wrap {
+      margin-bottom: 0;
+    }
 
-		.content__title,
-		.content__thumbnail-wrap {
-			margin-bottom: 0;
-		}
+    .content__excerpt {
+      margin-top: spacing('s');
 
-		.content__excerpt {
-			margin-top: spacing('s');
+      @include breakpoint('s') {
+        margin-top: spacing('s');
+      }
+    }
 
-			@include breakpoint('s') {
-				margin-top: spacing('s');
-			}
-		}
+    &.has-thumbnail {
+      @include breakpoint('s') {
+        .image-wrap {
+          height: 300px;
+          padding-top: 0;
+        }
+      }
+    }
 
-			&.has-thumbnail {
-				@include breakpoint('s') {
-					.image-wrap {
-						height: 300px;
-						padding-top: 0;
-					}
-				}
-			}
+    &.has-koros {
+      .hds-koros {
+        > svg {
+          path,
+          polygon {
+            fill: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
 
-			&.has-koros {
-				.hds-koros {
-					> svg {
-						path,
-						polygon {
-							fill: var(--primary-color);
-						}
-					}
-				}
-			}
-		}
+  &__thumbnail {
+    display: block;
+    width: 100%;
 
-		&__thumbnail {
-			display: block;
-			width: 100%;
+    &-wrap {
+      margin-bottom: $content-spacing;
+    }
 
-			&-wrap {
-				margin-bottom: $content-spacing;
-			}
+    figcaption {
+      font-style: normal;
+      padding: 0;
+      margin-top: spacing('s');
 
-			figcaption {
-				font-style: normal;
-				padding: 0;
-				margin-top: spacing('s');
-				
-				@include breakpointMax('m') {
-					padding-left: spacing('s');
-					padding-right: spacing('s');
-				}
+      @include breakpointMax('m') {
+        padding-left: spacing('s');
+        padding-right: spacing('s');
+      }
+    }
+  }
 
-			}
-		}
+  &__title {
+    margin-top: 0;
+  }
 
-		&__title {
-			margin-top: 0;
-		}
+  &__main {
+    .content__thumbnail {
+      margin-bottom: $content-spacing;
+    }
+  }
 
-		&__main {
+  &__body {
+    margin-bottom: $content-spacing;
 
-			.content__thumbnail {
-				margin-bottom: $content-spacing;
-			}
-		}
+    :first-child {
+      margin-top: 0;
+    }
+  }
 
-		&__body {
-			margin-bottom: $content-spacing;
+  &__sidebar {
+  }
 
-			:first-child {
-				margin-top: 0;
-			}
-		}
+  &__tags {
+    padding-top: spacing('layout-m');
+    padding-bottom: spacing('layout-m');
+  }
 
-		&__sidebar {
-		}
+  &__related {
+    h2 {
+      margin-top: 0;
+    }
 
-		&__tags {
-			padding-top: spacing('layout-m');
-			padding-bottom: spacing('layout-m');
-		}
+    padding-top: spacing('layout-l');
+    padding-bottom: spacing('layout-l');
+  }
+}
 
-		&__related {
+#content {
+  > .grid {
+    margin-bottom: $content-spacing;
+  }
+}
 
-			h2 {
-				margin-top: 0;
-			}
+.has-sidebar.has-sidenavigation {
+  .content__container {
+    display: grid;
+    grid-template-areas: 'subnav' 'content' 'sidebar';
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 64px;
+    column-gap: 64px;
+    justify-content: normal;
+    @media (min-width: 992px) {
+      margin-top: 96px;
+    }
 
-			padding-top: spacing('layout-l');
-			padding-bottom: spacing('layout-l');
-		}
-	}
-
-	#content {
-
-		> .grid {
-			margin-bottom: $content-spacing;
-		}
-	}
+    @media (min-width: 992px) {
+      grid-template-areas: 'subnav content' 'sidebar content';
+      grid-template-columns: 340px auto;
+      grid-template-rows: auto 1fr;
+    }
+    .content__sidebat--navigation {
+      grid-area: subnav;
+      width: 100%;
+    }
+    .content__main {
+      grid-area: content;
+      width: 100%;
+    }
+    .content__sidebar {
+      grid-area: sidebar;
+      width: 100%;
+    }
+  }
+}
