@@ -4,68 +4,71 @@
 @import '../../scss/mixins';
 @import '../../scss/settings';
 
-body.wp-admin .editor-styles-wrapper,
-body.editor-styles-wrapper {
-  padding-left: spacing('s') !important;
-  padding-right: spacing('s') !important;
-  max-width: var(--wp--style--global--content-size);
-  width: calc(100% - #{spacing('s')} * 2);
-  margin: auto !important;
+body.wp-admin .edit-post-visual-editor, html {
+	container-name: blockEditor;
+	container-type: inline-size;
+}
 
-  .block-editor-block-list__layout.is-root-container {
-    .wp-block-freeform {
-      * {
-        clear: both; //hack to fix alignment issues
-      }
-    }
-    .wp-block-image {
-      &:where(
-          :not(.alignleft):not(.alignright):not(.alignfull):not(.aligncenter)
-        ) {
-        display: table !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-      }
-    }
+body.wp-admin .editor-styles-wrapper, body.editor-styles-wrapper {
+    padding-left: spacing('s') !important;
+    padding-right: spacing('s') !important;
+	max-width: var(--wp--style--global--content-size);
+	width: calc(100% - #{spacing('s')} * 2);
+	margin: auto !important;
 
-    .wp-block-table {
-      table {
-        border-bottom: 1px double var(--color-black-60);
+	.block-editor-block-list__layout.is-root-container {
+		.wp-block-hds-wp-image-banner {
+		}
+		.wp-block-freeform {
+			* {
+				clear: both; //hack to fix alignment issues
+			}
+		}
+		.wp-block-image {
+			&:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.aligncenter)) {
+				display: table !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+			}
+		}
+		.wp-caption {
+			img {
+				width: -moz-available;
+				width: -webkit-fill-available;
+				width: fill-available;
+			}
+		}
 
-        tbody {
-          border-bottom: none;
-        }
+		.wp-block-table {
+			table {
+				border-bottom: 1px double var(--color-black-60);
 
-        tfoot {
-          border-bottom: none;
-        }
-      }
+			tbody {
+			border-bottom: none;
+			}
 
-      &.is-style-stripes {
-        border-bottom: none;
+			tfoot {
+			border-bottom: none;
+			}
+		}
 
-        table {
-          border-bottom: none;
-        }
-      }
-    }
+		&.is-style-stripes {
+			border-bottom: none;
 
-    .wp-caption {
-      img {
-        width: -moz-available;
-        width: -webkit-fill-available;
-        width: fill-available;
-      }
-    }
+			table {
+			border-bottom: none;
+			}
+		}
+		}
 
-    & > .wp-block-list {
-      padding-left: $list-margin-left;
-    }
+		& > .wp-block-list {
+		padding-left: $list-margin-left;
+		}
 
-    .hds-pagination {
-      pointer-events: none;
-    }
-  }
+		.hds-pagination {
+		pointer-events: none;
+		}
+	}
 
   @import '../../scss/elements';
 }
@@ -77,6 +80,63 @@ body .interface-interface-skeleton__sidebar {
       text-overflow: unset !important;
     }
   }
+}
+
+@container blockEditor (min-width: 1px) {
+	.editor-styles-wrapper {
+		.block-editor-block-list__layout.is-root-container {
+			.wp-block-hds-wp-image-banner {
+				width: 100cqw !important;
+				max-width: 100cqw !important;
+				margin-left: calc(50% - 50cqw) !important;
+				margin-right: calc(50% - 50cqw) !important;
+
+				.image-banner-caption {
+					margin-left: calc(50% - 50cqw) !important;
+					margin-right: calc(50% - 50cqw) !important;
+					padding-right: spacing('s');
+					padding-left: 0;
+			  
+				}
+			  
+				.image-banner--wrapper {
+			  
+					@include breakpointMax('m') {
+					  .content {
+						&__inner {
+						  padding-left: spacing('s');
+						  padding-right: spacing('s');
+						}
+					  }
+					}
+			  
+					@include breakpoint('m') {
+					  .image {
+						img {
+						  height: auto;
+						  max-width: 100%;
+						  width: 100%;
+						}
+					  }
+					}
+				}
+			  
+				  &.align-right {
+			  
+					.image-banner-caption {
+					  padding-left: spacing('s');
+					  padding-right: 0;
+				
+					  &--mobile {
+						padding-left: 0;
+						padding-right: spacing('s');
+					  }
+					}
+				  }
+			  
+			}
+		}
+	}
 }
 
 @import 'metaboxes';

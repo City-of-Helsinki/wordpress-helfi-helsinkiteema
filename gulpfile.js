@@ -1,7 +1,7 @@
 var gulp        = require('gulp'),
     sass        = require('gulp-sass')(require('sass')),
     rename      = require('gulp-rename'),
-		cleanCSS = require('gulp-clean-css');
+    cssNano     = require('gulp-cssnano');
     prefix      = require('gulp-autoprefixer'),
     concat      = require('gulp-concat'),
     uglify      = require('gulp-uglify'),
@@ -83,7 +83,7 @@ gulp.task('publicStyles', function() {
     .pipe(sass(sassOptions))
 		.pipe(gulp.dest(ASSETS.all))
     .pipe(prefix())
-    .pipe(cleanCSS(cssOptions))
+    .pipe(cssNano())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(ASSETS.all))
 });
@@ -93,7 +93,7 @@ gulp.task('adminStyles', function() {
     .pipe(sass(sassOptions))
 		.pipe(gulp.dest(ASSETS.adminStyles))
     .pipe(prefix())
-    .pipe(cleanCSS(cssOptions))
+    .pipe(cssNano())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(ASSETS.adminStyles))
 });
