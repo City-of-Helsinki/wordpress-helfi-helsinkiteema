@@ -3,6 +3,7 @@
 	.lang-item {
 
 		a {
+			--line-height: #{$global-line-height};
 			line-height: $global-line-height;
 		}
 

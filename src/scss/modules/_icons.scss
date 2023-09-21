@@ -4,8 +4,8 @@
 	display: block;
   	margin-left: 0;
 	transition: $default-transition;
-	width: 24px;
-
+	width: calc(var(--line-height)*1em);
+	
 	&--arrow-right {
 	}
 
@@ -14,17 +14,6 @@
 			background-color: transparent;
 		}
 	}
-
-	&--link-external {
-		width: 16px;
-	}
-
-	@for $i from 1 through 6 {
-		&--abstract-#{$i} {
-			background-color: transparent;
-		}
-	}
-
 
 	&.inline-icon {
 		display: inline-block;
