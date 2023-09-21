@@ -104,6 +104,7 @@
 	a {
 		display: flex;
 		align-items: center;
+		--line-height: 1;
 		line-height: 1;
 		text-decoration: none;
 		font-weight: $global-font-weight-medium;
@@ -128,6 +129,7 @@
 
 		a {
 			font-size: 20px;
+			--line-height: 1.2;
 			line-height: 1.2;
 		}
 	}
@@ -275,6 +277,7 @@
 	.menu__item {
 		a {
 			font-size: rem-calc(16);
+			--line-height: #{$global-line-height};
 			line-height: $global-line-height;
 			margin: spacing('xs') 0;
 		}
@@ -517,7 +520,8 @@
 					font-size: font-size(16) !important;
 					display: inline-block;
 					padding: spacing('s');
-					line-height: 32px;
+					--line-height: 1.5;
+					line-height: 1.5;
 
 					@include breakpoint('m') {
 						padding: spacing('s') spacing('m');

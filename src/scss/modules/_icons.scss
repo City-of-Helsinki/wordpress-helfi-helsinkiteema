@@ -4,14 +4,10 @@
   fill: $anchor-color;
   margin-left: 0;
 	transition: $default-transition;
-	width: 24px;
-
+	width: calc(var(--line-height)*1em);
+	
 	&--arrow-right {
 		transform: rotate(180deg);
-	}
-
-	&--link-external {
-		width: 16px;
 	}
 
 	&.inline-icon {

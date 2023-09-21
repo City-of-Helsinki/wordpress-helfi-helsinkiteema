@@ -84,6 +84,7 @@
                 td {
                     border: $default-border-width $default-border-style $medium-gray;
                     color: $black;
+                    --line-height: 2.5rem;
                     line-height: 2.5rem;
                     padding: 0;
                     width: 2rem;
