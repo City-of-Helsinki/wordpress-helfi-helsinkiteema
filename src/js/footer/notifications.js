@@ -30,6 +30,7 @@ function helsinkiNotifications() {
     sessionStorage.setItem( id, 'closed' );
   }
 
+
   function _closeNotification(event) {
     event.preventDefault();
     var _notice = event.currentTarget.closest('.notification');
@@ -37,6 +38,8 @@ function helsinkiNotifications() {
     _markClosed(
       _notificationId(_notice)
     );
+
+    focusToPrevious(_notice);
 
     _notice.remove();
   }

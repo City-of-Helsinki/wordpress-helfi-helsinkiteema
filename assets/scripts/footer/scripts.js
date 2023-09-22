@@ -61,6 +61,52 @@ function focusFirstChild(element) {
   return null;
 }
 
+function focusLastChild(element) {
+  for (var i = element.childNodes.length - 1; i >= 0; i--) {
+    if ( setFocus(element.childNodes[i]) || focusLastChild(element.childNodes[i]) ) {
+      console.log(element.childNodes[i]);
+      return true;
+    }
+  }
+  return null;
+}
+
+function focusToPrevious( element ) {
+  var _previousFocusable;
+  if ( element.previousElementSibling !== null ) { 
+    _previousFocusable = element.previousElementSibling;
+  }
+  else {
+    var _parent = element.parentElement;
+    while ( _parent ) {
+      if ( _parent.previousElementSibling !== null ) {
+        _previousFocusable = _parent.previousElementSibling;
+        break;
+      }
+      _parent = _parent.parentElement;
+    }
+  }
+
+  while ( _previousFocusable ) {
+    if ( focusLastChild(_previousFocusable) === true ) {
+      break;
+    }
+    if ( _previousFocusable.previousElementSibling !== null ) {
+      _previousFocusable = _previousFocusable.previousElementSibling;
+    }
+    else {
+      var _parent = _previousFocusable.parentElement;
+      while ( _parent ) {
+        if ( _parent.previousElementSibling !== null ) {
+          _previousFocusable = _parent.previousElementSibling;
+          break;
+        }
+        _parent = _parent.parentElement;
+      }
+    }
+  }
+}
+
 function controlledElement(controller) {
   return document.getElementById(controller.getAttribute('aria-controls'));
 }
@@ -776,6 +822,7 @@ function helsinkiNotifications() {
     sessionStorage.setItem( id, 'closed' );
   }
 
+
   function _closeNotification(event) {
     event.preventDefault();
     var _notice = event.currentTarget.closest('.notification');
@@ -783,6 +830,8 @@ function helsinkiNotifications() {
     _markClosed(
       _notificationId(_notice)
     );
+
+    focusToPrevious(_notice);
 
     _notice.remove();
   }
