@@ -35,7 +35,6 @@ function focusFirstChild(element) {
 function focusLastChild(element) {
   for (var i = element.childNodes.length - 1; i >= 0; i--) {
     if ( setFocus(element.childNodes[i]) || focusLastChild(element.childNodes[i]) ) {
-      console.log(element.childNodes[i]);
       return true;
     }
   }
