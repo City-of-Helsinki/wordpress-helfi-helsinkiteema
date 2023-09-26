@@ -4,7 +4,7 @@
 @import '../../scss/mixins';
 @import '../../scss/settings';
 
-body.wp-admin .edit-post-visual-editor, html {
+body.wp-admin .edit-post-visual-editor, html:not([class]) {
 	container-name: blockEditor;
 	container-type: inline-size;
 }
