@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-09-14 10:24+0000\n"
+"PO-Revision-Date: 2023-09-27 06:49+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -254,7 +254,7 @@ msgstr "Sivujen sivupalkki"
 #: customizer/config/header.php:69
 msgctxt "Customizer section title"
 msgid "Primary menu"
-msgstr ""
+msgstr "Päävalikko"
 
 #: customizer/config/header.php:24
 msgctxt "Customizer section title"
@@ -289,7 +289,7 @@ msgstr "Yoast SEO tulee olla asennettuna"
 #: customizer/config/header.php:79
 msgctxt "Customizer setting description"
 msgid "Three levels of hierarchy on large and small screens"
-msgstr ""
+msgstr "Kolme hierarkiatasoa isoilla ja pienillä näytöillä"
 
 #: customizer/config/header.php:80
 msgctxt "Customizer setting description"
@@ -297,6 +297,8 @@ msgid ""
 "Two levels of hierarchy for large screens and five levels of hierarchy for "
 "small screens"
 msgstr ""
+"Kaksi hierarkiatasoa isoilla näytöillä ja viisi hierarkiatasoa pienillä "
+"näytöillä"
 
 #: customizer/config/choices.php:18
 msgid "Default"
