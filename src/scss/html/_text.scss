@@ -1,4 +1,5 @@
 p {
+  --line-height: #{$paragraph-line-height};
   line-height: $paragraph-line-height;
   margin-top: 0;
   margin-bottom: $paragraph-margin-bottom;
