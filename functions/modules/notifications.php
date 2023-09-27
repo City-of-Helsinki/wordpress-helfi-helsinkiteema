@@ -78,11 +78,13 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 	);
 
 	$text = '';
+	$title = '';
 	if ( $notice['title'] ) {
 		if ( $langugage ) {
 			$notice['title'] = pll__( $notice['title'] );
 		}
-		$text .= '<strong role="heading" aria-level="2">' . esc_html( $notice['title'] ) . '</strong> ';
+		$title = esc_html( $notice['title'] );
+		$text .= '<strong>' . esc_html( $notice['title'] ) . '</strong> ';
 	}
 
 	if ( $text || $notice['text'] ) {
@@ -129,6 +131,7 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 			'type' => $type,
 			'icon' => helsinki_get_svg_icon( $icon[$type] ),
 			'text' => $text,
+			'title' => $title,
 		)
 	);
 }
