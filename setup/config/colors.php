@@ -22,6 +22,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#1a1a1a',
 			),
 			'secondary' => '#fff0f7',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#00d7a7',
 		),
 		'coat-of-arms' => array(
@@ -34,6 +35,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#1a1a1a',
 			),
 			'secondary' => '#e8f3fc',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#f5a3c7',
 		),
 		'copper' => array(
@@ -46,6 +48,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 			'secondary' => '#e8f3fc',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#f5a3c7',
 		),
 		'engel' => array(
@@ -58,6 +61,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 			'secondary' => '#f0f0ff',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#00d7a7',
 		),
 		'fog' => array(
@@ -70,6 +74,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 		 	'secondary' => '#e8f3fc',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#f5a3c7',
 		),
 		'gold' => array(
@@ -82,6 +87,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 			'secondary' => '#e8f3fc',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#fd4f00',
 		),
 		'metro' => array(
@@ -94,6 +100,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 			'secondary' => '#fff0f7',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#c2a251',
 		),
 		'silver' => array(
@@ -106,6 +113,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 			'secondary' => '#f0f0ff',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#c2a251',
 		),
 		'summer' => array(
@@ -118,6 +126,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 			'secondary' => '#fff9db',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#008741',
 		),
 		'suomenlinna' => array(
@@ -130,6 +139,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#ffffff',
 			),
 			'secondary' => '#f0f0ff',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#0000bf',
 		),
 		'tram' => array(
@@ -142,6 +152,7 @@ function helsinki_config_colors() {
 				'content-secondary' => '#1a1a1a',
 			),
 			'secondary' => '#fff9db',
+			'secondary-content' => '#1a1a1a',
 			'accent' => '#ffc61e',
 		),
 	);

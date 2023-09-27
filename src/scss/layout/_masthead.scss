@@ -62,7 +62,7 @@
 		text-decoration: none;
 
 		svg {
-			fill: $black;
+			
 		}
 
 		&:hover {
@@ -172,7 +172,7 @@
 			color: $header-search-color-alt;
 
 			svg {
-				fill: $header-search-color-alt;
+				background-color: $header-search-color-alt;
 			}
 
 			.icon--search {
@@ -427,7 +427,7 @@
 	}
 
 	svg {
-		fill: $anchor-color;
+		background-color: $anchor-color;
 	}
 
 	&[aria-expanded="true"] {
