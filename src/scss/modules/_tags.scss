@@ -3,12 +3,14 @@
 	h2 {
 		font-size: fontsize-heading('m');
 		font-weight: $global-font-weight-medium;
+		--line-height: 28px;
 		line-height: 28px;
 		margin-top: 0;
 		margin-bottom: spacing('s');
 
 		@include breakpointMax('l') { 
 			font-size: 20px;
+			--line-height: 26px;
 			line-height: 26px;
 		}
 
