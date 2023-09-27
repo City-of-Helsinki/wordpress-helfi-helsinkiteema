@@ -257,16 +257,28 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 
 		$item_output = '<span class="sidebar-navigation__wrapper">';
 
+		$current_page = get_post(get_the_ID());
+
 		if ($depth === 0) {
-			$item_output .= sprintf(
-				'<div class="sidebar-navigation__title">%s<a %s class="sidebar-navigation__title--link">%s %s%s%s</a></div>',
-				$args->before,
-				$attributes,
-				$svg,
-				$args->link_before,
-				$title,
-				$args->link_after
-			);
+			if ($current_page->ID === intval($item->object_id)) {
+				$item_output .= sprintf(
+					'<div class="sidebar-navigation__title">%s<span class="sidebar-navigation__title--link">%s%s%s</span></div>',
+					$args->before,
+					$args->link_before,
+					$title,
+					$args->link_after
+				);
+			} else {
+				$item_output .= sprintf(
+					'<div class="sidebar-navigation__title">%s<a %s class="sidebar-navigation__title--link">%s %s%s%s</a></div>',
+					$args->before,
+					$attributes,
+					$svg,
+					$args->link_before,
+					$title,
+					$args->link_after
+				);
+			}
 		} else {
 			$item_output .= sprintf(
 				'%s<a class="sibebar-navigation--link" %s>%s%s%s</a>',
@@ -278,7 +290,15 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 			);
 		}
 
-		if ($args->walker->has_children && $depth > 0) {
+		$theme_menu_depth = get_theme_mod('helsinki_header_primary_menu');
+
+		if ($theme_menu_depth['menu-items'] === 'menu-depth-2-5') {
+			$maxdepth = 4;
+		} else {
+			$maxdepth = 2;
+		}
+
+		if ($args->walker->has_children && $depth > 0 && $depth < $maxdepth) {
 			//$item_output .= '<button class="sidebar-navigation__toggle js-sidebarnavigation-toggle" type="button" aria-haspopup="true" aria-expanded="false"><span class="screen-reader-text">' . sprintf(esc_html__('Toggle submenu for %s', 'helsinki-universal'), $title) . '</span>' . helsinki_get_svg_icon('angle-down') . '</button>';
 			$this->submenu_id = $args->menu_id . '-submenu-toggle-' . $item->ID;
 			$item_output .= submenu_toggle($this->submenu_id, $title, 'js-sidebarnavigation-toggle');
