@@ -29,5 +29,8 @@
   "browserslist": [
     "last 2 versions",
     "ie 11"
-  ]
+  ],
+  "dependencies": {
+    "gulp-cssnano": "^2.1.3"
+  }
 }

@@ -3,6 +3,7 @@
 
 	background-color: #f2f2f2;
 	font-size: rem-calc(16);
+  --line-height: var(--lineheight-l);
 	line-height: var(--lineheight-l);
 
   > .hds-container {
@@ -38,6 +39,7 @@
 
     a {
       font-size: rem-calc(16);
+      --line-height: var(--lineheight-l);
     	line-height: var(--lineheight-l);
 
       &:focus,

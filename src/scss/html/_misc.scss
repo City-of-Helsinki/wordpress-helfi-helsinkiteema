@@ -12,6 +12,7 @@ body {
   font-family: $body-font-family;
   font-size: $body-font-size;
   font-weight: $body-font-weight;
+  --line-height: #{$global-line-height};
   line-height: $global-line-height;
   overflow-x: hidden;
   width: 100%;
