@@ -3,15 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Helsinki Universal\n"
 "Report-Msgid-Bugs-To: \n"
-"\n"
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2023-08-29 10:53+0000\n"
-=======
-"POT-Creation-Date: 2023-09-14 10:22+0000\n"
->>>>>>> feat/WY-301
+"POT-Creation-Date: 2023-10-04 11:16+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -22,7 +17,7 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:54 functions/modules/notifications.php:108
+#: functions/links.php:54 functions/modules/notifications.php:110
 #: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr ""
@@ -115,8 +110,8 @@ msgstr ""
 msgid "City of Helsinki"
 msgstr ""
 
-#: setup/assets.php:128 partials/header/search.php:2
-#: partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
+#: partials/header/search.php:2
 msgid "Close"
 msgstr ""
 
@@ -124,7 +119,7 @@ msgstr ""
 msgid "Close Menu"
 msgstr ""
 
-#: partials/notification/notice.php:13
+#: partials/notification/notice.php:5
 msgid "Close notification"
 msgstr ""
 
@@ -339,8 +334,9 @@ msgstr ""
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 
-#: customizer/config/settings.php:63 customizer/config/feedback-buttons.php:14
-#: customizer/config/notifications.php:24 customizer/config/sidebar.php:15
+#: customizer/config/feedback-buttons.php:14
+#: customizer/config/notifications.php:24 customizer/config/settings.php:63
+#: customizer/config/sidebar.php:15
 msgid "Enabled"
 msgstr ""
 
@@ -683,7 +679,7 @@ msgctxt "search submit"
 msgid "Search"
 msgstr ""
 
-#: partials/search/form-title.php:1 partials/header/search.php:9
+#: partials/header/search.php:9 partials/search/form-title.php:1
 msgctxt "search title"
 msgid "Search the site"
 msgstr ""
@@ -731,11 +727,11 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
-#: inc/walkers.php:352
+#: inc/walkers.php:372
 msgid "Show side navigation"
 msgstr ""
 
-#: inc/walkers.php:350
+#: inc/walkers.php:370
 msgid "Side navigation"
 msgstr ""
 
@@ -777,7 +773,7 @@ msgid ""
 "language."
 msgstr ""
 
-#: inc/walkers.php:356
+#: inc/walkers.php:376
 msgid ""
 "The side navigation is displayed on this page and on all its subpages, if "
 "the Basic page template is used on the page."
@@ -798,7 +794,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: inc/walkers.php:336
+#: inc/walkers.php:356
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr ""
