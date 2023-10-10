@@ -31,10 +31,15 @@
     }
 
     .content__excerpt {
+      font-size: 20px;
       margin-top: spacing('s');
 
       @include breakpoint('s') {
         margin-top: spacing('s');
+      }
+
+      @include breakpoint('m') {
+        font-size: 22px;
       }
     }
 
@@ -83,6 +88,14 @@
     margin-top: 0;
   }
 
+  &__excerpt {
+      font-size: 20px;
+
+      @include breakpoint('m') {
+        font-size: 22px;
+      }
+  }
+
   &__main {
     .content__thumbnail {
       margin-bottom: $content-spacing;
@@ -112,6 +125,20 @@
 
     padding-top: spacing('layout-l');
     padding-bottom: spacing('layout-l');
+  }
+
+  .page-divider {
+    display: block;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 2px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      width: 64px;
+      background-color: black;
+    }
   }
 }
 

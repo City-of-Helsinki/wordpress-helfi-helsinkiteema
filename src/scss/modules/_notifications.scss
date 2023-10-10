@@ -38,8 +38,6 @@
 
     p {
       font-size: $global-font-size;
-      --line-height: 1.2;
-      line-height: 1.2;
       margin-bottom: spacing('2-xs');
     }
 
@@ -47,8 +45,6 @@
       align-items: center;
       display: inline-flex;
       font-size: $global-font-size;
-      --line-height: 1;
-      line-height: 1;
       text-decoration: underline;
 
       .icon {

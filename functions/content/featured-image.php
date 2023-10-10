@@ -7,6 +7,10 @@ function helsinki_featured_image_is_hidden() {
 	return get_post_meta( get_queried_object_id(), 'hide_featured_image', true ) ? true : false;
 }
 
+function helsinki_has_featured_image() {
+	return has_post_thumbnail() && ! helsinki_featured_image_is_hidden();
+}
+
 /**
   * Classes
   */
