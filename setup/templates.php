@@ -57,6 +57,7 @@ function helsinki_setup_templates()
 	 */
 	if (is_singular()) {
 		add_action('helsinki_main_top', 'helsinki_notifications', 20);
+		add_action('helsinki_notification_scripts', 'helsinki_notification_scripts', 10);
 	}
 
 	/**

@@ -13,7 +13,8 @@ const ASSETS = {
   adminStyles: 'assets/admin/styles',
 	footerScripts: 'assets/scripts/footer',
   headerScripts: 'assets/scripts/header',
-  adminScripts: 'assets/scripts/admin'
+  adminScripts: 'assets/scripts/admin',
+  notifications: 'partials/notification/js'
 };
 
 const SOURCE = {
@@ -25,6 +26,9 @@ const SOURCE = {
   ],
   adminScripts: [
     'src/js/admin/*.js'
+  ],
+  notifications: [
+    'src/js/notifications/*.js'
   ],
   publicStyles: 'src/scss/**/*.scss',
   adminStyles: 'src/admin/scss/**/*.scss'
@@ -78,6 +82,18 @@ gulp.task('adminscripts', function(){
     .pipe(gulp.dest(ASSETS.adminScripts));
 });
 
+gulp.task('notifications', function(){ 
+  return gulp.src(SOURCE.notifications)
+    .pipe(concat('notifications.php'))
+    .pipe(gulp.dest(ASSETS.notifications))
+    .pipe(babel({
+      presets: ["@babel/preset-env"]
+    }))
+    .pipe(uglify())
+    .pipe(rename('notifications.min.php'))
+    .pipe(gulp.dest(ASSETS.notifications));
+})
+
 gulp.task('publicStyles', function() {
   return gulp.src(SOURCE.publicStyles)
     .pipe(sass(sassOptions))
@@ -98,7 +114,7 @@ gulp.task('adminStyles', function() {
     .pipe(gulp.dest(ASSETS.adminStyles))
 });
 
-gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts', 'adminscripts'));
+gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts', 'adminscripts', 'notifications'));
 gulp.task('styles', gulp.parallel('publicStyles', 'adminStyles'));
 
 
@@ -107,6 +123,7 @@ gulp.task('watch',function() {
   gulp.watch(SOURCE.footerScripts, gulp.parallel('footerscripts'));
   gulp.watch(SOURCE.headerScripts, gulp.parallel('headerscripts'));
   gulp.watch(SOURCE.adminScripts, gulp.parallel('adminscripts'));
+  gulp.watch(SOURCE.notifications, gulp.parallel('notifications'));
 });
 
-gulp.task('default', gulp.parallel('styles', 'footerscripts', 'headerscripts', 'adminscripts'));
+gulp.task('default', gulp.parallel('styles', 'footerscripts', 'headerscripts', 'adminscripts', 'notifications'));
