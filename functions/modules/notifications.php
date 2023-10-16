@@ -135,3 +135,14 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 		)
 	);
 }
+
+/**
+  * Scripts
+  */
+function helsinki_notification_scripts() {
+	get_template_part(
+		'partials/notification/js/notifications.min',
+		null,
+		array()
+	);
+}

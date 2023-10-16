@@ -23,11 +23,11 @@ function helsinkiNotifications() {
   }
 
   function _isClosed( id ) {
-    return 'closed' === sessionStorage.getItem(id);
+    return 'closed' === localStorage.getItem(id);
   }
 
   function _markClosed( id ) {
-    sessionStorage.setItem( id, 'closed' );
+    localStorage.setItem( id, 'closed' );
   }
 
 
