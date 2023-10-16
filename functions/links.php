@@ -86,6 +86,7 @@ function helsinki_links_parse_blocks( $block_content = '', $block = [] ) {
         'hds-wp/map',
         'hds-wp/video',
         'hds-wp/links',
+        'hds-wp/link-list-cards',
 	];
 
     $custom_classes = [
