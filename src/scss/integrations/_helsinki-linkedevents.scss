@@ -15,7 +15,8 @@
     }
 
     @include breakpoint('l') {
-      margin: 0 auto spacing('layout-l');
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .events__grid {
