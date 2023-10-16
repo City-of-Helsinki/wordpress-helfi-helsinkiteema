@@ -4,6 +4,7 @@
 	outline-color: $footer-color;
 	position: relative;
 	z-index: 1;
+	font-size: 16px;
 
 	> section {
     padding-top: $footer-section-spacing;
@@ -111,6 +112,7 @@
 					border-right: $footer-section-border;
 					padding-right: $menu-item-spacing;
 					display: inline;
+					font-size: 16px;
 				}
 
 				@include breakpoint(l) {
