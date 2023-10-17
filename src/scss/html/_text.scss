@@ -2,7 +2,7 @@ p {
   --line-height: #{$paragraph-line-height};
   line-height: $paragraph-line-height;
   margin-top: 0;
-  margin-bottom: $paragraph-margin-bottom;
+  margin-bottom: 16px;
   max-width: 860px;
 
   &.has-background {

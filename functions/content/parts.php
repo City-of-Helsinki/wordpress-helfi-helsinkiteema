@@ -98,6 +98,10 @@ function helsinki_get_content_excerpt( $post = null ) {
 	}
 }
 
+function helsinki_page_divider() {
+	get_template_part('partials/content/parts/divider');
+}
+
 /**
   * Meta
   */
