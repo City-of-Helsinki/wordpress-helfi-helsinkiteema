@@ -57,6 +57,7 @@ function helsinki_setup_templates()
 	 */
 	if (is_singular()) {
 		add_action('helsinki_main_top', 'helsinki_notifications', 20);
+		add_action('helsinki_notification_scripts', 'helsinki_notification_scripts', 10);
 	}
 
 	/**
@@ -229,6 +230,9 @@ function helsinki_setup_templates()
 				if (has_excerpt()) {
 					if (helsinki_hero_is_disabled()) {
 						add_action('helsinki_content_article', 'helsinki_content_article_excerpt', 11);
+						if (!helsinki_has_featured_image() && !helsinki_post_table_of_contents_enabled()) {
+							add_action('helsinki_content_article', 'helsinki_page_divider', 12);
+						}
 					} else {
 						add_filter('helsinki_hero_class_excerpt', '__return_true');
 						add_action('helsinki_hero_content', 'helsinki_hero_excerpt', 20);
