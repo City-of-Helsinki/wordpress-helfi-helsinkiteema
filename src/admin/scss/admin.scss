@@ -135,6 +135,21 @@ body .interface-interface-skeleton__sidebar {
 				  }
 			  
 			}
+
+			.wp-block-helsinki-tpr-unit {
+				.helsinki-tpr.tpr-unit {
+					width: 100cqw !important;
+					max-width: 100cqw !important;
+					margin-left: calc(50% - 50cqw) !important;
+					margin-right: calc(50% - 50cqw) !important;
+					padding-left: spacing('s');
+					padding-right: spacing('s');
+					
+					.hds-container {
+						padding: 0;
+					}
+				}
+			}
 		}
 	}
 }
