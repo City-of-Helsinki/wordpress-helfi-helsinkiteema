@@ -12,6 +12,21 @@ function helsinki_post_table_of_contents_enabled() {
 	);
 }
 
+function helsinki_post_table_of_contents_has_items() {
+	$items = helsinki_post_content_heading_link_list_items(
+		parse_blocks( get_post()->post_content )
+	);
+	return apply_filters(
+		'helsinki_post_table_of_contents_has_items',
+		! empty( $items ),
+		get_queried_object_id()
+	);
+}
+
+function helsinki_post_has_table_of_contents() {
+	return helsinki_post_table_of_contents_enabled() && helsinki_post_table_of_contents_has_items();
+}
+
 function helsinki_post_table_of_contents_title() {
 	return apply_filters(
 		'helsinki_post_table_of_contents_title',
