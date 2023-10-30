@@ -53,6 +53,11 @@ function helsinki_setup_templates()
 	}
 
 	/**
+	 * Header Skip
+	 */
+		add_action('helsinki_main_top', 'helsinki_header_skip_target', 10);
+
+	/**
 	 * Notifications
 	 */
 	if (is_singular()) {
