@@ -27,6 +27,12 @@ if ( ! function_exists('helsinki_header_skip') ) {
 	}
 }
 
+if ( ! function_exists('helsinki_header_skip_target') ) {
+	function helsinki_header_skip_target() {
+		get_template_part('partials/header/skip-target');
+	}
+}
+
 if ( ! function_exists('helsinki_topbar') ) {
 	function helsinki_topbar() {
 		$lang = function_exists('pll_current_language') ? pll_current_language('slug') : substr( get_bloginfo('language'), 0, 2 );
