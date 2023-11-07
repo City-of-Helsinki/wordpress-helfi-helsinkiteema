@@ -92,7 +92,7 @@
             window.rnsData = {
                 apiKey: '<?php echo $args['apiKey']; ?>',
                 title: '<?php echo $args['title']; ?>',
-                postId: '<?php echo $args['postId']; ?>',
+                postId: '<?php echo $args['category'] . '-' . $args['postId']; ?>',
                 categories: ['wordpress', '<?php echo $args['category']; ?>'],
                 disableFonts: <?php echo $args['disableFonts'] ? 'true' : 'false'; ?>,
                 initCallback: (element, canonicalUrl) => helsinkiInitRns(element, canonicalUrl),
