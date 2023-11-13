@@ -10,5 +10,6 @@ a {
   &:focus {
     outline: 3px solid $black;
     outline-color: inherit;
+    display: inline-block;
   }
 }
