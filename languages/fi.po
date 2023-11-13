@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-10-04 11:19+0000\n"
+"PO-Revision-Date: 2023-11-13 08:15+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -112,7 +112,7 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: functions/layout/header.php:71
+#: functions/layout/header.php:77
 msgid "City of Helsinki"
 msgstr "Helsingin kaupunki"
 
@@ -163,7 +163,7 @@ msgstr "käyttää evästeitä"
 msgid "Copper"
 msgstr "Kupari"
 
-#: partials/loop/pagination.php:44
+#: partials/loop/pagination.php:47
 #, php-format
 msgid "Currently on page %d"
 msgstr "Olet sivulla %d"
@@ -369,7 +369,7 @@ msgstr "Syötteen elinikä"
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
-#: partials/loop/pagination.php:34
+#: partials/loop/pagination.php:37
 msgid "First page"
 msgstr "Ensimmäinen sivu"
 
@@ -377,7 +377,7 @@ msgstr "Ensimmäinen sivu"
 msgid "Fog"
 msgstr "Sumu"
 
-#: setup/theme.php:130
+#: setup/theme.php:136
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
@@ -396,7 +396,7 @@ msgstr "Etusivu"
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
-#: functions/layout/header.php:89 partials/content/not-found.php:10
+#: functions/layout/header.php:95 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Anna palautetta"
@@ -416,6 +416,10 @@ msgstr "Kulta"
 #: block-editor/metaboxes.php:36
 msgid "Heading"
 msgstr "Otsikko"
+
+#: setup/theme.php:59
+msgid "Helsinki"
+msgstr "Helsinki"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -505,7 +509,7 @@ msgstr "Laskeutumissivu"
 msgid "Language"
 msgstr "Kieli"
 
-#: partials/loop/pagination.php:62
+#: partials/loop/pagination.php:65
 msgid "Last page"
 msgstr "Viimeinen sivu"
 
@@ -556,12 +560,12 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:129 partials/loop/pagination.php:25
-#: partials/loop/pagination.php:68
+#: setup/assets.php:129 partials/loop/pagination.php:28
+#: partials/loop/pagination.php:71
 msgid "Next"
 msgstr "Seuraava"
 
-#: partials/loop/pagination.php:68
+#: partials/loop/pagination.php:71
 msgid "Next page"
 msgstr "Seuraava sivu"
 
@@ -585,23 +589,33 @@ msgstr "Ilmoitus"
 msgid "Older"
 msgstr "Vanhemmat"
 
-#: functions/content/table-of-contents.php:18
+#: functions/content/table-of-contents.php:33
 msgid "On this page"
 msgstr "Tällä sivulla"
 
-#: partials/loop/pagination.php:52
+#: partials/loop/pagination.php:55
 #, php-format
 msgid "Page %d"
 msgstr "Sivu %d"
 
-#: partials/loop/pagination.php:25
+#: partials/loop/pagination.php:28
 msgid "Page navigation"
 msgstr "Sivunavigointi"
 
-#: setup/theme.php:129
+#: setup/theme.php:135
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
+
+#: patterns/basic-page.php:13
+msgctxt "Pattern title"
+msgid "Basic page"
+msgstr "Perussivu"
+
+#: patterns/front-page.php:13
+msgctxt "Pattern title"
+msgid "Front page"
+msgstr "Etusivu"
 
 #: functions/media/meta.php:32
 #, php-format
@@ -623,7 +637,7 @@ msgstr "Abstrakti"
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
-#: setup/theme.php:128
+#: setup/theme.php:134
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr "Artikkelit"
@@ -633,11 +647,11 @@ msgctxt "posts count"
 msgid "search results"
 msgstr "hakutulosta"
 
-#: setup/assets.php:130 partials/loop/pagination.php:28
+#: setup/assets.php:130 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr "Edellinen"
 
-#: partials/loop/pagination.php:28
+#: partials/loop/pagination.php:31
 msgid "Previous page"
 msgstr "Edellinen sivu"
 
@@ -653,17 +667,17 @@ msgstr "Julkaistu:"
 msgid "Read more"
 msgstr "Lue lisää"
 
-#: setup/theme.php:78
+#: setup/theme.php:84
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr "Alatunnisteen valikko"
 
-#: setup/theme.php:77
+#: setup/theme.php:83
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr "Päävalikko"
 
-#: setup/theme.php:76
+#: setup/theme.php:82
 msgctxt "Registered menu name"
 msgid "Top bar menu"
 msgstr "Yläpalkin valikko"

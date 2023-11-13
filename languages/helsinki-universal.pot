@@ -6,7 +6,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-10-04 11:16+0000\n"
+"POT-Creation-Date: 2023-11-13 08:15+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -106,7 +106,7 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: functions/layout/header.php:71
+#: functions/layout/header.php:77
 msgid "City of Helsinki"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Copper"
 msgstr ""
 
-#: partials/loop/pagination.php:44
+#: partials/loop/pagination.php:47
 #, php-format
 msgid "Currently on page %d"
 msgstr ""
@@ -356,7 +356,7 @@ msgstr ""
 msgid "Feed URL"
 msgstr ""
 
-#: partials/loop/pagination.php:34
+#: partials/loop/pagination.php:37
 msgid "First page"
 msgstr ""
 
@@ -364,7 +364,7 @@ msgstr ""
 msgid "Fog"
 msgstr ""
 
-#: setup/theme.php:130
+#: setup/theme.php:136
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
@@ -383,7 +383,7 @@ msgstr ""
 msgid "Gallery images"
 msgstr ""
 
-#: functions/layout/header.php:89 partials/content/not-found.php:10
+#: functions/layout/header.php:95 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""
@@ -402,6 +402,10 @@ msgstr ""
 
 #: block-editor/metaboxes.php:36
 msgid "Heading"
+msgstr ""
+
+#: setup/theme.php:59
+msgid "Helsinki"
 msgstr ""
 
 #. Name of the theme
@@ -489,7 +493,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: partials/loop/pagination.php:62
+#: partials/loop/pagination.php:65
 msgid "Last page"
 msgstr ""
 
@@ -539,12 +543,12 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:129 partials/loop/pagination.php:25
-#: partials/loop/pagination.php:68
+#: setup/assets.php:129 partials/loop/pagination.php:28
+#: partials/loop/pagination.php:71
 msgid "Next"
 msgstr ""
 
-#: partials/loop/pagination.php:68
+#: partials/loop/pagination.php:71
 msgid "Next page"
 msgstr ""
 
@@ -568,22 +572,32 @@ msgstr ""
 msgid "Older"
 msgstr ""
 
-#: functions/content/table-of-contents.php:18
+#: functions/content/table-of-contents.php:33
 msgid "On this page"
 msgstr ""
 
-#: partials/loop/pagination.php:52
+#: partials/loop/pagination.php:55
 #, php-format
 msgid "Page %d"
 msgstr ""
 
-#: partials/loop/pagination.php:25
+#: partials/loop/pagination.php:28
 msgid "Page navigation"
 msgstr ""
 
-#: setup/theme.php:129
+#: setup/theme.php:135
 msgctxt "Page sidebar"
 msgid "Page"
+msgstr ""
+
+#: patterns/basic-page.php:13
+msgctxt "Pattern title"
+msgid "Basic page"
+msgstr ""
+
+#: patterns/front-page.php:13
+msgctxt "Pattern title"
+msgid "Front page"
 msgstr ""
 
 #: functions/media/meta.php:32
@@ -606,7 +620,7 @@ msgstr ""
 msgid "Post count"
 msgstr ""
 
-#: setup/theme.php:128
+#: setup/theme.php:134
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr ""
@@ -616,11 +630,11 @@ msgctxt "posts count"
 msgid "search results"
 msgstr ""
 
-#: setup/assets.php:130 partials/loop/pagination.php:28
+#: setup/assets.php:130 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr ""
 
-#: partials/loop/pagination.php:28
+#: partials/loop/pagination.php:31
 msgid "Previous page"
 msgstr ""
 
@@ -636,17 +650,17 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: setup/theme.php:78
+#: setup/theme.php:84
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr ""
 
-#: setup/theme.php:77
+#: setup/theme.php:83
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr ""
 
-#: setup/theme.php:76
+#: setup/theme.php:82
 msgctxt "Registered menu name"
 msgid "Top bar menu"
 msgstr ""
