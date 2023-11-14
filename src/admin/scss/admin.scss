@@ -15,6 +15,7 @@ body.wp-admin .editor-styles-wrapper, body.editor-styles-wrapper {
 	max-width: var(--wp--style--global--content-size);
 	width: calc(100% - #{spacing('s')} * 2);
 	margin: auto !important;
+	margin-bottom: 50px !important;
 
 	.block-editor-block-list__layout.is-root-container {
 		.wp-block-hds-wp-image-banner {
