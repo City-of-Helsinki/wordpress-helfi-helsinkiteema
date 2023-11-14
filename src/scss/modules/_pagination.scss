@@ -78,6 +78,10 @@
 
     &__item-link {
       box-sizing: content-box;
+      &:focus,
+      &:active {
+        outline: solid $black 3px;
+      }
     }
 
     .hds-pagination__pages {

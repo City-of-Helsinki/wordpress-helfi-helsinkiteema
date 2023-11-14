@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-09-27 06:49+0000\n"
+"PO-Revision-Date: 2023-11-07 12:06+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -17,7 +17,7 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:54 functions/modules/notifications.php:108
+#: functions/links.php:54 functions/modules/notifications.php:110
 #: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
@@ -112,12 +112,12 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: functions/layout/header.php:71
+#: functions/layout/header.php:77
 msgid "City of Helsinki"
 msgstr "Helsingin kaupunki"
 
-#: setup/assets.php:128 partials/header/search.php:2
-#: partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
+#: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
 
@@ -125,7 +125,7 @@ msgstr "Sulje"
 msgid "Close Menu"
 msgstr "Sulje valikko"
 
-#: partials/notification/notice.php:13
+#: partials/notification/notice.php:5
 msgid "Close notification"
 msgstr "Sulje ilmoitus"
 
@@ -163,7 +163,7 @@ msgstr "käyttää evästeitä"
 msgid "Copper"
 msgstr "Kupari"
 
-#: partials/loop/pagination.php:44
+#: partials/loop/pagination.php:47
 #, php-format
 msgid "Currently on page %d"
 msgstr "Olet sivulla %d"
@@ -347,8 +347,9 @@ msgstr ""
 "Näyttää etusivun sisällön, joka on asettettu Ohjausnäkymä > Sivut > {etusivu}"
 "."
 
-#: customizer/config/settings.php:63 customizer/config/feedback-buttons.php:14
-#: customizer/config/notifications.php:24 customizer/config/sidebar.php:15
+#: customizer/config/feedback-buttons.php:14
+#: customizer/config/notifications.php:24 customizer/config/settings.php:63
+#: customizer/config/sidebar.php:15
 msgid "Enabled"
 msgstr "Käytössä"
 
@@ -368,7 +369,7 @@ msgstr "Syötteen elinikä"
 msgid "Feed URL"
 msgstr "Syötteen URL"
 
-#: partials/loop/pagination.php:34
+#: partials/loop/pagination.php:37
 msgid "First page"
 msgstr "Ensimmäinen sivu"
 
@@ -376,7 +377,7 @@ msgstr "Ensimmäinen sivu"
 msgid "Fog"
 msgstr "Sumu"
 
-#: setup/theme.php:130
+#: setup/theme.php:136
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
@@ -395,7 +396,7 @@ msgstr "Etusivu"
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
-#: functions/layout/header.php:89 partials/content/not-found.php:10
+#: functions/layout/header.php:95 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Anna palautetta"
@@ -415,6 +416,10 @@ msgstr "Kulta"
 #: block-editor/metaboxes.php:36
 msgid "Heading"
 msgstr "Otsikko"
+
+#: setup/theme.php:59
+msgid "Helsinki"
+msgstr "Helsinki"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -504,7 +509,7 @@ msgstr "Laskeutumissivu"
 msgid "Language"
 msgstr "Kieli"
 
-#: partials/loop/pagination.php:62
+#: partials/loop/pagination.php:65
 msgid "Last page"
 msgstr "Viimeinen sivu"
 
@@ -555,12 +560,12 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:129 partials/loop/pagination.php:25
-#: partials/loop/pagination.php:68
+#: setup/assets.php:129 partials/loop/pagination.php:28
+#: partials/loop/pagination.php:71
 msgid "Next"
 msgstr "Seuraava"
 
-#: partials/loop/pagination.php:68
+#: partials/loop/pagination.php:71
 msgid "Next page"
 msgstr "Seuraava sivu"
 
@@ -584,23 +589,33 @@ msgstr "Ilmoitus"
 msgid "Older"
 msgstr "Vanhemmat"
 
-#: functions/content/table-of-contents.php:18
+#: functions/content/table-of-contents.php:33
 msgid "On this page"
 msgstr "Tällä sivulla"
 
-#: partials/loop/pagination.php:52
+#: partials/loop/pagination.php:55
 #, php-format
 msgid "Page %d"
 msgstr "Sivu %d"
 
-#: partials/loop/pagination.php:25
+#: partials/loop/pagination.php:28
 msgid "Page navigation"
 msgstr "Sivunavigointi"
 
-#: setup/theme.php:129
+#: setup/theme.php:135
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
+
+#: patterns/basic-page.php:13
+msgctxt "Pattern title"
+msgid "Basic page"
+msgstr "Perussivu"
+
+#: patterns/front-page.php:13
+msgctxt "Pattern title"
+msgid "Front page"
+msgstr "Etusivu"
 
 #: functions/media/meta.php:32
 #, php-format
@@ -622,7 +637,7 @@ msgstr "Abstrakti"
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
-#: setup/theme.php:128
+#: setup/theme.php:134
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr "Artikkelit"
@@ -632,11 +647,11 @@ msgctxt "posts count"
 msgid "search results"
 msgstr "hakutulosta"
 
-#: setup/assets.php:130 partials/loop/pagination.php:28
+#: setup/assets.php:130 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr "Edellinen"
 
-#: partials/loop/pagination.php:28
+#: partials/loop/pagination.php:31
 msgid "Previous page"
 msgstr "Edellinen sivu"
 
@@ -652,17 +667,17 @@ msgstr "Julkaistu:"
 msgid "Read more"
 msgstr "Lue lisää"
 
-#: setup/theme.php:78
+#: setup/theme.php:84
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr "Alatunnisteen valikko"
 
-#: setup/theme.php:77
+#: setup/theme.php:83
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr "Päävalikko"
 
-#: setup/theme.php:76
+#: setup/theme.php:82
 msgctxt "Registered menu name"
 msgid "Top bar menu"
 msgstr "Yläpalkin valikko"
@@ -695,7 +710,7 @@ msgctxt "search submit"
 msgid "Search"
 msgstr "Hae"
 
-#: partials/search/form-title.php:1 partials/header/search.php:9
+#: partials/header/search.php:9 partials/search/form-title.php:1
 msgctxt "search title"
 msgid "Search the site"
 msgstr "Hae sivustolta"
@@ -747,11 +762,11 @@ msgstr "Näytä lisää"
 msgid "Show posts from a category"
 msgstr "Näytä artikkeleita kategoriasta"
 
-#: inc/walkers.php:352
+#: inc/walkers.php:372
 msgid "Show side navigation"
 msgstr "Näytä sivuvalikko"
 
-#: inc/walkers.php:350
+#: inc/walkers.php:370
 msgid "Side navigation"
 msgstr "Sivuvalikko"
 
@@ -795,7 +810,7 @@ msgid ""
 msgstr ""
 "Ilmoitus näytetään vain, kun sivustoa tarkastellaan valitulla kielellä."
 
-#: inc/walkers.php:356
+#: inc/walkers.php:376
 msgid ""
 "The side navigation is displayed on this page and on all its subpages, if "
 "the Basic page template is used on the page."
@@ -822,7 +837,7 @@ msgstr ""
 msgid "Title"
 msgstr "Otsikko"
 
-#: inc/walkers.php:336
+#: inc/walkers.php:356
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr "\"%s\" alavalikko"
