@@ -53,6 +53,12 @@ function helsinki_setup_theme()
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'editor-color-palette', array() );
 	add_theme_support( 'editor-gradient-presets', array() );
+	if ( function_exists( 'register_block_pattern_category' ) ) {
+		register_block_pattern_category(
+			'helsinki-pattern',
+			array( 'label' => __( 'Helsinki', 'helsinki-universal' ) )
+		);
+	}
 
 	/**
 	 * Widgets Block editor
