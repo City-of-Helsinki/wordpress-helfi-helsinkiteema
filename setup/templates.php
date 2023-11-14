@@ -53,6 +53,11 @@ function helsinki_setup_templates()
 	}
 
 	/**
+	 * Header Skip
+	 */
+		add_action('helsinki_main_top', 'helsinki_header_skip_target', 10);
+
+	/**
 	 * Notifications
 	 */
 	if (is_singular()) {
@@ -230,7 +235,7 @@ function helsinki_setup_templates()
 				if (has_excerpt()) {
 					if (helsinki_hero_is_disabled()) {
 						add_action('helsinki_content_article', 'helsinki_content_article_excerpt', 11);
-						if (!helsinki_has_featured_image() && !helsinki_post_table_of_contents_enabled()) {
+						if (!helsinki_has_featured_image() && !helsinki_post_has_table_of_contents()) {
 							add_action('helsinki_content_article', 'helsinki_page_divider', 12);
 						}
 					} else {
