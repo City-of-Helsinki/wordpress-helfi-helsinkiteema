@@ -2,6 +2,7 @@ a {
   color: $body-color;
   text-decoration: underline;
   transition: $default-transition;
+  display: inline-block;
 
   &:hover {
     text-decoration: none;
