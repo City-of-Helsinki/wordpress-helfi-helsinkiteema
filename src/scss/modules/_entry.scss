@@ -197,6 +197,10 @@ ul.posts {
 			margin-bottom: 0;
 		}
 
+		@include breakpoint(m) {
+			height: 100%;
+		}
+
 		a {
 			&:hover,
 			&:focus {
