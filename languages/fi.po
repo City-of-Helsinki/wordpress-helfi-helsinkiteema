@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-12-04 11:04+0000\n"
+"PO-Revision-Date: 2023-12-04 11:05+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
