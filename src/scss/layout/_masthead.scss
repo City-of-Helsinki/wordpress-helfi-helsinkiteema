@@ -93,6 +93,7 @@
 
 	.logo-icon {
 		height: 32px;
+		flex-shrink: 0;
 	}
 
 	.has-icon--before {
@@ -106,13 +107,15 @@
 		align-items: center;
 		text-decoration: none;
 		font-weight: $global-font-weight-medium;
+		--line-height: 1.2;
+		line-height: 1.2;
 	}
 
 	img {
 		display: block;
 		height: auto;
 		max-width: 200px;
-		max-height: 56px;
+		max-height: 32px;
 		width: auto;
 	}
 
@@ -125,6 +128,10 @@
 			height: 48px;
 		}
 
+		img {
+			max-height: 48px;
+		}
+
 		a {
 			font-size: 20px;
 		}
@@ -133,6 +140,10 @@
 	@include breakpoint(xl) {
 		.logo-icon {
 			height: 56px;
+		}
+
+		img {
+			max-height: 56px;
 		}
 
 		a {
@@ -312,7 +323,7 @@
 	#main-menu {
 		padding-left: spacing(m);
 		padding-right: spacing(m);
-		margin-right: 300px;
+		margin-right: 100px;
 
 		.menu__item {
 			height: rem-calc(64);
@@ -347,14 +358,14 @@
 
 			}
 
-			&--parent {
+			/*&--parent {
 				&:focus,
 				&:hover {
 					> .link-wrap {
 						border-bottom-color: $black;
 					}
 				}
-			}
+			}*/
 
 			&--active {
 				> .link-wrap {
@@ -370,7 +381,7 @@
 		.menu--sub {
 
 			> .menu__item {
-				height: rem-calc(48);
+				height: unset;
 	
 				> .link-wrap {
 					border-left: 4px solid transparent;

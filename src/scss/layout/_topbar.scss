@@ -1,5 +1,5 @@
 .topbar {
-	$topbar-padding: spacing('s') spacing('m');
+	$topbar-padding: spacing('xs') spacing('m');
 
 	background-color: #f2f2f2;
 	font-size: rem-calc(16);
@@ -8,7 +8,7 @@
 
   > .hds-container {
     padding: $topbar-padding;
-    gap: 0 spacing('l');
+    gap: 0 spacing('m');
   }
 
 	a {
@@ -35,7 +35,7 @@
 
   .menu {
 
-    gap: 0 spacing('l');
+    gap: 0 spacing('m');
 
     a {
       font-size: rem-calc(16);
