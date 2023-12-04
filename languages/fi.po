@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-11-13 08:16+0000\n"
+"PO-Revision-Date: 2023-12-04 11:04+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -128,6 +128,10 @@ msgstr "Sulje valikko"
 #: partials/notification/notice.php:5
 msgid "Close notification"
 msgstr "Sulje ilmoitus"
+
+#: partials/header/mobile-panel-toggle.php:1
+msgid "Close the navigation menu"
+msgstr "Sulje navigaatiovalikko"
 
 #: customizer/config/choices.php:19
 msgid "Coat of Arms"
@@ -592,6 +596,11 @@ msgstr "Vanhemmat"
 #: functions/content/table-of-contents.php:33
 msgid "On this page"
 msgstr "Tällä sivulla"
+
+#: partials/header/mobile-panel-toggle.php:1
+#: partials/header/mobile-panel-toggle.php:5
+msgid "Open the navigation menu"
+msgstr "Avaa navigaatiovalikko"
 
 #: partials/loop/pagination.php:55
 #, php-format
