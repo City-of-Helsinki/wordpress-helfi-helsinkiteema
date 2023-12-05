@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-12-04 11:05+0000\n"
+"PO-Revision-Date: 2023-12-05 13:13+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -457,6 +457,10 @@ msgstr "Kuva vasemmalla"
 #: block-editor/config/meta.php:7
 msgid "Image on right"
 msgstr "Kuva oikealla"
+
+#: integrations/maintenance.php:113 functions/layout/misc.php:60
+msgid "Image: "
+msgstr "Kuva:"
 
 #: customizer/config/choices.php:69
 msgid "Info"
