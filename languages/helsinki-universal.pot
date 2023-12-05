@@ -6,7 +6,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-11-08 11:47+0000\n"
+"POT-Creation-Date: 2023-12-05 13:11+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -436,6 +436,10 @@ msgstr ""
 
 #: block-editor/config/meta.php:7
 msgid "Image on right"
+msgstr ""
+
+#: integrations/maintenance.php:113 functions/layout/misc.php:55
+msgid "Image: "
 msgstr ""
 
 #: customizer/config/choices.php:69
