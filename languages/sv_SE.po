@@ -6,8 +6,13 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-12-05 13:11+0000\n"
-"X-Generator: Loco https://localise.biz/"
+"PO-Revision-Date: 2023-12-07 05:54+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Version: 2.6.0; wp-6.4.2"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -454,7 +459,7 @@ msgstr "Bild till höger"
 
 #: integrations/maintenance.php:113 functions/layout/misc.php:55
 msgid "Image: "
-msgstr "Bild:"
+msgstr "Bild: "
 
 #: customizer/config/choices.php:69
 msgid "Info"
