@@ -186,7 +186,7 @@ ul.posts {
 	&.entry--feed {
 		border-left: 4px $default-border-style var(--primary-color);
 		padding-left: spacing('s');
-		margin-bottom: spacing('m');
+		//margin-bottom: spacing('m');
 
 		@include breakpoint(l) {
 			border-top: $default-border;
@@ -226,7 +226,8 @@ ul.posts {
 			margin-bottom: spacing('2-xs');
 			font-size: var(--fontsize-heading-xs);
 			font-weight: $global-font-weight-medium;
-
+			line-height: 1.2;
+			
 			span {
 				margin-right: spacing('2-xs');
 			}
