@@ -6,6 +6,15 @@ ol {
 
 ul {
   list-style: $list-unoredered-style;
+  &.wp-block-page-list {
+    li {
+      margin-top: spacing('2-xs');  
+    }
+  }
+  &.wp-block-navigation__submenu-container {
+    margin-top: spacing('2-xs');
+    margin-bottom: 0;
+  }
 }
 
 ol {
