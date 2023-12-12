@@ -228,6 +228,10 @@ ul.posts {
 			font-weight: $global-font-weight-medium;
 			line-height: 1.2;
 			
+			a {
+				display: inline-block;
+			}
+			
 			span {
 				margin-right: spacing('2-xs');
 			}
