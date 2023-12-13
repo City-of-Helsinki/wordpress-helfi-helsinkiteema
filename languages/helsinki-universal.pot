@@ -6,7 +6,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-09-14 10:22+0000\n"
+"POT-Creation-Date: 2023-11-28 12:57+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -17,7 +17,7 @@ msgstr ""
 msgid "(Edit comment)"
 msgstr ""
 
-#: functions/links.php:54 functions/modules/notifications.php:108
+#: functions/links.php:54 functions/modules/notifications.php:110
 #: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr ""
@@ -106,12 +106,12 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: functions/layout/header.php:71
+#: functions/layout/header.php:77
 msgid "City of Helsinki"
 msgstr ""
 
-#: setup/assets.php:128 partials/header/search.php:2
-#: partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
+#: partials/header/search.php:2
 msgid "Close"
 msgstr ""
 
@@ -119,8 +119,12 @@ msgstr ""
 msgid "Close Menu"
 msgstr ""
 
-#: partials/notification/notice.php:13
+#: partials/notification/notice.php:5
 msgid "Close notification"
+msgstr ""
+
+#: partials/header/mobile-panel-toggle.php:1
+msgid "Close the navigation menu"
 msgstr ""
 
 #: customizer/config/choices.php:19
@@ -157,7 +161,7 @@ msgstr ""
 msgid "Copper"
 msgstr ""
 
-#: partials/loop/pagination.php:44
+#: partials/loop/pagination.php:47
 #, php-format
 msgid "Currently on page %d"
 msgstr ""
@@ -334,8 +338,9 @@ msgstr ""
 msgid "Displays front page content set in Dashboard > Pages > {front page}."
 msgstr ""
 
-#: customizer/config/settings.php:63 customizer/config/feedback-buttons.php:14
-#: customizer/config/notifications.php:24 customizer/config/sidebar.php:15
+#: customizer/config/feedback-buttons.php:14
+#: customizer/config/notifications.php:24 customizer/config/settings.php:63
+#: customizer/config/sidebar.php:15
 msgid "Enabled"
 msgstr ""
 
@@ -355,7 +360,7 @@ msgstr ""
 msgid "Feed URL"
 msgstr ""
 
-#: partials/loop/pagination.php:34
+#: partials/loop/pagination.php:37
 msgid "First page"
 msgstr ""
 
@@ -363,7 +368,7 @@ msgstr ""
 msgid "Fog"
 msgstr ""
 
-#: setup/theme.php:130
+#: setup/theme.php:136
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
@@ -382,7 +387,7 @@ msgstr ""
 msgid "Gallery images"
 msgstr ""
 
-#: functions/layout/header.php:89 partials/content/not-found.php:10
+#: functions/layout/header.php:95 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""
@@ -401,6 +406,10 @@ msgstr ""
 
 #: block-editor/metaboxes.php:36
 msgid "Heading"
+msgstr ""
+
+#: setup/theme.php:59
+msgid "Helsinki"
 msgstr ""
 
 #. Name of the theme
@@ -488,7 +497,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: partials/loop/pagination.php:62
+#: partials/loop/pagination.php:65
 msgid "Last page"
 msgstr ""
 
@@ -538,12 +547,12 @@ msgstr ""
 msgid "Newer Comments &amp;rarr;"
 msgstr ""
 
-#: setup/assets.php:129 partials/loop/pagination.php:25
-#: partials/loop/pagination.php:68
+#: setup/assets.php:129 partials/loop/pagination.php:28
+#: partials/loop/pagination.php:71
 msgid "Next"
 msgstr ""
 
-#: partials/loop/pagination.php:68
+#: partials/loop/pagination.php:71
 msgid "Next page"
 msgstr ""
 
@@ -567,22 +576,37 @@ msgstr ""
 msgid "Older"
 msgstr ""
 
-#: functions/content/table-of-contents.php:18
+#: functions/content/table-of-contents.php:33
 msgid "On this page"
 msgstr ""
 
-#: partials/loop/pagination.php:52
+#: partials/header/mobile-panel-toggle.php:1
+#: partials/header/mobile-panel-toggle.php:5
+msgid "Open the navigation menu"
+msgstr ""
+
+#: partials/loop/pagination.php:55
 #, php-format
 msgid "Page %d"
 msgstr ""
 
-#: partials/loop/pagination.php:25
+#: partials/loop/pagination.php:28
 msgid "Page navigation"
 msgstr ""
 
-#: setup/theme.php:129
+#: setup/theme.php:135
 msgctxt "Page sidebar"
 msgid "Page"
+msgstr ""
+
+#: patterns/basic-page.php:13
+msgctxt "Pattern title"
+msgid "Basic page"
+msgstr ""
+
+#: patterns/front-page.php:13
+msgctxt "Pattern title"
+msgid "Front page"
 msgstr ""
 
 #: functions/media/meta.php:32
@@ -605,7 +629,7 @@ msgstr ""
 msgid "Post count"
 msgstr ""
 
-#: setup/theme.php:128
+#: setup/theme.php:134
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr ""
@@ -615,11 +639,11 @@ msgctxt "posts count"
 msgid "search results"
 msgstr ""
 
-#: setup/assets.php:130 partials/loop/pagination.php:28
+#: setup/assets.php:130 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr ""
 
-#: partials/loop/pagination.php:28
+#: partials/loop/pagination.php:31
 msgid "Previous page"
 msgstr ""
 
@@ -635,17 +659,17 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: setup/theme.php:78
+#: setup/theme.php:84
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr ""
 
-#: setup/theme.php:77
+#: setup/theme.php:83
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr ""
 
-#: setup/theme.php:76
+#: setup/theme.php:82
 msgctxt "Registered menu name"
 msgid "Top bar menu"
 msgstr ""
@@ -678,7 +702,7 @@ msgctxt "search submit"
 msgid "Search"
 msgstr ""
 
-#: partials/search/form-title.php:1 partials/header/search.php:9
+#: partials/header/search.php:9 partials/search/form-title.php:1
 msgctxt "search title"
 msgid "Search the site"
 msgstr ""
@@ -726,11 +750,11 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
-#: inc/walkers.php:352
+#: inc/walkers.php:372
 msgid "Show side navigation"
 msgstr ""
 
-#: inc/walkers.php:350
+#: inc/walkers.php:370
 msgid "Side navigation"
 msgstr ""
 
@@ -772,7 +796,7 @@ msgid ""
 "language."
 msgstr ""
 
-#: inc/walkers.php:356
+#: inc/walkers.php:376
 msgid ""
 "The side navigation is displayed on this page and on all its subpages, if "
 "the Basic page template is used on the page."
@@ -793,7 +817,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: inc/walkers.php:336
+#: inc/walkers.php:356
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr ""

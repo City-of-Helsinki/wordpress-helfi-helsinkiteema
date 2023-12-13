@@ -23,7 +23,7 @@ div.aligncenter {
 .alignright {
   clear: right;
   float: right;
-  margin-left: $global-margin;
+  //margin-left: $global-margin;
 	margin-bottom: $paragraph-margin-bottom;
 
 	+ * {
@@ -41,7 +41,7 @@ div.aligncenter {
 .alignleft {
   clear: left;
   float: left;
-  margin-right: $global-margin;
+  //margin-right: $global-margin;
 	margin-bottom: $paragraph-margin-bottom;
 
 	+ * {
@@ -62,13 +62,13 @@ a {
 
     &.alignleft {
       float: left;
-			margin-right: $global-margin;
+			//margin-right: $global-margin;
 			margin-bottom: $paragraph-margin-bottom;
     }
 
     &.alignright {
       float: right;
-			margin-left: $global-margin;
+			//margin-left: $global-margin;
 			margin-bottom: $paragraph-margin-bottom;
     }
 
