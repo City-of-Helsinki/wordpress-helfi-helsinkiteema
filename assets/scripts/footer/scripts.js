@@ -732,6 +732,13 @@ function jsScrollTop(event) {
   window.scroll(0,0);
 }
 
+function isSearch( target ) {
+    return target.id === 'header-search';
+}
+
+function getHeaderSearchInput() {
+    return document.getElementById('search-input');
+}
 jsSidebarNavInit();
 
 function jsSidebarNavInit() {
@@ -966,6 +973,10 @@ function jsToggleOpen(toggle, target) {
   target.hidden = false;
   target.classList.add('active');
 
+  if (isSearch(target)) {
+    setFocus(getHeaderSearchInput());
+  }
+
   if ( ifControlsNoScroll(toggle) ) {
 	fixedDocumentBody();
   }
@@ -994,6 +1005,12 @@ function jsToggleSwapText(toggle, status) {
 			text.textContent = 'expanded' === status ? toggle.getAttribute('data-text-expanded') : toggle.getAttribute('data-text');
 		}
 	}
+  if ( toggle.hasAttribute('data-screen-reader-text') && toggle.hasAttribute('data-screen-reader-text-expanded') ) {
+    var screenReaderText = toggle.querySelector('.screen-reader-text');
+    if ( screenReaderText ) {
+      screenReaderText.textContent = 'expanded' === status ? toggle.getAttribute('data-screen-reader-text-expanded') : toggle.getAttribute('data-screen-reader-text');
+    }
+  }
 }
 
 function ifControlsNoScroll(element) {
