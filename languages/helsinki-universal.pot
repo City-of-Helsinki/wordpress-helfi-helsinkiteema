@@ -6,7 +6,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2023-11-08 11:47+0000\n"
+"POT-Creation-Date: 2023-12-13 06:43+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -121,6 +121,10 @@ msgstr ""
 
 #: partials/notification/notice.php:5
 msgid "Close notification"
+msgstr ""
+
+#: partials/header/mobile-panel-toggle.php:1
+msgid "Close the navigation menu"
 msgstr ""
 
 #: customizer/config/choices.php:19
@@ -438,6 +442,10 @@ msgstr ""
 msgid "Image on right"
 msgstr ""
 
+#: integrations/maintenance.php:113 functions/layout/misc.php:60
+msgid "Image: "
+msgstr ""
+
 #: customizer/config/choices.php:69
 msgid "Info"
 msgstr ""
@@ -574,6 +582,11 @@ msgstr ""
 
 #: functions/content/table-of-contents.php:33
 msgid "On this page"
+msgstr ""
+
+#: partials/header/mobile-panel-toggle.php:1
+#: partials/header/mobile-panel-toggle.php:5
+msgid "Open the navigation menu"
 msgstr ""
 
 #: partials/loop/pagination.php:55

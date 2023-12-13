@@ -20,6 +20,11 @@ function helsinki_content_breadcrumbs_single_link_info($link_info, $index, $crum
 	return $link_info;
 }
 
+add_filter('wpseo_breadcrumb_separator', 'helsinki_content_breadcrumbs_separator', 10, 1);
+function helsinki_content_breadcrumbs_separator($separator) {
+	return '<span aria-hidden="true">' . $separator . '</span>';
+}
+
 /**
   * Pagination
   */
@@ -50,8 +55,9 @@ if ( ! function_exists('helsinki_not_found_notice') ) {
 if ( ! function_exists('helsinki_maintenance_image')) {
 	function helsinki_not_found_image() {
 		return sprintf(
-			'<img class="decoration" alt="" src="%s" width="379" height="566">',
-			trailingslashit( get_template_directory_uri() ) . 'assets/images/illustration_error_page_404.svg'
+			'<figure><img class="decoration" alt="" src="%s" width="379" height="566"><figcaption class="wp-caption-text">%s</figcaption></figure>',
+			trailingslashit( get_template_directory_uri() ) . 'assets/images/illustration_error_page_404.svg',
+			__( 'Image: ', 'helsinki-universal') . 'Lille Santanen'
 		);
 	}
 }

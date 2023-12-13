@@ -108,8 +108,9 @@ function helsinki_maintenance_button() {
 
 function helsinki_maintenance_image() {
 	return sprintf(
-		'<img class="decoration" alt="" src="%s" width="823" height="1168">',
-		trailingslashit( get_template_directory_uri() ) . 'assets/images/maintenance.png'
+		'<figure><img class="decoration" alt="" src="%s" width="823" height="1168"><figcaption class="wp-caption-text">%s</figcaption></figure>',
+		trailingslashit( get_template_directory_uri() ) . 'assets/images/maintenance.png',
+		__( 'Image: ', 'helsinki-universal') . 'Lille Santanen'
 	);
 }
 
