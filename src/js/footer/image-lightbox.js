@@ -55,7 +55,7 @@ function helsinkiGalleryLightbox( config ) {
 
 	function initGalleryImage( figure ) {
 		let imageLink = figure.querySelector( 'a' );
-		if (imageLink)
+		if (imageLink && imageLink.querySelector( 'img' ))
 			imageLink.addEventListener( 'click', clickImage );
 	}
 
@@ -406,7 +406,7 @@ function helsinkiGalleryLightbox( config ) {
 	function hasImageLinks( gallery ) {
 		if (gallery.classList.contains('wp-block-image') || (gallery.classList.contains('wp-caption') && gallery.querySelector('img'))) {
 			var link = gallery.querySelector( 'a' );
-			if (link) {
+			if (link && link.querySelector( 'img' )) {
 				var href = link.getAttribute('href');
 				var acceptedEndings = ['jpg', 'jpg/', 'png', 'png/', 'webp', 'webp/'];
 				for (var i = 0; i < acceptedEndings.length; i++) {
@@ -419,6 +419,7 @@ function helsinkiGalleryLightbox( config ) {
 		}
 
 		return gallery.querySelector( '.blocks-gallery-item > figure > a, figure.wp-block-image > a, .gallery-item > .gallery-icon > a' );
+
 	}
 
 	function toggleHidden( element, hidden ) {

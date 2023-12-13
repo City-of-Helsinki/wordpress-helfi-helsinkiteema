@@ -6,13 +6,8 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-12-07 05:54+0000\n"
-"X-Generator: Loco https://localise.biz/\n"
-"Last-Translator: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Loco-Version: 2.6.0; wp-6.4.2"
+"PO-Revision-Date: 2023-12-13 06:43+0000\n"
+"X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
 msgid "&amp;larr; Older Comments"
@@ -133,6 +128,10 @@ msgstr "Sulje valikko"
 #: partials/notification/notice.php:5
 msgid "Close notification"
 msgstr "Sulje ilmoitus"
+
+#: partials/header/mobile-panel-toggle.php:1
+msgid "Close the navigation menu"
+msgstr "Sulje navigaatiovalikko"
 
 #: customizer/config/choices.php:19
 msgid "Coat of Arms"
@@ -459,7 +458,7 @@ msgstr "Kuva vasemmalla"
 msgid "Image on right"
 msgstr "Kuva oikealla"
 
-#: integrations/maintenance.php:113 functions/layout/misc.php:55
+#: integrations/maintenance.php:113 functions/layout/misc.php:60
 msgid "Image: "
 msgstr "Kuva: "
 
@@ -601,6 +600,11 @@ msgstr "Vanhemmat"
 #: functions/content/table-of-contents.php:33
 msgid "On this page"
 msgstr "Tällä sivulla"
+
+#: partials/header/mobile-panel-toggle.php:1
+#: partials/header/mobile-panel-toggle.php:5
+msgid "Open the navigation menu"
+msgstr "Avaa navigaatiovalikko"
 
 #: partials/loop/pagination.php:55
 #, php-format

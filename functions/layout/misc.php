@@ -20,6 +20,11 @@ function helsinki_content_breadcrumbs_single_link_info($link_info, $index, $crum
 	return $link_info;
 }
 
+add_filter('wpseo_breadcrumb_separator', 'helsinki_content_breadcrumbs_separator', 10, 1);
+function helsinki_content_breadcrumbs_separator($separator) {
+	return '<span aria-hidden="true">' . $separator . '</span>';
+}
+
 /**
   * Pagination
   */
