@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-11-28 12:58+0000\n"
+"PO-Revision-Date: 2023-12-13 06:44+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -455,6 +455,10 @@ msgstr "Bild till vänster"
 #: block-editor/config/meta.php:7
 msgid "Image on right"
 msgstr "Bild till höger"
+
+#: integrations/maintenance.php:113 functions/layout/misc.php:60
+msgid "Image: "
+msgstr "Bild: "
 
 #: customizer/config/choices.php:69
 msgid "Info"
