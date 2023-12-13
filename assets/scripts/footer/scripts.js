@@ -111,7 +111,7 @@ function helsinkiGalleryLightbox( config ) {
 
 	function initGalleryImage( figure ) {
 		let imageLink = figure.querySelector( 'a' );
-		if (imageLink)
+		if (imageLink && imageLink.querySelector( 'img' ))
 			imageLink.addEventListener( 'click', clickImage );
 	}
 
@@ -462,7 +462,7 @@ function helsinkiGalleryLightbox( config ) {
 	function hasImageLinks( gallery ) {
 		if (gallery.classList.contains('wp-block-image') || (gallery.classList.contains('wp-caption') && gallery.querySelector('img'))) {
 			var link = gallery.querySelector( 'a' );
-			if (link) {
+			if (link && link.querySelector( 'img' )) {
 				var href = link.getAttribute('href');
 				var acceptedEndings = ['jpg', 'jpg/', 'png', 'png/', 'webp', 'webp/'];
 				for (var i = 0; i < acceptedEndings.length; i++) {
@@ -475,6 +475,7 @@ function helsinkiGalleryLightbox( config ) {
 		}
 
 		return gallery.querySelector( '.blocks-gallery-item > figure > a, figure.wp-block-image > a, .gallery-item > .gallery-icon > a' );
+
 	}
 
 	function toggleHidden( element, hidden ) {
@@ -731,6 +732,13 @@ function jsScrollTop(event) {
   window.scroll(0,0);
 }
 
+function isSearch( target ) {
+    return target.id === 'header-search';
+}
+
+function getHeaderSearchInput() {
+    return document.getElementById('search-input');
+}
 jsSidebarNavInit();
 
 function jsSidebarNavInit() {
@@ -965,6 +973,10 @@ function jsToggleOpen(toggle, target) {
   target.hidden = false;
   target.classList.add('active');
 
+  if (isSearch(target)) {
+    setFocus(getHeaderSearchInput());
+  }
+
   if ( ifControlsNoScroll(toggle) ) {
 	fixedDocumentBody();
   }
@@ -993,6 +1005,12 @@ function jsToggleSwapText(toggle, status) {
 			text.textContent = 'expanded' === status ? toggle.getAttribute('data-text-expanded') : toggle.getAttribute('data-text');
 		}
 	}
+  if ( toggle.hasAttribute('data-screen-reader-text') && toggle.hasAttribute('data-screen-reader-text-expanded') ) {
+    var screenReaderText = toggle.querySelector('.screen-reader-text');
+    if ( screenReaderText ) {
+      screenReaderText.textContent = 'expanded' === status ? toggle.getAttribute('data-screen-reader-text-expanded') : toggle.getAttribute('data-screen-reader-text');
+    }
+  }
 }
 
 function ifControlsNoScroll(element) {

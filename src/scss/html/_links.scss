@@ -2,6 +2,7 @@ a {
   color: $body-color;
   text-decoration: underline;
   transition: $default-transition;
+  display: inline-block;
 
   &:hover {
     text-decoration: none;
@@ -10,5 +11,6 @@ a {
   &:focus {
     outline: 3px solid $black;
     outline-color: inherit;
+    display: inline-block;
   }
 }
