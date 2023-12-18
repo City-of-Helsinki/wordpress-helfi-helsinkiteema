@@ -48,17 +48,17 @@ if ( ! function_exists('helsinki_default_social_share_medias') ) {
 		return array(
 			'facebook' => array(
 				'url'   => 'https://www.facebook.com/sharer.php?s=100&amp;u=%1$s&amp;title=%2$s',
-				'text'  => __( 'Facebook', 'helsinki-universal' ),
+				'text'  => __( 'Facebook (The link leads to an external service)', 'helsinki-universal' ),
 				'title' => __( 'Share on Facebook', 'helsinki-universal' ),
 			),
 			'twitter'  => array(
 				'url'   => 'https://twitter.com/intent/tweet?text=%2$s&amp;url=%1$s',
-				'text'  => __( 'Twitter', 'helsinki-universal' ),
+				'text'  => __( 'Twitter (The link leads to an external service)', 'helsinki-universal' ),
 				'title' => __( 'Share on Twitter', 'helsinki-universal' ),
 			),
 			'linkedin' => array(
-        		'url' => 'https://www.linkedin.com/sharing/share-offsite/?url=%1$s',
-				'text'  => __( 'LinkedIn', 'helsinki-universal' ),
+        'url' => 'https://www.linkedin.com/sharing/share-offsite/?url=%1$s',
+				'text'  => __( 'LinkedIn (The link leads to an external service)', 'helsinki-universal' ),
 				'title' => __( 'Share on LinkedIn', 'helsinki-universal' ),
 			),
 		);
@@ -76,13 +76,15 @@ if ( ! function_exists('helsinki_social_share_links') ) {
 	$home = get_home_url();
 	$title = helsinki_view_title();
 	$permalink = home_url( $wp->request );
-	$onclick = "javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600'); return false;";
+	//$onclick = "javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600'); return false;";
+  $onclick = "javascript:window.location.href = this.href; return false;";
 	$out = array();
+  $counter = 1;
 
     foreach ($medias as $key => $settings) {
       $out[] = sprintf(
-        '<a class="hds-button share-link share-link--%1$s" href="%2$s" onclick="%3$s" title="%6$s">
-					<span class="screen-reader-text">%5$s</span>
+        '<a class="hds-button share-link share-link--%1$s" href="%2$s" onclick="%3$s" title="%6$s" aria-labelledby="share-' . $counter . '">
+					<span class="screen-reader-text" id="share-' . $counter . '">%5$s</span>
 					%4$s
 				</a>',
         esc_attr($key),
@@ -97,6 +99,7 @@ if ( ! function_exists('helsinki_social_share_links') ) {
         esc_html($settings['title']),
         esc_html($settings['text'])
       );
+      $counter++;
     }
 
     return $out;

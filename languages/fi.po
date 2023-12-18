@@ -526,8 +526,8 @@ msgid "Link url"
 msgstr "Linkin osoite"
 
 #: customizer/config/choices.php:61 functions/modules/social.php:61
-msgid "LinkedIn"
-msgstr "LinkedIn"
+msgid "LinkedIn (The link leads to an external service)"
+msgstr "LinkedIn (Linkki johtaa ulkoiseen palveluun)"
 
 #: sbsw/footer.php:14
 msgid "Load more"

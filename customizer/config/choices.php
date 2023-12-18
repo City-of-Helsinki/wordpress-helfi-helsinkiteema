@@ -56,9 +56,9 @@ function helsinki_customizer_choices_placeholder_icon() {
 
 function helsinki_customizer_choices_social_share() {
 	return array(
-		'facebook' => __('Facebook', 'helsinki-universal'),
-		'twitter' => __('Twitter', 'helsinki-universal'),
-		'linkedin' => __('LinkedIn', 'helsinki-universal'),
+		'facebook' => __('Facebook (The link leads to an external service)', 'helsinki-universal'),
+		'twitter' => __('Twitter (The link leads to an external service)', 'helsinki-universal'),
+		'linkedin' => __('LinkedIn (The link leads to an external service)', 'helsinki-universal'),
 	);
 }
 

@@ -35,36 +35,57 @@ function helsinki_build_replacement_link($begintag, $content, $svginner, $endtag
     $extra_attrs = '';
     $extra_classes = $custom_classes;
     $icon = '';
+    $unique_id = uniqid('id-', true);
+    $aria_label_span = '';
+    
+    $content_text = strip_tags($content);
 
     if ($linkType == 'mail') {
         $ariaLabel = __('(Link opens default mail program)', 'helsinki-universal');
         $extra_attrs = 'data-protocol="mailto"';
+        if (!empty($ariaLabel)) {
+            $aria_label_span = '<span id="' . esc_attr($unique_id) . '" class="hidden">' . esc_html($content_text) . ' ' . esc_html($ariaLabel) . '</span>';
+        }
         if (empty($svgafter) && empty($svginner)) {
-            $icon = helsinki_get_svg_icon('envelope', $extra_classes, $ariaLabel);
+            $icon = helsinki_get_svg_icon('envelope', $extra_classes);
         }
     }
     else if ($linkType == 'phone') {
         $ariaLabel = __('(Link starts a phone call)', 'helsinki-universal');
         $extra_attrs = 'data-protocol="tel"';
+        if (!empty($ariaLabel)) {
+            $aria_label_span = '<span id="' . esc_attr($unique_id) . '" class="hidden">' . esc_html($content_text) . ' ' . esc_html($ariaLabel) . '</span>';
+        }
         if (empty($svgafter) && empty($svginner)) {
-            $icon = helsinki_get_svg_icon('phone', $extra_classes, $ariaLabel);
+            $icon = helsinki_get_svg_icon('phone', $extra_classes);
         }
     }
     else if ($linkType == 'external') {
         $ariaLabel = __('(Link leads to external service)', 'helsinki-universal');
         $extra_attrs = 'data-is-external="true"';
-        if (empty($svgafter) && empty($svginner)) {
-            $icon = helsinki_get_svg_icon('link-external', $extra_classes, $ariaLabel);
+        if (!empty($ariaLabel)) {
+            $aria_label_span = '<span id="' . esc_attr($unique_id) . '" class="hidden">' . esc_html($content_text) . ' ' . esc_html($ariaLabel) . '</span>';
         }
+        if (empty($svgafter) && empty($svginner)) {
+            $icon = helsinki_get_svg_icon('link-external', $extra_classes);
+        }
+    }
+
+    $aria_labelledby_attr = '';
+    if (!empty($aria_label_span)) {
+        $aria_labelledby_attr = ' aria-labelledby="' . esc_attr($unique_id) . '"';
+        $icon = str_replace('>', $aria_labelledby_attr . '>', $icon);
     }
 
     $newBeginTag = str_replace('>', $extra_attrs . '>', $begintag );
 
-    return sprintf('%s%s%s%s',
+    return sprintf('%s%s%s%s%s%s',
         $newBeginTag,
-        $content . $icon,
-        $endtag,
-        $svgafter
+        $content,
+        $svginner, // Updated SVG tag with aria-labelledby attribute
+        $aria_label_span, // Include the aria label span here
+        $icon,
+        $endtag . $svgafter
     );
 }
 
