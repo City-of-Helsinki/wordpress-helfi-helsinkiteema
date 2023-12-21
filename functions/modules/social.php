@@ -83,7 +83,7 @@ if ( ! function_exists('helsinki_social_share_links') ) {
 
     foreach ($medias as $key => $settings) {
       $out[] = sprintf(
-        '<a class="hds-button share-link share-link--%1$s" href="%2$s" onclick="%3$s" title="%6$s" aria-labelledby="share-' . $counter . '">
+        '<a class="hds-button share-link share-link--%1$s" href="%2$s" onclick="%3$s" title="%6$s">
 					<span class="screen-reader-text" id="share-' . $counter . '">%5$s</span>
 					%4$s
 				</a>',
@@ -95,7 +95,8 @@ if ( ! function_exists('helsinki_social_share_links') ) {
           urlencode($home)
         )),
         $onclick,
-        helsinki_get_svg_icon($key),
+        '<svg class="icon mask-icon icon--' . esc_attr($key) . ' hds-icon--' . esc_attr($key) . ' " viewBox="0 0 24 24" aria-hidden="true" tabindex="-1" aria-labelledby="share-' . $counter . '"></svg>',
+        //helsinki_get_svg_icon($key),
         esc_html($settings['title']),
         esc_html($settings['text'])
       );
