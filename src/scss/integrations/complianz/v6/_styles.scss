@@ -1,28 +1,21 @@
 body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	background-color: var(--color-bus);
 	color: $white;
+  display: block;
 	opacity: 1;
 	transition: opacity 1s ease;
-	padding: spacing(l) spacing(m) spacing(m);
 	position: fixed;
 	top: initial;
 	bottom: 0;
 	left: 0;
 	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
 	z-index: 9999;
 	max-width: 100%;
 	width: 100%;
 	border-style: none;
 	margin: 0;
+  padding: spacing(m) spacing(s);
 	transform: translate(0);
-
-	@include breakpoint(l) {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
 
 	.cc-message {
 		display: block;
@@ -54,6 +47,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	}
 	// Added via filter
 	.cookie-categories-wrap {
+    margin-top: spacing(s);
 
 		@include breakpoint(l) {
 			justify-content: right;
@@ -65,14 +59,14 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		.cmplz-categories-wrap {
 			margin-bottom: spacing(m);
 
-			.cc-category {
+			.cmplz-category {
 				color: $white !important;
 			}
 
 			@include breakpoint(l) {
 				margin-bottom: 0;
 
-				.cc-category {
+				.cmplz-category {
 					font-size: fontsize-body(l);
 				}
 			}
@@ -81,6 +75,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 
 	.cmplz-categories {
 		width: unset !important;
+
 		.cmplz-categories-inner {
 			display: flex;
 			flex-wrap: wrap;
@@ -88,9 +83,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 			.cmplz-category {
 				background: none;
 			}
-
 		}
-
 	}
 
 	.cmplz-divider {
@@ -99,6 +92,8 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 
 	.cmplz-buttons {
 		flex-direction: row;
+    gap: spacing(s);
+    margin-top: spacing(s);
 
 		@include breakpointMax(m) {
 			flex-direction: column;
@@ -173,7 +168,6 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	.cmplz-links {
 		width: 100%;
 		justify-content: left;
-		margin-bottom: 32px;
 
 		a {
 			&:hover {
@@ -188,11 +182,18 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		color: $white !important;
 		cursor: pointer;
 		font-weight: $global-font-weight-medium;
-		margin-bottom: spacing(s);
-		padding: spacing(xs) spacing(l);
+    height: auto;
+    min-height: 45px;
+		padding: spacing(xs) spacing(s);
 		text-align: center;
 		text-decoration: none;
-		white-space: nowrap;
+		white-space: normal;
+
+    @include breakpoint(l) {
+  		padding-left: spacing(l);
+  		padding-right: spacing(l);
+  		white-space: nowrap;
+  	}
 
 		&:focus,
 		&:hover {
@@ -478,8 +479,6 @@ body .cc-revoke {
 		display: inline-block;
 		width: 40px;
 		height: 21px;
-
-
 
 		.cmplz-slider {
 			background-color: $white !important;
