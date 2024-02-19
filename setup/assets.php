@@ -30,7 +30,6 @@ function helsinki_enqueue_assets()
 	/**
 	  * Scripts
 	  */
-  	wp_enqueue_script('jquery-core');
 	$theme_footer_js = $debug ? 'scripts/footer/scripts.js': 'scripts/footer/scripts.min.js';
   	wp_enqueue_script(
 		'theme-footer',
