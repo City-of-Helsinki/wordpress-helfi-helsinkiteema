@@ -17,7 +17,7 @@ function helsinki_menu_config(string $location)
 
 	$theme_menu_depth = get_theme_mod('helsinki_header_primary_menu');
 
-	if ($theme_menu_depth['menu-items'] === 'menu-depth-2-5') {
+	if ( helsinki_header_primary_menu_items_style_is( 'menu-depth-2-5' ) ) {
 		$desktop_depth = 2;
 		$mobile_depth = 5;
 	} else {
