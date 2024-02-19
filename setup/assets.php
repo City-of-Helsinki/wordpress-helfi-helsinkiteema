@@ -100,7 +100,7 @@ function helsinki_enqueue_admin_assets($hook_suffix) {
 		  $version,
 		  'all'
 	  );
-  
+
 
 	$theme_admin_js = $debug ? 'scripts/admin/scripts.js': 'scripts/admin/scripts.min.js';
 	wp_enqueue_script(
@@ -261,15 +261,6 @@ function helsinki_colors(string $name ='') {
 
 function helsinki_default_scheme() {
 	return apply_filters( 'helsinki_default_scheme', 'coat-of-arms' );
-}
-
-/**
-  * Jquery
-  */
-function helsinki_move_jquery_into_footer($wp_scripts) {
-	$wp_scripts->add_data('jquery', 'group', 1);
-	$wp_scripts->add_data('jquery-core', 'group', 1);
-	$wp_scripts->add_data('jquery-migrate', 'group', 1);
 }
 
 /**
