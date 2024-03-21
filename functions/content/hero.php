@@ -321,8 +321,8 @@ function helsinki_hero_actions() {
 
 			add_action( 'helsinki_hero_image', 'helsinki_hero_koros' );
 			add_action( 'helsinki_hero_image', 'helsinki_hero_image_caption', 11 );
-			add_action( 'helsinki_hero_image_size', 'helsinki_image_size_full' );
-			
+			add_filter( 'helsinki_hero_image_size', 'helsinki_image_size_full' );
+
 			add_action( 'helsinki_hero_mobile_image', 'helsinki_hero_image_mobile_element', 10 );
 			add_action( 'helsinki_hero_mobile_image', 'helsinki_hero_image_caption', 11 );
 
@@ -331,6 +331,7 @@ function helsinki_hero_actions() {
 			add_filter( 'helsinki_hero_koros_flipped', '__return_false' );
 		} else if ( helsinki_hero_has_image_below() ) {
 			add_filter( 'helsinki_hero_class_full_width', '__return_true' );
+			add_filter( 'helsinki_hero_image_size', 'helsinki_image_size_full' );
 
 			add_action( 'helsinki_hero_after', 'helsinki_hero_decoration_arrow', 30 );
 			add_action( 'helsinki_hero_after', 'helsinki_hero_image', 20 );
@@ -343,13 +344,13 @@ function helsinki_hero_actions() {
 				add_action( 'helsinki_hero_after', 'helsinki_hero_overlay_diagonal', 5 );
 				remove_action( 'helsinki_hero_after', 'helsinki_hero_koros', 10 );
 			}
-				
+
 			add_action( 'helsinki_hero_after', 'helsinki_hero_decoration_arrow', 30 );
 			add_action( 'helsinki_hero_after', 'helsinki_hero_image_mobile', 20 );
 			add_action( 'helsinki_hero_image', 'helsinki_hero_image_element', 10 );
-			add_action( 'helsinki_hero_mobile_image', 'helsinki_hero_image_mobile_element', 10 );	
+			add_action( 'helsinki_hero_mobile_image', 'helsinki_hero_image_mobile_element', 10 );
 			add_action( 'helsinki_hero_mobile_image', 'helsinki_hero_image_caption', 11 );
-			add_action( 'helsinki_hero_image_size', 'helsinki_image_size_large' );
+			add_filter( 'helsinki_hero_image_size', 'helsinki_image_size_large' );
 
 		}
 
