@@ -1,4 +1,6 @@
 body #cmplz-cookiebanner-container .cmplz-cookiebanner {
+  z-index: 9999;
+
   .cmplz-cookiebanner__container {
   	display: flex;
   	flex-direction: column;
