@@ -34,6 +34,15 @@ function helsinki_block_editor_scripts() {
     	)
 	);
 
+	wp_add_inline_script(
+		'helsinki-sidebar-plugin',
+		'const HelsinkiUniversalSidebar = ' . json_encode( array(
+	    	'isFrontPage' => helsinki_id_is_front_page( $_GET['post'] ?? 0 ),
+			'heroStyleOptions' => helsinki_block_editor_hero_style_options(),
+		) ),
+		'before'
+	);
+
 	wp_enqueue_script(
 		'helsinki-editor-metaboxes',
 		get_template_directory_uri() . '/block-editor/scripts/metaboxes.js',
@@ -41,17 +50,20 @@ function helsinki_block_editor_scripts() {
 			'jquery',
 			'jquery-ui-core',
 			'jquery-ui-sortable',
-    	), 
-		null, 
+    	),
+		null,
 		true
 	);
 
-
 	wp_add_inline_script(
-		'helsinki-sidebar-plugin',
-		'const HelsinkiUniversalSidebar = ' . json_encode( array(
-	    	'isFrontPage' => helsinki_id_is_front_page( $_GET['post'] ?? 0 ),
-			'heroStyleOptions' => helsinki_block_editor_hero_style_options(),
+		'helsinki-editor-metaboxes',
+		'const HelsinkiThemeEditorMetabox = ' . json_encode( array(
+	    	'post_id' => $_GET['post'] ?? 0,
+			'ajax' => array(
+				'url' => admin_url( 'admin-ajax.php' ),
+				'action' => 'helsinki_get_wp_editor',
+				'nonce' => wp_create_nonce( 'helsinki_get_wp_editor_nonce' ),
+			),
 		) ),
 		'before'
 	);
