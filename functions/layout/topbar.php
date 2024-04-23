@@ -45,9 +45,9 @@ function helsinki_mobile_topbar_menu() {
 
 function helsinki_topbar_branding( string $language = 'fi' ) {
 	$branding = array(
-		'fi' => 'https://www.hel.fi/helsinki/fi',
-		'sv' => 'https://www.hel.fi/helsinki/sv',
-		'en' => 'https://www.hel.fi/helsinki/en',
+		'fi' => 'https://www.hel.fi/fi',
+		'sv' => 'https://www.hel.fi/sv',
+		'en' => 'https://www.hel.fi/en',
 	);
 
 	return apply_filters(
