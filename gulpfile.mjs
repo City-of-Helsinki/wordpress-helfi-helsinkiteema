@@ -1,11 +1,27 @@
-var gulp        = require('gulp'),
-    sass        = require('gulp-sass')(require('sass')),
-    rename      = require('gulp-rename'),
-    cssNano     = require('gulp-cssnano');
-    prefix      = require('gulp-autoprefixer'),
-    concat      = require('gulp-concat'),
-    uglify      = require('gulp-uglify'),
-    babel       = require('gulp-babel');
+'use strict';
+
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import gulp from 'gulp';
+import rename from 'gulp-rename';
+import cleanCSS from 'gulp-clean-css';
+import prefix from 'gulp-autoprefixer';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
+import babel from 'gulp-babel';
+
+const sass = gulpSass(dartSass);
+
+const sassOptions = {
+  outputStyle: 'compressed'
+};
+
+const cssOptions = {
+	level: 2,
+	format: {
+		semicolonAfterLastProperty: true
+	}
+};
 
 const ASSETS = {
   all:     'assets',
@@ -33,18 +49,6 @@ const SOURCE = {
   publicStyles: 'src/scss/**/*.scss',
   adminStyles: 'src/admin/scss/**/*.scss'
 }
-
-var sassOptions = {
-  outputStyle: 'compressed'
-};
-
-var cssOptions = {
-	level: 2,
-	format: {
-		semicolonAfterLastProperty: true
-	}
-};
-
 
 gulp.task('footerscripts', function(){
   return gulp.src(SOURCE.footerScripts)
@@ -82,7 +86,7 @@ gulp.task('adminscripts', function(){
     .pipe(gulp.dest(ASSETS.adminScripts));
 });
 
-gulp.task('notifications', function(){ 
+gulp.task('notifications', function(){
   return gulp.src(SOURCE.notifications)
     .pipe(concat('notifications.php'))
     .pipe(gulp.dest(ASSETS.notifications))
@@ -99,7 +103,7 @@ gulp.task('publicStyles', function() {
     .pipe(sass(sassOptions))
 		.pipe(gulp.dest(ASSETS.all))
     .pipe(prefix())
-    .pipe(cssNano())
+    .pipe(cleanCSS(cssOptions))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(ASSETS.all))
 });
@@ -109,21 +113,44 @@ gulp.task('adminStyles', function() {
     .pipe(sass(sassOptions))
 		.pipe(gulp.dest(ASSETS.adminStyles))
     .pipe(prefix())
-    .pipe(cssNano())
+    .pipe(cleanCSS(cssOptions))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(ASSETS.adminStyles))
 });
 
-gulp.task('scripts', gulp.parallel('footerscripts', 'headerscripts', 'adminscripts', 'notifications'));
-gulp.task('styles', gulp.parallel('publicStyles', 'adminStyles'));
+gulp.task(
+  'scripts',
+  gulp.parallel(
+    'footerscripts',
+    'headerscripts',
+    'adminscripts',
+    'notifications'
+  )
+);
 
+gulp.task(
+  'styles',
+  gulp.parallel(
+    'publicStyles',
+    'adminStyles'
+  )
+);
 
-gulp.task('watch',function() {
-  gulp.watch(SOURCE.styles,gulp.parallel('styles'));
+gulp.task('watch', function() {
+  gulp.watch(SOURCE.publicStyles, gulp.parallel('styles'));
   gulp.watch(SOURCE.footerScripts, gulp.parallel('footerscripts'));
   gulp.watch(SOURCE.headerScripts, gulp.parallel('headerscripts'));
   gulp.watch(SOURCE.adminScripts, gulp.parallel('adminscripts'));
   gulp.watch(SOURCE.notifications, gulp.parallel('notifications'));
 });
 
-gulp.task('default', gulp.parallel('styles', 'footerscripts', 'headerscripts', 'adminscripts', 'notifications'));
+gulp.task(
+  'default',
+  gulp.parallel(
+    'styles',
+    'footerscripts',
+    'headerscripts',
+    'adminscripts',
+    'notifications'
+  )
+);
