@@ -75,6 +75,7 @@ function helsinki_files()
 				'header',
 				'loop',
 				'sidebar',
+				'topbar',
 				'view',
 				'misc',
 			],

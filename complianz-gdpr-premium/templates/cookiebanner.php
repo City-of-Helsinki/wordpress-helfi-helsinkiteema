@@ -20,11 +20,13 @@
 		</a>
 	</div>-->
 
-	<!-- Divider between Header and Body -->
+	<div class="cmplz-cookiebanner__container">
 
-	<div class="cmplz-divider cmplz-divider-header"></div>
+		<!-- Divider between Header and Body -->
 
-	<!-- Body -->
+		<div class="cmplz-divider cmplz-divider-header"></div>
+
+		<!-- Body -->
 		<div class="cmplz-body">
 			<div class="cmplz-message">
 				<div class="cookie-notice">
