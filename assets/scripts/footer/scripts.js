@@ -818,7 +818,8 @@ function jsScrollTop(event) {
     }
 
     function _isFocusOut(event) {
-      return _isInFocus
+      return event.relatedTarget
+          && _isInFocus
           && ! _elementIsOrContains(elements.form, event.relatedTarget)
           && ! _elementIsOrContains(elements.toggle, event.relatedTarget);
     }
