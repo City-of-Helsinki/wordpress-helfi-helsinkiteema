@@ -28,6 +28,8 @@
 
     function _handleToggleClick(event) {
       if (_toggleIsExpanded()) {
+        elements.toggle.setAttribute('aria-label', _toggleOpenText());
+
         _isOpen = false;
 
         document.removeEventListener('click', _handleOffClick);
@@ -41,6 +43,8 @@
 
         elements.form.addEventListener('focusin', _handleFocusIn);
         elements.form.addEventListener('focusout', _handleFocusOut);
+
+        elements.toggle.setAttribute('aria-label', _toggleCloseText());
 
         _isOpen = true;
       }
@@ -71,6 +75,14 @@
 
     function _toggleIsExpanded() {
       return elements.toggle.getAttribute('aria-expanded') === 'true';
+    }
+
+    function _toggleCloseText() {
+      return elements.toggle.dataset.textExpanded.concat(' ', elements.toggle.dataset.text.toLowerCase());
+    }
+
+    function _toggleOpenText() {
+      return elements.toggle.dataset.text;
     }
 
     function _escKeyPressed(event) {
