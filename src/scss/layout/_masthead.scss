@@ -17,7 +17,7 @@
 		~ * {
 			--logout-bar-height: 53px;
 		}
-	}	
+	}
 
 	@include breakpointMax(l) {
 		border-bottom: $header-border;
@@ -62,7 +62,7 @@
 		text-decoration: none;
 
 		svg {
-			
+
 		}
 
 		&:hover {
@@ -79,7 +79,10 @@
 	}
 
 	button {
-		outline-offset: -3px;
+
+		&:not([type="submit"]) {
+			outline-offset: -3px;
+		}
 
 		svg {
 			outline: none;
@@ -194,7 +197,7 @@
 				display: block;
 			}
 		}
-		
+
 		&:hover {
 			text-decoration: underline;
 		}
@@ -265,7 +268,7 @@
 				}
 
 				+ [type="submit"] {
-		
+
 				}
 
 			}
@@ -296,7 +299,7 @@
 			padding-left: spacing('m');
 			padding-right: spacing('m');
 		}
-		
+
 	}
 
 	@include breakpoint(l) {
@@ -382,7 +385,7 @@
 
 			> .menu__item {
 				height: unset;
-	
+
 				> .link-wrap {
 					border-left: 4px solid transparent;
 
@@ -551,13 +554,13 @@
 						display: flex;
 						justify-content: center;
 						align-items: center;
-	
+
 						.icon {
 							width: 24px;
 							margin-left: 0;
 						}
 					}
-				} 
+				}
 
 				> .menu--sub {
 					//background-color: $light-gray;
