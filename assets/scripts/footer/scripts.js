@@ -761,27 +761,7 @@ function jsScrollTop(event) {
     }
 
     function _handleToggleClick(event) {
-      if (_toggleIsExpanded()) {
-        elements.toggle.setAttribute('aria-label', _toggleOpenText());
-
-        _isOpen = false;
-
-        document.removeEventListener('click', _handleOffClick);
-        document.removeEventListener('keyup', _handleKeyup);
-
-        elements.form.removeEventListener('focusin', _handleFocusIn);
-        elements.form.removeEventListener('focusout', _handleFocusOut);
-      } else {
-        document.addEventListener('click', _handleOffClick);
-        document.addEventListener('keyup', _handleKeyup);
-
-        elements.form.addEventListener('focusin', _handleFocusIn);
-        elements.form.addEventListener('focusout', _handleFocusOut);
-
-        elements.toggle.setAttribute('aria-label', _toggleCloseText());
-
-        _isOpen = true;
-      }
+      _toggleIsExpanded() ? _closeSearch() : _openSearch();
     }
 
     function _handleOffClick(event) {
@@ -800,9 +780,32 @@ function jsScrollTop(event) {
       _isFocusOut(event) && _closeSearch();
     }
 
+    function _openSearch() {
+      document.addEventListener('click', _handleOffClick);
+      document.addEventListener('keyup', _handleKeyup);
+
+      elements.form.addEventListener('focusin', _handleFocusIn);
+      elements.form.addEventListener('focusout', _handleFocusOut);
+
+      elements.toggle.setAttribute('aria-label', _toggleCloseText());
+
+      _isOpen = true;
+    }
+
     function _closeSearch() {
       if (_isOpen) {
-        elements.toggle.click();
+        elements.toggle.setAttribute('aria-label', _toggleOpenText());
+
+        _isOpen = false;
+
+        document.removeEventListener('click', _handleOffClick);
+        document.removeEventListener('keyup', _handleKeyup);
+
+        elements.form.removeEventListener('focusin', _handleFocusIn);
+        elements.form.removeEventListener('focusout', _handleFocusOut);
+
+        jsToggleClose(elements.toggle, elements.container);
+
         _isInFocus = false;
       }
     }
