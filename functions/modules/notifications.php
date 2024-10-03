@@ -72,43 +72,30 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 			'text' => '',
 			'link_text' => __( 'Read more', 'helsinki-universal' ),
 			'link_url' => '',
-			'is_external' => false,
 		),
 		$notice
 	);
 
+	if ( $langugage ) {
+		$notice = helsinki_notification_translated_texts( $notice );
+	}
+
 	$text = '';
 	$title = '';
 	if ( $notice['title'] ) {
-		if ( $langugage ) {
-			$notice['title'] = pll__( $notice['title'] );
-		}
 		$title = esc_html( $notice['title'] );
 		$text .= '<strong>' . esc_html( $notice['title'] ) . '</strong> ';
 	}
 
 	if ( $text || $notice['text'] ) {
-		if ( $langugage ) {
-			$notice['text'] = pll__( $notice['text'] );
-		}
 		$text = '<p>' . $text . esc_html( $notice['text'] ) . '</p>';
 	}
 
 	if ( $notice['link_url'] ) {
-		if ( $langugage ) {
-			$notice['link_url'] = pll__( $notice['link_url'] );
-			$notice['link_text'] = pll__( $notice['link_text'] );
-		}
-
 		$text .= sprintf(
-			'<a href="%s">%s%s</a>',
+			'<a href="%s">%s</a>',
 			esc_url( $notice['link_url'] ),
-			esc_html( $notice['link_text'] ),
-			helsinki_get_svg_icon(
-				$notice['is_external'] ? 'link-external' : 'arrow-right',
-				'',
-				$notice['is_external'] ?  __('(Link leads to external service)', 'helsinki-universal') : ''
-			)
+			esc_html( $notice['link_text'] )
 		);
 	}
 
@@ -118,10 +105,7 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 		'info' => 'info-circle-fill',
 	);
 
-	$type = "info";
-	if ( isset($notice["type"]) && !empty($notice["type"]) ) {
-		$type = $notice["type"];
-	}
+	$type = ! empty( $notice["type"] ) ? $notice["type"] : "info";
 
 	get_template_part(
 		'partials/notification/notice',
@@ -130,10 +114,24 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 			'id' => md5( $type . $text ),
 			'type' => $type,
 			'icon' => helsinki_get_svg_icon( $icon[$type] ),
-			'text' => $text,
+			'text' => helsinki_add_links_symbols( $text ),
 			'title' => $title,
 		)
 	);
+}
+
+function helsinki_notification_translated_texts( array $notice ): array {
+	$keys = array( 'title', 'text', 'link_text', 'link_url'	);
+
+	if ( apply_filters( 'helsinki_polylang_active', false ) ) {
+		foreach ( $keys as $key ) {
+			if ( ! empty( $notice[$key] ) ) {
+				$notice[$key] = pll__( $notice[$key] );
+			}
+		}
+	}
+
+	return $notice;
 }
 
 /**
