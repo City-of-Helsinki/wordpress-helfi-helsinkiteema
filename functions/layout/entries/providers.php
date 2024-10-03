@@ -4,6 +4,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
+function helsinki_provide_grid_entry( array $args = array() ): void {
+	helsinki_grid_entry( $args );
+}
+
+function helsinki_provide_feed_entry( array $args = array() ): void {
+	helsinki_feed_entry( $args );
+}
+
 function helsinki_provide_default_entry_image( WP_Post $post = null, string $type = '', array $args = array() ): void {
 	if ( ! $type && has_post_thumbnail( $post ) ) {
 		helsinki_entry_image( $post );
