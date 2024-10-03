@@ -74,4 +74,5 @@ function helsinki_setup_site() {
 		add_filter('helsinki_blog_single_meta', '__return_true');
 	}
 
+	do_action( 'helsinki_site_setup_ready' );
 }
