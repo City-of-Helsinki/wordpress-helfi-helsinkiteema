@@ -56,10 +56,6 @@ function helsinki_customizer_notification_sections() {
 				'link_url' => helsinki_setting_url(
 					__( 'Link url', 'helsinki-universal' )
 				),
-
-				'is_external' => helsinki_setting_checkbox(
-					__( 'Is external?', 'helsinki-universal' )
-				),
 			),
 		);
 	}
