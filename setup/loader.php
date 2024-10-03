@@ -70,11 +70,11 @@ function helsinki_files(): array {
 				'entries' => [
 					'config',
 					'elements',
+					'parts',
 					'filters',
 					'providers',
 					'setup',
 				],
-				'entry',
 				'footer',
 				'front-page',
 				'front-page-depracated',
