@@ -62,7 +62,7 @@ function helsinki_entry_has_placeholder_class( $args = array() ): bool {
 }
 
 function helsinki_entry_classes( string $post_type = '' ): void {
-	$classes = array( 'entry', );
+	$classes = array( 'entry' );
 
 	if ( has_post_thumbnail() ) {
 		$classes[] = 'has-thumbnail';
