@@ -115,6 +115,7 @@ function helsinki_setup_theme()
 		)
 	);
 
+	do_action( 'helsinki_theme_setup_ready' );
 }
 
 function helsinki_disable_default_widgets()
