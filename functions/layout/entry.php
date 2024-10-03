@@ -82,10 +82,6 @@ function helsinki_entry_image_icon() {
 	);
 }
 
-function helsinki_entry_image_icon_name() {
-	return helsinki_theme_mod('helsinki_general_icon', 'placeholder_icon', 'abstract-3');
-}
-
 function helsinki_entry_image_icon_classes() {
 	return implode(
 		' ',
@@ -159,21 +155,8 @@ if ( ! function_exists('helsinki_entry_default_image') ) {
 
 if ( ! function_exists('helsinki_get_entry_default_image') ) {
 	function helsinki_get_entry_default_image( string $size = 'post-thumnbnail', array $attr = array(), int $post_id = 0 ) {
-		if ( ! $post_id ) {
-			$post_id = get_the_ID();
-		}
-		$cat_thumb_id = 0;
-		foreach (get_the_category( $post_id ) as $category) {
-			$cat_thumb_id = helsinki_category_featured_image($category->term_id);
-			if ( $cat_thumb_id ) {
-				break;
-			}
-		}
+		$img_id = helsinki_entry_default_image_id( $post_id ?: get_the_ID() );
 
-		if ( ! $cat_thumb_id ) {
-			$cat_thumb_id = helsinki_category_featured_image( (int) get_option('default_category', 0) );
-		}
-
-		return $cat_thumb_id ? wp_get_attachment_image( $cat_thumb_id, $size, false, $attr ): '';
+		return $img_id ? wp_get_attachment_image( $img_id, $size, false, $attr ): '';
 	}
 }
