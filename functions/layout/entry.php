@@ -33,14 +33,14 @@ if ( ! function_exists('helsinki_entry') ) {
 }
 
 if ( ! function_exists('helsinki_grid_entry') ) {
-	function helsinki_grid_entry($args = array()) {
-		get_template_part('partials/loop/entry', 'grid', $args);
+	function helsinki_grid_entry( $args = array() ) {
+		get_template_part( 'partials/loop/entry', 'grid', $args );
 	}
 }
 
 if ( ! function_exists('helsinki_feed_entry') ) {
-	function helsinki_feed_entry() {
-		get_template_part('partials/loop/entry', 'feed');
+	function helsinki_feed_entry( $args = array() ) {
+		get_template_part( 'partials/loop/entry', 'feed', $args );
 	}
 }
 
