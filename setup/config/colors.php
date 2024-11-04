@@ -73,9 +73,9 @@ function helsinki_config_colors() {
 				'content' => '#1a1a1a',
 				'content-secondary' => '#ffffff',
 			),
-		 	'secondary' => '#e8f3fc',
+		 	'secondary' => '#fff9db',
 			'secondary-content' => '#1a1a1a',
-			'accent' => '#f5a3c7',
+			'accent' => '#fd4f00',
 		),
 		'gold' => array(
 			'primary' => array(
