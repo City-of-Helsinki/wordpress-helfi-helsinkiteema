@@ -99,6 +99,7 @@ function helsinki_files(): array {
 				'widgets',
 			],
 			'classes',
+			'class-helsinki-link-symbol-handler',
 			'links',
 			'misc',
 		],
