@@ -44,21 +44,8 @@ class Helsinki_Link_Symbol_Handler
 
 	protected function build_replacement_link( $begintag, $content, $svginner, $endtag, $svgafter, $linkType, $custom_classes ): string
 	{
-	    $extra_attrs = '';
-		$icon_callback = '';
-
-	    if ( $linkType === 'mail' ) {
-	        $extra_attrs = 'data-protocol="mailto"';
-			$icon_callback = 'mailto_icon';
-	    } else if ( $linkType === 'phone' ) {
-	        $extra_attrs = 'data-protocol="tel"';
-			$icon_callback = 'tel_icon';
-	    } else if ( $linkType === 'external' ) {
-	        $extra_attrs = 'data-is-external="true"';
-			$icon_callback = 'external_icon';
-	    } else if ( $linkType === 'internal' ) {
-			$icon_callback = 'internal_icon';
-	    }
+	    $extra_attrs = $this->link_extra_attrs( $linkType );
+		$icon_callback = $this->link_icon_callback( $linkType );
 
 		if ( empty($svgafter) && empty($svginner) && $icon_callback ) {
 			$content .= call_user_func( array( $this, $icon_callback ), $custom_classes );
@@ -67,6 +54,22 @@ class Helsinki_Link_Symbol_Handler
 	    $newBeginTag = str_replace('>', $extra_attrs . '>', $begintag );
 
 	    return sprintf( '%s%s%s%s', $newBeginTag, $content, $endtag, $svgafter );
+	}
+
+	protected function link_icon_callback( string $type ): string
+	{
+		$icon_callback = "{$type}_icon_html";
+
+		return method_exists( $this, $icon_callback ) ? $icon_callback : '';
+	}
+
+	protected function link_extra_attrs( string $type ): string
+	{
+		$extra_attrs = "{$type}_link_extra_attrs";
+
+		return method_exists( $this, $extra_attrs )
+			? call_user_func( array( $this, $extra_attrs ) )
+			: '';
 	}
 
 	protected function match_content( string $content ): array
@@ -120,7 +123,22 @@ class Helsinki_Link_Symbol_Handler
 		return str_starts_with( $url, '#' ) || str_starts_with( $url, '/' );
 	}
 
-	protected function mailto_icon( string $extra_classes = '' ): string
+	protected function mail_link_extra_attrs(): string
+	{
+		return 'data-protocol="mailto"';
+	}
+
+	protected function phone_link_extra_attrs(): string
+	{
+		return 'data-protocol="tel"';
+	}
+
+	protected function external_link_extra_attrs(): string
+	{
+		return 'data-is-external="true"';
+	}
+
+	protected function mail_icon_html( string $extra_classes = '' ): string
 	{
 		return helsinki_get_svg_icon(
 			'envelope',
@@ -129,7 +147,7 @@ class Helsinki_Link_Symbol_Handler
 		);
 	}
 
-	protected function tel_icon( string $extra_classes = '' ): string
+	protected function phone_icon_html( string $extra_classes = '' ): string
 	{
 		return helsinki_get_svg_icon(
 			'phone',
@@ -138,7 +156,7 @@ class Helsinki_Link_Symbol_Handler
 		);
 	}
 
-	protected function external_icon( string $extra_classes = '' ): string
+	protected function external_icon_html( string $extra_classes = '' ): string
 	{
 		return helsinki_get_svg_icon(
 			'link-external',
@@ -147,7 +165,7 @@ class Helsinki_Link_Symbol_Handler
 		);
 	}
 
-	protected function internal_icon( string $extra_classes = '' ): string
+	protected function internal_icon_html( string $extra_classes = '' ): string
 	{
 		return helsinki_get_svg_icon(
 			'arrow-right',
