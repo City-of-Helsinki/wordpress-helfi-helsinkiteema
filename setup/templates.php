@@ -386,4 +386,6 @@ function helsinki_setup_templates()
 	add_action('helsinki_footer_bottom', 'helsinki_footer_copyright', 20);
 	add_action('helsinki_footer_bottom', 'helsinki_footer_menu', 30);
 	add_action('helsinki_footer_bottom', 'helsinki_footer_back_top', 40);
+
+	do_action( 'helsinki_template_setup_ready' );
 }
