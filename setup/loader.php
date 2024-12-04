@@ -3,14 +3,13 @@
 /**
  * Include theme files
  */
-function helsinki_load_files() {
+function helsinki_load_files(): void {
 	helsinki_include_files(
 		helsinki_files()
 	);
 }
 
-function helsinki_files()
-{
+function helsinki_files(): array {
 	$files = [
 		'customizer' => [
 			'config' => [
@@ -68,7 +67,14 @@ function helsinki_files()
 				'svg',
 			],
 		    'layout' => [
-				'entry',
+				'entries' => [
+					'config',
+					'elements',
+					'parts',
+					'filters',
+					'providers',
+					'setup',
+				],
 				'footer',
 				'front-page',
 				'front-page-depracated',
@@ -93,6 +99,7 @@ function helsinki_files()
 				'widgets',
 			],
 			'classes',
+			'class-helsinki-link-symbol-handler',
 			'links',
 			'misc',
 		],
@@ -137,8 +144,7 @@ function helsinki_files()
 	return $files;
 }
 
-function helsinki_include_files(array $dir_files, string $subdir = '')
-{
+function helsinki_include_files(array $dir_files, string $subdir = ''): void {
     $path = get_template_directory();
     foreach ($dir_files as $dir => $file_or_files) {
         if ( is_array($file_or_files) ) {
@@ -150,7 +156,11 @@ function helsinki_include_files(array $dir_files, string $subdir = '')
 						$dir . DIRECTORY_SEPARATOR . $index
 					);
                 } else {
-                    helsinki_include_file($path, $dir, $file_or_subdir);
+					$subpath = $subdir
+						? $subdir . DIRECTORY_SEPARATOR . $dir
+						: $dir;
+
+                    helsinki_include_file($path, $subpath, $file_or_subdir);
                 }
             }
         } else {
@@ -163,15 +173,14 @@ function helsinki_include_files(array $dir_files, string $subdir = '')
     }
 }
 
-function helsinki_include_file(string $path, string $dir, string $filename)
-{
+function helsinki_include_file(string $path, string $dir, string $filename): void {
     $file = helsinki_build_file_path($path, $dir, $filename . '.php');
+
     if (file_exists($file)) {
         include $file;
     }
 }
 
-function helsinki_build_file_path(...$segments)
-{
+function helsinki_build_file_path(...$segments): string {
     return implode(DIRECTORY_SEPARATOR, $segments);
 }
