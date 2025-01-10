@@ -6,7 +6,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2025-01-10 13:52+0000\n"
+"POT-Creation-Date: 2025-01-10 15:17+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -111,8 +111,7 @@ msgstr ""
 msgid "City of Helsinki"
 msgstr ""
 
-#: setup/assets.php:127 partials/header/mobile-panel-toggle.php:1
-#: partials/header/search.php:2
+#: setup/assets.php:127
 msgid "Close"
 msgstr ""
 
@@ -122,10 +121,6 @@ msgstr ""
 
 #: partials/notification/notice.php:5
 msgid "Close notification"
-msgstr ""
-
-#: partials/header/mobile-panel-toggle.php:1
-msgid "Close the navigation menu"
 msgstr ""
 
 #: customizer/config/choices.php:19
@@ -484,6 +479,11 @@ msgstr ""
 msgid "Koroshape"
 msgstr ""
 
+#: partials/header/mobile-panel-toggle.php:12
+msgctxt "Label"
+msgid "Menu"
+msgstr ""
+
 #: searchform.php:20
 msgctxt "label"
 msgid "Search by keyword"
@@ -502,6 +502,26 @@ msgstr ""
 #: partials/header/mobile-menu.php:8
 msgctxt "Label - Nav - Mobile menu"
 msgid "Navigation menu"
+msgstr ""
+
+#: partials/header/mobile-panel-toggle.php:24
+msgctxt "Label - Toggle - Mobile menu"
+msgid "Close the navigation menu"
+msgstr ""
+
+#: partials/header/mobile-panel-toggle.php:15
+msgctxt "Label - Toggle - Mobile menu"
+msgid "Open the navigation menu"
+msgstr ""
+
+#: partials/header/search.php:25
+msgctxt "Label - Toggle - Search"
+msgid "Close site search"
+msgstr ""
+
+#: partials/header/search.php:16
+msgctxt "Label - Toggle - Search"
+msgid "Search from site"
 msgstr ""
 
 #. Name of the template
@@ -544,11 +564,6 @@ msgstr ""
 
 #: customizer/config/header.php:76
 msgid "Main menu information hierarchy levels"
-msgstr ""
-
-#: partials/header/mobile-panel-toggle.php:1
-#: partials/header/mobile-panel-toggle.php:4
-msgid "Menu"
 msgstr ""
 
 #: customizer/config/choices.php:26
@@ -594,11 +609,6 @@ msgstr ""
 
 #: functions/content/table-of-contents.php:33
 msgid "On this page"
-msgstr ""
-
-#: partials/header/mobile-panel-toggle.php:1
-#: partials/header/mobile-panel-toggle.php:5
-msgid "Open the navigation menu"
 msgstr ""
 
 #: partials/loop/pagination.php:55
@@ -703,8 +713,7 @@ msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
 msgstr ""
 
-#: functions/layout/view.php:42 partials/header/search.php:2
-#: partials/header/search.php:2
+#: functions/layout/view.php:42
 msgid "Search"
 msgstr ""
 
@@ -717,7 +726,7 @@ msgctxt "search submit"
 msgid "Search"
 msgstr ""
 
-#: partials/header/search.php:9 partials/search/form-title.php:1
+#: partials/header/search.php:31 partials/search/form-title.php:1
 msgctxt "search title"
 msgid "Search the site"
 msgstr ""
@@ -853,7 +862,12 @@ msgstr ""
 msgid "Updated"
 msgstr ""
 
-#: partials/header/search.php:5
+#: partials/header/mobile-panel-toggle.php:21 partials/header/search.php:22
+msgctxt "verb"
+msgid "Close"
+msgstr ""
+
+#: partials/header/search.php:13
 msgctxt "verb"
 msgid "Search"
 msgstr ""
