@@ -6,7 +6,7 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-12-13 06:44+0000\n"
+"PO-Revision-Date: 2025-01-10 13:53+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "Last-Translator: \n"
 "MIME-Version: 1.0\n"
@@ -22,16 +22,16 @@ msgstr "&amp;larr; Vanhemmat kommentit"
 msgid "(Edit comment)"
 msgstr "(Muokkaa kommenttia)"
 
-#: functions/links.php:54 functions/modules/notifications.php:110
+#: functions/class-helsinki-link-symbol-handler.php:164
 #: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr "(Linkki johtaa ulkoiseen palveluun)"
 
-#: functions/links.php:40
+#: functions/class-helsinki-link-symbol-handler.php:146
 msgid "(Link opens default mail program)"
 msgstr "(Linkki avaa oletussähköpostiohjelman)"
 
-#: functions/links.php:47
+#: functions/class-helsinki-link-symbol-handler.php:155
 msgid "(Link starts a phone call)"
 msgstr "(Linkki aloittaa puhelun)"
 
@@ -43,15 +43,15 @@ msgstr "404 - Etsimääsi sivua ei valitettavasti löytynyt"
 msgid "A multipurpose WordPress theme"
 msgstr "Monikäyttöinen WordPress-teema"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:153
+#: complianz-gdpr-premium/templates/cookiebanner.php:149
 msgid "Accept all cookies"
 msgstr "Hyväksy kaikki evästeet"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:154
+#: complianz-gdpr-premium/templates/cookiebanner.php:150
 msgid "Accept required cookies only"
 msgstr "Hyväksy vain välttämättömät evästeet"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:156
+#: complianz-gdpr-premium/templates/cookiebanner.php:152
 msgid "Accept selected cookies"
 msgstr "Hyväksy valitut evästeet"
 
@@ -80,6 +80,7 @@ msgid "Background image"
 msgstr "Taustakuva"
 
 #. Name of the template
+#: template/no-sidebar.php:2
 msgid "Basic page without sidebar"
 msgstr "Perussivu ilman sivupalkkia"
 
@@ -117,16 +118,16 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: functions/layout/header.php:77
+#: functions/layout/topbar.php:56
 msgid "City of Helsinki"
 msgstr "Helsingin kaupunki"
 
-#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
+#: setup/assets.php:127 partials/header/mobile-panel-toggle.php:1
 #: partials/header/search.php:2
 msgid "Close"
 msgstr "Sulje"
 
-#: partials/header/menu.php:6
+#: partials/header/menu.php:14
 msgid "Close Menu"
 msgstr "Sulje valikko"
 
@@ -173,7 +174,6 @@ msgid "Copper"
 msgstr "Kupari"
 
 #: partials/loop/pagination.php:47
-#, php-format
 msgid "Currently on page %d"
 msgstr "Olet sivulla %d"
 
@@ -386,7 +386,7 @@ msgstr "Ensimmäinen sivu"
 msgid "Fog"
 msgstr "Sumu"
 
-#: setup/theme.php:136
+#: setup/theme.php:137
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
@@ -401,11 +401,11 @@ msgstr "%s:stä"
 msgid "Front page"
 msgstr "Etusivu"
 
-#: setup/assets.php:131
+#: setup/assets.php:130
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
-#: functions/layout/header.php:95 partials/content/not-found.php:10
+#: functions/layout/topbar.php:74 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Anna palautetta"
@@ -422,7 +422,7 @@ msgstr "Siirry hel.fi-sivustolle"
 msgid "Gold"
 msgstr "Kulta"
 
-#: block-editor/metaboxes.php:36
+#: block-editor/metaboxes.php:31
 msgid "Heading"
 msgstr "Otsikko"
 
@@ -471,10 +471,6 @@ msgstr "Kuva: "
 msgid "Info"
 msgstr "Ilmoitus"
 
-#: customizer/config/notifications.php:61
-msgid "Is external?"
-msgstr "Ulkoinen?"
-
 #: customizer/config/choices.php:37
 msgctxt "Koros motif"
 msgid "Basic"
@@ -509,12 +505,28 @@ msgstr "Tyrsky"
 msgid "Koroshape"
 msgstr "Koromuoto"
 
-#: searchform.php:3
+#: searchform.php:20
 msgctxt "label"
 msgid "Search by keyword"
 msgstr "Etsi hakusanalla"
 
+#: partials/footer/menu.php:8
+msgctxt "Label - Nav - Footer menu"
+msgid "Additional information"
+msgstr "Lisätietoja"
+
+#: partials/header/menu.php:8
+msgctxt "Label - Nav - Main menu"
+msgid "Main menu"
+msgstr "Päävalikko"
+
+#: partials/header/mobile-menu.php:8
+msgctxt "Label - Nav - Mobile menu"
+msgid "Navigation menu"
+msgstr "Navigaatiovalikko"
+
 #. Name of the template
+#: template/landing-page.php:2
 msgid "Landing Page"
 msgstr "Laskeutumissivu"
 
@@ -573,7 +585,7 @@ msgstr "Uudemmat"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Uudemmat kommentit &amp;rarr;"
 
-#: setup/assets.php:129 partials/loop/pagination.php:28
+#: setup/assets.php:128 partials/loop/pagination.php:28
 #: partials/loop/pagination.php:71
 msgid "Next"
 msgstr "Seuraava"
@@ -612,7 +624,6 @@ msgid "Open the navigation menu"
 msgstr "Avaa navigaatiovalikko"
 
 #: partials/loop/pagination.php:55
-#, php-format
 msgid "Page %d"
 msgstr "Sivu %d"
 
@@ -620,17 +631,17 @@ msgstr "Sivu %d"
 msgid "Page navigation"
 msgstr "Sivunavigointi"
 
-#: setup/theme.php:135
+#: setup/theme.php:136
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
 
-#: patterns/basic-page.php:13
+#: patterns/basic-page.php:3 patterns/basic-page.php:13
 msgctxt "Pattern title"
 msgid "Basic page"
 msgstr "Perussivu"
 
-#: patterns/front-page.php:13
+#: patterns/front-page.php:3 patterns/front-page.php:13
 msgctxt "Pattern title"
 msgid "Front page"
 msgstr "Etusivu"
@@ -655,7 +666,7 @@ msgstr "Abstrakti"
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
-#: setup/theme.php:134
+#: setup/theme.php:135
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr "Artikkelit"
@@ -665,7 +676,7 @@ msgctxt "posts count"
 msgid "search results"
 msgstr "hakutulosta"
 
-#: setup/assets.php:130 partials/loop/pagination.php:31
+#: setup/assets.php:129 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -677,7 +688,7 @@ msgstr "Edellinen sivu"
 msgid "Published"
 msgstr "Julkaistu"
 
-#: partials/loop/entry-grid.php:8
+#: functions/layout/entries/elements.php:75
 msgid "Published:"
 msgstr "Julkaistu:"
 
@@ -723,7 +734,7 @@ msgstr "Haku"
 msgid "Search on hel.fi"
 msgstr "Etsi hel.fistä"
 
-#: searchform.php:7
+#: searchform.php:29
 msgctxt "search submit"
 msgid "Search"
 msgstr "Hae"
@@ -768,7 +779,7 @@ msgstr "Jaa Twitterissä"
 msgid "Share this on"
 msgstr "Jaa"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:155
+#: complianz-gdpr-premium/templates/cookiebanner.php:151
 msgid "Show cookie settings"
 msgstr "Näytä evästeasetukset"
 
@@ -812,7 +823,7 @@ msgstr "Suomenlinna"
 msgid "Tags"
 msgstr "Avainsanat"
 
-#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:45 customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Teksti"
 
