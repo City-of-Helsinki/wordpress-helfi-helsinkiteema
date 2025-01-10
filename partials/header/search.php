@@ -7,7 +7,8 @@
 	<div id="header-search" aria-labelledby="header-search-toggle" role="region">
 		<div class="hds-container">
 			<h2 class="search-title"><?php echo esc_html_x('Search the site', 'search title', 'helsinki-universal'); ?></h2>
-			<?php get_search_form(); ?>
+
+			<?php do_action( 'helsinki_search_form', 'header' ); ?>
 		</div>
 	</div>
 </div>
