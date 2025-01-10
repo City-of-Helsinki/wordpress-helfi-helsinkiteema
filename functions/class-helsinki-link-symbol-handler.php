@@ -161,7 +161,8 @@ class Helsinki_Link_Symbol_Handler
 		return helsinki_get_svg_icon(
 			'link-external',
 			$extra_classes,
-			__('(Link leads to external service)', 'helsinki-universal')
+			__('(Link leads to external service)', 'helsinki-universal'),
+			'img'
 		);
 	}
 
