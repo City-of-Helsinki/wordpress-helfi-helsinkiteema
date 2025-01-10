@@ -9,79 +9,80 @@
 
 <body <?php body_class(); ?>>
 
-  <?php
+	<?php wp_body_open(); ?>
 
-  wp_body_open();
+		<div class="layout-wrap">
 
-  /**
-   * Hook: helsinki_header_before
-   *
-   */
-  do_action('helsinki_header_before');
+			<?php
 
-  ?>
-  <?php ob_start(); ?>
-  <header id="masthead" class="<?php helsinki_header_classes(); ?>" role="banner">
+				/**
+				 * Hook: helsinki_header_before
+				 *
+				 */
+				do_action( 'helsinki_header_before' );
 
-    <?php
+			?>
 
-    /**
-     * Hook: helsinki_header_top
-     *
-     */
-    do_action('helsinki_header_top');
+			<?php ob_start(); ?>
 
-    ?>
+			<header id="masthead" class="<?php helsinki_header_classes(); ?>" role="banner">
 
-    <div class="hds-container navigation__content hds-container--wide flex-container">
+				<?php
 
-      <?php
+					/**
+					 * Hook: helsinki_header_top
+					 *
+					 */
+					do_action( 'helsinki_header_top' );
 
-      /**
-       * Hook: helsinki_header
-       *
-       */
-      do_action('helsinki_header');
+				?>
 
-      ?>
+				<div class="hds-container navigation__content hds-container--wide flex-container">
 
-    </div>
+					<?php
 
-    <?php
+						/**
+						* Hook: helsinki_header
+						*
+						*/
+						do_action( 'helsinki_header' );
 
-    /**
-     * Hook: helsinki_header_bottom
-     *
-     */
-    do_action('helsinki_header_bottom');
+					?>
 
-    ?>
+				</div>
 
-  </header>
+				<?php
+
+					/**
+					 * Hook: helsinki_header_bottom
+					 *
+					 */
+					do_action( 'helsinki_header_bottom' );
+
+				?>
+
+			</header>
 
 
-  <?php
+			<?php
 
-  /**
-   * Hook: helsinki_header_after
-   *
-   */
-  do_action('helsinki_header_after');
+				/**
+				 * Hook: helsinki_header_after
+				 *
+				 */
+				do_action( 'helsinki_header_after' );
 
-  ?>
+			?>
 
-  <main id="main" role="main">
+			<main id="main" role="main">
 
-    <?php
+				<?php
 
-    /**
-     * Hook: helsinki_main_top
-     *
-     */
-    do_action('helsinki_main_top');
+					/**
+					 * Hook: helsinki_main_top
+					 *
+					 */
+					do_action( 'helsinki_main_top' );
 
-    ?>
-    <?php
-    $header = ob_get_clean();
-    echo apply_filters('helsinki_header_output', $header);
-    ?>
+					echo apply_filters( 'helsinki_header_output', ob_get_clean() );
+				?>
