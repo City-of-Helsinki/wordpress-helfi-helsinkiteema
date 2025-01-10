@@ -61,3 +61,21 @@
     z-index: 100000; /* Above WP toolbar. */
   }
 }
+
+.js-toggle {
+  .js-toggle__open {}
+
+  .js-toggle__close {
+    display: none;
+  }
+
+  &[aria-expanded="true"] {
+    .js-toggle__open {
+      display: none;
+    }
+
+    .js-toggle__close {
+      display: inline;
+    }
+  }
+}

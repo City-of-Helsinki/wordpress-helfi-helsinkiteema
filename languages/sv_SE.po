@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2025-01-10 13:57+0000\n"
+"PO-Revision-Date: 2025-01-10 15:21+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -118,8 +118,7 @@ msgstr ""
 msgid "City of Helsinki"
 msgstr "Helsingfors stad"
 
-#: setup/assets.php:127 partials/header/mobile-panel-toggle.php:1
-#: partials/header/search.php:2
+#: setup/assets.php:127
 msgid "Close"
 msgstr "Stänga"
 
@@ -130,10 +129,6 @@ msgstr "Stäng menyn"
 #: partials/notification/notice.php:5
 msgid "Close notification"
 msgstr "Stäng avisering"
-
-#: partials/header/mobile-panel-toggle.php:1
-msgid "Close the navigation menu"
-msgstr "Stäng navigeringsmenyn"
 
 #: customizer/config/choices.php:19
 msgid "Coat of Arms"
@@ -500,6 +495,11 @@ msgstr "Bränning"
 msgid "Koroshape"
 msgstr "Koroform"
 
+#: partials/header/mobile-panel-toggle.php:12
+msgctxt "Label"
+msgid "Menu"
+msgstr "Navigeringsmeny"
+
 #: searchform.php:20
 msgctxt "label"
 msgid "Search by keyword"
@@ -519,6 +519,26 @@ msgstr "Huvudmeny"
 msgctxt "Label - Nav - Mobile menu"
 msgid "Navigation menu"
 msgstr "Navigationsmeny"
+
+#: partials/header/mobile-panel-toggle.php:24
+msgctxt "Label - Toggle - Mobile menu"
+msgid "Close the navigation menu"
+msgstr "Stäng navigeringsmenyn"
+
+#: partials/header/mobile-panel-toggle.php:15
+msgctxt "Label - Toggle - Mobile menu"
+msgid "Open the navigation menu"
+msgstr "Öppna navigeringsmenyn"
+
+#: partials/header/search.php:25
+msgctxt "Label - Toggle - Search"
+msgid "Close site search"
+msgstr "Stäng webbplatssökning"
+
+#: partials/header/search.php:16
+msgctxt "Label - Toggle - Search"
+msgid "Search from site"
+msgstr "Sök på webbplatsen"
 
 #. Name of the template
 #: template/landing-page.php:2
@@ -561,11 +581,6 @@ msgstr "Inloggad som %1$s. <a href=\"%2$s\">Logga ut?</a>"
 #: customizer/config/header.php:76
 msgid "Main menu information hierarchy levels"
 msgstr "Huvudmeny informationshierarkinivåer"
-
-#: partials/header/mobile-panel-toggle.php:1
-#: partials/header/mobile-panel-toggle.php:4
-msgid "Menu"
-msgstr "Navigeringsmeny"
 
 #: customizer/config/choices.php:26
 msgid "Metro"
@@ -611,11 +626,6 @@ msgstr "Äldre"
 #: functions/content/table-of-contents.php:33
 msgid "On this page"
 msgstr "På den här sidan"
-
-#: partials/header/mobile-panel-toggle.php:1
-#: partials/header/mobile-panel-toggle.php:5
-msgid "Open the navigation menu"
-msgstr "Öppna navigeringsmenyn"
 
 #: partials/loop/pagination.php:55
 msgid "Page %d"
@@ -719,8 +729,7 @@ msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
 msgstr "Detta flöde hämtas från %s."
 
-#: functions/layout/view.php:42 partials/header/search.php:2
-#: partials/header/search.php:2
+#: functions/layout/view.php:42
 msgid "Search"
 msgstr "Sök"
 
@@ -733,7 +742,7 @@ msgctxt "search submit"
 msgid "Search"
 msgstr "Sök"
 
-#: partials/header/search.php:9 partials/search/form-title.php:1
+#: partials/header/search.php:31 partials/search/form-title.php:1
 msgctxt "search title"
 msgid "Search the site"
 msgstr "Sök på webbplatsen"
@@ -880,7 +889,12 @@ msgstr "Typ"
 msgid "Updated"
 msgstr "Uppdaterad"
 
-#: partials/header/search.php:5
+#: partials/header/mobile-panel-toggle.php:21 partials/header/search.php:22
+msgctxt "verb"
+msgid "Close"
+msgstr "Stänga"
+
+#: partials/header/search.php:13
 msgctxt "verb"
 msgid "Search"
 msgstr "Sök"

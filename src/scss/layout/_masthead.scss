@@ -168,10 +168,6 @@
 			padding-right: spacing(m);
 		}
 
-		.icon--cross {
-			display: none;
-		}
-
 		@include breakpointMax(l) {
 			svg {
 				margin-left: 0;
@@ -183,14 +179,6 @@
 
 			svg {
 				background-color: $header-search-color-alt;
-			}
-
-			.icon--search {
-				display: none;
-			}
-
-			.icon--cross {
-				display: inline;
 			}
 
 			~ #header-search {
