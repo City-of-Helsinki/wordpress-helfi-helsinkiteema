@@ -787,15 +787,11 @@ function jsScrollTop(event) {
       elements.form.addEventListener('focusin', _handleFocusIn);
       elements.form.addEventListener('focusout', _handleFocusOut);
 
-      elements.toggle.setAttribute('aria-label', _toggleCloseText());
-
       _isOpen = true;
     }
 
     function _closeSearch() {
       if (_isOpen) {
-        elements.toggle.setAttribute('aria-label', _toggleOpenText());
-
         _isOpen = false;
 
         document.removeEventListener('click', _handleOffClick);
@@ -812,14 +808,6 @@ function jsScrollTop(event) {
 
     function _toggleIsExpanded() {
       return elements.toggle.getAttribute('aria-expanded') === 'true';
-    }
-
-    function _toggleCloseText() {
-      return elements.toggle.dataset.textExpanded.concat(' ', elements.toggle.dataset.text.toLowerCase());
-    }
-
-    function _toggleOpenText() {
-      return elements.toggle.dataset.text;
     }
 
     function _escKeyPressed(event) {
@@ -872,8 +860,8 @@ function isSearch( target ) {
     return target.id === 'header-search';
 }
 
-function getHeaderSearchInput() {
-    return document.getElementById('search-input');
+function getHeaderSearchInput( search ) {
+    return search.querySelector('input[type="search"]');
 }
 
 jsSidebarNavInit();
@@ -1111,7 +1099,7 @@ function jsToggleOpen(toggle, target) {
   target.classList.add('active');
 
   if (isSearch(target)) {
-    setFocus(getHeaderSearchInput());
+    setFocus(getHeaderSearchInput(target));
   }
 
   if ( ifControlsNoScroll(toggle) ) {
