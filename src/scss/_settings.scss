@@ -59,6 +59,8 @@ $default-opacity-hover: 0.8 !default;
 $global-margin: var(--spacing-layout-s) !default;
 $global-padding: var(--spacing-layout-s) !default;
 
+$global-max-width: 1920px !default;
+
 /* ========== TRANSITIONS ========== */
 $default-transition-time: .3s !default;
 $default-transition: all $default-transition-time !default;
@@ -107,7 +109,7 @@ $paragraph-margin-bottom: var(--spacing-l) !default;
 /* ==================== HEADER ==================== */
 
 /* ========== GENERAL ========== */
-$header-max-width: 1920px !default;
+$header-max-width: $global-max-width !default;
 $header-border: $default-border-width $default-border-style $medium-gray !default;
 
 /* ========== MENU ========== */
