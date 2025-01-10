@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 function helsinki_menu(string $location)
 {
 	$config = helsinki_menu_config($location);
@@ -92,8 +96,8 @@ function helsinki_menu_config(string $location)
 		case 'footer_menu':
 			return array(
 				'theme_location'    => $location,
-				'container'         => 'nav',
-				'container_class'   => 'footer__navigation',
+				'container'         => false,
+				'container_class'   => '',
 				'container_id'      => '',
 				'depth'             => 1,
 				'menu_id'           => 'footer-menu',
