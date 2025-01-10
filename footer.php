@@ -1,56 +1,55 @@
-  <?php
+			<?php
 
-    /**
-      * Hook: helsinki_main_bottom
-      *
-      */
-    do_action('helsinki_main_bottom');
+				/**
+				 * Hook: helsinki_main_bottom
+				 *
+				 */
+				do_action( 'helsinki_main_bottom' );
 
-  ?>
+				?>
 
-  </main>
+			</main>
 
-  <?php
+			<?php
 
-    /**
-      * Hook: helsinki_footer_before
-      *
-      */
-    do_action('helsinki_footer_before');
+				/**
+				 * Hook: helsinki_footer_before
+				 *
+				 */
+				do_action( 'helsinki_footer_before' );
 
-  ?>
-    
-  <?php ob_start(); ?>
-  <footer id="footer" class="<?php helsinki_footer_classes(); ?>" role="contentinfo">
+			?>
 
-    <?php
+			<?php ob_start(); ?>
+			<footer id="footer" class="<?php helsinki_footer_classes(); ?>" role="contentinfo">
 
-      /**
-        * Hook: helsinki_footer
-        *
-        */
-      do_action('helsinki_footer');
+				<?php
 
-    ?>
+					/**
+					 * Hook: helsinki_footer
+					 *
+					 */
+					do_action( 'helsinki_footer' );
 
-  </footer>
+				?>
 
-  <?php 
-      $footer = ob_get_clean();
-      echo apply_filters( 'helsinki_footer_output', $footer,)
-    ?>
+			</footer>
 
-  <?php
+			<?php
 
-    /**
-      * Hook: helsinki_footer_after
-      *
-      */
-    do_action('helsinki_footer_after');
+				/**
+				 * Hook: helsinki_footer_after
+				 *
+				 */
+				do_action( 'helsinki_footer_after' );
 
-    wp_footer();
+			?>
 
-  ?>
+			<?php echo apply_filters( 'helsinki_footer_output', ob_get_clean() ); ?>
 
-  </body>
+		</div> <!-- .layout-wrap -->
+
+	<?php wp_footer(); ?>
+
+	</body>
 </html>
