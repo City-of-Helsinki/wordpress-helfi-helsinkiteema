@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <nav id="main-menu-nav" class="navigation__menu show-for-l" aria-labelledby="main-menu-nav-label">
 	<span id="main-menu-nav-label" class="screen-reader-text">
-		<?php echo esc_html_x( 'Main menu', 'Registered menu name', 'helsinki-universal' ); ?>
+		<?php echo esc_html_x( 'Main menu', 'Label - Nav - Main menu', 'helsinki-universal' ); ?>
 	</span>
 	<div class="hds-container hds-container--wide">
 		<?php echo helsinki_menu('main_menu'); ?>
