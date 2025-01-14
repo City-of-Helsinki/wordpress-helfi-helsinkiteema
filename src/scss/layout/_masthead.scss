@@ -427,6 +427,8 @@
 
 	svg {
 		background-color: $anchor-color;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&[aria-expanded="true"] {
