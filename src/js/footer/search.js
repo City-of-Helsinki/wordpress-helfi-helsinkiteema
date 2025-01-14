@@ -31,11 +31,11 @@
     }
 
     function _handleOffClick(event) {
-      _isOffClick(event) && _closeSearch();
+      _isOffClick(event) && _closeSearch(true);
     }
 
     function _handleKeyup(event) {
-      _escKeyPressed(event) && _closeSearch();
+      _escKeyPressed(event) && _closeSearch(true);
     }
 
     function _handleFocusIn(event) {
@@ -56,7 +56,7 @@
       _isOpen = true;
     }
 
-    function _closeSearch() {
+    function _closeSearch(offclick) {
       if (_isOpen) {
         _isOpen = false;
 
@@ -66,7 +66,9 @@
         elements.form.removeEventListener('focusin', _handleFocusIn);
         elements.form.removeEventListener('focusout', _handleFocusOut);
 
-        jsToggleClose(elements.toggle, elements.container);
+        if(offclick) {
+          jsToggleClose(elements.toggle, elements.container);
+        }
 
         _isInFocus = false;
       }
