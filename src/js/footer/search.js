@@ -43,7 +43,7 @@
     }
 
     function _handleFocusOut(event) {
-      _isFocusOut(event) && _closeSearch();
+      _isFocusOut(event) && _closeSearch(true);
     }
 
     function _openSearch() {
