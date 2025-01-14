@@ -66,18 +66,23 @@
 		<!-- Footer - Buttons -->
 
 		<div class="cmplz-buttons">
-			<button class="cmplz-btn cmplz-accept"><?php esc_html_e('Accept all cookies', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-deny"><?php esc_html_e('Accept required cookies only', 'helsinki-universal') ?></button>
+			<button class="hds-button hds-button--secondary cmplz-accept">
+				<?php esc_html_e('Accept all cookies', 'helsinki-universal') ?>
+			</button>
+			<button class="hds-button hds-button--secondary cmplz-deny">
+				<?php esc_html_e('Accept required cookies only', 'helsinki-universal') ?>
+			</button>
 			<button
 				id="cmplz-cookie-banner-categories-toggle-<?php echo $unique; ?>"
-				class="cmplz-btn cmplz-view-preferences"
+				class="hds-button hds-button--secondary cmplz-view-preferences"
 				aria-controls="cmplz-cookie-banner-categories-<?php echo $unique; ?>"
 				aria-expanded="false"
-				onClick="this.setAttribute('aria-expanded', 'true'); this.hidden = true;">
+				onClick="this.setAttribute('aria-expanded', 'true');">
 				<?php esc_html_e('Show cookie settings', 'helsinki-universal') ?>
 			</button>
-			<button class="cmplz-btn cmplz-save-preferences"><?php esc_html_e('Accept selected cookies', 'helsinki-universal') ?></button>
-			<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">{manage_options}</a>
+			<button class="hds-button hds-button--secondary cmplz-save-preferences">
+				<?php esc_html_e('Accept selected cookies', 'helsinki-universal') ?>
+			</button>
 
 			<?php do_action("cmplz_after_buttons")?>
 		</div>
