@@ -51,7 +51,7 @@ class Helsinki_Link_Symbol_Handler
 			$content .= call_user_func( array( $this, $icon_callback ), $custom_classes );
 		}
 
-	    $newBeginTag = str_replace('>', $extra_attrs . '>', $begintag );
+	    $newBeginTag = str_replace('>', ' ' . $extra_attrs . '>', $begintag );
 
 	    return sprintf( '%s%s%s%s', $newBeginTag, $content, $endtag, $svgafter );
 	}
