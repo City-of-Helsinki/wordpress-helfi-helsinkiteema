@@ -2,7 +2,7 @@
 
 class Artcloud_Menu_Walker extends Walker_Nav_Menu
 {
-
+	private string $list_item_tag = 'li';
 	public $submenu_id = 0;
 
 	function start_lvl(&$output, $depth = 0, $args = array())
@@ -71,7 +71,7 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu
 		// $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
 		// $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		$output .= $indent . '<li' . $class_names . '>';
+		$output .= $indent . sprintf( '<%s%s>', $this->list_item_tag, $class_names );
 
 		$atts = array(
 			'title' => $item->attr_title ?? '',
@@ -161,10 +161,60 @@ class Artcloud_Menu_Walker extends Walker_Nav_Menu
 
 	public function end_el(&$output, $item, $depth = 0, $args = array())
 	{
-		$output .= $this->discard_item_spacing($args) ? '</li>' : "</li>\n";
+		$output .= sprintf( '</%s>', $this->list_item_tag );
+
+		if ( $this->discard_item_spacing($args) ) {
+			$output .= "\n";
+		}
 	}
 
+	public function walk( $elements, $max_depth, ...$args )
+	{
+		if ( $this->has_only_one_item( $elements ) ) {
+			$this->wrap_item_in_div( true );
+			add_filter( 'wp_nav_menu', array( $this, 'replace_menu_ul_with_div' ), 10, 2 );
+		} else {
+			$this->wrap_item_in_div( false );
+		}
 
+		return parent::walk( $elements, $max_depth, ...$args );
+	}
+
+	public function replace_menu_ul_with_div( string $nav_menu, \stdClass $args ): string
+	{
+		$ul_open = strpos( $nav_menu, '<ul' );
+		if ( $ul_open !== false ) {
+		    $nav_menu = $this->substring_replace( '<ul', $nav_menu, '<div', $ul_open );
+
+			$ul_close = strrpos( $nav_menu, '</ul>' );
+			if ( $ul_close !== false ) {
+			    $nav_menu = $this->substring_replace( '</ul>', $nav_menu, '</div>', $ul_close );
+			}
+		}
+
+		remove_filter( 'wp_nav_menu', array( $this, 'replace_menu_ul_with_div' ), 10, 2 );
+
+		return $nav_menu;
+	}
+
+	private function substring_replace( string $needle, string $haystack, string $replace, int $offset ): string
+	{
+		return substr_replace( $haystack, $replace, $offset, strlen( $needle ) );
+	}
+
+	private function has_only_one_item( array $elements ): bool
+	{
+		return count( $elements) === 1;
+	}
+
+	private function wrap_item_in_div( bool $use_div ): void
+	{
+		if ( $use_div ) {
+			$this->list_item_tag = 'div';
+		} else {
+			$this->list_item_tag = 'li';
+		}
+	}
 
 	public function add_submenu_toggle($args, $depth)
 	{
