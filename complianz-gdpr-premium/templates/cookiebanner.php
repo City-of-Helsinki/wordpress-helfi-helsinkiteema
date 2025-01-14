@@ -54,9 +54,6 @@
 		</div>
 
 		<!-- Footer -->
-		<!-- Footer - Divider -->
-
-		<div class="cmplz-divider cmplz-footer"></div>
 
 		<!-- Footer - Hyperlinks Legal Documents -->
 		<div class="cmplz-links cmplz-documents">
@@ -66,7 +63,19 @@
 			<?php do_action("cmplz_after_documents")?>
 		</div>
 
-		<!-- Body - Categories -->
+		<!-- Footer - Buttons -->
+
+		<div class="cmplz-buttons">
+			<button class="cmplz-btn cmplz-accept"><?php esc_html_e('Accept all cookies', 'helsinki-universal') ?></button>
+			<button class="cmplz-btn cmplz-deny"><?php esc_html_e('Accept required cookies only', 'helsinki-universal') ?></button>
+			<button class="cmplz-btn cmplz-view-preferences"><?php esc_html_e('Show cookie settings', 'helsinki-universal') ?></button>
+			<button class="cmplz-btn cmplz-save-preferences"><?php esc_html_e('Accept selected cookies', 'helsinki-universal') ?></button>
+			<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">{manage_options}</a>
+
+			<?php do_action("cmplz_after_buttons")?>
+		</div>
+
+		<!-- Footer - Categories -->
 
 		<!-- categories start -->
 		<div class="cookie-categories-wrap">
@@ -142,18 +151,6 @@
 		</div><!-- categories end -->
 
 		<?php do_action('cmplz_banner_after_categories' ) ?>
-
-		<!-- Footer - Buttons -->
-
-		<div class="cmplz-buttons">
-			<button class="cmplz-btn cmplz-accept"><?php esc_html_e('Accept all cookies', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-deny"><?php esc_html_e('Accept required cookies only', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-view-preferences"><?php esc_html_e('Show cookie settings', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-save-preferences"><?php esc_html_e('Accept selected cookies', 'helsinki-universal') ?></button>
-			<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">{manage_options}</a>
-
-			<?php do_action("cmplz_after_buttons")?>
-		</div>
 
 	</div>
 
