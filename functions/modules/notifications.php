@@ -114,7 +114,7 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 			'id' => md5( $type . $text ),
 			'type' => $type,
 			'icon' => helsinki_get_svg_icon( $icon[$type] ),
-			'text' => helsinki_add_links_symbols( $text, 'inline-icon', true ),
+			'text' => $text,
 			'title' => $title,
 		)
 	);
