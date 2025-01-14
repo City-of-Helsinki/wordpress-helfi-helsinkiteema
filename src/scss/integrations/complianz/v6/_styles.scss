@@ -1,6 +1,7 @@
 body #cmplz-cookiebanner-container .cmplz-cookiebanner {
-	background-color: var(--color-bus);
-	color: $white;
+	background-color: $white;
+  border-top: 8px solid var(--color-bus) !important;
+	color: $black;
   display: block;
 	opacity: 1;
 	transition: opacity 1s ease;
@@ -30,7 +31,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 			}
 
 			&__title {
-				color: $white;
+				color: $black;
 				font-size: fontsize-heading(m);
 				margin-bottom: spacing(m);
 			}
@@ -56,10 +57,6 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 
 		.cmplz-categories-wrap {
 			margin-bottom: spacing(m);
-
-			.cmplz-category {
-				color: $white !important;
-			}
 
 			@include breakpoint(l) {
 				margin-bottom: 0;
@@ -102,6 +99,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 			min-width: unset !important;
 			transition: all .3s;
 		}
+
+    .hds-button {
+      &:focus,
+      &:focus-within {
+        outline-color: var(--color-bus);
+      }
+    }
 	}
 
 	.cc-compliance {
@@ -414,17 +418,6 @@ body .cc-revoke {
 	.cc-window {
 		display: none;
 	}
-}
-
-#cc-window input[type="checkbox"],
-#cmplz-manage-consent-container input[type="checkbox"] {
-	width: initial;
-	-webkit-appearance: checkbox;
-}
-
-#cc-window input[type="checkbox"]:checked::before,
-#cmplz-manage-consent-container input[type="checkbox"]:checked::before {
-	content: '';
 }
 
 /*
