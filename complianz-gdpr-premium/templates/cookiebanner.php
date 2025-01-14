@@ -68,7 +68,14 @@
 		<div class="cmplz-buttons">
 			<button class="cmplz-btn cmplz-accept"><?php esc_html_e('Accept all cookies', 'helsinki-universal') ?></button>
 			<button class="cmplz-btn cmplz-deny"><?php esc_html_e('Accept required cookies only', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-view-preferences"><?php esc_html_e('Show cookie settings', 'helsinki-universal') ?></button>
+			<button
+				id="cmplz-cookie-banner-categories-toggle-<?php echo $unique; ?>"
+				class="cmplz-btn cmplz-view-preferences"
+				aria-controls="cmplz-cookie-banner-categories-<?php echo $unique; ?>"
+				aria-expanded="false"
+				onClick="this.setAttribute('aria-expanded', 'true'); this.hidden = true;">
+				<?php esc_html_e('Show cookie settings', 'helsinki-universal') ?>
+			</button>
 			<button class="cmplz-btn cmplz-save-preferences"><?php esc_html_e('Accept selected cookies', 'helsinki-universal') ?></button>
 			<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">{manage_options}</a>
 
@@ -78,73 +85,71 @@
 		<!-- Footer - Categories -->
 
 		<!-- categories start -->
-		<div class="cookie-categories-wrap">
+		<div
+			id="cmplz-cookie-banner-categories-<?php echo $unique; ?>"
+			class="cookie-categories-wrap"
+			aria-labelledby="cmplz-cookie-banner-categories-toggle-<?php echo $unique; ?>">
 			<div class="cmplz-categories">
 				<div class="cmplz-categories-inner">
 					<!-- Body - Categories - Functional -->
 					<div class="cmplz-categories-wrap">
-						<label class="cmplz-category cmplz-functional" for="cmplz-functional-{consent_type}-<?php echo $unique; ?>">
-							<div class="cmplz-slider-checkbox">
-								<input type="checkbox"
-										aria-checked="true"
-										id="cmplz-functional-{consent_type}-<?php echo $unique; ?>"
-										data-category="cmplz_functional"
-										class="cmplz-consent-checkbox cmplz-functional"
-										size="40"
-										value="1"
-										disabled />
-								<span class="cmplz-slider cmplz-round"></span>
-							</div>
-							<span class="cmplz-label" tabindex="0">{category_functional}</span>
-						</label>
+						<div class="hds-checkbox">
+							<input type="checkbox"
+									aria-checked="true"
+									id="cmplz-functional-{consent_type}-<?php echo $unique; ?>"
+									data-category="cmplz_functional"
+									class="hds-checkbox__input cmplz-functional"
+									size="40"
+									value="1"
+									disabled />
+							<label class="hds-checkbox__label cmplz-functional" for="cmplz-functional-{consent_type}-<?php echo $unique; ?>">
+								{category_functional}
+							</label>
+						</div>
 					</div>
 
 					<!-- Body - Categories - Preferences -->
 					<div class="cmplz-categories-wrap">
-						<label class="cmplz-category cmplz-preferences" for="cmplz-preferences-{consent_type}-<?php echo $unique; ?>">
-							<div class="cmplz-slider-checkbox">
-								<input type="checkbox"
-										id="cmplz-preferences-{consent_type}-<?php echo $unique; ?>"
-										data-category="cmplz_preferences"
-										class="cmplz-consent-checkbox cmplz-preferences"
-										size="40"
-										value="1"/>
-								<span class="cmplz-slider cmplz-round"></span>
-							</div>
-							<span class="cmplz-label" tabindex="0">{category_preferences}</span>
-						</label>
+						<div class="hds-checkbox">
+							<input type="checkbox"
+									data-category="cmplz_preferences"
+									class="hds-checkbox__input cmplz-preferences"
+									size="40"
+									value="1"/>
+							<label class="hds-checkbox__label cmplz-preferences">
+								{category_preferences}
+							</label>
+						</div>
 					</div>
 
 					<!-- Body - Categories - Statistics -->
 					<div class="cmplz-categories-wrap">
-						<label class="cmplz-category cmplz-statistics" for="cmplz-statistics-{consent_type}-<?php echo $unique; ?>">
-							<div class="cmplz-slider-checkbox">
-								<input type="checkbox"
-										id="cmplz-statistics-{consent_type}-<?php echo $unique; ?>"
-										data-category="cmplz_statistics"
-										class="cmplz-consent-checkbox cmplz-statistics"
-										size="40"
-										value="1"/>
-								<span class="cmplz-slider cmplz-round"></span>
-							</div>
-							<span class="cmplz-label" tabindex="0">{category_statistics}</span>
-						</label>
+						<div class="hds-checkbox">
+							<input type="checkbox"
+									id="cmplz-statistics-{consent_type}-<?php echo $unique; ?>"
+									data-category="cmplz_statistics"
+									class="hds-checkbox__input cmplz-statistics"
+									size="40"
+									value="1"/>
+							<label class="hds-checkbox__label cmplz-statistics" for="cmplz-statistics-{consent_type}-<?php echo $unique; ?>">
+								{category_statistics}
+							</label>
+						</div>
 					</div>
 
 					<!-- Body - Categories - Marketing -->
 					<div class="cmplz-categories-wrap">
-						<label class="cmplz-category cmplz-marketing" for="cmplz-marketing-{consent_type}-<?php echo $unique; ?>">
-							<div class="cmplz-slider-checkbox">
-								<input type="checkbox"
-										id="cmplz-marketing-{consent_type}-<?php echo $unique; ?>"
-										data-category="cmplz_marketing"
-										class="cmplz-consent-checkbox cmplz-marketing"
-										size="40"
-										value="1"/>
-								<span class="cmplz-slider cmplz-round"></span>
-							</div>
-							<span class="cmplz-label" tabindex="0">{category_marketing}</span>
-						</label>
+						<div class="hds-checkbox">
+							<input type="checkbox"
+									id="cmplz-marketing-{consent_type}-<?php echo $unique; ?>"
+									data-category="cmplz_marketing"
+									class="hds-checkbox__input cmplz-marketing"
+									size="40"
+									value="1"/>
+							<label class="hds-checkbox__label cmplz-marketing" for="cmplz-marketing-{consent_type}-<?php echo $unique; ?>">
+								{category_marketing}
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>

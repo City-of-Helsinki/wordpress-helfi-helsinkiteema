@@ -498,20 +498,20 @@ body .cc-revoke {
 	}
 	// .cmplz-slider-checkbox
 
-	label {
-		color: inherit;
-		font-weight: normal;
-		margin-bottom: 0;
-		line-height: inherit;
-		box-sizing: initial;
-
-		&:not(.cc-check) {
-			white-space: nowrap;
-			margin-right: 15px;
-			margin-left: 0;
-			padding-left: 0;
-		}
-	}
+	// label {
+	// 	color: inherit;
+	// 	font-weight: normal;
+	// 	margin-bottom: 0;
+	// 	line-height: inherit;
+	// 	box-sizing: initial;
+	//
+	// 	&:not(.cc-check) {
+	// 		white-space: nowrap;
+	// 		margin-right: 15px;
+	// 		margin-left: 0;
+	// 		padding-left: 0;
+	// 	}
+	// }
 
 	div {
 		&.cc-check {
@@ -576,9 +576,9 @@ body .cc-revoke {
 
 	.cmplz-categories-wrap {
 
-		label {
-			box-sizing: initial;
-		}
+		// label {
+		// 	box-sizing: initial;
+		// }
 
 		.cc-check {
 			cursor: pointer;

@@ -49,7 +49,6 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
     margin-top: spacing(s);
 
 		@include breakpoint(l) {
-			justify-content: right;
 			flex-grow: 2;
 			padding-right: spacing(l);
 			width: auto;
@@ -78,6 +77,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		.cmplz-categories-inner {
 			display: flex;
 			flex-wrap: wrap;
+      gap: var(--spacing-s);
 
 			.cmplz-category {
 				background: none;
@@ -583,20 +583,20 @@ body .cc-revoke {
 	}
 	// .cmplz-slider-checkbox
 
-	label {
-		color: inherit;
-		font-weight: normal;
-		margin-bottom: 0;
-		line-height: inherit;
-		box-sizing: initial;
-
-		&:not(.cc-check) {
-			white-space: nowrap;
-			margin-right: 15px;
-			margin-left: 0;
-			padding-left: 0;
-		}
-	}
+	// label {
+	// 	color: inherit;
+	// 	font-weight: normal;
+	// 	margin-bottom: 0;
+	// 	line-height: inherit;
+	// 	box-sizing: initial;
+  //
+	// 	&:not(.cc-check) {
+	// 		white-space: nowrap;
+	// 		margin-right: 15px;
+	// 		margin-left: 0;
+	// 		padding-left: 0;
+	// 	}
+	// }
 
 	div {
 		&.cc-check {
@@ -661,9 +661,9 @@ body .cc-revoke {
 
 	.cmplz-categories-wrap {
 
-		label {
-			box-sizing: initial;
-		}
+		// label {
+		// 	box-sizing: initial;
+		// }
 
 		.cc-check {
 			cursor: pointer;
