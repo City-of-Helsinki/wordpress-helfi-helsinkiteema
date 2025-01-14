@@ -9,7 +9,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	top: initial;
 	bottom: 0;
 	left: 0;
-	overflow: hidden;
+	overflow: hidden auto;
 	max-width: 100%;
 	width: 100%;
 	border-style: none;
@@ -56,11 +56,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		}
 
 		.cmplz-categories-wrap {
-			margin-bottom: spacing(m);
-
 			@include breakpoint(l) {
-				margin-bottom: 0;
-
 				.cmplz-category {
 					font-size: fontsize-body(l);
 				}
@@ -74,7 +70,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		.cmplz-categories-inner {
 			display: flex;
 			flex-wrap: wrap;
-      gap: var(--spacing-s);
+      gap: var(--spacing-m) var(--spacing-s);
 
 			.cmplz-category {
 				background: none;
