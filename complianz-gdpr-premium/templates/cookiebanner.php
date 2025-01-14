@@ -37,7 +37,7 @@
 							esc_html_x('uses cookies', 'cookie notice title prefix', 'helsinki-universal')
 						); ?>
 					</h2>
-					<p id="cmplz-message-{id}-{consent_type}"><?php _e('This website uses required cookies to ensure the basic functionality and performance. In addition, we use targeting cookies to improve the user experience, perform analytics and display personalised content.', 'helsinki-universal') ?></p>
+					<p id="cmplz-message-{id}-{consent_type}"><?php esc_html_e('This website uses required cookies to ensure the basic functionality and performance. In addition, we use targeting cookies to improve the user experience, perform analytics and display personalised content.', 'helsinki-universal') ?></p>
 				</div>
 			</div>
 
@@ -46,9 +46,9 @@
 		<!-- Body - Hyperlinks for TCF -->
 
 		<div class="cmplz-links cmplz-information">
-			<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container"><?php _e("Manage options","complianz-gdpr")?></a>
-			<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview"><?php _e("Manage services","complianz-gdpr")?></a>
-			<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper"><?php _e("Manage vendors","complianz-gdpr")?></a>
+			<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container"><?php esc_html_e("Manage options","complianz-gdpr")?></a>
+			<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview"><?php esc_html_e("Manage services","complianz-gdpr")?></a>
+			<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper"><?php esc_html_e("Manage vendors","complianz-gdpr")?></a>
 			<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/"><?php _e("Read more about these purposes","complianz-gdpr")?></a>
 			<?php do_action("cmplz_after_links")?>
 		</div>
@@ -146,10 +146,10 @@
 		<!-- Footer - Buttons -->
 
 		<div class="cmplz-buttons">
-			<button class="cmplz-btn cmplz-accept"><?php _e('Accept all cookies', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-deny"><?php _e('Accept required cookies only', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-view-preferences"><?php _e('Show cookie settings', 'helsinki-universal') ?></button>
-			<button class="cmplz-btn cmplz-save-preferences"><?php _e('Accept selected cookies', 'helsinki-universal') ?></button>
+			<button class="cmplz-btn cmplz-accept"><?php esc_html_e('Accept all cookies', 'helsinki-universal') ?></button>
+			<button class="cmplz-btn cmplz-deny"><?php esc_html_e('Accept required cookies only', 'helsinki-universal') ?></button>
+			<button class="cmplz-btn cmplz-view-preferences"><?php esc_html_e('Show cookie settings', 'helsinki-universal') ?></button>
+			<button class="cmplz-btn cmplz-save-preferences"><?php esc_html_e('Accept selected cookies', 'helsinki-universal') ?></button>
 			<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">{manage_options}</a>
 
 			<?php do_action("cmplz_after_buttons")?>
