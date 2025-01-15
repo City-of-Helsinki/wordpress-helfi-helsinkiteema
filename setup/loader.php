@@ -39,6 +39,10 @@ function helsinki_files(): array {
 			'metaboxes',
 		],
 		'inc' => [
+			'classes' => [
+				'class-helsinki-soft-hyphens-handler',
+				'class-helsinki-soft-hyphens-hooks-adapter',
+			],
 			'filters',
 			'walkers',
 			'taxonomy-thumbnails'
@@ -101,6 +105,7 @@ function helsinki_files(): array {
 			'classes',
 			'class-helsinki-link-symbol-handler',
 			'links',
+			'soft-hyphens',
 			'misc',
 		],
 		'integrations' => [],
