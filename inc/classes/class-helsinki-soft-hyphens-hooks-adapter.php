@@ -13,8 +13,13 @@ class Helsinki_Soft_Hyphens_Hooks_Adapter
 		$this->handler = $handler;
 	}
 
-	public function handle_content( string $content ): string
+	public function aria_hide_soft_hyphens( string $content ): string
 	{
-		return $this->handler->handle( $content );
+		return $this->handler->aria_hide_soft_hyphens( $content );
+	}
+
+	public function remove_soft_hyphens( string $content ): string
+	{
+		return $this->handler->remove_soft_hyphens( $content );
 	}
 }
