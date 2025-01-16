@@ -101,6 +101,7 @@ function helsinki_files(): array {
 			'classes',
 			'class-helsinki-link-symbol-handler',
 			'links',
+			'soft-hyphens',
 			'misc',
 		],
 		'integrations' => [],

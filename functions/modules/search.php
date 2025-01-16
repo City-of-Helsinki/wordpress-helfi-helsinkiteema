@@ -1,9 +1,25 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists('helsinki_search_form') ) {
 	function helsinki_search_form() {
-		get_search_form();
+		do_action( 'helsinki_search_form', '' );
 	}
+}
+
+function helsinki_provide_search_form( string $name ): void {
+	get_search_form( array(
+		'echo' => true,
+		'aria_label' => '',
+		'id' => $name,
+	) );
+}
+
+function helsinki_search_page_search_form(): void {
+	do_action( 'helsinki_search_form', 'search-page' );
 }
 
 function helsinki_search_sidebar() {

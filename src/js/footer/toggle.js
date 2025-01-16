@@ -42,7 +42,7 @@ function jsToggleOpen(toggle, target) {
   target.classList.add('active');
 
   if (isSearch(target)) {
-    setFocus(getHeaderSearchInput());
+    setFocus(getHeaderSearchInput(target));
   }
 
   if ( ifControlsNoScroll(toggle) ) {

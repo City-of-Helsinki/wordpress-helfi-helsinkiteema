@@ -1,6 +1,7 @@
 body #cmplz-cookiebanner-container .cmplz-cookiebanner {
-	background-color: var(--color-bus);
-	color: $white;
+	background-color: $white;
+  border-top: 8px solid var(--color-bus) !important;
+	color: $black;
   display: block;
 	opacity: 1;
 	transition: opacity 1s ease;
@@ -8,7 +9,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	top: initial;
 	bottom: 0;
 	left: 0;
-	overflow: hidden;
+	overflow: hidden auto;
 	max-width: 100%;
 	width: 100%;
 	border-style: none;
@@ -30,7 +31,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 			}
 
 			&__title {
-				color: $white;
+				color: $black;
 				font-size: fontsize-heading(m);
 				margin-bottom: spacing(m);
 			}
@@ -49,22 +50,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
     margin-top: spacing(s);
 
 		@include breakpoint(l) {
-			justify-content: right;
 			flex-grow: 2;
 			padding-right: spacing(l);
 			width: auto;
 		}
 
 		.cmplz-categories-wrap {
-			margin-bottom: spacing(m);
-
-			.cmplz-category {
-				color: $white !important;
-			}
-
 			@include breakpoint(l) {
-				margin-bottom: 0;
-
 				.cmplz-category {
 					font-size: fontsize-body(l);
 				}
@@ -78,6 +70,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		.cmplz-categories-inner {
 			display: flex;
 			flex-wrap: wrap;
+      gap: var(--spacing-m) var(--spacing-s);
 
 			.cmplz-category {
 				background: none;
@@ -102,6 +95,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 			min-width: unset !important;
 			transition: all .3s;
 		}
+
+    .hds-button {
+      &:focus,
+      &:focus-within {
+        outline-color: var(--color-bus);
+      }
+    }
 	}
 
 	.cc-compliance {
@@ -416,17 +416,6 @@ body .cc-revoke {
 	}
 }
 
-#cc-window input[type="checkbox"],
-#cmplz-manage-consent-container input[type="checkbox"] {
-	width: initial;
-	-webkit-appearance: checkbox;
-}
-
-#cc-window input[type="checkbox"]:checked::before,
-#cmplz-manage-consent-container input[type="checkbox"]:checked::before {
-	content: '';
-}
-
 /*
 * Hide revoke button
 * prevent overriding by script by using !important
@@ -583,20 +572,20 @@ body .cc-revoke {
 	}
 	// .cmplz-slider-checkbox
 
-	label {
-		color: inherit;
-		font-weight: normal;
-		margin-bottom: 0;
-		line-height: inherit;
-		box-sizing: initial;
-
-		&:not(.cc-check) {
-			white-space: nowrap;
-			margin-right: 15px;
-			margin-left: 0;
-			padding-left: 0;
-		}
-	}
+	// label {
+	// 	color: inherit;
+	// 	font-weight: normal;
+	// 	margin-bottom: 0;
+	// 	line-height: inherit;
+	// 	box-sizing: initial;
+  //
+	// 	&:not(.cc-check) {
+	// 		white-space: nowrap;
+	// 		margin-right: 15px;
+	// 		margin-left: 0;
+	// 		padding-left: 0;
+	// 	}
+	// }
 
 	div {
 		&.cc-check {
@@ -661,9 +650,9 @@ body .cc-revoke {
 
 	.cmplz-categories-wrap {
 
-		label {
-			box-sizing: initial;
-		}
+		// label {
+		// 	box-sizing: initial;
+		// }
 
 		.cc-check {
 			cursor: pointer;

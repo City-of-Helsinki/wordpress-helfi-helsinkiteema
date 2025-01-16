@@ -97,6 +97,10 @@ function helsinki_is_static_front_page() {
 	}
 }
 
+function helsinki_is_child_theme(): bool {
+	return get_template_directory() !== get_stylesheet_directory();
+}
+
 /**
   * Element attributes
   */
