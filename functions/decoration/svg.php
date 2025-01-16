@@ -55,16 +55,23 @@ function helsinki_svg_icon( string $key ) {
 	echo helsinki_get_svg_icon($key);
 }
 
-function helsinki_get_svg_icon( string $key, string $extra_classes = '', string $aria_label = '' ) {
-	$aria_attribute = $aria_label ? sprintf('aria-label="%s"', $aria_label) : 'aria-hidden="true"';
-	return sprintf(
-		'<svg class="icon mask-icon icon--%s hds-icon--%s %s" viewBox="%s" %s tabindex="-1"></svg>',
-		$key,
-		$key,
-		$extra_classes,
-		helsinki_svg_view_box($key),
-		$aria_attribute,
+function helsinki_get_svg_icon( string $key, string $extra_classes = '', string $aria_label = '', string $role = '' ) {
+	$attributes = array(
+		sprintf(
+			'class="icon mask-icon icon--%1$s hds-icon--%1$s %2$s"',
+			esc_attr( $key ),
+			esc_attr( $extra_classes )
+		),
+		sprintf( 'viewBox="%s"', helsinki_svg_view_box( $key ) ),
+		$aria_label ? sprintf( 'aria-label="%s"', esc_attr( $aria_label ) ) : 'aria-hidden="true"',
+		'tabindex="-1"'
 	);
+
+	if ( $role ) {
+		$attributes[] = sprintf( 'role="%s"', esc_attr( $role ) );
+	}
+
+	return sprintf( '<svg %s></svg>', implode( ' ', $attributes ) );
 }
 
 /**

@@ -1,5 +1,6 @@
 body #cmplz-cookiebanner-container .cmplz-cookiebanner {
   z-index: 9999;
+  max-height: 80vh;
 
   .cmplz-cookiebanner__container {
   	display: flex;
@@ -33,7 +34,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 			}
 
 			&__title {
-				color: $white;
+				color: $black;
 				font-size: fontsize-heading(m);
 				margin: 0 0 spacing(s);
 			}

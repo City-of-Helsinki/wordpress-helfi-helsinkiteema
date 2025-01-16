@@ -1,6 +1,27 @@
-<button id="mobile-panel-toggle" class="button-reset has-icon has-icon--above hide-for-l js-toggle js-toggle-no-scroll" type="button" aria-expanded="false" aria-controls="mobile-panel" data-text-expanded="<?php esc_attr_e( 'Close', 'helsinki-universal' ); ?>" data-text="<?php esc_attr_e('Menu', 'helsinki-universal'); ?>" data-screen-reader-text="<?php esc_attr_e('Open the navigation menu', 'helsinki-universal'); ?>" data-screen-reader-text-expanded="<?php esc_attr_e('Close the navigation menu', 'helsinki-universal'); ?>" data-no-scroll-breakpoint="992" data-no-scroll-limit="down">
-	<?php helsinki_svg_icon('menu-hamburger'); ?>
-	<?php helsinki_svg_icon('cross'); ?>
-	<span class="text" aria-hidden="true"><?php esc_html_e('Menu', 'helsinki-universal'); ?></span>
-	<span class="screen-reader-text"><?php esc_html_e('Open the navigation menu', 'helsinki-universal'); ?></span>
+<button
+	id="mobile-panel-toggle"
+	class="button-reset has-icon has-icon--above hide-for-l js-toggle js-toggle-no-scroll"
+	type="button"
+	aria-expanded="false"
+	aria-controls="mobile-panel"
+	data-no-scroll-breakpoint="992"
+	data-no-scroll-limit="down">
+	<span class="js-toggle__open">
+		<?php helsinki_svg_icon( 'menu-hamburger' ); ?>
+		<span class="text" aria-hidden="true">
+			<?php echo esc_html_x( 'Menu', 'Label', 'helsinki-universal' ); ?>
+		</span>
+		<span class="screen-reader-text">
+			<?php echo esc_html_x( 'Open the navigation menu', 'Label - Toggle - Mobile menu', 'helsinki-universal' ); ?>
+		</span>
+	</span>
+	<span class="js-toggle__close">
+		<?php helsinki_svg_icon( 'cross' ); ?>
+		<span class="text" aria-hidden="true">
+			<?php echo esc_html_x( 'Close', 'verb', 'helsinki-universal' ); ?>
+		</span>
+		<span class="screen-reader-text">
+			<?php echo esc_html_x( 'Close the navigation menu', 'Label - Toggle - Mobile menu', 'helsinki-universal' ); ?>
+		</span>
+	</span>
 </button>

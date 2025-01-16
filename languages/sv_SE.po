@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2023-12-13 06:44+0000\n"
+"PO-Revision-Date: 2025-01-10 15:21+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -17,16 +17,16 @@ msgstr "&amp;larr; Äldre kommentarer"
 msgid "(Edit comment)"
 msgstr "(Redigera kommentar)"
 
-#: functions/links.php:54 functions/modules/notifications.php:110
+#: functions/class-helsinki-link-symbol-handler.php:164
 #: partials/search/links.php:8 partials/search/links.php:15
 msgid "(Link leads to external service)"
 msgstr "(Länk leder till extern tjänst)"
 
-#: functions/links.php:40
+#: functions/class-helsinki-link-symbol-handler.php:146
 msgid "(Link opens default mail program)"
 msgstr "(Länk öppnar standardprogram för e-post)"
 
-#: functions/links.php:47
+#: functions/class-helsinki-link-symbol-handler.php:155
 msgid "(Link starts a phone call)"
 msgstr "(Link startar ett telefonsamtal)"
 
@@ -38,15 +38,15 @@ msgstr "404 - Tyvärr hittas inte sidan du sökte"
 msgid "A multipurpose WordPress theme"
 msgstr "Ett WordPress-tema för flera ändamål"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:153
+#: complianz-gdpr-premium/templates/cookiebanner.php:149
 msgid "Accept all cookies"
 msgstr "Acceptera alla kakor"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:154
+#: complianz-gdpr-premium/templates/cookiebanner.php:150
 msgid "Accept required cookies only"
 msgstr "Acceptera endast nödvändiga"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:156
+#: complianz-gdpr-premium/templates/cookiebanner.php:152
 msgid "Accept selected cookies"
 msgstr "Acceptera valda kakor"
 
@@ -75,6 +75,7 @@ msgid "Background image"
 msgstr "Bakgrundsbild"
 
 #. Name of the template
+#: template/no-sidebar.php:2
 msgid "Basic page without sidebar"
 msgstr "Grundläggande sida utan sidofält"
 
@@ -113,26 +114,21 @@ msgstr ""
 "Den här funktionen inaktiveras, så bygg förstasidesavsnitt genom "
 "framsideblockredigeraren. Se till att hålla \"Innehåll\" aktivt."
 
-#: functions/layout/header.php:77
+#: functions/layout/topbar.php:56
 msgid "City of Helsinki"
 msgstr "Helsingfors stad"
 
-#: setup/assets.php:128 partials/header/mobile-panel-toggle.php:1
-#: partials/header/search.php:2
+#: setup/assets.php:127
 msgid "Close"
 msgstr "Stänga"
 
-#: partials/header/menu.php:6
+#: partials/header/menu.php:14
 msgid "Close Menu"
 msgstr "Stäng menyn"
 
 #: partials/notification/notice.php:5
 msgid "Close notification"
 msgstr "Stäng avisering"
-
-#: partials/header/mobile-panel-toggle.php:1
-msgid "Close the navigation menu"
-msgstr "Stäng navigeringsmenyn"
 
 #: customizer/config/choices.php:19
 msgid "Coat of Arms"
@@ -169,7 +165,6 @@ msgid "Copper"
 msgstr "Koppar"
 
 #: partials/loop/pagination.php:47
-#, php-format
 msgid "Currently on page %d"
 msgstr "För närvarande på sidan %d"
 
@@ -259,7 +254,7 @@ msgstr "Sidans sidofält"
 #: customizer/config/header.php:69
 msgctxt "Customizer section title"
 msgid "Primary menu"
-msgstr ""
+msgstr "Primär meny"
 
 #: customizer/config/header.php:24
 msgctxt "Customizer section title"
@@ -294,7 +289,7 @@ msgstr "Yoast SEO krävs för att installeras"
 #: customizer/config/header.php:79
 msgctxt "Customizer setting description"
 msgid "Three levels of hierarchy on large and small screens"
-msgstr ""
+msgstr "Tre nivåer av hierarki på stora och små skärmar"
 
 #: customizer/config/header.php:80
 msgctxt "Customizer setting description"
@@ -302,6 +297,8 @@ msgid ""
 "Two levels of hierarchy for large screens and five levels of hierarchy for "
 "small screens"
 msgstr ""
+"Två nivåer av hierarki för stora skärmar och fem nivåer av hierarki för små "
+"skärmar"
 
 #: customizer/config/choices.php:18
 msgid "Default"
@@ -380,7 +377,7 @@ msgstr "Första sidan"
 msgid "Fog"
 msgstr "Dimma"
 
-#: setup/theme.php:136
+#: setup/theme.php:137
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Sidfot"
@@ -395,11 +392,11 @@ msgstr "%s"
 msgid "Front page"
 msgstr "Startsida"
 
-#: setup/assets.php:131
+#: setup/assets.php:130
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
-#: functions/layout/header.php:95 partials/content/not-found.php:10
+#: functions/layout/topbar.php:74 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Ge respons"
@@ -416,13 +413,13 @@ msgstr "Gå till hel.fi webbplats"
 msgid "Gold"
 msgstr "Guld"
 
-#: block-editor/metaboxes.php:36
+#: block-editor/metaboxes.php:31
 msgid "Heading"
 msgstr "Rubrik"
 
 #: setup/theme.php:59
 msgid "Helsinki"
-msgstr ""
+msgstr "Helsingfors"
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -464,10 +461,6 @@ msgstr "Bild: "
 msgid "Info"
 msgstr "Info"
 
-#: customizer/config/notifications.php:61
-msgid "Is external?"
-msgstr "Är extern?"
-
 #: customizer/config/choices.php:37
 msgctxt "Koros motif"
 msgid "Basic"
@@ -502,12 +495,53 @@ msgstr "Bränning"
 msgid "Koroshape"
 msgstr "Koroform"
 
-#: searchform.php:3
+#: partials/header/mobile-panel-toggle.php:12
+msgctxt "Label"
+msgid "Menu"
+msgstr "Navigeringsmeny"
+
+#: searchform.php:20
 msgctxt "label"
 msgid "Search by keyword"
 msgstr "Sök efter nyckelord"
 
+#: partials/footer/menu.php:8
+msgctxt "Label - Nav - Footer menu"
+msgid "Additional information"
+msgstr "Ytterligare information"
+
+#: partials/header/menu.php:8
+msgctxt "Label - Nav - Main menu"
+msgid "Main menu"
+msgstr "Huvudmeny"
+
+#: partials/header/mobile-menu.php:8
+msgctxt "Label - Nav - Mobile menu"
+msgid "Navigation menu"
+msgstr "Navigationsmeny"
+
+#: partials/header/mobile-panel-toggle.php:24
+msgctxt "Label - Toggle - Mobile menu"
+msgid "Close the navigation menu"
+msgstr "Stäng navigeringsmenyn"
+
+#: partials/header/mobile-panel-toggle.php:15
+msgctxt "Label - Toggle - Mobile menu"
+msgid "Open the navigation menu"
+msgstr "Öppna navigeringsmenyn"
+
+#: partials/header/search.php:25
+msgctxt "Label - Toggle - Search"
+msgid "Close site search"
+msgstr "Stäng webbplatssökning"
+
+#: partials/header/search.php:16
+msgctxt "Label - Toggle - Search"
+msgid "Search from site"
+msgstr "Sök på webbplatsen"
+
 #. Name of the template
+#: template/landing-page.php:2
 msgid "Landing Page"
 msgstr "Landningssida"
 
@@ -546,12 +580,7 @@ msgstr "Inloggad som %1$s. <a href=\"%2$s\">Logga ut?</a>"
 
 #: customizer/config/header.php:76
 msgid "Main menu information hierarchy levels"
-msgstr ""
-
-#: partials/header/mobile-panel-toggle.php:1
-#: partials/header/mobile-panel-toggle.php:4
-msgid "Menu"
-msgstr "Navigeringsmeny"
+msgstr "Huvudmeny informationshierarkinivåer"
 
 #: customizer/config/choices.php:26
 msgid "Metro"
@@ -565,7 +594,7 @@ msgstr "Nyare"
 msgid "Newer Comments &amp;rarr;"
 msgstr "Nyare kommentarer &amp;rarr;"
 
-#: setup/assets.php:129 partials/loop/pagination.php:28
+#: setup/assets.php:128 partials/loop/pagination.php:28
 #: partials/loop/pagination.php:71
 msgid "Next"
 msgstr "Nästa"
@@ -598,13 +627,7 @@ msgstr "Äldre"
 msgid "On this page"
 msgstr "På den här sidan"
 
-#: partials/header/mobile-panel-toggle.php:1
-#: partials/header/mobile-panel-toggle.php:5
-msgid "Open the navigation menu"
-msgstr "Öppna navigeringsmenyn"
-
 #: partials/loop/pagination.php:55
-#, php-format
 msgid "Page %d"
 msgstr "Sida %d"
 
@@ -612,20 +635,20 @@ msgstr "Sida %d"
 msgid "Page navigation"
 msgstr "Sidnavigering"
 
-#: setup/theme.php:135
+#: setup/theme.php:136
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sida"
 
-#: patterns/basic-page.php:13
+#: patterns/basic-page.php:3 patterns/basic-page.php:13
 msgctxt "Pattern title"
 msgid "Basic page"
-msgstr ""
+msgstr "Grundläggande sida"
 
-#: patterns/front-page.php:13
+#: patterns/front-page.php:3 patterns/front-page.php:13
 msgctxt "Pattern title"
 msgid "Front page"
-msgstr ""
+msgstr "Första sidan"
 
 #: functions/media/meta.php:32
 #, php-format
@@ -647,7 +670,7 @@ msgstr "Abstrakt"
 msgid "Post count"
 msgstr "Antal inlägg"
 
-#: setup/theme.php:134
+#: setup/theme.php:135
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr "Artikel"
@@ -657,7 +680,7 @@ msgctxt "posts count"
 msgid "search results"
 msgstr "sökresultat"
 
-#: setup/assets.php:130 partials/loop/pagination.php:31
+#: setup/assets.php:129 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr "Tidigare"
 
@@ -669,7 +692,7 @@ msgstr "Föregående sida"
 msgid "Published"
 msgstr "Publicerad"
 
-#: partials/loop/entry-grid.php:8
+#: functions/layout/entries/elements.php:75
 msgid "Published:"
 msgstr "Publicerad:"
 
@@ -706,8 +729,7 @@ msgctxt "RSS feed source(s)"
 msgid "This feed is fetched from %s."
 msgstr "Detta flöde hämtas från %s."
 
-#: functions/layout/view.php:42 partials/header/search.php:2
-#: partials/header/search.php:2
+#: functions/layout/view.php:42
 msgid "Search"
 msgstr "Sök"
 
@@ -715,12 +737,12 @@ msgstr "Sök"
 msgid "Search on hel.fi"
 msgstr "Sök på hel.fi"
 
-#: searchform.php:7
+#: searchform.php:29
 msgctxt "search submit"
 msgid "Search"
 msgstr "Sök"
 
-#: partials/header/search.php:9 partials/search/form-title.php:1
+#: partials/header/search.php:31 partials/search/form-title.php:1
 msgctxt "search title"
 msgid "Search the site"
 msgstr "Sök på webbplatsen"
@@ -739,6 +761,9 @@ msgid ""
 "on small screens only if the sites pages have a side menu. Otherwise, select "
 "three hierarchy levels."
 msgstr ""
+"Välj två nivåer av hierarki på stora skärmar och fem nivåer av hierarki på "
+"små skärmar endast om webbplatsens sidor har en sidomeny. Annars väljer du "
+"tre hierarkinivåer."
 
 #: functions/modules/social.php:52
 msgid "Share on Facebook"
@@ -756,7 +781,7 @@ msgstr "Dela på Twitter"
 msgid "Share this on"
 msgstr "Dela detta på"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:155
+#: complianz-gdpr-premium/templates/cookiebanner.php:151
 msgid "Show cookie settings"
 msgstr "Visa kakinställningarna"
 
@@ -770,11 +795,11 @@ msgstr "Visa inlägg från en kategori"
 
 #: inc/walkers.php:372
 msgid "Show side navigation"
-msgstr ""
+msgstr "Visa sidonavigering"
 
 #: inc/walkers.php:370
 msgid "Side navigation"
-msgstr ""
+msgstr "Sidnavigering"
 
 #: block-editor/metaboxes.php:6
 msgid "Sidebar"
@@ -800,7 +825,7 @@ msgstr "Suomenlinna"
 msgid "Tags"
 msgstr "Taggar"
 
-#: block-editor/metaboxes.php:44 customizer/config/notifications.php:49
+#: block-editor/metaboxes.php:45 customizer/config/notifications.php:49
 msgid "Text"
 msgstr "Text"
 
@@ -821,6 +846,8 @@ msgid ""
 "The side navigation is displayed on this page and on all its subpages, if "
 "the Basic page template is used on the page."
 msgstr ""
+"Sidnavigeringen visas på denna sida och på alla dess undersidor, om "
+"sidmallen Basic används på sidan."
 
 #: partials/content/none.php:15
 msgid "This author has not published any posts yet."
@@ -862,7 +889,12 @@ msgstr "Typ"
 msgid "Updated"
 msgstr "Uppdaterad"
 
-#: partials/header/search.php:5
+#: partials/header/mobile-panel-toggle.php:21 partials/header/search.php:22
+msgctxt "verb"
+msgid "Close"
+msgstr "Stänga"
+
+#: partials/header/search.php:13
 msgctxt "verb"
 msgid "Search"
 msgstr "Sök"

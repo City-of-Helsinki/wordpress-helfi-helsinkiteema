@@ -27,6 +27,54 @@ function jsCloseClick(event) {
 	}
 }
 
+(() => {
+  window.addEventListener('load', _adjustFooterBottomMargin);
+  document.addEventListener('cmplz_banner_status', _handleCookieBannerStatus);
+
+  const _bodyClass = 'helsinki-cookiebanner-visible';
+  const _footerResizer = _debounce(_adjustFooterBottomMargin, 500);
+  const _footer = document.querySelector('.layout-wrap #footer');
+  const _banner = document.querySelector('#cmplz-cookiebanner-container .cmplz-cookiebanner');
+
+  function _handleCookieBannerStatus(event) {
+    _toggleCookieBannerBodyClass(_isCookieBannerVisible(event));
+  }
+
+  function _isCookieBannerVisible(event) {
+    return event.detail && 'show' === event.detail;
+  }
+
+  function _toggleCookieBannerBodyClass(visible) {
+    if (visible) {
+      document.body.classList.add(_bodyClass);
+      window.addEventListener('resize', _footerResizer);
+      _adjustFooterBottomMargin();
+    } else {
+      document.body.classList.remove(_bodyClass);
+      window.removeEventListener('resize', _footerResizer);
+      _adjustFooterBottomMargin();
+    }
+  }
+
+  function _adjustFooterBottomMargin() {
+    if (_footer) {
+      _footer.style.marginBottom = _cookieBannerHeight();
+    }
+  }
+
+  function _cookieBannerHeight() {
+    return (_banner) ? _banner.offsetHeight + 'px' : 0;
+  }
+
+  function _debounce(func, time = 100){
+    var timer;
+    return (event) => {
+      if(timer) clearTimeout(timer);
+      timer = setTimeout(func, time, event);
+    };
+  }
+})();
+
 function controlledElement(controller) {
   return document.getElementById(controller.getAttribute('aria-controls'));
 }
@@ -765,11 +813,11 @@ function jsScrollTop(event) {
     }
 
     function _handleOffClick(event) {
-      _isOffClick(event) && _closeSearch();
+      _isOffClick(event) && _closeSearch(true);
     }
 
     function _handleKeyup(event) {
-      _escKeyPressed(event) && _closeSearch();
+      _escKeyPressed(event) && _closeSearch(true);
     }
 
     function _handleFocusIn(event) {
@@ -777,7 +825,7 @@ function jsScrollTop(event) {
     }
 
     function _handleFocusOut(event) {
-      _isFocusOut(event) && _closeSearch();
+      _isFocusOut(event) && _closeSearch(true);
     }
 
     function _openSearch() {
@@ -787,15 +835,11 @@ function jsScrollTop(event) {
       elements.form.addEventListener('focusin', _handleFocusIn);
       elements.form.addEventListener('focusout', _handleFocusOut);
 
-      elements.toggle.setAttribute('aria-label', _toggleCloseText());
-
       _isOpen = true;
     }
 
-    function _closeSearch() {
+    function _closeSearch(offclick) {
       if (_isOpen) {
-        elements.toggle.setAttribute('aria-label', _toggleOpenText());
-
         _isOpen = false;
 
         document.removeEventListener('click', _handleOffClick);
@@ -804,7 +848,9 @@ function jsScrollTop(event) {
         elements.form.removeEventListener('focusin', _handleFocusIn);
         elements.form.removeEventListener('focusout', _handleFocusOut);
 
-        jsToggleClose(elements.toggle, elements.container);
+        if(offclick) {
+          jsToggleClose(elements.toggle, elements.container);
+        }
 
         _isInFocus = false;
       }
@@ -812,14 +858,6 @@ function jsScrollTop(event) {
 
     function _toggleIsExpanded() {
       return elements.toggle.getAttribute('aria-expanded') === 'true';
-    }
-
-    function _toggleCloseText() {
-      return elements.toggle.dataset.textExpanded.concat(' ', elements.toggle.dataset.text.toLowerCase());
-    }
-
-    function _toggleOpenText() {
-      return elements.toggle.dataset.text;
     }
 
     function _escKeyPressed(event) {
@@ -872,8 +910,8 @@ function isSearch( target ) {
     return target.id === 'header-search';
 }
 
-function getHeaderSearchInput() {
-    return document.getElementById('search-input');
+function getHeaderSearchInput( search ) {
+    return search.querySelector('input[type="search"]');
 }
 
 jsSidebarNavInit();
@@ -1111,7 +1149,7 @@ function jsToggleOpen(toggle, target) {
   target.classList.add('active');
 
   if (isSearch(target)) {
-    setFocus(getHeaderSearchInput());
+    setFocus(getHeaderSearchInput(target));
   }
 
   if ( ifControlsNoScroll(toggle) ) {

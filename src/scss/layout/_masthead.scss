@@ -168,10 +168,6 @@
 			padding-right: spacing(m);
 		}
 
-		.icon--cross {
-			display: none;
-		}
-
 		@include breakpointMax(l) {
 			svg {
 				margin-left: 0;
@@ -183,14 +179,6 @@
 
 			svg {
 				background-color: $header-search-color-alt;
-			}
-
-			.icon--search {
-				display: none;
-			}
-
-			.icon--cross {
-				display: inline;
 			}
 
 			~ #header-search {
@@ -209,8 +197,9 @@
 		right: 0;
 		top: 100%;
 		left: 0;
+    right: 0;
 		height: 100vh;
-		width: 100vw;
+		width: 100%;
 		padding-top: spacing(layout-2-xl);
 		padding-bottom: spacing(layout-m);
 		position: absolute;
@@ -438,6 +427,8 @@
 
 	svg {
 		background-color: $anchor-color;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&[aria-expanded="true"] {

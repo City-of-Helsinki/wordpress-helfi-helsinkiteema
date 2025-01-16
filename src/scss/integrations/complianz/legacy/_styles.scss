@@ -1,6 +1,6 @@
 body #cc-window.cc-window {
-	background-color: var(--color-bus);
-	color: $white;
+	background-color: $white;
+	color: $black;
 	opacity: 1;
 	transition: opacity 1s ease;
 	padding: spacing(l) spacing(m) spacing(m);
@@ -35,7 +35,7 @@ body #cc-window.cc-window {
 			}
 
 			&__title {
-				color: $white;
+				color: $black;
 				font-size: fontsize-heading(m);
 				margin-bottom: spacing(m);
 			}
@@ -62,10 +62,6 @@ body #cc-window.cc-window {
 
 		.cmplz-categories-wrap {
 			margin-bottom: spacing(m);
-
-			.cc-category {
-				color: $white !important;
-			}
 
 			@include breakpoint(l) {
 				margin-bottom: 0;
@@ -342,16 +338,6 @@ body .cc-revoke {
   }
 }
 
-#cc-window input[type="checkbox"],
-#cmplz-manage-consent-container input[type="checkbox"] {
-  width: initial;
-  -webkit-appearance: checkbox;
-}
-#cc-window input[type="checkbox"]:checked::before,
-#cmplz-manage-consent-container input[type="checkbox"]:checked::before {
-  content: '';
-}
-
 /*
 * Hide revoke button
 * prevent overriding by script by using !important
@@ -498,20 +484,20 @@ body .cc-revoke {
 	}
 	// .cmplz-slider-checkbox
 
-	label {
-		color: inherit;
-		font-weight: normal;
-		margin-bottom: 0;
-		line-height: inherit;
-		box-sizing: initial;
-
-		&:not(.cc-check) {
-			white-space: nowrap;
-			margin-right: 15px;
-			margin-left: 0;
-			padding-left: 0;
-		}
-	}
+	// label {
+	// 	color: inherit;
+	// 	font-weight: normal;
+	// 	margin-bottom: 0;
+	// 	line-height: inherit;
+	// 	box-sizing: initial;
+	//
+	// 	&:not(.cc-check) {
+	// 		white-space: nowrap;
+	// 		margin-right: 15px;
+	// 		margin-left: 0;
+	// 		padding-left: 0;
+	// 	}
+	// }
 
 	div {
 		&.cc-check {
@@ -576,9 +562,9 @@ body .cc-revoke {
 
 	.cmplz-categories-wrap {
 
-		label {
-			box-sizing: initial;
-		}
+		// label {
+		// 	box-sizing: initial;
+		// }
 
 		.cc-check {
 			cursor: pointer;
