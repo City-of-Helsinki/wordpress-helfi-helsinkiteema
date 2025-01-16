@@ -100,22 +100,22 @@ gulp.task('notifications', function(){
 
 gulp.task('publicStyles', function() {
   return gulp.src(SOURCE.publicStyles)
-    .pipe(sass(sassOptions))
-		.pipe(gulp.dest(ASSETS.all))
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(gulp.dest(ASSETS.all))
     .pipe(prefix())
     .pipe(cleanCSS(cssOptions))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(ASSETS.all))
+    .pipe(gulp.dest(ASSETS.all));
 });
 
 gulp.task('adminStyles', function() {
   return gulp.src(SOURCE.adminStyles)
-    .pipe(sass(sassOptions))
-		.pipe(gulp.dest(ASSETS.adminStyles))
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(gulp.dest(ASSETS.adminStyles))
     .pipe(prefix())
     .pipe(cleanCSS(cssOptions))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(ASSETS.adminStyles))
+    .pipe(gulp.dest(ASSETS.adminStyles));
 });
 
 gulp.task(

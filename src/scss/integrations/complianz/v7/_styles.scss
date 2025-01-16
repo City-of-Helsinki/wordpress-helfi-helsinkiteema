@@ -1,4 +1,8 @@
 body #cmplz-cookiebanner-container .cmplz-cookiebanner {
+  background-color: $white;
+  border-top: 8px solid var(--color-bus);
+  border-radius: 0;
+  color: $black;
   z-index: 9999;
   max-height: 80vh;
 
