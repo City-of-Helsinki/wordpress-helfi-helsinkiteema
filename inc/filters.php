@@ -81,7 +81,7 @@ function helsinki_widget_recent_posts_args( $instance, $widget_instance, $args )
         // Set new value format to $the_date
         $the_date = mysql2date( $d, $post->post_date );
 
-        return $the_date;   
+        return $the_date;
     }, 10, 3 );
 
   }
@@ -161,10 +161,10 @@ add_filter( 'default_page_template_title', 'helsinki_basic_page_template_name', 
   */
   function helsinki_password_protected_page_form() {
     global $post;
-  
+
     $loginurl = site_url() . '/wp-login.php?action=postpass';
     $label = 'pwbox-' . ( ! empty( $post->ID ) ? $post->ID : rand() );
-  
+
     ob_start();
     ?>
     <form action="<?php echo esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ); ?>" class="post-password-form" method="post">
@@ -177,11 +177,11 @@ add_filter( 'default_page_template_title', 'helsinki_basic_page_template_name', 
         </div>
         <input class="hds-button button" type="submit" name="Submit" value="<?php echo esc_attr_x( 'Enter', 'post password form' ) ?>" />
     </form>
-        
-  
+
+
     <?php
     return ob_get_clean();
-}   
+}
 add_filter( 'the_password_form', 'helsinki_password_protected_page_form', 10 );
 
 /**
@@ -207,14 +207,13 @@ function helsinki_handle_helsinkichannel_embed( $matches, $attr, $url, $rawattr 
 /**
  * Image
  */
-
- function helsinki_image_render( $block_content = '', $block = [] ) {
+function helsinki_image_render( $block_content = '', $block = [] ) {
 	if ( empty( $block['blockName'] ) || 'core/image' !== $block['blockName'] ) {
 		return $block_content;
 	}
 
 	if (function_exists('helsinki_base_image_credit')) {
-    
+
     if (empty($block['attrs']['id'])) {
       return $block_content;
     }
@@ -250,3 +249,8 @@ function helsinki_handle_helsinkichannel_embed( $matches, $attr, $url, $rawattr 
 	return $block_content;
 }
 add_filter( 'render_block', 'helsinki_image_render', 10, 2 );
+
+/**
+ * Disable lazy loaded image auto sizes added in WP 6.7
+ */
+add_filter( 'wp_img_tag_add_auto_sizes', '__return_false' );
