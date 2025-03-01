@@ -1,6 +1,37 @@
 <?php
 
 /**
+ * Autoloader
+ */
+function helsinki_class_autoloader( $class ) {
+	$namespace = 'CityOfHelsinki\WordPress\Helsinki\Theme';
+
+	if ( false === stripos( $class, $namespace ) ) {
+		return;
+	}
+
+	$parts = array_filter(
+		explode(
+			DIRECTORY_SEPARATOR,
+			str_replace(
+				[$namespace, '\\'],
+				['', DIRECTORY_SEPARATOR],
+				$class
+			)
+		)
+	);
+
+	$class = array_pop( $parts );
+	$class = 'class-' . str_replace( '_', '-', strtolower( $class ) );
+
+	helsinki_include_file(
+		get_template_directory(),
+		helsinki_build_file_path( ...array_map( 'strtolower', $parts ) ),
+		$class
+	);
+}
+
+/**
  * Include theme files
  */
 function helsinki_load_files(): void {
