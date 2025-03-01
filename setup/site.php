@@ -1,9 +1,14 @@
 <?php
 
-function helsinki_setup_site() {
-	$theme_mods = helsinki_theme_mods();
-	//var_dump($theme_mods);
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
+use CityOfHelsinki\WordPress\Helsinki\Theme\Setup\Scheme\Theme_Scheme;
+use CityOfHelsinki\WordPress\Helsinki\Theme\Setup\Scheme\Theme_Scheme_Styles;
+use CityOfHelsinki\WordPress\Helsinki\Theme\Setup\Scheme\Theme_Scheme_Hooks;
+
+function helsinki_setup_site(): void {
 	/**
 	  * General
 	  */
@@ -12,10 +17,14 @@ function helsinki_setup_site() {
 		helsinki_koros_set_type($current_koros);
 	}
 
-	$current_scheme = helsinki_theme_mod('helsinki_general_style', 'scheme');
-	helsinki_set_current_scheme(
-		$current_scheme ?: helsinki_default_scheme()
-	);
+	$scheme = helsinki_create_theme_scheme_hooks();
+
+	add_filter( 'helsinki_scheme', array( $scheme, 'current_scheme' ) );
+	add_filter( 'helsinki_scheme_root_styles', array( $scheme, 'root_styles' ) );
+
+	add_action( 'wp_head', array( $scheme, 'print_inline_styles' ) );
+	add_action( 'admin_head', array( $scheme, 'print_inline_styles' ) );
+	add_action( 'helsinki_set_current_scheme', array( $scheme, 'set_scheme' ) );
 
 	if ( helsinki_theme_mod('helsinki_header_breadcrumbs', 'enabled') ) {
 		add_filter('helsinki_breadcrumbs_enabled', '__return_true');
@@ -75,4 +84,35 @@ function helsinki_setup_site() {
 	}
 
 	do_action( 'helsinki_site_setup_ready' );
+}
+
+function helsinki_create_theme_scheme_hooks(): Theme_Scheme_Hooks {
+	$hooks = helsinki_theme_scheme_hooks(
+		helsinki_config_colors(),
+		helsinki_customizer_choices_style_schemes(),
+		helsinki_default_scheme(),
+		helsinki_theme_mod( 'helsinki_general_style', 'scheme' )
+	);
+
+	return apply_filters( 'helsinki_theme_scheme_hooks', $hooks );
+}
+
+function helsinki_theme_scheme_hooks(
+	array $colors,
+	array $schemes,
+	string $default,
+	string $current = ''
+): Theme_Scheme_Hooks {
+	$scheme = new Theme_Scheme( $schemes, $default );
+
+	try {
+		$scheme->set_current( $current );
+	} catch (\Exception $e) {
+		error_log( $e->getMessage() );
+	}
+
+	return new Theme_Scheme_Hooks(
+		$scheme,
+		new Theme_Scheme_Styles( $colors )
+	);
 }
