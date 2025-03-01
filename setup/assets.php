@@ -149,69 +149,24 @@ function helsinki_script_localization() {
 /**
   * Theme schemes
   */
-function helsinki_set_current_scheme( string $scheme ) {
-	$valid = helsinki_customizer_choices_style_schemes();
-	if ( ! isset($valid[$scheme]) ) {
-		$scheme = helsinki_default_scheme();
-	}
-
-	add_filter(
-		'helsinki_scheme',
-		function() use ($scheme) {
-			return $scheme;
-		}
+function helsinki_set_current_scheme( string $scheme ): void {
+	trigger_error(
+		__FUNCTION__ . '() is deprecated. Use helsinki_set_current_scheme action instead.',
+		E_USER_DEPRECATED
 	);
 
-	add_action(
-		'wp_head',
-		function() use ($scheme) {
-			helsinki_scheme_root_styles($scheme);
-		}
-	);
+	error_log( print_r( debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS, 1 ), true ) );
 
-	add_action(
-		'admin_head',
-		function() use ($scheme) {
-			helsinki_scheme_root_styles($scheme);
-		}
-	);
+	do_action( 'helsinki_set_current_scheme', $scheme );
 }
 
-function helsinki_scheme_root_styles( string $scheme ) {
-	$config = helsinki_colors( $scheme );
-
-	$colors = apply_filters(
-		'helsinki_scheme_root_styles_colors',
-		array(
-			'--primary-color' => $config['primary']['color'] ?? '--color-' . $scheme,
-			'--primary-color-light' => $config['primary']['light'] ?? '--color-' . $scheme . '-light',
-			'--primary-color-medium' => $config['primary']['medium'] ?? '--color-' . $scheme . '-medium-light',
-			'--primary-color-dark' => $config['primary']['dark'] ?? '--color-' . $scheme . '-dark',
-			'--primary-content-color' => $config['primary']['content'] ?? '--color-' . $scheme . '-content',
-			'--primary-content-secondary-color' => $config['primary']['content-secondary'] ?? '--color-' . $scheme . '-content-secondary',
-			'--secondary-color' => $config['secondary'] ?? '',
-			'--secondary-content-color' => $config['secondary-content'] ?? '',
-			'--accent-color' => $config['accent'] ?? '',
-		),
-		$scheme,
-		$config
+function helsinki_scheme_root_styles( string $scheme ): void {
+	trigger_error(
+		__FUNCTION__ . '() is deprecated. Get scheme root styles via helsinki_scheme_root_styles filter.',
+		E_USER_DEPRECATED
 	);
 
-	$use_hex = apply_filters(
-		'helsinki_scheme_root_styles_use_hex',
-		! empty( sanitize_hex_color( $colors['--primary-color'] ) )
-	);
-
-	$properties = array();
-	foreach ( $colors as $key => $value ) {
-		$properties[] = sprintf(
-			'%s: %s;',
-			esc_attr($key),
-			$use_hex ? sanitize_hex_color( $value ) : 'var(' . esc_attr($value) . ')'
-		);
-	}
-
-	echo '<style>:root {' . implode( ' ', $properties ) . '}</style>';
+	error_log( print_r( debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS, 1 ), true ) );
 }
 
 function helsinki_scheme_body_class( $classes ) {
