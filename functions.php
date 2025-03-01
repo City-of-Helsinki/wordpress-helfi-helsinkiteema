@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  */
 require_once get_template_directory() . '/setup/loader.php';
+spl_autoload_register( __NAMESPACE__ . '\\helsinki_class_autoloader' );
+
 add_action('after_setup_theme', 'helsinki_load_files', 0);
 
 /**
