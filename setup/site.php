@@ -87,11 +87,13 @@ function helsinki_setup_site(): void {
 }
 
 function helsinki_create_theme_scheme_hooks(): Theme_Scheme_Hooks {
+	$current_scheme = helsinki_theme_mod( 'helsinki_general_style', 'scheme', '' );
+
 	$hooks = helsinki_theme_scheme_hooks(
 		helsinki_config_colors(),
 		helsinki_customizer_choices_style_schemes(),
 		helsinki_default_scheme(),
-		helsinki_theme_mod( 'helsinki_general_style', 'scheme' )
+		is_string( $current_scheme ) ? $current_scheme : ''
 	);
 
 	return apply_filters( 'helsinki_theme_scheme_hooks', $hooks );
