@@ -90,7 +90,7 @@ function helsinki_get_wp_editor_ajax_handler(): void {
 	die;
 }
 
-function helsinki_get_wp_editor( $content = '', $editor_id, $options = array() ): string {
+function helsinki_get_wp_editor( string $content, string $editor_id, array $options = array() ): string {
 	ob_start();
 
 	wp_editor( $content, $editor_id, $options );
