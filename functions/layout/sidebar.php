@@ -88,33 +88,34 @@ function helsinki_sidebar_params($params)
 }
 add_filter('dynamic_sidebar_params', 'helsinki_sidebar_params');
 
-add_filter('wp_nav_menu_objects', 'helsinki_get_submenu', 10, 2);
-function helsinki_get_submenu($items, $args)
-{
-
-	if (empty($args->context)) {
+add_filter( 'wp_nav_menu_objects', 'helsinki_get_submenu', 10, 2 );
+function helsinki_get_submenu( array $items, stdClass $args ): array {
+	if ( ! helsinki_is_menu_in_sidebar_context( $args ) ) {
 		return $items;
 	}
 
-	if ('sidebar' == $args->context) {
+	$parent_id = helsinki_get_current_submenu_pages_parent_id( $items );
+	$children = array_flip( helsinki_submenu_get_children_ids( $parent_id, $items ) );
 
-		$current_pages = array_filter($items, function ($item) {
-			return !empty(array_intersect(['current-menu-parent', 'current-menu-ancestor', 'current-menu-item'], $item->classes));
-		});
-		$current_pages = array_values($current_pages);
-		$parent_id = $current_pages[0]->ID;
-	}
+	return array_values( array_filter(
+		$items,
+		fn ( $item ) => ( $item->ID === $parent_id || isset( $children[$item->ID] ) )
+	) );
+}
 
-	$children = helsinki_submenu_get_children_ids($parent_id, $items);
+function helsinki_is_menu_in_sidebar_context( stdClass $args ): bool {
+	return isset( $args->context ) && 'sidebar' === $args->context;
+}
 
-	foreach ($items as $key => $item) {
-		if ($item->ID != $parent_id && !in_array($item->ID, $children)) {
-			unset($items[$key]);
-		}
-	}
-	$items = array_values($items);
+function helsinki_get_current_submenu_pages_parent_id( array $items ): int {
+	$compare_classes = ['current-menu-parent', 'current-menu-ancestor', 'current-menu-item'];
 
-	return $items;
+	$current_pages = array_values( array_filter(
+		$items,
+		fn ( $item ) => ! empty( array_intersect( $compare_classes , $item->classes ) )
+	) );
+
+	return $current_pages ? $current_pages[0]->ID : 0;
 }
 
 add_action('wp_update_nav_menu', 'helsinki_get_menu_items');
