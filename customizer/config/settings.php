@@ -91,7 +91,7 @@ function helsinki_setting_media(string $label, string $description = '', string 
 /**
  * Multicheckbox
  */
-function helsinki_setting_multicheckbox(string $label, string $description = '', array $choices, bool $sortable = false, array $default = array())
+function helsinki_setting_multicheckbox(string $label, string $description = '', array $choices = array(), bool $sortable = false, array $default = array())
 {
   return array(
     'config' => array(
@@ -150,7 +150,7 @@ function helsinki_sanitize_number($value)
 /**
  * Radio
  */
-function helsinki_setting_radio(string $label, string $description = '', array $choices, string $default = '')
+function helsinki_setting_radio(string $label, string $description = '', array $choices = array(), string $default = '')
 {
   return array(
     'config' => array(
@@ -185,7 +185,7 @@ function helsinki_sanitize_radio($input, $setting)
 /**
  * Select
  */
-function helsinki_setting_select(string $label, string $description = '', array $choices, string $default = '')
+function helsinki_setting_select(string $label, string $description = '', array $choices = array(), string $default = '')
 {
   return array(
     'config' => array(
