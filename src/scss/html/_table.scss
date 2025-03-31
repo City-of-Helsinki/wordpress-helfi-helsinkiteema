@@ -1,4 +1,4 @@
-table {
+table:not(.hds-react-component__date-input table) {
 	display: block;
 	/*border-collapse: separate !important;
 	border-spacing: 0;
@@ -31,7 +31,7 @@ table {
 
 }
 
-thead {
+thead:not(.hds-react-component__date-input thead) {
 	width: 100%;
 	background-color: var(--color-black-10);
 	border-top: 2px double var(--color-black-50);
@@ -48,7 +48,7 @@ thead {
 	}
 }
 
-tbody {
+tbody:not(.hds-react-component__date-input tbody) {
 	width: 100%;
 
 	tr {
@@ -65,7 +65,7 @@ tbody {
 	}
 }
 
-tfoot {
+tfoot:not(.hds-react-component__date-input tfoot) {
 	width: 100%;
 
 	td {
@@ -80,7 +80,7 @@ tfoot {
 	border-right: 2px double var(--color-black-50);
 }
 
-tr {
+tr:not(.hds-react-component__date-input tr) {
 	border-bottom: 1px solid var(--color-black-50);
 	&:not(:last-of-type) {
 		td {
@@ -98,17 +98,19 @@ tr {
 
 th {
 	font-weight: $table-heading-font-weight;
-	padding: $table-cell-padding !important;
 	white-space: normal;
-	min-width: 140px;
 	border: unset !important;
 }
 
 td {
-	padding: $table-cell-padding !important;
 	white-space: normal;
-	min-width: 140px;
 	border: unset !important;
+}
+
+th:not(.hds-react-component__date-input th),
+td:not(.hds-react-component__date-input td) {
+  padding: $table-cell-padding !important;
+  min-width: 140px;
 }
 
 figure.wp-block-table {
@@ -181,7 +183,7 @@ figure.wp-block-table {
 				}
 			}
 		}
-	
+
 	}
 
 	figcaption {
