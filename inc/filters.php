@@ -111,33 +111,60 @@ function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
 add_filter( 'widget_output', 'helsinki_sidebar_filter_widgets', 10, 4 );
 
 function helsinki_sidebar_filter_rss_links($output) {
-    if (empty($output)) {
-      return $output;
+    return $output
+		? helsinki_append_svg_icon_to_elements( $output, 'link-external', 'a', 'rsswidget' )
+		: $output;
+}
+
+function helsinki_append_svg_icon_to_elements( string $html, string $icon, string $element_selector, string $target_class ): string {
+	$dom = helsinki_create_dom_document_from_html( $html );
+
+    $icon = $dom->importNode( helsinki_create_svg_icon_dom_item( $icon ), true );
+    $elements = $dom->getElementsByTagName( $element_selector );
+
+    for ($i = 0; $i < $elements->count(); $i++) {
+        $element = $elements->item($i);
+
+        if ( $element->getAttribute('class') === $target_class ) {
+            $element->appendChild( $icon->cloneNode( true ) );
+        }
     }
 
-    $domIcon = new DOMDocument();
-    $domIcon->encoding = 'utf-8';
-    $domIcon->loadXML(helsinki_get_svg_icon('link-external'));
-    $icon = $domIcon->getElementsByTagName('svg');
-
-    $dom = new DOMDocument();
-    $dom->encoding = 'utf-8';
-    libxml_use_internal_errors(true);
-    $dom->loadHTML(mb_convert_encoding($output, 'HTML-ENTITIES', 'UTF-8'));
-    libxml_clear_errors();
-    $icon = $dom->importNode($icon->item(0), true);
-    $links = $dom->getElementsByTagName('a');
-    for ($i = 0; $i < $links->count(); $i++) {
-      $link = $links->item($i);
-      if ($link->getAttribute('class') == 'rsswidget') {
-        $cIcon = $icon->cloneNode(true);
-        $link->appendChild($cIcon);
-      }
-    }
     return $dom->saveHTML();
 }
 
-add_filter('helsinki_sidebar_output', 'helsinki_sidebar_filter_rss_links');
+function helsinki_create_dom_document_from_html( string $html ): DOMDocument {
+    $dom = new DOMDocument();
+    $dom->encoding = 'utf-8';
+
+    libxml_use_internal_errors(true);
+
+    $dom->loadHTML( helsinki_format_html_entities_utf8( $html ) );
+
+    libxml_clear_errors();
+
+    return $dom;
+}
+
+function helsinki_format_html_entities_utf8( string $html ): string {
+	return htmlspecialchars_decode(
+		mb_convert_encoding(
+			htmlentities( $html, ENT_COMPAT, 'utf-8', false ),
+			'ISO-8859-1',
+			'UTF-8'
+		)
+	);
+}
+
+function helsinki_create_svg_icon_dom_item( string $name ) {
+    $domIcon = new DOMDocument();
+    $domIcon->encoding = 'utf-8';
+    $domIcon->loadXML( helsinki_get_svg_icon( $name ) );
+
+    return $domIcon->getElementsByTagName('svg')->item(0);
+}
+
+add_filter( 'helsinki_sidebar_output', 'helsinki_sidebar_filter_rss_links' );
 add_filter( 'rss_widget_feed_link', '__return_false' );
 
 function helsinki_filter_category_dropdown_widget($output) {
