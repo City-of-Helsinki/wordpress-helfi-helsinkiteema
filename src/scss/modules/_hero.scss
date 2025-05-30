@@ -103,7 +103,7 @@
 
 
     .button {
-		
+
     }
 
     .hds-koros {
@@ -361,6 +361,13 @@
                         margin-bottom: 2px;
                     }
                 }
+
+                .hds-koros--wave-inverse {
+                  > svg {
+                      transform: translateY(100%);
+                      margin-bottom: 1px;
+                  }
+                }
             }
 
             .hero__thumbnail {
@@ -381,7 +388,7 @@
                         max-width: unset;
                     }
                 }
-	
+
             }
         }
     }
@@ -414,6 +421,15 @@
                 left: 0;
                 bottom: 0;
             }
+
+            &--wave-inverse {
+              background: transparent;
+
+              > svg {
+                margin-bottom: 1px;
+                transform: translateY(100%);
+              }
+            }
         }
 
         > .hero__thumbnail {
@@ -421,17 +437,17 @@
 
             .image-wrap--fixed-size {
                 padding-top: 0;
-    
+
                 img {
                     position: static;
                     transform: none;
                     max-width: none;
                     height: 400px;
                     object-fit: cover;
-    
+
                     @include breakpointMax('l') {
                         height: 300px;
-                    }    
+                    }
                 }
             }
         }
@@ -502,7 +518,7 @@
 
                 &--calm {
                     + .hero__thumbnail_caption {
-                        
+
                     }
                 }
 
@@ -523,11 +539,11 @@
                 &--beat {
                     height: 5px;
                 }
-    
+
                 &--vibration {
                     height: math.div($koros-size, 5);
                 }
-    
+
                 > svg {
                     position: absolute;
                     left: 0;
@@ -556,17 +572,17 @@
 
             .image-wrap--fixed-size {
                 padding-top: 0;
-    
+
                 img {
                     position: static;
                     transform: none;
                     max-width: none;
                     height: 400px;
                     object-fit: cover;
-    
+
                     @include breakpointMax('l') {
                         height: 300px;
-                    }    
+                    }
                 }
             }
 
@@ -577,7 +593,7 @@
             @include breakpoint('l') {
                 transform: translate(-50%,50%);
             }
-    
+
         }
 
         @include breakpoint('l') {
