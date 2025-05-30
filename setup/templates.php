@@ -222,6 +222,8 @@ function helsinki_setup_templates()
 					add_filter('body_class', 'helsinki_hero_body_class', 10);
 					add_action('helsinki_content_header_hero', 'helsinki_hero', 10);
 
+					add_filter( 'helsinki_koros_name', 'helsinki_determine_koros_name', 10, 3 );
+					add_filter( 'helsinki_koros_flipped', 'helsinki_determine_koros_flip', 10, 3 );
 					add_filter('helsinki_hero_class_koros', '__return_true');
 					add_action('helsinki_hero_after', 'helsinki_hero_koros', 10);
 
