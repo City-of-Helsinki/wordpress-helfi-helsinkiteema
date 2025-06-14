@@ -98,10 +98,10 @@ function helsinki_sidebar_filter_widgets($widget_output, $widget_type) {
     $tag = get_queried_object();
     if ($tag != null && $tag instanceof WP_TERM) {
       $tag_id = $tag->term_id;
-      $occurence;
-      preg_match('/class="tag-cloud-link tag-link-'.$tag_id.'/', $widget_output, $occurence, PREG_OFFSET_CAPTURE);
-      if (count($occurence) > 0) {
-        $widget_output = substr_replace($widget_output, 'aria-current="true"', $occurence[0][1], 0);
+      $occurrence;
+      preg_match('/class="tag-cloud-link tag-link-'.$tag_id.'/', $widget_output, $occurrence, PREG_OFFSET_CAPTURE);
+      if (count($occurrence) > 0) {
+        $widget_output = substr_replace($widget_output, 'aria-current="true"', $occurrence[0][1], 0);
         $widget_output = str_replace('tag-link-'.$tag_id, 'tag-link-'.$tag_id.' current_tag', $widget_output);
       }
     }

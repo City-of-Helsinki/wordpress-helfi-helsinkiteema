@@ -5,7 +5,7 @@ ol {
 }
 
 ul {
-  list-style: $list-unoredered-style;
+  list-style: $list-unordered-style;
   &.wp-block-page-list {
     li {
       margin-top: spacing('2-xs');  
@@ -18,7 +18,7 @@ ul {
 }
 
 ol {
-  list-style: $list-oredered-style;
+  list-style: $list-ordered-style;
 }
 
 dl {

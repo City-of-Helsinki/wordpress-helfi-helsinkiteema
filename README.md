@@ -30,7 +30,7 @@ Customizer settings config files are stored at `/customizer/config` and setup is
 ## Development
 
 ### Assets
-(S)CSS and JS source files are stored in `/src`. Asset complitation is done with [Gulp](https://gulpjs.com/) and the processed files can be found in `/assets`.
+(S)CSS and JS source files are stored in `/src`. Asset compilation is done with [Gulp](https://gulpjs.com/) and the processed files can be found in `/assets`.
 
 Install dependencies with `npm install`. Build assets with `gulp scripts` and `gulp styles` or watch changes with `gulp watch`.
 

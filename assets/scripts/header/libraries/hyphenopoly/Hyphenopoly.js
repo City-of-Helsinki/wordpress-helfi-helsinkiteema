@@ -91,7 +91,7 @@
 
             /**
              * The get-trap: get the value from userMap or else from defaults
-             * @param {Sring} key - The key to retrieve the value for
+             * @param {String} key - The key to retrieve the value for
              * @returns {*}
              */
             function get(key) {
@@ -102,7 +102,7 @@
 
             /**
              * The set-trap: set the value to userMap and don't touch defaults
-             * @param {Sring} key - The key for the value
+             * @param {String} key - The key for the value
              * @param {*} value - The value
              * @returns {*}
              */
@@ -288,7 +288,7 @@
          * Get language of element by searching its parents or fallback
          * @param {Object} el The element
          * @param {string} parentLang Lang of parent if available
-         * @param {boolean} fallback Will falback to mainlanguage
+         * @param {boolean} fallback Will fallback to mainlanguage
          * @returns {string|null} The language or null
          */
         function getLang(el, parentLang = "", fallback = true) {
@@ -534,7 +534,7 @@
         const wordRegExpPool = new Map();
 
         /**
-         * Hyphenate an entitiy (text string or Element-Object)
+         * Hyphenate an entity (text string or Element-Object)
          * @param {string} lang - the language of the string
          * @param {string} sel - the selectorName of settings
          * @param {string} entity - the entity to be hyphenated
@@ -834,7 +834,7 @@
             function registerSubstitutions(alphalen, exp) {
                 if (C.substitute.has(lang)) {
                     const subst = C.substitute.get(lang);
-                    subst.forEach((substituer, substituted) => {
+                    subst.forEach((substitute, substituted) => {
                         const substitutedU = substituted.toUpperCase();
                         const substitutedUcc = (substitutedU === substituted)
                             ? 0
@@ -842,7 +842,7 @@
                         alphalen = exp.subst(
                             substituted.charCodeAt(0),
                             substitutedUcc,
-                            substituer.charCodeAt(0)
+                            substitute.charCodeAt(0)
                         );
                     });
                 }
@@ -851,7 +851,7 @@
 
             /**
              * Instantiate the hyphenEngine
-             * @param {object} res - The fetched ressource
+             * @param {object} res - The fetched resource
              */
             function handleWasm(res) {
                 const exp = res.instance.exports;

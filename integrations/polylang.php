@@ -42,7 +42,7 @@ function helsinki_register_polylang_strings() {
 add_filter('language_attributes', 'helsinki_polylang_filter_html_attributes', 10, 2);
 
 function helsinki_polylang_filter_html_attributes($output, $doctype) {
-	$replacables = array(
+	$replaceables = array(
 		'lang="en-US"',
 		'lang="en-GB"',
 		'lang="en-AU"',
@@ -56,7 +56,7 @@ function helsinki_polylang_filter_html_attributes($output, $doctype) {
 		'lang="en"',
 		'lang="sv"',
 	);
-	$output = str_replace($replacables, $replacees, $output);
+	$output = str_replace($replaceables, $replacees, $output);
 	return $output;
 }
 

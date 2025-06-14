@@ -108,7 +108,7 @@ function helsinki_files(): array {
 				],
 				'footer',
 				'front-page',
-				'front-page-depracated',
+				'front-page-deprecated',
 				'header',
 				'loop',
 				'sidebar',

@@ -26,9 +26,9 @@ function helsinki_notifications() {
 		return;
 	}
 
-	$current_langugage = '';
+	$current_language = '';
 	if ( apply_filters( 'helsinki_polylang_active', false ) ) {
-		$current_langugage = pll_current_language( 'slug' );
+		$current_language = pll_current_language( 'slug' );
 	}
 
 	ob_start();
@@ -40,14 +40,14 @@ function helsinki_notifications() {
 		}
 
 		if (
-			$current_langugage &&
+			$current_language &&
 			! empty( $notice['lang'] ) &&
-			$current_langugage !== $notice['lang']
+			$current_language !== $notice['lang']
 		) {
 			continue;
 		}
 
-		helsinki_notification( $notice, $current_langugage );
+		helsinki_notification( $notice, $current_language );
 	}
 
 	$notices = ob_get_clean();
@@ -64,7 +64,7 @@ function helsinki_notifications() {
 /**
   * Elements
   */
-function helsinki_notification( array $notice, string $langugage = '' ) {
+function helsinki_notification( array $notice, string $language = '' ) {
 	$notice = shortcode_atts(
 		array(
 			'type' => 'info',
@@ -76,7 +76,7 @@ function helsinki_notification( array $notice, string $langugage = '' ) {
 		$notice
 	);
 
-	if ( $langugage ) {
+	if ( $language ) {
 		$notice = helsinki_notification_translated_texts( $notice );
 	}
 
