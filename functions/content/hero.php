@@ -176,6 +176,11 @@ function helsinki_hero_classes( string $default = '' ) {
 
 	if ( apply_filters( 'helsinki_hero_class_koros', false ) ) {
 		$classes[] = 'has-koros';
+
+		$type = apply_filters( 'helsinki_koros_type', helsinki_koros_type_basic() );
+		if ( $type ) {
+			$classes[] = 'has-koros--' . $type;
+		}
 	}
 
 	if ( apply_filters( 'helsinki_hero_class_call_to_action', false ) ) {
@@ -289,8 +294,10 @@ function helsinki_hero_koros_mobile( array $args = array() ) {
 }
 
 function helsinki_determine_koros_name( $name, string $type, string $id ) {
-	if ( 'wave' === $type && ! helsinki_hero_has_background_image() ) {
-		$inverse = array( 'page_hero_overlay', 'page_hero', 'page_hero_mobile' );
+	if ( 'wave' === $type ) {
+		$inverse = helsinki_hero_has_background_image()
+			? array( 'page_hero_mobile' )
+			: array( 'page_hero_overlay', 'page_hero' );
 
 		return in_array( $id, $inverse ) ? 'inverse' : $name;
 	}
@@ -300,7 +307,9 @@ function helsinki_determine_koros_name( $name, string $type, string $id ) {
 
 function helsinki_determine_koros_flip( bool $flipped, string $type, string $id ) {
 	if ( 'wave' === $type ) {
-		$no_flip = array( 'page_hero_overlay', 'page_hero', 'page_hero_mobile' );
+		$no_flip = helsinki_hero_has_background_image()
+			? array( 'page_hero_mobile' )
+			: array( 'page_hero_overlay', 'page_hero' );
 
 		return in_array( $id, $no_flip ) ? false : $flipped;
 	}
@@ -321,10 +330,8 @@ function helsinki_hero_decoration_arrow() {
   */
 function helsinki_hero_actions() {
 
-	if ( ! helsinki_hero_has_background_image() ) {
-		add_filter( 'helsinki_koros_name', 'helsinki_determine_koros_name', 10, 3 );
-		add_filter( 'helsinki_koros_flipped', 'helsinki_determine_koros_flip', 10, 3 );
-	}
+	add_filter( 'helsinki_koros_name', 'helsinki_determine_koros_name', 10, 3 );
+	add_filter( 'helsinki_koros_flipped', 'helsinki_determine_koros_flip', 10, 3 );
 
 	add_filter( 'helsinki_hero_class_koros', '__return_true' );
 	add_action( 'helsinki_hero_after', 'helsinki_hero_koros', 10 );
