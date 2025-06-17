@@ -12,9 +12,6 @@
 
 			</div>
 
-			<div class="entry__more">
-				<?php helsinki_svg_icon('arrow-right'); ?>
-			</div>
 		</div>
 
 		<?php do_action( 'helsinki_entry_content_after', get_post(), 'grid', $args ); ?>
