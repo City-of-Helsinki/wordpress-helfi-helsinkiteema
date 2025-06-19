@@ -3,9 +3,11 @@ a {
   text-decoration: underline;
   transition: $default-transition;
   display: inline-block;
+  text-decoration-thickness: rem-calc(1);
+  text-underline-offset: 10%;
 
   &:hover {
-    text-decoration: none;
+    text-decoration-thickness: rem-calc(2);
   }
 
   &:focus {
