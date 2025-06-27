@@ -8,7 +8,7 @@ ul {
   list-style: $list-unoredered-style;
   &.wp-block-page-list {
     li {
-      margin-top: spacing('2-xs');  
+      margin-top: spacing('2-xs');
     }
   }
   &.wp-block-navigation__submenu-container {
@@ -68,21 +68,4 @@ dd {
 			}
 		}
 	}
-}
-
-//for editor
-ol, ul {
-
-  &.wp-block-list {
-    li {
-      + li {
-        margin-top: spacing('2-xs');
-      }
-
-      ol, ul {
-        margin-top: spacing('2-xs') !important;
-        margin-bottom: 0;
-      }
-    }
-  }
 }
