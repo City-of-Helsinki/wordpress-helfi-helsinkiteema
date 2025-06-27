@@ -53,7 +53,8 @@ function helsinki_cmplz_cookiebanner_settings( $settings ) {
 		$settings,
 		helsinki_complianz_cookiebanner_styles()
 	);
-	if (cmplz_version < '6.0.0') {
+
+	if ( helsinki_complianz_version_compare( '6.0.0', '<' ) ) {
 		$settings['categories'] = helsinki_complianz_cookiebanner_categories_wrap(
 			$settings['categories'] ?? ''
 		);
@@ -105,7 +106,7 @@ function helsinki_complianz_cookiebanner_message_wrap(string $message = '') {
 }
 
 function helsinki_complianz_cookiebanner_styles() {
-	if (cmplz_version >= '6.0.0') {
+	if ( helsinki_complianz_version_compare( '6.0.0', '>=' ) ) {
 		return array(
 			"banner_background_color" => "inherit",
 			"banner_border_color" => "inherit",
@@ -164,8 +165,10 @@ function helsinki_complianz_cookiebanner_styles() {
 }
 
 function helsinki_regenerate_banner(){
+    $version = helsinki_complianz_version();
+
 	//regenerate banner every 24 hours or plugin version change
-	if (get_transient("helsinki_cmplz_banner_regeneration") != cmplz_version) {
+	if (get_transient("helsinki_cmplz_banner_regeneration") != $version) {
 		$banners = cmplz_get_cookiebanners();
 		if ( $banners ) {
 			foreach ( $banners as $banner_item ) {
@@ -173,7 +176,17 @@ function helsinki_regenerate_banner(){
 				$banner->save();
 			}
 		}
-		set_transient("helsinki_cmplz_banner_regeneration", cmplz_version, 60*60*24);
+		set_transient("helsinki_cmplz_banner_regeneration", $version, 60*60*24);
 	}
 }
 add_action('init', 'helsinki_regenerate_banner');
+
+function helsinki_complianz_version_compare( string $to, string $operator ): bool {
+	$current = helsinki_complianz_version();
+
+	return $current && version_compare( $current, $to, $operator );
+}
+
+function helsinki_complianz_version(): string {
+	return defined('cmplz_version') ? cmplz_version : '';
+}
