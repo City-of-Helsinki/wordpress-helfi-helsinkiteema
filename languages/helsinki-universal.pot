@@ -6,7 +6,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2025-01-10 15:17+0000\n"
+"POT-Creation-Date: 2025-08-14 08:41+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -36,18 +36,6 @@ msgstr ""
 
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
-msgstr ""
-
-#: complianz-gdpr-premium/templates/cookiebanner.php:149
-msgid "Accept all cookies"
-msgstr ""
-
-#: complianz-gdpr-premium/templates/cookiebanner.php:150
-msgid "Accept required cookies only"
-msgstr ""
-
-#: complianz-gdpr-premium/templates/cookiebanner.php:152
-msgid "Accept selected cookies"
 msgstr ""
 
 #: customizer/config/choices.php:68
@@ -145,12 +133,6 @@ msgstr ""
 
 #: customizer/config/front-page.php:7
 msgid "Content"
-msgstr ""
-
-#: integrations/complianz.php:102
-#: complianz-gdpr-premium/templates/cookiebanner.php:37
-msgctxt "cookie notice title prefix"
-msgid "uses cookies"
 msgstr ""
 
 #: customizer/config/choices.php:23
@@ -292,7 +274,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:154
+#: inc/filters.php:181
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -405,6 +387,12 @@ msgstr ""
 
 #: setup/theme.php:59
 msgid "Helsinki"
+msgstr ""
+
+#: setup/scheme/class-theme-scheme.php:46
+#, php-format
+msgctxt "Helsinki theme scheme validation exception"
+msgid "%s is not a valid theme scheme."
 msgstr ""
 
 #. Name of the theme
@@ -762,10 +750,6 @@ msgstr ""
 msgid "Share this on"
 msgstr ""
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:151
-msgid "Show cookie settings"
-msgstr ""
-
 #: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr ""
@@ -774,11 +758,11 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
-#: inc/walkers.php:372
+#: inc/walkers.php:422
 msgid "Show side navigation"
 msgstr ""
 
-#: inc/walkers.php:370
+#: inc/walkers.php:420
 msgid "Side navigation"
 msgstr ""
 
@@ -820,7 +804,7 @@ msgid ""
 "language."
 msgstr ""
 
-#: inc/walkers.php:376
+#: inc/walkers.php:426
 msgid ""
 "The side navigation is displayed on this page and on all its subpages, if "
 "the Basic page template is used on the page."
@@ -830,18 +814,11 @@ msgstr ""
 msgid "This author has not published any posts yet."
 msgstr ""
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:40
-msgid ""
-"This website uses required cookies to ensure the basic functionality and "
-"performance. In addition, we use targeting cookies to improve the user "
-"experience, perform analytics and display personalised content."
-msgstr ""
-
 #: customizer/config/notifications.php:45
 msgid "Title"
 msgstr ""
 
-#: inc/walkers.php:356
+#: inc/walkers.php:406
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr ""
