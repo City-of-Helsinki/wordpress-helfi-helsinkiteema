@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2025-01-10 15:21+0000\n"
+"PO-Revision-Date: 2025-08-14 08:41+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -37,18 +37,6 @@ msgstr "404 - Tyvärr hittas inte sidan du sökte"
 #. Description of the theme
 msgid "A multipurpose WordPress theme"
 msgstr "Ett WordPress-tema för flera ändamål"
-
-#: complianz-gdpr-premium/templates/cookiebanner.php:149
-msgid "Accept all cookies"
-msgstr "Acceptera alla kakor"
-
-#: complianz-gdpr-premium/templates/cookiebanner.php:150
-msgid "Accept required cookies only"
-msgstr "Acceptera endast nödvändiga"
-
-#: complianz-gdpr-premium/templates/cookiebanner.php:152
-msgid "Accept selected cookies"
-msgstr "Acceptera valda kakor"
 
 #: customizer/config/choices.php:68
 msgid "Alert"
@@ -153,12 +141,6 @@ msgstr "Kommentarer är stängda."
 #: customizer/config/front-page.php:7
 msgid "Content"
 msgstr "Innehåll"
-
-#: integrations/complianz.php:102
-#: complianz-gdpr-premium/templates/cookiebanner.php:37
-msgctxt "cookie notice title prefix"
-msgid "uses cookies"
-msgstr "använder cookies"
 
 #: customizer/config/choices.php:23
 msgid "Copper"
@@ -304,7 +286,7 @@ msgstr ""
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:154
+#: inc/filters.php:181
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -420,6 +402,12 @@ msgstr "Rubrik"
 #: setup/theme.php:59
 msgid "Helsinki"
 msgstr "Helsingfors"
+
+#: setup/scheme/class-theme-scheme.php:46
+#, php-format
+msgctxt "Helsinki theme scheme validation exception"
+msgid "%s is not a valid theme scheme."
+msgstr ""
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -781,10 +769,6 @@ msgstr "Dela på Twitter"
 msgid "Share this on"
 msgstr "Dela detta på"
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:151
-msgid "Show cookie settings"
-msgstr "Visa kakinställningarna"
-
 #: partials/loop/load-more.php:6
 msgid "Show more"
 msgstr "Visa mer"
@@ -793,11 +777,11 @@ msgstr "Visa mer"
 msgid "Show posts from a category"
 msgstr "Visa inlägg från en kategori"
 
-#: inc/walkers.php:372
+#: inc/walkers.php:422
 msgid "Show side navigation"
 msgstr "Visa sidonavigering"
 
-#: inc/walkers.php:370
+#: inc/walkers.php:420
 msgid "Side navigation"
 msgstr "Sidnavigering"
 
@@ -841,7 +825,7 @@ msgstr ""
 "Meddelandet kommer endast att visas när webbplatsen visas på det valda "
 "språket."
 
-#: inc/walkers.php:376
+#: inc/walkers.php:426
 msgid ""
 "The side navigation is displayed on this page and on all its subpages, if "
 "the Basic page template is used on the page."
@@ -853,22 +837,11 @@ msgstr ""
 msgid "This author has not published any posts yet."
 msgstr "Denna författare har inte publicerat några inlägg ännu."
 
-#: complianz-gdpr-premium/templates/cookiebanner.php:40
-msgid ""
-"This website uses required cookies to ensure the basic functionality and "
-"performance. In addition, we use targeting cookies to improve the user "
-"experience, perform analytics and display personalised content."
-msgstr ""
-"Denna webbplats använder obligatoriska kakor för att säkerställa de "
-"grundläggande funktionerna och prestandan. Dessutom använder vi "
-"inriktningskakor för bättre användarupplevelse, analytik och "
-"individualiserat innehåll."
-
 #: customizer/config/notifications.php:45
 msgid "Title"
 msgstr "Titel"
 
-#: inc/walkers.php:356
+#: inc/walkers.php:406
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr "Växla undermenyn för %s"
