@@ -1,0 +1,57 @@
+.hero.has-image-below {
+
+  .hero__content {
+    max-width: 100%;
+
+    .hero__title {
+      max-width: rem-calc(860);
+    }
+  }
+
+  > .hds-koros {
+    height: math.div($koros-size, 2);
+
+    > svg {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    &--beat {
+      height: 5px;
+    }
+
+    &--vibration {
+      height: math.div($koros-size, 5);
+    }
+
+    &--wave-inverse {
+      background-color: transparent;
+      transform: translateY(100%);
+
+      > svg {
+        position: static;
+      }
+    }
+  }
+
+  > .hero__thumbnail {
+    background-color: $body-background-color;
+
+    .image-wrap--fixed-size {
+      padding-top: 0;
+
+      img {
+        position: static;
+        transform: none;
+        max-width: none;
+        height: 400px;
+        object-fit: cover;
+
+        @include breakpointMax('l') {
+          height: 300px;
+        }
+      }
+    }
+  }
+}

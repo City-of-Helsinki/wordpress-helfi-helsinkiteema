@@ -4,6 +4,10 @@ $classes = array(
 	'hds-koros--' . $args['type'],
 );
 
+if ( $args['name'] ) {
+	$classes[] = sprintf( 'hds-koros--%s-%s', $args['type'], $args['name'] );
+}
+
 if ( ! empty($args['flipped']) ) {
 	$classes[] = 'hds-koros--flip-horizontal';
 }
@@ -12,7 +16,7 @@ if ( ! empty($args['flipped']) ) {
 	<?php
 		get_template_part(
 			'partials/koros/' . $args['type'],
-			null,
+			$args['name'],
 			array(
 				'id' => $args['id'],
 				'height' => 42, //85

@@ -18,8 +18,9 @@ if ( ! function_exists('helsinki_koros') ) {
 				null,
 				array(
 					'id' => $id,
+					'name' => apply_filters( 'helsinki_koros_name', null, $type, $id ),
 					'type' => $type,
-					'flipped' => $flipped,
+					'flipped' => apply_filters( 'helsinki_koros_flipped', $flipped, $type, $id ),
 				)
 			);
 		}
