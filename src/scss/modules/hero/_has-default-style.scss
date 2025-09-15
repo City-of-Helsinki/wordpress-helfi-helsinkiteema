@@ -1,0 +1,55 @@
+.hero.has-default-style {
+  margin: 0;
+
+  @include breakpointMax('m') {
+    > .hds-koros {
+      height: math.div($koros-size, 2);
+
+      > svg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      &--beat {
+        height: 5px;
+      }
+
+      &--vibration {
+        height: math.div($koros-size, 5);
+      }
+
+      &--wave-inverse {
+        background-color: transparent;
+        transform: translateY(100%);
+
+        > svg {
+          position: static;
+        }
+      }
+    }
+  }
+
+  @include breakpoint('m') {
+    &.has-koros--wave {
+      > .hds-container {
+        padding-bottom: spacing('l');
+      }
+    }
+  }
+
+  .hero__container {
+    .hero__content {
+      max-width: 100%;
+
+      .hero__title {
+        max-width: rem-calc(790);
+      }
+
+      .hero__excerpt,
+      .buttons {
+        max-width: rem-calc(690);
+      }
+    }
+  }
+}

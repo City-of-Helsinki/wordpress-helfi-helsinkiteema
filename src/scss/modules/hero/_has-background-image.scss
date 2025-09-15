@@ -1,0 +1,192 @@
+.hero.has-background-image {
+  background-color: $body-background-color;
+  position: relative;
+
+  .hds-container {
+    display: flex;
+    align-items: center;
+    min-height: rem-calc(340);
+    padding-top: spacing('layout-m');
+    padding-bottom: spacing('layout-2-xs');
+
+    @include breakpoint('m') {
+      padding-top: spacing('layout-m');
+      padding-bottom: spacing('layout-s');
+    }
+
+    @include breakpoint('l') {
+      min-height: rem-calc(440);
+      padding-top: 4.5rem;
+
+      .hero__content {
+        max-width: unset;
+      }
+    }
+
+    @include breakpoint('xl') {
+      min-height: rem-calc(540);
+      padding-top: spacing('layout-xl');
+    }
+  }
+
+  > .hero__thumbnail:first-child {
+    display: none;
+    margin-top: 0;
+    position: relative;
+    min-height: calc(300px + #{$koros-size});
+    margin-bottom: 32px;
+
+    /*@include breakpoint('m') {
+      min-height: calc(500px + #{$koros-size});
+    }*/
+
+    @include breakpoint('l') {
+      display: block;
+      min-height: calc(600px + #{$koros-size});
+    }
+
+    > .hero__thumbnail_caption {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    > .hds-koros {
+      background-color: transparent;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      &--basic {
+        + .hero__thumbnail_caption {
+          bottom: -6px;
+        }
+      }
+
+      &--beat {
+        + .hero__thumbnail_caption {
+          bottom: -34px;
+        }
+      }
+
+      &--pulse {
+        + .hero__thumbnail_caption {
+          bottom: -16px;
+        }
+      }
+
+      &--vibration {
+        + .hero__thumbnail_caption {
+          bottom: -26px;
+        }
+      }
+
+      &--wave {
+        + .hero__thumbnail_caption {
+          bottom: -16px;
+        }
+      }
+    }
+  }
+
+  .hds-koros {
+    > svg {
+      path, polygon {
+        fill: $body-background-color;
+      }
+    }
+
+    @include breakpointMax('l') {
+      height: math.div($koros-size, 2);
+
+      > svg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      &--beat {
+        height: 5px;
+      }
+
+      &--vibration {
+        height: math.div($koros-size, 5);
+      }
+
+      &--wave-inverse {
+        background-color: transparent;
+        transform: translateY(100%);
+
+        @include breakpointMax('l') {
+          > svg {
+            position: static;
+          }
+        }
+      }
+    }
+  }
+
+  > .hero__container {
+    @include breakpoint('l') {
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  .hero__thumbnail__mobile {
+    display: block;
+    background-color: $body-background-color;
+
+    .image-wrap--fixed-size {
+      padding-top: 0;
+
+      img {
+        position: static;
+        transform: none;
+        max-width: none;
+        height: 400px;
+        object-fit: cover;
+
+        @include breakpointMax('l') {
+          height: 300px;
+        }
+      }
+    }
+  }
+
+  .hero__decoration {
+    @include breakpoint('l') {
+      transform: translate(-50%,50%);
+    }
+  }
+
+  @include breakpoint('l') {
+    > .hds-koros {
+      display: none;
+    }
+
+    .hero__thumbnail__mobile {
+      display: none;
+    }
+  }
+
+  .hero__content {
+    > * {
+      max-width: none;
+    }
+
+    @include breakpoint('l') {
+      background-color: $body-background-color;
+      padding: spacing('2-xl') spacing('xl');
+      width: 70%;
+    }
+
+    @include breakpoint('xl') {
+      width: 60%;
+    }
+  }
+}
