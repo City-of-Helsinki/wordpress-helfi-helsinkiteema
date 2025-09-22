@@ -1,8 +1,11 @@
 .hero.has-image-left,
 .hero.has-image-right {
+  --flex-direction: row;
+
   .hds-container {
     display: flex;
     align-items: center;
+    flex-direction: var(--flex-direction);
     min-height: rem-calc(340);
     padding-top: spacing('layout-m');
     padding-bottom: spacing('layout-2-xs');
@@ -109,13 +112,10 @@
   }
 }
 
-.hero.has-image-left {
-  &.has-thumbnail {
-    @include breakpoint('l') {
-      .hero__container {
-        flex-direction: row-reverse;
-      }
-    }
+body:not(.rtl) .hero.has-image-left.has-thumbnail,
+body.rtl .hero.has-image-right.has-thumbnail {
+  @include breakpoint('l') {
+    --flex-direction: row-reverse;
   }
 }
 
