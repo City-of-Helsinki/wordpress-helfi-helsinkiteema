@@ -190,3 +190,11 @@
     }
   }
 }
+
+[dir="rtl"] .hero.has-background-image {
+  > .hero__container {
+    @include breakpoint('l') {
+      flex-direction: row-reverse;
+    }
+  }
+}

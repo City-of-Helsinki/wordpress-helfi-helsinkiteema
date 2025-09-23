@@ -29,7 +29,7 @@ if ( ! function_exists('helsinki_header_skip_target') ) {
 
 if ( ! function_exists('helsinki_header_logo') ) {
 	function helsinki_header_logo() {
-		$classes = array();
+		$classes = array( 'home-link' );
 		$blog_name = get_bloginfo('name');
 		$home_url = home_url('/');
 
