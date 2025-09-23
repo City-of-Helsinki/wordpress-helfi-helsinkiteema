@@ -3,6 +3,7 @@
   .hds-container {
     display: flex;
     align-items: center;
+    justify-content: left;
     min-height: rem-calc(340);
     padding-top: spacing('layout-m');
     padding-bottom: spacing('layout-2-xs');
@@ -103,7 +104,7 @@
         background-color: var(--primary-color);
         height: 100%;
         left: 40%;
-        width: 1100px;
+        width: min(100vw, 1920px);
         transform: rotate(-45deg);
         transform-origin: bottom left;
 

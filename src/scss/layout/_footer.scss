@@ -4,12 +4,12 @@
 	outline-color: $footer-color;
 	position: relative;
 	z-index: 1;
-	font-size: 16px;
+	font-size: rem-calc(16);
 
 	> section {
     padding-top: $footer-section-spacing;
 
-		@include breakpoint(l) {
+		@include breakpoint('l') {
 			display: flex;
 			flex-wrap: wrap;
 		}
@@ -31,16 +31,19 @@
 	.footer__widgets {}
 
 	.footer__bottom {
-		align-items: center;
+		--align-items: normal;
+		--flex-direction: column;
+
+		align-items: var(--align-items);
+		display: flex;
+		flex-direction: var(--flex-direction);
+		gap: #{spacing('s')};
     margin-top: spacing('layout-m');
     padding-bottom: $footer-section-spacing;
 
-		@include breakpoint(l) {
-			> * {
-				+ * {
-					margin-left: spacing('s');
-				}
-			}
+		@include breakpoint('l') {
+			--align-items: center;
+			--flex-direction: row;
 		}
 
     @include breakpointMax('xl') {
@@ -63,33 +66,14 @@
   }
 
 	&__logo {
-		margin-bottom: spacing('s');
-
-		@include breakpoint(l) {
-			margin-bottom: 0;
-		}
-
 		svg {
 			fill: $footer-color;
 			height: 40px;
 		}
 	}
 
-	&__copyright {
-		margin-bottom: spacing('s');
-
-		@include breakpoint(l) {
-			margin-bottom: 0;
-		}
-	}
-
 	&__navigation {
 		flex-grow: 2;
-		margin-bottom: $footer-section-spacing;
-
-		@include breakpoint(l) {
-			margin-bottom: 0;
-		}
 
 		.menu {
 			display: flex;
@@ -115,7 +99,7 @@
 					font-size: 16px;
 				}
 
-				@include breakpoint(l) {
+				@include breakpoint('l') {
 					&:first-child {
 						a {
 							border-left: $footer-section-border;
@@ -160,8 +144,14 @@
 }
 
 #back-top {
+	--margin-top: var(--spacing-layout-2-xs);
+
 	font-size: var(--fontsize-heading-s);
 	font-weight: $global-font-weight-medium;
 	justify-content: right;
-	margin-right: 0;
+	margin-top: var(--margin-top);
+
+	@include breakpoint('l') {
+		--margin-top: 0;
+	}
 }

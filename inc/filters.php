@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
   * Clean up the archive title
   */
@@ -7,6 +11,18 @@ function helsinki_get_the_archive_title_prefix( $prefix ) {
   return '<span class="prefix">' . $prefix . '</span>';
 }
 add_filter( 'get_the_archive_title_prefix', 'helsinki_get_the_archive_title_prefix' );
+
+/**
+  * Front end language attributes
+  */
+add_filter( 'language_attributes', 'helsinki_language_attributes', 10, 2 );
+function helsinki_language_attributes( string $output, string $doctype ): string {
+	if ( false === strpos( $output, ' dir="rtl"' ) && ! is_rtl() ) {
+		return 'dir="ltr" ' . $output;
+	}
+
+	return $output;
+}
 
 /**
   * Format view description
