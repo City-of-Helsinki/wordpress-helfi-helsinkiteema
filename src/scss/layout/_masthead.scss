@@ -99,20 +99,19 @@
 		flex-shrink: 0;
 	}
 
-	.has-icon--before {
-		svg, img {
-			margin-right: spacing(s);
-		}
-	}
+  .home-link {
+    --line-height: 1.2;
 
-	a {
-		display: flex;
+    display: flex;
 		align-items: center;
 		text-decoration: none;
 		font-weight: $global-font-weight-medium;
-		--line-height: 1.2;
-		line-height: 1.2;
-	}
+		line-height: var(--line-height);
+
+    &.has-icon {
+      --column-gap: #{spacing('s')};
+    }
+  }
 
 	img {
 		display: block;
@@ -126,7 +125,7 @@
 		display: block;
 	}
 
-	@include breakpoint(l) {
+	@include breakpoint('l') {
 		.logo-icon {
 			height: 48px;
 		}
@@ -140,7 +139,7 @@
 		}
 	}
 
-	@include breakpoint(xl) {
+	@include breakpoint('xl') {
 		.logo-icon {
 			height: 56px;
 		}

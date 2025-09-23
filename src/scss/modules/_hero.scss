@@ -57,6 +57,8 @@
     }
 
     .hero__decoration {
+      overflow: clip;
+      overflow-clip-margin: 5px;
       position: absolute;
       bottom: 0;
       left: spacing('s');
