@@ -112,8 +112,8 @@
   }
 }
 
-body:not(.rtl) .hero.has-image-left.has-thumbnail,
-body.rtl .hero.has-image-right.has-thumbnail {
+[dir="ltr"] .hero.has-image-left.has-thumbnail,
+[dir="rtl"] .hero.has-image-right.has-thumbnail {
   @include breakpoint('l') {
     --flex-direction: row-reverse;
   }
