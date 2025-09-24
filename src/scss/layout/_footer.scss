@@ -41,11 +41,6 @@
     margin-top: spacing('layout-m');
     padding-bottom: $footer-section-spacing;
 
-		@include breakpoint('l') {
-			--align-items: center;
-			--flex-direction: row;
-		}
-
     @include breakpointMax('xl') {
       padding-bottom: spacing('layout-xl');
     }
@@ -140,6 +135,13 @@
 		&:hover {
 			text-decoration: none;
 		}
+	}
+}
+
+@include breakpoint('l') {
+	.footer .footer__bottom {
+		--align-items: center;
+		--flex-direction: row;
 	}
 }
 
