@@ -168,6 +168,11 @@ function helsinki_files(): array {
 		add_filter('helsinki_smash_balloon_social_wall_active', '__return_true');
 	}
 
+	if ( did_action( 'wordpress_helfi_cookie_consent_loaded' ) ) {
+		$files['integrations'][] = 'wp-helfi-cookie-consent';
+		add_filter( 'helsinki_cookie_consent_active', '__return_true' );
+	}
+
 	return $files;
 }
 
