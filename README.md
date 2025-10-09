@@ -12,7 +12,6 @@ Originally designed to be installed with [Composer](https://getcomposer.org/) al
 
 ### Recommended
 - [Polylang](https://wordpress.org/plugins/polylang/)
-- [Complianz – GDPR/CCPA Cookie Consent](https://wordpress.org/plugins/complianz-gdpr/) or [Pro version](https://complianz.io/)
 
 ### Optional
 - [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) (breadcrumbs support)

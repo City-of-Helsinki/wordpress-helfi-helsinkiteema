@@ -143,11 +143,6 @@ function helsinki_files(): array {
 		add_filter('helsinki_polylang_active', '__return_true');
 	}
 
-	if ( class_exists('COMPLIANZ') ) {
-		$files['integrations'][] = 'complianz';
-		add_filter('helsinki_complianz_active', '__return_true');
-	}
-
 	if ( class_exists('MTNC') ) {
 		$files['integrations'][] = 'maintenance';
 		add_filter('helsinki_maintenance_active', '__return_true');
