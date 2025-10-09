@@ -5,7 +5,7 @@
   	margin-left: 0;
 	transition: $default-transition;
 	width: calc(var(--line-height)*1em);
-	
+
 	&--arrow-right {
 	}
 
@@ -20,7 +20,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		margin-top: -4px;
-		margin-left: spacing('4-xs');
+		margin-inline-start: spacing('4-xs');
 	}
 
 	&.mask-icon {
@@ -30,33 +30,31 @@
 }
 
 .has-icon {
+  --direction: row;
+  --column-gap: #{spacing('2-xs')};
+  --justify-content: normal;
+  --row-gap: 0;
+  --font-size: #{rem-calc(12)};
+  --font-size-large: var(--font-size);
+
 	align-items: center;
 	display: flex;
+  flex-direction: var(--direction);
+  justify-content: var(--justify-content);
+  gap: var(--row-gap) var(--column-gap);
 
-	&--before {
-		svg {
-			margin-right: #{spacing('2-xs')};
-		}
-	}
-
-	&--after {
-		svg {
-			margin-left: #{spacing('2-xs')};
-		}
-	}
 
 	&--above {
+    --direction: column;
+    --justify-content: center;
 
 		.text {
-			font-size: rem-calc(12);
+			font-size: var(--font-size);
 
 			@include breakpoint('l') {
-				font-size: rem-calc(12);
+				font-size: var(--font-size-large);
 			}
 		}
-
-		flex-direction: column;
-		justify-content: center;
 	}
 
 }
