@@ -143,11 +143,6 @@ function helsinki_files(): array {
 		add_filter('helsinki_polylang_active', '__return_true');
 	}
 
-	if ( class_exists('COMPLIANZ') ) {
-		$files['integrations'][] = 'complianz';
-		add_filter('helsinki_complianz_active', '__return_true');
-	}
-
 	if ( class_exists('MTNC') ) {
 		$files['integrations'][] = 'maintenance';
 		add_filter('helsinki_maintenance_active', '__return_true');
@@ -171,6 +166,11 @@ function helsinki_files(): array {
 	if ( defined( 'SWVER' ) ) {
 		$files['integrations'][] = 'sb-social-wall';
 		add_filter('helsinki_smash_balloon_social_wall_active', '__return_true');
+	}
+
+	if ( did_action( 'wordpress_helfi_cookie_consent_loaded' ) ) {
+		$files['integrations'][] = 'wp-helfi-cookie-consent';
+		add_filter( 'helsinki_cookie_consent_active', '__return_true' );
 	}
 
 	return $files;
