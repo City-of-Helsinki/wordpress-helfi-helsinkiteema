@@ -3852,13 +3852,18 @@ body.blog .hero.has-image-right {
 }
 .has-rns.page:not(.has-sidebar) .content .content__container,
 .has-rns.page:not(.has-sidebar) .content .content__main,
-.has-rns.page:not(.has-sidebar) .content .content__body, .has-rns.single-post .content .content__container,
-.has-rns.single-post .content .content__main,
-.has-rns.single-post .content .content__body {
+.has-rns.page:not(.has-sidebar) .content .content__body {
   padding-bottom: 0;
   margin-bottom: 0;
 }
-.has-rns.page:not(.has-sidebar) .footer .hds-koros, .has-rns.single-post .footer .hds-koros {
+.has-rns.page:not(.has-sidebar) .footer .hds-koros {
+  background-color: var(--color-silver-light);
+}
+.has-rns.single-post .content,
+.has-rns.single-post .content__related {
+  padding-bottom: 0;
+}
+.has-rns.single-post .footer .hds-koros {
   background-color: var(--color-silver-light);
 }
 
