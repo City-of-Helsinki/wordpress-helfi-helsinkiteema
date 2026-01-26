@@ -3833,6 +3833,40 @@ body.blog .hero.has-image-right {
   position: absolute;
 }
 
+.has-rns.has-sidebar:not(.single-post) .rns-container {
+  --background-color: transparent;
+  --margin-horizontal: auto;
+  --max-width: none;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --width: auto;
+}
+@media only screen and (min-width: 768px) {
+  .has-rns.has-sidebar:not(.single-post) .rns-container {
+    --margin-top: spacing('4-xl');
+    --margin-bottom: spacing('4-xl');
+  }
+}
+.has-rns.has-sidebar:not(.single-post) .rns-container .hds-container {
+  padding: 0;
+}
+.has-rns.page:not(.has-sidebar) .content .content__container,
+.has-rns.page:not(.has-sidebar) .content .content__main,
+.has-rns.page:not(.has-sidebar) .content .content__body {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.has-rns.page:not(.has-sidebar) .footer .hds-koros {
+  background-color: var(--color-silver-light);
+}
+.has-rns.single-post .content,
+.has-rns.single-post .content__related {
+  padding-bottom: 0;
+}
+.has-rns.single-post .footer .hds-koros {
+  background-color: var(--color-silver-light);
+}
+
 #breadcrumbs {
   font-size: 0.875rem;
 }
