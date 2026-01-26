@@ -20,8 +20,7 @@
     }
   }
 
-  &.page:not(.has-sidebar),
-  &.single-post {
+  &.page:not(.has-sidebar) {
     .content {
       .content__container,
       .content__main,
@@ -29,6 +28,17 @@
         padding-bottom: 0;
         margin-bottom: 0;
       }
+    }
+
+    .footer .hds-koros {
+      background-color: $light-gray;
+    }
+  }
+
+  &.single-post {
+    .content,
+    .content__related {
+      padding-bottom: 0;
     }
 
     .footer .hds-koros {
