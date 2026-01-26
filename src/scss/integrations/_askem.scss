@@ -1,0 +1,38 @@
+.has-rns {
+
+  &.has-sidebar:not(.single-post) {
+    .rns-container {
+      --background-color: transparent;
+      --margin-horizontal: auto;
+      --max-width: none;
+      --padding-top: 0;
+      --padding-bottom: 0;
+      --width: auto;
+
+      @include breakpoint('m') {
+        --margin-top: spacing('4-xl');
+        --margin-bottom: spacing('4-xl');
+    	}
+
+      .hds-container {
+        padding: 0;
+      }
+    }
+  }
+
+  &.page:not(.has-sidebar),
+  &.single-post {
+    .content {
+      .content__container,
+      .content__main,
+      .content__body {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .footer .hds-koros {
+      background-color: $light-gray;
+    }
+  }
+}
