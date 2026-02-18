@@ -121,7 +121,6 @@ function helsinki_files(): array {
 			],
 		    'modules' => [
 				'comments',
-				'feedback',
 				'load-more',
 				'menu',
 				'notifications',
@@ -133,9 +132,12 @@ function helsinki_files(): array {
 			'class-helsinki-link-symbol-handler',
 			'links',
 			'soft-hyphens',
+			'deprecated',
 			'misc',
 		],
-		'integrations' => [],
+		'integrations' => [
+			'askem'
+		],
 	];
 
 	if ( class_exists('Polylang') ) {

@@ -4740,6 +4740,49 @@ body.wp-admin .editor-styles-wrapper #main-content,
 body.editor-styles-wrapper #main-content {
   position: absolute;
 }
+body.wp-admin .editor-styles-wrapper .has-rns.has-sidebar:not(.single-post) .rns-container,
+body.editor-styles-wrapper .has-rns.has-sidebar:not(.single-post) .rns-container {
+  --background-color: transparent;
+  --margin-horizontal: auto;
+  --max-width: none;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --width: auto;
+}
+@media only screen and (min-width: 768px) {
+  body.wp-admin .editor-styles-wrapper .has-rns.has-sidebar:not(.single-post) .rns-container,
+  body.editor-styles-wrapper .has-rns.has-sidebar:not(.single-post) .rns-container {
+    --margin-top: spacing('4-xl');
+    --margin-bottom: spacing('4-xl');
+  }
+}
+body.wp-admin .editor-styles-wrapper .has-rns.has-sidebar:not(.single-post) .rns-container .hds-container,
+body.editor-styles-wrapper .has-rns.has-sidebar:not(.single-post) .rns-container .hds-container {
+  padding: 0;
+}
+body.wp-admin .editor-styles-wrapper .has-rns.page:not(.has-sidebar) .content .content__container,
+body.wp-admin .editor-styles-wrapper .has-rns.page:not(.has-sidebar) .content .content__main,
+body.wp-admin .editor-styles-wrapper .has-rns.page:not(.has-sidebar) .content .content__body,
+body.editor-styles-wrapper .has-rns.page:not(.has-sidebar) .content .content__container,
+body.editor-styles-wrapper .has-rns.page:not(.has-sidebar) .content .content__main,
+body.editor-styles-wrapper .has-rns.page:not(.has-sidebar) .content .content__body {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+body.wp-admin .editor-styles-wrapper .has-rns.page:not(.has-sidebar) .footer .hds-koros,
+body.editor-styles-wrapper .has-rns.page:not(.has-sidebar) .footer .hds-koros {
+  background-color: var(--color-silver-light);
+}
+body.wp-admin .editor-styles-wrapper .has-rns.single-post .content,
+body.wp-admin .editor-styles-wrapper .has-rns.single-post .content__related,
+body.editor-styles-wrapper .has-rns.single-post .content,
+body.editor-styles-wrapper .has-rns.single-post .content__related {
+  padding-bottom: 0;
+}
+body.wp-admin .editor-styles-wrapper .has-rns.single-post .footer .hds-koros,
+body.editor-styles-wrapper .has-rns.single-post .footer .hds-koros {
+  background-color: var(--color-silver-light);
+}
 body.wp-admin .editor-styles-wrapper #breadcrumbs,
 body.editor-styles-wrapper #breadcrumbs {
   font-size: 0.875rem;
