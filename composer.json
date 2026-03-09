@@ -7,8 +7,5 @@
       "email": "hel@artcloud.fi",
       "homepage": "https://www.artcloud.fi"
     }
-  ],
-	"require": {
-		"city-of-helsinki/wordpress-helfi-hds-wp": ">1.0"
-  }
+  ]
 }
