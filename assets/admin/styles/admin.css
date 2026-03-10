@@ -831,6 +831,10 @@ body.wp-admin .editor-styles-wrapper .js-toggle[aria-expanded=true] .js-toggle__
 body.editor-styles-wrapper .js-toggle[aria-expanded=true] .js-toggle__close {
   display: inline;
 }
+body.wp-admin .editor-styles-wrapper .js-toggle > .text,
+body.editor-styles-wrapper .js-toggle > .text {
+  margin-top: 2px;
+}
 body.wp-admin .editor-styles-wrapper .has-invert-color .hero:not(.has-background-image),
 body.editor-styles-wrapper .has-invert-color .hero:not(.has-background-image) {
   color: var(--color-white);

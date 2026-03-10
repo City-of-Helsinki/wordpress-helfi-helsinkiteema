@@ -658,6 +658,9 @@ p.has-background {
 .js-toggle[aria-expanded=true] .js-toggle__close {
   display: inline;
 }
+.js-toggle > .text {
+  margin-top: 2px;
+}
 
 .has-invert-color .hero:not(.has-background-image) {
   color: var(--color-white);
