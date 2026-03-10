@@ -13,6 +13,6 @@
 		<?php helsinki_svg_icon( 'cross' ); ?>
 	</span>
 	<span class="text">
-		<?php echo esc_html_x( 'Menu', 'Label', 'helsinki-universal' ); ?>
+		<?php echo esc_html_x( 'Menu', 'menu toggle', 'helsinki-universal' ); ?>
 	</span>
 </button>
