@@ -22,25 +22,26 @@ function helsinki_setup_templates()
 	/**
 	 * Site Header
 	 */
-	add_action('helsinki_header_top', 'helsinki_header_skip', 5);
-	add_action('helsinki_header_top', 'helsinki_topbar', 10);
-	add_filter('body_class', 'helsinki_topbar_body_class', 10);
+	add_action( 'helsinki_main_before', 'helsinki_header_element', 10 );
 
-	add_action('helsinki_header', 'helsinki_header_logo', 10);
-	add_action('helsinki_header', 'helsinki_header_mobile_panel_toggle', 50);
-	add_action('helsinki_header_bottom', 'helsinki_header_main_menu', 20);
-	add_action('helsinki_header_bottom', 'helsinki_header_mobile_panel', 30);
+	add_action( 'helsinki_header_top', 'helsinki_header_skip', 5 );
+	add_action( 'helsinki_header_top', 'helsinki_topbar', 10 );
+	add_filter( 'body_class', 'helsinki_topbar_body_class', 10 );
 
-	add_action('helsinki_header_mobile_panel', 'helsinki_header_mobile_menu', 20);
-	add_action('helsinki_header_mobile_panel', 'helsinki_header_mobile_links', 30);
+	add_action( 'helsinki_header', 'helsinki_header_logo', 10 );
+	add_action( 'helsinki_header', 'helsinki_header_mobile_panel', 50 );
 
-	if (apply_filters('helsinki_header_languages_enabled', false)) {
-		add_action('helsinki_header', 'helsinki_header_languages', 20);
-		add_action('helsinki_header_mobile_panel', 'helsinki_header_languages', 10);
+	add_action( 'helsinki_header_bottom', 'helsinki_header_main_menu', 20 );
+
+	add_action( 'helsinki_header_mobile_panel', 'helsinki_header_mobile_menu', 20 );
+	add_action( 'helsinki_header_mobile_panel', 'helsinki_header_mobile_links', 30 );
+
+	if ( apply_filters( 'helsinki_header_languages_enabled', false ) ) {
+		add_action( 'helsinki_header', 'helsinki_header_languages', 20 );
 	}
 
-	if (apply_filters('helsinki_header_search_enabled', false)) {
-		add_action('helsinki_header', 'helsinki_header_search', 40);
+	if ( apply_filters( 'helsinki_header_search_enabled', false ) ) {
+		add_action( 'helsinki_header', 'helsinki_header_search', 40 );
 	}
 
 	/**

@@ -15,62 +15,13 @@
 
 			<?php
 
-				/**
-				 * Hook: helsinki_header_before
-				 *
-				 */
-				do_action( 'helsinki_header_before' );
-
-			?>
-
-			<?php ob_start(); ?>
-
-			<header id="masthead" class="<?php helsinki_header_classes(); ?>" role="banner">
-
-				<?php
-
-					/**
-					 * Hook: helsinki_header_top
-					 *
-					 */
-					do_action( 'helsinki_header_top' );
-
-				?>
-
-				<div class="hds-container navigation__content hds-container--wide flex-container">
-
-					<?php
-
-						/**
-						* Hook: helsinki_header
-						*
-						*/
-						do_action( 'helsinki_header' );
-
-					?>
-
-				</div>
-
-				<?php
-
-					/**
-					 * Hook: helsinki_header_bottom
-					 *
-					 */
-					do_action( 'helsinki_header_bottom' );
-
-				?>
-
-			</header>
-
-
-			<?php
+				ob_start();
 
 				/**
 				 * Hook: helsinki_header_after
 				 *
 				 */
-				do_action( 'helsinki_header_after' );
+				do_action( 'helsinki_main_before' );
 
 			?>
 
