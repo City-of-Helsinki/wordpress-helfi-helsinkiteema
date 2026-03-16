@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2025-08-14 08:41+0000\n"
+"PO-Revision-Date: 2026-03-10 13:29+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: comments.php:35
@@ -286,7 +286,7 @@ msgstr ""
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:181
+#: inc/filters.php:197
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -407,7 +407,7 @@ msgstr "Helsingfors"
 #, php-format
 msgctxt "Helsinki theme scheme validation exception"
 msgid "%s is not a valid theme scheme."
-msgstr ""
+msgstr "%s är inte ett giltigt temaschema."
 
 #. Name of the theme
 msgid "Helsinkiteema #1"
@@ -483,11 +483,6 @@ msgstr "Bränning"
 msgid "Koroshape"
 msgstr "Koroform"
 
-#: partials/header/mobile-panel-toggle.php:12
-msgctxt "Label"
-msgid "Menu"
-msgstr "Navigeringsmeny"
-
 #: searchform.php:20
 msgctxt "label"
 msgid "Search by keyword"
@@ -507,26 +502,6 @@ msgstr "Huvudmeny"
 msgctxt "Label - Nav - Mobile menu"
 msgid "Navigation menu"
 msgstr "Navigationsmeny"
-
-#: partials/header/mobile-panel-toggle.php:24
-msgctxt "Label - Toggle - Mobile menu"
-msgid "Close the navigation menu"
-msgstr "Stäng navigeringsmenyn"
-
-#: partials/header/mobile-panel-toggle.php:15
-msgctxt "Label - Toggle - Mobile menu"
-msgid "Open the navigation menu"
-msgstr "Öppna navigeringsmenyn"
-
-#: partials/header/search.php:25
-msgctxt "Label - Toggle - Search"
-msgid "Close site search"
-msgstr "Stäng webbplatssökning"
-
-#: partials/header/search.php:16
-msgctxt "Label - Toggle - Search"
-msgid "Search from site"
-msgstr "Sök på webbplatsen"
 
 #. Name of the template
 #: template/landing-page.php:2
@@ -569,6 +544,11 @@ msgstr "Inloggad som %1$s. <a href=\"%2$s\">Logga ut?</a>"
 #: customizer/config/header.php:76
 msgid "Main menu information hierarchy levels"
 msgstr "Huvudmeny informationshierarkinivåer"
+
+#: partials/header/mobile-panel-toggle.php:16
+msgctxt "menu toggle"
+msgid "Menu"
+msgstr "Meny"
 
 #: customizer/config/choices.php:26
 msgid "Metro"
@@ -730,10 +710,15 @@ msgctxt "search submit"
 msgid "Search"
 msgstr "Sök"
 
-#: partials/header/search.php:31 partials/search/form-title.php:1
+#: partials/header/search.php:22 partials/search/form-title.php:1
 msgctxt "search title"
 msgid "Search the site"
 msgstr "Sök på webbplatsen"
+
+#: partials/header/search.php:17
+msgctxt "search toggle"
+msgid "Search"
+msgstr "Sök"
 
 #: customizer/config/front-page.php:45
 msgid "Section title"
@@ -777,11 +762,11 @@ msgstr "Visa mer"
 msgid "Show posts from a category"
 msgstr "Visa inlägg från en kategori"
 
-#: inc/walkers.php:422
+#: inc/walkers.php:421
 msgid "Show side navigation"
 msgstr "Visa sidonavigering"
 
-#: inc/walkers.php:420
+#: inc/walkers.php:419
 msgid "Side navigation"
 msgstr "Sidnavigering"
 
@@ -825,7 +810,7 @@ msgstr ""
 "Meddelandet kommer endast att visas när webbplatsen visas på det valda "
 "språket."
 
-#: inc/walkers.php:426
+#: inc/walkers.php:425
 msgid ""
 "The side navigation is displayed on this page and on all its subpages, if "
 "the Basic page template is used on the page."
@@ -841,7 +826,7 @@ msgstr "Denna författare har inte publicerat några inlägg ännu."
 msgid "Title"
 msgstr "Titel"
 
-#: inc/walkers.php:406
+#: inc/walkers.php:405
 #, php-format
 msgid "Toggle submenu for %s"
 msgstr "Växla undermenyn för %s"
@@ -861,16 +846,6 @@ msgstr "Typ"
 #: partials/content/parts/updated.php:2
 msgid "Updated"
 msgstr "Uppdaterad"
-
-#: partials/header/mobile-panel-toggle.php:21 partials/header/search.php:22
-msgctxt "verb"
-msgid "Close"
-msgstr "Stänga"
-
-#: partials/header/search.php:13
-msgctxt "verb"
-msgid "Search"
-msgstr "Sök"
 
 #: customizer/config/front-page.php:21
 msgid "Visible sections"

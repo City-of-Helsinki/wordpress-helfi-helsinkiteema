@@ -1,4 +1,4 @@
-<div class="navigation__search">
+<div class="nav-toggle nav-toggle--search">
 	<button
 		id="header-search-toggle"
 		class="button-reset has-icon has-icon--above js-toggle js-toggle-no-scroll"
@@ -9,24 +9,17 @@
 		data-no-scroll-limit="down">
 		<span class="js-toggle__open">
 			<?php helsinki_svg_icon( 'search' ); ?>
-			<span class="text" aria-hidden="true">
-				<?php echo esc_html_x( 'Search', 'verb', 'helsinki-universal' ); ?>
-			</span>
-			<span class="screen-reader-text">
-				<?php echo esc_html_x( 'Search from site', 'Label - Toggle - Search', 'helsinki-universal' ); ?>
-			</span>
 		</span>
 		<span class="js-toggle__close">
 			<?php helsinki_svg_icon( 'cross' ); ?>
-			<span class="text" aria-hidden="true">
-				<?php echo esc_html_x( 'Close', 'verb', 'helsinki-universal' ); ?>
-			</span>
-			<span class="screen-reader-text">
-				<?php echo esc_html_x( 'Close site search', 'Label - Toggle - Search', 'helsinki-universal' ); ?>
-			</span>
+		</span>
+		<span class="text">
+			<?php echo esc_html_x( 'Search', 'search toggle', 'helsinki-universal' ); ?>
 		</span>
 	</button>
-	<div id="header-search" aria-labelledby="header-search-toggle" role="region">
+</div>
+<div class="nav-toggle-dropdown nav-toggle-dropdown--search">
+	<div id="header-search" class="nav-toggle-dropdown__content" aria-labelledby="header-search-toggle" role="region" hidden>
 		<div class="hds-container">
 			<h2 class="search-title"><?php echo esc_html_x('Search the site', 'search title', 'helsinki-universal'); ?></h2>
 

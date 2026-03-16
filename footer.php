@@ -13,6 +13,12 @@
 			<?php
 
 				/**
+				 * Hook: helsinki_main_after
+				 *
+				 */
+				do_action( 'helsinki_main_after' );
+
+				/**
 				 * Hook: helsinki_footer_before
 				 *
 				 */

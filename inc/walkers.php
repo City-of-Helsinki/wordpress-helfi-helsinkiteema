@@ -349,7 +349,6 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 		}
 
 		if ($args->walker->has_children && $depth > 0 && $depth < $maxdepth) {
-			//$item_output .= '<button class="sidebar-navigation__toggle js-sidebarnavigation-toggle" type="button" aria-haspopup="true" aria-expanded="false"><span class="screen-reader-text">' . sprintf(esc_html__('Toggle submenu for %s', 'helsinki-universal'), $title) . '</span>' . helsinki_get_svg_icon('angle-down') . '</button>';
 			$this->submenu_id = $args->menu_id . '-submenu-toggle-' . $item->ID;
 			$item_output .= submenu_toggle($this->submenu_id, $title, 'js-sidebarnavigation-toggle');
 		}
@@ -396,10 +395,10 @@ class Helsinki_Sidebar_Walker	extends Walker_Nav_Menu
 function submenu_toggle($item_id, $title, $toggle)
 {
 	return sprintf(
-		'<button id="%s" class="button-reset menu__toggle %s" type="button" aria-haspopup="true" aria-expanded="false">
-				<span class="screen-reader-text">%s</span>
-				%s
-			</button>',
+		'<button id="%s" class="button-reset menu__toggle %s" type="button" aria-expanded="false">
+			<span class="screen-reader-text">%s</span>
+			%s
+		</button>',
 		$item_id,
 		$toggle,
 		sprintf(
