@@ -1,0 +1,35 @@
+#wpadminbar {
+	+ #masthead {
+		--wordpress-toolbar-height: 32px;
+
+		@media screen and (max-width: 782px) {
+			--wordpress-toolbar-height: 46px;
+		}
+	}
+}
+
+#masthead {
+  --header-content-height: 64px;
+  --language-block-height: 52px;
+
+	background-color: $white;
+	position: relative;
+
+	#logout_bar {
+		~ * {
+			--logout-bar-height: 53px;
+		}
+	}
+
+	@include breakpointMax('l') {
+		border-bottom: $header-border;
+	}
+
+	@include breakpoint('l') {
+		--header-content-height: 74px;
+	}
+
+  @include breakpoint('xl') {
+		--header-content-height: 88px;
+	}
+}
