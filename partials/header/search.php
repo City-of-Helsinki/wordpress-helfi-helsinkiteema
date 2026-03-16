@@ -18,10 +18,12 @@
 		</span>
 	</button>
 </div>
-<div id="header-search" aria-labelledby="header-search-toggle" role="region" hidden>
-	<div class="hds-container">
-		<h2 class="search-title"><?php echo esc_html_x('Search the site', 'search title', 'helsinki-universal'); ?></h2>
+<div class="nav-toggle-dropdown nav-toggle-dropdown--search">
+	<div id="header-search" class="nav-toggle-dropdown__content" aria-labelledby="header-search-toggle" role="region" hidden>
+		<div class="hds-container">
+			<h2 class="search-title"><?php echo esc_html_x('Search the site', 'search title', 'helsinki-universal'); ?></h2>
 
-		<?php do_action( 'helsinki_search_form', 'header' ); ?>
+			<?php do_action( 'helsinki_search_form', 'header' ); ?>
+		</div>
 	</div>
 </div>
