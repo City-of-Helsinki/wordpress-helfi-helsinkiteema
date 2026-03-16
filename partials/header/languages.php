@@ -1,4 +1,4 @@
-<div class="navigation__languages">
+<div class="languages-wrapper">
 	<ul class="languages menu">
 		<?php
 			foreach ( $args['languages'] as $code => $language ) {
