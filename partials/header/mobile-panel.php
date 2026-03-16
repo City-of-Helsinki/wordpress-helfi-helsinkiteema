@@ -18,16 +18,18 @@
 		</span>
 	</button>
 </div>
-<div id="mobile-panel" class="hide-for-l" aria-labelledby="mobile-panel-toggle" hidden>
+<div class="nav-toggle-dropdown nav-toggle-dropdown--menu hide-for-l">
+	<div id="mobile-panel" class="nav-toggle-dropdown__content" aria-labelledby="mobile-panel-toggle" hidden>
 
-	<?php
+		<?php
 
-	  /**
-		* Hook: helsinki_header_mobile_panel
-		*
-		*/
-	  do_action('helsinki_header_mobile_panel');
+		  /**
+			* Hook: helsinki_header_mobile_panel
+			*
+			*/
+		  do_action('helsinki_header_mobile_panel');
 
-	?>
+		?>
 
+	</div>
 </div>
