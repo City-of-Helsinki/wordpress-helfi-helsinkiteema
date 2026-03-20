@@ -154,7 +154,10 @@ if ( ! function_exists('helsinki_header_search') ) {
 
 if ( ! function_exists('helsinki_header_searchform') ) {
 	function helsinki_header_searchform() {
-		get_template_part('partials/header/searchform');
+		/*
+		 * @since 4.38.0
+		 */
+		helsinki_deprecation_notice( __FUNCTION__, 'helsinki_header_search' );
 	}
 }
 
