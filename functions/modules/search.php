@@ -4,6 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Modules\Search_Form_Builder;
+
 if ( ! function_exists('helsinki_search_form') ) {
 	function helsinki_search_form() {
 		do_action( 'helsinki_search_form', '' );
@@ -11,33 +13,36 @@ if ( ! function_exists('helsinki_search_form') ) {
 }
 
 function helsinki_provide_search_form( string $name ): void {
-	$form_attributes = array(
-		'class' => 'search-form',
-		'role' => 'search',
-		'method' => 'get',
-		'action' => esc_url( home_url( '/' ) ),
-	);
+	$config = helsinki_search_form_config( $name );
 
-	$search_input_id = 'search-input';
+	(new Search_Form_Builder())
+		->set_form_id( $name )
+		->set_title( $config['title'] )
+		->set_title_level( $config['title_level'] )
+		->set_title_classes( ...$config['title_classes'] )
+		->render_form();
+}
 
-	if ( $name ) {
-		$form_attributes['id'] = sprintf( '%s-search-form', $name );
-		$form_attributes['aria-labelledby'] = sprintf( '%s-search-title', $name );
+function helsinki_search_form_config( string $name ): array {
+	$config = match( $name ) {
+		'header' => array(
+			'title' => _x( 'Search the site', 'search title', 'helsinki-universal' ),
+			'title_level' => 2,
+			'title_classes' => array(),
+		),
+		'search-page' => array(
+			'title' => _x( 'Search the site', 'search title', 'helsinki-universal' ),
+			'title_level' => 1,
+			'title_classes' => array( 'view-title' ),
+		),
+		default => array(
+			'title' => '',
+			'title_level' => 2,
+			'title_classes' => array(),
+		),
+	};
 
-		$search_input_id = sprintf( '%s-%s', $name, $search_input_id );
-	}
-
-	get_search_form( array(
-		'echo' => true,
-		'aria_label' => '',
-		'id' => $name,
-		'search_input_id' => $search_input_id,
-		'form_attributes' => implode( ' ', array_map(
-			fn( $key, $value ) => sprintf( '%s="%s"', $key, esc_attr( $value ) ),
-			array_keys( $form_attributes ),
-			array_values( $form_attributes ),
-		) ),
-	) );
+	return apply_filters( 'helsinki_search_form_config', $config, $name );
 }
 
 function helsinki_search_page_search_form(): void {
@@ -57,13 +62,10 @@ function helsinki_search_title() {
 }
 
 function helsinki_search_form_title() {
-	get_template_part(
-		'partials/search/form-title',
-		null,
-		array(
-			'id' => 'search-page-search-title',
-		)
-	);
+	/*
+	 * @since 4.38.0
+	 */
+	helsinki_deprecation_notice( __FUNCTION__, 'helsinki_provide_search_form' );
 }
 
 function helsinki_search_links() {
