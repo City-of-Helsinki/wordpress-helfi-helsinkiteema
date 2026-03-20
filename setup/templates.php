@@ -331,7 +331,6 @@ function helsinki_setup_templates()
 		add_action('helsinki_search_top', 'helsinki_view_header', 10);
 		add_action('helsinki_search_top', 'helsinki_search_title', 20);
 
-		add_action('helsinki_view_header', 'helsinki_search_form_title', 10);
 		add_action('helsinki_view_header', 'helsinki_search_page_search_form', 20);
 
 		add_action('helsinki_search_posts', 'helsinki_loop_count', 10);
