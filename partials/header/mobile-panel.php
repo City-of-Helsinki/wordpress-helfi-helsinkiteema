@@ -19,7 +19,7 @@
 	</button>
 </div>
 <div class="nav-toggle-dropdown nav-toggle-dropdown--menu hide-for-l">
-	<div id="mobile-panel" class="nav-toggle-dropdown__content" aria-labelledby="mobile-panel-toggle" hidden>
+	<nav id="mobile-panel" class="nav-toggle-dropdown__content" aria-labelledby="mobile-panel-toggle" hidden>
 
 		<?php
 
@@ -31,5 +31,5 @@
 
 		?>
 
-	</div>
+	</nav>
 </div>
