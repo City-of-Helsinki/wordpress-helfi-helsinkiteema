@@ -33,7 +33,6 @@
     &--widget_categories,
     &--widget_pages,
     &--widget_meta,
-    &--widget_recent_comments,
     &--widget_recent_entries,
     &--widget_rss {
 
@@ -153,17 +152,6 @@
         }
     }
     // --widget_nav_menu
-
-    &--widget_recent_comments {
-        font-size: rem-calc(13);
-
-        .comment-author-link {
-            a {
-                font-weight: $global-font-weight-medium;
-            }
-        }
-    }
-    // --widget_recent_comments
 
     &--widget_recent_entries {
         font-size: rem-calc(20);
