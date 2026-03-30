@@ -209,7 +209,6 @@ class Disable_Comments
 			'comment_previously_approved' => 'numeric_true',
 			'comments_notify' => 'numeric_false',
 			'moderation_notify' => 'numeric_false',
-			'wp_notes_notify' => 'numeric_false',
 			'show_avatars' => 'numeric_false',
 			'default_pingback_flag' => 'numeric_false',
 			'default_comment_status' => 'status_closed',
