@@ -6,16 +6,8 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2026-03-10 13:28+0000\n"
+"POT-Creation-Date: 2026-03-30 13:39+0000\n"
 "X-Generator: Loco https://localise.biz/"
-
-#: comments.php:35
-msgid "&amp;larr; Older Comments"
-msgstr ""
-
-#: partials/content/parts/comment.php:23
-msgid "(Edit comment)"
-msgstr ""
 
 #: functions/class-helsinki-link-symbol-handler.php:164
 #: partials/search/links.php:8 partials/search/links.php:15
@@ -99,7 +91,7 @@ msgstr ""
 msgid "City of Helsinki"
 msgstr ""
 
-#: setup/assets.php:127
+#: setup/assets.php:120
 msgid "Close"
 msgstr ""
 
@@ -119,16 +111,12 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: comments.php:34
-msgid "Comment navigation"
+#: setup/class-disable-comments.php:119
+msgid "Commenting disabled"
 msgstr ""
 
-#: comments.php:17
-msgid "Comments"
-msgstr ""
-
-#: comments.php:41
-msgid "Comments are closed."
+#: setup/class-disable-comments.php:120
+msgid "Commenting is disabled on Helsinkiteema sites."
 msgstr ""
 
 #: customizer/config/front-page.php:7
@@ -274,7 +262,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: inc/filters.php:197
+#: inc/filters.php:188
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr ""
@@ -345,7 +333,7 @@ msgstr ""
 msgid "Fog"
 msgstr ""
 
-#: setup/theme.php:137
+#: setup/theme.php:133
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr ""
@@ -360,7 +348,7 @@ msgstr ""
 msgid "Front page"
 msgstr ""
 
-#: setup/assets.php:130
+#: setup/assets.php:123
 msgid "Gallery images"
 msgstr ""
 
@@ -385,7 +373,7 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: setup/theme.php:59
+#: setup/theme.php:57
 msgid "Helsinki"
 msgstr ""
 
@@ -467,7 +455,7 @@ msgstr ""
 msgid "Koroshape"
 msgstr ""
 
-#: searchform.php:20
+#: searchform.php:8
 msgctxt "label"
 msgid "Search by keyword"
 msgstr ""
@@ -482,11 +470,6 @@ msgctxt "Label - Nav - Main menu"
 msgid "Main menu"
 msgstr ""
 
-#: partials/header/mobile-menu.php:8
-msgctxt "Label - Nav - Mobile menu"
-msgid "Navigation menu"
-msgstr ""
-
 #. Name of the template
 #: template/landing-page.php:2
 msgid "Landing Page"
@@ -498,10 +481,6 @@ msgstr ""
 
 #: partials/loop/pagination.php:65
 msgid "Last page"
-msgstr ""
-
-#: functions/modules/comments.php:32
-msgid "Leave a comment"
 msgstr ""
 
 #: customizer/config/notifications.php:53
@@ -520,16 +499,11 @@ msgstr ""
 msgid "Load more"
 msgstr ""
 
-#: functions/modules/comments.php:27
-#, php-format
-msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
-msgstr ""
-
 #: customizer/config/header.php:76
 msgid "Main menu information hierarchy levels"
 msgstr ""
 
-#: partials/header/mobile-panel-toggle.php:16
+#: partials/header/mobile-panel.php:17
 msgctxt "menu toggle"
 msgid "Menu"
 msgstr ""
@@ -542,11 +516,7 @@ msgstr ""
 msgid "Newer"
 msgstr ""
 
-#: comments.php:36
-msgid "Newer Comments &amp;rarr;"
-msgstr ""
-
-#: setup/assets.php:128 partials/loop/pagination.php:28
+#: setup/assets.php:121 partials/loop/pagination.php:28
 #: partials/loop/pagination.php:71
 msgid "Next"
 msgstr ""
@@ -587,7 +557,7 @@ msgstr ""
 msgid "Page navigation"
 msgstr ""
 
-#: setup/theme.php:136
+#: setup/theme.php:132
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr ""
@@ -622,7 +592,7 @@ msgstr ""
 msgid "Post count"
 msgstr ""
 
-#: setup/theme.php:135
+#: setup/theme.php:131
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr ""
@@ -632,7 +602,7 @@ msgctxt "posts count"
 msgid "search results"
 msgstr ""
 
-#: setup/assets.php:129 partials/loop/pagination.php:31
+#: setup/assets.php:122 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr ""
 
@@ -652,17 +622,17 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: setup/theme.php:84
+#: setup/theme.php:82
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr ""
 
-#: setup/theme.php:83
+#: setup/theme.php:81
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr ""
 
-#: setup/theme.php:82
+#: setup/theme.php:80
 msgctxt "Registered menu name"
 msgid "Top bar menu"
 msgstr ""
@@ -689,12 +659,12 @@ msgstr ""
 msgid "Search on hel.fi"
 msgstr ""
 
-#: searchform.php:29
+#: searchform.php:17
 msgctxt "search submit"
 msgid "Search"
 msgstr ""
 
-#: partials/header/search.php:22 partials/search/form-title.php:1
+#: functions/modules/search.php:29 functions/modules/search.php:34
 msgctxt "search title"
 msgid "Search the site"
 msgstr ""
@@ -838,8 +808,4 @@ msgstr ""
 
 #: partials/search/links.php:3 partials/content/parts/related.php:3
 msgid "You might be interested in"
-msgstr ""
-
-#: partials/content/parts/comment.php:19
-msgid "Your comment is awaiting moderation."
 msgstr ""

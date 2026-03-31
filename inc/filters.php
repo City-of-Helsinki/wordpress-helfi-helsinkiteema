@@ -61,15 +61,6 @@ function helsinki_excerpt_character_length( $text, $raw_excerpt ) {
 add_filter( 'wp_trim_excerpt', 'helsinki_excerpt_character_length', 999, 2 );
 
 /**
-  * Comment Form
-  */
-function helsinki_comment_form_default_fields( $fields ) {
-  unset( $fields['url'] );
-  return $fields;
-}
-add_filter('comment_form_default_fields', 'helsinki_comment_form_default_fields');
-
-/**
   * Widgets
   */
 function helsinki_widget_tag_cloud_args( $default ) {

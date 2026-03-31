@@ -68,13 +68,6 @@ function helsinki_enqueue_assets()
 		'helsinkiTheme',
 		helsinki_script_localization()
 	);
-
-	/**
-	  * Comments
-	  */
-	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
-		wp_enqueue_script('comment-reply');
-	}
 }
 
 function helsinki_enqueue_admin_assets($hook_suffix) {
@@ -215,18 +208,4 @@ function helsinki_colors(string $name ='') {
 
 function helsinki_default_scheme() {
 	return apply_filters( 'helsinki_default_scheme', 'coat-of-arms' );
-}
-
-/**
-  * Widgets
-  */
-function helsinki_remove_recent_comments_widget_styles() {
-    global $wp_widget_factory;
-    remove_action(
-		'wp_head',
-		[
-			$wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
-			'recent_comments_style'
-		]
-	);
 }

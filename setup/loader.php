@@ -120,7 +120,6 @@ function helsinki_files(): array {
 				'meta',
 			],
 		    'modules' => [
-				'comments',
 				'load-more',
 				'menu',
 				'notifications',

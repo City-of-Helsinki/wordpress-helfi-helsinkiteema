@@ -4892,88 +4892,6 @@ body.editor-styles-wrapper .wp-caption p.wp-caption-text {
   margin: 0;
   padding: 0;
 }
-body.wp-admin .editor-styles-wrapper .container--comments .container__heading,
-body.editor-styles-wrapper .container--comments .container__heading {
-  --line-height: 1;
-  line-height: 1;
-  margin-bottom: var(--spacing-layout-s);
-}
-body.wp-admin .editor-styles-wrapper .comments-list,
-body.editor-styles-wrapper .comments-list {
-  list-style: none;
-  margin: 0;
-}
-body.wp-admin .editor-styles-wrapper .comments-list .comment,
-body.editor-styles-wrapper .comments-list .comment {
-  margin-bottom: var(--spacing-layout-s);
-}
-body.wp-admin .editor-styles-wrapper .comments-list .comment.waiting-moderation,
-body.editor-styles-wrapper .comments-list .comment.waiting-moderation {
-  background-color: var(--color-silver-light);
-  padding: var(--spacing-2-xs);
-}
-body.wp-admin .editor-styles-wrapper .comments-list .comment + .comment,
-body.editor-styles-wrapper .comments-list .comment + .comment {
-  border-top: 1px solid var(--color-black-20);
-  border-color: var(--primary-color);
-  padding-top: var(--spacing-layout-s);
-}
-body.wp-admin .editor-styles-wrapper .comments-list .comment__article__header > *,
-body.editor-styles-wrapper .comments-list .comment__article__header > * {
-  font-weight: 500;
-  float: left;
-  width: 50%;
-}
-body.wp-admin .editor-styles-wrapper .comments-list .comment__article__header > *:nth-child(even),
-body.editor-styles-wrapper .comments-list .comment__article__header > *:nth-child(even) {
-  text-align: right;
-}
-body.wp-admin .editor-styles-wrapper .comments-list .children,
-body.editor-styles-wrapper .comments-list .children {
-  border-top: 1px solid var(--color-black-20);
-  border-color: var(--primary-color);
-  list-style: none;
-  margin-bottom: 0;
-  padding-top: var(--spacing-layout-s);
-}
-body.wp-admin .editor-styles-wrapper .comment-form label,
-body.editor-styles-wrapper .comment-form label {
-  margin-bottom: var(--spacing-2-xs);
-}
-body.wp-admin .editor-styles-wrapper .comment-form textarea,
-body.editor-styles-wrapper .comment-form textarea {
-  display: block;
-  width: 100%;
-}
-body.wp-admin .editor-styles-wrapper .comment-form-comment label, body.wp-admin .editor-styles-wrapper .comment-form-author label, body.wp-admin .editor-styles-wrapper .comment-form-email label,
-body.editor-styles-wrapper .comment-form-comment label,
-body.editor-styles-wrapper .comment-form-author label,
-body.editor-styles-wrapper .comment-form-email label {
-  display: block;
-}
-body.wp-admin .editor-styles-wrapper .comment-form-author input, body.wp-admin .editor-styles-wrapper .comment-form-email input,
-body.editor-styles-wrapper .comment-form-author input,
-body.editor-styles-wrapper .comment-form-email input {
-  width: 100%;
-}
-@media only screen and (min-width: ) {
-  body.wp-admin .editor-styles-wrapper .comment-form-author, body.wp-admin .editor-styles-wrapper .comment-form-email,
-  body.editor-styles-wrapper .comment-form-author,
-  body.editor-styles-wrapper .comment-form-email {
-    display: inline-block;
-    float: left;
-    width: 33%;
-  }
-  body.wp-admin .editor-styles-wrapper .comment-form-author input, body.wp-admin .editor-styles-wrapper .comment-form-email input,
-  body.editor-styles-wrapper .comment-form-author input,
-  body.editor-styles-wrapper .comment-form-email input {
-    width: 95%;
-  }
-}
-body.wp-admin .editor-styles-wrapper .comment-form-cookies-consent,
-body.editor-styles-wrapper .comment-form-cookies-consent {
-  clear: both;
-}
 body.wp-admin .editor-styles-wrapper .gallery,
 body.editor-styles-wrapper .gallery {
   display: flex;
@@ -5387,33 +5305,30 @@ body.wp-admin .editor-styles-wrapper .widget img,
 body.editor-styles-wrapper .widget img {
   max-width: 100%;
 }
-body.wp-admin .editor-styles-wrapper .widget--widget_archive li + li, body.wp-admin .editor-styles-wrapper .widget--widget_categories li + li, body.wp-admin .editor-styles-wrapper .widget--widget_pages li + li, body.wp-admin .editor-styles-wrapper .widget--widget_meta li + li, body.wp-admin .editor-styles-wrapper .widget--widget_recent_comments li + li, body.wp-admin .editor-styles-wrapper .widget--widget_recent_entries li + li, body.wp-admin .editor-styles-wrapper .widget--widget_rss li + li,
+body.wp-admin .editor-styles-wrapper .widget--widget_archive li + li, body.wp-admin .editor-styles-wrapper .widget--widget_categories li + li, body.wp-admin .editor-styles-wrapper .widget--widget_pages li + li, body.wp-admin .editor-styles-wrapper .widget--widget_meta li + li, body.wp-admin .editor-styles-wrapper .widget--widget_recent_entries li + li, body.wp-admin .editor-styles-wrapper .widget--widget_rss li + li,
 body.editor-styles-wrapper .widget--widget_archive li + li,
 body.editor-styles-wrapper .widget--widget_categories li + li,
 body.editor-styles-wrapper .widget--widget_pages li + li,
 body.editor-styles-wrapper .widget--widget_meta li + li,
-body.editor-styles-wrapper .widget--widget_recent_comments li + li,
 body.editor-styles-wrapper .widget--widget_recent_entries li + li,
 body.editor-styles-wrapper .widget--widget_rss li + li {
   margin-top: var(--spacing-2-xs);
 }
-body.wp-admin .editor-styles-wrapper .widget--widget_archive li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_categories li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_pages li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_meta li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_recent_comments li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_recent_entries li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_rss li > ul,
+body.wp-admin .editor-styles-wrapper .widget--widget_archive li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_categories li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_pages li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_meta li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_recent_entries li > ul, body.wp-admin .editor-styles-wrapper .widget--widget_rss li > ul,
 body.editor-styles-wrapper .widget--widget_archive li > ul,
 body.editor-styles-wrapper .widget--widget_categories li > ul,
 body.editor-styles-wrapper .widget--widget_pages li > ul,
 body.editor-styles-wrapper .widget--widget_meta li > ul,
-body.editor-styles-wrapper .widget--widget_recent_comments li > ul,
 body.editor-styles-wrapper .widget--widget_recent_entries li > ul,
 body.editor-styles-wrapper .widget--widget_rss li > ul {
   margin-top: var(--spacing-layout-s);
   margin-left: var(--spacing-layout-s);
 }
-body.wp-admin .editor-styles-wrapper .widget--widget_archive select, body.wp-admin .editor-styles-wrapper .widget--widget_categories select, body.wp-admin .editor-styles-wrapper .widget--widget_pages select, body.wp-admin .editor-styles-wrapper .widget--widget_meta select, body.wp-admin .editor-styles-wrapper .widget--widget_recent_comments select, body.wp-admin .editor-styles-wrapper .widget--widget_recent_entries select, body.wp-admin .editor-styles-wrapper .widget--widget_rss select,
+body.wp-admin .editor-styles-wrapper .widget--widget_archive select, body.wp-admin .editor-styles-wrapper .widget--widget_categories select, body.wp-admin .editor-styles-wrapper .widget--widget_pages select, body.wp-admin .editor-styles-wrapper .widget--widget_meta select, body.wp-admin .editor-styles-wrapper .widget--widget_recent_entries select, body.wp-admin .editor-styles-wrapper .widget--widget_rss select,
 body.editor-styles-wrapper .widget--widget_archive select,
 body.editor-styles-wrapper .widget--widget_categories select,
 body.editor-styles-wrapper .widget--widget_pages select,
 body.editor-styles-wrapper .widget--widget_meta select,
-body.editor-styles-wrapper .widget--widget_recent_comments select,
 body.editor-styles-wrapper .widget--widget_recent_entries select,
 body.editor-styles-wrapper .widget--widget_rss select {
   width: 100%;
@@ -5489,14 +5404,6 @@ body.editor-styles-wrapper .widget--widget_pages .current_page_item {
 body.wp-admin .editor-styles-wrapper .widget--widget_nav_menu .menu,
 body.editor-styles-wrapper .widget--widget_nav_menu .menu {
   display: block;
-}
-body.wp-admin .editor-styles-wrapper .widget--widget_recent_comments,
-body.editor-styles-wrapper .widget--widget_recent_comments {
-  font-size: 0.8125rem;
-}
-body.wp-admin .editor-styles-wrapper .widget--widget_recent_comments .comment-author-link a,
-body.editor-styles-wrapper .widget--widget_recent_comments .comment-author-link a {
-  font-weight: 500;
 }
 body.wp-admin .editor-styles-wrapper .widget--widget_recent_entries,
 body.editor-styles-wrapper .widget--widget_recent_entries {
