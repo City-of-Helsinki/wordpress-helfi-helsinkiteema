@@ -1,20 +1,29 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
   * Element classes
   */
 function helsinki_header_classes() {
-	helsinki_element_classes(
-		'navigation',
-		array(
-			'navigation',
-		)
-    );
+	/*
+	 * @since 4.38.0
+	 */
+	helsinki_deprecation_notice( __FUNCTION__, 'partials/header/element' );
 }
 
 /**
   * Partials
   */
+if ( ! function_exists( 'helsinki_header_element' ) ) {
+	function helsinki_header_element(): void {
+		get_template_part( 'partials/header/element' );
+	}
+}
+
+
 if ( ! function_exists('helsinki_header_skip') ) {
 	function helsinki_header_skip() {
 		get_template_part('partials/header/skip');
@@ -111,12 +120,14 @@ if ( ! function_exists('helsinki_header_mobile_links') ) {
 
 if ( ! function_exists('helsinki_header_mobile_panel_toggle') ) {
 	function helsinki_header_mobile_panel_toggle() {
-		get_template_part('partials/header/mobile-panel-toggle');
+		/*
+		 * @since 4.38.0
+		 */
+		helsinki_deprecation_notice( __FUNCTION__, 'partials/header/mobile-panel' );
 	}
 }
 
-
-if ( ! function_exists('helsinki_header_mobile_menu') ) {
+if ( ! function_exists( 'helsinki_header_mobile_menu' ) ) {
 	function helsinki_header_mobile_menu() {
 		get_template_part(
 			'partials/header/mobile-menu',
@@ -128,7 +139,10 @@ if ( ! function_exists('helsinki_header_mobile_menu') ) {
 
 if ( ! function_exists('helsinki_header_content') ) {
 	function helsinki_header_content() {
-		get_template_part('partials/header/content');
+		/*
+		 * @since 4.38.0
+		 */
+		helsinki_deprecation_notice( __FUNCTION__, 'partials/header/element' );
 	}
 }
 
@@ -140,24 +154,16 @@ if ( ! function_exists('helsinki_header_search') ) {
 
 if ( ! function_exists('helsinki_header_searchform') ) {
 	function helsinki_header_searchform() {
-		get_template_part('partials/header/searchform');
+		/*
+		 * @since 4.38.0
+		 */
+		helsinki_deprecation_notice( __FUNCTION__, 'helsinki_header_search' );
 	}
 }
 
 if ( ! function_exists('helsinki_available_languages') ) {
 	function helsinki_available_languages() {
-		if ( class_exists('Polylang') ) {
-			return pll_the_languages(array(
-				'echo'                   => 0,
-				'hide_if_empty'          => 1,
-				'hide_current'           => 0,
-				'display_names_as'       => 'name',
-				'hide_if_no_translation' => 0,
-				'raw'                    => true
-			));
-		} else {
-			return array();
-		}
+		return apply_filters( 'helsinki_available_languages', array() );
 	}
 }
 
@@ -167,9 +173,7 @@ if ( ! function_exists('helsinki_header_languages') ) {
 
 		$args = apply_filters(
 			'helsinki_header_languages',
-			array(
-				'languages' => helsinki_available_languages(),
-			),
+			array( 'languages' => helsinki_available_languages() ),
 			$name
 		);
 
@@ -177,12 +181,11 @@ if ( ! function_exists('helsinki_header_languages') ) {
 			return;
 		}
 
-		$accessibility = array(
+		$args['accessibility'] = array(
 			'fi' => 'Vaihda sivuston kieleksi ',
 			'en' => 'Switch website language to ',
 			'sv' => 'Ändra webbplatsens språk till ',
 		);
-		$args['accessibility'] = $accessibility;
 
 		get_template_part( 'partials/header/languages', $name, $args);
 	}

@@ -1,11 +1,19 @@
 <?php
 
-add_action('after_setup_theme', 'helsinki_register_polylang_strings', 10);
-function helsinki_register_polylang_strings() {
-	if ( ! apply_filters('helsinki_polylang_active', false) ) {
-		return;
-	}
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
+add_action( 'after_setup_theme', 'helsinki_polylang_setup', 10 );
+function helsinki_polylang_setup(): void {
+	if ( apply_filters( 'helsinki_polylang_active', false ) ) {
+		helsinki_register_polylang_strings();
+
+		add_filter( 'helsinki_available_languages', 'helsinki_polylang_available_languages' );
+	}
+}
+
+function helsinki_register_polylang_strings(): void {
 	$config = array(
 		'customizer' => array(
 			'front-page' => array(
@@ -36,7 +44,17 @@ function helsinki_register_polylang_strings() {
 			}
 		}
 	}
+}
 
+function helsinki_polylang_available_languages(): array {
+	return pll_the_languages( array(
+		'echo'                   => 0,
+		'hide_if_empty'          => 1,
+		'hide_current'           => 0,
+		'display_names_as'       => 'name',
+		'hide_if_no_translation' => 0,
+		'raw'                    => true
+	) );
 }
 
 add_filter('language_attributes', 'helsinki_polylang_filter_html_attributes', 10, 2);

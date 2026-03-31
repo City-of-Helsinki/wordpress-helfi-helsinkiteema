@@ -1,0 +1,30 @@
+.languages-wrapper {
+  --background-color: var(--color-black-5);
+  --border: 1px solid var(--color-black-20);
+  --menu-padding: #{spacing('s')};
+  --menu-gap: #{spacing('s')};
+
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-top);
+
+  @include breakpoint('m') {
+		--background-color: transparent;
+    --border: none;
+	}
+
+  .menu {
+		padding-left: var(--menu-padding);
+		padding-right: var(--menu-padding);
+		column-gap: var(--menu-gap);
+	}
+
+  .menu__item {
+		a {
+      --line-height: #{$global-line-height};
+
+			font-size: rem-calc(16);
+			line-height: var(--line-height);
+			margin: spacing('xs') 0;
+		}
+	}
+}
