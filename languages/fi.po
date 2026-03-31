@@ -6,21 +6,13 @@ msgstr ""
 "Language: fi\n"
 "Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2026-03-10 13:29+0000\n"
+"PO-Revision-Date: 2026-03-30 13:40+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "Last-Translator: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Loco-Version: 2.6.14; wp-6.7.1"
-
-#: comments.php:35
-msgid "&amp;larr; Older Comments"
-msgstr "&amp;larr; Vanhemmat kommentit"
-
-#: partials/content/parts/comment.php:23
-msgid "(Edit comment)"
-msgstr "(Muokkaa kommenttia)"
 
 #: functions/class-helsinki-link-symbol-handler.php:164
 #: partials/search/links.php:8 partials/search/links.php:15
@@ -110,7 +102,7 @@ msgstr ""
 msgid "City of Helsinki"
 msgstr "Helsingin kaupunki"
 
-#: setup/assets.php:127
+#: setup/assets.php:120
 msgid "Close"
 msgstr "Sulje"
 
@@ -130,17 +122,13 @@ msgstr "Vaakuna"
 msgid "Color"
 msgstr "Väri"
 
-#: comments.php:34
-msgid "Comment navigation"
-msgstr "Kommenttien selaus"
+#: setup/class-disable-comments.php:119
+msgid "Commenting disabled"
+msgstr "Kommentointi on poistettu käytöstä"
 
-#: comments.php:17
-msgid "Comments"
-msgstr "Kommentit"
-
-#: comments.php:41
-msgid "Comments are closed."
-msgstr "Kommentointi on suljettu."
+#: setup/class-disable-comments.php:120
+msgid "Commenting is disabled on Helsinkiteema sites."
+msgstr "Kommentointi on poistettu käytöstä Helsinkiteema-sivustoilla."
 
 #: customizer/config/front-page.php:7
 msgid "Content"
@@ -290,7 +278,7 @@ msgstr ""
 msgid "Default"
 msgstr "Oletus"
 
-#: inc/filters.php:197
+#: inc/filters.php:188
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Perussivu"
@@ -363,7 +351,7 @@ msgstr "Ensimmäinen sivu"
 msgid "Fog"
 msgstr "Sumu"
 
-#: setup/theme.php:137
+#: setup/theme.php:133
 msgctxt "Footer sidebar"
 msgid "Footer"
 msgstr "Alatunniste"
@@ -378,7 +366,7 @@ msgstr "%s:stä"
 msgid "Front page"
 msgstr "Etusivu"
 
-#: setup/assets.php:130
+#: setup/assets.php:123
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
@@ -403,7 +391,7 @@ msgstr "Kulta"
 msgid "Heading"
 msgstr "Otsikko"
 
-#: setup/theme.php:59
+#: setup/theme.php:57
 msgid "Helsinki"
 msgstr "Helsinki"
 
@@ -488,7 +476,7 @@ msgstr "Tyrsky"
 msgid "Koroshape"
 msgstr "Koromuoto"
 
-#: searchform.php:20
+#: searchform.php:8
 msgctxt "label"
 msgid "Search by keyword"
 msgstr "Etsi hakusanalla"
@@ -503,11 +491,6 @@ msgctxt "Label - Nav - Main menu"
 msgid "Main menu"
 msgstr "Päävalikko"
 
-#: partials/header/mobile-menu.php:8
-msgctxt "Label - Nav - Mobile menu"
-msgid "Navigation menu"
-msgstr "Navigaatiovalikko"
-
 #. Name of the template
 #: template/landing-page.php:2
 msgid "Landing Page"
@@ -520,10 +503,6 @@ msgstr "Kieli"
 #: partials/loop/pagination.php:65
 msgid "Last page"
 msgstr "Viimeinen sivu"
-
-#: functions/modules/comments.php:32
-msgid "Leave a comment"
-msgstr "Jätä kommentti"
 
 #: customizer/config/notifications.php:53
 msgid "Link text"
@@ -541,17 +520,11 @@ msgstr "LinkedIn"
 msgid "Load more"
 msgstr "Lataa lisää"
 
-#: functions/modules/comments.php:27
-#, php-format
-msgid "Logged in as %1$s. <a href=\"%2$s\">Log out?</a>"
-msgstr ""
-"Kirjautuneena sisään tunnuksella %1$s. <a href=\"%2$s\">Kirjaudu ulos?</a>"
-
 #: customizer/config/header.php:76
 msgid "Main menu information hierarchy levels"
 msgstr "Päävalikon informaatiohierarkian tasot"
 
-#: partials/header/mobile-panel-toggle.php:16
+#: partials/header/mobile-panel.php:17
 msgctxt "menu toggle"
 msgid "Menu"
 msgstr "Valikko"
@@ -564,11 +537,7 @@ msgstr "Metro"
 msgid "Newer"
 msgstr "Uudemmat"
 
-#: comments.php:36
-msgid "Newer Comments &amp;rarr;"
-msgstr "Uudemmat kommentit &amp;rarr;"
-
-#: setup/assets.php:128 partials/loop/pagination.php:28
+#: setup/assets.php:121 partials/loop/pagination.php:28
 #: partials/loop/pagination.php:71
 msgid "Next"
 msgstr "Seuraava"
@@ -609,7 +578,7 @@ msgstr "Sivu %d"
 msgid "Page navigation"
 msgstr "Sivunavigointi"
 
-#: setup/theme.php:136
+#: setup/theme.php:132
 msgctxt "Page sidebar"
 msgid "Page"
 msgstr "Sivut"
@@ -644,7 +613,7 @@ msgstr "Abstrakti"
 msgid "Post count"
 msgstr "Julkaisujen määrä"
 
-#: setup/theme.php:135
+#: setup/theme.php:131
 msgctxt "Post sidebar"
 msgid "Post"
 msgstr "Artikkelit"
@@ -654,7 +623,7 @@ msgctxt "posts count"
 msgid "search results"
 msgstr "hakutulosta"
 
-#: setup/assets.php:129 partials/loop/pagination.php:31
+#: setup/assets.php:122 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -674,17 +643,17 @@ msgstr "Julkaistu:"
 msgid "Read more"
 msgstr "Lue lisää"
 
-#: setup/theme.php:84
+#: setup/theme.php:82
 msgctxt "Registered menu name"
 msgid "Footer menu"
 msgstr "Alatunnisteen valikko"
 
-#: setup/theme.php:83
+#: setup/theme.php:81
 msgctxt "Registered menu name"
 msgid "Main menu"
 msgstr "Päävalikko"
 
-#: setup/theme.php:82
+#: setup/theme.php:80
 msgctxt "Registered menu name"
 msgid "Top bar menu"
 msgstr "Yläpalkin valikko"
@@ -711,12 +680,12 @@ msgstr "Haku"
 msgid "Search on hel.fi"
 msgstr "Etsi hel.fistä"
 
-#: searchform.php:29
+#: searchform.php:17
 msgctxt "search submit"
 msgid "Search"
 msgstr "Hae"
 
-#: partials/header/search.php:22 partials/search/form-title.php:1
+#: functions/modules/search.php:29 functions/modules/search.php:34
 msgctxt "search title"
 msgid "Search the site"
 msgstr "Hae sivustolta"
@@ -869,7 +838,3 @@ msgstr "Voi harmi!"
 #: partials/search/links.php:3 partials/content/parts/related.php:3
 msgid "You might be interested in"
 msgstr "Sinua voisi kiinnostaa"
-
-#: partials/content/parts/comment.php:19
-msgid "Your comment is awaiting moderation."
-msgstr "Kommenttisi odottaa tarkistusta."
