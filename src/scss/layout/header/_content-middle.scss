@@ -1,0 +1,110 @@
+#masthead .header__content {
+  --header-content-padding: 16px;
+
+	display: grid;
+	grid-template-areas:
+	".        logo     .        .        search   toggle  .       "
+  "menu     menu     menu     menu     menu     menu     menu    "
+  "lang     lang     lang     lang     lang     lang     lang    ";
+  grid-template-columns: var(--header-content-padding) auto 1fr auto auto auto var(--header-content-padding);
+  grid-template-rows: var(--header-content-height) min-content min-content min-content;
+	position: relative;
+
+  a {
+		color: $black;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+  button {
+		&:not([type="submit"]) {
+			outline-offset: -3px;
+		}
+
+		svg {
+			outline: none;
+		}
+	}
+
+	.navigation__logo {
+		grid-area: logo;
+	}
+
+	.languages-wrapper {
+    align-self: center;
+		grid-area: lang;
+	}
+
+	.nav-toggle {
+    --toggle-padding: #{spacing('2-xs')};
+
+    align-self: center;
+
+    .js-toggle {
+      height: 100%;
+      padding: var(--toggle-padding);
+    }
+	}
+
+  .nav-toggle-dropdown {
+    position: relative;
+  }
+
+  .nav-toggle-dropdown__content {
+    --background-color: #{$body-background-color};
+    --padding: #{spacing('layout-2-xl')} 0 #{spacing('layout-m')};
+    --height: 100vh;
+    --max-height: calc(var(--height) - var(--wordpress-toolbar-height,0px) - var(--header-content-height) - var(--logout-bar-height,0px));
+
+    background-color: var(--background-color);
+    height: var(--height);
+  	max-height: var(--max-height);
+  	overflow-y: auto;
+    padding: var(--padding);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 6;
+  }
+
+	.nav-toggle--search {
+		grid-area: search;
+	}
+
+  .nav-toggle-dropdown--search {
+    grid-area: menu;
+  }
+
+	.nav-toggle--menu {
+		grid-area: toggle;
+	}
+
+  .nav-toggle-dropdown--menu {
+    grid-area: menu;
+  }
+
+  @include breakpoint('m') {
+    --header-content-padding: 24px;
+		--background-color: transparent;
+    --border: none;
+    --menu-padding: #{spacing('m')};
+
+    grid-template-areas:
+    ".        logo     .        .        lang     search   toggle   .       "
+    "menu     menu     menu     menu     menu     menu     menu     menu    ";
+    grid-template-columns: 24px auto 1fr auto auto auto auto 24px;
+    grid-template-columns: var(--header-content-padding) auto 1fr auto auto auto auto var(--header-content-padding);
+    grid-template-rows: var(--header-content-height) auto;
+	}
+
+  @include breakpoint('l') {
+    grid-template-areas:
+    ".        logo     .        .        lang   search toggle  .   "
+    "menu     menu     menu     menu     menu   menu   menu    menu";
+  }
+}
