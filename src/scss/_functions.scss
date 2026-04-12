@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'sass:math';
+
 @function root-var( $variable ) {
 	@return var( #{$variable} );
 }
@@ -7,7 +10,7 @@
 }
 
 @function get-breakpoint( $breakpoint ) {
-  @return map-get( $breakpoints, $breakpoint );
+  @return map.get( $breakpoints, $breakpoint );
 }
 
 @function get-max-columns( $breakpoint ) {
