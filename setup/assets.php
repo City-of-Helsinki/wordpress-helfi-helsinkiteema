@@ -19,10 +19,7 @@ function helsinki_enqueue_assets()
 	wp_enqueue_style(
 		'theme',
 		$assets . $default_css,
-		array(
-			'helsinki-wp-styles',
-			'wp-block-library',
-		),
+		array( 'helsinki-wp-public' ),
 		$version,
 		'all'
 	);
@@ -87,6 +84,7 @@ function helsinki_enqueue_admin_assets($hook_suffix) {
 		  'theme-admin-styles',
 		  $assets . $admin_css,
 		  array(
+			  'helsinki-wp',
 			  'wp-block-library',
 		  ),
 		  $version,
