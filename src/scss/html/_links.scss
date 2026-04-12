@@ -1,4 +1,4 @@
-a {
+a:not(.hds-button,.hds-tag) {
   color: $body-color;
   text-decoration: underline;
   transition: $default-transition;
