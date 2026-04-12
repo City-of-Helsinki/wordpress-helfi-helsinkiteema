@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -39,7 +41,7 @@
 
     @for $i from 1 through 12 {
         &.gallery-columns-#{$i} {
-            $percentage: percentage( math.div(1, $i) );
+            $percentage: math.percentage( math.div(1, $i) );
 
             > .gallery-item {
                 width: calc(50% - var(--gallery-block--gutter-size, 16px)/2);
