@@ -1,15 +1,3 @@
-p {
-  --line-height: #{$paragraph-line-height};
-  line-height: $paragraph-line-height;
-  margin-top: 0;
-  margin-bottom: 16px;
-  max-width: 860px;
-
-  &.has-background {
-    padding: 0;
-  }
-}
-
 :root {
   p {
     &.has-white-color {
