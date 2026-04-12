@@ -21,7 +21,6 @@ function jsSidebarNavInit() {
 
   forCallbackLoop(sidebarNavToggle, function (sidebarMenuToggle) {
     var menuItem = sidebarMenuToggle.closest('.menu__item');
-    console.log(menuItem);
     if (
       menuItem.classList.contains('current-menu-item') ||
       menuItem.classList.contains('current-menu-ancestor') ||
