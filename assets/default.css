@@ -157,8 +157,9 @@ a:not(.hds-button, .hds-tag):focus {
 
 ul,
 ol {
-  margin: 0 0 var(--spacing-l) var(--spacing-layout-s);
+  margin: var(--spacing-l) 0;
   padding: 0;
+  padding-inline-start: var(--spacing-layout-s);
 }
 
 ul {
@@ -428,7 +429,6 @@ td:not(.hds-react-component__date-input td) {
 figure.wp-block-table {
   display: block !important;
   overflow: visible;
-  margin-bottom: var(--spacing-l);
   max-width: 100%;
 }
 figure.wp-block-table:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.aligncenter)) {
@@ -507,17 +507,6 @@ figure.wp-block-table.aligncenter figcaption {
 .wp-block-calendar nav .wp-calendar-nav-next {
   float: right;
   padding: 8px;
-}
-
-p {
-  --line-height: var(--lineheight-l);
-  line-height: var(--lineheight-l);
-  margin-top: 0;
-  margin-bottom: 16px;
-  max-width: 860px;
-}
-p.has-background {
-  padding: 0;
 }
 
 :root p.has-white-color {
@@ -891,22 +880,10 @@ footer .search-form .search-field .hds-button--secondary[type=submit]:focus, .ha
 }
 
 .is-layout-flex {
+  --gap: 0.5em;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
-  margin-bottom: var(--spacing-l);
-}
-.is-layout-flex.wp-block-columns {
-  gap: 0;
-}
-@media only screen and (min-width: 768px) {
-  .is-layout-flex.wp-block-columns {
-    gap: 64px;
-  }
-}
-
-.is-layout-flow {
-  margin-bottom: var(--spacing-l);
+  gap: var(--gap);
 }
 
 .footer {
@@ -4526,17 +4503,6 @@ footer .widget--widget_rss .rss-date {
   margin-bottom: var(--spacing-s);
 }
 .wp-block-group.has-background .wp-block-group__inner-container > :last-child {
-  margin-bottom: 0;
-}
-
-.wp-block-list {
-  max-width: 860px;
-}
-.wp-block-list li + li {
-  margin-top: var(--spacing-2-xs);
-}
-.wp-block-list li ol, .wp-block-list li ul {
-  margin-top: var(--spacing-2-xs) !important;
   margin-bottom: 0;
 }
 
