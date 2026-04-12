@@ -1,20 +1,19 @@
 .icon {
-	fill: $anchor-color;
-	background-color: transparent;
-	display: block;
-  	margin-left: 0;
-	transition: $default-transition;
-	width: calc(var(--line-height)*1em);
+  --icon-background: transparent;
+  --icon-fill: #{$anchor-color};
+  --icon-size: calc( var(--line-height, 1) * 1em );
 
-	&--arrow-right {
-	}
+	fill: var(--icon-fill);
+	background-color: var(--icon-background);
+	display: block;
+	transition: $default-transition;
+	width: var(--icon-size);
 
 	@for $i from 1 through 6 {
 		&--abstract-#{$i} {
-			background-color: transparent;
+			--icon-background: transparent;
 		}
 	}
-
 
 	&.inline-icon {
 		display: inline-block;
@@ -24,8 +23,8 @@
 	}
 
 	&.mask-icon {
-		fill: none;
-		background-color: $anchor-color;
+    --icon-background: currentColor;
+    --icon-fill: none;
 	}
 }
 
