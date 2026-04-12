@@ -117,8 +117,8 @@
 		color: $footer-color;
 	}
 
-	a,
-	.widget li a,
+	a:not(.hds-tag),
+	.widget li a:not(.hds-tag),
 	.menu__item > a {
 		color: $white;
 		text-decoration: underline;
