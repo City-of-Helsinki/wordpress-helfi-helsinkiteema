@@ -59,18 +59,15 @@
     }
 
     .icon {
+      --icon-background: var(--accent-color);
+      --icon-size: #{rem-calc(140)};
+
       @include absoluteCenter();
 
-      height: rem-calc(140);
-      width: auto;
-      background-color: var(--accent-color);
-
-      path {
-        
-      }
+      width: var(--icon-size);
 
       @include breakpoint('xl') {
-        height: rem-calc(162);
+        --icon-size: #{rem-calc(162)};
       }
     }
 
