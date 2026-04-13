@@ -112,10 +112,9 @@
           cursor: pointer;
 
           .icon {
-            width: 28px;
+            --icon-size: 28px;
           }
-          svg {
-          }
+
           &[aria-expanded='true'] {
             svg {
               transform: rotate(180deg);
