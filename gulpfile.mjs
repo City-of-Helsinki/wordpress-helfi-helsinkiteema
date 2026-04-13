@@ -24,8 +24,8 @@ const cssOptions = {
 };
 
 const ASSETS = {
-  all:     'assets',
-	styles:  'assets/styles/',
+  all: 'assets',
+	styles: 'assets/styles/',
   adminStyles: 'assets/admin/styles',
 	footerScripts: 'assets/scripts/footer',
   headerScripts: 'assets/scripts/header',
@@ -35,19 +35,23 @@ const ASSETS = {
 
 const SOURCE = {
   footerScripts: [
-    'src/js/footer/*.js'
+    'src/public/js/footer/*.js'
   ],
   headerScripts: [
-    'src/js/header/*.js'
+    'src/public/js/header/*.js'
   ],
   adminScripts: [
-    'src/js/admin/*.js'
+    'src/admin/general/js/*.js'
+  ],
+  editorScripts: [
+    'src/admin/editor/js/*.js'
   ],
   notifications: [
-    'src/js/notifications/*.js'
+    'src/public/js/notifications/*.js'
   ],
-  publicStyles: 'src/scss/**/*.scss',
-  adminStyles: 'src/admin/scss/**/*.scss'
+  publicStyles: 'src/public/scss/**/*.scss',
+  editorStyles: 'src/admin/editor/scss/**/*.scss',
+  adminStyles: 'src/admin/general/scss/**/*.scss',
 }
 
 gulp.task('footerscripts', function(){
