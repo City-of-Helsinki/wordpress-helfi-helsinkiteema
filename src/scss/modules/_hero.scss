@@ -68,8 +68,9 @@
       z-index: 1;
 
       .icon {
+        --icon-size: 150px;
+
         @include absoluteCenter();
-        width: 150px;
       }
 
       &--arrow {
@@ -86,7 +87,7 @@
         transform: translate(-50%,70%);
 
         .icon {
-          width: 180px;
+          --icon-size: 180px;
           left: 0;
           transform: translate(-25%,-50%);
         }
