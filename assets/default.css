@@ -223,7 +223,7 @@ html {
 body {
   background-color: var(--color-white);
   color: #1a1a1a;
-  font-family: "Helsinki Grotesk", Arial;
+  font-family: HelsinkiGroteskPro, Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   --line-height: var(--lineheight-l);
