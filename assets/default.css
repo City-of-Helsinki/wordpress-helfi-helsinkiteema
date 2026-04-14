@@ -138,7 +138,7 @@ input[type=url] {
   text-decoration: none;
 }
 
-a:not(.hds-button, .hds-tag) {
+:where(a:not(.hds-button, .hds-tag)) {
   color: #1a1a1a;
   text-decoration: underline;
   transition: all 0.3s;
@@ -146,10 +146,10 @@ a:not(.hds-button, .hds-tag) {
   text-decoration-thickness: 0.0625rem;
   text-underline-offset: 10%;
 }
-a:not(.hds-button, .hds-tag):hover {
+:where(a:not(.hds-button, .hds-tag)):hover {
   text-decoration-thickness: 0.125rem;
 }
-a:not(.hds-button, .hds-tag):focus {
+:where(a:not(.hds-button, .hds-tag)):focus {
   outline: 3px solid #1a1a1a;
   outline-color: inherit;
   display: inline-block;
@@ -223,7 +223,7 @@ html {
 body {
   background-color: var(--color-white);
   color: #1a1a1a;
-  font-family: "Helsinki Grotesk", Arial;
+  font-family: HelsinkiGroteskPro, Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   --line-height: var(--lineheight-l);
@@ -4579,7 +4579,6 @@ p.has-text-align-center, .wp-block-heading.has-text-align-center {
   background: none;
   box-shadow: none;
   display: block;
-  margin-left: var(--spacing-layout-s);
   min-width: auto;
   position: static;
   top: auto;
