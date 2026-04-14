@@ -174,12 +174,43 @@ function helsinki_create_svg_icon_dom_item( string $name ) {
 add_filter( 'helsinki_sidebar_output', 'helsinki_sidebar_filter_rss_links' );
 add_filter( 'rss_widget_feed_link', '__return_false' );
 
+add_filter( 'wp_dropdown_cats', 'helsinki_filter_category_dropdown_widget' );
 function helsinki_filter_category_dropdown_widget($output) {
-  $output = str_replace('<select', '<p><span class="hds-text-input__input-wrapper"><select', $output); //wrap select in span
-  $output = str_replace('</select>', '</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>', $output); //add chevron to category dropdown
-  return $output;
+	//wrap select in span
+	$output = str_replace(
+		'<select',
+		'<p class="hds-text-input"><span class="hds-text-input__input-wrapper"><select',
+		$output
+	);
+
+	//add chevron to category dropdown
+	$output = str_replace(
+		'</select>',
+		'</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>',
+		$output
+	);
+
+	$output = str_replace(
+		'class=\'postform',
+		'class=\'hds-text-input__input postform',
+		$output
+	);
+
+	return $output;
 }
-add_filter('wp_dropdown_cats', 'helsinki_filter_category_dropdown_widget');
+
+add_filter( 'wp_list_categories', 'helsinki_category_item_tag_class', 10, 2 );
+function helsinki_category_item_tag_class( string $output, array $args ): string {
+	$tags = new WP_HTML_Tag_Processor( $output );
+
+	while( $tags->next_tag( array( 'class_name' => 'cat-item' ) ) ) {
+		if ( $tags->next_tag( 'a' ) ) {
+			$tags->add_class( 'hds-tag hds-tag--rounded-corners' );
+		}
+	}
+
+	return $tags->get_updated_html();
+}
 
 /**
   * Page Templates
