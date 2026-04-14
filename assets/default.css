@@ -138,7 +138,7 @@ input[type=url] {
   text-decoration: none;
 }
 
-a {
+a:not(.hds-button, .hds-tag) {
   color: #1a1a1a;
   text-decoration: underline;
   transition: all 0.3s;
@@ -146,10 +146,10 @@ a {
   text-decoration-thickness: 0.0625rem;
   text-underline-offset: 10%;
 }
-a:hover {
+a:not(.hds-button, .hds-tag):hover {
   text-decoration-thickness: 0.125rem;
 }
-a:focus {
+a:not(.hds-button, .hds-tag):focus {
   outline: 3px solid #1a1a1a;
   outline-color: inherit;
   display: inline-block;
@@ -1001,25 +1001,25 @@ footer .search-form .search-field .hds-button--secondary[type=submit]:focus, .ha
 .footer .widget__title {
   color: var(--color-white);
 }
-.footer a,
-.footer .widget li a,
+.footer a:not(.hds-tag),
+.footer .widget li a:not(.hds-tag),
 .footer .menu__item > a {
   color: var(--color-white);
   text-decoration: underline;
 }
-.footer a svg,
-.footer .widget li a svg,
+.footer a:not(.hds-tag) svg,
+.footer .widget li a:not(.hds-tag) svg,
 .footer .menu__item > a svg {
   fill: var(--color-white);
 }
-.footer a svg.mask-icon,
-.footer .widget li a svg.mask-icon,
+.footer a:not(.hds-tag) svg.mask-icon,
+.footer .widget li a:not(.hds-tag) svg.mask-icon,
 .footer .menu__item > a svg.mask-icon {
   background-color: var(--color-white);
 }
-.footer a:focus, .footer a:hover,
-.footer .widget li a:focus,
-.footer .widget li a:hover,
+.footer a:not(.hds-tag):focus, .footer a:not(.hds-tag):hover,
+.footer .widget li a:not(.hds-tag):focus,
+.footer .widget li a:not(.hds-tag):hover,
 .footer .menu__item > a:focus,
 .footer .menu__item > a:hover {
   text-decoration: none;
@@ -2424,30 +2424,32 @@ ul.posts {
 }
 
 .icon {
-  fill: #1a1a1a;
-  background-color: transparent;
+  --icon-background: transparent;
+  --icon-fill: #1a1a1a;
+  --icon-size: calc( var(--line-height, 1) * 1em );
+  fill: var(--icon-fill);
+  background-color: var(--icon-background);
   display: block;
-  margin-left: 0;
   transition: all 0.3s;
-  width: calc(var(--line-height) * 1em);
+  width: var(--icon-size);
 }
 .icon--abstract-1 {
-  background-color: transparent;
+  --icon-background: transparent;
 }
 .icon--abstract-2 {
-  background-color: transparent;
+  --icon-background: transparent;
 }
 .icon--abstract-3 {
-  background-color: transparent;
+  --icon-background: transparent;
 }
 .icon--abstract-4 {
-  background-color: transparent;
+  --icon-background: transparent;
 }
 .icon--abstract-5 {
-  background-color: transparent;
+  --icon-background: transparent;
 }
 .icon--abstract-6 {
-  background-color: transparent;
+  --icon-background: transparent;
 }
 .icon.inline-icon {
   display: inline-block;
@@ -2456,8 +2458,8 @@ ul.posts {
   margin-inline-start: var(--spacing-4-xs);
 }
 .icon.mask-icon {
-  fill: none;
-  background-color: #1a1a1a;
+  --icon-background: currentColor;
+  --icon-fill: none;
 }
 
 .has-icon {
