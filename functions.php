@@ -50,6 +50,7 @@ add_action( 'template_redirect', 'helsinki_setup_templates', 10 );
  *
  */
 add_action( 'wp_enqueue_scripts', 'helsinki_enqueue_assets', 10 );
+add_action( 'enqueue_block_assets', 'helsinki_enqueue_editor_assets', 10 );
 add_action( 'admin_enqueue_scripts', 'helsinki_enqueue_admin_assets', 10 );
 
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );

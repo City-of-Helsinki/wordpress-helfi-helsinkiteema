@@ -24,133 +24,130 @@ const cssOptions = {
 };
 
 const ASSETS = {
-  all:     'assets',
-	styles:  'assets/styles/',
-  adminStyles: 'assets/admin/styles',
-	footerScripts: 'assets/scripts/footer',
-  headerScripts: 'assets/scripts/header',
-  adminScripts: 'assets/scripts/admin',
-  notifications: 'partials/notification/js'
+  admin: {
+    styles: 'assets/admin/css',
+    scripts: 'assets/admin/js',
+  },
+  editor: {
+    styles: 'assets/editor/css',
+    scripts: 'assets/editor/js',
+  },
+  public: {
+    scripts: {
+      header: 'assets/public/header',
+      footer: 'assets/public/footer',
+      notifications: 'partials/notification/js',
+    },
+    styles: 'assets/public',
+  },
 };
 
 const SOURCE = {
-  footerScripts: [
-    'src/js/footer/*.js'
-  ],
-  headerScripts: [
-    'src/js/header/*.js'
-  ],
-  adminScripts: [
-    'src/js/admin/*.js'
-  ],
-  notifications: [
-    'src/js/notifications/*.js'
-  ],
-  publicStyles: 'src/scss/**/*.scss',
-  adminStyles: 'src/admin/scss/**/*.scss'
+  admin: {
+    styles: 'src/admin/scss/**/*.scss',
+    scripts: 'src/admin/js/*.js',
+  },
+  editor: {
+    styles: 'src/editor/scss/**/*.scss',
+    scripts: 'src/editor/js/*.js',
+  },
+  public: {
+    scripts: {
+      header: 'src/public/js/header/*.js',
+      footer: 'src/public/js/footer/*.js',
+      notifications: 'src/public/js/notifications/*.js',
+    },
+    styles: 'src/public/scss/**/*.scss',
+  },
 }
 
-gulp.task('footerscripts', function(){
-  return gulp.src(SOURCE.footerScripts)
-    .pipe(concat('scripts.js'))
-		.pipe(gulp.dest(ASSETS.footerScripts))
-    .pipe(babel({
-      presets: ["@babel/preset-env"]
-    }))
-    .pipe(uglify())
-    .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest(ASSETS.footerScripts));
-});
+function handleScripts(source, destination) {
+  return gulp.src(source)
+		.pipe(concat('scripts.js'))
+		.pipe(babel({
+			presets: ["@babel/preset-env"]
+		}))
+    .pipe(gulp.dest(destination))
+		.pipe(uglify())
+		.pipe(rename('scripts.min.js'))
+		.pipe(gulp.dest(destination));
+}
 
-gulp.task('headerscripts', function(){
-  return gulp.src(SOURCE.headerScripts)
-    .pipe(concat('scripts.js'))
-		.pipe(gulp.dest(ASSETS.headerScripts))
-    .pipe(babel({
-      presets: ["@babel/preset-env"]
-    }))
-    .pipe(uglify())
-    .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest(ASSETS.headerScripts));
-});
+function handleStyles(source, destination) {
+  return gulp.src(source)
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(prefix())
+    .pipe(cleanCSS(cssOptions))
+    .pipe(gulp.dest(destination))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(destination))
+}
 
-gulp.task('adminscripts', function(){
-  return gulp.src(SOURCE.adminScripts)
-    .pipe(concat('scripts.js'))
-		.pipe(gulp.dest(ASSETS.adminScripts))
-    .pipe(babel({
-      presets: ["@babel/preset-env"]
-    }))
-    .pipe(uglify())
-    .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest(ASSETS.adminScripts));
-});
+gulp.task('adminScripts', () => handleScripts(SOURCE.admin.scripts, ASSETS.admin.scripts));
+gulp.task('adminStyles', () => handleStyles(SOURCE.admin.styles, ASSETS.admin.styles));
 
-gulp.task('notifications', function(){
-  return gulp.src(SOURCE.notifications)
+gulp.task('editorScripts', () => handleScripts(SOURCE.editor.scripts, ASSETS.editor.scripts));
+gulp.task('editorStyles', () => handleStyles(SOURCE.editor.styles, ASSETS.editor.styles));
+
+gulp.task('footerScripts', () => handleScripts(SOURCE.public.scripts.footer, ASSETS.public.scripts.footer));
+gulp.task('headerScripts', () => handleScripts(SOURCE.public.scripts.header, ASSETS.public.scripts.header));
+gulp.task('publicStyles', () => handleStyles(SOURCE.public.styles, ASSETS.public.styles));
+
+gulp.task('notificationScripts', function(){
+  return gulp.src(SOURCE.public.scripts.notifications)
     .pipe(concat('notifications.php'))
-    .pipe(gulp.dest(ASSETS.notifications))
+    .pipe(gulp.dest(ASSETS.public.scripts.notifications))
     .pipe(babel({
       presets: ["@babel/preset-env"]
     }))
     .pipe(uglify())
     .pipe(rename('notifications.min.php'))
-    .pipe(gulp.dest(ASSETS.notifications));
+    .pipe(gulp.dest(ASSETS.public.scripts.notifications));
 })
-
-gulp.task('publicStyles', function() {
-  return gulp.src(SOURCE.publicStyles)
-    .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(gulp.dest(ASSETS.all))
-    .pipe(prefix())
-    .pipe(cleanCSS(cssOptions))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(ASSETS.all));
-});
-
-gulp.task('adminStyles', function() {
-  return gulp.src(SOURCE.adminStyles)
-    .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(gulp.dest(ASSETS.adminStyles))
-    .pipe(prefix())
-    .pipe(cleanCSS(cssOptions))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(ASSETS.adminStyles));
-});
 
 gulp.task(
   'scripts',
   gulp.parallel(
-    'footerscripts',
-    'headerscripts',
-    'adminscripts',
-    'notifications'
+    'adminScripts',
+    'editorScripts',
+    'footerScripts',
+    'headerScripts',
+    'notificationScripts',
   )
 );
 
 gulp.task(
   'styles',
   gulp.parallel(
+    'adminStyles',
+    'editorStyles',
     'publicStyles',
-    'adminStyles'
   )
 );
 
 gulp.task('watch', function() {
-  gulp.watch(SOURCE.publicStyles, gulp.parallel('styles'));
-  gulp.watch(SOURCE.footerScripts, gulp.parallel('footerscripts'));
-  gulp.watch(SOURCE.headerScripts, gulp.parallel('headerscripts'));
-  gulp.watch(SOURCE.adminScripts, gulp.parallel('adminscripts'));
-  gulp.watch(SOURCE.notifications, gulp.parallel('notifications'));
+  gulp.watch(SOURCE.admin.scripts, gulp.parallel('adminScripts'));
+  gulp.watch(SOURCE.admin.styles, gulp.parallel('adminStyles'));
+
+  gulp.watch(SOURCE.editor.scripts, gulp.parallel('editorScripts'));
+  gulp.watch(SOURCE.editor.styles, gulp.parallel('editorStyles'));
+
+  gulp.watch(SOURCE.public.scripts.footer, gulp.parallel('footerScripts'));
+  gulp.watch(SOURCE.public.scripts.header, gulp.parallel('headerScripts'));
+  gulp.watch(SOURCE.public.scripts.notifications, gulp.parallel('notificationScripts'));
+  gulp.watch(SOURCE.public.styles, gulp.parallel('publicStyles'));
 });
 
 gulp.task(
   'default',
   gulp.parallel(
-    'styles',
-    'footerscripts',
-    'headerscripts',
-    'adminscripts',
-    'notifications'
+    'adminScripts',
+    'adminStyles',
+    'editorScripts',
+    'editorStyles',
+    'footerScripts',
+    'headerScripts',
+    'notificationScripts',
+    'publicStyles',
   )
 );

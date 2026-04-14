@@ -1,73 +1,65 @@
+"use strict";
+
 function setFocus(element) {
   try {
     element.focus();
-  }
-    catch (error) {
-  }
-  return (document.activeElement === element);
+  } catch (error) {}
+  return document.activeElement === element;
 }
-
 function firstFocusableChild(element) {
   var firstMenuItem = element.querySelector('.menu li a');
-  if ( firstMenuItem ) {
+  if (firstMenuItem) {
     return firstMenuItem;
   }
   var firstInput = element.querySelector('input');
-  if ( firstInput ) {
+  if (firstInput) {
     return firstInput;
   }
   return element.firstElementChild;
 }
-
 function lastFocusableChild(element) {
   return element.lastElementChild;
 }
-
 function focusFirstChild(element) {
   for (var i = 0; i < element.childNodes.length; i++) {
-    if ( setFocus(element.childNodes[i]) || focusFirstChild(element.childNodes[i]) ) {
+    if (setFocus(element.childNodes[i]) || focusFirstChild(element.childNodes[i])) {
       return true;
     }
   }
   return null;
 }
-
 function focusLastChild(element) {
   for (var i = element.childNodes.length - 1; i >= 0; i--) {
-    if ( setFocus(element.childNodes[i]) || focusLastChild(element.childNodes[i]) ) {
+    if (setFocus(element.childNodes[i]) || focusLastChild(element.childNodes[i])) {
       return true;
     }
   }
   return null;
 }
-
-function focusToPrevious( element ) {
+function focusToPrevious(element) {
   var _previousFocusable;
-  if ( element.previousElementSibling !== null ) { 
+  if (element.previousElementSibling !== null) {
     _previousFocusable = element.previousElementSibling;
-  }
-  else {
+  } else {
     var _parent = element.parentElement;
-    while ( _parent ) {
-      if ( _parent.previousElementSibling !== null ) {
+    while (_parent) {
+      if (_parent.previousElementSibling !== null) {
         _previousFocusable = _parent.previousElementSibling;
         break;
       }
       _parent = _parent.parentElement;
     }
   }
-
-  while ( _previousFocusable ) {
-    if ( focusLastChild(_previousFocusable) === true ) {
+  while (_previousFocusable) {
+    if (focusLastChild(_previousFocusable) === true) {
       break;
     }
-    if ( _previousFocusable.previousElementSibling !== null ) {
+    if (_previousFocusable.previousElementSibling !== null) {
       _previousFocusable = _previousFocusable.previousElementSibling;
-    }
-    else {
+    } else {
       var _parent = _previousFocusable.parentElement;
-      while ( _parent ) {
-        if ( _parent.previousElementSibling !== null ) {
+      while (_parent) {
+        if (_parent.previousElementSibling !== null) {
           _previousFocusable = _parent.previousElementSibling;
           break;
         }
@@ -76,21 +68,34 @@ function focusToPrevious( element ) {
     }
   }
 }
-
 Hyphenopoly.config({
-    require: {
-        "fi": "lentokonesuihkuturbiinimoottoriapumekaanikkoaliupseerioppilas",
-        "en-us": "Supercalifragilisticexpialidocious"
-    },
-    setup: {
-        selectors: {
-            "h1": {minWordLength: 14},
-            "h2": {minWordLength: 14},
-            "h3": {minWordLength: 14},
-            "h4": {minWordLength: 14},
-            "h5": {minWordLength: 14},
-            "h6": {minWordLength: 14},
-            ".link__title_link": {minWordLength: 14},
-        }
+  require: {
+    "fi": "lentokonesuihkuturbiinimoottoriapumekaanikkoaliupseerioppilas",
+    "en-us": "Supercalifragilisticexpialidocious"
+  },
+  setup: {
+    selectors: {
+      "h1": {
+        minWordLength: 14
+      },
+      "h2": {
+        minWordLength: 14
+      },
+      "h3": {
+        minWordLength: 14
+      },
+      "h4": {
+        minWordLength: 14
+      },
+      "h5": {
+        minWordLength: 14
+      },
+      "h6": {
+        minWordLength: 14
+      },
+      ".link__title_link": {
+        minWordLength: 14
+      }
     }
+  }
 });

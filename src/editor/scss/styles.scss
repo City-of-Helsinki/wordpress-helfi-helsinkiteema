@@ -1,8 +1,8 @@
 @use "sass:math";
 
-@import '../../scss/functions';
-@import '../../scss/mixins';
-@import '../../scss/settings';
+@import '../../public/scss/functions';
+@import '../../public/scss/mixins';
+@import '../../public/scss/settings';
 
 body.wp-admin .edit-post-visual-editor__content-area,
 html:not([class]) {
@@ -73,7 +73,7 @@ body.editor-styles-wrapper {
 		}
 	}
 
-  @import '../../scss/elements';
+  @import '../../public/scss/elements';
 }
 
 body .interface-interface-skeleton__sidebar {
