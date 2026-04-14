@@ -1,7 +1,8 @@
 ul,
 ol {
-  margin: 0 0 $paragraph-margin-bottom $list-margin-left;
+  margin: $paragraph-margin-bottom 0;
   padding: 0;
+  padding-inline-start: $list-margin-left;
 }
 
 ul {

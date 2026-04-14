@@ -116,7 +116,6 @@ td:not(.hds-react-component__date-input td) {
 figure.wp-block-table {
 	display: block !important;
 	overflow: visible;
-	margin-bottom: $paragraph-margin-bottom;
 	max-width: 100%;
 
 	&:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.aligncenter)) {
