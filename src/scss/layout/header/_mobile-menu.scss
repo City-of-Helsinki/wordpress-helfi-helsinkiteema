@@ -41,7 +41,7 @@
 
 						> button {
 							.icon {
-								width: 24px;
+								--icon-size: 24px;
 							}
 						}
 					}
@@ -86,7 +86,7 @@
 						align-items: center;
 
 						.icon {
-							width: 24px;
+							--icon-size: 24px;
 							margin-left: 0;
 						}
 					}
