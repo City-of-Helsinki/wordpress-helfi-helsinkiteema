@@ -323,7 +323,7 @@ add_filter( 'wp_img_tag_add_auto_sizes', '__return_false' );
 /**
  * Escape all post content by default
  */
-add_filter( 'the_content', 'helsinki_kses_post_the_content', PHP_INT_MAX + 1 );
+add_filter( 'the_content', 'helsinki_kses_post_the_content', intval( PHP_INT_MAX + 1 ) );
 function helsinki_kses_post_the_content( string $content ): string {
 	return wp_kses_post( $content );
 }
