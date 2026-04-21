@@ -4,8 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-use WP_Post;
-
 final class Helsinki_Image_Meta_Provider
 {
 	private const PHOTOGRAPHER_META_KEY = '_photographer_text';
