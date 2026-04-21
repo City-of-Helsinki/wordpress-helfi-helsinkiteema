@@ -319,3 +319,11 @@ add_filter( 'render_block', 'helsinki_image_render', 10, 2 );
  * Disable lazy loaded image auto sizes added in WP 6.7
  */
 add_filter( 'wp_img_tag_add_auto_sizes', '__return_false' );
+
+/**
+ * Escape all post content by default
+ */
+add_filter( 'the_content', 'helsinki_kses_post_the_content', intval( PHP_INT_MAX + 1 ) );
+function helsinki_kses_post_the_content( string $content ): string {
+	return wp_kses_post( $content );
+}
