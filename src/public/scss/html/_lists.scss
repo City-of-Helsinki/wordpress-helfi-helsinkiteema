@@ -2,7 +2,7 @@ ul,
 ol {
   margin: $paragraph-margin-bottom 0;
   padding: 0;
-  padding-inline-start: $list-margin-left;
+  padding-inline-start: var(--list-indent, #{$list-margin-left});
 }
 
 ul {

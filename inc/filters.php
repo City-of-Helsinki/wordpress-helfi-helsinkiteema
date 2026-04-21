@@ -201,19 +201,6 @@ function helsinki_filter_category_dropdown_widget($output) {
 	return $output;
 }
 
-add_filter( 'wp_list_categories', 'helsinki_category_item_tag_class', 10, 2 );
-function helsinki_category_item_tag_class( string $output, array $args ): string {
-	$tags = new WP_HTML_Tag_Processor( $output );
-
-	while( $tags->next_tag( array( 'class_name' => 'cat-item' ) ) ) {
-		if ( $tags->next_tag( 'a' ) ) {
-			$tags->add_class( 'hds-tag hds-tag--rounded-corners' );
-		}
-	}
-
-	return $tags->get_updated_html();
-}
-
 /**
   * Page Templates
   */

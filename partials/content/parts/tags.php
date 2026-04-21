@@ -4,6 +4,9 @@
 	<div class="tagcloud">
 		<?php foreach (get_the_tags() as $index => $tag) :
 			$classes = array(
+				'hds-tag',
+				'hds-tag--rounded-corners',
+				'hds-tag--link',
 				'tag-cloud-link',
 				'tag-link-' . $tag->term_id,
 				'tag-link-position-' . ($index + 1)
