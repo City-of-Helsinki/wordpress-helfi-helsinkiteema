@@ -176,25 +176,27 @@ add_filter( 'rss_widget_feed_link', '__return_false' );
 
 add_filter( 'wp_dropdown_cats', 'helsinki_filter_category_dropdown_widget' );
 function helsinki_filter_category_dropdown_widget($output) {
-	//wrap select in span
-	$output = str_replace(
-		'<select',
-		'<p class="hds-text-input"><span class="hds-text-input__input-wrapper"><select',
-		$output
-	);
+	if ( did_action( 'template_redirect' ) ) {
+		//wrap select in span
+		$output = str_replace(
+			'<select',
+			'<p class="hds-text-input"><span class="hds-text-input__input-wrapper"><select',
+			$output
+		);
 
-	//add chevron to category dropdown
-	$output = str_replace(
-		'</select>',
-		'</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>',
-		$output
-	);
+		//add chevron to category dropdown
+		$output = str_replace(
+			'</select>',
+			'</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>',
+			$output
+		);
 
-	$output = str_replace(
-		'class=\'postform',
-		'class=\'hds-text-input__input postform',
-		$output
-	);
+		$output = str_replace(
+			'class=\'postform',
+			'class=\'hds-text-input__input postform',
+			$output
+		);
+	}
 
 	return $output;
 }
