@@ -176,40 +176,29 @@ add_filter( 'rss_widget_feed_link', '__return_false' );
 
 add_filter( 'wp_dropdown_cats', 'helsinki_filter_category_dropdown_widget' );
 function helsinki_filter_category_dropdown_widget($output) {
-	//wrap select in span
-	$output = str_replace(
-		'<select',
-		'<p class="hds-text-input"><span class="hds-text-input__input-wrapper"><select',
-		$output
-	);
+	if ( did_action( 'template_redirect' ) ) {
+		//wrap select in span
+		$output = str_replace(
+			'<select',
+			'<p class="hds-text-input"><span class="hds-text-input__input-wrapper"><select',
+			$output
+		);
 
-	//add chevron to category dropdown
-	$output = str_replace(
-		'</select>',
-		'</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>',
-		$output
-	);
+		//add chevron to category dropdown
+		$output = str_replace(
+			'</select>',
+			'</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>',
+			$output
+		);
 
-	$output = str_replace(
-		'class=\'postform',
-		'class=\'hds-text-input__input postform',
-		$output
-	);
-
-	return $output;
-}
-
-add_filter( 'wp_list_categories', 'helsinki_category_item_tag_class', 10, 2 );
-function helsinki_category_item_tag_class( string $output, array $args ): string {
-	$tags = new WP_HTML_Tag_Processor( $output );
-
-	while( $tags->next_tag( array( 'class_name' => 'cat-item' ) ) ) {
-		if ( $tags->next_tag( 'a' ) ) {
-			$tags->add_class( 'hds-tag hds-tag--rounded-corners' );
-		}
+		$output = str_replace(
+			'class=\'postform',
+			'class=\'hds-text-input__input postform',
+			$output
+		);
 	}
 
-	return $tags->get_updated_html();
+	return $output;
 }
 
 /**
@@ -319,3 +308,11 @@ add_filter( 'render_block', 'helsinki_image_render', 10, 2 );
  * Disable lazy loaded image auto sizes added in WP 6.7
  */
 add_filter( 'wp_img_tag_add_auto_sizes', '__return_false' );
+
+/**
+ * Escape all post content by default
+ */
+add_filter( 'the_content', 'helsinki_kses_post_the_content', intval( PHP_INT_MAX + 1 ) );
+function helsinki_kses_post_the_content( string $content ): string {
+	return wp_kses_post( $content );
+}

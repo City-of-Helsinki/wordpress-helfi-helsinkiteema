@@ -17,11 +17,6 @@
   width: var(--width);
   padding: var(--padding-top) var(--padding-horizontal) var(--padding-bottom);
 
-  @include breakpoint('m') {
-    --margin-top: var(--spacing-layout-l, 4rem);
-    --margin-bottom: var(--spacing-layout-l, 4rem);
-  }
-
   @media screen and (min-width: #{$global-max-width}) {
     --margin-horizontal: calc(50% - calc(#{$global-max-width} / 2));
     --max-width: #{$global-max-width};
@@ -197,6 +192,13 @@
 
   &:last-child {
     --margin-bottom: 0;
+  }
+}
+
+@include breakpoint('m') {
+  div.rns-container {
+    --margin-top: var(--spacing-layout-l, 4rem);
+    --margin-bottom: var(--spacing-layout-l, 4rem);
   }
 }
 

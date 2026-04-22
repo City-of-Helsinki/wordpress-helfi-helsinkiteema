@@ -14,5 +14,7 @@
 		}
 	}
 
-	&--flip-horizontal {}
+	&--flip-horizontal {
+    transform: scaleY(-1);
+  }
 }
