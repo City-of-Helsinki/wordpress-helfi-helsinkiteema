@@ -45,8 +45,6 @@ function helsinki_setup_theme(): void {
 	 */
 	add_theme_support( 'disable-custom-colors' );
 	add_theme_support( 'disable-custom-gradients' );
-	add_theme_support( 'disable-layout-styles' );
-
 	remove_theme_support( 'core-block-patterns' );
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'style-editor.css' );
