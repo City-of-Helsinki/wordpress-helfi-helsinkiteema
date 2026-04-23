@@ -13,11 +13,10 @@ blockquote {
     border-left: 8px solid;
     border-color: var(--primary-color);
     padding-left: spacing('layout-s');
-    max-width: 860px;
 
     @include breakpoint('m') {
         margin-top: spacing('layout-l');
-        margin-bottom: spacing('layout-l');    
+        margin-bottom: spacing('layout-l');
     }
 
     @include breakpointMax('m') {
