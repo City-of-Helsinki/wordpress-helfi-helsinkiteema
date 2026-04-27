@@ -26,7 +26,16 @@ if ( ! function_exists( 'helsinki_header_element' ) ) {
 
 if ( ! function_exists('helsinki_header_skip') ) {
 	function helsinki_header_skip(): void {
-		get_template_part('partials/header/skip');
+		$target = apply_filters( 'helsinki_header_skip_target', 'main-content' );
+		$text   = apply_filters( 'helsinki_header_skip_text', __( 'Skip to content', 'helsinki-universal' ) );
+
+		if ( $target && $text ) {
+			printf(
+				'<a class="navigation__skip screen-reader-text" href="#%s">%s</a>',
+				esc_attr( $target ),
+				esc_html( $text )
+			);
+		}
 	}
 }
 
