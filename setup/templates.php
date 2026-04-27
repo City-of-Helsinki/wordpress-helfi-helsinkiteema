@@ -52,13 +52,8 @@ function helsinki_setup_templates()
 	/**
 	 * Breadcrumbs
 	 */
-	if (
-		apply_filters('helsinki_breadcrumbs_enabled', false) &&
-		(
-			(helsinki_is_static_front_page() && !is_front_page()) || (!is_front_page() && !is_home())
-		)
-	) {
-		add_action('helsinki_main_top', 'helsinki_content_breadcrumbs', 10);
+	if ( helsinki_breadcrumbs_enabled() ) {
+		add_action( 'helsinki_main_before', 'helsinki_content_breadcrumbs', 20 );
 	}
 
 	/**

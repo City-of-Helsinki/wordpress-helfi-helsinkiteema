@@ -23,6 +23,14 @@ if ( ! function_exists('helsinki_content_breadcrumbs') ) {
 	}
 }
 
+function helsinki_breadcrumbs_enabled(): bool {
+	$not_home = (helsinki_is_static_front_page() && !is_front_page())
+		|| (!is_front_page() && !is_home());
+
+	return apply_filters( 'helsinki_breadcrumbs_enabled', false )
+	       && $not_home;
+}
+
 add_filter('wpseo_breadcrumb_single_link_info', 'helsinki_content_breadcrumbs_single_link_info', 10, 3);
 function helsinki_content_breadcrumbs_single_link_info($link_info, $index, $crumbs) {
 	if ($index == 0) {
