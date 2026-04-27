@@ -26,7 +26,7 @@ if ( ! function_exists( 'helsinki_header_element' ) ) {
 
 if ( ! function_exists('helsinki_header_skip') ) {
 	function helsinki_header_skip(): void {
-		$target = apply_filters( 'helsinki_header_skip_target', 'main-content' );
+		$target = apply_filters( 'helsinki_header_skip_target', 'main' );
 		$text   = apply_filters( 'helsinki_header_skip_text', __( 'Skip to content', 'helsinki-universal' ) );
 
 		if ( $target && $text ) {
