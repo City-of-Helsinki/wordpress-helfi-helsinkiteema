@@ -6,7 +6,7 @@ msgstr ""
 "Language: sv_SE\n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2026-03-30 13:40+0000\n"
+"PO-Revision-Date: 2026-04-27 07:48+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: functions/class-helsinki-link-symbol-handler.php:164
@@ -98,7 +98,7 @@ msgstr ""
 msgid "City of Helsinki"
 msgstr "Helsingfors stad"
 
-#: setup/assets.php:120
+#: setup/assets.php:122
 msgid "Close"
 msgstr "Stänga"
 
@@ -118,11 +118,11 @@ msgstr "Vapen"
 msgid "Color"
 msgstr "Färg"
 
-#: setup/class-disable-comments.php:119
+#: setup/class-disable-comments.php:120
 msgid "Commenting disabled"
 msgstr "Kommentarfunktion inaktiverad"
 
-#: setup/class-disable-comments.php:120
+#: setup/class-disable-comments.php:121
 msgid "Commenting is disabled on Helsinkiteema sites."
 msgstr "Kommentarfunktionen är inaktiverad på Helsinkiteema-webbplatser."
 
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Default"
 msgstr "Standard"
 
-#: inc/filters.php:188
+#: inc/filters.php:208
 msgctxt "default page template name"
 msgid "Basic page"
 msgstr "Grundläggande sida"
@@ -327,7 +327,7 @@ msgstr "Aktiverad"
 msgid "Engel"
 msgstr "Engel"
 
-#: customizer/config/choices.php:59 functions/modules/social.php:51
+#: customizer/config/choices.php:59
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -362,7 +362,7 @@ msgstr "%s"
 msgid "Front page"
 msgstr "Startsida"
 
-#: setup/assets.php:123
+#: setup/assets.php:125
 msgid "Gallery images"
 msgstr "Galleri bilder"
 
@@ -507,7 +507,7 @@ msgstr "Länktext"
 msgid "Link url"
 msgstr "Länk url"
 
-#: customizer/config/choices.php:61 functions/modules/social.php:61
+#: customizer/config/choices.php:61
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -532,7 +532,7 @@ msgstr "Metro"
 msgid "Newer"
 msgstr "Nyare"
 
-#: setup/assets.php:121 partials/loop/pagination.php:28
+#: setup/assets.php:123 partials/loop/pagination.php:28
 #: partials/loop/pagination.php:71
 msgid "Next"
 msgstr "Nästa"
@@ -588,12 +588,12 @@ msgctxt "Pattern title"
 msgid "Front page"
 msgstr "Första sidan"
 
-#: functions/media/meta.php:32
+#: functions/media/class-helsinki-image-meta-provider.php:43
 #, php-format
 msgid "Photo: %s"
 msgstr "Bild: %s"
 
-#: functions/media/meta.php:8
+#: functions/media/class-helsinki-image-meta-provider.php:16
 msgid "Photographer"
 msgstr "Fotograf"
 
@@ -618,7 +618,7 @@ msgctxt "posts count"
 msgid "search results"
 msgstr "sökresultat"
 
-#: setup/assets.php:122 partials/loop/pagination.php:31
+#: setup/assets.php:124 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr "Tidigare"
 
@@ -708,17 +708,17 @@ msgstr ""
 "små skärmar endast om webbplatsens sidor har en sidomeny. Annars väljer du "
 "tre hierarkinivåer."
 
-#: functions/modules/social.php:52
+#: functions/modules/social.php:51
 msgid "Share on Facebook"
 msgstr "Dela på Facebook"
 
-#: functions/modules/social.php:62
+#: functions/modules/social.php:59
 msgid "Share on LinkedIn"
 msgstr "Dela på LinkedIn"
 
-#: functions/modules/social.php:57
-msgid "Share on Twitter"
-msgstr "Dela på Twitter"
+#: functions/modules/social.php:55
+msgid "Share on X"
+msgstr "Dela på X"
 
 #: partials/content/parts/social-share.php:2
 msgid "Share this on"
@@ -805,7 +805,7 @@ msgstr "Växla undermenyn för %s"
 msgid "Tram"
 msgstr "Spårvagn"
 
-#: customizer/config/choices.php:60 functions/modules/social.php:56
+#: customizer/config/choices.php:60
 msgid "Twitter"
 msgstr "Twitter"
 
