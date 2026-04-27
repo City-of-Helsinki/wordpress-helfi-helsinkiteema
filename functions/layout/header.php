@@ -32,7 +32,10 @@ if ( ! function_exists('helsinki_header_skip') ) {
 
 if ( ! function_exists('helsinki_header_skip_target') ) {
 	function helsinki_header_skip_target(): void {
-		get_template_part('partials/header/skip-target');
+		/*
+		 * @since 4.39.0
+		 */
+		helsinki_deprecation_notice( __FUNCTION__, 'helsinki_header_skip' );
 	}
 }
 
