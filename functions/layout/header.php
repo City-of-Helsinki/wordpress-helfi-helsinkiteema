@@ -31,7 +31,7 @@ if ( ! function_exists('helsinki_header_skip') ) {
 
 		if ( $target && $text ) {
 			printf(
-				'<a class="navigation__skip screen-reader-text" href="#%s">%s</a>',
+				'<a id="skip-to-content" class="navigation__skip screen-reader-text" href="#%s">%s</a>',
 				esc_attr( $target ),
 				esc_html( $text )
 			);

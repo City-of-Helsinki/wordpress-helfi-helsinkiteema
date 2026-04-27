@@ -46,8 +46,10 @@ function jsToggleOpen(toggle, target) {
   }
 
   if ( ifControlsNoScroll(toggle) ) {
-	fixedDocumentBody();
+	  fixedDocumentBody();
   }
+
+  document.dispatchEvent(new CustomEvent('helsinki-theme-toggle-opened'));
 }
 
 function jsToggleClose(toggle, target) {
@@ -64,6 +66,8 @@ function jsToggleClose(toggle, target) {
   }
 
   toggle.focus();
+
+  document.dispatchEvent(new CustomEvent('helsinki-theme-toggle-closed'));
 }
 
 function jsToggleSwapText(toggle, status) {
