@@ -48,17 +48,14 @@ if ( ! function_exists('helsinki_default_social_share_medias') ) {
 		return array(
 			'facebook' => array(
 				'url'   => 'https://www.facebook.com/sharer.php?s=100&amp;u=%1$s&amp;title=%2$s',
-				'text'  => __( 'Facebook', 'helsinki-universal' ),
 				'title' => __( 'Share on Facebook', 'helsinki-universal' ),
 			),
-			'twitter'  => array(
+			'x'  => array(
 				'url'   => 'https://twitter.com/intent/tweet?text=%2$s&amp;url=%1$s',
-				'text'  => __( 'Twitter', 'helsinki-universal' ),
-				'title' => __( 'Share on Twitter', 'helsinki-universal' ),
+				'title' => __( 'Share on X', 'helsinki-universal' ),
 			),
 			'linkedin' => array(
         		'url' => 'https://www.linkedin.com/sharing/share-offsite/?url=%1$s',
-				'text'  => __( 'LinkedIn', 'helsinki-universal' ),
 				'title' => __( 'Share on LinkedIn', 'helsinki-universal' ),
 			),
 		);
@@ -95,7 +92,7 @@ if ( ! function_exists('helsinki_social_share_links') ) {
         $onclick,
         helsinki_get_svg_icon($key),
         esc_html($settings['title']),
-        esc_html($settings['text'])
+        esc_attr($settings['title'])
       );
     }
 
