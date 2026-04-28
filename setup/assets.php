@@ -1,40 +1,58 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+function helsinki_is_debug(): bool {
+	return defined( 'WP_DEBUG' ) && WP_DEBUG;
+}
+
+function helsinki_assets_version(): string {
+	return helsinki_is_debug() ? (string) time() : wp_get_theme()->get( 'Version' );
+}
+
+function helsinki_assets_url(): string {
+	return get_template_directory_uri() . '/assets/';
+}
+
 /**
   * Asset loading
   */
-function helsinki_enqueue_assets()
-{
-	$debug = defined('WP_DEBUG') && WP_DEBUG;
-	$assets = get_template_directory_uri() . '/assets/';
-
-	/**
-	  * Theme version
-	  */
-  	$version = $debug ? time() : wp_get_theme()->get('Version');
+function helsinki_enqueue_assets(): void {
+	$debug = helsinki_is_debug();
+	$assets = helsinki_assets_url();
+  	$version = helsinki_assets_version();
 
 	/**
 	  * Styles
 	  */
-	$default_css = $debug ? 'default.css': 'default.min.css';
 	wp_enqueue_style(
 		'theme',
-		$assets . $default_css,
-		array(
-			'helsinki-wp-styles',
-			'wp-block-library',
-		),
+		$assets . ( $debug ? 'public/styles.css': 'public/styles.min.css' ),
+		array( 'helsinki-wp-public' ),
 		$version,
 		'all'
 	);
 
 	/**
+	  * Vendor
+	  */
+	wp_enqueue_script(
+		'hyphenopoly',
+		$assets . 'vendor/hyphenopoly/Hyphenopoly_Loader.js',
+		array(),
+		$version,
+		false
+	);
+
+	/**
 	  * Scripts
 	  */
-	$theme_footer_js = $debug ? 'scripts/footer/scripts.js': 'scripts/footer/scripts.min.js';
   	wp_enqueue_script(
 		'theme-footer',
-		$assets . $theme_footer_js,
-		array('jquery'),
+		$assets . ( $debug ? 'public/footer/scripts.js': 'public/footer/scripts.min.js' ),
+		array( 'jquery' ),
 		$version,
 		true
 	);
@@ -45,20 +63,10 @@ function helsinki_enqueue_assets()
 		helsinki_script_localization()
 	);
 
-	$hyphenopoly_js = 'scripts/header/libraries/hyphenopoly/Hyphenopoly_Loader.js';
-  	wp_enqueue_script(
-		'hyphenopoly',
-		$assets . $hyphenopoly_js,
-		array(),
-		$version,
-		false
-	);
-
-	$theme_header_js = $debug ? 'scripts/header/scripts.js': 'scripts/header/scripts.min.js';
   	wp_enqueue_script(
 		'theme-header',
-		$assets . $theme_header_js,
-		array(),
+		$assets . ( $debug ? 'public/header/scripts.js': 'public/header/scripts.min.js' ),
+		array( 'hyphenopoly' ),
 		$version,
 		false
 	);
@@ -68,55 +76,42 @@ function helsinki_enqueue_assets()
 		'helsinkiTheme',
 		helsinki_script_localization()
 	);
+}
 
-	/**
-	  * Comments
-	  */
-	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
-		wp_enqueue_script('comment-reply');
+function helsinki_enqueue_editor_assets(): void {
+	if ( is_admin() ) {
+		$debug = helsinki_is_debug();
+		$assets = helsinki_assets_url();
+		$version = helsinki_assets_version();
+
+		wp_enqueue_style(
+			'theme-block-editor',
+			$assets . ( $debug ? 'editor/css/styles.css': 'editor/css/styles.min.css' ),
+			array( 'helsinki-wp' ),
+			$version,
+			'all'
+		);
+
+		wp_enqueue_script(
+			'theme-block-editor',
+			$assets . ( $debug ? 'editor/js/scripts.js': 'editor/js/scripts.min.js' ),
+			array( 'wp-edit-post' ),
+			$version,
+			true
+		);
 	}
 }
 
-function helsinki_enqueue_admin_assets($hook_suffix) {
-	$debug = defined('WP_DEBUG') && WP_DEBUG;
-	$assets = get_template_directory_uri() . '/assets/';
-
-	/**
-	  * Theme version
-	  */
-  	$version = $debug ? time() : wp_get_theme()->get('Version');
-
-	/**
-	  * Styles
-	  */
-	  $admin_css = $debug ? 'admin/styles/admin.css': 'admin/styles/admin.min.css';
-	  wp_enqueue_style(
-		  'theme-admin-styles',
-		  $assets . $admin_css,
-		  array(
-			  'wp-block-library',
-		  ),
-		  $version,
-		  'all'
-	  );
-
-
-	$theme_admin_js = $debug ? 'scripts/admin/scripts.js': 'scripts/admin/scripts.min.js';
-	wp_enqueue_script(
-		'theme-admin',
-		$assets . $theme_admin_js,
-		array(
-			'wp-edit-post',
-		),
-		$version,
-		true
-	);
-
-	wp_localize_script(
-		'theme-admin',
-		'helsinkiTheme',
-		helsinki_script_localization()
-	);
+function helsinki_enqueue_admin_assets( string $hook_suffix ): void {
+	if ( 'options-reading.php' === $hook_suffix ) {
+		wp_enqueue_script(
+			'theme-admin',
+			helsinki_assets_url() . ( helsinki_is_debug() ? 'admin/js/scripts.js': 'admin/js/scripts.min.js' ),
+			array(),
+			helsinki_assets_version(),
+			true
+		);
+	}
 }
 
 function helsinki_script_localization() {
@@ -215,18 +210,4 @@ function helsinki_colors(string $name ='') {
 
 function helsinki_default_scheme() {
 	return apply_filters( 'helsinki_default_scheme', 'coat-of-arms' );
-}
-
-/**
-  * Widgets
-  */
-function helsinki_remove_recent_comments_widget_styles() {
-    global $wp_widget_factory;
-    remove_action(
-		'wp_head',
-		[
-			$wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
-			'recent_comments_style'
-		]
-	);
 }

@@ -1,0 +1,44 @@
+.hds-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+
+	@include breakpointMax('m') {
+		padding-left: spacing('s');
+		padding-right: spacing('s');
+		max-width: none;
+	}
+
+	&--wide {
+		max-width: $global-max-width;
+	}
+}
+
+.container__heading {
+	margin-top: 0;
+	margin-bottom: spacing(layout-m);
+}
+
+.flex-container {
+	display: flex;
+
+	&--align-center {
+		align-items: center;
+	}
+
+	&--column {
+		flex-direction: column;
+	}
+
+	&--row-reverse {
+		flex-direction: row-reverse;
+	}
+}
+
+.is-layout-flex {
+  --gap: 0.5em;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+}

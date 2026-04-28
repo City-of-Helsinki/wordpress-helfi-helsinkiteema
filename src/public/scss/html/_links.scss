@@ -1,0 +1,18 @@
+:where(a:not(.hds-button,.hds-tag)) {
+  color: $body-color;
+  text-decoration: underline;
+  transition: $default-transition;
+  display: inline-block;
+  text-decoration-thickness: rem-calc(1);
+  text-underline-offset: 10%;
+
+  &:hover {
+    text-decoration-thickness: rem-calc(2);
+  }
+
+  &:focus {
+    outline: 3px solid $black;
+    outline-color: inherit;
+    display: inline-block;
+  }
+}

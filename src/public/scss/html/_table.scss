@@ -1,0 +1,252 @@
+table:not(.hds-react-component__date-input table) {
+	display: block;
+	/*border-collapse: separate !important;
+	border-spacing: 0;
+	border: 1px solid var(--color-black-60);*/
+	margin-top: $table-margin-bottom;
+	margin-bottom: 0;
+	text-align: left;
+	width: unset !important;
+	max-width: fit-content;
+	overflow-x: auto;
+	white-space: nowrap;
+
+	&.has-fixed-layout {
+		@include breakpoint('m') {
+			display: table;
+			table-layout: fixed;
+			width: 100% !important;
+			max-width: none;
+		}
+	}
+
+	caption {
+		text-align: left;
+	}
+
+	&:focus {
+		outline: 3px solid #1a1a1a;
+		outline-color: inherit;
+	}
+
+}
+
+thead:not(.hds-react-component__date-input thead) {
+	width: 100%;
+	background-color: var(--color-black-10);
+	border-top: 2px double var(--color-black-50);
+	border-left: 2px double var(--color-black-50);
+	border-right: 2px double var(--color-black-50);
+	border-bottom: none !important;
+
+	&:not(:empty)+ tbody {
+		tr {
+			&:first-child {
+				border-top: none;
+			}
+		}
+	}
+}
+
+tbody:not(.hds-react-component__date-input tbody) {
+	width: 100%;
+
+	tr {
+		&:first-child {
+			border-top: 2px double var(--color-black-50);
+		}
+	}
+
+	border-left: 2px double var(--color-black-50);
+	border-right: 2px double var(--color-black-50);
+
+	&:last-child {
+		border-bottom: 2px double var(--color-black-50);
+	}
+}
+
+tfoot:not(.hds-react-component__date-input tfoot) {
+	width: 100%;
+
+	td {
+		@if $table-border-enabled {
+			border-top: $table-border;
+		}
+	}
+
+	border-top: none !important;
+	border-bottom: 2px double var(--color-black-50);
+	border-left: 2px double var(--color-black-50);
+	border-right: 2px double var(--color-black-50);
+}
+
+tr:not(.hds-react-component__date-input tr) {
+	border-bottom: 1px solid var(--color-black-50);
+	&:not(:last-of-type) {
+		td {
+			@if $table-border-enabled {
+				border-bottom: $table-border;
+			}
+		}
+		th {
+			@if $table-border-enabled {
+				border-bottom: $table-border;
+			}
+		}
+	}
+}
+
+th {
+	font-weight: $table-heading-font-weight;
+	white-space: normal;
+	border: unset !important;
+}
+
+td {
+	white-space: normal;
+	border: unset !important;
+}
+
+th:not(.hds-react-component__date-input th),
+td:not(.hds-react-component__date-input td) {
+  padding: $table-cell-padding !important;
+  min-width: 140px;
+}
+
+figure.wp-block-table {
+	display: block !important;
+	overflow: visible;
+	max-width: 100%;
+
+	&:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.aligncenter)) {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	&.has-vertical-header {
+		table {
+			tbody {
+				tr {
+					td {
+						&:first-of-type {
+							font-weight: $table-heading-font-weight;
+							background-color: var(--color-black-10);
+							border-bottom-color: $table-border-color-vertical;
+						}
+					}
+				}
+			}
+
+			tfoot {
+				tr {
+					td {
+						&:first-of-type {
+							font-weight: $table-heading-font-weight;
+							background-color: var(--color-black-10);
+							border-top-color: $table-border-color-vertical;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.is-style-stripes {
+		border-bottom: none;
+		tbody {
+			tr {
+				&:nth-child(odd) {
+					background-color: unset;
+				}
+
+				&:nth-child(even) {
+					background-color: var(--color-black-10);
+				}
+			}
+		}
+
+		tr {
+			border-bottom: none;
+		}
+	}
+
+	table {
+		td {
+			word-break: normal !important;
+		}
+
+		&.has-fixed-layout {
+			@include breakpoint('m') {
+				td {
+					word-break: break-word !important;
+				}
+			}
+		}
+
+	}
+
+	figcaption {
+		background: none !important;
+		color: $black !important;
+		font-size: $caption-font-size !important;
+		font-style: normal !important;
+		text-align: left !important;
+		padding: 1rem 0 0 !important;
+		position: static !important;
+		flex-grow: 0;
+		flex-basis: unset;
+	}
+
+	&.aligncenter {
+		table {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		figcaption {
+			text-align: center !important;
+		}
+	}
+
+}
+
+.wp-block-calendar {
+	color: $black;
+
+	table {
+		caption {
+			color: $black;
+		}
+
+		thead {
+			tr {
+				th {
+					font-weight: inherit;
+					background: unset;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				td {
+					color: $black;
+					border-right: $table-border !important;
+					border-bottom: $table-border !important;
+					border-color: $table-border-color !important;
+				}
+			}
+		}
+	}
+
+	nav {
+		.wp-calendar-nav-prev {
+			float: left;
+			padding: 8px;
+		}
+
+		.wp-calendar-nav-next {
+			float: right;
+			padding: 8px;
+		}
+	}
+}

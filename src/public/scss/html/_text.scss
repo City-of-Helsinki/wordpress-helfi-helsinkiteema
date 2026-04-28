@@ -1,0 +1,27 @@
+:root {
+  p {
+    &.has-white-color {
+      color: $body-color;
+    }
+
+    &.has-black-background-color {
+      background-color: transparent;
+    }
+  }
+}
+
+.size-s {
+	font-size: fontsize-body(s);
+}
+
+.size-m {
+	font-size: fontsize-body(m);
+}
+
+.size-l {
+	font-size: fontsize-body(l);
+}
+
+.size-xl {
+	font-size: fontsize-body(xl);
+}

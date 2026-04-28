@@ -1,6 +1,12 @@
 <?php
-function helsinki_setup_theme()
-{
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+use CityOfHelsinki\WordPress\Helsinki\Theme\Setup\Disable_Comments;
+
+function helsinki_setup_theme(): void {
 
     /**
      * I18n
@@ -18,24 +24,16 @@ function helsinki_setup_theme()
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
-    add_theme_support(
-        'html5',
-        [
-	        'caption',
-	        'comment-form',
-	        'comment-list',
-	        'gallery',
-	        'search-form'
-        ]
-    );
-    add_theme_support(
-        'custom-logo',
-        [
-	        'flex-height' => true,
-	        'flex-width'  => true,
-	        'header-text' => [ 'site-title' ],
-        ]
-    );
+    add_theme_support( 'html5', array(
+        'caption',
+        'gallery',
+        'search-form'
+    ) );
+    add_theme_support( 'custom-logo', array(
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => [ 'site-title' ],
+    ) );
 
 	/**
 	 * Post type support
@@ -118,19 +116,17 @@ function helsinki_setup_theme()
 	do_action( 'helsinki_theme_setup_ready' );
 }
 
-function helsinki_disable_default_widgets()
-{
+function helsinki_disable_default_widgets(): void {
 	$disable = array(
 		'WP_Widget_Calendar',
 		'PLL_Widget_Calendar',
 		'WP_Widget_Meta',
-		'WP_Widget_Block'
+		'WP_Widget_Block',
 	);
 	array_walk( $disable, 'unregister_widget' );
 }
 
-function helsinki_register_sidebars()
-{
+function helsinki_register_sidebars(): void {
 	$sidebars = array(
 		'post' => _x('Post', 'Post sidebar', 'helsinki-universal'),
 		'page' => _x('Page', 'Page sidebar', 'helsinki-universal'),
@@ -157,5 +153,19 @@ function helsinki_register_sidebars()
 		    'before_title'  => '<h3 class="widget__title">',
 		    'after_title'   => '</h3>',
 	    ]);
+	}
+}
+
+function helsinki_disable_comments(): void {
+	if ( apply_filters( 'helsinki_disable_comments', true ) ) {
+		$handler = new Disable_Comments();
+
+		$handler->init_common_hooks();
+
+		if ( \is_admin() ) {
+			$handler->init_admin_hooks();
+		} else {
+			$handler->init_frontend_hooks();
+		}
 	}
 }
