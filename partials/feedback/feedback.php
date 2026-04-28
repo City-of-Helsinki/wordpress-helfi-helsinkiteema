@@ -16,6 +16,8 @@
                 for (var i = 0; i < reactions.length; i++) {
 
                     var reaction = reactions[i];
+					reaction.classList.add('hds-button', 'hds-button--secondary');
+
                     reaction.innerHTML = reaction.innerHTML + facesArray[i];
 
                     reaction.addEventListener('click', function(e) {
@@ -39,13 +41,19 @@
                     var input = inputGroup.getElementsByClassName('rns-input-field')[0];
                     input.classList.add('hds-text-input__input');
 
-                    var inputWrapper = document.createElement('span');
+					var hdsTextInput = document.createElement('div');
+					hdsTextInput.classList.add('hds-text-input');
+
+                    var inputWrapper = document.createElement('div');
                     inputWrapper.classList.add('rns-textarea-wrapper', 'hds-text-input__input-wrapper');
                     inputWrapper.appendChild(label);
                     inputWrapper.appendChild(input);
-                    inputGroup.appendChild(inputWrapper);
+                    hdsTextInput.appendChild(inputWrapper);
+                    inputGroup.appendChild(hdsTextInput);
 
                     var submit = reactionPlugin.getElementsByClassName('rns-form-submit')[0];
+					submit.classList.add('hds-button');
+
                     submit.innerHTML = submit.innerHTML + helsinkiTheme.icons.arrowRight;
 
                     inputGroup.classList.add('rns-helsinki-parsed');

@@ -61,15 +61,6 @@ function helsinki_excerpt_character_length( $text, $raw_excerpt ) {
 add_filter( 'wp_trim_excerpt', 'helsinki_excerpt_character_length', 999, 2 );
 
 /**
-  * Comment Form
-  */
-function helsinki_comment_form_default_fields( $fields ) {
-  unset( $fields['url'] );
-  return $fields;
-}
-add_filter('comment_form_default_fields', 'helsinki_comment_form_default_fields');
-
-/**
   * Widgets
   */
 function helsinki_widget_tag_cloud_args( $default ) {
@@ -183,12 +174,32 @@ function helsinki_create_svg_icon_dom_item( string $name ) {
 add_filter( 'helsinki_sidebar_output', 'helsinki_sidebar_filter_rss_links' );
 add_filter( 'rss_widget_feed_link', '__return_false' );
 
+add_filter( 'wp_dropdown_cats', 'helsinki_filter_category_dropdown_widget' );
 function helsinki_filter_category_dropdown_widget($output) {
-  $output = str_replace('<select', '<p><span class="hds-text-input__input-wrapper"><select', $output); //wrap select in span
-  $output = str_replace('</select>', '</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>', $output); //add chevron to category dropdown
-  return $output;
+	if ( did_action( 'template_redirect' ) ) {
+		//wrap select in span
+		$output = str_replace(
+			'<select',
+			'<p class="hds-text-input"><span class="hds-text-input__input-wrapper"><select',
+			$output
+		);
+
+		//add chevron to category dropdown
+		$output = str_replace(
+			'</select>',
+			'</select><span class="select-chevron">' . helsinki_get_svg_icon('angle-down') . '</span></span></p>',
+			$output
+		);
+
+		$output = str_replace(
+			'class=\'postform',
+			'class=\'hds-text-input__input postform',
+			$output
+		);
+	}
+
+	return $output;
 }
-add_filter('wp_dropdown_cats', 'helsinki_filter_category_dropdown_widget');
 
 /**
   * Page Templates
@@ -297,3 +308,11 @@ add_filter( 'render_block', 'helsinki_image_render', 10, 2 );
  * Disable lazy loaded image auto sizes added in WP 6.7
  */
 add_filter( 'wp_img_tag_add_auto_sizes', '__return_false' );
+
+/**
+ * Escape all post content by default
+ */
+add_filter( 'the_content', 'helsinki_kses_post_the_content', intval( PHP_INT_MAX + 1 ) );
+function helsinki_kses_post_the_content( string $content ): string {
+	return wp_kses_post( $content );
+}

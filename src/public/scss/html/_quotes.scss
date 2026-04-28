@@ -1,0 +1,60 @@
+cite {
+  color: $dark-gray;
+  font-style: italic;
+}
+
+blockquote {
+    background: none;
+    font-size: rem-calc(36);
+    margin: 0;
+    margin-top: spacing('layout-m');
+    margin-bottom: spacing('layout-m');
+    padding: 0;
+    border-left: 8px solid;
+    border-color: var(--primary-color);
+    padding-left: spacing('layout-s');
+
+    @include breakpoint('m') {
+        margin-top: spacing('layout-l');
+        margin-bottom: spacing('layout-l');
+    }
+
+    @include breakpointMax('m') {
+        padding-left: spacing('layout-2-xs');
+    }
+
+
+    p {
+        font-size: rem-calc(32);
+        font-style: italic;
+        margin-bottom: 0;
+
+        @include breakpointMax('m') {
+            font-size: rem-calc(24);
+        }
+
+        &::before {
+            content: '\201C';
+        }
+
+        &::after {
+            content: '\201D';
+        }
+    }
+
+    cite {
+        display: block;
+        color: $body-color;
+        font-style: normal;
+        font-size: rem-calc(18);
+        margin-top: spacing('m');
+
+        &::before {
+            content: '- ';
+        }
+    }
+}
+
+q {
+  font-style: italic;
+}

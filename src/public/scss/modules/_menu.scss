@@ -1,0 +1,171 @@
+.menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+	gap: 0 spacing(m);
+
+	a {
+		display: block;
+		font-size: $menu-item-font-size;
+		font-weight: $global-font-weight-normal;
+		text-decoration: none;
+	}
+
+	.menu__item {
+		position: relative;
+
+		.link-wrap {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+
+			button {
+				margin-left: spacing(s);
+				background-color: var(--color-black-5);
+
+				.icon {
+					--icon-size: 24px;
+					pointer-events: none;
+				}
+
+				&:hover {
+					background-color: var(--color-black-20);
+				}
+
+				&:focus {
+					outline: 3px solid $black;
+				}
+
+			}
+		}
+
+		&.open,
+		&--hover {
+			> .link-wrap {
+				button {
+					.icon {
+						transform: rotate(180deg);
+					}
+				}
+			}
+
+			> .menu {
+				display: block;
+			}
+		}
+
+		&--active {
+			> .link-wrap {
+				> a {
+					font-weight: $global-font-weight-bold;
+				}
+			}
+		}
+	}
+	// .menu__item
+
+	&--sub {
+		background-color: $white;
+		border: $default-border;
+		display: none;
+		min-width: $submenu-min-width;
+		position: absolute;
+		padding-left: 0;
+		padding-right: 0;
+		top: 100%;
+		left: 0;
+		z-index: 5;
+
+		.menu__item {
+			> .link-wrap {
+				padding-left: spacing(s);
+				padding-right: spacing(s);
+				justify-content: space-between;
+
+				a {
+					font-size: $submenu-item-font-size;
+					padding-top: spacing(s);
+					padding-bottom: spacing(s);
+				}
+			}
+
+			> .menu--sub {
+				top: -1px;
+				left: 100%;
+			}
+
+			&--active {
+				> .link-wrap {
+					a {
+						font-weight: $global-font-weight-bold;
+					}
+				}
+			}
+
+			@include breakpoint('l') {
+				> .js-submenu-toggle {
+					margin-left: auto;
+					margin-right: spacing('s');
+
+					&.has-icon {
+						.icon--angle-down {
+							transform: rotate(-90deg);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--vertical {
+		flex-direction: column;
+
+		.menu__item {
+			display: block;
+			text-align: left;
+			width: 100%;
+
+			&--parent {
+				&.has-icon {
+					display: flex;
+				}
+			}
+		}
+	}
+
+	&.menu--sidebar {
+		.menu--sub {
+			background-color: transparent;
+			box-shadow: none;
+			margin-left: $vertical-menu-indent;
+			padding-top: 0;
+			padding-bottom: 0;
+			position: static;
+		}
+
+		.menu__item--active {
+			> .menu--sub {
+				display: block;
+			}
+		}
+	}
+}
+
+.js-submenu-toggle {
+
+	.icon {
+		transition: transform .6s;
+	}
+
+	&.has-icon {
+		&[aria-expanded="true"] {
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+}
