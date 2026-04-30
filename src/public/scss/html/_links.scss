@@ -1,5 +1,8 @@
 :where(a:not(.hds-button,.hds-tag)) {
-  color: $body-color;
+  --anchor-color: #{$body-color};
+  --anchor-color-alt: var(--anchor-color);
+
+  color: var(--anchor-color);
   text-decoration: underline;
   transition: $default-transition;
   display: inline-block;
@@ -7,10 +10,12 @@
   text-underline-offset: 10%;
 
   &:hover {
+    color: var(--anchor-color-alt);
     text-decoration-thickness: rem-calc(2);
   }
 
   &:focus {
+    color: var(--anchor-color-alt);
     outline: 3px solid $black;
     outline-color: inherit;
     display: inline-block;
