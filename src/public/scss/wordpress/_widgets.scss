@@ -159,6 +159,10 @@
             margin-bottom: 0 !important;
         }
 
+        > ul {
+          --list-indent: 0;
+        }
+
         li {
             padding-bottom: 8px;
             padding-top: 16px;
@@ -169,13 +173,14 @@
             }
 
             a {
+              --anchor-text-decoration: none;
+
                 font-weight: $global-font-weight-medium;
-                text-decoration: none;
                 font-size: rem-calc(20);
                 margin-bottom: spacing('2-xs');
 
                 &:hover {
-                    text-decoration: underline;
+                  --anchor-text-decoration: #{$anchor-text-decoration};
                 }
             }
 
