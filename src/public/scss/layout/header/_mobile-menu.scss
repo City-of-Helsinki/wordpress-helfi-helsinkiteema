@@ -9,6 +9,7 @@
 
 	&:hover {
 		text-decoration: underline;
+  	text-decoration-thickness: $anchor-text-decoration-thickness-alt;
 	}
 }
 
