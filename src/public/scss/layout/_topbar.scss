@@ -12,48 +12,31 @@
   }
 
 	a {
-		text-decoration: none;
+		--anchor-text-decoration: none;
 
     &:focus,
     &:hover {
-      text-decoration: $anchor-text-decoration;
+      --anchor-text-decoration: #{$anchor-text-decoration};
     }
 	}
 
 	&__branding {
-		//padding: $topbar-padding;
 		flex-grow: 2;
 	}
 
 	&__link {
-		//padding: $topbar-padding;
-
 		.icon {
 			margin-top: -4px;
 		}
 	}
 
   .menu {
-
     gap: 0 spacing('s');
 
     a {
       font-size: rem-calc(16);
       --line-height: var(--lineheight-l);
     	line-height: var(--lineheight-l);
-
-      &:focus,
-      &:hover {
-        text-decoration: $anchor-text-decoration;
-      }
-    }
-
-    .menu__item {
-
-      + .menu__item {
-        //margin-left: spacing('l');
-      }
-
     }
 
   }

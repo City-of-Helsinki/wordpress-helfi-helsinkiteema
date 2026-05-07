@@ -7,10 +7,11 @@
 	gap: 0 spacing(m);
 
 	a {
+    --anchor-text-decoration: none;
+
 		display: block;
 		font-size: $menu-item-font-size;
 		font-weight: $global-font-weight-normal;
-		text-decoration: none;
 	}
 
 	.menu__item {
