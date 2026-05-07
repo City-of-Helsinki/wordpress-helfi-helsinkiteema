@@ -184,7 +184,8 @@
 }
 
 @include breakpointMax('l') {
-  .mobile-menu-panel-open .layout-wrap > :not(#masthead) {
+  .mobile-menu-panel-open .layout-wrap > :not(#masthead),
+	.mobile-menu-panel-open #masthead .languages-wrapper {
     display: none;
   }
 }
