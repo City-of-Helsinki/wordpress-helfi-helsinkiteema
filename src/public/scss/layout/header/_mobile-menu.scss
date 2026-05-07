@@ -10,6 +10,20 @@
 	&:hover {
 		text-decoration: underline;
 	}
+
+  .close {
+    display: none;
+  }
+
+  &[aria-expanded="true"] {
+    .open {
+      display: none;
+    }
+
+    .close {
+      display: block;
+    }
+  }
 }
 
 #mobile-panel {
@@ -165,6 +179,13 @@
 
 #masthead .header__content .nav-toggle-dropdown--menu {
   .nav-toggle-dropdown__content {
-    --padding: 0 0 #{spacing('layout-m')};
+    --padding: 0;
+  }
+}
+
+@include breakpointMax('l') {
+  .mobile-menu-panel-open .layout-wrap > :not(#masthead),
+	.mobile-menu-panel-open #masthead .languages-wrapper {
+    display: none;
   }
 }

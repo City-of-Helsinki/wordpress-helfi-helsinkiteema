@@ -511,6 +511,70 @@ function eventLoadMoreRendered(element) {
   var event = jsEvent('loadMoreRendered');
   element.dispatchEvent(event);
 }
+(function (_ref) {
+  var toggle = _ref.toggle,
+    panel = _ref.panel,
+    skipLink = _ref.skipLink;
+  if (toggle && panel) {
+    var isOpen = function isOpen() {
+      return 'true' === toggle.getAttribute('aria-expanded');
+    };
+    var openPanel = function openPanel() {
+      closeOtherToggles(toggle);
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+      panel.classList.add('active');
+      document.body.classList.add('mobile-menu-panel-open');
+      document.addEventListener('keydown', handleEscPress);
+      document.addEventListener('helsinki-theme-toggle-opened', handleToggleOpen);
+      return true;
+    };
+    var closePanel = function closePanel(focus) {
+      toggle.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+      panel.classList.remove('active');
+      document.body.classList.remove('mobile-menu-panel-open');
+      document.removeEventListener('keydown', handleEscPress);
+      document.removeEventListener('helsinki-theme-toggle-opened', handleToggleOpen);
+      if (focus) {
+        toggle.focus();
+      }
+      return true;
+    };
+    var handleEscPress = function handleEscPress(event) {
+      return 'Escape' === event.key && isOpen() && closePanel(true);
+    };
+    var handleToggleOpen = function handleToggleOpen(event) {
+      return isOpen() && closePanel(false);
+    };
+    toggle.addEventListener('click', function (event) {
+      return isOpen() ? closePanel() : openPanel(true);
+    });
+    if (skipLink) {
+      skipLink.addEventListener('click', function (event) {
+        return isOpen() && closePanel(false);
+      });
+    }
+
+    // container.addEventListener('keydown', event => {
+    //   if ('Tab' === event.key) {
+    //     let focusElements = _focusElements();
+    //
+    //     if (event.shiftKey && document.activeElement === focusElements.first()) {
+    //       focusElements.last();
+    //     } else if (document.activeElement === focusElements.last()) {
+    //       focusElements.first();
+    //     }
+    //   }
+    // });
+
+    closePanel();
+  }
+})({
+  toggle: document.getElementById('mobile-panel-toggle'),
+  panel: document.getElementById('mobile-panel'),
+  skipLink: document.getElementById('skip-to-content')
+});
 var jsModal = {
   currentModal: null,
   currentTrigger: null,
@@ -891,6 +955,7 @@ function jsToggleOpen(toggle, target) {
   if (ifControlsNoScroll(toggle)) {
     fixedDocumentBody();
   }
+  document.dispatchEvent(new CustomEvent('helsinki-theme-toggle-opened'));
 }
 function jsToggleClose(toggle, target) {
   if (isModal(target)) {
@@ -904,6 +969,7 @@ function jsToggleClose(toggle, target) {
     scrollableDocumentBody();
   }
   toggle.focus();
+  document.dispatchEvent(new CustomEvent('helsinki-theme-toggle-closed'));
 }
 function jsToggleSwapText(toggle, status) {
   if (toggle.hasAttribute('data-text') && toggle.hasAttribute('data-text-expanded')) {
