@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
   * Element classes
   */
-function helsinki_header_classes() {
+function helsinki_header_classes(): void {
 	/*
 	 * @since 4.38.0
 	 */
@@ -25,19 +25,31 @@ if ( ! function_exists( 'helsinki_header_element' ) ) {
 
 
 if ( ! function_exists('helsinki_header_skip') ) {
-	function helsinki_header_skip() {
-		get_template_part('partials/header/skip');
+	function helsinki_header_skip(): void {
+		$target = apply_filters( 'helsinki_header_skip_target', 'main' );
+		$text   = apply_filters( 'helsinki_header_skip_text', __( 'Skip to content', 'helsinki-universal' ) );
+
+		if ( $target && $text ) {
+			printf(
+				'<a id="skip-to-content" class="navigation__skip screen-reader-text" href="#%s">%s</a>',
+				esc_attr( $target ),
+				esc_html( $text )
+			);
+		}
 	}
 }
 
 if ( ! function_exists('helsinki_header_skip_target') ) {
-	function helsinki_header_skip_target() {
-		get_template_part('partials/header/skip-target');
+	function helsinki_header_skip_target(): void {
+		/*
+		 * @since 4.39.0
+		 */
+		helsinki_deprecation_notice( __FUNCTION__, 'helsinki_header_skip' );
 	}
 }
 
 if ( ! function_exists('helsinki_header_logo') ) {
-	function helsinki_header_logo() {
+	function helsinki_header_logo(): void {
 		$classes = array( 'home-link' );
 		$blog_name = get_bloginfo('name');
 		$home_url = home_url('/');
@@ -84,13 +96,13 @@ if ( ! function_exists('helsinki_header_logo') ) {
 }
 
 if ( ! function_exists('helsinki_header_main_menu') ) {
-	function helsinki_header_main_menu() {
+	function helsinki_header_main_menu(): void {
 		get_template_part('partials/header/menu');
 	}
 }
 
 if ( ! function_exists('helsinki_header_mobile_panel') ) {
-	function helsinki_header_mobile_panel() {
+	function helsinki_header_mobile_panel(): void {
 		get_template_part(
 			'partials/header/mobile-panel',
 			null,
@@ -100,7 +112,7 @@ if ( ! function_exists('helsinki_header_mobile_panel') ) {
 }
 
 if ( ! function_exists('helsinki_header_mobile_links') ) {
-	function helsinki_header_mobile_links() {
+	function helsinki_header_mobile_links(): void {
 		$lang = function_exists('pll_current_language') ? pll_current_language('slug') : substr( get_bloginfo('language'), 0, 2 );
 		$name = apply_filters( 'helsinki_topbar_name', null );
 		$args = apply_filters(
@@ -119,7 +131,7 @@ if ( ! function_exists('helsinki_header_mobile_links') ) {
 }
 
 if ( ! function_exists('helsinki_header_mobile_panel_toggle') ) {
-	function helsinki_header_mobile_panel_toggle() {
+	function helsinki_header_mobile_panel_toggle(): void {
 		/*
 		 * @since 4.38.0
 		 */
@@ -128,7 +140,7 @@ if ( ! function_exists('helsinki_header_mobile_panel_toggle') ) {
 }
 
 if ( ! function_exists( 'helsinki_header_mobile_menu' ) ) {
-	function helsinki_header_mobile_menu() {
+	function helsinki_header_mobile_menu(): void {
 		get_template_part(
 			'partials/header/mobile-menu',
 			null,
@@ -138,7 +150,7 @@ if ( ! function_exists( 'helsinki_header_mobile_menu' ) ) {
 }
 
 if ( ! function_exists('helsinki_header_content') ) {
-	function helsinki_header_content() {
+	function helsinki_header_content():void {
 		/*
 		 * @since 4.38.0
 		 */
@@ -147,13 +159,13 @@ if ( ! function_exists('helsinki_header_content') ) {
 }
 
 if ( ! function_exists('helsinki_header_search') ) {
-	function helsinki_header_search() {
+	function helsinki_header_search(): void {
 		get_template_part('partials/header/search');
 	}
 }
 
 if ( ! function_exists('helsinki_header_searchform') ) {
-	function helsinki_header_searchform() {
+	function helsinki_header_searchform(): void {
 		/*
 		 * @since 4.38.0
 		 */
@@ -162,13 +174,13 @@ if ( ! function_exists('helsinki_header_searchform') ) {
 }
 
 if ( ! function_exists('helsinki_available_languages') ) {
-	function helsinki_available_languages() {
+	function helsinki_available_languages(): array {
 		return apply_filters( 'helsinki_available_languages', array() );
 	}
 }
 
 if ( ! function_exists('helsinki_header_languages') ) {
-	function helsinki_header_languages() {
+	function helsinki_header_languages(): void {
 		$name = apply_filters( 'helsinki_header_languages', null );
 
 		$args = apply_filters(
@@ -192,7 +204,7 @@ if ( ! function_exists('helsinki_header_languages') ) {
 }
 
 if ( ! function_exists('helsinki_header_koros') ) {
-	function helsinki_header_koros() {
+	function helsinki_header_koros(): void {
 		helsinki_koros(
 			'header',
 			apply_filters( 'helsinki_header_koros_flipped', true )

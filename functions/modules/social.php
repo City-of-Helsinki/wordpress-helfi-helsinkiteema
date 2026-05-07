@@ -63,24 +63,23 @@ if ( ! function_exists('helsinki_default_social_share_medias') ) {
 }
 
 if ( ! function_exists('helsinki_social_share_links') ) {
-  function helsinki_social_share_links() {
+  function helsinki_social_share_links(): array {
     $medias = helsinki_social_share_medias();
     if ( ! $medias || ! is_array( $medias ) ) {
-      return;
+      return array();
     }
 
 	global $wp;
 	$home = get_home_url();
 	$title = helsinki_view_title();
 	$permalink = home_url( $wp->request );
-	$onclick = "javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600'); return false;";
 	$out = array();
 
     foreach ($medias as $key => $settings) {
       $out[] = sprintf(
-        '<a class="hds-button share-link share-link--%1$s" href="%2$s" onclick="%3$s" title="%6$s">
-					<span class="screen-reader-text">%5$s</span>
-					%4$s
+        '<a class="hds-button share-link share-link--%1$s" href="%2$s" title="%3$s">
+					<span class="screen-reader-text">%4$s</span>
+					%5$s
 				</a>',
         esc_attr($key),
         esc_url(sprintf(
@@ -89,10 +88,9 @@ if ( ! function_exists('helsinki_social_share_links') ) {
           urlencode($title),
           urlencode($home)
         )),
-        $onclick,
-        helsinki_get_svg_icon($key),
         esc_html($settings['title']),
-        esc_attr($settings['title'])
+        esc_attr($settings['title']),
+        helsinki_get_svg_icon($key)
       );
     }
 

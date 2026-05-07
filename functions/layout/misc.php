@@ -4,11 +4,31 @@
   * Breadcrumbs
   */
 if ( ! function_exists('helsinki_content_breadcrumbs') ) {
-	function helsinki_content_breadcrumbs() {
+	function helsinki_content_breadcrumbs(): void {
 		if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb( '<div role="navigation" aria-label="'.esc_html__( 'Breadcrumbs', 'helsinki-universal' ).'" id="breadcrumbs" class="breadcrumbs"><div class="hds-container hds-container--wide">','</div></div>' );
+			$crumbs = yoast_breadcrumb( '', '', false );
+
+			if ( $crumbs ) {
+				printf(
+					'<nav aria-label="%s" id="breadcrumbs" class="breadcrumbs">
+						<div class="hds-container hds-container--wide">
+							%s
+						</div>
+					</nav>',
+					esc_attr( __( 'Breadcrumbs', 'helsinki-universal' ) ),
+					$crumbs
+				);
+			}
 		}
 	}
+}
+
+function helsinki_breadcrumbs_enabled(): bool {
+	$not_home = (helsinki_is_static_front_page() && !is_front_page())
+		|| (!is_front_page() && !is_home());
+
+	return apply_filters( 'helsinki_breadcrumbs_enabled', false )
+	       && $not_home;
 }
 
 add_filter('wpseo_breadcrumb_single_link_info', 'helsinki_content_breadcrumbs_single_link_info', 10, 3);
