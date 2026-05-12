@@ -47,7 +47,7 @@ blockquote {
         color: $body-color;
         font-style: normal;
         font-size: rem-calc(18);
-        margin-top: spacing('m');
+        margin-top: spacing('s');
 
         &::before {
             content: '- ';
