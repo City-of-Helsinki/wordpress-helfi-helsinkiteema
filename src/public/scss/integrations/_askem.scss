@@ -195,6 +195,7 @@
             width: auto;
 
             .rns-share-button {
+              color: $black;
               display: flex;
               align-items: center;
               border: none;
@@ -210,12 +211,14 @@
                 color: $black;
                 font-size: $global-font-size;
                 line-height: $global-line-height;
+                text-decoration: var(--anchor-text-decoration, #{$anchor-text-decoration});
+                text-decoration-thickness: var(--anchor-text-decoration-thickness, #{$anchor-text-decoration-thickness});
+                text-underline-offset: 10%;
               }
 
               &:hover {
                 .rns-label {
-                  text-decoration: underline;
-                  font-weight: $global-font-weight-medium;
+                  --anchor-text-decoration-thickness: #{$anchor-text-decoration-thickness-alt};
                 }
               }
             }
