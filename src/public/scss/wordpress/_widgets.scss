@@ -1,33 +1,32 @@
 .widget {
-    font-size: fontsize-body(l);
-    margin-bottom: $global-margin;
+  font-size: fontsize-body(l);
+  margin-bottom: $global-margin;
 
-    &__title {
-        font-size: fontsize-heading('m');
-        font-weight: $global-font-weight-medium;
-        margin-top: 0;
-        margin-bottom: $paragraph-margin-bottom;
-    }
+  &__title {
+    font-size: fontsize-heading('m');
+    font-weight: $global-font-weight-medium;
+    margin-top: 0;
+    margin-bottom: $paragraph-margin-bottom;
+  }
 
-    ul {
-        list-style: none;
-        margin: 0;
-        &.children {
-            margin-top: spacing('2-xs');
-        }
+  ul {
+    list-style: none;
+    margin: 0;
+    &.children {
+        margin-top: spacing('2-xs');
     }
+  }
 
-    li {
-      a:not(.hds-tag) {
-        color: $black;
-        display: block;
-        font-size: fontsize-body(l);
-      }
+  li {
+    a:not(.hds-tag) {
+      display: block;
+      font-size: fontsize-body(l);
     }
+  }
 
-    img {
-        max-width: 100%;
-    }
+  img {
+    max-width: 100%;
+  }
 
     &--widget_archive,
     &--widget_categories,
@@ -85,7 +84,7 @@
 
                 td {
                     border: $default-border-width $default-border-style $medium-gray;
-                    color: $black;
+                    color: currentColor;
                     --line-height: 2.5rem;
                     line-height: 2.5rem;
                     padding: 0;
@@ -160,6 +159,10 @@
             margin-bottom: 0 !important;
         }
 
+        > ul {
+          --list-indent: 0;
+        }
+
         li {
             padding-bottom: 8px;
             padding-top: 16px;
@@ -170,13 +173,14 @@
             }
 
             a {
+              --anchor-text-decoration: none;
+
                 font-weight: $global-font-weight-medium;
-                text-decoration: none;
                 font-size: rem-calc(20);
                 margin-bottom: spacing('2-xs');
 
                 &:hover {
-                    text-decoration: underline;
+                  --anchor-text-decoration: #{$anchor-text-decoration};
                 }
             }
 

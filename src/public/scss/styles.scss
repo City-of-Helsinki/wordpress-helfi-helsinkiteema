@@ -4,4 +4,18 @@
 
 @import 'functions';
 @import 'mixins';
-@import 'elements';
+
+@import 'html/index';
+
+@import 'util/visibility';
+@import 'util/invert-color';
+
+@import 'layout/index';
+
+@import 'modules/index';
+
+@import 'integrations/askem';
+@import 'integrations/yoastseo';
+@import 'integrations/helsinki-linkedevents';
+
+@import 'wordpress/index';
