@@ -31,49 +31,24 @@
 }
 
 %inverted-button {
-	background-color: $white;
-	border-color: $white;
-	color: $black;
-
-	.icon {
-		background-color: $black;
-	}
-
+  --button-background-color: #{$white};
+  --button-color: #{$black};
+  --button-outline-color: #{$white};
 
 	&:hover {
-		background-color: transparent;
-		color: $white;
-
-		.icon {
-			background-color: $white;
-		}
+    --button-background-color: rgba(255,255,255,.8);
+    --button-color: #{$black};
 	}
 
-  &:focus {
-    outline-color: $white;
-  }
-
 	&.hds-button--secondary {
-		background-color: transparent;
-		border-color: $white;
-		color: $white;
-
-		.icon {
-			background-color: $white;
-		}
+    --button-background-color: transparent;
+		--button-border-color: #{$white};
+		--button-color: #{$white};
 
 		&:hover {
-			background-color: $white;
-			color: $black;
-
-			.icon {
-				background-color: $black;
-			}
+      &:hover {
+        --button-background-color: rgba(0,0,0,.05);
+      }
 		}
-
-    &:focus {
-      outline-color: $white;
-    }
-
 	}
 }

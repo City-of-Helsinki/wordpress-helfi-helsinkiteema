@@ -1,16 +1,17 @@
-:where(a:not(.hds-button,.hds-tag)) {
-  color: $body-color;
-  text-decoration: underline;
-  transition: $default-transition;
+a:where(:not(.hds-button,.hds-tag)) {
+  color: var(--anchor-color, #{$body-color});
+  text-decoration: var(--anchor-text-decoration, #{$anchor-text-decoration});
   display: inline-block;
-  text-decoration-thickness: rem-calc(1);
+  text-decoration-thickness: var(--anchor-text-decoration-thickness, #{$anchor-text-decoration-thickness});
   text-underline-offset: 10%;
 
   &:hover {
-    text-decoration-thickness: rem-calc(2);
+    --anchor-text-decoration-thickness: #{$anchor-text-decoration-thickness-alt};
+    color: var(--anchor-color-alt, #{$body-color});
   }
 
   &:focus {
+    color: var(--anchor-color-alt);
     outline: 3px solid $black;
     outline-color: inherit;
     display: inline-block;

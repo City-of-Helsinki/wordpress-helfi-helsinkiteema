@@ -37,6 +37,7 @@
 }
 
 #header-search-toggle {
+
   &[aria-expanded="true"] {
     color: $header-search-color-alt;
 
@@ -47,6 +48,7 @@
 
   &:hover {
     text-decoration: underline;
+  	text-decoration-thickness: $anchor-text-decoration-thickness-alt;
   }
 }
 

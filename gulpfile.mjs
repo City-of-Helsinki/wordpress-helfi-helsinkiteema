@@ -84,7 +84,7 @@ function handleStyles(source, destination) {
 }
 
 gulp.task('adminScripts', () => handleScripts(SOURCE.admin.scripts, ASSETS.admin.scripts));
-gulp.task('adminStyles', () => handleStyles(SOURCE.admin.styles, ASSETS.admin.styles));
+// gulp.task('adminStyles', () => handleStyles(SOURCE.admin.styles, ASSETS.admin.styles));
 
 gulp.task('editorScripts', () => handleScripts(SOURCE.editor.scripts, ASSETS.editor.scripts));
 gulp.task('editorStyles', () => handleStyles(SOURCE.editor.styles, ASSETS.editor.styles));
@@ -119,7 +119,7 @@ gulp.task(
 gulp.task(
   'styles',
   gulp.parallel(
-    'adminStyles',
+    // 'adminStyles',
     'editorStyles',
     'publicStyles',
   )
@@ -127,7 +127,7 @@ gulp.task(
 
 gulp.task('watch', function() {
   gulp.watch(SOURCE.admin.scripts, gulp.parallel('adminScripts'));
-  gulp.watch(SOURCE.admin.styles, gulp.parallel('adminStyles'));
+  // gulp.watch(SOURCE.admin.styles, gulp.parallel('adminStyles'));
 
   gulp.watch(SOURCE.editor.scripts, gulp.parallel('editorScripts'));
   gulp.watch(SOURCE.editor.styles, gulp.parallel('editorStyles'));
@@ -142,7 +142,7 @@ gulp.task(
   'default',
   gulp.parallel(
     'adminScripts',
-    'adminStyles',
+    // 'adminStyles',
     'editorScripts',
     'editorStyles',
     'footerScripts',

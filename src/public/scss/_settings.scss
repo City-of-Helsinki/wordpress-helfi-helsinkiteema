@@ -92,6 +92,9 @@ $button-font-weight: $global-font-weight-bold !default;
 $anchor-color: $body-color !default;
 $anchor-text-decoration: underline !default;
 
+$anchor-text-decoration-thickness: .0625rem;
+$anchor-text-decoration-thickness-alt: .125rem;
+
 $anchor-active-font-weight: $global-font-weight-medium !default;
 
 /* ===== LISTS ===== */

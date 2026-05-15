@@ -15,12 +15,10 @@
 			a {
 				font-size: fontsize-body('l');
 				color: $black;
-			}
 
-			> .link-wrap {
-				&:hover {
-					text-decoration: underline;
-				}
+        &:hover {
+          --anchor-text-decoration: #{$anchor-text-decoration};
+        }
 			}
 		}
 

@@ -11,8 +11,8 @@
   ],
   "license": "GPLv3",
   "devDependencies": {
-    "@babel/core": "^7.28.6",
-    "@babel/preset-env": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.5",
     "babel-polyfill": "^6.26.0",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^10.0.0",
@@ -23,7 +23,7 @@
     "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.2",
     "hds-design-tokens": "^5.0.0",
-    "sass": "^1.97.3"
+    "sass": "^1.99.0"
   },
   "browserslist": [
     "last 2 versions",
