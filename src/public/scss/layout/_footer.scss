@@ -1,4 +1,7 @@
 .footer {
+  --anchor-color: currentColor;
+  --anchor-color-alt: currentColor;
+
 	background-color: $footer-background-color;
 	color: $footer-color;
 	outline-color: $footer-color;
@@ -28,7 +31,10 @@
 		}
 	}
 
-	.footer__widgets {}
+  a,
+  .menu a {
+    --anchor-text-decoration: #{$anchor-text-decoration};
+  }
 
 	.footer__bottom {
 		--align-items: normal;
@@ -115,26 +121,6 @@
 
 	.widget__title {
 		color: $footer-color;
-	}
-
-	a:not(.hds-tag),
-	.widget li a:not(.hds-tag),
-	.menu__item > a {
-		color: $white;
-		text-decoration: underline;
-
-		svg {
-			fill: $white;
-
-			&.mask-icon {
-				background-color: $white;
-			}
-		}
-
-		&:focus,
-		&:hover {
-			text-decoration: none;
-		}
 	}
 }
 

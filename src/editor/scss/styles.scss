@@ -65,8 +65,23 @@ body.editor-styles-wrapper {
 			pointer-events: none;
 		}
 	}
+}
 
-  @import '../../public/scss/elements';
+.editor-styles-wrapper {
+  @import '../../public/scss/html/index';
+
+  @import '../../public/scss/util/visibility';
+  @import '../../public/scss/util/invert-color';
+
+  @import '../../public/scss/layout/content';
+  @import '../../public/scss/layout/container';
+  @import '../../public/scss/layout/grid';
+
+  @import '../../public/scss/modules/index';
+
+  @import '../../public/scss/integrations/helsinki-linkedevents';
+
+  @import '../../public/scss/wordpress/index';
 }
 
 body .interface-interface-skeleton__sidebar {
@@ -119,15 +134,15 @@ body .interface-interface-skeleton__sidebar {
 
 				  &.align-right {
 
-					.image-banner-caption {
-					  padding-left: spacing('s');
-					  padding-right: 0;
+  					.image-banner-caption {
+  					  padding-left: spacing('s');
+  					  padding-right: 0;
 
-					  &--mobile {
-						padding-left: 0;
-						padding-right: spacing('s');
-					  }
-					}
+  					  &--mobile {
+    						padding-left: 0;
+    						padding-right: spacing('s');
+  					  }
+  					}
 				  }
 
 			}

@@ -25,6 +25,11 @@
 			font-size: rem-calc(16);
 			line-height: var(--line-height);
 			margin: spacing('xs') 0;
+      text-decoration-thickness: $anchor-text-decoration-thickness-alt;
+
+      &.current-lang {
+        --anchor-text-decoration: none;
+      }
 		}
 	}
 }
