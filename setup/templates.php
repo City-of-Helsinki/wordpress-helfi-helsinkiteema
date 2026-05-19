@@ -268,10 +268,10 @@ function helsinki_setup_templates()
 
 		add_action('helsinki_content_article', 'helsinki_content_article_header', 10);
 		add_action('helsinki_content_header', 'helsinki_content_article_title', 10);
+		add_action('helsinki_content_article', 'helsinki_page_divider', 12);
 
 		if (has_excerpt()) {
 			add_action('helsinki_content_header', 'helsinki_content_article_excerpt', 20);
-			add_action('helsinki_content_article', 'helsinki_page_divider', 12);
 		}
 
 		if (apply_filters('helsinki_blog_single_meta', false)) {
