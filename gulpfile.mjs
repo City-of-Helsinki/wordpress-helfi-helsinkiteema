@@ -17,9 +17,14 @@ const sassOptions = {
 };
 
 const cssOptions = {
-	level: 2,
+	level: {
+    1: {
+      tidySelectors: false,
+    },
+    2: {}
+  },
 	format: {
-		semicolonAfterLastProperty: true
+		semicolonAfterLastProperty: true,
 	}
 };
 
