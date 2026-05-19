@@ -27,18 +27,6 @@
 		}
 
 		&__header {
-
-			&::after {
-				background-color: $black;
-				content: '';
-				display: block;
-				margin-top: spacing('layout-s');
-				margin-bottom: spacing('layout-s');
-				max-width: rem-calc(64);
-				width: 100%;
-				height: 2px;
-			}
-
 			> .hds-container {
 				> * {
 					margin-bottom: 0;
