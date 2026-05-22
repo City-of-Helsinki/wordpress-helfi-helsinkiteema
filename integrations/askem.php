@@ -12,10 +12,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 function setup_feedback_buttons(): void {
 	if ( is_feedback_enabled() && is_feedback_context() ) {
 		\add_filter( 'body_class', __NAMESPACE__ . '\\apply_body_class', 10 );
+		\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\feedback_scripts' );
 
 		$hook = feedback_buttons_hook_and_priority();
 
 		\add_action( $hook['name'], __NAMESPACE__ . '\\provide_feedback_buttons', $hook['priority'] );
+	}
+}
+
+function feedback_scripts(): void {
+	$api_key = get_api_key();
+
+	if ( $api_key ) {
+		$handle = 'helsinki-theme-askem';
+
+		\wp_register_script( $handle, '' );
+		\wp_enqueue_script( $handle );
+
+		\wp_add_inline_script(
+			$handle,
+			sprintf(
+				'const HelsinkiThemeAskem = %s;',
+				json_encode( feedback_buttons_args( $api_key ) )
+			),
+			'before'
+		);
 	}
 }
 
@@ -52,7 +73,7 @@ function provide_feedback_buttons(): void {
 		\get_template_part(
 	        'partials/feedback/feedback',
 	        null,
-	        feedback_buttons_args( $api_key )
+	       array( 'script_url' => helsinki_assets_url() . 'vendor/askem/init.js' )
 	    );
 	}
 }
