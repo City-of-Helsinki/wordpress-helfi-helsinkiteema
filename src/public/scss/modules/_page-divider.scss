@@ -1,0 +1,18 @@
+.page-divider {
+  --divider-color: var(--color-black, #000);
+  --divider-margin: var(--spacing-layout-s, 32px);
+  --divider-height: 2px;
+  --divider-width: 64px;
+
+  display: block;
+
+  &:after {
+    content: '';
+    display: block;
+    height: var(--divider-height);
+    margin-top: var(--divider-margin);
+    margin-bottom: var(--divider-margin);
+    width: var(--divider-width);
+    background-color: var(--divider-color);
+  }
+}

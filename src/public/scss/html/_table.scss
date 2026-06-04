@@ -1,4 +1,4 @@
-table:not(.hds-react-component__date-input table) {
+table:not(.hds-date-input-wrap table) {
 	display: block;
 	/*border-collapse: separate !important;
 	border-spacing: 0;
@@ -28,72 +28,58 @@ table:not(.hds-react-component__date-input table) {
 		outline: 3px solid #1a1a1a;
 		outline-color: inherit;
 	}
-
 }
 
-thead:not(.hds-react-component__date-input thead) {
+thead:not(.hds-date-input-wrap thead) {
 	width: 100%;
 	background-color: var(--color-black-10);
 	border-top: 2px double var(--color-black-50);
 	border-left: 2px double var(--color-black-50);
 	border-right: 2px double var(--color-black-50);
 	border-bottom: none !important;
-
-	&:not(:empty)+ tbody {
-		tr {
-			&:first-child {
-				border-top: none;
-			}
-		}
-	}
 }
 
-tbody:not(.hds-react-component__date-input tbody) {
-	width: 100%;
+thead:not(.hds-date-input-wrap thead):not(:empty) + tbody tr:first-child {
+  border-top: none;
+}
 
-	tr {
-		&:first-child {
-			border-top: 2px double var(--color-black-50);
-		}
-	}
-
+tbody:not(.hds-date-input-wrap tbody) {
 	border-left: 2px double var(--color-black-50);
 	border-right: 2px double var(--color-black-50);
-
-	&:last-child {
-		border-bottom: 2px double var(--color-black-50);
-	}
+	width: 100%;
 }
 
-tfoot:not(.hds-react-component__date-input tfoot) {
-	width: 100%;
+tbody:not(.hds-date-input-wrap tbody):last-child {
+  border-bottom: 2px double var(--color-black-50);
+}
 
-	td {
-		@if $table-border-enabled {
-			border-top: $table-border;
-		}
-	}
+tbody:not(.hds-date-input-wrap tbody) tr:first-child {
+  border-top: 2px double var(--color-black-50);
+}
 
+tfoot:not(.hds-date-input-wrap tfoot) {
 	border-top: none !important;
 	border-bottom: 2px double var(--color-black-50);
 	border-left: 2px double var(--color-black-50);
 	border-right: 2px double var(--color-black-50);
+	width: 100%;
 }
 
-tr:not(.hds-react-component__date-input tr) {
+@if $table-border-enabled {
+  tfoot:not(.hds-date-input-wrap tfoot) td {
+    border-top: $table-border;
+  }
+}
+
+tr:not(.hds-date-input-wrap tr) {
 	border-bottom: 1px solid var(--color-black-50);
-	&:not(:last-of-type) {
-		td {
-			@if $table-border-enabled {
-				border-bottom: $table-border;
-			}
-		}
-		th {
-			@if $table-border-enabled {
-				border-bottom: $table-border;
-			}
-		}
-	}
+}
+
+@if $table-border-enabled {
+  tr:not(.hds-date-input-wrap tr):not(:last-of-type) td,
+  tr:not(.hds-date-input-wrap tr):not(:last-of-type) th {
+    border-bottom: $table-border;
+  }
 }
 
 th {
@@ -107,8 +93,8 @@ td {
 	border: unset !important;
 }
 
-th:not(.hds-react-component__date-input th),
-td:not(.hds-react-component__date-input td) {
+th:not(.hds-date-input-wrap th),
+td:not(.hds-date-input-wrap td) {
   padding: $table-cell-padding !important;
   min-width: 140px;
 }
@@ -182,7 +168,6 @@ figure.wp-block-table {
 				}
 			}
 		}
-
 	}
 
 	figcaption {
