@@ -1,4 +1,4 @@
-(({apiKey,title,postId,category,disableFonts}) => {
+(({apiKey,title,postId,category,disableFonts}, container) => {
   var reactionPlugin = null;
 
   const facesArray = [
@@ -90,19 +90,86 @@
     }
   }
 
-  window.rnsData = {
-    apiKey,
-    title,
-    postId: `${category} - ${postId}`,
-    categories: ['wordpress', category],
-    disableFonts: !! disableFonts,
-    initCallback: (element, canonicalUrl) => helsinkiInitRns(element, canonicalUrl),
+  function dispatchFeedbackEvent(name, details) {
+    window.dispatchEvent(
+      new CustomEvent('helsinki-feedback-buttons-' + name, {detail: details})
+    );
+  }
+
+  function HelsinkiFeedbackButtons({container, script, key, data}) {
+    var _loaded = false;
+    const _loadConditions = [];
+
+    const _shouldLoad = () => {
+      for (let i = 0; i < _loadConditions.length; i++) {
+        if (! _loadConditions[i]({container, script})) {
+          return false;
+        }
+      }
+
+      return true;
+    };
+
+    const _addLoadCondition = (condition) => {
+      if (typeof condition === 'function') {
+        _loadConditions.push(condition);
+      }
+    }
+
+    const _load = () => {
+      if (! _loaded) {
+        window[key] = data;
+
+        document.body.appendChild((() => {
+          var s = document.createElement('script');
+          s.src = script;
+
+          return s;
+        })());
+
+        _loaded = true;
+
+        dispatchFeedbackEvent('loaded', {
+          container,
+          script,
+        });
+      }
+    };
+
+    return {
+      init: () => {
+        dispatchFeedbackEvent('initializing', {
+          addLoadCondition: _addLoadCondition,
+        });
+
+        if (_shouldLoad()) {
+          _load();
+        }
+
+        dispatchFeedbackEvent('ready', {
+          container,
+          script,
+          load: _load,
+        });
+      },
+    };
   };
 
-  document.body.appendChild((() => {
-    var s = document.createElement('script');
-    s.src = 'https://cdn.reactandshare.com/plugin/rns.js';
-
-    return s;
-  })());
-})(HelsinkiThemeAskem || {});
+  if (container) {
+    window.addEventListener('load', (event) => {
+      HelsinkiFeedbackButtons({
+        container,
+        script: 'https://cdn.reactandshare.com/plugin/rns.js',
+        key: 'rnsData',
+        data: {
+          apiKey,
+          title,
+          postId: `${category} - ${postId}`,
+          categories: ['wordpress', category],
+          disableFonts: !! disableFonts,
+          initCallback: (element, canonicalUrl) => helsinkiInitRns(element, canonicalUrl),
+        },
+      }).init();
+    });
+  }
+})(HelsinkiThemeAskem || {}, document.querySelector('.rns-container'));
