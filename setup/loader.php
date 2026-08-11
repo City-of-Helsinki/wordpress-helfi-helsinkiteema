@@ -135,7 +135,7 @@ function helsinki_files(): array {
 			'misc',
 		],
 		'integrations' => [
-			'askem'
+			'askem' => [ 'init' ],
 		],
 	];
 

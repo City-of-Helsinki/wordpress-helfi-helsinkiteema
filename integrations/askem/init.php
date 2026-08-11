@@ -67,76 +67,22 @@ function apply_body_class( array $classes ): array {
 }
 
 function feedback_buttons_script_url(): string {
-	$script_url = \apply_filters(
-		'helsinki_feedback_buttons_script_url',
-		helsinki_assets_url() . 'vendor/askem/init.js'
-	);
-
-	return \wp_sanitize_redirect( $script_url ) ?: '';
-}
-
-function feedback_buttons_html(): string {
-	return \wp_kses(
-		\apply_filters(
-			'helsinki_feedback_buttons_html',
-			'<div class="rns"></div>'
-		),
-		array(
-			'div' => array(
-				'id' => true,
-				'class' => true,
-				'data-*' => true,
-			),
-			'h2' => array(
-				'id' => true,
-				'class' => true,
-			),
-			'h3' => array(
-				'id' => true,
-				'class' => true,
-			),
-			'p' => array(
-				'id' => true,
-				'class' => true,
-			),
-			'span' => array(
-				'id' => true,
-				'class' => true,
-				'aria-*' => true,
-				'role' => true,
-			),
-			'a' => array(
-				'id' => true,
-				'class' => true,
-				'href' => true,
-				'target' => true,
-			),
-			'button' => array(
-				'id' => true,
-				'class' => true,
-				'type' => true,
-				'data-*' => true,
-			),
-		)
-	);
+	return helsinki_assets_url() . 'vendor/askem/init.js';
 }
 
 function provide_feedback_buttons(): void {
-	$script_url = feedback_buttons_script_url();
-	$buttons = feedback_buttons_html();
+	$setup = new Feedback_Buttons_Setup(
+		feedback_buttons_script_url(),
+		'<div class="rns"></div>'
+	);
 
-	if ( \wp_validate_redirect( $script_url ) ) {
-		$buttons .= sprintf(
-			'<script src="%s" type="text/javascript"></script>',
-			\esc_url( $script_url )
-		);
-	}
+	\do_action( 'helsinki_feedback_buttons_setup', $setup );
 
 	printf(
 		'<div class="rns-container">
 			<div class="hds-container">%s</div>
 		</div>',
-		$buttons
+		$setup->buttons_html()
 	);
 }
 
