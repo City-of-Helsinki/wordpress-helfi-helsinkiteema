@@ -90,7 +90,7 @@
     }
   }
 
-  window['rnsData'] = {
+  window.rnsData = {
     apiKey,
     title,
     postId: `${category} - ${postId}`,
@@ -105,4 +105,4 @@
 
     return s;
   })());
-})(HelsinkiThemeAskem || {}, document.querySelector('.rns-container'));
+})(HelsinkiThemeAskem || {});
