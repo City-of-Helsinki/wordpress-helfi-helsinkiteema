@@ -20,6 +20,11 @@ function helsinki_assets_url(): string {
   * Asset loading
   */
 function helsinki_enqueue_assets(): void {
+
+	if ( ! apply_filters( 'helsinki_theme_should_enqueue_assets', true ) ) {
+		return;
+	}
+
 	$debug = helsinki_is_debug();
 	$assets = helsinki_assets_url();
   	$version = helsinki_assets_version();
