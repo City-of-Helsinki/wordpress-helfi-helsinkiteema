@@ -117,6 +117,7 @@ function helsinki_files(): array {
 				'misc',
 			],
 			'media' => [
+				'lightbox',
 				'meta',
 			],
 		    'modules' => [
