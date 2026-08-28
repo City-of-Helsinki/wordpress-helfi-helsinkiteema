@@ -22,7 +22,7 @@
           "fontStyle": false,
           "fontSize": false,
           "textTransform": false,
-          "letterSpacing": false  
+          "letterSpacing": false
         }
       },
       "core/quote": {
@@ -31,7 +31,7 @@
           "fontStyle": false,
           "fontSize": false,
           "textTransform": false,
-          "letterSpacing": false  
+          "letterSpacing": false
         }
       },
       "core/heading": {
@@ -40,7 +40,7 @@
           "fontStyle": false,
           "fontSize": false,
           "textTransform": false,
-          "letterSpacing": false  
+          "letterSpacing": false
         }
       },
       "core/table": {
@@ -49,7 +49,7 @@
           "fontStyle": false,
           "fontSize": false,
           "textTransform": false,
-          "letterSpacing": false  
+          "letterSpacing": false
         }
       },
       "core/list": {
@@ -58,7 +58,7 @@
           "fontStyle": false,
           "fontSize": false,
           "textTransform": false,
-          "letterSpacing": false  
+          "letterSpacing": false
         }
       },
       "core/group": {
@@ -67,7 +67,7 @@
           "fontStyle": false,
           "fontSize": false,
           "textTransform": false,
-          "letterSpacing": false  
+          "letterSpacing": false
         }
       },
       "core/social-links": {
@@ -85,6 +85,12 @@
               "name": "White"
             }
           ]
+        }
+      },
+      "core/image": {
+        "lightbox": {
+          "enabled": false,
+          "allowEditing": false
         }
       }
     },
