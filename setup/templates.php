@@ -176,7 +176,11 @@ function helsinki_setup_templates()
 			add_action('helsinki_view_header_classes', 'helsinki_view_classes', 10);
 			add_action('helsinki_view_header', 'helsinki_view_heading', 10);
 			add_action('helsinki_view_header', 'helsinki_view_description', 20);
-			add_action('helsinki_view_header_after', 'helsinki_view_hero', 20);
+
+			add_filter( 'helsinki_koros_name', 'helsinki_determine_koros_name', 10, 3 );
+			add_filter( 'helsinki_koros_flipped', 'helsinki_determine_koros_flip', 10, 3 );
+			add_filter( 'helsinki_hero_class_koros', '__return_true' );
+			add_action( 'helsinki_view_header_after', 'helsinki_view_hero', 20 );
 
 			add_action('helsinki_loop_top', 'helsinki_view_header', 10);
 
@@ -353,7 +357,11 @@ function helsinki_setup_templates()
 		add_action('helsinki_view_header_classes', 'helsinki_view_classes', 10);
 		add_action('helsinki_view_header', 'helsinki_view_heading', 10);
 		add_action('helsinki_view_header', 'helsinki_view_description', 20);
-		add_action('helsinki_view_header_after', 'helsinki_view_hero', 20);
+
+		add_filter( 'helsinki_koros_name', 'helsinki_determine_koros_name', 10, 3 );
+		add_filter( 'helsinki_koros_flipped', 'helsinki_determine_koros_flip', 10, 3 );
+		add_filter( 'helsinki_hero_class_koros', '__return_true' );
+		add_action( 'helsinki_view_header_after', 'helsinki_view_hero', 20 );
 
 		add_action('helsinki_loop_top', 'helsinki_view_header', 10);
 

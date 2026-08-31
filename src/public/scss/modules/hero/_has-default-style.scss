@@ -1,6 +1,8 @@
-.hero.has-default-style {
+body:not(.archive) .hero.has-default-style {
   margin: 0;
+}
 
+.hero.has-default-style {
   @include breakpointMax('m') {
     > .hds-koros {
       height: math.div($koros-size, 2);
