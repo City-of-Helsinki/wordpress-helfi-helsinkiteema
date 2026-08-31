@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schemas.wp.org/wp/7.0/theme.json",
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
   "version": 3,
   "settings": {
     "blocks": {
@@ -122,6 +122,10 @@
 	    "writingMode": false,
 	    "textTransform": false,
       "customLineHeight": false
+    },
+    "viewport": {
+      "mobile": "576px",
+      "tablet": "992px"
     }
   }
 }
