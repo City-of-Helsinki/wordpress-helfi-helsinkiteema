@@ -5,7 +5,10 @@
     "blocks": {
       "core/button": {
         "border": {
-          "customRadius": false
+          "color": false,
+					"radius": false,
+					"style": false,
+					"width": false
         },
         "color": {
           "palette": [],
@@ -14,7 +17,10 @@
 					"custom": false,
 					"customGradient": false,
           "customDuotone": false
-				}
+				},
+        "dimensions": {
+          "width": false
+        }
       },
       "core/paragraph": {
         "typography": {
