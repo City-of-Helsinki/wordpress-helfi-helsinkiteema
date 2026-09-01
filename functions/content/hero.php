@@ -76,7 +76,7 @@ function helsinki_hero_layout_style( int $id = 0 ) {
 		if ( ! $style ) {
 			$style = apply_filters( 'helsinki_hero_layout_style_default', 'image-left' );
 		}
-	} else if ( is_page() || is_archive() ) {
+	} else if ( is_page() || is_archive() || is_home() ) {
 		$style = 'default-style';
 	}
 
