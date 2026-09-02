@@ -34,3 +34,48 @@ function helsinki_setup_image_meta_provider(): void {
 function helsinki_base_image_credit( $post_id = null ): string {
 	return apply_filters( 'helsinki_image_credit_text', '', (int) $post_id );
 }
+
+add_filter( 'render_block', 'helsinki_image_render', 10, 2 );
+function helsinki_image_render( $block_content = '', $block = [] ) {
+	$is_valid_image_block = ! empty( $block['blockName'] )
+		&& ('core/image' === $block['blockName'])
+		&& ! empty( $block['attrs']['id'] );
+
+	if ( ! $is_valid_image_block ) {
+		return $block_content;
+	}
+
+	$credit = helsinki_base_image_credit( $block['attrs']['id'] );
+	if ( $credit ) {
+		preg_match_all(
+			'/(?<figcaption><figcaption[^\>]*>)(?<content>.*)(<\/figcaption>)/sU',
+			$block_content,
+			$matches
+		);
+
+		if ( ! empty( $matches['figcaption'][0] ) ) {
+			$block_content = preg_replace(
+				'/(?<figcaption><figcaption[^\>]*>)(?<content>.*)(<\/figcaption>)/sU',
+				$matches['figcaption'][0] . $matches['content'][0] . ' ' . $credit . '</figcaption>',
+				$block_content,
+				1
+			);
+		} else {
+			//if there is no figcaption, create one
+			preg_match_all(
+				'/(?<figure><figure[^\>]*>)(?<content>.*)(<\/figure>)/sU',
+				$block_content,
+				$matches
+			);
+
+			$block_content = preg_replace(
+				'/(?<figure><figure[^\>]*>)(?<content>.*)(<\/figure>)/sU',
+				$matches['figure'][0] . $matches['content'][0] . '<figcaption>' . $credit . '</figcaption></figure>',
+				$block_content,
+				1
+			);
+		}
+	}
+
+	return $block_content;
+}
