@@ -10,7 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 \add_action( 'template_redirect', __NAMESPACE__ . '\\setup_feedback_buttons' );
 function setup_feedback_buttons(): void {
-	if ( is_feedback_enabled() && is_feedback_context() ) {
+	$enabled = is_feedback_enabled()
+		&& is_feedback_context()
+		&& get_api_key();
+
+	if ( $enabled ) {
 		\add_filter( 'body_class', __NAMESPACE__ . '\\apply_body_class', 10 );
 		\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\feedback_scripts' );
 
@@ -21,23 +25,19 @@ function setup_feedback_buttons(): void {
 }
 
 function feedback_scripts(): void {
-	$api_key = get_api_key();
+	$handle = 'helsinki-theme-askem';
 
-	if ( $api_key ) {
-		$handle = 'helsinki-theme-askem';
+	\wp_register_script( $handle, '' );
+	\wp_enqueue_script( $handle );
 
-		\wp_register_script( $handle, '' );
-		\wp_enqueue_script( $handle );
-
-		\wp_add_inline_script(
-			$handle,
-			sprintf(
-				'const HelsinkiThemeAskem = %s;',
-				json_encode( feedback_buttons_args( $api_key ) )
-			),
-			'before'
-		);
-	}
+	\wp_add_inline_script(
+		$handle,
+		sprintf(
+			'const HelsinkiThemeAskem = %s;',
+			json_encode( feedback_buttons_args( get_api_key() ) )
+		),
+		'before'
+	);
 }
 
 function feedback_buttons_hook_and_priority(): array {
@@ -66,16 +66,24 @@ function apply_body_class( array $classes ): array {
 	return \helsinki_add_body_class_has_n( $classes, 'rns' );
 }
 
-function provide_feedback_buttons(): void {
-	$api_key = get_api_key();
+function feedback_buttons_script_url(): string {
+	return helsinki_assets_url() . 'vendor/askem/init.js';
+}
 
-	if ( $api_key ) {
-		\get_template_part(
-	        'partials/feedback/feedback',
-	        null,
-	       array( 'script_url' => helsinki_assets_url() . 'vendor/askem/init.js' )
-	    );
-	}
+function provide_feedback_buttons(): void {
+	$setup = new Feedback_Buttons_Setup(
+		feedback_buttons_script_url(),
+		'<div class="rns"></div>'
+	);
+
+	\do_action( 'helsinki_feedback_buttons_setup', $setup );
+
+	printf(
+		'<div class="rns-container">
+			<div class="hds-container">%s</div>
+		</div>',
+		$setup->buttons_html()
+	);
 }
 
 function feedback_buttons_args( string $api_key ): array {

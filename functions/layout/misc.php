@@ -72,7 +72,7 @@ if ( ! function_exists('helsinki_not_found_notice') ) {
 	}
 }
 
-if ( ! function_exists('helsinki_maintenance_image')) {
+if ( ! function_exists('helsinki_not_found_image')) {
 	function helsinki_not_found_image() {
 		return sprintf(
 			'<figure><img class="decoration" alt="" src="%s" width="379" height="566"><figcaption class="wp-caption-text">%s</figcaption></figure>',
