@@ -1,100 +1,281 @@
-jsMenuInit();
+function createSubmenuController(item) {
+  const toggleButton = item.querySelector(
+    ':scope > .link-wrap > .js-submenu-toggle'
+  );
 
-function jsMenuInit() {
-	forCallbackLoop(
-		document.querySelectorAll('.js-submenu-toggle'),
-		function( submenuToggle ) {
-			submenuToggle.addEventListener('touchstart', function(event){
-				jsSubmenuToggle(event, submenuToggle);
-			});
-			submenuToggle.addEventListener('click', function(event){
-				jsSubmenuToggle(event, submenuToggle);
-			});
-		}
-	);
+  const submenu = item.querySelector(
+    ':scope > .menu--sub'
+  );
 
-  forCallbackLoop(
-		document.querySelectorAll('#main-menu .menu__item--parent > .link-wrap > a'),
-		function( menuLink ) {
-      var menuItem = menuLink.closest('.menu__item--parent');
+  if (!toggleButton || !submenu) {
+    return null;
+  }
 
-			menuLink.addEventListener('mouseover', function(event){
-				toggleMouseHoverClass(menuItem, true);
-			});
+  const isDepthZero = item.classList.contains('menu__depth-0');
 
-			menuItem.addEventListener('mouseleave', function(event){
-				toggleMouseHoverClass(menuItem, false);
-			});
-		}
-	);
+  function isOpen() {
+    return item.classList.contains('open');
+  }
 
-  document.addEventListener('click', closeAllSubmenus);
+  function isHovered() {
+    return item.classList.contains('menu__item--hover');
+  }
+
+  function open() {
+    item.classList.add('open');
+    toggleButton.setAttribute('aria-expanded', 'true');
+  }
+
+  function close() {
+    item.classList.remove('open');
+    toggleButton.setAttribute('aria-expanded', 'false');
+  }
+
+  function hoverOpen() {
+    item.classList.add('menu__item--hover');
+  }
+
+  function hoverClose() {
+    item.classList.remove('menu__item--hover');
+  }
+
+  return {
+    item,
+    submenu,
+    toggleButton,
+    isDepthZero,
+    isOpen,
+    isHovered,
+    open,
+    close,
+    hoverOpen,
+    hoverClose,
+  };
 }
 
-function jsSubmenuToggle(event, currentToggle) {
-	event.preventDefault();
 
-	var thisMenuItem = currentToggle.closest('.menu__item'),
-			thisMenu = thisMenuItem.parentElement;
-
-	forCallbackLoop(
-		thisMenu.querySelectorAll('.menu__item.open'),
-		function( openMenuItem ) {
-			if ( thisMenuItem !== openMenuItem ) {
-				closeSubmenu(
-					openMenuItem.querySelector('.js-submenu-toggle')
-				);
-			}
-		}
-	);
-
-	if ( isMenuItemOpen(thisMenuItem) ) {
-		closeSubmenu(currentToggle);
-	} else {
-		openSubmenu(currentToggle);
-	}
-}
-
-function closeAllSubmenus(event) {
-  var mainMenu = document.getElementById('main-menu');
-  if ( mainMenu.contains(event.target) ) {
+function initMenu(menu) {
+  if (!menu) {
     return;
   }
 
-  forCallbackLoop(
-		mainMenu.querySelectorAll('.menu__item.open'),
-		function( openMenuItem ) {
-      closeSubmenu(
-        openMenuItem.querySelector('.js-submenu-toggle')
-      );
-		}
-	);
-}
+  const controllers = Array.from(
+    menu.querySelectorAll('.menu__item--parent.has-toggle')
+  )
+    .map(createSubmenuController)
+    .filter(Boolean);
 
-function isMenuItemOpen(menuItem) {
-	return menuItem.classList.contains('open');
-}
+  const controllerByItem = new Map(
+    controllers.map(controller => [
+      controller.item,
+      controller,
+    ])
+  );
 
-function closeSubmenu(element) {
-	if ( ! element ) {
-		return;
-	}
-  element.closest('.menu__item').classList.remove('open');
-  element.setAttribute('aria-expanded', "false");
-}
-
-function openSubmenu(element) {
-	if ( ! element ) {
-		return;
-	}
-  element.closest('.menu__item').classList.add('open');
-  element.setAttribute('aria-expanded', "true");
-}
-
-function toggleMouseHoverClass(element, enabled) {
-  if ( enabled ) {
-    element.classList.add('menu__item--hover');
-  } else {
-    element.classList.remove('menu__item--hover');
+  function getController(item) {
+    return controllerByItem.get(item) || null;
   }
+
+  function getClosestController(element) {
+    if (!(element instanceof Element)) {
+      return null;
+    }
+
+    const item = element.closest(
+      '.menu__item--parent.has-toggle'
+    );
+
+    if (!item || !menu.contains(item)) {
+      return null;
+    }
+
+    return getController(item);
+  }
+
+  function getDescendantControllers(controller) {
+    return controllers.filter(candidate =>
+      candidate !== controller &&
+      controller.item.contains(candidate.item)
+    );
+  }
+
+  /*
+   * Fully reset a branch.
+   *
+   * Used when another depth-0 branch is opened,
+   * or when Escape explicitly closes a branch.
+   */
+  function resetController(controller) {
+    getDescendantControllers(controller).forEach(descendant => {
+      descendant.close();
+      descendant.hoverClose();
+    });
+
+    controller.close();
+    controller.hoverClose();
+  }
+
+  /*
+   * Close explicit click-open state only.
+   *
+   * Hover state is deliberately left alone.
+   */
+  function closeController(controller) {
+    getDescendantControllers(controller).forEach(descendant => {
+      descendant.close();
+    });
+
+    controller.close();
+  }
+
+  function closeOtherDepthZeroControllers(currentController) {
+    controllers.forEach(controller => {
+      if (
+        controller !== currentController &&
+        controller.isDepthZero &&
+        (controller.isOpen() || controller.isHovered())
+      ) {
+        resetController(controller);
+      }
+    });
+  }
+
+  function openController(controller) {
+    if (controller.isDepthZero) {
+      closeOtherDepthZeroControllers(controller);
+    }
+
+    controller.open();
+  }
+
+  function hoverOpenController(controller) {
+    if (controller.isDepthZero) {
+      closeOtherDepthZeroControllers(controller);
+    }
+
+    controller.hoverOpen();
+  }
+
+
+  /*
+   * Click
+   *
+   * .open represents explicit click/toggle state.
+   */
+  menu.addEventListener('click', event => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+
+    const toggleButton = event.target.closest(
+      '.js-submenu-toggle'
+    );
+
+    if (!toggleButton || !menu.contains(toggleButton)) {
+      return;
+    }
+
+    const controller = getClosestController(toggleButton);
+
+    if (!controller) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (controller.isOpen()) {
+      closeController(controller);
+    } else {
+      openController(controller);
+    }
+  });
+
+
+  /*
+   * Hover
+   *
+   * These listeners are attached directly because mouseenter /
+   * mouseleave do not bubble, which makes nested menu behaviour
+   * much easier to reason about.
+   */
+  controllers.forEach(controller => {
+    controller.item.addEventListener('mouseenter', () => {
+      hoverOpenController(controller);
+    });
+
+    controller.item.addEventListener('mouseleave', () => {
+      controller.hoverClose();
+    });
+  });
+
+
+  /*
+   * Focus leaving an item closes its explicit .open state.
+   *
+   * Moving focus between descendants of the same menu item
+   * does nothing.
+   */
+  menu.addEventListener('focusout', event => {
+    const controller = getClosestController(event.target);
+
+    if (!controller || !controller.isOpen()) {
+      return;
+    }
+
+    const nextElement = event.relatedTarget;
+
+    if (
+      nextElement instanceof Node &&
+      controller.item.contains(nextElement)
+    ) {
+      return;
+    }
+
+    closeController(controller);
+  });
+
+
+  /*
+   * Escape closes the closest currently active submenu.
+   *
+   * Both .open and .menu__item--hover are removed so Escape
+   * always visibly closes the submenu.
+   */
+  menu.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') {
+      return;
+    }
+
+    const activeElement = document.activeElement;
+
+    if (!(activeElement instanceof Element)) {
+      return;
+    }
+
+    const item = activeElement.closest(
+      '.menu__item--parent.has-toggle.open, ' +
+      '.menu__item--parent.has-toggle.menu__item--hover'
+    );
+
+    if (!item || !menu.contains(item)) {
+      return;
+    }
+
+    const controller = getController(item);
+
+    if (!controller) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    resetController(controller);
+    controller.toggleButton.focus();
+  });
 }
+
+[
+  document.getElementById('main-menu'),
+  document.getElementById('mobile-main-menu'),
+].forEach(initMenu);
