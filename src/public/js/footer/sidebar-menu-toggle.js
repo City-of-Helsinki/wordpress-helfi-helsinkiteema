@@ -49,7 +49,7 @@ function jsSidebarMenuToggle(event, currentToggle) {
     }
   );
 
-  if (isMenuItemOpen(thisMenuItem)) {
+  if (thisMenuItem.classList.contains('open')) {
     closeSidebarMenu(currentToggle);
   } else {
     openSidebarMenu(currentToggle);
