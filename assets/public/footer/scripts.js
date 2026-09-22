@@ -813,7 +813,7 @@ function jsSidebarMenuToggle(event, currentToggle) {
       closeSidebarMenu(openMenuItem.querySelector('.js-sidebarnavigation-toggle'));
     }
   });
-  if (isMenuItemOpen(thisMenuItem)) {
+  if (thisMenuItem.classList.contains('open')) {
     closeSidebarMenu(currentToggle);
   } else {
     openSidebarMenu(currentToggle);
@@ -833,75 +833,207 @@ function openSidebarMenu(element) {
   element.closest('.menu__item').classList.add('open');
   element.setAttribute('aria-expanded', 'true');
 }
-jsMenuInit();
-function jsMenuInit() {
-  forCallbackLoop(document.querySelectorAll('.js-submenu-toggle'), function (submenuToggle) {
-    submenuToggle.addEventListener('touchstart', function (event) {
-      jsSubmenuToggle(event, submenuToggle);
-    });
-    submenuToggle.addEventListener('click', function (event) {
-      jsSubmenuToggle(event, submenuToggle);
-    });
-  });
-  forCallbackLoop(document.querySelectorAll('#main-menu .menu__item--parent > .link-wrap > a'), function (menuLink) {
-    var menuItem = menuLink.closest('.menu__item--parent');
-    menuLink.addEventListener('mouseover', function (event) {
-      toggleMouseHoverClass(menuItem, true);
-    });
-    menuItem.addEventListener('mouseleave', function (event) {
-      toggleMouseHoverClass(menuItem, false);
-    });
-  });
-  document.addEventListener('click', closeAllSubmenus);
+function createSubmenuController(item) {
+  var toggleButton = item.querySelector(':scope > .link-wrap > .js-submenu-toggle');
+  var submenu = item.querySelector(':scope > .menu--sub');
+  if (!toggleButton || !submenu) {
+    return null;
+  }
+  var isDepthZero = item.classList.contains('menu__depth-0');
+  function isOpen() {
+    return item.classList.contains('open');
+  }
+  function isHovered() {
+    return item.classList.contains('menu__item--hover');
+  }
+  function open() {
+    item.classList.add('open');
+    toggleButton.setAttribute('aria-expanded', 'true');
+  }
+  function close() {
+    item.classList.remove('open');
+    toggleButton.setAttribute('aria-expanded', 'false');
+  }
+  function hoverOpen() {
+    item.classList.add('menu__item--hover');
+  }
+  function hoverClose() {
+    item.classList.remove('menu__item--hover');
+  }
+  return {
+    item: item,
+    submenu: submenu,
+    toggleButton: toggleButton,
+    isDepthZero: isDepthZero,
+    isOpen: isOpen,
+    isHovered: isHovered,
+    open: open,
+    close: close,
+    hoverOpen: hoverOpen,
+    hoverClose: hoverClose
+  };
 }
-function jsSubmenuToggle(event, currentToggle) {
-  event.preventDefault();
-  var thisMenuItem = currentToggle.closest('.menu__item'),
-    thisMenu = thisMenuItem.parentElement;
-  forCallbackLoop(thisMenu.querySelectorAll('.menu__item.open'), function (openMenuItem) {
-    if (thisMenuItem !== openMenuItem) {
-      closeSubmenu(openMenuItem.querySelector('.js-submenu-toggle'));
+function initMenu(menu) {
+  if (!menu) {
+    return;
+  }
+  var controllers = Array.from(menu.querySelectorAll('.menu__item--parent.has-toggle')).map(createSubmenuController).filter(Boolean);
+  var controllerByItem = new Map(controllers.map(function (controller) {
+    return [controller.item, controller];
+  }));
+  function getController(item) {
+    return controllerByItem.get(item) || null;
+  }
+  function getClosestController(element) {
+    if (!(element instanceof Element)) {
+      return null;
+    }
+    var item = element.closest('.menu__item--parent.has-toggle');
+    if (!item || !menu.contains(item)) {
+      return null;
+    }
+    return getController(item);
+  }
+  function getDescendantControllers(controller) {
+    return controllers.filter(function (candidate) {
+      return candidate !== controller && controller.item.contains(candidate.item);
+    });
+  }
+
+  /*
+   * Fully reset a branch.
+   *
+   * Used when another depth-0 branch is opened,
+   * or when Escape explicitly closes a branch.
+   */
+  function resetController(controller) {
+    getDescendantControllers(controller).forEach(function (descendant) {
+      descendant.close();
+      descendant.hoverClose();
+    });
+    controller.close();
+    controller.hoverClose();
+  }
+
+  /*
+   * Close explicit click-open state only.
+   *
+   * Hover state is deliberately left alone.
+   */
+  function closeController(controller) {
+    getDescendantControllers(controller).forEach(function (descendant) {
+      descendant.close();
+    });
+    controller.close();
+  }
+  function closeOtherDepthZeroControllers(currentController) {
+    controllers.forEach(function (controller) {
+      if (controller !== currentController && controller.isDepthZero && (controller.isOpen() || controller.isHovered())) {
+        resetController(controller);
+      }
+    });
+  }
+  function openController(controller) {
+    if (controller.isDepthZero) {
+      closeOtherDepthZeroControllers(controller);
+    }
+    controller.open();
+  }
+  function hoverOpenController(controller) {
+    if (controller.isDepthZero) {
+      closeOtherDepthZeroControllers(controller);
+    }
+    controller.hoverOpen();
+  }
+
+  /*
+   * Click
+   *
+   * .open represents explicit click/toggle state.
+   */
+  menu.addEventListener('click', function (event) {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+    var toggleButton = event.target.closest('.js-submenu-toggle');
+    if (!toggleButton || !menu.contains(toggleButton)) {
+      return;
+    }
+    var controller = getClosestController(toggleButton);
+    if (!controller) {
+      return;
+    }
+    event.preventDefault();
+    if (controller.isOpen()) {
+      closeController(controller);
+    } else {
+      openController(controller);
     }
   });
-  if (isMenuItemOpen(thisMenuItem)) {
-    closeSubmenu(currentToggle);
-  } else {
-    openSubmenu(currentToggle);
-  }
-}
-function closeAllSubmenus(event) {
-  var mainMenu = document.getElementById('main-menu');
-  if (mainMenu.contains(event.target)) {
-    return;
-  }
-  forCallbackLoop(mainMenu.querySelectorAll('.menu__item.open'), function (openMenuItem) {
-    closeSubmenu(openMenuItem.querySelector('.js-submenu-toggle'));
+
+  /*
+   * Hover
+   *
+   * These listeners are attached directly because mouseenter /
+   * mouseleave do not bubble, which makes nested menu behaviour
+   * much easier to reason about.
+   */
+  controllers.forEach(function (controller) {
+    controller.item.addEventListener('mouseenter', function () {
+      hoverOpenController(controller);
+    });
+    controller.item.addEventListener('mouseleave', function () {
+      controller.hoverClose();
+    });
+  });
+
+  /*
+   * Focus leaving an item closes its explicit .open state.
+   *
+   * Moving focus between descendants of the same menu item
+   * does nothing.
+   */
+  menu.addEventListener('focusout', function (event) {
+    var controller = getClosestController(event.target);
+    if (!controller || !controller.isOpen()) {
+      return;
+    }
+    var nextElement = event.relatedTarget;
+    if (nextElement instanceof Node && controller.item.contains(nextElement)) {
+      return;
+    }
+    closeController(controller);
+  });
+
+  /*
+   * Escape closes the closest currently active submenu.
+   *
+   * Both .open and .menu__item--hover are removed so Escape
+   * always visibly closes the submenu.
+   */
+  menu.addEventListener('keydown', function (event) {
+    if (event.key !== 'Escape') {
+      return;
+    }
+    var activeElement = document.activeElement;
+    if (!(activeElement instanceof Element)) {
+      return;
+    }
+    var item = activeElement.closest('.menu__item--parent.has-toggle.open, ' + '.menu__item--parent.has-toggle.menu__item--hover');
+    if (!item || !menu.contains(item)) {
+      return;
+    }
+    var controller = getController(item);
+    if (!controller) {
+      return;
+    }
+    event.preventDefault();
+    event.stopPropagation();
+    resetController(controller);
+    controller.toggleButton.focus();
   });
 }
-function isMenuItemOpen(menuItem) {
-  return menuItem.classList.contains('open');
-}
-function closeSubmenu(element) {
-  if (!element) {
-    return;
-  }
-  element.closest('.menu__item').classList.remove('open');
-  element.setAttribute('aria-expanded', "false");
-}
-function openSubmenu(element) {
-  if (!element) {
-    return;
-  }
-  element.closest('.menu__item').classList.add('open');
-  element.setAttribute('aria-expanded', "true");
-}
-function toggleMouseHoverClass(element, enabled) {
-  if (enabled) {
-    element.classList.add('menu__item--hover');
-  } else {
-    element.classList.remove('menu__item--hover');
-  }
-}
+[document.getElementById('main-menu'), document.getElementById('mobile-main-menu')].forEach(initMenu);
 (function ($) {
   $(document).ready(function () {
     var links = $(".table-of-contents a");
