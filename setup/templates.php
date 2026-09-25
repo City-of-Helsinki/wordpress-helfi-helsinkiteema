@@ -266,14 +266,20 @@ function helsinki_setup_templates(): void {
 	 * single
 	 */
 	else if (is_single()) {
-		add_filter( 'body_class', 'helsinki_sidebar_body_class', 10 );
-		add_action( 'helsinki_content_article_main_after', 'helsinki_sidebar', 30 );
+
+		if ( apply_filters( 'helsinki_blog_single_sidebar', true ) ) {
+			add_filter( 'body_class', 'helsinki_sidebar_body_class', 10 );
+			add_action( 'helsinki_content_article_main_after', 'helsinki_sidebar', 30 );
+		}
 
 		add_action( 'helsinki_content_article', 'helsinki_content_article_header', 10 );
 		add_action( 'helsinki_content_header', 'helsinki_content_article_title', 10 );
-		add_action( 'helsinki_content_article', 'helsinki_page_divider', 12 );
 
-		if ( has_excerpt() ) {
+		if ( apply_filters( 'helsinki_blog_single_page_divider', true ) ) {
+			add_action( 'helsinki_content_article', 'helsinki_page_divider', 12 );
+		}
+
+		if ( apply_filters( 'helsinki_blog_single_excerpt', has_excerpt() ) ) {
 			add_action( 'helsinki_content_header', 'helsinki_content_article_excerpt', 20 );
 		}
 
@@ -297,7 +303,7 @@ function helsinki_setup_templates(): void {
 			}
 		}
 
-		if ( has_post_thumbnail() ) {
+		if ( apply_filters( 'helsinki_blog_single_thumbnail', has_post_thumbnail() ) ) {
 			add_filter( 'body_class', 'helsinki_featured_image_body_class', 10 );
 			add_action( 'helsinki_content_article', 'helsinki_content_article_thumbnail', 30 );
 		}
@@ -409,13 +415,23 @@ function helsinki_setup_cpt_template(): void {
 
 	do_action( 'helsinki_setup_cpt_template' );
 
-	add_filter( 'helsinki_blog_single_author', '__return_false' );
-	add_filter( 'helsinki_blog_single_date', '__return_false' );
-	add_filter( 'helsinki_blog_single_updated', '__return_false' );
+	add_action( 'helsinki_content_header', 'helsinki_content_article_meta', 15 );
+	add_action( 'helsinki_content_article_meta', 'helsinki_content_article_categories', 10 );
+
+	add_filter( 'helsinki_blog_single_page_divider', fn() => ! has_post_thumbnail() );
+
+	add_filter( 'helsinki_blog_single_meta', '__return_false' );
+	add_filter( 'helsinki_blog_single_tags', '__return_true' );
 	add_filter( 'helsinki_blog_single_related', '__return_false' );
 
+	// add_filter( 'helsinki_blog_single_sidebar', '__return_false' );
+
+	add_filter( 'helsinki_content_article_categories_as_tags', '__return_true' );
 	add_filter( 'helsinki_content_article_categories_as_links', '__return_false' );
 	add_filter( 'helsinki_content_article_tags_as_links', '__return_false' );
 
-	add_action( 'helsinki_cpt_content', 'helsinki_content_article', 20 );
+	add_action( 'helsinki_feedback_buttons_layout', function( $layout ) {
+		$layout->enable();
+		$layout->display_after_content();
+	} );
 }
