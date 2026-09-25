@@ -10,18 +10,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 \add_action( 'template_redirect', __NAMESPACE__ . '\\setup_feedback_buttons' );
 function setup_feedback_buttons(): void {
-	$enabled = is_feedback_enabled()
-		&& is_feedback_context()
-		&& get_api_key();
+	$layout = create_feedback_buttons_layout();
 
-	if ( $enabled ) {
-		\add_filter( 'body_class', __NAMESPACE__ . '\\apply_body_class', 10 );
-		\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\feedback_scripts' );
+	if ( $layout->enabled() && get_api_key() ) {
+		\add_action(
+			'wp_enqueue_scripts',
+			__NAMESPACE__ . '\\feedback_scripts'
+		);
 
-		$hook = feedback_buttons_hook_and_priority();
+		\add_filter(
+			'body_class',
+			array( $layout, 'apply_body_class' ),
+			10
+		);
 
-		\add_action( $hook['name'], __NAMESPACE__ . '\\provide_feedback_buttons', $hook['priority'] );
+		\add_action(
+			$layout->hook_name(),
+			array( $layout, 'render' ),
+			$layout->hook_priority()
+		);
 	}
+}
+
+function create_feedback_buttons_layout(): Feedback_Buttons_Layout {
+	$layout = new Feedback_Buttons_Layout(
+		(is_feedback_enabled() && is_feedback_context()),
+		feedback_buttons_script_url()
+	);
+
+	if ( \is_singular( 'post' ) ) {
+		$layout->display_after_content();
+	}
+
+	\do_action( 'helsinki_feedback_buttons_layout', $layout );
+
+	return $layout;
 }
 
 function feedback_scripts(): void {
@@ -40,20 +63,6 @@ function feedback_scripts(): void {
 	);
 }
 
-function feedback_buttons_hook_and_priority(): array {
-	if ( \is_singular( 'post' ) ) {
-		return array(
-			'name' => 'helsinki_content',
-			'priority' => 30,
-		);
-	}
-
-	return array(
-		'name' => 'helsinki_content_body_after',
-		'priority' => 21,
-	);
-}
-
 function is_feedback_context(): bool {
 	return \is_page() || \is_singular( 'post' );
 }
@@ -62,28 +71,8 @@ function is_feedback_enabled(): bool {
 	return \apply_filters( 'helsinki_feedback_enabled', false );
 }
 
-function apply_body_class( array $classes ): array {
-	return \helsinki_add_body_class_has_n( $classes, 'rns' );
-}
-
 function feedback_buttons_script_url(): string {
 	return helsinki_assets_url() . 'vendor/askem/init.js';
-}
-
-function provide_feedback_buttons(): void {
-	$setup = new Feedback_Buttons_Setup(
-		feedback_buttons_script_url(),
-		'<div class="rns"></div>'
-	);
-
-	\do_action( 'helsinki_feedback_buttons_setup', $setup );
-
-	printf(
-		'<div class="rns-container">
-			<div class="hds-container">%s</div>
-		</div>',
-		$setup->buttons_html()
-	);
 }
 
 function feedback_buttons_args( string $api_key ): array {
