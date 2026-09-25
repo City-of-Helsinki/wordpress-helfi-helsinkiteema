@@ -136,33 +136,46 @@ function helsinki_content_article_categories() {
 		__( 'Categories' )
 	);
 
+	$as_tags = apply_filters(
+		'helsinki_content_article_categories_as_tags',
+		false
+	);
+
 	$as_links = apply_filters(
 		'helsinki_content_article_categories_as_links',
 		true
 	);
 
-	if ( $as_links ) {
-		$categories = array_map(
-			fn( $term ) => new Term_Link( $term ),
-			$categories
-		);
+	$separator = apply_filters(
+		'helsinki_content_article_categories_separator',
+		', '
+	);
+
+	$wrap_classes = array();
+
+	if ( $as_tags ) {
+		$wrap_classes[] = 'tagcloud';
+
+		$separator = '';
+
+		$categories = helsinki_post_tags( $categories, $as_links );
+
 	} else {
-		$categories = array_map(
-			fn( $term ) => new Term_Text( $term ),
-			$categories
-		);
+		$mapper = $as_links
+			? fn( $term ) => new Term_Link( $term )
+			: fn( $term ) => new Term_Text( $term );
+
+		$categories = array_map( $mapper, $categories );
 	}
 
 	get_template_part(
 		'partials/content/parts/categories',
 		null,
 		array(
+			'wrap_classes' => implode( ' ', $wrap_classes ),
 			'categories' => $categories,
 			'title' => $title,
-			'separator' => apply_filters(
-				'helsinki_content_article_categories_separator',
-				', '
-			),
+			'separator' => $separator,
 		)
 	);
 }
@@ -195,27 +208,35 @@ function helsinki_content_article_tags() {
 		true
 	);
 
-	$items = array();
-	foreach ( $tags as $index => $tag ) {
-		$items[] = new Tag(
-			$tag,
-			$as_links,
-			array(
-				'tag-cloud-link',
-				'tag-link-' . $tag->term_id,
-				'tag-link-position-' . ($index + 1)
-			)
-		);
-	}
+	$wrap_classes = array( 'tagcloud' );
 
 	get_template_part(
 		'partials/content/parts/tags',
 		null,
 		array(
-			'tags' => $items,
+			'wrap_classes' => $wrap_classes,
+			'tags' => helsinki_post_tags( $tags, $as_links ),
 			'title' => $title,
 		)
 	);
+}
+
+function helsinki_post_tags( array $terms, bool $as_links ): array {
+	$tags = array();
+
+	foreach ( $terms as $index => $term ) {
+		$tags[] = new Tag(
+			$term,
+			$as_links,
+			array(
+				'tag-cloud-link',
+				'tag-link-' . $term->term_id,
+				'tag-link-position-' . ($index + 1)
+			)
+		);
+	}
+
+	return $tags;
 }
 
 /**
