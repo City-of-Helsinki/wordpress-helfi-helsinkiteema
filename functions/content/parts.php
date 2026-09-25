@@ -1,5 +1,9 @@
 <?php
 
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Content\Renderers\Tag;
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Content\Renderers\Term_Link;
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Content\Renderers\Term_Text;
+
 /**
   * Element
   */
@@ -122,7 +126,45 @@ function helsinki_content_article_updated() {
 }
 
 function helsinki_content_article_categories() {
-	get_template_part('partials/content/parts/categories');
+	$categories = get_the_category();
+	if ( ! $categories ) {
+		return;
+	}
+
+	$title = apply_filters(
+		'helsinki_content_article_categories_title',
+		__( 'Categories' )
+	);
+
+	$as_links = apply_filters(
+		'helsinki_content_article_categories_as_links',
+		true
+	);
+
+	if ( $as_links ) {
+		$categories = array_map(
+			fn( $term ) => new Term_Link( $term ),
+			$categories
+		);
+	} else {
+		$categories = array_map(
+			fn( $term ) => new Term_Text( $term ),
+			$categories
+		);
+	}
+
+	get_template_part(
+		'partials/content/parts/categories',
+		null,
+		array(
+			'categories' => $categories,
+			'title' => $title,
+			'separator' => apply_filters(
+				'helsinki_content_article_categories_separator',
+				', '
+			),
+		)
+	);
 }
 
 function helsinki_post_first_category( int $post_id = 0 ) {
@@ -138,7 +180,42 @@ function helsinki_content_article_author() {
 }
 
 function helsinki_content_article_tags() {
-	get_template_part('partials/content/parts/tags');
+	$tags = get_the_tags();
+	if ( ! $tags ) {
+		return;
+	}
+
+	$title = apply_filters(
+		'helsinki_content_article_tags_title',
+		__( 'Tags' )
+	);
+
+	$as_links = apply_filters(
+		'helsinki_content_article_tags_as_links',
+		true
+	);
+
+	$items = array();
+	foreach ( $tags as $index => $tag ) {
+		$items[] = new Tag(
+			$tag,
+			$as_links,
+			array(
+				'tag-cloud-link',
+				'tag-link-' . $tag->term_id,
+				'tag-link-position-' . ($index + 1)
+			)
+		);
+	}
+
+	get_template_part(
+		'partials/content/parts/tags',
+		null,
+		array(
+			'tags' => $items,
+			'title' => $title,
+		)
+	);
 }
 
 /**
