@@ -1,21 +1,9 @@
-<section role="group" aria-label="<?php esc_html_e('Tags'); ?>" class="content__tags tags">
+<section role="group" aria-label="<?php echo esc_attr( $args['title'] ); ?>" class="content__tags tags">
 
-	<h2><?php esc_html_e('Tags'); ?></h2>
+	<h2><?php echo esc_html( $args['title'] ); ?></h2>
+
 	<div class="tagcloud">
-		<?php foreach (get_the_tags() as $index => $tag) :
-			$classes = array(
-				'hds-tag',
-				'hds-tag--rounded-corners',
-				'hds-tag--link',
-				'tag-cloud-link',
-				'tag-link-' . $tag->term_id,
-				'tag-link-position-' . ($index + 1)
-			);
-			?>
-			<a class="<?php echo esc_attr( implode(' ', $classes) ); ?>" href="<?php echo esc_url( get_term_link( $tag, 'post_tag') ); ?>" rel="tag">
-				<?php echo esc_html( $tag->name ); ?>
-			</a>
-		<?php endforeach; ?>
+		<?php echo implode( '', $args['tags'] ); ?>
 	</div>
 
 </section>
