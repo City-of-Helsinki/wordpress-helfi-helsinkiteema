@@ -13,11 +13,20 @@
 	}
 
 	> * {
-		margin-right: .5rem;
+    margin-inline-end: spacing('2-xs');
 		+ * {
 			border-left: $default-border-width $default-border-style $dark-gray;
-			padding-left: .5rem;
+      padding-inline-start: spacing('2-xs');
 		}
 	}
 
+}
+
+[dir="rtl"] {
+  .meta {
+    > * + * {
+      border-right: $default-border-width $default-border-style $dark-gray;
+      border-left: none;
+    }
+  }
 }
