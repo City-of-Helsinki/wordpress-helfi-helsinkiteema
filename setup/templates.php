@@ -423,6 +423,7 @@ function helsinki_setup_cpt_template(): void {
 	add_filter( 'helsinki_blog_single_meta', '__return_false' );
 	add_filter( 'helsinki_blog_single_tags', '__return_true' );
 	add_filter( 'helsinki_blog_single_related', '__return_false' );
+	add_filter( 'helsinki_blog_single_social_share', '__return_false' );
 
 	// add_filter( 'helsinki_blog_single_sidebar', '__return_false' );
 
