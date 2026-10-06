@@ -215,24 +215,58 @@ function initMenu(menu) {
    * Moving focus between descendants of the same menu item
    * does nothing.
    */
-  menu.addEventListener('focusout', event => {
-    const controller = getClosestController(event.target);
+   menu.addEventListener('focusout', event => {
+     const nextElement = event.relatedTarget;
 
-    if (!controller || !controller.isOpen()) {
-      return;
-    }
+     controllers.forEach(controller => {
+       const focusWasOnToggle =
+         event.target === controller.toggleButton;
 
-    const nextElement = event.relatedTarget;
+       const focusWasInSubmenu =
+         controller.submenu.contains(event.target);
 
-    if (
-      nextElement instanceof Node &&
-      controller.item.contains(nextElement)
-    ) {
-      return;
-    }
+       if (!focusWasOnToggle && !focusWasInSubmenu) {
+         return;
+       }
 
-    closeController(controller);
-  });
+       const focusMovesIntoSubmenu =
+         nextElement instanceof Node &&
+         controller.submenu.contains(nextElement);
+
+       /*
+        * Toggle -> submenu
+        *
+        * Normal forward Tab into the opened submenu.
+        * Keep it open.
+        */
+       if (focusWasOnToggle && focusMovesIntoSubmenu) {
+         return;
+       }
+
+       /*
+        * Submenu -> somewhere else inside the same submenu
+        *
+        * Keep it open.
+        */
+       if (focusWasInSubmenu && focusMovesIntoSubmenu) {
+         return;
+       }
+
+       /*
+        * Everything else means focus left this controller's
+        * active submenu scope.
+        *
+        * Examples:
+        *
+        * submenu -> own toggle
+        * submenu -> sibling item
+        * submenu -> parent level
+        * toggle  -> preceding link/item
+        * toggle  -> outside menu
+        */
+       resetController(controller);
+     });
+   });
 
 
   /*
