@@ -1,5 +1,9 @@
 .meta {
+  align-items: center;
 	color: $dark-gray;
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacing('2-xs');
 
 	a {
 		color: $dark-gray;
@@ -12,12 +16,9 @@
 		}
 	}
 
-	> * {
-    margin-inline-end: spacing('2-xs');
-		+ * {
-			border-left: $default-border-width $default-border-style $dark-gray;
-      padding-inline-start: spacing('2-xs');
-		}
+	> * + * {
+		border-left: $default-border-width $default-border-style $dark-gray;
+    padding-inline-start: spacing('2-xs');
 	}
 
 }
