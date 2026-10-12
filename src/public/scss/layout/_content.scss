@@ -75,6 +75,11 @@
     margin-top: 0;
   }
 
+  &__meta {
+    margin-top: spacing('layout-s');
+    margin-bottom: spacing('layout-s');
+  }
+
   &__main {
     .content__thumbnail {
       margin-bottom: $content-spacing;
