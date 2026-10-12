@@ -194,6 +194,8 @@ function helsinki_setup_templates(): void {
 			add_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_categories', 10);
 			add_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_tags', 20);
 		} else {
+			add_filter( 'body_class', 'helsinki_add_first_block_body_class', 10 );
+
 			add_action('helsinki_content_article', 'helsinki_content_article_body', 20);
 
 			if (helsinki_is_landing_page()) {
