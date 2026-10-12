@@ -59,7 +59,7 @@ function helsinki_content_article_header_class() {
 function helsinki_content_article_header_container_class() {
 	helsinki_element_classes(
 		'content_article_header_container',
-		array()
+		array( 'inner' )
 	);
 }
 
