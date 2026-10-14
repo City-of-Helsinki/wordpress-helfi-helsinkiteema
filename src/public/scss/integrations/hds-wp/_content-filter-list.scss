@@ -6,6 +6,7 @@ body.first-block-hds-wp-content-filter-list:not(.has-sidebar) {
   .hero {
     margin-bottom: 0;
 
+    &.has-default-style,
     &.has-image-right,
     &.has-image-left {
       .hds-koros {
@@ -29,7 +30,8 @@ body.first-block-hds-wp-content-filter-list:not(.has-sidebar) {
     }
   }
 
-  .content .content__container {
+  .hero + .content__container,
+  .content__header + .content__container {
     padding-top: 0;
   }
 
