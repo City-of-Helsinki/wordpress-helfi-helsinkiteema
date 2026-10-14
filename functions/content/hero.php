@@ -187,6 +187,10 @@ function helsinki_hero_classes( string $default = '' ) {
 		$classes[] = 'has-call-to-action';
 	}
 
+	if ( apply_filters( 'helsinki_hero_class_decoration_arrow', false ) ) {
+		$classes[] = 'has-decoration-arrow';
+	}
+
 	if ( apply_filters( 'helsinki_hero_class_full_width', false ) ) {
 		$classes[] = 'is-full-width';
 	}
@@ -343,6 +347,7 @@ function helsinki_hero_actions() {
 
 		if ( helsinki_hero_has_background_image() ) {
 			add_filter( 'helsinki_hero_class_full_width', '__return_true' );
+			add_filter( 'helsinki_hero_class_decoration_arrow', '__return_true' );
 
 			remove_action( 'helsinki_hero_after', 'helsinki_hero_koros', 10 );
 			add_action( 'helsinki_hero_after', 'helsinki_hero_koros_mobile', 10 );
@@ -363,6 +368,7 @@ function helsinki_hero_actions() {
 			add_filter( 'helsinki_hero_koros_flipped', '__return_false' );
 		} else if ( helsinki_hero_has_image_below() ) {
 			add_filter( 'helsinki_hero_class_full_width', '__return_true' );
+			add_filter( 'helsinki_hero_class_decoration_arrow', '__return_true' );
 			add_filter( 'helsinki_hero_image_size', 'helsinki_image_size_full' );
 
 			add_action( 'helsinki_hero_after', 'helsinki_hero_decoration_arrow', 30 );
@@ -376,6 +382,7 @@ function helsinki_hero_actions() {
 				add_action( 'helsinki_hero_after', 'helsinki_hero_overlay_diagonal', 5 );
 				remove_action( 'helsinki_hero_after', 'helsinki_hero_koros', 10 );
 			}
+			add_filter( 'helsinki_hero_class_decoration_arrow', '__return_true' );
 
 			add_action( 'helsinki_hero_after', 'helsinki_hero_decoration_arrow', 30 );
 			add_action( 'helsinki_hero_after', 'helsinki_hero_image_mobile', 20 );
