@@ -38,7 +38,8 @@ function helsinki_hero_has_background_image( int $id = 0 ) {
 		return true;
 	}
 
-	return 'background-image' === helsinki_hero_layout_style_meta( $id );
+	return helsinki_is_landing_page()
+		&& 'background-image' === helsinki_hero_layout_style_meta( $id );
 }
 
 function helsinki_hero_has_diagonal( int $id = 0 ) {
