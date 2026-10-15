@@ -121,10 +121,10 @@
             }
           }
           &:hover::before {
-            background-color: var(--color-black-20);
+            background-color: $medium-gray;
           }
           &::before {
-            background-color: var(--color-black-5);
+            background-color: $black-5;
             content: '';
             height: 24px;
             top: 0;

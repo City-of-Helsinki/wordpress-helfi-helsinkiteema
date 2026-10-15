@@ -110,7 +110,9 @@ function helsinki_page_divider() {
   * Meta
   */
 function helsinki_content_article_meta() {
-	get_template_part('partials/content/parts/meta');
+	if ( apply_filters( 'helsinki_content_article_has_meta', true ) ) {
+		get_template_part( 'partials/content/parts/meta' );
+	}
 }
 
 function helsinki_content_article_date() {

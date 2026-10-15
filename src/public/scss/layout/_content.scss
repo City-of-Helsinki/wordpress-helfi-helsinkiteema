@@ -25,7 +25,6 @@
   &__header {
     margin-bottom: 0;
 
-    .content__title,
     .content__thumbnail-wrap {
       margin-bottom: 0;
     }
@@ -76,8 +75,8 @@
   }
 
   &__meta {
-    margin-top: spacing('layout-s');
-    margin-bottom: spacing('layout-s');
+    margin-top: spacing('s');
+    margin-bottom: spacing('s');
   }
 
   &__main {

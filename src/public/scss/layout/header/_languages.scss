@@ -1,6 +1,6 @@
 .languages-wrapper {
-  --background-color: var(--color-black-5);
-  --border: 1px solid var(--color-black-20);
+  --background-color: #{$black-5};
+  --border: 1px solid #{$medium-gray};
   --menu-padding: #{spacing('s')};
   --menu-gap: #{spacing('s')};
 

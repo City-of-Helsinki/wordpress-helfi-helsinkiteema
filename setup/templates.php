@@ -417,6 +417,10 @@ function helsinki_setup_cpt_template(): void {
 
 	do_action( 'helsinki_setup_cpt_template' );
 
+	add_filter( 'helsinki_content_article_has_meta', function( $has_meta ) {
+		return ! get_the_category() ? false : $has_meta;
+	} );
+
 	add_action( 'helsinki_content_header', 'helsinki_content_article_meta', 15 );
 	add_action( 'helsinki_content_article_meta', 'helsinki_content_article_categories', 10 );
 
