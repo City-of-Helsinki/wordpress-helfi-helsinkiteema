@@ -6,10 +6,9 @@
 
 /* ===== BASE ===== */
 $black: #1a1a1a !default;
-$black-5: var(--color-black-5);
 $white: var(--color-white) !default;
 
-$light-gray: var(--color-silver-light) !default;
+$light-gray: var(--color-black-5) !default;
 $medium-gray: var(--color-black-20) !default;
 $dark-gray: var(--color-black-60) !default;
 
@@ -133,7 +132,7 @@ $mobilemenu-toggle-color: $black !default;
 $mobilemenu-toggle-color-alf: var(--primary-color-dark) !default;
 
 /* ========== SEARCH ========== */
-$header-search-background-color: var(--color-silver-light) !default;
+$header-search-background-color: $light-gray !default;
 $header-search-color-alt: $black !default;
 $header-search-width: 60% !default;
 
