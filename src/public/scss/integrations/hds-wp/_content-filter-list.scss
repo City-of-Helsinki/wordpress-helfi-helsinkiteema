@@ -1,5 +1,5 @@
 .wp-block-hds-wp-content-filter-list {
-  --background-color: #{$black-5};
+  --background-color: #{$light-gray};
 }
 
 .has-sidebar {
@@ -34,7 +34,7 @@ body.first-block-hds-wp-content-filter-list:not(.has-sidebar) {
     &.has-image-right,
     &.has-image-left {
       .hds-koros {
-        background-color: $black-5;
+        background-color: $light-gray;
       }
     }
 
@@ -47,7 +47,7 @@ body.first-block-hds-wp-content-filter-list:not(.has-sidebar) {
         > svg {
           path,
           polygon {
-            fill: $black-5;
+            fill: $light-gray;
           }
         }
       }
@@ -107,6 +107,6 @@ body:not(.has-sidebar):not(.has-rns):has(.content .wp-block-hds-wp-content-filte
   }
 
   .footer .hds-koros {
-    background-color: $black-5;
+    background-color: $light-gray;
   }
 }
