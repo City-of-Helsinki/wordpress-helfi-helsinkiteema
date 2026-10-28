@@ -1,0 +1,112 @@
+.wp-block-hds-wp-content-filter-list {
+  --background-color: #{$black-5};
+}
+
+.has-sidebar {
+
+  .wp-block-hds-wp-content-filter-list {
+    --block-padding-top: #{spacing('l')};
+    --block-padding-bottom: #{spacing('l')};
+    --block-padding-horizontal: #{spacing('s')};
+
+    .hds-container {
+      padding: 0;
+    }
+
+    @include breakpoint('m') {
+      --block-padding-horizontal: #{spacing('l')};
+    }
+
+    @include breakpoint('l') {
+      --block-max-width: none;
+      --block-margin-horizontal: unset;
+      --block-width: auto;
+    }
+  }
+
+}
+
+body.first-block-hds-wp-content-filter-list:not(.has-sidebar) {
+  .hero {
+    margin-bottom: 0;
+
+    &.has-default-style,
+    &.has-image-right,
+    &.has-image-left {
+      .hds-koros {
+        background-color: $black-5;
+      }
+    }
+
+    &.has-background-image {
+      > .hero__thumbnail:first-child {
+        margin-bottom: 0;
+      }
+
+      .hds-koros {
+        > svg {
+          path,
+          polygon {
+            fill: $black-5;
+          }
+        }
+      }
+    }
+  }
+
+  .hero + .content__container,
+  .content__header + .content__container {
+    padding-top: 0;
+  }
+
+  .hero.has-decoration-arrow + .content__container {
+    .wp-block-hds-wp-content-filter-list {
+      --block-padding-top: var(--spacing-layout-xl, 6rem);
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .wp-block-hds-wp-content-filter-list {
+      --block-padding-top: var(--spacing-4-xl, 4rem);
+      --block-padding-bottom: var(--spacing-4-xl, 4rem);
+    }
+
+    .hero.has-decoration-arrow + .content__container {
+      .wp-block-hds-wp-content-filter-list {
+        --block-padding-top: var(--spacing-layout-2-xl, 8rem);
+      }
+    }
+  }
+}
+
+body.has-rns-after-content {
+  .content:has(.wp-block-hds-wp-content-filter-list:last-child) {
+    .wp-block-hds-wp-content-filter-list {
+      margin-bottom: 0;
+    }
+
+    + .rns-container {
+      margin-top: 0;
+    }
+  }
+}
+
+body:not(.has-sidebar):not(.has-rns):has(.content .wp-block-hds-wp-content-filter-list:last-child) {
+  .content {
+    .content__container {
+      padding-bottom: 0;
+    }
+
+    .content__body {
+      margin-bottom: 0;
+    }
+
+    .wp-block-hds-wp-content-filter-list {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer .hds-koros {
+    background-color: $black-5;
+  }
+}

@@ -41,6 +41,7 @@ add_action( 'wp_loaded', 'helsinki_setup_site', 10 );
  * Add actions based on filters
  *
  */
+add_action( 'helsinki_wp_custom_post_type_template', 'helsinki_provide_cpt_template' );
 add_action( 'template_redirect', 'helsinki_setup_templates', 10 );
 
 /**

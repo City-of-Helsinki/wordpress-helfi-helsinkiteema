@@ -71,16 +71,31 @@ function helsinki_setup_site(): void {
 	/**
 	  * Single article
 	  */
-	$single_article_parts = array('social_share', 'categories', 'author', 'date', 'updated', 'tags', 'related');
+	$single_article_parts = array(
+		'social_share',
+		'categories',
+		'author',
+		'date',
+		'updated',
+		'tags',
+		'related'
+	);
+
 	$show_single_article_meta = false;
-	foreach ($single_article_parts as $single_article_part) {
-		if ( helsinki_theme_mod('helsinki_blog_single', $single_article_part) ) {
-			add_filter('helsinki_blog_single_' . $single_article_part, '__return_true');
+	foreach ( $single_article_parts as $single_article_part ) {
+		if ( helsinki_theme_mod( 'helsinki_blog_single', $single_article_part ) ) {
+			add_filter(
+				'helsinki_blog_single_' . $single_article_part,
+				'__return_true'
+			);
+
 			$show_single_article_meta = true;
 		}
 	}
+
 	if ( $show_single_article_meta ) {
-		add_filter('helsinki_blog_single_meta', '__return_true');
+		add_filter( 'helsinki_blog_single_meta', '__return_true' );
+		add_filter( 'helsinki_blog_single_date', '__return_true' );
 	}
 
 	do_action( 'helsinki_site_setup_ready' );
