@@ -22,6 +22,25 @@ if ( ! function_exists('helsinki_feed_entry') ) {
 	}
 }
 
+function helsinki_loop_entry() {
+	$entry = helsinki_create_entry_setup(
+		get_post(),
+		array(
+			'entry--list',
+			'flex-container'
+		)
+	);
+
+	get_template_part(
+		'partials/loop/entry',
+		null,
+		array(
+			'is_search' => is_search(),
+			'entry' => $entry,
+		)
+	);
+}
+
 if ( ! function_exists('helsinki_entries_load_more') ) {
 	function helsinki_entries_load_more(): void {
 		get_template_part( 'partials/loop/load-more' );

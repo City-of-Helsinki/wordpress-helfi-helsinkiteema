@@ -1,9 +1,6 @@
 <?php
 
 add_action( 'admin_init', 'helsinki_init_taxonomy_thumbnails' );
-add_action( 'admin_enqueue_scripts', 'helsinki_wp_enqueue_media_for_taxonomy_thumbnails' );
-add_action( 'admin_print_footer_scripts', 'helsinki_taxonomy_thumbnails_scripts' );
-
 function helsinki_init_taxonomy_thumbnails() {
   $taxonomies = apply_filters(
     'helsinki_init_taxonomy_thumbnails',
@@ -107,6 +104,7 @@ function helsinki_update_featured_image_meta( $term_id, $tt_id ){
   }
 }
 
+add_action( 'admin_enqueue_scripts', 'helsinki_wp_enqueue_media_for_taxonomy_thumbnails' );
 function helsinki_wp_enqueue_media_for_taxonomy_thumbnails() {
 	$screen = get_current_screen();
 	if ( ! empty( $screen->base ) && ('edit-tags' === $screen->base || 'term' === $screen->base) ) {
@@ -114,6 +112,7 @@ function helsinki_wp_enqueue_media_for_taxonomy_thumbnails() {
 	}
 }
 
+add_action( 'admin_print_footer_scripts', 'helsinki_taxonomy_thumbnails_scripts' );
 function helsinki_taxonomy_thumbnails_scripts() {
   $screen = get_current_screen();
 	if ( empty( $screen->base ) || ( 'edit-tags' !== $screen->base && 'term' !== $screen->base ) ) {
@@ -159,4 +158,36 @@ function helsinki_taxonomy_thumbnails_scripts() {
       });
     </script>
   <?php
+}
+
+add_filter( 'helsinki_entry_thumbnail_id', function( int $id, WP_Post $post ): int {
+	return $id ?: helsinki_provide_post_category_image_id( $post->ID );
+}, 5, 2 );
+
+add_filter( 'helsinki_entry_default_image_id', function( int $id, int $post_id ): int {
+	return $id ?: helsinki_provide_post_category_image_id( $post_id );
+}, 5, 2 );
+
+function helsinki_provide_post_category_image_id( int $post_id ): int {
+	if ( has_term( '', 'category', $post_id ) ) {
+		foreach ( get_the_category( $post_id ) as $category ) {
+			$id = helsinki_category_featured_image( $category->term_id );
+
+			if ( $id ) {
+				return $id;
+			}
+		}
+
+		return helsinki_category_featured_image(
+			(int) get_option( 'default_category', 0 )
+		);
+	}
+
+	return 0;
+}
+
+if ( ! function_exists('helsinki_category_featured_image') ) {
+	function helsinki_category_featured_image( int $id ): int {
+		return (int) get_term_meta( $id, 'featured_image', true );
+	}
 }

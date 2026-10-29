@@ -8,6 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
   * Filter elements
   */
 add_filter( 'helsinki_entry_title_heading_level', 'helsinki_filter_entry_title_heading_level', 10, 2 );
+function helsinki_filter_entry_title_heading_level( int $level, WP_Post $post = null ): int {
+	return ( is_archive() || is_home() ) ? 2 : $level;
+}
 
 /**
   * Render elements
