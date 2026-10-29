@@ -4,6 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Layout\Entries\Entry_Image;
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Layout\Entries\Entry_Image_Renderer;
+
 /**
   * Title
   */
@@ -108,23 +111,17 @@ function helsinki_entry_image( $post = null, $force_placeholder = false ): void 
 }
 
 function helsinki_get_entry_image( $post = null, $force_placeholder = false ): string {
-	$image = helsinki_get_entry_image_html(
-		$post ? $post : get_post(),
-		helsinki_entry_image_size(),
-		array()
+	$image = helsinki_create_entry_image(
+	   ($post instanceof WP_Post) ? $post : get_post( $post ),
+	   true
 	);
 
-	if ( ! $image || $force_placeholder ) {
-		return helsinki_get_entry_image_with_wrap(
-			helsinki_entry_image_icon(),
-			helsinki_entry_image_classes(true)
-		);
-	} else {
-		return helsinki_get_entry_image_with_wrap(
-			$image,
-			helsinki_entry_image_classes()
-		);
+	$renderer = new Entry_Image_Renderer( $image );
+	if ( ! $image->id || $force_placeholder ) {
+		$renderer->with_placeholder();
 	}
+
+	return $renderer->render();
 }
 
 function helsinki_get_entry_image_with_wrap( string $image, string $class ): string {
@@ -136,7 +133,9 @@ function helsinki_get_entry_image_with_wrap( string $image, string $class ): str
 }
 
 function helsinki_get_entry_image_html( WP_Post $post, string $size, array $attr = array() ): string {
-	return has_post_thumbnail( $post ) ? get_the_post_thumbnail($post, $size, $attr) : helsinki_get_entry_default_image($size, $attr);
+	return has_post_thumbnail( $post )
+		? get_the_post_thumbnail( $post, $size, $attr )
+		: helsinki_get_entry_default_image( $size, $attr );
 }
 
 if ( ! function_exists('helsinki_entry_default_image') ) {

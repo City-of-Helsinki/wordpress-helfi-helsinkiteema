@@ -6,18 +6,48 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists('helsinki_entry') ) {
 	function helsinki_entry(): void {
-		get_template_part('partials/loop/entry');
+		$entry = helsinki_create_entry_setup(
+			get_post(),
+			array(
+				'entry--list',
+				'flex-container'
+			)
+		);
+
+		get_template_part( 'partials/loop/entry', null, array(
+			'enty' => $entry,
+		) );
 	}
 }
 
 if ( ! function_exists('helsinki_grid_entry') ) {
 	function helsinki_grid_entry( $args = array() ): void {
+		$args['entry'] = helsinki_create_entry_setup(
+			get_post(),
+			array( 'entry--grid' )
+		);
+
+		if (
+			! $args['entry']->has_thumbnail()
+			|| helsinki_entry_has_placeholder_class( $args )
+		) {
+			$args['entry']->with_placeholder();
+		}
+
 		get_template_part( 'partials/loop/entry', 'grid', $args );
 	}
 }
 
 if ( ! function_exists('helsinki_feed_entry') ) {
 	function helsinki_feed_entry( $args = array() ): void {
+		$args['entry'] = helsinki_create_entry_setup(
+			get_post(),
+			array(
+				'entry--feed',
+				'entry--post',
+			)
+		);
+
 		get_template_part( 'partials/loop/entry', 'feed', $args );
 	}
 }

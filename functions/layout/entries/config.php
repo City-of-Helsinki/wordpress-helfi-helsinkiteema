@@ -19,20 +19,7 @@ function helsinki_entry_image_size(): string {
 }
 
 function helsinki_entry_default_image_id( int $post_id ): int {
-	$img_id = 0;
-	foreach ( get_the_category( $post_id ) as $category ) {
-		$img_id = (int) helsinki_category_featured_image( $category->term_id );
-
-		if ( $img_id ) {
-			break;
-		}
-	}
-
-	if ( ! $img_id ) {
-		$img_id = (int) helsinki_category_featured_image( (int) get_option( 'default_category', 0 ) );
-	}
-
-	return apply_filters( 'helsinki_entry_default_image_id', $img_id, $post_id );
+	return apply_filters( 'helsinki_entry_default_image_id', 0, $post_id );
 }
 
 function helsinki_entry_image_icon_classes(): string {
@@ -61,16 +48,9 @@ function helsinki_entry_has_placeholder_class( $args = array() ): bool {
 		: false;
 }
 
-function helsinki_entry_classes( string $post_type = '' ): void {
-	$classes = array( 'entry' );
-
-	if ( has_post_thumbnail() ) {
-		$classes[] = 'has-thumbnail';
-	}
-
-	if ( $post_type ) {
-		$classes[] = 'entry--' . $post_type;
-		$classes = apply_filters( "helsinki_{$post_type}_entry_classes", $classes );
+function helsinki_entry_classes( string|array $classes = '' ): void {
+	if ( is_string( $classes ) ) {
+		$classes = array( $classes );
 	}
 
 	helsinki_element_classes( 'entry', $classes );

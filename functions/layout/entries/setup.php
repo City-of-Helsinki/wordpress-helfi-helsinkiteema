@@ -4,6 +4,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Layout\Entries\Entry_Image;
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Layout\Entries\Entry_Setup;
+
+function helsinki_create_entry_image( mixed $post = null, bool $fixed_size = false ): Entry_Image {
+	return new Entry_Image(
+		apply_filters(
+			'helsinki_entry_thumbnail_id',
+			(int) get_post_thumbnail_id( $post ),
+			$post
+		),
+		apply_filters(
+			'helsinki_entry_image_size',
+			'post-thumbnail',
+			$post
+		),
+		apply_filters(
+			'helsinki_entry_image_icon',
+			helsinki_entry_image_icon_name(),
+			$post
+		),
+		$fixed_size
+	);
+}
+
+function helsinki_create_entry_setup( WP_Post $post, array $classes = array() ): Entry_Setup {
+	$setup = new Entry_Setup(
+		$post,
+		helsinki_create_entry_image( $post, true ),
+		$classes
+	);
+
+	do_action( 'helsinki_entry_setup', $setup );
+
+	return $setup;
+}
+
 /**
   * Filter elements
   */
