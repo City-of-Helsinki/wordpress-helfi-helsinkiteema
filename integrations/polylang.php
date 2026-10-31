@@ -10,6 +10,17 @@ function helsinki_polylang_setup(): void {
 		helsinki_register_polylang_strings();
 
 		add_filter( 'helsinki_available_languages', 'helsinki_polylang_available_languages' );
+
+		add_filter(
+			'helsinki_topbar_feedback',
+			function( array $feedback ): array {
+				if ( ! empty( $feedback['url'] ) ) {
+					$feedback['url'] = pll__( $feedback['url'] );
+				}
+
+				return $feedback;
+			}
+		);
 	}
 }
 
@@ -25,17 +36,20 @@ function helsinki_register_polylang_strings(): void {
 			'front-page' => array(
 				'recent-posts' => helsinki_theme_mod(
 					'helsinki_front_page_recent-posts',
-					'title'
+					'title',
+					''
 				),
 				'social' => helsinki_theme_mod(
 					'helsinki_front_page_social',
-					'title'
+					'title',
+					''
 				),
 			),
 			'topbar' => array(
 				'feedback_url' => helsinki_theme_mod(
 					'helsinki_header_topbar',
-					'feedback_url'
+					'feedback_url',
+					''
 				),
 			),
 		),
