@@ -6,7 +6,7 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"POT-Creation-Date: 2026-04-27 07:47+0000\n"
+"POT-Creation-Date: 2026-10-31 18:13+0000\n"
 "X-Generator: Loco https://localise.biz/"
 
 #: functions/class-helsinki-link-symbol-handler.php:164
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Basic page without sidebar"
 msgstr ""
 
-#: functions/layout/misc.php:9
+#: functions/layout/misc.php:18
 msgid "Breadcrumbs"
 msgstr ""
 
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Bus"
 msgstr ""
 
-#: functions/layout/loop.php:110
+#: functions/layout/loop.php:99
 msgid "Categories"
 msgstr ""
 
@@ -87,11 +87,11 @@ msgid ""
 "checkbox active."
 msgstr ""
 
-#: functions/layout/topbar.php:56
+#: functions/layout/topbar.php:72
 msgid "City of Helsinki"
 msgstr ""
 
-#: setup/assets.php:122
+#: setup/assets.php:127
 msgid "Close"
 msgstr ""
 
@@ -131,42 +131,42 @@ msgstr ""
 msgid "Currently on page %d"
 msgstr ""
 
-#: customizer/config.php:38
+#: customizer/config.php:42
 msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr ""
 
-#: customizer/config.php:90
+#: customizer/config.php:94
 msgctxt "Customizer panel title"
 msgid "Feedback buttons"
 msgstr ""
 
-#: customizer/config.php:77
+#: customizer/config.php:81
 msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr ""
 
-#: customizer/config.php:51
+#: customizer/config.php:55
 msgctxt "Customizer panel title"
 msgid "Header"
 msgstr ""
 
-#: customizer/config.php:25
+#: customizer/config.php:29
 msgctxt "Customizer panel title"
 msgid "Notifications"
 msgstr ""
 
-#: customizer/config.php:64
+#: customizer/config.php:68
 msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr ""
 
-#: customizer/config.php:12
+#: customizer/config.php:16
 msgctxt "Customizer panel title"
 msgid "Style"
 msgstr ""
 
-#: customizer/config/header.php:54
+#: customizer/config/header.php:73
 msgctxt "Customizer section title"
 msgid "Breadcrumbs"
 msgstr ""
@@ -196,7 +196,7 @@ msgctxt "Customizer section title"
 msgid "Koroshape"
 msgstr ""
 
-#: customizer/config/header.php:39
+#: customizer/config/header.php:58
 msgctxt "Customizer section title"
 msgid "Language selector"
 msgstr ""
@@ -211,12 +211,12 @@ msgctxt "Customizer section title"
 msgid "Page sidebar"
 msgstr ""
 
-#: customizer/config/header.php:69
+#: customizer/config/header.php:88
 msgctxt "Customizer section title"
 msgid "Primary menu"
 msgstr ""
 
-#: customizer/config/header.php:24
+#: customizer/config/header.php:43
 msgctxt "Customizer section title"
 msgid "Search"
 msgstr ""
@@ -231,27 +231,32 @@ msgctxt "Customizer section title"
 msgid "Single Article"
 msgstr ""
 
-#: customizer/config/header.php:45
+#: customizer/config/header.php:24
+msgctxt "Customizer section title"
+msgid "Topbar"
+msgstr ""
+
+#: customizer/config/header.php:64
 msgctxt "Customizer setting description"
 msgid "Display language selector in site header"
 msgstr ""
 
-#: customizer/config/header.php:30
+#: customizer/config/header.php:49
 msgctxt "Customizer setting description"
 msgid "Display search field in site header"
 msgstr ""
 
-#: customizer/config/header.php:60
+#: customizer/config/header.php:79
 msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr ""
 
-#: customizer/config/header.php:79
+#: customizer/config/header.php:98
 msgctxt "Customizer setting description"
 msgid "Three levels of hierarchy on large and small screens"
 msgstr ""
 
-#: customizer/config/header.php:80
+#: customizer/config/header.php:99
 msgctxt "Customizer setting description"
 msgid ""
 "Two levels of hierarchy for large screens and five levels of hierarchy for "
@@ -273,6 +278,10 @@ msgstr ""
 
 #: customizer/config/header.php:15
 msgid "Disable default city logo"
+msgstr ""
+
+#: customizer/config/header.php:30
+msgid "Disable topbar"
 msgstr ""
 
 #: customizer/config/blog.php:20
@@ -344,25 +353,25 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr ""
 
-#: functions/layout/misc.php:17
+#: functions/layout/misc.php:37
 msgid "Front page"
 msgstr ""
 
-#: setup/assets.php:125
+#: setup/assets.php:130
 msgid "Gallery images"
 msgstr ""
 
-#: functions/layout/topbar.php:74 partials/content/not-found.php:10
+#: functions/layout/topbar.php:96 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr ""
 
-#: partials/content/not-found.php:9
-msgid "Go back to the frontpage"
+#: customizer/config/header.php:33
+msgid "Give feedback custom link url"
 msgstr ""
 
-#: integrations/maintenance.php:105
-msgid "Go to hel.fi"
+#: partials/content/not-found.php:9
+msgid "Go back to the frontpage"
 msgstr ""
 
 #: customizer/config/choices.php:20
@@ -413,7 +422,7 @@ msgstr ""
 msgid "Image on right"
 msgstr ""
 
-#: integrations/maintenance.php:113 functions/layout/misc.php:60
+#: functions/layout/misc.php:80
 msgid "Image: "
 msgstr ""
 
@@ -483,6 +492,12 @@ msgstr ""
 msgid "Last page"
 msgstr ""
 
+#: customizer/config/header.php:34
+msgid ""
+"Link targets for the site's language versions are managed in the dashboard "
+"under Languages ​​> Translations."
+msgstr ""
+
 #: customizer/config/notifications.php:53
 msgid "Link text"
 msgstr ""
@@ -499,11 +514,11 @@ msgstr ""
 msgid "Load more"
 msgstr ""
 
-#: customizer/config/header.php:76
+#: customizer/config/header.php:95
 msgid "Main menu information hierarchy levels"
 msgstr ""
 
-#: partials/header/mobile-panel.php:17
+#: partials/header/mobile-panel.php:18
 msgctxt "menu toggle"
 msgid "Menu"
 msgstr ""
@@ -516,7 +531,7 @@ msgstr ""
 msgid "Newer"
 msgstr ""
 
-#: setup/assets.php:123 partials/loop/pagination.php:28
+#: setup/assets.php:128 partials/loop/pagination.php:28
 #: partials/loop/pagination.php:71
 msgid "Next"
 msgstr ""
@@ -602,7 +617,7 @@ msgctxt "posts count"
 msgid "search results"
 msgstr ""
 
-#: setup/assets.php:124 partials/loop/pagination.php:31
+#: setup/assets.php:129 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr ""
 
@@ -614,7 +629,7 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#: functions/layout/entries/elements.php:75
+#: functions/layout/entries/elements.php:78
 msgid "Published:"
 msgstr ""
 
@@ -682,7 +697,7 @@ msgstr ""
 msgid "Select category"
 msgstr ""
 
-#: customizer/config/header.php:77
+#: customizer/config/header.php:96
 msgid ""
 "Select two levels of hierarchy on large screens and five levels of hierarchy "
 "on small screens only if the sites pages have a side menu. Otherwise, select "
@@ -729,7 +744,7 @@ msgstr ""
 msgid "Silver"
 msgstr ""
 
-#: partials/header/skip.php:2
+#: functions/layout/header.php:30
 msgid "Skip to content"
 msgstr ""
 
@@ -741,7 +756,7 @@ msgstr ""
 msgid "Suomenlinna"
 msgstr ""
 
-#: functions/layout/loop.php:138
+#: functions/layout/loop.php:127
 msgid "Tags"
 msgstr ""
 
