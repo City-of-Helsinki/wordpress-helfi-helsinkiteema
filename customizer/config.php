@@ -1,6 +1,10 @@
 <?php
 
-function helsinki_customizer_config() {
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+function helsinki_customizer_config(): array {
 	return apply_filters(
 		'helsinki_customizer_config',
 		array(
