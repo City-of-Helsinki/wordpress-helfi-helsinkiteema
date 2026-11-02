@@ -4,9 +4,9 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-17 13:24+0000\n"
 "Language: fi\n"
-"Language-Team: Finnish\n"
+"Language-Team: Suomi\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2026-04-27 07:48+0000\n"
+"PO-Revision-Date: 2026-10-31 18:14+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "Last-Translator: \n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgstr "Taustakuva"
 msgid "Basic page without sidebar"
 msgstr "Perussivu ilman sivupalkkia"
 
-#: functions/layout/misc.php:9
+#: functions/layout/misc.php:18
 msgid "Breadcrumbs"
 msgstr "Murupolku"
 
@@ -72,7 +72,7 @@ msgstr "Murupolku"
 msgid "Bus"
 msgstr "Bussi"
 
-#: functions/layout/loop.php:110
+#: functions/layout/loop.php:99
 msgid "Categories"
 msgstr "Kategoriat"
 
@@ -98,11 +98,11 @@ msgstr ""
 "Tämä toiminnallisuus on poistumassa käytöstä, joten rakenna etusivun osiot "
 "etusivun lohkoeditorin kautta. Muista pitää 'Sisältö' -kohta aktiivisena."
 
-#: functions/layout/topbar.php:56
+#: functions/layout/topbar.php:72
 msgid "City of Helsinki"
 msgstr "Helsingin kaupunki"
 
-#: setup/assets.php:122
+#: setup/assets.php:127
 msgid "Close"
 msgstr "Sulje"
 
@@ -142,42 +142,42 @@ msgstr "Kupari"
 msgid "Currently on page %d"
 msgstr "Olet sivulla %d"
 
-#: customizer/config.php:38
+#: customizer/config.php:42
 msgctxt "Customizer panel title"
 msgid "Blog"
 msgstr "Blogi"
 
-#: customizer/config.php:90
+#: customizer/config.php:94
 msgctxt "Customizer panel title"
 msgid "Feedback buttons"
 msgstr "Palautepainikkeet"
 
-#: customizer/config.php:77
+#: customizer/config.php:81
 msgctxt "Customizer panel title"
 msgid "Footer"
 msgstr "Alatunniste"
 
-#: customizer/config.php:51
+#: customizer/config.php:55
 msgctxt "Customizer panel title"
 msgid "Header"
 msgstr "Ylätunniste"
 
-#: customizer/config.php:25
+#: customizer/config.php:29
 msgctxt "Customizer panel title"
 msgid "Notifications"
 msgstr "Ilmoitukset"
 
-#: customizer/config.php:64
+#: customizer/config.php:68
 msgctxt "Customizer panel title"
 msgid "Sidebar"
 msgstr "Sivupalkki"
 
-#: customizer/config.php:12
+#: customizer/config.php:16
 msgctxt "Customizer panel title"
 msgid "Style"
 msgstr "Tyyli"
 
-#: customizer/config/header.php:54
+#: customizer/config/header.php:73
 msgctxt "Customizer section title"
 msgid "Breadcrumbs"
 msgstr "Murupolku"
@@ -209,7 +209,7 @@ msgctxt "Customizer section title"
 msgid "Koroshape"
 msgstr "Koromuoto"
 
-#: customizer/config/header.php:39
+#: customizer/config/header.php:58
 #| msgid "Languages"
 msgctxt "Customizer section title"
 msgid "Language selector"
@@ -225,12 +225,12 @@ msgctxt "Customizer section title"
 msgid "Page sidebar"
 msgstr "Sivujen sivupalkki"
 
-#: customizer/config/header.php:69
+#: customizer/config/header.php:88
 msgctxt "Customizer section title"
 msgid "Primary menu"
 msgstr "Päävalikko"
 
-#: customizer/config/header.php:24
+#: customizer/config/header.php:43
 msgctxt "Customizer section title"
 msgid "Search"
 msgstr "Haku"
@@ -245,27 +245,32 @@ msgctxt "Customizer section title"
 msgid "Single Article"
 msgstr "Yksittäinen artikkeli"
 
-#: customizer/config/header.php:45
+#: customizer/config/header.php:24
+msgctxt "Customizer section title"
+msgid "Topbar"
+msgstr "Apuvalikko"
+
+#: customizer/config/header.php:64
 msgctxt "Customizer setting description"
 msgid "Display language selector in site header"
 msgstr "Näytä kielivalitsin ylätunnisteessa"
 
-#: customizer/config/header.php:30
+#: customizer/config/header.php:49
 msgctxt "Customizer setting description"
 msgid "Display search field in site header"
 msgstr "Näytä hakukenttä ylätunnisteessa"
 
-#: customizer/config/header.php:60
+#: customizer/config/header.php:79
 msgctxt "Customizer setting description"
 msgid "Required Yoast SEO to be installed"
 msgstr "Yoast SEO tulee olla asennettuna"
 
-#: customizer/config/header.php:79
+#: customizer/config/header.php:98
 msgctxt "Customizer setting description"
 msgid "Three levels of hierarchy on large and small screens"
 msgstr "Kolme hierarkiatasoa isoilla ja pienillä näytöillä"
 
-#: customizer/config/header.php:80
+#: customizer/config/header.php:99
 msgctxt "Customizer setting description"
 msgid ""
 "Two levels of hierarchy for large screens and five levels of hierarchy for "
@@ -290,6 +295,10 @@ msgstr "Diagonaali"
 #: customizer/config/header.php:15
 msgid "Disable default city logo"
 msgstr "Poista kaupungin oletuslogo käytöstä"
+
+#: customizer/config/header.php:30
+msgid "Disable topbar"
+msgstr "Poista apuvalikko käytöstä"
 
 #: customizer/config/blog.php:20
 msgid "Display author"
@@ -362,26 +371,26 @@ msgctxt "from RSS feed source"
 msgid "%s"
 msgstr "%s:stä"
 
-#: functions/layout/misc.php:17
+#: functions/layout/misc.php:37
 msgid "Front page"
 msgstr "Etusivu"
 
-#: setup/assets.php:125
+#: setup/assets.php:130
 msgid "Gallery images"
 msgstr "Galleriakuvat"
 
-#: functions/layout/topbar.php:74 partials/content/not-found.php:10
+#: functions/layout/topbar.php:96 partials/content/not-found.php:10
 #: partials/search/links.php:8
 msgid "Give feedback"
 msgstr "Anna palautetta"
 
+#: customizer/config/header.php:33
+msgid "Give feedback custom link url"
+msgstr "Anna palautetta -linkin oma osoite"
+
 #: partials/content/not-found.php:9
 msgid "Go back to the frontpage"
 msgstr "Siirry etusivulle"
-
-#: integrations/maintenance.php:105
-msgid "Go to hel.fi"
-msgstr "Siirry hel.fi-sivustolle"
 
 #: customizer/config/choices.php:20
 msgid "Gold"
@@ -434,7 +443,7 @@ msgstr "Kuva vasemmalla"
 msgid "Image on right"
 msgstr "Kuva oikealla"
 
-#: integrations/maintenance.php:113 functions/layout/misc.php:60
+#: functions/layout/misc.php:80
 msgid "Image: "
 msgstr "Kuva: "
 
@@ -504,6 +513,14 @@ msgstr "Kieli"
 msgid "Last page"
 msgstr "Viimeinen sivu"
 
+#: customizer/config/header.php:34
+msgid ""
+"Link targets for the site's language versions are managed in the dashboard "
+"under Languages ​​> Translations."
+msgstr ""
+"Sivuston kieliversioiden linkkikohteita hallinoidaan ohjausnäkymän kohdasta "
+"Kielet > Käännökset."
+
 #: customizer/config/notifications.php:53
 msgid "Link text"
 msgstr "Linkkiteksti"
@@ -520,11 +537,11 @@ msgstr "LinkedIn"
 msgid "Load more"
 msgstr "Lataa lisää"
 
-#: customizer/config/header.php:76
+#: customizer/config/header.php:95
 msgid "Main menu information hierarchy levels"
 msgstr "Päävalikon informaatiohierarkian tasot"
 
-#: partials/header/mobile-panel.php:17
+#: partials/header/mobile-panel.php:18
 msgctxt "menu toggle"
 msgid "Menu"
 msgstr "Valikko"
@@ -537,7 +554,7 @@ msgstr "Metro"
 msgid "Newer"
 msgstr "Uudemmat"
 
-#: setup/assets.php:123 partials/loop/pagination.php:28
+#: setup/assets.php:128 partials/loop/pagination.php:28
 #: partials/loop/pagination.php:71
 msgid "Next"
 msgstr "Seuraava"
@@ -623,7 +640,7 @@ msgctxt "posts count"
 msgid "search results"
 msgstr "hakutulosta"
 
-#: setup/assets.php:124 partials/loop/pagination.php:31
+#: setup/assets.php:129 partials/loop/pagination.php:31
 msgid "Previous"
 msgstr "Edellinen"
 
@@ -635,7 +652,7 @@ msgstr "Edellinen sivu"
 msgid "Published"
 msgstr "Julkaistu"
 
-#: functions/layout/entries/elements.php:75
+#: functions/layout/entries/elements.php:78
 msgid "Published:"
 msgstr "Julkaistu:"
 
@@ -703,7 +720,7 @@ msgstr "Osion otsikko"
 msgid "Select category"
 msgstr "Valitse kategoria"
 
-#: customizer/config/header.php:77
+#: customizer/config/header.php:96
 msgid ""
 "Select two levels of hierarchy on large screens and five levels of hierarchy "
 "on small screens only if the sites pages have a side menu. Otherwise, select "
@@ -754,7 +771,7 @@ msgstr "Sivupalkki"
 msgid "Silver"
 msgstr "Hopea"
 
-#: partials/header/skip.php:2
+#: functions/layout/header.php:30
 msgid "Skip to content"
 msgstr "Siirry sisältöön"
 
@@ -766,7 +783,7 @@ msgstr "Kesä"
 msgid "Suomenlinna"
 msgstr "Suomenlinna"
 
-#: functions/layout/loop.php:138
+#: functions/layout/loop.php:127
 msgid "Tags"
 msgstr "Avainsanat"
 

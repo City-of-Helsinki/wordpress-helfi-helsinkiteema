@@ -24,8 +24,11 @@ function helsinki_setup_templates(): void {
 	add_action( 'helsinki_main_before', 'helsinki_header_element', 10 );
 
 	add_action( 'helsinki_header_top', 'helsinki_header_skip', 5 );
-	add_action( 'helsinki_header_top', 'helsinki_topbar', 10 );
-	add_filter( 'body_class', 'helsinki_topbar_body_class', 10 );
+
+	if ( helsinki_topbar_enabled() ) {
+		add_action( 'helsinki_header_top', 'helsinki_topbar', 10 );
+		add_filter( 'body_class', 'helsinki_topbar_body_class', 10 );
+	}
 
 	add_action( 'helsinki_header', 'helsinki_header_logo', 10 );
 	add_action( 'helsinki_header', 'helsinki_header_mobile_panel', 50 );

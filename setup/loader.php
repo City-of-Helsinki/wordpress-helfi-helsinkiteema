@@ -58,7 +58,6 @@ function helsinki_files(): array {
 			'config',
 			'functions',
 			'init',
-			'css',
 		],
 		'block-editor' => [
 			'config' => [
