@@ -26,8 +26,10 @@ function helsinki_setup_templates(): void {
 	add_action( 'helsinki_header_top', 'helsinki_header_skip', 5 );
 
 	if ( helsinki_topbar_enabled() ) {
-		add_action( 'helsinki_header_top', 'helsinki_topbar', 10 );
 		add_filter( 'body_class', 'helsinki_topbar_body_class', 10 );
+
+		add_action( 'helsinki_header_top', 'helsinki_topbar', 10 );
+		add_action( 'helsinki_header_mobile_panel', 'helsinki_header_mobile_links', 30 );
 	}
 
 	add_action( 'helsinki_header', 'helsinki_header_logo', 10 );
@@ -36,7 +38,6 @@ function helsinki_setup_templates(): void {
 	add_action( 'helsinki_header_bottom', 'helsinki_header_main_menu', 20 );
 
 	add_action( 'helsinki_header_mobile_panel', 'helsinki_header_mobile_menu', 20 );
-	add_action( 'helsinki_header_mobile_panel', 'helsinki_header_mobile_links', 30 );
 
 	if ( apply_filters( 'helsinki_header_languages_enabled', false ) ) {
 		add_action( 'helsinki_header', 'helsinki_header_languages', 20 );
