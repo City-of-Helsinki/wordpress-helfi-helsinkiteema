@@ -25,6 +25,11 @@ if ( ! function_exists('helsinki_topbar') ) {
 		$args = apply_filters(
 			'helsinki_topbar_args',
 			array(
+				'wrap_classes' => array(
+					'topbar',
+					'has-light-gray-background-color',
+					'show-for-l',
+				),
 				'branding' => helsinki_topbar_branding( $lang ),
 				'feedback' => helsinki_topbar_feedback( $lang ),
 				'menu' => helsinki_topbar_menu(),
@@ -49,6 +54,10 @@ if ( ! function_exists('helsinki_header_mobile_links') ) {
 		$args = apply_filters(
 			'helsinki_topbar_args',
 			array(
+				'wrap_classes' => array(
+					'mobile-links',
+					'has-light-gray-background-color',
+				),
 				'branding' => helsinki_topbar_branding( $lang ),
 				'feedback' => helsinki_topbar_feedback( $lang ),
 				'menu' => helsinki_mobile_topbar_menu(),

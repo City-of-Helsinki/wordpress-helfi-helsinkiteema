@@ -1,4 +1,4 @@
-<div id="topbar" class="topbar show-for-l">
+<div id="topbar" class="<?php helsinki_element_classes( 'topbar', $args['wrap_classes'] ); ?>">
 	<div class="hds-container hds-container--wide flex-container flex-container--align-center">
 		<?php if ( $args['display_branding'] ) : ?>
 			<div class="topbar__branding">

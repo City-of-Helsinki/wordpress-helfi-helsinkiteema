@@ -1,4 +1,4 @@
-<div class="mobile-links">
+<div class="<?php helsinki_element_classes( 'mobile-links', $args['wrap_classes'] ); ?>">
 	<?php
 		if ( $args['menu'] ) {
 			echo $args['menu'];
