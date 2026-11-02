@@ -13,14 +13,14 @@ function helsinki_provide_feed_entry( array $args = array() ): void {
 }
 
 function helsinki_provide_default_entry_image( WP_Post $post = null, string $type = '', array $args = array() ): void {
-	if ( ! $type && has_post_thumbnail( $post ) ) {
-		helsinki_entry_image( $post );
+	if ( ! $type ) {
+		echo $args['entry']->thumbnail();
 	}
 }
 
 function helsinki_provide_grid_entry_image( WP_Post $post = null, string $type = '', array $args = array() ): void {
 	if ( 'grid' === $type ) {
-		helsinki_entry_image( $post, helsinki_entry_has_placeholder_class( $args ) );
+		echo $args['entry']->thumbnail();
 	}
 }
 

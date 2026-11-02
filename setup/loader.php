@@ -102,7 +102,6 @@ function helsinki_files(): array {
 					'config',
 					'elements',
 					'parts',
-					'filters',
 					'providers',
 					'setup',
 				],

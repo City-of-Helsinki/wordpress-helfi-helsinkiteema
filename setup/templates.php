@@ -256,7 +256,7 @@ function helsinki_setup_templates(): void {
 					add_action('helsinki_content_article', 'helsinki_post_table_of_contents', 14);
 				}
 
-				if (has_post_thumbnail() && !helsinki_featured_image_is_hidden()) {
+				if ( helsinki_has_featured_image() ) {
 					add_filter('body_class', 'helsinki_featured_image_body_class', 10);
 					add_action('helsinki_content_article', 'helsinki_content_article_thumbnail', 15);
 				}
