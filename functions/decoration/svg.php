@@ -56,6 +56,9 @@ function helsinki_svg_icon( string $key ) {
 }
 
 function helsinki_get_svg_icon( string $key, string $extra_classes = '', string $aria_label = '', string $role = '' ) {
+	// Load the icon style, see wordpress-helfi-hds-wp class Icons
+	do_action( 'hds_wp_use_icon', $key );
+
 	$attributes = array(
 		sprintf(
 			'class="icon mask-icon icon--%1$s hds-icon--%1$s %2$s"',
