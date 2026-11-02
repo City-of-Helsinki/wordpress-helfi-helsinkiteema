@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use WP_Post;
 
-final class Post_Featured_Image
+final class Post_Featured_Image implements View_Featured_Image
 {
 	public function __construct(
 		private WP_Post $post,
