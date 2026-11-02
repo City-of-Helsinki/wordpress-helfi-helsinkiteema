@@ -38,21 +38,17 @@ function helsinki_add_first_block_body_class( array $body ): array {
 /**
   * Element
   */
-function helsinki_element_classes( string $type, array $classes = array() ) {
-  $classes = apply_filters(
-	"helsinki_{$type}_classes",
-	array_filter( $classes )
-  );
-  if ( $classes && is_array($classes) ) {
-    echo esc_attr( implode( ' ', $classes ) );
-  }
+function helsinki_element_classes( string $type, array $classes = array() ): void {
+	$classes = apply_filters(
+		"helsinki_{$type}_classes",
+		array_filter( $classes )
+	);
+
+	if ( $classes && is_array($classes) ) {
+		echo esc_attr( implode( ' ', $classes ) );
+	}
 }
 
-function helsinki_sidebar_classes() {
-  helsinki_element_classes(
-    'sidebar',
-    array(
-      'sidebar',
-    )
-  );
+function helsinki_sidebar_classes(): void {
+	helsinki_element_classes( 'sidebar', array( 'sidebar' ) );
 }

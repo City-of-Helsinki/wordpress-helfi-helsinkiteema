@@ -25,6 +25,11 @@ if ( ! function_exists('helsinki_topbar') ) {
 		$args = apply_filters(
 			'helsinki_topbar_args',
 			array(
+				'wrap_classes' => array(
+					'topbar',
+					'has-light-gray-background-color',
+					'show-for-l',
+				),
 				'branding' => helsinki_topbar_branding( $lang ),
 				'feedback' => helsinki_topbar_feedback( $lang ),
 				'menu' => helsinki_topbar_menu(),
@@ -33,8 +38,44 @@ if ( ! function_exists('helsinki_topbar') ) {
 			$lang
 		);
 
+		$args['display_branding'] = helsinki_is_topbar_link_visible( $args, 'branding' );
+		$args['display_feedback'] = helsinki_is_topbar_link_visible( $args, 'feedback' );
+
 		get_template_part( 'partials/header/topbar', $name, $args );
 	}
+}
+
+if ( ! function_exists('helsinki_header_mobile_links') ) {
+	function helsinki_header_mobile_links(): void {
+		$lang = substr( get_locale(), 0, 2 );
+
+		$name = apply_filters( 'helsinki_topbar_name', null );
+
+		$args = apply_filters(
+			'helsinki_topbar_args',
+			array(
+				'wrap_classes' => array(
+					'mobile-links',
+					'has-light-gray-background-color',
+				),
+				'branding' => helsinki_topbar_branding( $lang ),
+				'feedback' => helsinki_topbar_feedback( $lang ),
+				'menu' => helsinki_mobile_topbar_menu(),
+			),
+			$name,
+			$lang
+		);
+
+		$args['display_branding'] = helsinki_is_topbar_link_visible( $args, 'branding' );
+		$args['display_feedback'] = helsinki_is_topbar_link_visible( $args, 'feedback' );
+
+		get_template_part( 'partials/header/mobile-links', null, $args );
+	}
+}
+
+function helsinki_is_topbar_link_visible( array $args, string $key ): bool {
+	return ! empty( $args[$key]['url'] )
+		&& ! empty( $args[$key]['title'] );
 }
 
 function helsinki_topbar_enabled(): bool {

@@ -111,25 +111,6 @@ if ( ! function_exists('helsinki_header_mobile_panel') ) {
 	}
 }
 
-if ( ! function_exists('helsinki_header_mobile_links') ) {
-	function helsinki_header_mobile_links(): void {
-		$lang = function_exists('pll_current_language') ? pll_current_language('slug') : substr( get_bloginfo('language'), 0, 2 );
-		$name = apply_filters( 'helsinki_topbar_name', null );
-		$args = apply_filters(
-			'helsinki_topbar_args',
-			array(
-				'branding' => helsinki_topbar_branding( $lang ),
-				'feedback' => helsinki_topbar_feedback( $lang ),
-				'menu' => helsinki_mobile_topbar_menu(),
-			),
-			$name,
-			$lang
-		);
-
-		get_template_part('partials/header/mobile-links', null, $args);
-	}
-}
-
 if ( ! function_exists('helsinki_header_mobile_panel_toggle') ) {
 	function helsinki_header_mobile_panel_toggle(): void {
 		/*

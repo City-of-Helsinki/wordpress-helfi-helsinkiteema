@@ -1,10 +1,12 @@
-<div id="topbar" class="topbar show-for-l">
+<div id="topbar" class="<?php helsinki_element_classes( 'topbar', $args['wrap_classes'] ); ?>">
 	<div class="hds-container hds-container--wide flex-container flex-container--align-center">
-		<div class="topbar__branding">
-			<a href="<?php echo esc_html( $args['branding']['url'] ); ?>">
-				<?php echo esc_html( $args['branding']['title'] ); ?>
-			</a>
-		</div>
+		<?php if ( $args['display_branding'] ) : ?>
+			<div class="topbar__branding">
+				<a href="<?php echo esc_html( $args['branding']['url'] ); ?>">
+					<?php echo esc_html( $args['branding']['title'] ); ?>
+				</a>
+			</div>
+		<?php endif; ?>
 
 		<?php if ( $args['menu'] ) : ?>
 			<div class="topbar__link">
@@ -12,10 +14,12 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="topbar__link">
-			<a href="<?php echo esc_html( $args['feedback']['url'] ); ?>">
-				<?php echo esc_html( $args['feedback']['title'] ); ?>
-			</a>
-		</div>
+		<?php if ( $args['display_feedback'] ) : ?>
+			<div class="topbar__link">
+				<a href="<?php echo esc_html( $args['feedback']['url'] ); ?>">
+					<?php echo esc_html( $args['feedback']['title'] ); ?>
+				</a>
+			</div>
+		<?php endif; ?>
 	</div>
 </div>
