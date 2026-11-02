@@ -1,24 +1,23 @@
 <?php
 
-add_action( 'admin_init', 'helsinki_init_taxonomy_thumbnails' );
-function helsinki_init_taxonomy_thumbnails() {
-  $taxonomies = apply_filters(
-    'helsinki_init_taxonomy_thumbnails',
-    array(
-			'category',
-		)
-  );
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
 
-  if ( $taxonomies && is_array( $taxonomies ) ) {
-		foreach ( $taxonomies as $taxonomy ) {
-	    add_filter( "manage_edit-{$taxonomy}_columns", 'helsinki_add_featured_image_column' );
-	    add_filter( "manage_{$taxonomy}_custom_column", 'helsinki_add_featured_image_column_content', 10, 3 );
-	    add_action( "{$taxonomy}_add_form_fields", 'helsinki_add_featured_image_field', 10, 2 );
-	    add_action( "created_{$taxonomy}", 'helsinki_save_featured_image_meta', 10, 2 );
-	    add_action( "{$taxonomy}_edit_form_fields", 'helsinki_edit_featured_image_field', 10, 2 );
-	    add_action( "edited_{$taxonomy}", 'helsinki_update_featured_image_meta', 10, 2 );
-	  }
-  }
+add_action( 'admin_init', 'helsinki_init_taxonomy_thumbnails' );
+function helsinki_init_taxonomy_thumbnails(): void {
+	foreach ( helsinki_taxonomies_with_thumbnails() as $taxonomy ) {
+		add_filter( "manage_edit-{$taxonomy}_columns", 'helsinki_add_featured_image_column' );
+		add_filter( "manage_{$taxonomy}_custom_column", 'helsinki_add_featured_image_column_content', 10, 3 );
+		add_action( "{$taxonomy}_add_form_fields", 'helsinki_add_featured_image_field', 10, 2 );
+		add_action( "created_{$taxonomy}", 'helsinki_save_featured_image_meta', 10, 2 );
+		add_action( "{$taxonomy}_edit_form_fields", 'helsinki_edit_featured_image_field', 10, 2 );
+		add_action( "edited_{$taxonomy}", 'helsinki_update_featured_image_meta', 10, 2 );
+	}
+}
+
+function helsinki_taxonomies_with_thumbnails(): array {
+	return apply_filters( 'helsinki_init_taxonomy_thumbnails', array( 'category' ) );
 }
 
 function helsinki_add_featured_image_column( $columns ){
@@ -161,23 +160,37 @@ function helsinki_taxonomy_thumbnails_scripts() {
 }
 
 add_filter( 'helsinki_entry_thumbnail_id', function( int $id, WP_Post $post ): int {
-	return $id ?: helsinki_provide_post_category_image_id( $post->ID );
+	return $id ?: helsinki_provide_taxonomy_image_id( $post->ID );
+}, 5, 2 );
+
+add_filter( 'helsinki_post_thumbnail_id', function( int $id, WP_Post $post ): int {
+	return $id ?: helsinki_provide_taxonomy_image_id( $post->ID );
 }, 5, 2 );
 
 add_filter( 'helsinki_entry_default_image_id', function( int $id, int $post_id ): int {
-	return $id ?: helsinki_provide_post_category_image_id( $post_id );
+	return $id ?: helsinki_provide_taxonomy_image_id( $post_id );
 }, 5, 2 );
 
-function helsinki_provide_post_category_image_id( int $post_id ): int {
-	if ( has_term( '', 'category', $post_id ) ) {
-		foreach ( get_the_category( $post_id ) as $category ) {
-			$id = helsinki_category_featured_image( $category->term_id );
+function helsinki_provide_taxonomy_image_id( int $post_id ): int {
+	$tax_terms = function( int $post_id, string $taxonomy ): array {
+		$terms = get_the_terms( $post_id, $taxonomy );
 
-			if ( $id ) {
-				return $id;
+		return is_array( $terms ) ? $terms : array();
+	};
+
+	foreach ( helsinki_taxonomies_with_thumbnails() as $taxonomy ) {
+		if ( has_term( '', $taxonomy, $post_id ) ) {
+			foreach ( $tax_terms( $post_id, $taxonomy ) as $term ) {
+				$id = helsinki_category_featured_image( $term->term_id );
+
+				if ( $id ) {
+					return $id;
+				}
 			}
 		}
+	}
 
+	if ( has_term( '', 'category', $post_id ) ) {
 		return helsinki_category_featured_image(
 			(int) get_option( 'default_category', 0 )
 		);
