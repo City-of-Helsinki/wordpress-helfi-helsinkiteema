@@ -11,45 +11,38 @@ function createSubmenuController(item) {
     return null;
   }
 
-  const isDepthZero = item.classList.contains('menu__depth-0');
-
-  function isOpen() {
-    return item.classList.contains('open');
-  }
-
-  function isHovered() {
-    return item.classList.contains('menu__item--hover');
-  }
-
-  function open() {
-    item.classList.add('open');
-    toggleButton.setAttribute('aria-expanded', 'true');
-  }
-
-  function close() {
-    item.classList.remove('open');
-    toggleButton.setAttribute('aria-expanded', 'false');
-  }
-
-  function hoverOpen() {
-    item.classList.add('menu__item--hover');
-  }
-
-  function hoverClose() {
-    item.classList.remove('menu__item--hover');
-  }
-
   return {
     item,
-    submenu,
     toggleButton,
-    isDepthZero,
-    isOpen,
-    isHovered,
-    open,
-    close,
-    hoverOpen,
-    hoverClose,
+    submenu,
+
+    isDepthZero: item.classList.contains('menu__depth-0'),
+
+    isOpen() {
+      return item.classList.contains('open');
+    },
+
+    isHovered() {
+      return item.classList.contains('menu__item--hover');
+    },
+
+    open() {
+      item.classList.add('open');
+      toggleButton.setAttribute('aria-expanded', 'true');
+    },
+
+    close() {
+      item.classList.remove('open');
+      toggleButton.setAttribute('aria-expanded', 'false');
+    },
+
+    hoverOpen() {
+      item.classList.add('menu__item--hover');
+    },
+
+    hoverClose() {
+      item.classList.remove('menu__item--hover');
+    },
   };
 }
 
@@ -64,6 +57,14 @@ function initMenu(menu) {
   )
     .map(createSubmenuController)
     .filter(Boolean);
+
+  // Precompute descendant controllers here.
+  controllers.forEach(controller => {
+    controller.descendants = controllers.filter(candidate =>
+      candidate !== controller &&
+      controller.item.contains(candidate.item)
+    );
+  });
 
   const controllerByItem = new Map(
     controllers.map(controller => [
@@ -92,13 +93,6 @@ function initMenu(menu) {
     return getController(item);
   }
 
-  function getDescendantControllers(controller) {
-    return controllers.filter(candidate =>
-      candidate !== controller &&
-      controller.item.contains(candidate.item)
-    );
-  }
-
   /*
    * Fully reset a branch.
    *
@@ -106,7 +100,7 @@ function initMenu(menu) {
    * or when Escape explicitly closes a branch.
    */
   function resetController(controller) {
-    getDescendantControllers(controller).forEach(descendant => {
+    controller.descendants.forEach(descendant => {
       descendant.close();
       descendant.hoverClose();
     });
@@ -121,10 +115,7 @@ function initMenu(menu) {
    * Hover state is deliberately left alone.
    */
   function closeController(controller) {
-    getDescendantControllers(controller).forEach(descendant => {
-      descendant.close();
-    });
-
+    controller.descendants.forEach(descendant => descendant.close());
     controller.close();
   }
 
@@ -210,29 +201,63 @@ function initMenu(menu) {
 
 
   /*
-   * Focus leaving an item closes its explicit .open state.
+   * Focus leaving a controller's active toggle/submenu scope
+   * fully resets that submenu branch.
    *
-   * Moving focus between descendants of the same menu item
-   * does nothing.
+   * Focus moving within the same submenu keeps it open.
    */
-  menu.addEventListener('focusout', event => {
-    const controller = getClosestController(event.target);
+   menu.addEventListener('focusout', event => {
+     const nextElement = event.relatedTarget;
 
-    if (!controller || !controller.isOpen()) {
-      return;
-    }
+     controllers.forEach(controller => {
+       const focusWasOnToggle =
+         event.target === controller.toggleButton;
 
-    const nextElement = event.relatedTarget;
+       const focusWasInSubmenu =
+         controller.submenu.contains(event.target);
 
-    if (
-      nextElement instanceof Node &&
-      controller.item.contains(nextElement)
-    ) {
-      return;
-    }
+       if (!focusWasOnToggle && !focusWasInSubmenu) {
+         return;
+       }
 
-    closeController(controller);
-  });
+       const focusMovesIntoSubmenu =
+         nextElement instanceof Node &&
+         controller.submenu.contains(nextElement);
+
+       /*
+        * Toggle -> submenu
+        *
+        * Normal forward Tab into the opened submenu.
+        * Keep it open.
+        */
+       if (focusWasOnToggle && focusMovesIntoSubmenu) {
+         return;
+       }
+
+       /*
+        * Submenu -> somewhere else inside the same submenu
+        *
+        * Keep it open.
+        */
+       if (focusWasInSubmenu && focusMovesIntoSubmenu) {
+         return;
+       }
+
+       /*
+        * Everything else means focus left this controller's
+        * active submenu scope.
+        *
+        * Examples:
+        *
+        * submenu -> own toggle
+        * submenu -> sibling item
+        * submenu -> parent level
+        * toggle  -> preceding link/item
+        * toggle  -> outside menu
+        */
+       resetController(controller);
+     });
+   });
 
 
   /*

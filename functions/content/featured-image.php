@@ -56,12 +56,3 @@ function helsinki_content_article_thumbnail($post_type = null) {
 		$data
 	);
 }
-
-/**
-  * Categories
-  */
-if ( ! function_exists('helsinki_category_featured_image') ) {
-	function helsinki_category_featured_image( int $id ) {
-		return get_term_meta( $id, 'featured_image', true );
-	}
-}

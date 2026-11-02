@@ -46,3 +46,18 @@ if ( ! function_exists('helsinki_single_comment') ) {
 function helsinki_remove_recent_comments_widget_styles() {
     helsinki_deprecation_notice( __FUNCTION__, 'nothing' );
 }
+
+/**
+ * @since 4.41.0
+ */
+function helsinki_customizer_inline_styles(): string {
+	helsinki_deprecation_notice( __FUNCTION__, 'your own solution' );
+
+	return '';
+}
+
+function helsinki_customizer_media_query(): string {
+    helsinki_deprecation_notice( __FUNCTION__, 'your own solution' );
+
+	return '';
+}

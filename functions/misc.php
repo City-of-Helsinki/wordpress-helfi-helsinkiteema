@@ -1,5 +1,7 @@
 <?php
 
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Content\Renderers\Wrap_Image;
+
 function helsinki_deprecation_notice( string $deprecated, string $new ) {
 	trigger_error(
 		"The {$deprecated} function is deprecated. Please use {$new} instead.",
@@ -33,19 +35,7 @@ if ( ! function_exists('helsinki_heading') ) {
 }
 
 function helsinki_image_with_wrap( string $image = '', bool $fixed = false ) {
-	$class = array(
-		'image-wrap'
-	);
-
-	if ( $fixed ) {
-		$class[] = 'image-wrap--fixed-size';
-	}
-
-	return sprintf(
-		'<div class="%s">%s</div>',
-		implode(' ', $class),
-		$image
-	);
+	return (string) new Wrap_Image( $image, $fixed );
 }
 
 function helsinki_trim_title( string $title ) {
