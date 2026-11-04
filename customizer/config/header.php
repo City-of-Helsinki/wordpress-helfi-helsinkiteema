@@ -18,6 +18,25 @@ function helsinki_customizer_header_sections()
 
 		), // general
 
+		'topbar' => array(
+
+			'config' => array(
+				'title' => esc_html_x( 'Topbar', 'Customizer section title', 'helsinki-universal' ),
+				'capability' => 'edit_theme_options',
+			),
+
+			'section_settings' => array(
+				'disable_topbar' => helsinki_setting_checkbox(
+					esc_html__( 'Disable topbar', 'helsinki-universal' )
+				),
+				'feedback_url' => helsinki_setting_url(
+					esc_html__( 'Give feedback custom link url', 'helsinki-universal' ),
+					esc_html__( "Link targets for the site's language versions are managed in the dashboard under Languages ​​> Translations.", 'helsinki-universal' ),
+				),
+			), // section_settings
+
+		), // topbar
+
 		'search' => array(
 
 			'config' => array(

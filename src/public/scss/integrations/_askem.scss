@@ -258,29 +258,28 @@
   }
 }
 
-.has-rns {
+.has-rns-after-content-body {
+  .rns-container {
+    --background-color: transparent;
+    --margin-horizontal: auto;
+    --max-width: none;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --width: auto;
 
-  &.has-sidebar:not(.single-post) {
-    .rns-container {
-      --background-color: transparent;
-      --margin-horizontal: auto;
-      --max-width: none;
-      --padding-top: 0;
-      --padding-bottom: 0;
-      --width: auto;
+    .hds-container {
+      padding: 0;
+    }
 
-      .hds-container {
-        padding: 0;
-      }
-
-      .wp-cookie-consent-placeholder {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-      }
+    .wp-cookie-consent-placeholder {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
   }
+}
 
-  &.page:not(.has-sidebar) {
+.has-rns-after-content {
+  &.page {
     .content {
       .content__container,
       .content__main,
@@ -289,20 +288,16 @@
         margin-bottom: 0;
       }
     }
-
-    .footer .hds-koros {
-      background-color: $light-gray;
-    }
   }
 
-  &.single-post {
+  &.single {
     .content,
     .content__related {
       padding-bottom: 0;
     }
+  }
 
-    .footer .hds-koros {
-      background-color: $light-gray;
-    }
+  .footer .hds-koros {
+    background-color: $light-gray;
   }
 }

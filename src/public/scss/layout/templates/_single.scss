@@ -38,12 +38,12 @@
 			}
 		}
 
-		&__thumbnail {
-			@include breakpointMax('m') {
-				@include alignFull();
-			}
-		}
-
 	} // .content
 
 } // .single
+
+.single-post .content__thumbnail {
+  @include breakpointMax('m') {
+    @include alignFull();
+  }
+}

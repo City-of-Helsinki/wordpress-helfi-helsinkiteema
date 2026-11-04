@@ -71,17 +71,6 @@ function helsinki_loop_list() {
 	);
 }
 
-function helsinki_loop_entry() {
-	$is_search = is_search();
-	get_template_part(
-		'partials/loop/entry',
-		null,
-		array(
-			'is_search' => $is_search,
-		)
-	);
-}
-
 /**
  * @deprecated Please use helsinki_load_more_button() instead
  * @since 4.0.0 Marked deprecated in favor of helsinki_load_more_button()

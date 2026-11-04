@@ -256,7 +256,9 @@ ul.posts {
 	// --grid
 } // .entry
 
-.entries {
+.archive .entries,
+.blog .entries,
+.search-results .entries {
 
 	&--list {
 		margin-bottom: $global-margin;
