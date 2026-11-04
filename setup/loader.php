@@ -58,7 +58,6 @@ function helsinki_files(): array {
 			'config',
 			'functions',
 			'init',
-			'css',
 		],
 		'block-editor' => [
 			'config' => [
@@ -102,7 +101,6 @@ function helsinki_files(): array {
 					'config',
 					'elements',
 					'parts',
-					'filters',
 					'providers',
 					'setup',
 				],
