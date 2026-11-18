@@ -18,7 +18,7 @@ final class Feedback_Buttons_Layout
 		private bool $enabled,
 		private string $script_url
 	) {
-		$this->display_after_body();
+		$this->display_after_content();
 	}
 
 	public function display_after_body(): void
