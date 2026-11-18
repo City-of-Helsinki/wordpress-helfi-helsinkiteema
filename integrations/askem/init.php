@@ -38,18 +38,9 @@ function create_feedback_buttons_layout(): Feedback_Buttons_Layout {
 		feedback_buttons_script_url()
 	);
 
-	if ( should_display_after_content() ) {
-		$layout->display_after_content();
-	}
-
 	\do_action( 'helsinki_feedback_buttons_layout', $layout );
 
 	return $layout;
-}
-
-function should_display_after_content(): bool {
-	return \is_singular( 'post' )
-		|| \get_page_template_slug( \get_the_ID() );
 }
 
 function feedback_scripts(): void {
