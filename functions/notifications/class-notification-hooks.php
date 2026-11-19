@@ -21,6 +21,9 @@ final class Notification_Hooks
 		$data = $this->from_array( $source );
 
 		if ( $this->should_add( $data ) ) {
+			\do_action( 'hds_wp_use_icon', $data->type->icon() );
+			\do_action( 'hds_wp_use_icon', 'cross' );
+
 			$this->notifications[] = new Notification_Renderer( $data );
 		}
 	}
@@ -95,9 +98,6 @@ final class Notification_Hooks
 			$data['title'],
 			__( 'Close notification', 'helsinki-universal' )
 		) ) );
-
-		\do_action( 'hds_wp_use_icon', $data['type']->icon() );
-		\do_action( 'hds_wp_use_icon', 'cross' );
 
 		return $data;
 	}
