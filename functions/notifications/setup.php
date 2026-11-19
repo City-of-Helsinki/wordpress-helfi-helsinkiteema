@@ -8,15 +8,17 @@ use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Notifications\Notification
 
 add_action( 'template_redirect', 'helsinki_setup_notifications', 20 );
 function helsinki_setup_notifications(): void {
-	$hooks = helsinki_create_notifications_hooks( substr( get_locale(), 0, 2 ) );
+	if ( is_singular() ) {
+		$hooks = helsinki_create_notifications_hooks( substr( get_locale(), 0, 2 ) );
 
-	foreach ( helsinki_notifications_config() as $data ) {
-		$hooks->add_notification( $data );
-	}
+		foreach ( helsinki_notifications_config() as $data ) {
+			$hooks->add_notification( $data );
+		}
 
-	if ( $hooks->should_display() ) {
-		add_action( 'helsinki_main_top', array( $hooks, 'display' ), 20 );
-		add_action( 'helsinki_notification_scripts', array( $hooks, 'scripts' ), 10 );
+		if ( $hooks->should_display() ) {
+			add_action( 'helsinki_main_top', array( $hooks, 'display' ), 20 );
+			add_action( 'helsinki_notification_scripts', array( $hooks, 'scripts' ), 10 );
+		}
 	}
 }
 

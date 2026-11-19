@@ -27,8 +27,7 @@ final class Notification_Hooks
 
 	public function should_display(): bool
 	{
-		return $this->notifications
-			&& \is_singular();
+		return ! empty( $this->notifications );
 	}
 
 	public function display(): void
