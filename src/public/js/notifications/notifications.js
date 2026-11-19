@@ -5,9 +5,9 @@ function helsinkiNotifications() {
       return;
     }
 
-    var _notices = notifications.querySelectorAll('.notification');
+    var _notices = notifications.querySelectorAll('.hds-notification');
     for (var i = 0; i < _notices.length; i++) {
-      var _closeButton = _notices[i].querySelector('.close'),
+      var _closeButton = _notices[i].querySelector('.hds-notification__close-button'),
           _noticeId = _notificationId(_notices[i]);
 
       if ( _isClosed(_noticeId) ) {
@@ -30,10 +30,9 @@ function helsinkiNotifications() {
     localStorage.setItem( id, 'closed' );
   }
 
-
   function _closeNotification(event) {
     event.preventDefault();
-    var _notice = event.currentTarget.closest('.notification');
+    var _notice = event.currentTarget.closest('.hds-notification');
 
     _markClosed(
       _notificationId(_notice)
@@ -44,9 +43,6 @@ function helsinkiNotifications() {
     _notice.remove();
   }
 
-  /**
-	  * Module
-	  */
 	return {
 		init: _init,
 	};

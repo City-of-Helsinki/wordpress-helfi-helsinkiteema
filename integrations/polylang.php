@@ -4,6 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use CityOfHelsinki\WordPress\Helsinki\Theme\Functions\Notifications\Notification_Data;
+
 add_action( 'after_setup_theme', 'helsinki_polylang_setup', 10 );
 function helsinki_polylang_setup(): void {
 	if ( apply_filters( 'helsinki_polylang_active', false ) ) {
@@ -19,6 +21,17 @@ function helsinki_polylang_setup(): void {
 				}
 
 				return $feedback;
+			}
+		);
+
+		add_action(
+			'helsinki_notification_data',
+			function( Notification_Data $data ) {
+				foreach ( helsinki_notification_polylang_fields() as $field ) {
+					if ( ! empty( $data->$field ) ) {
+						$data->$field = pll__( $data->$field );
+					}
+				}
 			}
 		);
 	}
@@ -56,11 +69,10 @@ function helsinki_register_polylang_strings(): void {
 	);
 
 	$notifications = array();
-	$notification_fields = array( 'title', 'text', 'link_text', 'link_url', );
 	for ( $i = 1; $i <= helsinki_customizer_notification_count(); $i++ ) {
 		$data = helsinki_theme_mod( 'helsinki_notification_notice_' . $i, '' );
 
-		foreach ( $notification_fields as $field ) {
+		foreach ( helsinki_notification_polylang_fields() as $field ) {
 			$key = $i . '-' . $field;
 			$notifications[$key] = $data[$field] ?? '';
 		}
@@ -79,6 +91,10 @@ function helsinki_register_polylang_strings(): void {
 			}
 		}
 	}
+}
+
+function helsinki_notification_polylang_fields(): array {
+	return array( 'title', 'text', 'link_text', 'link_url' );
 }
 
 function helsinki_polylang_available_languages(): array {
