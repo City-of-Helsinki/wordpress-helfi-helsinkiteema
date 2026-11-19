@@ -1,10 +1,14 @@
 <?php
 
-function helsinki_customizer_notification_count() {
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+function helsinki_customizer_notification_count(): int {
 	return 3;
 }
 
-function helsinki_customizer_notification_sections() {
+function helsinki_customizer_notification_sections(): array {
 
 	$config = array();
 
