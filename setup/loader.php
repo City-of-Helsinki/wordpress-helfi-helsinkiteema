@@ -121,10 +121,12 @@ function helsinki_files(): array {
 		    'modules' => [
 				'load-more',
 				'menu',
-				'notifications',
 				'search',
 				'social',
 				'widgets',
+			],
+			'notifications' => [
+				'setup',
 			],
 			'classes',
 			'class-helsinki-link-symbol-handler',
