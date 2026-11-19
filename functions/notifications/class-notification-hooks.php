@@ -57,7 +57,13 @@ final class Notification_Hooks
 			? ( $this->current_langugage === $data->lang )
 			: true;
 
-		return $data->enabled && $correct_lang;
+		$has_content = $data->title
+			|| $data->text
+			|| ($data->link_text && $data->link_url);
+
+		return $data->enabled
+			&& $has_content
+			&& $correct_lang;
 	}
 
 	private function from_array( array $source ): Notification_Data
